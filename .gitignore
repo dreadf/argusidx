@@ -1,0 +1,27 @@
+# CRITICAL: data/raw/ holds PURCHASED Sectors API data (real credits spent).
+# It must NEVER be gitignored. The previous project's ".gitignore silently
+# dropped the reproducibility data" mistake (a blanket output/data/*.csv
+# rule) is exactly the failure this comment exists to prevent. If you are
+# tempted to add a broad "data/" rule below, add "!data/raw/" alongside it,
+# or better, don't.
+
+# Yahoo dev-time cache: free and re-fetchable, safe to ignore.
+data/dev_cache/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Env / secrets
+.env
+.env.local
+*.key
+
+# OS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
