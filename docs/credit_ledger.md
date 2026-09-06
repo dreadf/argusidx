@@ -37,7 +37,7 @@ floor and recheck the portal before this matters.)*
 1. Every billed call gets a line **before** moving on to the next task,
    not reconstructed from memory afterward.
 2. State the cost and get explicit go-ahead before spending, per the
-   standing project rule — this ledger records what was approved and
+   standing project rule, this ledger records what was approved and
    spent, it doesn't replace asking first.
 3. If the running total here and the portal's actual balance ever
    disagree, the portal wins, and the discrepancy gets a line explaining
