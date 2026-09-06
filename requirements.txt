@@ -1,0 +1,3 @@
+# pipeline/ itself is stdlib-only by design (see RULES.md process rule 3).
+# pytest is the only dependency, needed to run pipeline/tests/.
+pytest

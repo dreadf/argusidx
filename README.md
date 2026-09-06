@@ -51,14 +51,41 @@ but honest, tested evidence about the signals people already believe.
 
 - **Sectors API** (sectors.app) — the core, required data source per
   the hackathon rules. Coverage: IDX (Indonesia), also SGX/KLSE/Mining
-  though unused here.
+  though unused here. All Sectors-sourced data in this repo is provided
+  by [Sectors](https://sectors.app).
 - **Yahoo Finance** — development-time only, for cheaply testing a
   hypothesis before spending Sectors credits on it. Never ships.
 
+## Setup
+
+Requires Python 3.11+. The pipeline itself is stdlib-only; the only
+dependency is `pytest`, for running the test suite.
+
+```
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# run the H1 hypothesis test
+python -m pipeline.hypotheses.h1_free_float
+
+# run the test suite
+python -m pytest pipeline/tests/
+```
+
+If you're going to make live Sectors API calls (not required to
+reproduce H1, which runs entirely on committed data), copy
+`.env.example` to `.env` and fill in `SECTORS_API_KEY`. `.env` is
+gitignored and must never be committed.
+
 ## Disclaimer
 
-*(To be finalized — see BACKLOG.md, Compliance.)* This project is an
-information and analysis tool. It does not provide financial advice and
-does not recommend buying, selling, or holding any security. All
-findings describe historical relationships in past data and are not
-guarantees about the future.
+This project is an information and analysis tool. It does not provide
+financial advice, and does not recommend buying, selling, or holding any
+security. Nothing here should be read as a signal to act on. All
+findings describe historical, statistical relationships measured in past
+IDX data — they are not predictions, and they are not guarantees about
+future performance. Each finding stands on its own evidence and its own
+stated limits; findings are never combined into a single score or
+verdict. If you're making a financial decision, that decision is yours
+alone — consult a licensed financial professional.
