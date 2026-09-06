@@ -42,6 +42,9 @@ but honest, tested evidence about the signals people already believe.
 - `RULES.md` — the hackathon's constraints and this project's process
   rules.
 - `BACKLOG.md` — the to-do list, by category.
+- `docs/PLAN.md` — the full project plan: product design, hypothesis
+  register, credit budget, schedule, and the reasoning behind every
+  decision `RULES.md` and `BACKLOG.md` only summarize.
 - `docs/credit_ledger.md` — every Sectors API credit spent, and why.
 
 ## Data sources
