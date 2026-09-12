@@ -22,15 +22,33 @@ calls count toward the total.
 | 2026-09-06 | `/v2/foreign-flow/GOTO/` | Verify foreign-flow data | 1 | 13 |
 | 2026-09-06 | `/v2/free-float/` (full universe) | H1 explanatory variable | 10 | 23 |
 | 2026-09-06 | `/v2/companies/` (market cap, 5 pages) | H1 size-confound control | 5 | 28 |
+| 2026-09-06 | `/v2/companies/?where=pe_ttm>0 and roe_ttm>0&order_by=-market_cap&limit=5&include_query_values=true` | Phase 0 — field density test (approved in advance, see BACKLOG.md) | 1 | 29 |
+| 2026-09-07 | `/v2/companies/?where=pe[2024] is not null&order_by=-market_cap&limit=3&include_query_values=true` | Phase 1 shape probe Q1 — yearly bracket-notation key format (confirmed flat: `"pe[2024]"`) | 1 | 30 |
+| 2026-09-07 | `/v2/companies/?where=pe_ttm>0 or market_cap>0&order_by=-market_cap&limit=5&include_query_values=true` | Phase 1 shape probe Q2 — confirms permissive OR avoids AND's filtering (total_count 962 vs Phase 0's 604) | 1 | 31 |
+| 2026-09-07 | `/v2/companies/` — full 49-condition combined `where` (all snapshot + yearly fields), limit=1 | Phase 1 pre-flight — confirms one query gets all 48 fields with zero rows excluded (total_count 962). Avoids the ~30-35 credit field-group fallback. | 1 | 32 |
+| 2026-09-07 | `/v2/companies/` — full universe sweep, 5 pages × limit=200 | Phase 1 C2 — all snapshot + yearly 2021-2025 fields for 962 companies. `data/raw/universe_2026-09-07.json`. Cross-checked against purchased `free_float_2026-09-06.json`: 0 disagreements across 961 common symbols. | 5 | 37 |
+| 2026-09-12 | `/v2/companies/` — expanded combined `where` (adds `industry`/`sub_industry`/price-bands/`earnings[YYYY]`/etc., verified against the live schema, `pipeline/hypotheses/_universe_fields.py`), limit=1 | Pre-flight for the re-sweep — approved by user. Confirmed: all 83 expected fields present, `total_count=962` (zero rows excluded) | 1 | 38 |
+| 2026-09-12 | `/v2/companies/` — full universe re-sweep, 5 pages × limit=200, expanded field list | Approved by user 2026-09-12 (unlocks H4/H10/H15, fixes 207 stranded peer groups). `data/raw/universe_2026-09-12.json`, 962 companies, all 83 fields populated. Cross-checked against purchased `free_float_2026-09-06.json`: 36 of 961 common symbols now disagree (vs. 0 disagreements on the 2026-09-07 sweep against the same purchased file) — real free-float drift over the 5 days between sweeps, not a bug; see `docs/DATA.md` note | 5 | 43 |
 
-**Total spent as of 2026-09-06: 28 credits.**
+**Total spent as of 2026-09-12: 43 credits.**
 
-*(Note: earlier conversational summaries said 29 — the discrepancy is a
-single free/billed ambiguity around one of the very first exploratory
-calls that was never conclusively confirmed either way. Treat 28 as the
-floor and recheck the portal before this matters.)*
+*(Note on how the Phase 0 call actually ran: the first attempts via
+`pipeline/sectors_client.py` and a mis-sourced `.env` both hit Cloudflare
+403s, which are free per the rules above and not logged as separate
+lines. The one call above is the single successful, billed request —
+made while diagnosing the 403s, with curl rather than the script, but
+using the exact approved query. No extra call was made beyond the one
+approved.)*
 
-**Remaining: ~972.**
+*(Historical note: before the Phase 0 line above, this table's own
+28-credit total once disagreed with an earlier conversational summary of
+29 — a single free/billed ambiguity around one of the very first
+exploratory calls, never conclusively resolved either way. That old
+uncertainty is unrelated to the current 29-credit total, which reflects
+the real, newly-logged Phase 0 call. Recheck the portal before either
+number matters for a decision.)*
+
+**Remaining: ~957.**
 
 ## Rules for this ledger
 
@@ -42,3 +60,8 @@ floor and recheck the portal before this matters.)*
 3. If the running total here and the portal's actual balance ever
    disagree, the portal wins, and the discrepancy gets a line explaining
    why (a free response miscounted as billed, or vice versa).
+4. `pipeline/sectors_client.py`'s `get()` retries on 5xx, which is not
+   fully idempotent against billing -- a 5xx generated after Sectors
+   already ran the query bills the retry a second time. Low-risk for a
+   single call; recheck the portal balance against this ledger after any
+   `paginate()`-driven sweep, where the call count is much higher.
