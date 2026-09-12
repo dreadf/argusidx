@@ -5,16 +5,30 @@ bug everywhere, so this is the highest-leverage place to have coverage).
 """
 import math
 
+import pytest
+
+from datetime import datetime, timezone
+
 from pipeline.stats import (
     annualized_volatility,
+    closes_in_year,
     log_returns,
     max_drawdown,
     median_of,
+    moving_average,
+    nearest_index,
+    nearest_value,
     no_move_fraction,
     quintiles,
+    rsi,
     spearman,
     total_return,
+    welch_ttest,
 )
+
+
+def _ts(year, month, day):
+    return datetime(year, month, day, tzinfo=timezone.utc).timestamp()
 
 
 def test_log_returns():
@@ -94,3 +108,222 @@ def test_quintiles_splits_evenly():
 def test_median_of():
     rows = [{"x": 1}, {"x": 3}, {"x": 2}]
     assert median_of(rows, "x") == 2
+
+
+# --- Regression tests for bugs found and fixed 2026-09-07 -----------------
+# Each corresponds to a real defect: distinct sequential ranks fabricating
+# structure from ties, a sign-blind infinite t-statistic, a spurious
+# perfect correlation at n<=2, empty quintile buckets crashing median_of,
+# and quintiles() dumping its remainder entirely into the last bucket.
+
+
+def test_spearman_ties_are_averaged_not_sequential():
+    # Six identical x-values against a monotonic y: with proper tie
+    # averaging every x-rank is the same, so rho must be 0 -- the
+    # previous behavior (distinct sequential ranks) reported rho=+1.0,
+    # a perfect correlation from zero information in x.
+    result = spearman([1, 1, 1, 1, 1, 1], [10, 20, 30, 40, 50, 60])
+    assert math.isclose(result.rho, 0.0, abs_tol=1e-9)
+    assert result.t == 0.0
+
+
+def test_spearman_tie_sign_does_not_flip_with_input_order():
+    a = spearman([1, 1, 1, 1], [1, 2, 3, 4])
+    b = spearman([1, 1, 1, 1], [4, 3, 2, 1])
+    assert a.rho == b.rho == 0.0
+
+
+def test_spearman_perfect_negative_correlation_has_negative_t():
+    result = spearman([1, 2, 3, 4, 5], [5, 4, 3, 2, 1])
+    assert result.rho == -1.0
+    assert result.t == float("-inf")  # previously always +inf regardless of sign
+
+
+def test_spearman_below_n3_returns_nan_not_spurious_perfect_correlation():
+    # n=2 is mathematically always rho=+-1 -- a correlation estimate with
+    # no information content. Previously returned rho=1.0, t=inf; now NaN.
+    for a, b in [([], []), ([1], [2]), ([1, 2], [3, 4])]:
+        result = spearman(a, b)
+        assert math.isnan(result.rho)
+        assert math.isnan(result.t)
+        assert result.n == len(a)
+
+
+def test_quintiles_n_less_than_buckets_does_not_crash_median_of():
+    rows = [{"v": 1}, {"v": 2}]
+    buckets = quintiles(rows, "v", n_buckets=5)
+    assert len(buckets) == 5
+    assert sum(len(b) for b in buckets) == 2
+    empty = [b for b in buckets if not b]
+    assert empty  # some buckets are unavoidably empty when n < n_buckets
+    assert math.isnan(median_of(empty[0], "v"))  # previously StatisticsError
+
+
+def test_quintiles_remainder_spread_not_dumped_in_last_bucket():
+    # n=14 into 5 buckets: 14 = 5*2 + 4, so 4 buckets get 3 and 1 gets 2 --
+    # previously the last bucket absorbed the whole remainder ([2,2,2,2,6]),
+    # making it 3x wider than the others and biasing any first-vs-last
+    # bucket comparison (exactly what every hypothesis module here does).
+    rows = [{"v": i} for i in range(14)]
+    buckets = quintiles(rows, "v", n_buckets=5)
+    sizes = [len(b) for b in buckets]
+    assert sizes == [3, 3, 3, 3, 2]
+    assert max(sizes) - min(sizes) <= 1
+
+
+def test_max_drawdown_raises_on_non_positive_price():
+    with pytest.raises(ValueError):
+        max_drawdown([0.0, 100.0, 50.0])
+    with pytest.raises(ValueError):
+        max_drawdown([100.0, -5.0, 50.0])
+
+
+def test_log_returns_raises_on_non_positive_price():
+    with pytest.raises(ValueError):
+        log_returns([100.0, 0.0, 100.0])
+    with pytest.raises(ValueError):
+        log_returns([100.0, -1.0, 100.0])
+
+
+def test_closes_in_year_filters_by_calendar_year():
+    entry = {
+        "timestamps": [_ts(2023, 12, 31), _ts(2024, 1, 1), _ts(2024, 6, 1), _ts(2025, 1, 1)],
+        "close": [1.0, 2.0, 3.0, 4.0],
+    }
+    assert closes_in_year(entry, 2024) == [2.0, 3.0]
+
+
+def test_closes_in_year_uses_requested_field():
+    entry = {
+        "timestamps": [_ts(2024, 1, 1)],
+        "close": [10.0],
+        "adjclose": [9.0],
+    }
+    assert closes_in_year(entry, 2024, field="adjclose") == [9.0]
+
+
+def test_closes_in_year_raises_on_length_mismatch():
+    entry = {"timestamps": [_ts(2024, 1, 1), _ts(2024, 1, 2)], "close": [1.0]}
+    with pytest.raises(ValueError):
+        closes_in_year(entry, 2024)
+
+
+def test_nearest_value_picks_closest_timestamp():
+    entry = {
+        "timestamps": [_ts(2024, 1, 1), _ts(2024, 1, 10), _ts(2024, 1, 20)],
+        "close": [1.0, 2.0, 3.0],
+    }
+    assert nearest_value(entry, datetime(2024, 1, 12, tzinfo=timezone.utc)) == 2.0
+
+
+def test_nearest_value_none_outside_max_gap_days():
+    entry = {"timestamps": [_ts(2024, 1, 1)], "close": [1.0]}
+    assert nearest_value(entry, datetime(2024, 2, 1, tzinfo=timezone.utc), max_gap_days=10) is None
+
+
+def test_nearest_value_boundary_is_inclusive():
+    entry = {"timestamps": [_ts(2024, 1, 1)], "close": [1.0]}
+    target = datetime(2024, 1, 11, tzinfo=timezone.utc)  # exactly 10 days later
+    assert nearest_value(entry, target, max_gap_days=10) == 1.0
+
+
+def test_nearest_value_uses_requested_field():
+    entry = {"timestamps": [_ts(2024, 1, 1)], "close": [10.0], "adjclose": [9.0]}
+    assert nearest_value(entry, datetime(2024, 1, 1, tzinfo=timezone.utc), field="adjclose") == 9.0
+
+
+def test_nearest_value_raises_on_length_mismatch():
+    entry = {"timestamps": [_ts(2024, 1, 1), _ts(2024, 1, 2)], "close": [1.0]}
+    with pytest.raises(ValueError):
+        nearest_value(entry, datetime(2024, 1, 1, tzinfo=timezone.utc))
+
+
+def test_nearest_value_raises_on_non_positive_price():
+    entry = {"timestamps": [_ts(2024, 1, 1)], "close": [0.0]}
+    with pytest.raises(ValueError):
+        nearest_value(entry, datetime(2024, 1, 1, tzinfo=timezone.utc))
+
+
+def test_nearest_index_picks_closest_timestamp():
+    entry = {"timestamps": [_ts(2024, 1, 1), _ts(2024, 1, 10), _ts(2024, 1, 20)]}
+    assert nearest_index(entry, datetime(2024, 1, 12, tzinfo=timezone.utc)) == 1
+
+
+def test_nearest_index_none_outside_max_gap_days():
+    entry = {"timestamps": [_ts(2024, 1, 1)]}
+    assert nearest_index(entry, datetime(2024, 2, 1, tzinfo=timezone.utc), max_gap_days=10) is None
+
+
+# --- moving_average / rsi (added for H14) ----------------------------------
+
+
+def test_moving_average_basic():
+    out = moving_average([1, 2, 3, 4, 5], window=3)
+    assert out == [None, None, 2, 3, 4]
+
+
+def test_moving_average_too_short_is_all_none():
+    out = moving_average([1, 2], window=3)
+    assert out == [None, None]
+
+
+def test_moving_average_window_must_be_positive():
+    with pytest.raises(ValueError):
+        moving_average([1, 2, 3], window=0)
+
+
+def test_rsi_all_gains_is_100():
+    # Monotonically rising closes -> avg_loss is always 0 -> RSI pinned at 100.
+    out = rsi([1, 2, 3, 4, 5, 6], period=3)
+    assert out[:3] == [None, None, None]
+    assert out[3:] == [100.0, 100.0, 100.0]
+
+
+def test_rsi_flat_prices_is_50():
+    # No price movement at all -> avg_gain and avg_loss both 0 -> RSI=50
+    # (0/0 is undefined; 50 is the conventional "no signal" value).
+    out = rsi([5, 5, 5, 5, 5], period=2)
+    assert out[:2] == [None, None]
+    assert out[2:] == [50.0, 50.0, 50.0]
+
+
+def test_rsi_too_short_is_all_none():
+    out = rsi([1, 2, 3], period=14)
+    assert out == [None, None, None]
+
+
+def test_rsi_matches_hand_calculation():
+    # closes 1..15, period=14: 14 consecutive +1 deltas -> avg_gain=1,
+    # avg_loss=0 -> RS=inf -> RSI=100. Only one value is defined (index 14).
+    closes = list(range(1, 16))
+    out = rsi(closes, period=14)
+    assert out[:14] == [None] * 14
+    assert out[14] == 100.0
+
+
+# --- welch_ttest (added for H15) -------------------------------------------
+
+
+def test_welch_ttest_identical_groups_has_zero_diff():
+    a = [1.0, 2.0, 3.0, 4.0, 5.0]
+    b = [1.0, 2.0, 3.0, 4.0, 5.0]
+    result = welch_ttest(a, b)
+    assert math.isclose(result.diff, 0.0, abs_tol=1e-9)
+    assert math.isclose(result.t, 0.0, abs_tol=1e-9)
+    assert result.n_a == result.n_b == 5
+
+
+def test_welch_ttest_detects_a_real_mean_difference():
+    a = [10.0, 11.0, 9.0, 10.5, 9.5]
+    b = [1.0, 2.0, 0.5, 1.5, 0.0]
+    result = welch_ttest(a, b)
+    assert result.diff > 0
+    assert result.t > 5  # large, obvious separation
+
+
+def test_welch_ttest_insufficient_data_is_nan():
+    result = welch_ttest([1.0], [1.0, 2.0, 3.0])
+    assert math.isnan(result.t)
+    assert math.isnan(result.diff)
+    assert result.n_a == 1
+    assert result.n_b == 3

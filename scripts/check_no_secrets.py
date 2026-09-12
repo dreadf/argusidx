@@ -26,18 +26,57 @@ import sys
 # Deliberately broad: a credential-shaped assignment (KEY/TOKEN/SECRET/etc.
 # followed by a long opaque string), or a handful of well-known vendor
 # prefixes. False positives are cheap; a missed key is not.
+#
+# The keyword can be followed by a closing quote/bracket before the
+# `:`/`=` (['"\]\)\s]* below) so this catches JSON ("api_key": "...") and
+# Python subscript assignment (os.environ['KEY'] = '...'), not just a
+# bare shell-style KEY=value line. "authoriz" is included because it's
+# this project's own auth style (sectors_client.py sends the raw key in
+# an Authorization header) -- the one shape a real leak here would most
+# likely take was, until this fix, the one shape this scanner couldn't see.
+# Each pattern captures the credential value itself as `value`, so ALLOW
+# (below) can be checked against just that value rather than the whole
+# line -- checking the whole line let `example`/`xxx`/`<...>` ANYWHERE on
+# a line (e.g. a trailing "# example config" comment) suppress detection
+# of a real key earlier on the same line.
 PATTERNS = [
     re.compile(
-        r"(?i)(api[_-]?key|secret|token|password|passwd)\s*[:=]\s*['\"]?"
-        r"[A-Za-z0-9_\-/+]{16,}['\"]?"
+        r"(?i)(api[_-]?key|secret|token|password|passwd|authoriz\w*)"
+        # Optional "Bearer " (or similar auth scheme word) between the
+        # `:`/`=` and the actual credential -- an `Authorization: Bearer
+        # <token>` header (this project's own Sectors-client style; see
+        # pipeline/sectors_client.py) previously matched nothing here: the
+        # scheme word "Bearer" itself would attempt to satisfy the value
+        # capture, fail the {16,} length requirement, and the pattern gave
+        # up rather than looking past it for the real token (found by
+        # /code-review, 2026-09-12).
+        r"['\"\]\)\s]*[:=]\s*['\"]?(?:[A-Za-z]+\s+)?(?P<value>[A-Za-z0-9_\-/+]{16,})['\"]?"
     ),
-    re.compile(r"AKIA[0-9A-Z]{16}"),  # AWS access key id
-    re.compile(r"sk-[A-Za-z0-9]{20,}"),  # OpenAI/Anthropic-style secret key
-    re.compile(r"ghp_[A-Za-z0-9]{36}"),  # GitHub personal access token
+    re.compile(r"(?P<value>AKIA[0-9A-Z]{16})"),  # AWS access key id
+    re.compile(r"(?P<value>sk-[A-Za-z0-9]{20,})"),  # OpenAI/Anthropic-style secret key
+    re.compile(r"(?P<value>ghp_[A-Za-z0-9]{36})"),  # GitHub personal access token
 ]
 
-# Lines that are clearly templates/placeholders, not real secrets.
-ALLOW = re.compile(r"(?i)(your[_-]?key|example|placeholder|xxx+|<[^>]+>|^\s*$)")
+# Values that are clearly templates/placeholders, not real secrets.
+# Applied to the matched credential VALUE only (see above), not the line.
+ALLOW = re.compile(r"(?i)(your[_-]?key|example|placeholder|xxx+)")
+
+# After removing every ALLOW match from the value, anything left this long
+# is assumed to still be a real secret. Catches a real key concatenated
+# with a placeholder word with no separating space -- e.g.
+# "aB3xK9...jL0nP_example_suffix" -- which `ALLOW.search(value)` alone
+# would wrongly allow, because the value's own character class
+# ([A-Za-z0-9_-/+]) lets a real key and a trailing placeholder word merge
+# into one indistinguishable blob. A bare `search` for "example" anywhere
+# in that blob can't tell "this whole value is a placeholder" apart from
+# "a real secret happens to sit next to the word example".
+MIN_REAL_SECRET_LEN = 12
+
+
+def _is_placeholder(value: str) -> bool:
+    remainder = ALLOW.sub("", value)
+    remainder = re.sub(r"[_\-/]", "", remainder)  # separators left behind
+    return len(remainder) < MIN_REAL_SECRET_LEN
 
 
 def find_secrets(text: str) -> list[str]:
@@ -46,10 +85,18 @@ def find_secrets(text: str) -> list[str]:
         if not line.startswith("+") or line.startswith("+++"):
             continue
         content = line[1:]
-        if ALLOW.search(content):
-            continue
         for pattern in PATTERNS:
-            if pattern.search(content):
+            # finditer, not search: a line can carry two credential-shaped
+            # values matched by the SAME pattern (e.g. a placeholder
+            # example followed by a real key later on the same line).
+            # search() only ever sees the first one -- if that one turned
+            # out to be a placeholder, the old code moved on to the next
+            # PATTERN entirely, never inspecting the second match of this
+            # same pattern (found by /code-review, 2026-09-12).
+            if any(
+                not _is_placeholder(m.groupdict().get("value") or m.group(0))
+                for m in pattern.finditer(content)
+            ):
                 hits.append(content.strip())
                 break
     return hits

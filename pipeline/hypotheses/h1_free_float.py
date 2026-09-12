@@ -33,11 +33,11 @@ before trusting either.
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
 from pathlib import Path
 
 from pipeline.stats import (
     annualized_volatility,
+    closes_in_year,
     max_drawdown,
     median_of,
     no_move_fraction,
@@ -63,7 +63,12 @@ def load_market_cap() -> dict[str, float]:
     out = {}
     for r in rows:
         mc = (r.get("query_values") or {}).get("market_cap")
-        if mc:
+        # `is not None`, not a bare truthy check -- a bare `if mc:` would
+        # silently drop a legitimate market_cap of 0 (found by
+        # /code-review, 2026-09-12; load_free_float two lines up already
+        # gets this right, this function didn't match its own file's
+        # convention).
+        if mc is not None:
             out[r["symbol"]] = mc
     return out
 
@@ -71,7 +76,8 @@ def load_market_cap() -> dict[str, float]:
 def build_1y_rows(ff: dict[str, float]) -> list[dict]:
     prices = json.loads(PRICES_1Y_PATH.read_text())
     rows = []
-    for sym, closes in prices.items():
+    for sym, entry in prices.items():
+        closes = entry["close"]
         if sym not in ff or len(closes) < 120:
             continue
         rows.append(
@@ -111,6 +117,14 @@ def print_staleness_check(rows: list[dict]) -> None:
     liquid = [r for r in rows if r["no_move"] < 0.20]
     c = spearman([r["ff"] for r in liquid], [r["vol"] for r in liquid])
     print(f"\n  Liquid-only re-test (n={len(liquid)}): rho={c.rho:+.3f}  t={c.t:+.2f}")
+    print(
+        "\n  CAVEAT (added after the fact -- see EXPERIMENT.md): no_move_fraction\n"
+        "  only sees days a price exists. A day the stock never traded produces\n"
+        "  no bar at all, so it is invisible here, not counted as 'no movement'.\n"
+        "  This re-test does not actually rule out illiquidity. The corrected\n"
+        "  check, using actual trading-day counts, is in\n"
+        "  pipeline/hypotheses/h1_stress.py."
+    )
 
 
 def print_year_by_year(ff: dict[str, float]) -> None:
@@ -118,14 +132,10 @@ def print_year_by_year(ff: dict[str, float]) -> None:
     prices5y = json.loads(PRICES_5Y_PATH.read_text())
     for year in [2022, 2023, 2024, 2025, 2026]:
         rows = []
-        for sym, pairs in prices5y.items():
+        for sym, entry in prices5y.items():
             if sym not in ff:
                 continue
-            closes = [
-                c
-                for t, c in pairs
-                if datetime.fromtimestamp(t, timezone.utc).year == year
-            ]
+            closes = closes_in_year(entry, year)
             if len(closes) < 100:
                 continue
             rows.append({"ff": ff[sym], "vol": annualized_volatility(closes)})
@@ -169,10 +179,22 @@ def main() -> None:
     print_size_control(rows, mcap)
 
     print(
-        "\nConclusion: among small IDX companies, widely-floated ones are far more\n"
-        "volatile than closely-held ones. Among large companies, free float barely\n"
-        "matters. Robust 2022-2026. This is about volatility, not returns -- the\n"
-        "return relationship is ~0. Trial count: 1. Status: exploratory (no holdout)."
+        "\nPre-registered hypothesis FALSIFIED, in the reverse direction: we\n"
+        "predicted lower float -> higher volatility; the data shows the opposite\n"
+        "(rho is positive, not negative). See EXPERIMENT.md for the corrected\n"
+        "liquidity check (pipeline/hypotheses/h1_stress.py) and the retraction of\n"
+        "the year-by-year 'strengthening' claim -- both were overstated in the\n"
+        "original writeup.\n"
+        "\nConclusion (corrected 2026-09-10 -- see EXPERIMENT.md, the original text\n"
+        "here was itself retracted): IDX stocks where a lot of stock is publicly\n"
+        "available tend to be more volatile than closely-held ones, and this holds\n"
+        "across MOST company sizes, not just small caps -- the size-control table\n"
+        "above is significant in 3 of 4 size buckets (smallest, small-mid, largest),\n"
+        "weakest only in mid-large. The one live boundary condition is a calendar-\n"
+        "period one: significant 2024-2026, absent 2022-2023, cause unknown (see\n"
+        "EXPERIMENT.md) -- not a size-based exclusion. This is about volatility, not\n"
+        "returns -- the return relationship is ~0. Trial count: 1.\n"
+        "Status: exploratory (no holdout)."
     )
 
 

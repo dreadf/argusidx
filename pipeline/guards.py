@@ -32,10 +32,19 @@ def assert_within_data_floor(start: date) -> None:
 
 
 def _load_known_tickers() -> frozenset[str]:
-    """Ticker universe from the purchased free-float dataset (961 companies)."""
-    matches = sorted(DATA_RAW.glob("free_float_*.json"))
+    """Ticker universe from the purchased free-float dataset (961 companies).
+
+    The glob is pinned to the dated filename pattern rather than
+    `free_float_*.json` -- a loose glob would silently treat any
+    matching file as the authoritative universe by lexicographic sort
+    order (e.g. a `free_float_backup.json` sorts after every dated file
+    and would win, regardless of which is actually most recent).
+    """
+    matches = sorted(DATA_RAW.glob("free_float_????-??-??.json"))
     if not matches:
-        raise FileNotFoundError(f"no free_float_*.json found under {DATA_RAW}")
+        raise FileNotFoundError(
+            f"no free_float_YYYY-MM-DD.json found under {DATA_RAW}"
+        )
     with matches[-1].open() as f:
         rows = json.load(f)
     return frozenset(row["symbol"].upper() for row in rows)
