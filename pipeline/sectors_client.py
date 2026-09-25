@@ -24,6 +24,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
+from typing import Callable
 
 BASE_URL = "https://api.sectors.app/v2"
 RETRIES = 3
@@ -138,7 +139,13 @@ def get(path: str, params: dict[str, str] | None = None) -> dict:
     raise SectorsAPIError(f"request failed after {RETRIES} attempts: {last_error}")
 
 
-def paginate(path: str, params: dict[str, str], page_size: int = 200) -> list[dict]:
+def paginate(
+    path: str,
+    params: dict[str, str],
+    page_size: int = 200,
+    on_page: Callable[[list[dict]], None] | None = None,
+    start_offset: int = 0,
+) -> list[dict]:
     """GET every page of a `/v2/companies/`-style paginated endpoint.
 
     Terminates on the response's own `has_next` / `next_offset` fields
@@ -150,16 +157,39 @@ def paginate(path: str, params: dict[str, str], page_size: int = 200) -> list[di
     Each page is a separately billed call -- this makes exactly as many
     calls as pages exist, no more, no fewer. Caller is responsible for
     having already approved the expected page count and cost.
+
+    `on_page`, if given, is called with each page's `results` list right
+    after it's fetched -- e.g. `lambda page: f.write(...)` to persist
+    incrementally to disk. `start_offset`, if given, resumes from that
+    offset instead of 0 -- pair the two to make a genuinely resumable
+    pull: save each page as it arrives, and on a re-run pass
+    `start_offset=<rows already saved>` so already-billed pages are
+    never re-fetched (and re-billed). Note `on_page` ALONE only prevents
+    DATA LOSS on a crash, not RE-BILLING on retry -- a real gap found by
+    /code-review, 2026-09-13: `on_page` shipped first (in response to a
+    47-page /v2/filings/ pull that billed 32 pages, hit a 429, and lost
+    everything because nothing was saved until the end) but the naive
+    retry still re-fetched from offset 0, re-billing those same 32
+    pages. `start_offset` closes that gap for any FUTURE caller of this
+    function directly (the incident itself used a one-off scratch
+    script with manual pagination, not this function). Both parameters
+    default to their prior behavior -- purely additive, no change to
+    existing callers.
+
+    The return value holds only the pages fetched in THIS call: with
+    `start_offset > 0` it does not include rows saved by an earlier run.
     """
     all_results: list[dict] = []
     page_params = dict(params)
     page_params["limit"] = str(page_size)
-    offset = 0
+    offset = start_offset
     while True:
         page_params["offset"] = str(offset)
         response = get(path, page_params)
         results = response.get("results", [])
         all_results.extend(results)
+        if on_page is not None:
+            on_page(results)
         pagination = response.get("pagination", {})
         if not pagination.get("has_next"):
             break

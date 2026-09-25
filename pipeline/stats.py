@@ -393,6 +393,41 @@ def split_half(rows: list, seed: int) -> tuple[list, list]:
     return shuffled[:half], shuffled[half:]
 
 
+def payout_ratio_from_totals(dividend_per_share: float | None, earnings: float | None, shares: float | None) -> float | None:
+    """Payout ratio = dividend-per-share / EPS, where EPS = earnings / shares.
+
+    **Verified** against the live schema (`https://api.sectors.app/schema/`,
+    2026-09-13): `total_dividend[year]` is documented as "Total dividends
+    paid PER SHARE for the year"; `earnings[year]` is documented as
+    "Annual net profit/loss in IDR" -- i.e. company-TOTAL, not EPS.
+    Dividing dividend directly by earnings (this project's original
+    construction, in both H4 and H10 before this fix) is off by a factor
+    of shares outstanding, not a payout ratio at all -- independently
+    **verified** by sanity-checking BBCA's FY2024 `total_dividend`/
+    `earnings`/`outstanding_shares` figures against the already-
+    purchased snapshot `payout_ratio` field: the naive division gave
+    5e-12, while the corrected formula gives 0.624, close to (not
+    identical to -- the snapshot is a TTM figure, not FY2024-specific,
+    so an exact match isn't expected) the snapshot's 0.80. Same order
+    of magnitude, which is what this check was actually establishing --
+    stated precisely rather than implying a like-for-like match. Single
+    implementation here per
+    this module's own "fix it once" convention -- H4 and H10 each had
+    their own copy of this fix before being consolidated (found by
+    /code-review, 2026-09-13).
+
+    Returns None if any input is missing or if earnings/shares aren't
+    both positive (payout ratio is undefined for a loss-making company or
+    a non-payer), matching this module's None-for-undefined convention.
+    """
+    if dividend_per_share is None or earnings is None or shares is None:
+        return None
+    if earnings <= 0 or shares <= 0:
+        return None
+    eps = earnings / shares  # always > 0: both operands already guarded above
+    return dividend_per_share / eps
+
+
 def sector_neutral_rank(rows: list[dict], field: str, group_key: str) -> list[dict]:
     """Returns `rows` (only those with a non-None `field`) with a new
     `f"{field}_rank"` in [0, 1]: each row's percentile rank of `field`

@@ -19,6 +19,7 @@ from pipeline.stats import (
     nearest_index,
     nearest_value,
     no_move_fraction,
+    payout_ratio_from_totals,
     quintiles,
     rsi,
     spearman,
@@ -327,3 +328,30 @@ def test_welch_ttest_insufficient_data_is_nan():
     assert math.isnan(result.diff)
     assert result.n_a == 1
     assert result.n_b == 3
+
+
+# --- payout_ratio_from_totals (added for H4/H10, 2026-09-13) ---------------
+
+
+def test_payout_ratio_from_totals_matches_hand_calculation():
+    # BBCA 2024: total_dividend=277.5/share, earnings=54,836,305,000,000,
+    # outstanding_shares=123,275,050,000 -> EPS ~= 444.83, payout ~= 0.624.
+    result = payout_ratio_from_totals(277.5, 54_836_305_000_000.0, 123_275_050_000.0)
+    assert math.isclose(result, 0.6238353655484264, rel_tol=1e-9)
+
+
+def test_payout_ratio_from_totals_naive_division_would_be_tiny():
+    # Guards against regressing to the units bug this function exists to
+    # fix -- a naive dividend/earnings division is off by a factor of
+    # shares outstanding (~1e-12 for BBCA), not a real payout ratio.
+    naive = 277.5 / 54_836_305_000_000.0
+    result = payout_ratio_from_totals(277.5, 54_836_305_000_000.0, 123_275_050_000.0)
+    assert result > naive * 1e6
+
+
+def test_payout_ratio_from_totals_none_for_missing_or_undefined_inputs():
+    assert payout_ratio_from_totals(None, 100.0, 10.0) is None
+    assert payout_ratio_from_totals(5.0, None, 10.0) is None
+    assert payout_ratio_from_totals(5.0, 100.0, None) is None
+    assert payout_ratio_from_totals(5.0, -100.0, 10.0) is None  # loss-making
+    assert payout_ratio_from_totals(5.0, 100.0, 0.0) is None  # no shares

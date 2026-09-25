@@ -40,11 +40,16 @@ CLAUDE.md):
 6. revenue_growth = revenue[year] / revenue[year-1] - 1, revenue[year-1]
    > 0 only. Belief under test: growing companies keep growing (or:
    growth is already priced in and doesn't predict forward return).
-7. payout_ratio = total_dividend[year] / earnings[year], earnings[year] >
-   0 only. Belief under test: a high payout ratio predicts WORSE forward
-   returns (the "unsustainable yield" story). Distinct from the future
-   H4 (payout ratio -> DIVIDEND CUT, a different outcome variable) --
-   same numerator/denominator construction, different question, no
+7. payout_ratio = stats.payout_ratio_from_totals (dividend-per-share
+   divided by EPS, where EPS = earnings[year]/outstanding_shares[year]
+   -- NOT the naive total_dividend[year]/earnings[year] this docstring
+   originally described; that construction was off by a factor of
+   shares outstanding, found and fixed 2026-09-13, see EXPERIMENT.md's
+   H10 correction note). Belief under test: a high payout ratio predicts
+   WORSE forward returns (the "unsustainable yield" story). Distinct
+   from H4 (payout ratio -> DIVIDEND CUT, a different outcome variable,
+   now tested and confirmed) -- same numerator/denominator
+   construction, different question, no
    overlap in outcome.
 
 No interaction terms here -- H15 already covers pre-registered
@@ -97,7 +102,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from pipeline.hypotheses.h5_value_size import EXPLORE_YEARS, HOLDOUT_YEARS, PRICES_5Y_PATH
-from pipeline.stats import benjamini_hochberg, nearest_value, normal_two_sided_p, sector_neutral_rank, spearman
+from pipeline.stats import (
+    benjamini_hochberg,
+    nearest_value,
+    normal_two_sided_p,
+    payout_ratio_from_totals,
+    sector_neutral_rank,
+    spearman,
+)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 UNIVERSE_PATH = REPO_ROOT / "data" / "raw" / "universe_2026-09-12.json"
@@ -151,7 +163,7 @@ def build_rows_for_year(universe: list[dict], prices5y: dict, year: int) -> list
         row["revenue_growth"] = (
             revenue / revenue_prev - 1 if revenue is not None and revenue_prev is not None and revenue_prev > 0 else None
         )
-        row["payout_ratio"] = div / earnings if div is not None and earnings is not None and earnings > 0 else None
+        row["payout_ratio"] = payout_ratio_from_totals(div, earnings, shares)
         rows.append(row)
     return rows
 
