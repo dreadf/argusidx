@@ -1,0 +1,235 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: #0A0E17;
+  --foreground: #F2F5FA;
+  --card: #121826;
+  --card-foreground: oklch(0.985 0 0);
+  --popover: #121826;
+  --popover-foreground: #F2F5FA;
+  --primary: #1B57C4;
+  --primary-foreground: #F2F5FA;
+  --secondary: #1A2234;
+  --secondary-foreground: #F2F5FA;
+  --muted: #1A2234;
+  --muted-foreground: #8A97AD;
+  --accent: rgba(27, 87, 196, 0.22);
+  --accent-foreground: #8FB4EE;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.12);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+/* ============================================================
+   ArgusIDX data-viz tokens — dataviz skill's validated default
+   palette (validated: node scripts/dataviz/validate_palette.js,
+   see /docs/PRODUCT.md's design-system section for the audit).
+   These are separate from shadcn's UI chrome tokens above —
+   this block is ONLY for chart/data marks, never for buttons,
+   borders, or generic UI chrome.
+   ============================================================ */
+:root {
+  /* Categorical (8 hues, fixed order — never cycled, never reassigned
+     by rank). Slot 1 (blue) doubles as the sequential hue. */
+  --viz-cat-1: #2a78d6; /* blue */
+  --viz-cat-2: #eb6834; /* orange */
+  --viz-cat-3: #1baf7a; /* aqua */
+  --viz-cat-4: #eda100; /* yellow */
+  --viz-cat-5: #e87ba4; /* magenta */
+  --viz-cat-6: #008300; /* green */
+  --viz-cat-7: #4a3aa7; /* violet */
+  --viz-cat-8: #e34948; /* red */
+
+  /* Diverging pair — blue<->red, gray neutral midpoint.
+     Used for: market breadth (near-low/mid/near-high), today's
+     movers (down/flat/up). NEVER green/red — verified to fail
+     the colorblind check (deuteranopia ΔE 4.1, floor is 6.0). */
+  --viz-diverging-pos: #2a78d6;
+  --viz-diverging-neg: #e34948;
+  --viz-diverging-neutral: #f0efec;
+
+  /* Sequential (one hue, light->dark) — for magnitude / ordinal
+     jobs, e.g. today's "how much did things move" reading and the
+     idx-total trend chart. */
+  --viz-seq-100: #cde2fb;
+  --viz-seq-150: #b7d3f6;
+  --viz-seq-200: #9ec5f4;
+  --viz-seq-250: #86b6ef;
+  --viz-seq-300: #6da7ec;
+  --viz-seq-350: #5598e7;
+  --viz-seq-400: #3987e5;
+  --viz-seq-450: #2a78d6;
+  --viz-seq-500: #256abf;
+  --viz-seq-550: #1c5cab;
+  --viz-seq-600: #184f95;
+  --viz-seq-650: #104281;
+  --viz-seq-700: #0d366b;
+
+  /* Status (fixed, reserved — never themed, never a series color).
+     The ONLY sanctioned use in this product: the honesty
+     scoreboard's ✓/✗ (the claim's status, not a stock's risk).
+     Always paired with the ✓/✗ icon, never color alone. */
+  --viz-status-good: #0ca30c;
+  --viz-status-warning: #fab219;
+  --viz-status-serious: #ec835a;
+  --viz-status-critical: #d03b3b;
+
+  /* Chart chrome */
+  --viz-surface: #fcfcfb;
+  --viz-ink-primary: #0b0b0b;
+  --viz-ink-secondary: #52514e;
+  --viz-ink-muted: #898781;
+  --viz-gridline: #e1e0d9;
+  --viz-baseline: #c3c2b7;
+  --viz-raised: #eeeeea;
+  --viz-accent: #256abf;
+  --viz-chart-blue: #2a78d6;
+}
+
+.dark {
+  --viz-cat-1: #3987e5;
+  --viz-cat-2: #d95926;
+  --viz-cat-3: #199e70;
+  --viz-cat-4: #c98500;
+  --viz-cat-5: #d55181;
+  --viz-cat-6: #008300;
+  --viz-cat-7: #9085e9;
+  --viz-cat-8: #e66767;
+
+  --viz-diverging-pos: #3987e5;
+  --viz-diverging-neg: #e66767;
+  --viz-diverging-neutral: #383835;
+
+  --viz-status-good: #0ca30c;
+  --viz-status-warning: #fab219;
+  --viz-status-serious: #ec835a;
+  --viz-status-critical: #d03b3b;
+
+  --viz-surface: #121826;
+  --viz-ink-primary: #F2F5FA;
+  --viz-ink-secondary: #B4BFD1;
+  --viz-ink-muted: #8A97AD;
+  --viz-gridline: rgba(255, 255, 255, 0.09);
+  --viz-baseline: #2B3550;
+  --viz-raised: #1A2234;
+  --viz-accent: #8FB4EE;
+  --viz-chart-blue: #4C8DF0;
+}
+
+/* Bottom-nav clearance on phones; sidebar clearance on desktop. */
+.app-content {
+  padding-bottom: calc(76px + env(safe-area-inset-bottom));
+}
+@media (min-width: 768px) {
+  .app-content {
+    padding-bottom: 0;
+  }
+}
