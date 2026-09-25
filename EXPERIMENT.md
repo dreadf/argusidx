@@ -404,6 +404,57 @@ better explanation.
   +0.179/t +3.87** — both halves still positive and significant, so the
   direction still isn't an artifact of one arbitrary half of the sample.
 
+### Robustness stress tests (2026-09-20): sector, bootstrap, bucketing
+
+`pipeline/hypotheses/h1_robustness.py` (0 credits, owned data, seeded,
+~10 s). Stress tests of an existing finding, so **no new trials** (trial
+counter unchanged); interpretations were fixed in the module docstring
+before running. Reproduces the baseline exactly (n=913, ρ +0.177, t +5.42).
+
+**1. Leave-one-sector-out: not sector-driven.** Excluding each of the 11
+sectors in turn leaves ρ between +0.161 (Financials excluded) and +0.213
+(Consumer Cyclicals excluded), t between +4.56 and +6.00. Excluding
+property, mining (Basic Materials, Energy) and Financials together
+(n=527): ρ +0.165, t +3.82. Pre-registered verdict: robust to sector.
+Descriptive, not a claim: alone, the effect is never negative; ten
+sectors are positive and Consumer Cyclicals is ≈0 (n=149, ρ +0.001),
+which is why dropping it raises the pooled ρ. Eight of 11 single sectors
+are not individually significant (only Consumer Non-Cyclicals,
+Financials and Industrials clear |t|>2), which at n=37–149 is a power limit, not
+evidence against the effect. 11 looks, no multiple-comparison correction.
+Do not read the sector ordering as "strongest in X".
+
+**2. Bootstrap 95% intervals (2,000 resamples).** Smallest-cap bucket
+(n=229): ρ +0.215, stock-level [+0.077, +0.349], sector-cluster
+[+0.077, +0.403]. Pooled: [+0.109, +0.241] / [+0.100, +0.249]. Largest:
+[+0.037, +0.297] / [+0.025, +0.272]. **Small-mid: [+0.008, +0.269]
+stock-level but [−0.004, +0.280] cluster: borderline.** Mid-large
+includes zero on both. So "significant in 3 of 4 size buckets" holds
+only at the stock level; allowing for sector clustering it is 2 of 4
+clearly plus one borderline. Do not repeat the 3-of-4 wording in
+product copy.
+
+**3. Bucketing and threshold sensitivity: direction consistent, shape is
+a step.** Terciles 52/69/69%, quartiles 53/55/73/70%, quintiles
+54/53/69/69/73%, deciles 49/60/51/54/63/75/73/57/66/78% median volatility
+(thinnest float first). High float has the higher median in every scheme,
+but the relationship is not smooth: deciles rise in only 6 of 9 steps.
+Thin-float cut: stocks below 5/10/15/20/25/30% free float have median
+volatility 14–22 points lower than the rest at the 5–25% cuts and 10.6
+at 30%, every 95% interval excludes zero (the <5% cut has n=13: [+4.4, +65.8],
+too few to lean on).
+
+**What this changes for the app.** Nothing in the direction of the H1
+statement: it is not a property/mining/financials artifact and its
+direction survives every cut. Wording constraints: keep "bersamaan
+dengan", never "menyebabkan" or "memprediksi"; do not claim it holds
+inside every size bucket or sector (Consumer Cyclicals shows nothing);
+describe it as lower vs higher float groups, not a smooth gradient.
+Still true from before: contemporaneous association, 2024–2026 only,
+snapshot free float.
+
+Not run here: the optional H5-excluding-Financials side-by-side.
+
 ---
 
 ## H1b — Does the float-drawdown relationship survive size control?
@@ -1307,11 +1358,16 @@ by rule (`CLAUDE.md`'s predictor-before-outcome constraint):
 6. **revenue_growth** = revenue[year]/revenue[year−1] − 1, prior-year
    revenue > 0 only. Belief under test: growth persists (or is already
    priced in).
-7. **payout_ratio** = total_dividend[year]/earnings[year], earnings>0
-   only. Belief under test: a high payout predicts *worse* forward
-   returns (the "unsustainable yield" story). Distinct outcome from the
-   still-pending H4 (payout ratio → dividend CUT) despite the same
-   ratio construction — no overlap in what's being predicted.
+7. **payout_ratio** = `stats.payout_ratio_from_totals` (dividend-per-
+   share ÷ EPS, where EPS = earnings[year]/outstanding_shares[year]).
+   ⚠️ Originally written here as `total_dividend[year]/earnings[year]`
+   directly — corrected 2026-09-13 (see the correction note further
+   below in this section): that naive division is off by a factor of
+   shares outstanding, not a real payout ratio. Belief under test: a
+   high payout predicts *worse* forward returns (the "unsustainable
+   yield" story). Distinct outcome from H4 (payout ratio → dividend
+   CUT, now tested and confirmed) despite the same ratio construction —
+   no overlap in what's being predicted.
 
 No interaction terms — H15 already covers pre-registered interactions
 under its own trial count; repeating them here would double-count.
@@ -1358,9 +1414,22 @@ varies — see table; not every feature is defined for every row, e.g.
 | revenue_growth | −0.002 / −0.06 | +0.051 / +2.07 (p=0.038) | survives | **flipped** | NOT confirmed |
 | roe (quality) | +0.019 / +0.76 | −0.025 / −1.04 (p=0.301) | does not survive | flipped | NOT confirmed |
 | debt_to_equity_ratio (leverage) | −0.011 / −0.45 | −0.024 / −1.00 (p=0.318) | does not survive | same | NOT confirmed |
-| payout_ratio | +0.007 / +0.17 | +0.016 / +0.42 (p=0.676) | does not survive | same | NOT confirmed |
+| payout_ratio | +0.011 / +0.25 | −0.032 / −0.79 (p=0.428) | does not survive | flipped | NOT confirmed |
 
 **Three of seven confirmed, four null** — reported in full regardless.
+
+⚠️ **Correction, 2026-09-13 (found building H4):** `payout_ratio`'s
+original construction (`total_dividend[year]/earnings[year]`) divided a
+PER-SHARE figure by a company-TOTAL figure — off by a factor of shares
+outstanding, not a real payout ratio at all (caught by sanity-checking
+against the snapshot `payout_ratio` field: BBCA's naive value came out
+5e-12 against a real ~0.8). Fixed to `total_dividend[year] /
+(earnings[year]/outstanding_shares[year])`. **The verdict is unchanged
+— still NOT confirmed — but the table above reflects the corrected
+numbers**, not the originally-published ones (both explore and holdout
+rho/t changed slightly; explore's sign flipped from the original write-up,
+still not significant either way). The other 6 features were never
+affected by this bug and are unchanged.
 
 ### What's new here, not just a re-run
 
@@ -1435,6 +1504,861 @@ firmer than before," not "resolved."
   unaffected by payout_ratio's null result here — that tested payout
   ratio against *return*, not against *whether the dividend gets cut*;
   still a live, distinct candidate.
+
+---
+
+## H11 — Do stocks suspended for "unusual price increase" subsequently underperform the index?
+
+**Date:** 2026-09-13. Candidate since the plan's original design (ties
+to the gorengan problem statement); adopted for real once
+`/v2/suspensions/` was purchased (20 credits, full 588-record history —
+see `docs/credit_ledger.md`).
+
+### Why this exists
+
+74% of all 588 IDX suspensions purchased this session (437) are for a
+"significant cumulative price INCREASE" — IDX's own regulatory language
+for a pump-like move, explicitly issued "as investor protection." This
+is the closest thing to a direct, official, checkable gorengan marker
+this project has data for, and unlike H8 (blocked at ~100+ credits) the
+data was a single flat-rate purchase.
+
+### Method
+
+Pre-registered: suspended stocks (reason contains "peningkatan harga",
+verified directly against the purchased data, not assumed) earn a
+LOWER subsequent return than the index (^JKSE) over +30 and +90 calendar
+days from the suspension date — a mean-reversion "pump fades" claim.
+Explore = 2025 suspensions (312 usable events), holdout = 2026
+suspensions so far (91/83 usable events at +30d/+90d — some 2026 events
+are too recent for their horizon to have elapsed yet and are excluded,
+not estimated). Baseline price is the last close before the halt
+(`adjclose`); benchmark is the index over the identical window. Full
+code: `pipeline/hypotheses/h11_suspension_underperformance.py`.
+
+### What we found — and why the mean and the win-rate tell different stories
+
+| Phase | Horizon | n | Beat index | Stock mean / median | Index mean / median | Welch t |
+|---|---|---|---|---|---|---|
+| Explore | +30d | 312 | 55.1% | +25.5% / +7.3% | +1.9% / +2.4% | +5.99 |
+| Explore | +90d | 312 | 43.3% | +66.4% / −4.4% | +3.0% / +7.3% | +5.56 |
+| Holdout | +30d | 91 | **37.4%** | +0.9% / **−11.7%** | −7.7% / −8.5% | +1.29 |
+| Holdout | +90d | 83 | **33.7%** | −11.8% / **−30.5%** | −16.8% / −17.2% | +0.75 |
+
+**By the pre-registered Welch-t criterion, H11 is FALSIFIED as stated —
+the mean-based test never comes out negative, let alone significantly
+so, in either phase.** Taken at face value that looks like the opposite
+of what was predicted.
+
+**But the win-rate and median numbers tell a real, different, and more
+useful story that the mean-based test is hiding.** In 3 of 4 cells
+(both holdout horizons, and explore's +90d), the suspended stock beats
+the index LESS than half the time, and its MEDIAN return is
+substantially worse than the index's median over the same window —
+holdout's +90d median is −30.5% against the index's own −16.2% over the
+same dates. **The mean is dragged strongly positive by a small number
+of extreme continuing run-ups** (explore's own median flips from +7.3%
+at +30d to −4.4% at +90d while the mean does the opposite, +25.5% →
++66.4% — a small number of stocks kept pumping hard enough to swing the
+average even as the typical case reversed). This is the same
+right-skewed shape H16 already documented for the whole IDX market
+(Bessembinder's pattern) — just sharper here, since a suspension for a
+rapid price spike is exactly the population most likely to contain a
+few genuine mania continuations alongside a majority that reverts.
+
+### Honest verdict
+
+**Neither a clean confirmation nor a clean null — reported as both,
+deliberately, rather than picking whichever framing looks better.**
+The formally pre-registered test (mean/Welch-t) does not confirm
+underperformance and is not falsified in the "outperforms" direction
+either — it is simply not significant, and mildly positive-signed in
+both phases (a genuine, if weak, sign AGREEMENT between explore and
+holdout, just in the opposite direction from what was predicted).
+**The win-rate/median framing, not pre-registered as the primary test
+but visible in the same output, shows real, holdout-consistent
+underperformance** (33.7%–37.4% win rate, both well below 50%) that
+would need its own honestly-labeled follow-up test (e.g. a sign test on
+win-rate, or a test on medians) to be formally confirmed rather than
+just observed.
+
+### Limits
+
+- **The primary Welch-t test treats paired same-window observations as
+  independent** — the stock and index return at a given horizon share
+  the exact same calendar dates, so they are not independent samples in
+  the textbook sense this test assumes. No paired-test machinery exists
+  in this project yet. This likely makes the reported t-statistics
+  somewhat too confident either way, not just too weak.
+- **Repeat suspensions of the same symbol are pooled as separate
+  events, not collapsed** — a stock suspended 3 times during one rally
+  contributes 3 non-independent rows. Not fixed here, consistent with
+  this project's practice of disclosing rather than silently patching
+  every clustering concern (see H5's dropout-bias precedent).
+- **2026 holdout events requiring a horizon past "today" are excluded,
+  not estimated** — the holdout n (91/83) is smaller than explore's
+  (312) partly for this reason, not just because 2026 has fewer months
+  of data so far.
+- **The win-rate/median result described above was NOT the
+  pre-registered primary test** — noticing it in the same run's output
+  and reporting it honestly is different from having pre-registered it
+  as the falsification criterion. Treat it as a real, disclosed
+  observation worth a proper follow-up test, not as confirmed evidence.
+- **Legal/naming note, unchanged from the rest of this project:** this
+  reports a regulatory CATEGORY and a resulting base rate, never a
+  claim that any named company manipulated its price. No symbol is
+  singled out here as an accusation.
+- **Dev-only price data, same status as every other Yahoo-derived
+  number in this project:** owes the same Sectors price cross-check
+  already tracked in `BACKLOG.md` (`docs/PLAN.md` §8.3).
+- **Trial count: 18** (H1, H1b, H5, H14's 3, H15's 3, H10's 7, plus
+  H11's 2 pre-registered horizons).
+
+### What it opens up
+
+- **A genuinely usable, checkable base-rate sentence for the product,
+  once the win-rate framing gets its own proper follow-up test:**
+  "of stocks suspended for a sudden price spike, roughly 2 in 3 were
+  down more than the index three months later" — directly serves the
+  gorengan problem statement without accusing any specific company.
+- **A cautionary companion note the mean-based result itself supplies:**
+  a minority of these stocks kept running hard enough to flip a naive
+  average — "usually fades, but not always, and the exceptions are
+  large" is itself a more honest, more useful message than either
+  "always fades" or "doesn't fade."
+
+---
+
+## H4 — Does a high payout ratio predict a dividend cut the following year?
+
+**Date:** 2026-09-13. Adopted 2026-09-09 as "near-free" once
+`earnings[YYYY]` was unlocked by the 2026-09-12 sweep; built once H10 and
+H11 were done.
+
+### Why this exists
+
+"This dividend may not be sustainable" is a concrete, checkable,
+non-advisory flag `docs/PLAN.md` designed the product around — but only
+if the underlying claim (high payout → more likely cut) actually holds
+on IDX. Distinct outcome from H10's `payout_ratio` feature (which tested
+the same ratio against subsequent RETURN, and found nothing) — this
+tests it against a DIVIDEND CUT, a different question entirely, despite
+sharing the ratio construction.
+
+### A units bug, found and fixed before trusting any number
+
+The obvious construction — `total_dividend[year] / earnings[year]` — is
+wrong: `total_dividend` is a PER-SHARE rupiah figure, `earnings` is the
+company's TOTAL profit. Dividing one by the other is off by a factor of
+shares outstanding, not a payout ratio. Caught by sanity-checking a real
+company (BBCA 2024) against the already-purchased snapshot
+`payout_ratio` field: the naive construction gave 5e-12; the corrected
+one (`total_dividend[year] / (earnings[year]/outstanding_shares[year])`,
+i.e. dividend-per-share over EPS) gave 0.62, the right order of
+magnitude against the snapshot's ~0.8 ttm figure. **This same bug
+existed in H10's `payout_ratio` feature and has been fixed there too**
+(H10's verdict for that feature is unchanged — still not confirmed —
+but its exact numbers in this document were corrected; see H10's own
+entry).
+
+### Method
+
+Pre-registered: payout_ratio (dividend-per-share ÷ EPS) in year Y, top/
+middle/bottom terciles, predicts whether `total_dividend[Y+1] <
+total_dividend[Y]` (a cut). Only dividend-payers with positive earnings
+in year Y are included (payout ratio is undefined otherwise). Usable
+formation years: 2021–2024 (2025 is the latest year with a fully
+realized Y+1 outcome, since 2026 isn't complete yet). Explore = formation
+2021–2022 (outcome 2022–2023); holdout = formation 2023–2024 (outcome
+2024–2025). Full code:
+`pipeline/hypotheses/h4_payout_dividend_cuts.py`.
+
+### What we found
+
+| Phase | n | rho | t | T1 (lowest payout) cut rate | T2 cut rate | T3 (highest payout) cut rate |
+|---|---|---|---|---|---|---|
+| Explore | 450 | +0.403 | +9.33 | 8.0% (12/150) | 28.0% (42/150) | 51.3% (77/150) |
+| Holdout | 540 | +0.441 | +11.41 | 13.9% (25/180) | 39.4% (71/180) | **65.6% (118/180)** |
+
+**CONFIRMED, cleanly, in both phases** — a large, highly significant,
+monotonic effect that gets clearly stronger with each tercile, in the
+predicted direction, replicating from explore to holdout almost exactly
+(rho +0.40 → +0.44). One of the strongest and least ambiguous confirmed
+results in this project, alongside H1 and H5's value leg.
+
+### What it means in plain language
+
+Of IDX companies whose payout ratio was in the bottom third, roughly 1
+in 10 cut their dividend the next year. Of those in the top third
+(paying out about all, or more than all, of what they earned), roughly
+2 in 3 did. **A high payout ratio is a real, checkable warning sign for
+IDX dividend sustainability** — directly powers the flag `docs/PLAN.md`
+designed this hypothesis for.
+
+### Limits
+
+- **Mechanical, not purely behavioral:** a company paying out 100%+ of
+  earnings has very little room before a profit dip forces a lower
+  absolute dividend even with an unchanged payout POLICY — some of this
+  effect is closer to accounting arithmetic than a discovered market
+  inefficiency. Still a real, useful base rate for the flag either way.
+- **"Cut" is defined as ANY decrease**, including a token 1-rupiah
+  reduction — does not distinguish a small trim from a dividend
+  elimination. Not refined here.
+- **No FDR correction needed at n=1 trial**, but this is exactly the
+  kind of large, clean effect that should make anyone pause and
+  double-check the construction before trusting it — which is exactly
+  what happened (see the units-bug section above) and is the reason this
+  result is trusted, not despite the correction but because of it.
+- **Trial count: 19** (H1, H1b, H5, H14's 3, H15's 3, H10's 7, H11's 2,
+  plus H4).
+
+### What it opens up
+
+- **A clean, strong, directly product-usable finding** — powers the
+  "this dividend may not be sustainable" flag exactly as designed,
+  without needing any hedging beyond the mechanical-effect caveat above.
+
+---
+
+## H13 — Do Acceleration-board IPOs underperform Main-board IPOs?
+
+**Date:** 2026-09-13. Candidate since 2026-09-09 ("free to test" — 266
+owned 2021+ listings, prices already in the Yahoo dev cache); built as
+the next free hypothesis after H4 confirmed and H12 hit a blocking data
+problem.
+
+### Why this exists
+
+`docs/SOURCES.md` already cites published findings that ~2/3 of
+Acceleration-board IDX IPOs from 2020-2024 posted negative returns at
+360/720 days — this project holds `listing_date`/`listing_board` for 266
+2021+ listings, already purchased, and prices already in the free Yahoo
+cache. Zero additional cost to check whether the same pattern shows up
+in this project's own data (a different sample/window, not a strict
+replication of the cited study).
+
+### Method
+
+Pre-registered: Acceleration-board IPOs earn a lower return, and are
+more often negative, than Main-board IPOs, at 180/365/720 calendar days
+from first trade. "Listing price" proxy = nearest close within 10 days
+of `listing_date` (not the actual IPO offer price — a disclosed
+simplification). Explore = listed 2021-2022 (83 usable listings);
+holdout = listed 2023-2024 (120 usable). A horizon is excluded per-event
+if it hasn't elapsed yet, not padded. Full code:
+`pipeline/hypotheses/h13_ipo_board_performance.py`.
+
+### What we found
+
+| Phase | Horizon | Acceleration n / neg. rate / median | Main n / neg. rate / median | Welch t (Accel vs Main) |
+|---|---|---|---|---|
+| Explore | +180d | 13 / 69.2% / −54.5% | 18 / 50.0% / +2.8% | −1.23 |
+| Explore | +365d | 13 / 69.2% / −48.9% | 18 / 61.1% / −5.5% | −1.27 |
+| Explore | +720d | 13 / 76.9% / −77.8% | 18 / 55.6% / −6.1% | −1.01 |
+| Holdout | +180d | 20 / 60.0% / −35.8% | 21 / 47.6% / +2.8% | −1.23 |
+| Holdout | +365d | 20 / **80.0%** / −73.0% | 21 / **33.3%** / +18.6% | −1.26 |
+| Holdout | +720d | 20 / 65.0% / −33.7% | 18 / 27.8% / +6.7% | −0.41 |
+
+**Same two-story pattern H11 already taught this project to check for,
+found again.** The negative-rate/median framing shows a real, large,
+consistent gap — Acceleration's negative rate is 60-80% in every one of
+the 6 cells, Main's is much lower (28-62%), closely matching the cited
+literature's own ~⅔ figure for Acceleration. **Every single one of the 6
+Welch-t values is negative-signed** (Acceleration's mean return below
+Main's), in both phases, at all three horizons — real sign agreement,
+not a coin flip. **But none clears even the plain ~1.96 threshold**, let
+alone the stricter ~2.4 Bonferroni bar — group sizes of 13-21 give this
+test very little power, and mean returns are wildly noisy (a few extreme
+winners, e.g. Main's holdout +365d mean of +186.5%, swamp the signal the
+same way H11's suspension data did).
+
+### Honest verdict
+
+**Falsified on the pre-registered Welch-t test — not significant at any
+horizon, in either phase.** But the negative-rate/median pattern is
+large, consistent across both phases and all three horizons, and matches
+independently-published literature closely enough that this reads as
+real underpowered evidence, not noise — the sample is just too small
+(13-21 per group) for the mean-based test to detect what the frequency
+numbers already show plainly. Reported as both, exactly like H11,
+rather than picking whichever framing looks cleaner.
+
+### Limits
+
+- **"Listing price" is a same-day-close proxy, not the actual IPO offer
+  price** — a real difference from the cited literature's own basis;
+  Sectors' `/v2/listing-performance/` would give the real figure but
+  costs credits per symbol (docs/PLAN.md's ~60-120 credit estimate to
+  ship this with real Sectors prices, a separate decision).
+- **Small group sizes (13-21) are the likely reason the mean-based test
+  never reaches significance** despite a large, consistent gap on the
+  frequency measure — this is a power problem, not necessarily a sign
+  the effect isn't real.
+- **Extreme individual outliers dominate the mean** in several cells
+  (e.g. Main's own IPOs occasionally posted 100%+ returns) — the same
+  right-skew this project has now found in H11 and H16, evidently a
+  general property of IDX small/speculative stocks, not unique to any
+  one hypothesis.
+- **Development and Watchlist boards are reported descriptively only**
+  — no specific literature-backed directional claim was pre-registered
+  for them, so their numbers (also often showing a real negative-rate
+  gap, e.g. Watchlist's 100% negative rate at +720d holdout, n=3) are not
+  part of the falsification test and the n is often very small.
+- **Dev-only price data, same status as every other Yahoo-derived
+  number in this project:** owes the same Sectors price cross-check
+  already tracked in `BACKLOG.md` (`docs/PLAN.md` §8.3).
+- **Trial count: 22** (H1, H1b, H5, H14's 3, H15's 3, H10's 7, H11's 2,
+  H4, plus H13's 3 horizons).
+
+### What it opens up
+
+- **A real, checkable base rate for the exact decision `docs/PLAN.md`
+  §4.4 flags as served by nothing today:** "of the last N Acceleration-
+  board IPOs, roughly 2 in 3 were below their first-trade price a year
+  later" — usable even while formally unconfirmed, with the caveat
+  stated plainly (large gap, small sample).
+- **A candidate for the ~60-120 credit real-Sectors-price version**,
+  if the product build reaches a point where shipping this with real
+  IPO offer prices (rather than the free proxy) is worth the spend.
+
+---
+
+## H11b — Among stocks suspended for an unusual price INCREASE, do larger companies hold their gains better?
+
+**Date:** 2026-09-13. Promoted from an exploratory finding (found while
+digging into H11's mean/median split at the user's request) to a
+pre-registered, held-out test.
+
+### The road here — including a false lead, kept for the record
+
+Digging into why H11's suspended-stock returns sometimes fade and
+sometimes keep running, three candidates were checked exploratorily
+against H11's full pool (395 usable events):
+1. **Size of the pre-suspension run-up** — no relationship (rho=+0.025,
+   t=+0.50).
+2. **Free float** — no relationship (rho=+0.028, t=+0.55) — notably,
+   H1's own float→volatility signal does NOT carry over to this specific
+   question.
+3. **Prior suspension count for the same symbol** — looked huge at first
+   (Welch t=−6.37, "repeat offenders" doing far better) but this was a
+   **look-ahead leak**: counting suspensions across *all* time (including
+   ones AFTER the event being measured) smuggles outcome information
+   into the predictor — a stock getting suspended again next month IS
+   direct evidence its price kept rising during the very window being
+   measured. Corrected to count only suspensions strictly BEFORE each
+   event, the effect nearly vanished (t=+0.85, wrong direction even).
+   **Kept here as documentation of exactly the mistake this project's
+   own predictor-before-outcome discipline exists to catch** — not
+   swept away as a footnote.
+4. **Company size (market_cap)** — the one that held up: smallest
+   tercile median +90d return −23%, largest tercile +15%, same sign in
+   2025 and 2026 checked separately.
+
+Candidate #4 is what this module tests properly.
+
+### Method
+
+Pre-registered: among stocks suspended for a significant cumulative
+price INCREASE, larger companies (market_cap terciles, computed within
+each phase's own pool) earn a higher subsequent return than smaller
+ones, at +30d and +90d. Explore = suspended in 2025 (matching H11's own
+boundary); holdout = suspended in 2026. Reuses H11's own
+`_parse_events`/`_baseline_at_or_before` rather than reimplementing them.
+Full code: `pipeline/hypotheses/h11b_suspension_size.py`.
+
+**Predictor caveat, same shape as H1's `free_float`:** `market_cap` is a
+SNAPSHOT field (current, as of the 2026-09-13 sweep), not a historical
+value at the time of each past suspension event — not strictly
+predictor-before-outcome the way H4/H5/H10's yearly fields are.
+Disclosed plainly rather than papered over, matching H1's own long-
+standing treatment of this exact limitation.
+
+### What we found
+
+| Phase | Horizon | n | rho | t | T1 (smallest) | T3 (largest) |
+|---|---|---|---|---|---|---|
+| Explore | +30d | 312 | +0.116 | +2.06 | mean +9.8% / median +0.0% | mean +37.8% / median +8.2% |
+| Explore | +90d | 312 | +0.240 | +4.36 | mean +8.9% / median −17.6% | mean +99.7% / median +18.6% |
+| Holdout | +30d | 91 | +0.127 | +1.21 | mean −10.1% / median −23.6% | mean −2.5% / median −13.0% |
+| Holdout | +90d | 83 | +0.144 | +1.31 | mean −18.1% / median −34.2% | mean +7.8% / median −25.6% |
+
+### Honest verdict
+
+**Direction holds — all four rho values are positive, larger companies
+consistently do relatively better — but holdout does not clear
+significance at either horizon** (t=1.21, 1.31, well short of the usual
+~1.96, let alone the stricter ~2.4 bar), and holdout's tercile table is
+no longer cleanly monotonic (T2 dips below T1 at both horizons).
+**NOT confirmed by this module's own pre-registered bar.** The much
+smaller holdout sample (83-91 events vs. explore's 312) and a generally
+rougher 2026 for suspended stocks overall (every tercile median is
+negative in holdout, unlike explore) both plausibly explain the weaker
+signal without requiring the underlying pattern to be false — but that
+is exactly the kind of after-the-fact explanation this project doesn't
+let itself lean on as proof. Reported honestly as underpowered, not
+confirmed.
+
+### Limits
+
+- **market_cap is a snapshot field** — see the caveat above; same
+  category of limitation H1 has carried since this project's first
+  hypothesis, not a new problem invented here.
+- **Holdout sample is small** (83-91 events) — the most likely reason
+  this fails to reach significance despite a same-signed correlation;
+  a genuine power problem, not necessarily evidence of no effect.
+- **The candidate-search process that led here was exploratory** — this
+  module is the first REAL test of it, but the explore-phase numbers
+  above were already known before this module existed (they're the same
+  numbers from the original diagnostic pass) — so "explore agrees with
+  itself" here carries less weight than it would if explore had been run
+  blind. Only the holdout numbers are genuinely fresh evidence.
+- **Trial count: 24** (H1, H1b, H5, H14's 3, H15's 3, H10's 7, H11's 2,
+  H4, H13's 3, plus H11b's 2).
+
+### What it opens up
+
+- **A partial, honest answer to "why does it fade sometimes and not
+  others"**: company size looks like a real part of the story, but the
+  evidence isn't strong enough yet to ship as a confirmed finding —
+  worth re-testing once more 2026/2027 suspension data accumulates,
+  rather than assumed settled either way.
+
+---
+
+## H8 (cheap version) — Does insider selling before a price-spike suspension predict a deeper crash?
+
+**Date:** 2026-09-13. The original H8 ("gorengan fingerprint" via
+broker-concentration tracking) is blocked at ~100+ credits
+(`/v2/broker-summary/`'s 14-day window cap makes full-market coverage
+unaffordable). This is a different, cheaper mechanism, promoted from an
+anecdote to a real pre-registered test at the user's direct request.
+
+### Why this exists
+
+H11's own companion probe (4 case studies, 2026-09-13) found insiders
+selling meaningful stakes in the weeks before real price-spike
+suspensions — MGLV's controlling holder sold from 74% to 67% ownership
+across three filings in three weeks before its suspension. That was 4
+anecdotes, not evidence. This module tests the same idea across **all**
+437 qualifying suspension events, using a bulk `/v2/filings/` pull (79
+credits — see the cost-overrun disclosure below) instead of one query
+per event.
+
+### Method
+
+Pre-registered: stocks with an insider SELL filing in the 30 days
+before a "peningkatan harga" (unusual price increase) suspension earn a
+LOWER subsequent return than stocks with no such filing, at +30d/+90d.
+Only filings strictly before the suspension date count (predictor-
+before-outcome). Explore = suspended in 2025, holdout = suspended in
+2026, matching H11/H11b's own boundary. Reuses H11's own
+`_parse_events`/`_baseline_at_or_before` rather than reimplementing
+them. Full code: `pipeline/hypotheses/h8_insider_selling_gorengan.py`.
+
+**Data-quality guard, verified:** 1 of 1,388 pulled insider-sell filings
+had an impossible `share_percentage_transaction` of 930.2% (a garbled
+record for PPRI.JK, sharing the same holder/date as an adjacent sane
+record showing 0.93%) — excluded via a `<=100%` sanity filter before any
+aggregation, not silently summed in.
+
+### Small-sample limitation, stated up front
+
+Only 29 of 437 events (6.6%) have a matching insider-sell filing in
+their 30-day pre-window: **22 in explore, only 7 in holdout** — well
+below this project's usual n≥10 convention for a formal test.
+
+### What we found — and it does NOT confirm the anecdote
+
+| Phase | Horizon | Insider sold: n / mean / median | No insider selling: n / mean / median |
+|---|---|---|---|
+| Explore | +30d | 20 / +16.6% / +10.0% | 292 / +26.1% / +6.8% |
+| Explore | +90d | 20 / +35.8% / +2.7% | 292 / +68.5% / −4.9% |
+| Holdout | +30d | 4 / +35.1% / −6.5% | 87 / −0.7% / −11.7% |
+| Holdout | +90d | 4 / +100.1% / +67.6% | 79 / −17.4% / −32.8% |
+
+**Falsified, and not just weakly — reversed in holdout.** Explore's
+mean-based direction is weakly consistent with the hypothesis (t=−0.83
+at +30d, t=−1.42 at +90d, neither significant), but holdout **flips
+completely**: the "insider sold" group did dramatically *better* than
+the "no selling" group at both horizons (median +67.6% vs −32.8% at
++90d) — the opposite of what was predicted. With only 4 holdout events,
+this reversal itself isn't reliable evidence of anything either — the
+honest reading is that the sample is too thin to draw any conclusion,
+and what data exists points away from the hypothesis, not toward it.
+
+### Honest verdict
+
+**The exciting 4-case anecdote did not replicate at scale.** This is
+exactly what pre-registration and holdout discipline exist to catch —
+an anecdote that looked like a real pattern (MGLV's dramatic stake sale)
+turned out not to generalize across the full population of qualifying
+events. Not shipped as a finding, not carried forward as a "likely true
+but underpowered" lead the way H11b's size result was — this one
+actively reversed, not just fell short of significance.
+
+### Limits
+
+- **n=4 in holdout is far too small to distinguish signal from noise**
+  — this result could look completely different with a few more months
+  of data either direction.
+- **Only ~6.6% of suspension events have ANY matching insider-sell
+  filing in the pre-window** — for the vast majority of pump-and-dump-
+  flagged stocks, there's simply no insider filing to check, so even a
+  real effect (if one exists) would only ever apply to a small minority
+  of cases.
+- **A 30-day pre-window is a specific, somewhat arbitrary choice** — not
+  varied or tested against other windows here; a different window could
+  in principle produce a different sample and different result. Not
+  explored further given how thin the data already is.
+- **Trial count: 26** (H1, H1b, H5, H14's 3, H15's 3, H10's 7, H11's 2,
+  H4, H13's 3, H11b's 2, plus this H8's 2).
+
+### What it opens up
+
+- **A clean, honest example for the honesty scoreboard**: "insiders
+  selling before a price spike predicts a crash" is a plausible-sounding
+  story that this project actually tested and found does not hold up —
+  itself valuable, checkable content distinct from a confirmed finding.
+- **Confirms the value of pre-registration as a discipline, concretely**
+  — without this test, the 4-case anecdote could easily have been
+  oversold as a real pattern in the product.
+
+---
+
+## H9 — Does news sentiment (Bullish vs. Bearish, as tagged by Sectors) predict short-term returns?
+
+**Date:** 2026-09-13. Previously "candidate, uncosted, not pre-
+registered" — researched and built for real at the user's request, who
+specifically wanted a genuinely different axis from technical/
+fundamental analysis.
+
+### Why this exists
+
+Literature review (see Sources below) found real, if short-lived,
+sentiment effects on IDX specifically — one LSTM study on manufacturing
+stocks found news sentiment the second-most-influential predictor,
+ahead of several traditional financial variables. The classic reference
+(Tetlock 2007) finds media pessimism predicts short-term downward
+pressure, THEN a reversion toward fundamentals — a horizon-dependent
+effect, not a simple "bullish news → stock keeps rising" story.
+Sectors' own `/v2/news/` endpoint already tags articles Bullish/
+Bearish/Neutral and links most to a specific symbol — no NLP pipeline
+needed, a large scope reduction from the original "uncosted" framing.
+
+### A major limitation, found only after pulling the data
+
+The corpus (8,801 Bullish/Bearish-tagged articles, 294 credits — see
+`docs/credit_ledger.md`) covers **only 2026-05-16 to 2026-09-12, ~4
+months** — not the multi-year span every other hypothesis here uses.
+This wasn't knowable from the schema; it only became clear after the
+pull. Consequence: the usual calendar-YEAR explore/holdout split (2025
+vs. 2026) used by H1/H5/H10/H11/H13 is impossible here — there's less
+than one year of data at all. This module instead splits the pulled
+window itself in half (first half = explore, second half = holdout), a
+meaningfully weaker form of holdout than this project's other
+hypotheses, since the two "phases" aren't genuinely independent time
+periods and can share market-wide conditions.
+
+### Method
+
+Pre-registered: a stock named in a Bullish-tagged article earns a
+higher return than one named in a Bearish-tagged article, over the
+following 10 and 20 calendar days (short horizons, since the ~4-month
+window can't support anything longer). One row per (article, symbol)
+pair — 2,428 of 8,801 articles name more than one company (broad
+market-wide news), each getting an identical sentiment reading, a real,
+disclosed limitation, not deduplicated. Full code:
+`pipeline/hypotheses/h9_news_sentiment.py`.
+
+### What we found
+
+| Phase | Horizon | Bullish n / mean / median | Bearish n / mean / median | Welch t |
+|---|---|---|---|---|
+| Explore | +10d | 5,165 / +0.4% / +0.4% | 2,558 / +1.1% / +0.0% | **−1.93** |
+| Explore | +20d | 5,165 / +1.2% / +0.9% | 2,558 / +0.8% / +0.0% | +1.18 |
+| Holdout | +10d | 4,555 / +1.7% / +0.6% | 1,863 / −0.1% / +0.0% | **+7.20** |
+| Holdout | +20d | 3,663 / +3.8% / +2.0% | 1,503 / +1.6% / +0.0% | **+5.54** |
+
+### Honest verdict — NOT confirmed, despite huge holdout t-statistics
+
+Holdout's t-statistics (7.20, 5.54) are enormous — but **the +10d
+horizon actually REVERSES sign between phases**: explore has bearish
+outperforming bullish (t=−1.93, wrong direction), holdout has bullish
+winning decisively (t=+7.20). Per this project's own standing rule
+(explore and holdout must agree in sign before anything is called
+confirmed — see H1/H5/H10's identical convention), **this fails at the
+10-day horizon specifically**, despite huge significance in one phase.
+The 20-day horizon is directionally consistent (both positive) but
+explore is nowhere near significant there (t=+1.18). Given the sample
+sizes are enormous (thousands of rows) yet the sign still disagrees at
+one horizon, this reads less like noise and more like the corpus's two
+halves genuinely reflecting different market conditions — exactly the
+risk the module's own limitation section warned about before running
+anything.
+
+### Limits
+
+- **The within-window "holdout" is not a real held-out time period**
+  the way H1/H4/H5/H10/H11/H13's year-based splits are — both halves
+  come from the same ~4-month window and likely share overlapping
+  market regime effects. Treat any result here as considerably less
+  trustworthy than this project's other confirmed findings until a
+  longer news history is available to re-test against.
+- **Multi-symbol articles (2,428 of 8,801) give identical sentiment
+  readings to every named company** — not weighted down or
+  deduplicated; a busy market-news day could correlate returns across
+  many "unrelated" rows.
+- **10-day sign reversal between phases is the headline limitation** —
+  this alone is enough to call the pre-registered hypothesis not
+  confirmed, regardless of holdout's raw significance.
+- **Article timestamp, not publication-to-market-open lag, is used as
+  t0** — an article published after market close same-day is measured
+  against a baseline price from before it existed; not adjusted for
+  here.
+- **Trial count: 28** (H1, H1b, H5, H14's 3, H15's 3, H10's 7, H11's 2,
+  H4, H13's 3, H11b's 2, H8's 2, plus H9's 2).
+
+### What it opens up
+
+- **A genuinely promising lead for a proper future test** once Sectors'
+  news corpus accumulates a longer history — the 20-day direction
+  agreement and the sheer sample size available (unlike H8's thin 29
+  events) suggest this axis is worth re-testing, not abandoning.
+- **A concrete illustration, alongside H8, of why holdout discipline
+  matters**: a naive read of holdout's t=7.20 alone would have looked
+  like the strongest finding in the whole project; only checking
+  sign-agreement against explore caught that it doesn't actually
+  confirm the pre-registered claim.
+
+### Sources
+
+- Alamsyah et al. (2019) and related IDX-specific sentiment studies —
+  found via literature search, 2026-09-13; see the search summary
+  provided to the user in-conversation for full citations (Journal
+  Sagepub LSTM study, PMC emerging-markets sentiment study, Atlantis
+  Press IDX investor-sentiment study).
+- Tetlock, P. (2007). "Giving Content to Investor Sentiment: The Role
+  of Media in the Stock Market." *The Journal of Finance*, 62(3),
+  1139-1168.
+
+---
+
+## H8b — Does insider BUYING before a price-spike suspension predict a better outcome? (mirror of H8)
+
+**Date:** 2026-09-13. Requested directly by the user after H8 (insider
+selling) came back falsified — insider buying is a distinct claim, not
+just "the absence of selling." Lakonishok & Lee (2001, *Review of
+Financial Studies*) find insider purchases predict returns more
+reliably across markets than insider sales, reasoning that a sale can
+be liquidity-driven noise while a purchase is a costlier, more
+deliberate signal. Same 437 "unusual price increase" suspension events
+as H8/H11; new data pull, `/v2/filings/` (`transaction_type=buy`), 60
+credits, 1,767 records — see `docs/credit_ledger.md`.
+
+**Pre-registered:** stocks with insider BUY filings in the 30 days
+before a price-spike suspension earn a HIGHER subsequent return than
+stocks with no such filings, over the following 30 and 90 calendar
+days. Full code: `pipeline/hypotheses/h8b_insider_buying_suspension.py`.
+
+**Data-quality note, a real fix over H8's own filter:** H8's
+`0 < pct <= 100` filter silently drops any transaction whose
+`share_percentage_transaction` rounds to 0.0 — verified real, not
+garbled data (e.g. BBCA buys of 0.001%-0.03% of its enormous share
+count, confirmed via `share_percentage_before`/`_after`). 69 of 1,388
+H8 sell records and 281 of 1,767 H8b buy records fall into this
+category. H8b uses `pct <= 100` instead (excludes only the one
+impossible >100% record, the buy-side mirror of H8's own excluded
+PPRI.JK record) — not backported to H8 to avoid re-touching an
+already-closed hypothesis's methodology after the fact.
+
+**Small-sample limitation, same shape as H8:** only 29 of 437 events
+(6.6%) have a matching insider-buy filing — 18 in 2025 (explore, after
+usable-row filtering), 7 in 2026 (holdout) — below MIN_GROUP_SIZE=10 in
+holdout for a formal test at either horizon.
+
+### What we found
+
+| Phase | Horizon | Bought n / mean / median | No buy n / mean / median | Welch t |
+|---|---|---|---|---|
+| Explore | +30d | 18 / +20.2% / +18.2% | 294 / +25.8% / +6.5% | −0.54 |
+| Explore | +90d | 18 / +87.3% / +22.9% | 294 / +65.2% / −5.3% | +0.67 |
+| Holdout | +30d | 7 / −10.2% / −17.2% | 84 / +1.8% / −11.4% | n/a (n<10) |
+| Holdout | +90d | 7 / +22.8% / −27.0% | 76 / −14.9% / −32.9% | n/a (n<10) |
+
+### Honest verdict — underpowered, and the two horizons disagree with each other
+
+Neither horizon reaches a formal test in holdout (bought group n=7).
+Descriptively: **the 30-day horizon is directionally consistent across
+phases but in the OPPOSITE direction from the pre-registered
+hypothesis** — insider buying predicts a *worse* subsequent return at
+30 days in both explore (diff −5.6%) and holdout (diff −12.0%). **The
+90-day horizon is directionally consistent WITH the hypothesis** in
+both phases (diff +22.1% explore, +37.7% holdout). Two horizons of the
+same underlying data giving opposite reads of the same claim is itself
+informative — this is not a clean confirmation, and not a clean
+falsification either. A plausible read, not verified further: insiders
+buying right before a suspicious price spike may include participants
+in the run-up itself (worse near-term outcome, consistent with a
+"buying into the pump" story) whose position only looks vindicated over
+a longer horizon if the stock happens to hold its gains — but this is
+speculation, not something the data here can distinguish from noise
+given n=7.
+
+### Limits
+
+- Holdout group (n=7) is below MIN_GROUP_SIZE=10 at both horizons — no
+  formal significance test possible; only means/medians reported.
+- Same event population as H8/H11 — not independent evidence of a
+  different underlying pattern, just a different predictor tested on
+  the same 437 events.
+- **Trial count: 30** (H1, H1b, H5, H14's 3, H15's 3, H10's 7, H11's 2,
+  H4, H13's 3, H11b's 2, H8's 2, H9's 2, plus H8b's 2 — counted for
+  disclosure purposes matching H8's own convention for underpowered
+  subgroups, even though nothing here reached a formal significance
+  test).
+
+---
+
+## H9b — Does sentiment DISAGREEMENT (bullish and bearish news at once) predict higher volatility?
+
+**Date:** 2026-09-13. A different axis from H9's own DIRECTION test,
+requested by the user as a way to get more use out of the already-paid
+294-credit news corpus (no new Sectors cost). Tests whether a stock
+getting bullish and bearish coverage at the same time — the market
+visibly disagreeing about it — predicts a choppier ride next, not which
+way sentiment leans.
+
+**Pre-registered:** a symbol-window with both a bullish- and a
+bearish-tagged article earns higher realized volatility over the
+following 10 trading days than a one-sided-coverage window. To avoid
+scoring near-duplicate overlapping windows (the H14/H15 pseudo-
+replication lesson, applied up front this time), articles are grouped
+into non-overlapping 20-day bins per symbol
+(`pipeline/hypotheses/_news_bins.py`), not scored article-by-article.
+Same within-window explore/holdout split as H9 (before/after
+2026-07-15) — same ~4-month-corpus caveat applies identically. Full
+code: `pipeline/hypotheses/h9b_sentiment_dispersion_volatility.py`.
+
+### What we found
+
+| Phase | Mixed n / mean vol / median vol | One-sided n / mean vol / median vol | Welch t |
+|---|---|---|---|
+| Explore | 323 / 52.5% / 45.6% | 461 / 45.7% / 37.4% | **+2.65** |
+| Holdout | 417 / 38.7% / 31.8% | 580 / 38.9% / 30.5% | −0.10 |
+
+### Honest verdict — NOT confirmed
+
+Explore looked like a real, significant effect (t=+2.65, mixed-coverage
+stocks ~7 points more volatile). It **completely vanished in holdout**
+(t=−0.10, effectively zero difference). This is the clean pattern H5's
+own stress-testing work exists to catch: a result that looks real in
+one slice and disappears in the next is exactly what a placebo/holdout
+discipline is supposed to filter out before anything ships.
+
+### Limits
+
+- Same weak within-window holdout caveat as H9/H9c/H9d — inherited from
+  the corpus's ~4-month span.
+- Overall market-wide volatility may simply have been higher in the
+  explore half of the window than the holdout half (a level-shift
+  unrelated to sentiment dispersion specifically) — not separately
+  checked here.
+- **Trial count: 31** (H1, H1b, H5, H14's 3, H15's 3, H10's 7, H11's 2,
+  H4, H13's 3, H11b's 2, H8's 2, H9's 2, H8b's 2, plus H9b's 1 — single
+  horizon, unlike H9's two).
+
+---
+
+## H9c — Does news COVERAGE VOLUME (regardless of tone) predict returns?
+
+**Date:** 2026-09-13. Third of the three follow-up angles on H9's data.
+Motivated by attention-driven-trading literature (Barber & Odean, "All
+That Glitters," 2008): unusual investor attention on a stock can
+predict distinctive subsequent price behavior independent of whether
+the attention is positive or negative.
+
+**Real limitation, stated up front:** the pulled corpus was filtered to
+`tags=bullish,bearish` only — there is no neutral-tagged news in this
+dataset, so "attention" here means "count of bullish/bearish-tagged
+articles," a proxy, not true total coverage volume (which would need a
+separate, uncosted pull of neutral-tagged news too).
+
+**Pre-registered:** an above-median-article-count symbol-window earns a
+different subsequent 10-trading-day return than a below-median-count
+window; no direction pre-specified (exploratory — does volume matter at
+all, not which way). Same 20-day non-overlapping bins as H9b. Full
+code: `pipeline/hypotheses/h9c_news_attention_volume.py`.
+
+### What we found
+
+| Phase | High-attention n / mean / median | Low-attention n / mean / median | Welch t |
+|---|---|---|---|
+| Explore | 380 / +5.1% / +3.0% | 404 / +4.0% / +1.3% | +1.28 |
+| Holdout | 459 / +1.9% / 0.0% | 543 / +2.2% / 0.0% | −0.45 |
+
+### Honest verdict — the cleanest null of the three follow-ups
+
+Not significant in explore (t=+1.28), and the sign flips in holdout
+(t=−0.45) on top of that. No evidence news-volume alone (independent of
+tone) predicts IDX returns in this corpus.
+
+### Limits
+
+- The "attention" proxy is incomplete (bullish/bearish only, no
+  neutral-tagged baseline) — a genuine attention test would need the
+  full news feed, not this subset.
+- Same weak within-window holdout caveat as H9/H9b/H9d.
+- **Trial count: 32** (H1, H1b, H5, H14's 3, H15's 3, H10's 7, H11's 2,
+  H4, H13's 3, H11b's 2, H8's 2, H9's 2, H8b's 2, H9b's 1, plus H9c's
+  1).
+
+---
+
+## H9d — Is news more bearish than usual right before a price-spike suspension?
+
+**Date:** 2026-09-13. The most direct tie to the gorengan theme of the
+three follow-ups, but the weakest in design — **descriptive only, not
+a pre-registered statistical test, and not counted in the trial
+counter**, stated up front rather than dressed up with a p-value on a
+sample this small.
+
+**The constraint, checked before building anything:** the news corpus
+spans only 2026-05-16 to 2026-09-12 (~4 months); the 437 "unusual price
+increase" suspension events span all of 2025-2026. Only events falling
+inside the news window can be checked — verified: 30 of 437 (6.9%), and
+only 22 of those actually have at least one tagged article in their
+30-day pre-window. Full code:
+`pipeline/hypotheses/h9d_sentiment_before_suspension.py`.
+
+### What we found
+
+Population baseline across the whole corpus: 10,926 bullish / 4,894
+bearish articles (30.9% bearish overall). Of the 22 covered
+suspension events: 3 bearish-only, 10 bullish-only, 9 mixed. Pre-window
+bearish share across all 22 events: **25.0%** — slightly BELOW the
+30.9% population baseline, not above it.
+
+### Honest verdict — no support for the idea, on a sample too small to trust either way
+
+If anything, the pre-suspension coverage in this tiny sample runs
+*more* bullish than the market-wide baseline, not more bearish — the
+opposite of what a "the market senses something is wrong" story would
+predict. With n=22 and no matched control group (the 30.9% baseline is
+a rough population average, not stocks matched on size/sector/period),
+this is not strong enough evidence to conclude anything either way — it
+just doesn't support the hypothesis on the data available.
+
+### Limits
+
+- n=22 is far below any threshold this project treats as informative;
+  not a matched control (population baseline vs. a specific 30-day
+  pre-event window for a handful of small, illiquid stocks are not
+  directly comparable).
+- 407 of 437 events (93%) predate the news corpus entirely and simply
+  cannot be checked with this data.
+- **Not counted in the trial counter** — descriptive only, per the
+  module's own stated design.
 
 ---
 
@@ -1601,6 +2525,224 @@ unique to H16.
   owned Yahoo data, no new Sectors call. Both deferred to the app-build
   phase (Chunk N), per the product's own "detailed product planning is
   its own pass" rule.
+
+---
+
+## Chunk M base rates — loss-maker turnaround, typical drawdown, recovery after a fall
+
+**Date:** 2026-09-13. Same category as H16 — **not falsifiable
+hypotheses**, no explore/holdout split, no significance test, not
+counted in the trial counter. All three are free (owned Sectors
+sweep + owned Yahoo price cache, no new API calls), from
+`docs/PLAN.md`'s Chunk M "base-rate family," which the plan itself
+flags as the highest-value remaining free work: each answers a
+concrete decision the problem statement names as currently served by
+nothing (`docs/PLAN.md` §4.4).
+
+### Loss-maker turnaround rate — "it's cheap because it's temporarily loss-making"
+
+Of IDX companies that lost money in a given year, what fraction were
+profitable again the following year? Uses the owned `earnings[YYYY]`
+field (`data/raw/universe_2026-09-12.json`, 2021-2025), no price data
+needed. Full code: `pipeline/hypotheses/m_loss_maker_turnaround.py`.
+
+| Transition | n loss-years | turned around | rate |
+|---|---|---|---|
+| 2021→2022 | 230 | 81 | 35.2% |
+| 2022→2023 | 207 | 55 | 26.6% |
+| 2023→2024 | 211 | 39 | 18.5% |
+| 2024→2025 | 205 | 50 | 24.4% |
+| **Pooled** | **853** | **225** | **26.4%** |
+
+**Reasonably stable across years** (18.5%-35.2%, no single year driving
+the pooled figure) — roughly **1 in 4** loss-making IDX companies
+return to profit the very next year. Tempers "it's cheap because it's
+temporarily loss-making" without needing a prediction: most don't turn
+around within a year.
+
+### Typical drawdown for a stock's profile — "is this fall normal?"
+
+How far does a stock like this usually fall in a bad year? Uses the
+1-year Yahoo cache (raw `close`, H1's convention) + the owned
+`market_cap` snapshot for descriptive size buckets. ⚠️ **A first attempt
+using the 5-year cache's full-period drawdown produced implausibly
+extreme numbers (median −74.7%) — caught by comparing against H1b's
+own published 1-year drawdown figures (−40% to −66% range) before
+writing anything up; switched to the 1-year window to match.** Full
+code: `pipeline/hypotheses/m_typical_drawdown.py`.
+
+| Group | n | 25th pctile | median | 75th pctile |
+|---|---|---|---|---|
+| All IDX stocks | 913 | −66.3% | −49.5% | −35.2% |
+| Smallest tercile | 304 | −68.7% | −54.7% | −40.8% |
+| Mid tercile | 304 | −65.0% | −49.5% | −35.3% |
+| Largest tercile | 305 | −63.3% | −44.3% | −30.6% |
+
+**The median IDX stock's worst 1-year decline is around −50%** — a
+sobering number worth surfacing on its own, not just as a size-bucket
+comparison, since it resets expectations for what "normal" looks like
+on this market regardless of which stock a user holds. Size still
+matters at the margins (smallest tercile ~10 points worse than
+largest), consistent in direction with H1/H1b's own float/size-volatility
+findings, though this isn't the same claim (current size vs. current
+drawdown, not a predictive test).
+
+### Recovery after a fall — "should I average down?"
+
+Of stocks that fell 30%+ from a peak, what fraction were back to that
+peak a year later, vs. still down? Uses the 5-year Yahoo cache only.
+Event detection built to avoid double-counting the same decline
+multiple times (a running-peak/re-arm design — see module docstring):
+1,348 distinct fall events found across 887 stocks. Full code:
+`pipeline/hypotheses/m_recovery_after_fall.py`.
+
+| Outcome (measured ~1 year after the 30%+ trigger) | n | share |
+|---|---|---|
+| Still below the pre-fall peak | 1,191 | **88.4%** |
+| Back at or above the pre-fall peak | 157 | 11.6% |
+
+Of the 1,191 still down, the median gap to the old peak was still
+**−49.2%** — not a near-miss, a real continued shortfall. **This is a
+demanding bar (fully round-tripping back to the OLD HIGH, not merely a
+positive return)**, so the low recovery rate should not be read as "88%
+of IDX stocks lose money" — it specifically answers "did this stock's
+big fall round-trip within a year," which is what "should I average
+down expecting a snap-back" actually asks. Consistent in spirit with
+H16's own finding that only 49.7% of stocks beat the index and 47.1%
+had a negative annualized return — this market does not reliably
+reward buying dips on a 1-year horizon.
+
+### Limits, all three
+
+- **Descriptive base rates, not predictions for any individual stock.**
+  None of these claim "this specific stock will behave this way" — they
+  report what happened across the population, same epistemic status as
+  H16.
+- **Loss-maker turnaround:** only checks a 1-year turnaround; a company
+  that recovers in year 2 counts as "did not turn around" here — a
+  real, disclosed undercount of the true eventual-turnaround rate.
+- **Typical drawdown:** current `market_cap` used for a descriptive
+  grouping only (not a predictive claim) — see module docstring for why
+  that's fine here despite the project's usual predictor-before-outcome
+  rule (which governs "X predicts Y" claims, not descriptive groupings).
+- **Recovery after a fall:** "recovered" requires the close price back
+  at/above the OLD peak specifically — a stock that's up 25% from its
+  trough but still below its old high counts as "still down" here. A
+  gentler bar (e.g. "recovered X% of the drawdown") was considered but
+  not built, to keep the headline number answering exactly the
+  "should I average down" question rather than a softer one.
+- **Not counted in the trial counter** — none of the three is a
+  falsifiable "X predicts Y" claim.
+
+## Pre-registration, 2026-09-22 — H17 and three descriptive situations (S1, A, D)
+
+**Written before any outcome for these definitions was computed.**
+Everything below is frozen here first; the modules come after.
+
+**Disclosure.** Earlier in the build a rough, exploratory look at
+outcomes was taken for candidate situations A and D (and two others,
+B and C, that are dropped: B looked like a data artifact, C needs its
+own pre-registration). A and D below are therefore descriptive base
+rates only, never findings, and their definitions may have been
+influenced by that look. S1 and H17 had counts only (S1: number of
+events and stocks); no outcome was looked at.
+
+### H17 — "Laba naik → harga naik" (a falsifiable hypothesis, +1 trial)
+
+Belief under test: companies whose annual net income grew go on to
+have higher returns.
+
+- **Predictor:** `earnings[Y] / earnings[Y−1] − 1`, only where
+  `earnings[Y−1] > 0`. Yearly field, measured strictly before the
+  outcome window (predictor-before-outcome holds: Y's full-year figure
+  is published by about April Y+1, the window opens 1 May Y+1).
+- **Outcome:** `adjclose` return from 1 May to 4 Sep of Y+1, the same
+  window and price rule as H5/H10 (constants imported from
+  `h5_value_size.py`, so the boundary cannot drift).
+- **Method:** percentile rank within each `sub_sector`
+  (`stats.sector_neutral_rank`), pooled, Spearman against the return.
+  Explore 2022–2023, holdout 2024–2025.
+- **Direction, fixed in advance:** positive.
+- **Decision rule:** CONFIRMED only if holdout p < 0.05 (two-sided) and
+  explore and holdout agree in sign. One test, so no FDR correction;
+  it adds **one trial (32 → 33)**.
+- **Overlap, disclosed:** it sits next to H10's `revenue_growth` and
+  `earnings_yield`, which used different inputs. Earnings growth was
+  not one of H10's seven features.
+
+### S1 — "Harga baru melonjak" (descriptive situation, not counted)
+
+- **Event:** the first close with `close[t] / close[t−20] − 1 ≥ +0.40`
+  (20 trading days), raw `close` from the 5-year dev cache. After an
+  event, the next one for the same stock needs at least 40 more trading
+  days. Bars with a missing or non-positive close are dropped.
+- **In the situation now:** the stock's latest event is at most 20
+  trading days old.
+- **Base rate, three numbers, fixed in advance**, measured on the
+  event day's close over the next 60 trading days: (a) share of events
+  whose close 60 trading days later is below the event-day close;
+  (b) median and 25th/75th percentile of that 60-day change; (c) share
+  that closed at least 30% below the event-day close at some point
+  within the 60 days. Events with fewer than 60 later bars are left
+  out.
+- **Limits stated up front:** events of the same stock can overlap, so
+  the events are not independent; a stock-level view (first event per
+  stock) is reported beside the pooled one. Five years, one market
+  regime. No comparison against any other group.
+
+### A — "Laba turun dua tahun berturut-turut" (descriptive)
+
+- **Trigger:** `earnings[Y] < earnings[Y−1] < earnings[Y−2]`, all
+  reported, and `earnings[Y−2] > 0`. Shown now for Y = 2025.
+- **Base rate:** among stock-years with that trigger where
+  `earnings[Y+1]` exists (Y = 2023, 2024), the share with
+  `earnings[Y+1] > earnings[Y]` (earnings rose the next year).
+
+### D — "Laba lebih dari dua kali lipat" (descriptive)
+
+- **Trigger:** `earnings[Y] > 2 × earnings[Y−1]` and `earnings[Y−1] > 0`.
+  Shown now for Y = 2025.
+- **Base rate:** among stock-years with that trigger where
+  `earnings[Y+1]` exists (Y = 2022–2024), (a) the share with
+  `earnings[Y+1] < earnings[Y]` (gave part of it back) and (b) the
+  share with `earnings[Y+1] < earnings[Y−1]` (gave all of it back).
+
+**Not counted in the trial counter:** S1, A, D. **Counted:** H17.
+
+### Results, run 2026-09-22 (each module run once, as pre-registered)
+
+**H17 — NOT confirmed.** Explore (Y = 2022–2023): n=1,196, rho +0.050,
+t +1.73, p=0.084. Holdout (Y = 2024–2025): n=1,256, rho +0.002, t +0.07,
+p=0.945. Same sign, but the holdout effect is zero. **Trial count: 33**
+(was 32). Reproduce: `.venv/bin/python -m pipeline.hypotheses.h17_earnings_growth`.
+
+**S1, descriptive** (`m_recent_spike`): 773 stocks had at least one jump of
+40% or more in 20 trading days. Of 3,081 events with 60 later bars:
+57.2% closed lower 60 trading days later, median change −7.0%
+(25th/75th percentile −26.9% / +24.9%), and 32.4% closed at least 30%
+below the event-day close at some point in the 60 days. First event per
+stock (n=766): 57.8% lower, median −8.0%, 27.7% deep drop. Roughly 4 in 10
+did not fall, and a quarter gained about 25% or more, so this describes a
+wide spread, not a direction. Events of one stock can overlap.
+*Implementation fix, disclosed:* the first run compared
+`close[t]/close[t-20] - 1 >= 0.40`, which misses an exact +40% because of
+floating-point (140/100 - 1 is 0.3999…). It now compares
+`close[t] >= close[t-20] * 1.40`. The first run gave 3,044 events / 771
+stocks and the same shape (57.2% lower, median −7.1%, 32.7% deep drop);
+the definition is unchanged.
+
+**A, descriptive** (`m_earnings_streaks`): 136 stocks are in it now
+(Y = 2025). Of 262 earlier stock-years (Y = 2023: 108, 2024: 154), 151
+(57.6%) had higher earnings the next year (61.1% and 55.2%).
+
+**D, descriptive** (`m_earnings_streaks`): 79 stocks are in it now. Of 256
+earlier stock-years (Y = 2022–2024), 136 (53.1%) had lower earnings the
+next year than the jump year, and 53 (20.7%) fell below the pre-jump
+level (by year: 23.5% / 20.3% / 16.4%).
+
+Earlier notes said 77 stocks for A; the pre-registered definition
+(`earnings[Y-2] > 0`, all three years reported) gives 136. The
+pre-registered number is the one used.
 
 ---
 

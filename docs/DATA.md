@@ -225,16 +225,181 @@ step, not an automatic consequence of this sweep landing.
 - **Free-float drift found, not a bug:** cross-checked against the same
   purchased `free_float_2026-09-06.json` the 2026-09-07 sweep checked
   against zero-disagreement — this time **36 of 961 common symbols
-  disagree**, some substantially (e.g. `CBMF.JK` 0.0306 → 0.24). Read as
-  real free-float movement over the 5 days between sweeps (plausible: OJK
-  has required monthly free-float reporting since Jan 2026, per
-  `docs/SOURCES.md`), not a query or parsing error — the query shape and
-  cross-check logic are unchanged from the zero-disagreement run five days
-  earlier. **Not yet investigated further** — worth a spot-check if any
-  hypothesis leans on free_float and the discrepancy matters to its
-  result; H1/H1b currently use the original purchased
+  disagree**, some substantially (e.g. `CBMF.JK` 0.0306 → 0.24). Not a
+  query or parsing error — the query shape and cross-check logic are
+  unchanged from the zero-disagreement run five days earlier.
+  ⚠️ **Investigated 2026-09-13.** Pilot (1 credit, approved —
+  `docs/credit_ledger.md`): pulled `/v2/filings/` for `CBMF.JK` over
+  2026-09-01→09-12 to see whether an insider/institutional filing
+  explained its jump. **Zero filings returned.**
+  **A follow-up check that session ran (comparing `last_close_price`
+  null→populated across the drift symbols) was a false lead and has
+  been retracted here** — `last_close_price` is `null` for **all 962
+  rows** in the 2026-09-07 sweep, not just the drift set, because that
+  field was never part of that earlier sweep's query at all (it was
+  added in the 2026-09-12 expanded field list, `_universe_fields.py`).
+  Comparing it across the two sweeps was comparing "not fetched" against
+  "fetched," not a real suspension/dormancy signal — caught by checking
+  the full population before trusting the pattern, not before writing it
+  down once. **Broader probe run afterward (8 more credits, approved) on
+  6 real, liquid drift symbols (ADRO/BBNI/BSDE/BULL/BHIT/BIRD) plus 2
+  zero-drift controls (AKRA/AMMN), same window:** all 6 drifting symbols
+  came back with **zero filings**; the zero-drift control AKRA had 6
+  small filings (individual stakes of 0.02%–0.27%) whose combined
+  magnitude roughly matches its own near-zero measured free_float
+  change. **Conclusion: individually filed insider/institutional
+  transactions are real and roughly consistent with SMALL free_float
+  changes, but are far too small in magnitude to explain the multi-
+  percentage-point jumps in this drift set** (`CBMF` +20.9pp, `ATIC`
+  +11.5pp). Whatever drives those larger moves is not captured by
+  `/v2/filings/` at all — plausibly a bulk/block trade below the
+  individual-filing threshold, a corporate action, or a Sectors-side
+  recalculation, none investigated further this session. **Practical
+  takeaway: `/v2/filings/` does not look viable as a way to reconstruct
+  a free-float time series for H1** — it may track small ownership moves
+  but misses whatever causes the large swings this drift set is made
+  of. Not pursued further. H1/H1b currently use the original purchased
   `free_float_2026-09-06.json` directly, not this sweep's copy, so they
   are unaffected either way.
+
+## `data/raw/suspensions_2026-09-13.json`
+
+**Purchased from Sectors, approved 2026-09-13** (20 credits — `/v2/suspensions/`,
+full history, 20 pages × `limit=30`, flat 1 credit/call regardless of
+filters, verified against the live schema). Never gitignored. 588
+records, each `{symbol, suspension_date, reason, pdf_url}`.
+
+- **437 of 588 (74%) are for "unusual price increase"** (UMA/cooling-
+  down) — the direct gorengan/pump marker; 10 more for unusual price
+  decrease, 17 generic cooling-down. The rest are governance/reporting
+  reasons (late financials, listing-fee arrears, going-concern doubt,
+  etc.) — see `BACKLOG.md` for the category breakdown.
+- Unlocks H11 (suspension → underperformance) for real — was previously
+  a costed-but-unpurchased candidate.
+- Companion probe (4 more credits, same session): pulled `/v2/filings/`
+  for 4 real "unusual price increase" suspensions to test whether
+  insider filing activity shows a pattern beforehand. Found one — see
+  `BACKLOG.md`'s write-up — but it is 4 case studies, not a validated
+  finding; any future hypothesis built on this needs its own
+  pre-registration and a control group, not this exploratory pass.
+- **Legal caution, unchanged from the rest of this project:** any
+  manipulation-adjacent write-up (H8, H11, this note) stays
+  frequency-only in anything user-facing — named tickers appear here and
+  in `BACKLOG.md` only as descriptive filing/suspension facts already
+  public via IDX's own official notices, never as an accusation.
+
+## `data/raw/mining_companies_2026-09-13.json`
+
+**Purchased from Sectors, approved 2026-09-13** (13 credits —
+`/v2/mining/companies/`, discovery list, 13 pages × `limit=30`, 1
+credit/page. ⚠️ **Cost was mis-stated to the user as "1 credit" before
+this call ran** — the endpoint itself is 1 credit per CALL, but 366
+total mining entities at 30/page meant 13 calls; disclosed and corrected
+in `docs/credit_ledger.md` immediately after, not caught beforehand.)
+Never gitignored. 366 records, each `{slug, name, symbol, company_type,
+key_operation, commodity_type}`.
+
+- **Only 68 of 366 have an IDX `symbol`** (the rest are unlisted
+  subsidiaries/holding entities) — 55 coal, 10 nickel, 9 gold, 4 copper,
+  2 silver, 1 aluminium, 1 zinc/lead (some companies have >1 commodity).
+  Smaller than `docs/PLAN.md`'s original "≤205" estimate, which
+  conflated the whole Basic Materials/Energy sectors with actual miners.
+- **H12 probe finding, from the live schema (free, not a purchased
+  call):** `/v2/mining/resources-reserves/{province}/` returns reserves
+  at PROVINCE+COMMODITY+YEAR granularity, not per company. There is no
+  per-listed-miner "years of reserves left" figure anywhere in this API
+  — see `BACKLOG.md`'s H12 entry for the full implication (blocks the
+  plan's original "clean, uninvented arithmetic" pitch for this lens;
+  needs a user decision on whether a province-level proxy is acceptable).
+
+## `data/raw/insider_sells_2025_2026_2026-09-13.jsonl`
+
+**Purchased from Sectors, approved 2026-09-13** (79 credits — see
+`docs/credit_ledger.md`'s cost-overrun disclosure: estimated ~47, cost
+79 in practice because a first attempt using the plain `paginate()`
+helper billed 32 pages before hitting a 429 rate limit, then lost that
+data because nothing was saved until the very end; the corrected,
+incrementally-saving re-run re-billed those same 32 pages). Never
+gitignored. JSONL (one filing per line, not a JSON array, to make
+incremental writes trivial), 1,388 records — every `/v2/filings/`
+record for `holder_type=insider&transaction_type=sell` between
+2025-01-01 and 2026-09-13.
+
+- **1 of 1,388 records has an impossible field value**:
+  `share_percentage_transaction` of 930.2% for a `PPRI.JK` filing — a
+  garbled/duplicate record sharing the same holder and date as an
+  adjacent, sane record (0.93%). Excluded via a `<=100%` filter in
+  `pipeline/hypotheses/h8_insider_selling_gorengan.py`, not silently
+  included in any sum.
+- Built specifically to test H8's cheap version (see `EXPERIMENT.md`) —
+  joined locally against the already-purchased suspension events to
+  check whether insider selling before a price-spike suspension
+  predicts a deeper crash. Result: falsified, reversed in holdout.
+- **Prompted a real fix to shared infrastructure:** `pipeline/
+  sectors_client.py`'s `paginate()` gained an optional `on_page`
+  callback so a future large pull can persist each page immediately —
+  the exact gap that caused this file's cost overrun. Later found (via
+  `/code-review`) that `on_page` alone only prevents data LOSS, not
+  RE-BILLING on retry — `paginate()` also gained a `start_offset`
+  parameter to close that gap for good.
+
+## `data/raw/sentiment_news_2025_2026_2026-09-13.jsonl`
+
+**Purchased from Sectors, approved 2026-09-13** (294 credits — see
+`docs/credit_ledger.md`). Never gitignored. JSONL, 8,801 records —
+every `/v2/news/` article tagged `bullish` or `bearish` (never both —
+verified 0 of 8,801 carry both tags). Clean pull, no rate-limit hits, no
+re-billing — used the same incrementally-saving pattern H8's cost
+overrun forced this project to adopt.
+
+- **Real limitation, found only after pulling (not knowable from the
+  schema):** the corpus covers only **2026-05-16 to 2026-09-12, ~4
+  months** — not a multi-year span. Forces H9 (`EXPERIMENT.md`) into a
+  within-window explore/holdout split instead of the calendar-year
+  split every other hypothesis here uses.
+- **7,737 of 8,801 (87.9%) link to at least one IDX symbol**; 2,428
+  name more than one (broad market-wide news) — each named company gets
+  an identical sentiment reading from that one article, a disclosed,
+  not-deduplicated limitation.
+- Built to test H9 (does Bullish/Bearish tagging predict short-term
+  returns) — result: not confirmed, sign reverses at the 10-day horizon
+  between explore and holdout despite huge holdout significance. See
+  `EXPERIMENT.md`'s H9 entry.
+- Also reused, at no extra Sectors cost, for three follow-up
+  hypotheses on the same corpus (H9b sentiment dispersion → volatility,
+  H9c news-attention volume → returns, H9d sentiment before
+  suspensions) — see `EXPERIMENT.md`. H9b and H9c both null (explore
+  looked real, holdout didn't replicate); H9d descriptive-only, n too
+  small for a formal test.
+
+## `data/raw/insider_buys_2025_2026_2026-09-13.jsonl`
+
+**Purchased from Sectors, approved 2026-09-13** (60 credits — see
+`docs/credit_ledger.md`). Never gitignored. JSONL, 1,767 records —
+every `/v2/filings/` record for `holder_type=insider&transaction_type=
+buy` between 2025-01-01 and 2026-09-13. Clean run, no rate-limit hits,
+no re-billing (used the same incrementally-saving pattern from the
+start, learned from `insider_sells_...`'s cost-overrun incident).
+
+- **1 of 1,767 records has an impossible field value** (`PPRI.JK`,
+  `share_percentage_transaction` = 929.3% — the buy-side mirror of the
+  sell file's own garbled record). Excluded via a `<=100%` filter in
+  `pipeline/hypotheses/h8b_insider_buying_suspension.py`.
+- **A real filter improvement over the sell file's own convention,
+  found while building H8b:** the sell file's `0 < pct <= 100` filter
+  silently drops any transaction whose `share_percentage_transaction`
+  rounds to 0.0 — checked directly and confirmed these are genuine
+  small transactions, not bad data (e.g. BBCA buys of 0.001%-0.03% of
+  its enormous share count, verified via matching
+  `share_percentage_before`/`_after`). 281 of 1,767 buy records and 69
+  of 1,388 sell records fall in this category. H8b's loader uses
+  `pct <= 100` instead (keeps the 0.0 cases). Not backported to H8
+  itself, to avoid re-touching an already-closed hypothesis.
+- Built to test H8b (does insider buying before a price-spike
+  suspension predict a *better* outcome — the mirror of H8) — result:
+  underpowered (holdout n=7), and the two horizons disagree with each
+  other (30d says worse, 90d says better, both directionally consistent
+  across explore/holdout on their own). See `EXPERIMENT.md`'s H8b entry.
 
 ## Snapshot ↔ yearly field mapping
 
@@ -258,8 +423,12 @@ something that essentially never changes, so using today's value as if
 it always applied is harmless:
 
 - **Safe as snapshots** (static or near-static): `symbol`,
-  `company_name`, `listing_date`, `listing_board`, `sector`,
-  `sub_sector`.
+  `company_name`, `listing_date`, `sector`, `sub_sector`.
+- **Not safe for questions about listing time**: `listing_board`. It is
+  the company's *current* board, not its board at IPO. Stocks move
+  boards, and 2021+ listings carry "Watchlist", a status assigned after
+  listing. Grouping by it partly reflects where stocks ended up (see the
+  caveat in `pipeline/appdata/build_ipo_boards.py`).
 - **Dangerous as snapshots** (change constantly): `free_float`,
   `market_cap`, and by extension every `_ttm` / `_mrq` field — these
   describe *today*, and using them against a different time period
