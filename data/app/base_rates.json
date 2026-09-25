@@ -1,0 +1,168 @@
+{
+  "as_of": "2026-09-13",
+  "note": "Descriptive base rates, not predictions for any individual stock - same epistemic status as the beat-gold result (data/app/beat_gold.json): no explore/holdout split, no significance test, not counted in the project's trial counter (see EXPERIMENT.md's Chunk M section). Two of the three (typical_drawdown, recovery_after_fall) are computed once from development-only Yahoo Finance price history, never live in this product - a disclosed, dated research result, not a live capability.",
+  "loss_maker_turnaround": {
+    "n": 853,
+    "turned_around": 225,
+    "pct": 26.4,
+    "by_year": [
+      {
+        "from_year": 2021,
+        "to_year": 2022,
+        "n": 230,
+        "turned_around": 81,
+        "pct": 35.2
+      },
+      {
+        "from_year": 2022,
+        "to_year": 2023,
+        "n": 207,
+        "turned_around": 55,
+        "pct": 26.6
+      },
+      {
+        "from_year": 2023,
+        "to_year": 2024,
+        "n": 211,
+        "turned_around": 39,
+        "pct": 18.5
+      },
+      {
+        "from_year": 2024,
+        "to_year": 2025,
+        "n": 205,
+        "turned_around": 50,
+        "pct": 24.4
+      }
+    ]
+  },
+  "typical_drawdown": {
+    "overall": {
+      "n": 913,
+      "p25_pct": -66.3,
+      "median_pct": -49.5,
+      "p75_pct": -35.2
+    },
+    "by_size_tercile": {
+      "smallest": {
+        "n": 304,
+        "p25_pct": -68.7,
+        "median_pct": -54.7,
+        "p75_pct": -40.8
+      },
+      "mid": {
+        "n": 304,
+        "p25_pct": -65.0,
+        "median_pct": -49.5,
+        "p75_pct": -35.3
+      },
+      "largest": {
+        "n": 305,
+        "p25_pct": -63.3,
+        "median_pct": -44.3,
+        "p75_pct": -30.6
+      }
+    }
+  },
+  "recovery_after_fall": {
+    "n_events": 1348,
+    "n_stocks": 887,
+    "still_below_peak": {
+      "n": 1191,
+      "pct": 88.4
+    },
+    "recovered": {
+      "n": 157,
+      "pct": 11.6
+    },
+    "still_down_median_gap_pct": -49.2
+  },
+  "recent_spike": {
+    "pooled": {
+      "n_events": 3081,
+      "share_below_event_close": 0.5718922427783187,
+      "median_change": -0.06976744186046513,
+      "p25_change": -0.268660506507584,
+      "p75_change": 0.24927745664739887,
+      "share_deep_drop": 0.32359623498864004
+    },
+    "first_event_per_stock": {
+      "n_events": 766,
+      "share_below_event_close": 0.5783289817232375,
+      "median_change": -0.08017857142857143,
+      "p25_change": -0.2650056465273857,
+      "p75_change": 0.22619047619047628,
+      "share_deep_drop": 0.27676240208877284
+    },
+    "stocks_with_event": 773
+  },
+  "earnings_two_year_decline": {
+    "pooled": {
+      "n": 262,
+      "count": 151,
+      "rate": 0.5763358778625954
+    },
+    "by_year": {
+      "2023": {
+        "n": 108,
+        "count": 66,
+        "rate": 0.6111111111111112
+      },
+      "2024": {
+        "n": 154,
+        "count": 85,
+        "rate": 0.551948051948052
+      }
+    }
+  },
+  "earnings_more_than_doubled": {
+    "gave_part_back": {
+      "n": 256,
+      "count": 136,
+      "rate": 0.53125
+    },
+    "gave_all_back": {
+      "n": 256,
+      "count": 53,
+      "rate": 0.20703125
+    },
+    "by_year": {
+      "2022": {
+        "gave_part_back": {
+          "n": 119,
+          "count": 69,
+          "rate": 0.5798319327731093
+        },
+        "gave_all_back": {
+          "n": 119,
+          "count": 28,
+          "rate": 0.23529411764705882
+        }
+      },
+      "2023": {
+        "gave_part_back": {
+          "n": 64,
+          "count": 27,
+          "rate": 0.421875
+        },
+        "gave_all_back": {
+          "n": 64,
+          "count": 13,
+          "rate": 0.203125
+        }
+      },
+      "2024": {
+        "gave_part_back": {
+          "n": 73,
+          "count": 40,
+          "rate": 0.547945205479452
+        },
+        "gave_all_back": {
+          "n": 73,
+          "count": 12,
+          "rate": 0.1643835616438356
+        }
+      }
+    }
+  }
+}

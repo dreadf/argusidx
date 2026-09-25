@@ -1,0 +1,4597 @@
+{
+  "as_of": "2026-09-12",
+  "source_file": "sentiment_news_2025_2026_2026-09-13.jsonl",
+  "note": "Bullish/Bearish tags are supplied by Sectors, not computed by ArgusIDX.",
+  "n_articles": 8801,
+  "bullish_articles_pct": 75.1,
+  "n_mentions": 15820,
+  "bullish_mentions_pct": 69.1,
+  "n_symbols": 795,
+  "multi_symbol_articles": 2428,
+  "first_date": "2026-05-16",
+  "last_date": "2026-09-12",
+  "most_covered": [
+    {
+      "symbol": "BBCA.JK",
+      "company_name": "PT Bank Central Asia Tbk.",
+      "bullish": 389,
+      "bearish": 208,
+      "mentions": 597
+    },
+    {
+      "symbol": "BMRI.JK",
+      "company_name": "PT Bank Mandiri (Persero) Tbk",
+      "bullish": 371,
+      "bearish": 151,
+      "mentions": 522
+    },
+    {
+      "symbol": "BBRI.JK",
+      "company_name": "PT Bank Rakyat Indonesia (Persero) Tbk",
+      "bullish": 334,
+      "bearish": 170,
+      "mentions": 504
+    },
+    {
+      "symbol": "TLKM.JK",
+      "company_name": "PT Telkom Indonesia (Persero) Tbk",
+      "bullish": 207,
+      "bearish": 88,
+      "mentions": 295
+    },
+    {
+      "symbol": "BUMI.JK",
+      "company_name": "Bumi Resources Tbk",
+      "bullish": 202,
+      "bearish": 90,
+      "mentions": 292
+    },
+    {
+      "symbol": "GOTO.JK",
+      "company_name": "PT GoTo Gojek Tokopedia Tbk",
+      "bullish": 116,
+      "bearish": 171,
+      "mentions": 287
+    },
+    {
+      "symbol": "TPIA.JK",
+      "company_name": "PT Chandra Asri Pacific Tbk",
+      "bullish": 158,
+      "bearish": 118,
+      "mentions": 276
+    },
+    {
+      "symbol": "ANTM.JK",
+      "company_name": "Aneka Tambang Tbk.",
+      "bullish": 174,
+      "bearish": 97,
+      "mentions": 271
+    },
+    {
+      "symbol": "BBNI.JK",
+      "company_name": "PT Bank Negara Indonesia (Persero) Tbk",
+      "bullish": 186,
+      "bearish": 85,
+      "mentions": 271
+    },
+    {
+      "symbol": "ASII.JK",
+      "company_name": "Astra International Tbk",
+      "bullish": 143,
+      "bearish": 62,
+      "mentions": 205
+    },
+    {
+      "symbol": "DSSA.JK",
+      "company_name": "Dian Swastatika Sentosa Tbk",
+      "bullish": 95,
+      "bearish": 107,
+      "mentions": 202
+    },
+    {
+      "symbol": "YULE.JK",
+      "company_name": "Yulie Sekuritas Indonesia Tbk",
+      "bullish": 149,
+      "bearish": 49,
+      "mentions": 198
+    },
+    {
+      "symbol": "AMMN.JK",
+      "company_name": "PT Amman Mineral Internasional Tbk.",
+      "bullish": 100,
+      "bearish": 86,
+      "mentions": 186
+    },
+    {
+      "symbol": "BBTN.JK",
+      "company_name": "PT Bank Tabungan Negara (Persero) Tbk",
+      "bullish": 146,
+      "bearish": 27,
+      "mentions": 173
+    },
+    {
+      "symbol": "CPIN.JK",
+      "company_name": "Charoen Pokphand Indonesia Tbk",
+      "bullish": 75,
+      "bearish": 96,
+      "mentions": 171
+    },
+    {
+      "symbol": "TINS.JK",
+      "company_name": "PT Timah Tbk",
+      "bullish": 138,
+      "bearish": 27,
+      "mentions": 165
+    },
+    {
+      "symbol": "MDKA.JK",
+      "company_name": "PT Merdeka Copper Gold Tbk",
+      "bullish": 105,
+      "bearish": 39,
+      "mentions": 144
+    },
+    {
+      "symbol": "BRIS.JK",
+      "company_name": "PT Bank Syariah Indonesia Tbk",
+      "bullish": 115,
+      "bearish": 18,
+      "mentions": 133
+    },
+    {
+      "symbol": "BREN.JK",
+      "company_name": "PT Barito Renewables Energy Tbk.",
+      "bullish": 63,
+      "bearish": 69,
+      "mentions": 132
+    },
+    {
+      "symbol": "INCO.JK",
+      "company_name": "Vale Indonesia Tbk",
+      "bullish": 108,
+      "bearish": 21,
+      "mentions": 129
+    },
+    {
+      "symbol": "CUAN.JK",
+      "company_name": "PT Petrindo Jaya Kreasi Tbk",
+      "bullish": 63,
+      "bearish": 64,
+      "mentions": 127
+    },
+    {
+      "symbol": "EMAS.JK",
+      "company_name": "PT Merdeka Gold Resources Tbk",
+      "bullish": 93,
+      "bearish": 28,
+      "mentions": 121
+    },
+    {
+      "symbol": "BRPT.JK",
+      "company_name": "Barito Pacific Tbk",
+      "bullish": 77,
+      "bearish": 41,
+      "mentions": 118
+    },
+    {
+      "symbol": "PGEO.JK",
+      "company_name": "PT Pertamina Geothermal Energy Tbk",
+      "bullish": 99,
+      "bearish": 15,
+      "mentions": 114
+    },
+    {
+      "symbol": "SMGR.JK",
+      "company_name": "Semen Indonesia (Persero) Tbk",
+      "bullish": 67,
+      "bearish": 47,
+      "mentions": 114
+    },
+    {
+      "symbol": "ADRO.JK",
+      "company_name": "Alamtri Resources Indonesia Tbk",
+      "bullish": 82,
+      "bearish": 30,
+      "mentions": 112
+    },
+    {
+      "symbol": "AADI.JK",
+      "company_name": "PT Adaro Andalan Indonesia Tbk",
+      "bullish": 72,
+      "bearish": 37,
+      "mentions": 109
+    },
+    {
+      "symbol": "FILM.JK",
+      "company_name": "PT MD Entertainment Tbk",
+      "bullish": 49,
+      "bearish": 54,
+      "mentions": 103
+    },
+    {
+      "symbol": "PTBA.JK",
+      "company_name": "Bukit Asam Tbk",
+      "bullish": 80,
+      "bearish": 21,
+      "mentions": 101
+    },
+    {
+      "symbol": "PTRO.JK",
+      "company_name": "Petrosea Tbk",
+      "bullish": 71,
+      "bearish": 29,
+      "mentions": 100
+    },
+    {
+      "symbol": "ICBP.JK",
+      "company_name": "Indofood CBP Sukses Makmur Tbk",
+      "bullish": 66,
+      "bearish": 32,
+      "mentions": 98
+    },
+    {
+      "symbol": "ISAT.JK",
+      "company_name": "PT Indosat Tbk",
+      "bullish": 79,
+      "bearish": 19,
+      "mentions": 98
+    },
+    {
+      "symbol": "RATU.JK",
+      "company_name": "PT Raharja Energi Cepu Tbk",
+      "bullish": 50,
+      "bearish": 48,
+      "mentions": 98
+    },
+    {
+      "symbol": "AMRT.JK",
+      "company_name": "PT Sumber Alfaria Trijaya Tbk.",
+      "bullish": 67,
+      "bearish": 30,
+      "mentions": 97
+    },
+    {
+      "symbol": "UNTR.JK",
+      "company_name": "United Tractors Tbk",
+      "bullish": 54,
+      "bearish": 40,
+      "mentions": 94
+    },
+    {
+      "symbol": "INDY.JK",
+      "company_name": "Indika Energy Tbk",
+      "bullish": 66,
+      "bearish": 24,
+      "mentions": 90
+    },
+    {
+      "symbol": "ADHI.JK",
+      "company_name": "PT Adhi Karya (Persero) Tbk.",
+      "bullish": 38,
+      "bearish": 51,
+      "mentions": 89
+    },
+    {
+      "symbol": "DEWA.JK",
+      "company_name": "Darma Henwa Tbk",
+      "bullish": 56,
+      "bearish": 32,
+      "mentions": 88
+    },
+    {
+      "symbol": "MBMA.JK",
+      "company_name": "PT Merdeka Battery Materials Tbk",
+      "bullish": 68,
+      "bearish": 19,
+      "mentions": 87
+    },
+    {
+      "symbol": "HRTA.JK",
+      "company_name": "PT Hartadinata Abadi Tbk",
+      "bullish": 68,
+      "bearish": 13,
+      "mentions": 81
+    },
+    {
+      "symbol": "UNVR.JK",
+      "company_name": "Unilever Indonesia Tbk",
+      "bullish": 72,
+      "bearish": 9,
+      "mentions": 81
+    },
+    {
+      "symbol": "MAPI.JK",
+      "company_name": "Mitra Adiperkasa Tbk",
+      "bullish": 59,
+      "bearish": 20,
+      "mentions": 79
+    },
+    {
+      "symbol": "ESSA.JK",
+      "company_name": "ESSA Industries Indonesia Tbk",
+      "bullish": 38,
+      "bearish": 40,
+      "mentions": 78
+    },
+    {
+      "symbol": "NCKL.JK",
+      "company_name": "PT Trimegah Bangun Persada Tbk",
+      "bullish": 56,
+      "bearish": 20,
+      "mentions": 76
+    },
+    {
+      "symbol": "PGAS.JK",
+      "company_name": "PT Perusahaan Gas Negara Tbk",
+      "bullish": 57,
+      "bearish": 19,
+      "mentions": 76
+    },
+    {
+      "symbol": "BYAN.JK",
+      "company_name": "Bayan Resources Tbk",
+      "bullish": 47,
+      "bearish": 26,
+      "mentions": 73
+    },
+    {
+      "symbol": "MTEL.JK",
+      "company_name": "PT Dayamitra Telekomunikasi Tbk",
+      "bullish": 65,
+      "bearish": 7,
+      "mentions": 72
+    },
+    {
+      "symbol": "BNBR.JK",
+      "company_name": "Bakrie & Brothers Tbk",
+      "bullish": 50,
+      "bearish": 21,
+      "mentions": 71
+    },
+    {
+      "symbol": "GGRM.JK",
+      "company_name": "Gudang Garam Tbk",
+      "bullish": 64,
+      "bearish": 5,
+      "mentions": 69
+    },
+    {
+      "symbol": "KLBF.JK",
+      "company_name": "Kalbe Farma Tbk",
+      "bullish": 41,
+      "bearish": 27,
+      "mentions": 68
+    },
+    {
+      "symbol": "TAPG.JK",
+      "company_name": "PT Triputra Agro Persada Tbk",
+      "bullish": 46,
+      "bearish": 22,
+      "mentions": 68
+    },
+    {
+      "symbol": "EXCL.JK",
+      "company_name": "PT XLSMART Telecom Sejahtera Tbk",
+      "bullish": 57,
+      "bearish": 10,
+      "mentions": 67
+    },
+    {
+      "symbol": "SINI.JK",
+      "company_name": "PT Singaraja Putra Tbk",
+      "bullish": 48,
+      "bearish": 19,
+      "mentions": 67
+    },
+    {
+      "symbol": "BUKA.JK",
+      "company_name": "PT Bukalapak.com Tbk",
+      "bullish": 19,
+      "bearish": 47,
+      "mentions": 66
+    },
+    {
+      "symbol": "BBKP.JK",
+      "company_name": "PT Bank KB Indonesia Tbk",
+      "bullish": 46,
+      "bearish": 19,
+      "mentions": 65
+    },
+    {
+      "symbol": "PANI.JK",
+      "company_name": "PT Pantai Indah Kapuk Dua Tbk.",
+      "bullish": 50,
+      "bearish": 15,
+      "mentions": 65
+    },
+    {
+      "symbol": "ARTO.JK",
+      "company_name": "PT Bank Jago Tbk.",
+      "bullish": 24,
+      "bearish": 40,
+      "mentions": 64
+    },
+    {
+      "symbol": "HEAL.JK",
+      "company_name": "PT Medikaloka Hermina Tbk",
+      "bullish": 23,
+      "bearish": 41,
+      "mentions": 64
+    },
+    {
+      "symbol": "TOWR.JK",
+      "company_name": "Sarana Menara Nusantara Tbk",
+      "bullish": 52,
+      "bearish": 12,
+      "mentions": 64
+    },
+    {
+      "symbol": "WIFI.JK",
+      "company_name": "PT Solusi Sinergi Digital Tbk",
+      "bullish": 52,
+      "bearish": 11,
+      "mentions": 63
+    },
+    {
+      "symbol": "JPFA.JK",
+      "company_name": "JAPFA Comfeed Indonesia Tbk",
+      "bullish": 49,
+      "bearish": 13,
+      "mentions": 62
+    },
+    {
+      "symbol": "PANS.JK",
+      "company_name": "Panin Sekuritas Tbk",
+      "bullish": 48,
+      "bearish": 13,
+      "mentions": 61
+    },
+    {
+      "symbol": "RAJA.JK",
+      "company_name": "Rukun Raharja Tbk",
+      "bullish": 48,
+      "bearish": 12,
+      "mentions": 60
+    },
+    {
+      "symbol": "JSMR.JK",
+      "company_name": "PT Jasa Marga Tbk",
+      "bullish": 49,
+      "bearish": 10,
+      "mentions": 59
+    },
+    {
+      "symbol": "WEGE.JK",
+      "company_name": "PT Wijaya Karya Bangunan Gedung Tbk",
+      "bullish": 22,
+      "bearish": 37,
+      "mentions": 59
+    },
+    {
+      "symbol": "BRMS.JK",
+      "company_name": "Bumi Resources Minerals Tbk",
+      "bullish": 45,
+      "bearish": 13,
+      "mentions": 58
+    },
+    {
+      "symbol": "BFIN.JK",
+      "company_name": "BFI Finance Indonesia Tbk",
+      "bullish": 50,
+      "bearish": 7,
+      "mentions": 57
+    },
+    {
+      "symbol": "ENRG.JK",
+      "company_name": "Energi Mega Persada Tbk",
+      "bullish": 44,
+      "bearish": 13,
+      "mentions": 57
+    },
+    {
+      "symbol": "ERAA.JK",
+      "company_name": "Erajaya Swasembada Tbk",
+      "bullish": 54,
+      "bearish": 2,
+      "mentions": 56
+    },
+    {
+      "symbol": "ITMG.JK",
+      "company_name": "Indo Tambangraya Megah Tbk",
+      "bullish": 37,
+      "bearish": 18,
+      "mentions": 55
+    },
+    {
+      "symbol": "MEDC.JK",
+      "company_name": "PT Medco Energi Internasional Tbk",
+      "bullish": 40,
+      "bearish": 15,
+      "mentions": 55
+    },
+    {
+      "symbol": "ELSA.JK",
+      "company_name": "Elnusa Tbk",
+      "bullish": 50,
+      "bearish": 4,
+      "mentions": 54
+    },
+    {
+      "symbol": "TCPI.JK",
+      "company_name": "PT Transcoal Pacific Tbk",
+      "bullish": 13,
+      "bearish": 41,
+      "mentions": 54
+    },
+    {
+      "symbol": "BNGA.JK",
+      "company_name": "PT Bank CIMB Niaga Tbk",
+      "bullish": 38,
+      "bearish": 15,
+      "mentions": 53
+    },
+    {
+      "symbol": "VKTR.JK",
+      "company_name": "PT VKTR Teknologi Mobilitas Tbk",
+      "bullish": 45,
+      "bearish": 8,
+      "mentions": 53
+    },
+    {
+      "symbol": "ADMR.JK",
+      "company_name": "PT Alamtri Minerals Indonesia Tbk",
+      "bullish": 38,
+      "bearish": 14,
+      "mentions": 52
+    },
+    {
+      "symbol": "AKRA.JK",
+      "company_name": "PT AKR Corporindo Tbk.",
+      "bullish": 45,
+      "bearish": 7,
+      "mentions": 52
+    },
+    {
+      "symbol": "BTPN.JK",
+      "company_name": "PT Bank SMBC Indonesia Tbk",
+      "bullish": 41,
+      "bearish": 11,
+      "mentions": 52
+    },
+    {
+      "symbol": "ARCI.JK",
+      "company_name": "PT Archi Indonesia Tbk",
+      "bullish": 39,
+      "bearish": 11,
+      "mentions": 50
+    },
+    {
+      "symbol": "BNII.JK",
+      "company_name": "PT Bank Maybank Indonesia Tbk",
+      "bullish": 39,
+      "bearish": 11,
+      "mentions": 50
+    },
+    {
+      "symbol": "CTRA.JK",
+      "company_name": "Ciputra Development Tbk",
+      "bullish": 25,
+      "bearish": 24,
+      "mentions": 49
+    },
+    {
+      "symbol": "CBDK.JK",
+      "company_name": "PT Bangun Kosambi Sukses Tbk",
+      "bullish": 43,
+      "bearish": 5,
+      "mentions": 48
+    },
+    {
+      "symbol": "CDIA.JK",
+      "company_name": "PT Chandra Daya Investasi Tbk",
+      "bullish": 31,
+      "bearish": 17,
+      "mentions": 48
+    },
+    {
+      "symbol": "BSDE.JK",
+      "company_name": "PT Bumi Serpong Damai Tbk",
+      "bullish": 17,
+      "bearish": 30,
+      "mentions": 47
+    },
+    {
+      "symbol": "AALI.JK",
+      "company_name": "Astra Agro Lestari Tbk",
+      "bullish": 30,
+      "bearish": 16,
+      "mentions": 46
+    },
+    {
+      "symbol": "SMRA.JK",
+      "company_name": "PT Summarecon Agung Tbk",
+      "bullish": 29,
+      "bearish": 16,
+      "mentions": 45
+    },
+    {
+      "symbol": "HMSP.JK",
+      "company_name": "HM Sampoerna Tbk",
+      "bullish": 35,
+      "bearish": 9,
+      "mentions": 44
+    },
+    {
+      "symbol": "SSIA.JK",
+      "company_name": "PT Surya Semesta Internusa Tbk",
+      "bullish": 36,
+      "bearish": 8,
+      "mentions": 44
+    },
+    {
+      "symbol": "GTSI.JK",
+      "company_name": "PT GTS Internasional Tbk",
+      "bullish": 35,
+      "bearish": 8,
+      "mentions": 43
+    },
+    {
+      "symbol": "INKP.JK",
+      "company_name": "Indah Kiat Pulp & Paper Tbk",
+      "bullish": 27,
+      "bearish": 16,
+      "mentions": 43
+    },
+    {
+      "symbol": "KRAS.JK",
+      "company_name": "Krakatau Steel (Persero) Tbk",
+      "bullish": 32,
+      "bearish": 11,
+      "mentions": 43
+    },
+    {
+      "symbol": "GIAA.JK",
+      "company_name": "Garuda Indonesia (Persero) Tbk",
+      "bullish": 31,
+      "bearish": 11,
+      "mentions": 42
+    },
+    {
+      "symbol": "PSAB.JK",
+      "company_name": "J Resources Asia Pasifik Tbk",
+      "bullish": 34,
+      "bearish": 8,
+      "mentions": 42
+    },
+    {
+      "symbol": "WSKT.JK",
+      "company_name": "PT Waskita Karya (Persero) Tbk",
+      "bullish": 17,
+      "bearish": 25,
+      "mentions": 42
+    },
+    {
+      "symbol": "KPIG.JK",
+      "company_name": "MNC Tourism Indonesia Tbk",
+      "bullish": 7,
+      "bearish": 34,
+      "mentions": 41
+    },
+    {
+      "symbol": "MYOR.JK",
+      "company_name": "Mayora Indah Tbk",
+      "bullish": 32,
+      "bearish": 8,
+      "mentions": 40
+    },
+    {
+      "symbol": "PWON.JK",
+      "company_name": "Pakuwon Jati Tbk",
+      "bullish": 24,
+      "bearish": 15,
+      "mentions": 39
+    },
+    {
+      "symbol": "RELI.JK",
+      "company_name": "Reliance Sekuritas Indonesia Tbk",
+      "bullish": 37,
+      "bearish": 2,
+      "mentions": 39
+    },
+    {
+      "symbol": "TUGU.JK",
+      "company_name": "PT Asuransi Tugu Pratama Indonesia Tbk",
+      "bullish": 32,
+      "bearish": 7,
+      "mentions": 39
+    },
+    {
+      "symbol": "MAPA.JK",
+      "company_name": "PT MAP Aktif Adiperkasa Tbk",
+      "bullish": 36,
+      "bearish": 1,
+      "mentions": 37
+    },
+    {
+      "symbol": "LSIP.JK",
+      "company_name": "PP London Sumatra Indonesia Tbk",
+      "bullish": 30,
+      "bearish": 6,
+      "mentions": 36
+    },
+    {
+      "symbol": "TBIG.JK",
+      "company_name": "PT Tower Bersama Infrastructure Tbk",
+      "bullish": 31,
+      "bearish": 5,
+      "mentions": 36
+    },
+    {
+      "symbol": "ACES.JK",
+      "company_name": "PT Aspirasi Hidup Indonesia Tbk",
+      "bullish": 33,
+      "bearish": 2,
+      "mentions": 35
+    },
+    {
+      "symbol": "BDMN.JK",
+      "company_name": "PT Bank Danamon Indonesia Tbk",
+      "bullish": 27,
+      "bearish": 8,
+      "mentions": 35
+    },
+    {
+      "symbol": "CMRY.JK",
+      "company_name": "PT Cisarua Mountain Dairy Tbk",
+      "bullish": 32,
+      "bearish": 3,
+      "mentions": 35
+    },
+    {
+      "symbol": "DSNG.JK",
+      "company_name": "PT Dharma Satya Nusantara Tbk",
+      "bullish": 25,
+      "bearish": 10,
+      "mentions": 35
+    },
+    {
+      "symbol": "INDF.JK",
+      "company_name": "Indofood Sukses Makmur Tbk",
+      "bullish": 25,
+      "bearish": 10,
+      "mentions": 35
+    },
+    {
+      "symbol": "INTP.JK",
+      "company_name": "Indocement Tunggal Prakarsa Tbk",
+      "bullish": 34,
+      "bearish": 1,
+      "mentions": 35
+    },
+    {
+      "symbol": "KAEF.JK",
+      "company_name": "Kimia Farma Tbk",
+      "bullish": 29,
+      "bearish": 6,
+      "mentions": 35
+    },
+    {
+      "symbol": "BBHI.JK",
+      "company_name": "PT Allo Bank Indonesia Tbk",
+      "bullish": 19,
+      "bearish": 15,
+      "mentions": 34
+    },
+    {
+      "symbol": "NISP.JK",
+      "company_name": "PT Bank OCBC NISP Tbk",
+      "bullish": 31,
+      "bearish": 3,
+      "mentions": 34
+    },
+    {
+      "symbol": "CBRE.JK",
+      "company_name": "PT Cakra Buana Resources Energi Tbk",
+      "bullish": 15,
+      "bearish": 18,
+      "mentions": 33
+    },
+    {
+      "symbol": "DCII.JK",
+      "company_name": "PT DCI Indonesia Tbk",
+      "bullish": 22,
+      "bearish": 11,
+      "mentions": 33
+    },
+    {
+      "symbol": "HRUM.JK",
+      "company_name": "Harum Energy Tbk",
+      "bullish": 26,
+      "bearish": 7,
+      "mentions": 33
+    },
+    {
+      "symbol": "BNLI.JK",
+      "company_name": "Bank Permata Tbk",
+      "bullish": 16,
+      "bearish": 16,
+      "mentions": 32
+    },
+    {
+      "symbol": "DMAS.JK",
+      "company_name": "PT Puradelta Lestari Tbk",
+      "bullish": 28,
+      "bearish": 4,
+      "mentions": 32
+    },
+    {
+      "symbol": "FORE.JK",
+      "company_name": "PT Fore Kopi Indonesia Tbk",
+      "bullish": 30,
+      "bearish": 2,
+      "mentions": 32
+    },
+    {
+      "symbol": "SIDO.JK",
+      "company_name": "PT Industri Jamu Dan Farmasi Sido Muncul Tbk",
+      "bullish": 11,
+      "bearish": 21,
+      "mentions": 32
+    },
+    {
+      "symbol": "TOBA.JK",
+      "company_name": "PT TBS Energi Utama Tbk",
+      "bullish": 30,
+      "bearish": 2,
+      "mentions": 32
+    },
+    {
+      "symbol": "BTPS.JK",
+      "company_name": "PT Bank BTPN Syariah Tbk.",
+      "bullish": 29,
+      "bearish": 2,
+      "mentions": 31
+    },
+    {
+      "symbol": "MIDI.JK",
+      "company_name": "Midi Utama Indonesia Tbk",
+      "bullish": 25,
+      "bearish": 6,
+      "mentions": 31
+    },
+    {
+      "symbol": "BWPT.JK",
+      "company_name": "Eagle High Plantations Tbk",
+      "bullish": 15,
+      "bearish": 15,
+      "mentions": 30
+    },
+    {
+      "symbol": "GHON.JK",
+      "company_name": "PT Gihon Telekomunikasi Indonesia Tbk",
+      "bullish": 19,
+      "bearish": 11,
+      "mentions": 30
+    },
+    {
+      "symbol": "INET.JK",
+      "company_name": "PT Sinergi Inti Andalan Prima Tbk",
+      "bullish": 27,
+      "bearish": 3,
+      "mentions": 30
+    },
+    {
+      "symbol": "JARR.JK",
+      "company_name": "PT Jhonlin Agro Raya Tbk",
+      "bullish": 22,
+      "bearish": 8,
+      "mentions": 30
+    },
+    {
+      "symbol": "DOID.JK",
+      "company_name": "PT BUMA Internasional Grup Tbk",
+      "bullish": 17,
+      "bearish": 12,
+      "mentions": 29
+    },
+    {
+      "symbol": "SILO.JK",
+      "company_name": "PT Siloam International Hospitals Tbk",
+      "bullish": 23,
+      "bearish": 6,
+      "mentions": 29
+    },
+    {
+      "symbol": "SMDR.JK",
+      "company_name": "Samudera Indonesia Tbk",
+      "bullish": 24,
+      "bearish": 5,
+      "mentions": 29
+    },
+    {
+      "symbol": "SRTG.JK",
+      "company_name": "PT Saratoga Investama Sedaya Tbk",
+      "bullish": 20,
+      "bearish": 9,
+      "mentions": 29
+    },
+    {
+      "symbol": "BANK.JK",
+      "company_name": "PT Bank Aladin Syariah Tbk",
+      "bullish": 17,
+      "bearish": 11,
+      "mentions": 28
+    },
+    {
+      "symbol": "BIRD.JK",
+      "company_name": "PT Blue Bird Tbk",
+      "bullish": 20,
+      "bearish": 8,
+      "mentions": 28
+    },
+    {
+      "symbol": "BUVA.JK",
+      "company_name": "PT Bukit Uluwatu Villa Tbk",
+      "bullish": 17,
+      "bearish": 11,
+      "mentions": 28
+    },
+    {
+      "symbol": "EMTK.JK",
+      "company_name": "Elang Mahkota Teknologi Tbk",
+      "bullish": 19,
+      "bearish": 9,
+      "mentions": 28
+    },
+    {
+      "symbol": "KIJA.JK",
+      "company_name": "Kawasan Industri Jababeka Tbk",
+      "bullish": 20,
+      "bearish": 8,
+      "mentions": 28
+    },
+    {
+      "symbol": "MIKA.JK",
+      "company_name": "PT Mitra Keluarga Karyasehat Tbk",
+      "bullish": 20,
+      "bearish": 8,
+      "mentions": 28
+    },
+    {
+      "symbol": "SUPA.JK",
+      "company_name": "PT Super Bank Indonesia Tbk",
+      "bullish": 22,
+      "bearish": 6,
+      "mentions": 28
+    },
+    {
+      "symbol": "SIMP.JK",
+      "company_name": "Salim Ivomas Pratama Tbk",
+      "bullish": 17,
+      "bearish": 10,
+      "mentions": 27
+    },
+    {
+      "symbol": "VISI.JK",
+      "company_name": "PT Satu Visi Putra Tbk",
+      "bullish": 23,
+      "bearish": 4,
+      "mentions": 27
+    },
+    {
+      "symbol": "DAAZ.JK",
+      "company_name": "PT Daaz Bara Lestari Tbk",
+      "bullish": 6,
+      "bearish": 20,
+      "mentions": 26
+    },
+    {
+      "symbol": "MORA.JK",
+      "company_name": "PT Ekamas Mora Republik Tbk",
+      "bullish": 19,
+      "bearish": 7,
+      "mentions": 26
+    },
+    {
+      "symbol": "TRIM.JK",
+      "company_name": "PT Trimegah Sekuritas Indonesia Tbk",
+      "bullish": 17,
+      "bearish": 9,
+      "mentions": 26
+    },
+    {
+      "symbol": "AUTO.JK",
+      "company_name": "Astra Otoparts Tbk",
+      "bullish": 24,
+      "bearish": 1,
+      "mentions": 25
+    },
+    {
+      "symbol": "COCO.JK",
+      "company_name": "PT Wahana Interfood Nusantara Tbk",
+      "bullish": 21,
+      "bearish": 4,
+      "mentions": 25
+    },
+    {
+      "symbol": "FORU.JK",
+      "company_name": "Fortune Indonesia Tbk",
+      "bullish": 21,
+      "bearish": 4,
+      "mentions": 25
+    },
+    {
+      "symbol": "GJTL.JK",
+      "company_name": "Gajah Tunggal Tbk",
+      "bullish": 25,
+      "bearish": 0,
+      "mentions": 25
+    },
+    {
+      "symbol": "PRDA.JK",
+      "company_name": "PT Prodia Widyahusada Tbk",
+      "bullish": 23,
+      "bearish": 2,
+      "mentions": 25
+    },
+    {
+      "symbol": "BULL.JK",
+      "company_name": "PT Buana Lintas Lautan Tbk.",
+      "bullish": 21,
+      "bearish": 3,
+      "mentions": 24
+    },
+    {
+      "symbol": "MDIY.JK",
+      "company_name": "PT Daya Intiguna Yasa Tbk",
+      "bullish": 24,
+      "bearish": 0,
+      "mentions": 24
+    },
+    {
+      "symbol": "PACK.JK",
+      "company_name": "PT Abadi Nusantara Hijau Investama Tbk",
+      "bullish": 15,
+      "bearish": 9,
+      "mentions": 24
+    },
+    {
+      "symbol": "AMAR.JK",
+      "company_name": "PT Bank Amar Indonesia Tbk.",
+      "bullish": 21,
+      "bearish": 2,
+      "mentions": 23
+    },
+    {
+      "symbol": "BIPI.JK",
+      "company_name": "PT Astrindo Nusantara Infrastruktur Tbk.",
+      "bullish": 18,
+      "bearish": 5,
+      "mentions": 23
+    },
+    {
+      "symbol": "GULA.JK",
+      "company_name": "PT Aman Agrindo Tbk",
+      "bullish": 22,
+      "bearish": 1,
+      "mentions": 23
+    },
+    {
+      "symbol": "IMPC.JK",
+      "company_name": "PT Impack Pratama Industri Tbk",
+      "bullish": 20,
+      "bearish": 3,
+      "mentions": 23
+    },
+    {
+      "symbol": "KOTA.JK",
+      "company_name": "PT DMS Propertindo Tbk",
+      "bullish": 19,
+      "bearish": 4,
+      "mentions": 23
+    },
+    {
+      "symbol": "PGUN.JK",
+      "company_name": "PT Pradiksi Gunatama Tbk",
+      "bullish": 15,
+      "bearish": 8,
+      "mentions": 23
+    },
+    {
+      "symbol": "RMKE.JK",
+      "company_name": "PT RMK Energy Tbk",
+      "bullish": 20,
+      "bearish": 3,
+      "mentions": 23
+    },
+    {
+      "symbol": "SCMA.JK",
+      "company_name": "Surya Citra Media Tbk",
+      "bullish": 19,
+      "bearish": 4,
+      "mentions": 23
+    },
+    {
+      "symbol": "WIKA.JK",
+      "company_name": "PT Wijaya Karya (Persero) Tbk",
+      "bullish": 7,
+      "bearish": 16,
+      "mentions": 23
+    },
+    {
+      "symbol": "SMAR.JK",
+      "company_name": "PT Sinar Mas Agro Resources and Technology Tbk",
+      "bullish": 12,
+      "bearish": 10,
+      "mentions": 22
+    },
+    {
+      "symbol": "HATM.JK",
+      "company_name": "PT Habco Trans Maritima Tbk",
+      "bullish": 8,
+      "bearish": 13,
+      "mentions": 21
+    },
+    {
+      "symbol": "MAIN.JK",
+      "company_name": "Malindo Feedmill Tbk",
+      "bullish": 19,
+      "bearish": 2,
+      "mentions": 21
+    },
+    {
+      "symbol": "OMED.JK",
+      "company_name": "PT Jayamas Medica Industri Tbk",
+      "bullish": 19,
+      "bearish": 2,
+      "mentions": 21
+    },
+    {
+      "symbol": "ADCP.JK",
+      "company_name": "PT Adhi Commuter Properti Tbk",
+      "bullish": 4,
+      "bearish": 16,
+      "mentions": 20
+    },
+    {
+      "symbol": "CNMA.JK",
+      "company_name": "PT Nusantara Sejahtera Raya Tbk",
+      "bullish": 6,
+      "bearish": 14,
+      "mentions": 20
+    },
+    {
+      "symbol": "GPSO.JK",
+      "company_name": "PT Geoprima Solusi Tbk",
+      "bullish": 18,
+      "bearish": 2,
+      "mentions": 20
+    },
+    {
+      "symbol": "IBST.JK",
+      "company_name": "Inti Bangun Sejahtera Tbk",
+      "bullish": 9,
+      "bearish": 11,
+      "mentions": 20
+    },
+    {
+      "symbol": "INAF.JK",
+      "company_name": "Indofarma Tbk",
+      "bullish": 8,
+      "bearish": 12,
+      "mentions": 20
+    },
+    {
+      "symbol": "MLIA.JK",
+      "company_name": "Mulia Industrindo Tbk",
+      "bullish": 2,
+      "bearish": 18,
+      "mentions": 20
+    },
+    {
+      "symbol": "SSMS.JK",
+      "company_name": "PT Sawit Sumbermas Sarana Tbk",
+      "bullish": 8,
+      "bearish": 12,
+      "mentions": 20
+    },
+    {
+      "symbol": "UVCR.JK",
+      "company_name": "PT Trimegah Karya Pratama Tbk",
+      "bullish": 19,
+      "bearish": 1,
+      "mentions": 20
+    },
+    {
+      "symbol": "WBSA.JK",
+      "company_name": "PT BSA Logistics Indonesia Tbk",
+      "bullish": 13,
+      "bearish": 7,
+      "mentions": 20
+    },
+    {
+      "symbol": "BMAS.JK",
+      "company_name": "PT Bank Maspion Indonesia Tbk.",
+      "bullish": 6,
+      "bearish": 13,
+      "mentions": 19
+    },
+    {
+      "symbol": "FAST.JK",
+      "company_name": "PT Fast Food Indonesia Tbk",
+      "bullish": 16,
+      "bearish": 3,
+      "mentions": 19
+    },
+    {
+      "symbol": "GMFI.JK",
+      "company_name": "PT Garuda Maintenance Facility Aero Asia Tbk",
+      "bullish": 16,
+      "bearish": 3,
+      "mentions": 19
+    },
+    {
+      "symbol": "HILL.JK",
+      "company_name": "PT Hillcon Tbk",
+      "bullish": 2,
+      "bearish": 17,
+      "mentions": 19
+    },
+    {
+      "symbol": "PEHA.JK",
+      "company_name": "PT Phapros Tbk",
+      "bullish": 18,
+      "bearish": 1,
+      "mentions": 19
+    },
+    {
+      "symbol": "WIIM.JK",
+      "company_name": "Wismilak Inti Makmur Tbk",
+      "bullish": 18,
+      "bearish": 1,
+      "mentions": 19
+    },
+    {
+      "symbol": "BBSI.JK",
+      "company_name": "PT Krom Bank Indonesia Tbk",
+      "bullish": 12,
+      "bearish": 6,
+      "mentions": 18
+    },
+    {
+      "symbol": "BHIT.JK",
+      "company_name": "PT MNC Asia Holding Tbk",
+      "bullish": 10,
+      "bearish": 8,
+      "mentions": 18
+    },
+    {
+      "symbol": "BSSR.JK",
+      "company_name": "Baramulti Suksessarana Tbk",
+      "bullish": 17,
+      "bearish": 1,
+      "mentions": 18
+    },
+    {
+      "symbol": "ISSP.JK",
+      "company_name": "PT Steel Pipe Industry of Indonesia Tbk",
+      "bullish": 16,
+      "bearish": 2,
+      "mentions": 18
+    },
+    {
+      "symbol": "MEJA.JK",
+      "company_name": "PT Harta Djaya Karya Tbk",
+      "bullish": 17,
+      "bearish": 1,
+      "mentions": 18
+    },
+    {
+      "symbol": "MGLV.JK",
+      "company_name": "PT Panca Anugrah Wisesa Tbk",
+      "bullish": 15,
+      "bearish": 3,
+      "mentions": 18
+    },
+    {
+      "symbol": "AGRO.JK",
+      "company_name": "PT Bank Raya Indonesia Tbk",
+      "bullish": 14,
+      "bearish": 3,
+      "mentions": 17
+    },
+    {
+      "symbol": "AVIA.JK",
+      "company_name": "PT Avia Avian Tbk",
+      "bullish": 16,
+      "bearish": 1,
+      "mentions": 17
+    },
+    {
+      "symbol": "KETR.JK",
+      "company_name": "PT Ketrosden Triasmitra Tbk",
+      "bullish": 13,
+      "bearish": 4,
+      "mentions": 17
+    },
+    {
+      "symbol": "PMMP.JK",
+      "company_name": "PT Panca Mitra Multiperdana Tbk",
+      "bullish": 0,
+      "bearish": 17,
+      "mentions": 17
+    },
+    {
+      "symbol": "SMCB.JK",
+      "company_name": "PT Solusi Bangun Indonesia Tbk",
+      "bullish": 12,
+      "bearish": 5,
+      "mentions": 17
+    },
+    {
+      "symbol": "TKIM.JK",
+      "company_name": "Pabrik Kertas Tjiwi Kimia Tbk",
+      "bullish": 11,
+      "bearish": 6,
+      "mentions": 17
+    },
+    {
+      "symbol": "BACH.JK",
+      "company_name": "PT Bach Multi Global Tbk",
+      "bullish": 13,
+      "bearish": 3,
+      "mentions": 16
+    },
+    {
+      "symbol": "BELI.JK",
+      "company_name": "PT Global Digital Niaga Tbk",
+      "bullish": 12,
+      "bearish": 4,
+      "mentions": 16
+    },
+    {
+      "symbol": "INAI.JK",
+      "company_name": "Indal Aluminium Industry Tbk",
+      "bullish": 15,
+      "bearish": 1,
+      "mentions": 16
+    },
+    {
+      "symbol": "PIPA.JK",
+      "company_name": "PT Multi Makmur Lemindo Tbk",
+      "bullish": 11,
+      "bearish": 5,
+      "mentions": 16
+    },
+    {
+      "symbol": "RANS.JK",
+      "company_name": "PT Rans Entertainmen Indonesia Tbk",
+      "bullish": 8,
+      "bearish": 8,
+      "mentions": 16
+    },
+    {
+      "symbol": "TMAS.JK",
+      "company_name": "PT Temas Tbk",
+      "bullish": 12,
+      "bearish": 4,
+      "mentions": 16
+    },
+    {
+      "symbol": "BACA.JK",
+      "company_name": "PT Bank Capital Indonesia Tbk",
+      "bullish": 12,
+      "bearish": 3,
+      "mentions": 15
+    },
+    {
+      "symbol": "BBYB.JK",
+      "company_name": "PT Bank Neo Commerce Tbk.",
+      "bullish": 11,
+      "bearish": 4,
+      "mentions": 15
+    },
+    {
+      "symbol": "BJBR.JK",
+      "company_name": "Bank Pembangunan Daerah Jawa Barat dan Banten Tbk",
+      "bullish": 11,
+      "bearish": 4,
+      "mentions": 15
+    },
+    {
+      "symbol": "BLOG.JK",
+      "company_name": "PT Trimitra Trans Persada Tbk",
+      "bullish": 14,
+      "bearish": 1,
+      "mentions": 15
+    },
+    {
+      "symbol": "BTEL.JK",
+      "company_name": "Bakrie Telecom Tbk",
+      "bullish": 3,
+      "bearish": 12,
+      "mentions": 15
+    }
+  ],
+  "by_symbol": {
+    "TPIA.JK": {
+      "bullish": 158,
+      "bearish": 118
+    },
+    "INRU.JK": {
+      "bullish": 0,
+      "bearish": 13
+    },
+    "LAPD.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "UVCR.JK": {
+      "bullish": 19,
+      "bearish": 1
+    },
+    "INET.JK": {
+      "bullish": 27,
+      "bearish": 3
+    },
+    "BBCA.JK": {
+      "bullish": 389,
+      "bearish": 208
+    },
+    "BYAN.JK": {
+      "bullish": 47,
+      "bearish": 26
+    },
+    "BBRI.JK": {
+      "bullish": 334,
+      "bearish": 170
+    },
+    "DSSA.JK": {
+      "bullish": 95,
+      "bearish": 107
+    },
+    "BBNI.JK": {
+      "bullish": 186,
+      "bearish": 85
+    },
+    "BUMI.JK": {
+      "bullish": 202,
+      "bearish": 90
+    },
+    "BRPT.JK": {
+      "bullish": 77,
+      "bearish": 41
+    },
+    "BMRI.JK": {
+      "bullish": 371,
+      "bearish": 151
+    },
+    "BREN.JK": {
+      "bullish": 63,
+      "bearish": 69
+    },
+    "VKTR.JK": {
+      "bullish": 45,
+      "bearish": 8
+    },
+    "BRMS.JK": {
+      "bullish": 45,
+      "bearish": 13
+    },
+    "KLBF.JK": {
+      "bullish": 41,
+      "bearish": 27
+    },
+    "EPMT.JK": {
+      "bullish": 2,
+      "bearish": 3
+    },
+    "JARR.JK": {
+      "bullish": 22,
+      "bearish": 8
+    },
+    "IPAC.JK": {
+      "bullish": 2,
+      "bearish": 2
+    },
+    "PANS.JK": {
+      "bullish": 48,
+      "bearish": 13
+    },
+    "PTBA.JK": {
+      "bullish": 80,
+      "bearish": 21
+    },
+    "MORA.JK": {
+      "bullish": 19,
+      "bearish": 7
+    },
+    "CUAN.JK": {
+      "bullish": 63,
+      "bearish": 64
+    },
+    "ANTM.JK": {
+      "bullish": 174,
+      "bearish": 97
+    },
+    "AADI.JK": {
+      "bullish": 72,
+      "bearish": 37
+    },
+    "BRIS.JK": {
+      "bullish": 115,
+      "bearish": 18
+    },
+    "SUPA.JK": {
+      "bullish": 22,
+      "bearish": 6
+    },
+    "SAME.JK": {
+      "bullish": 9,
+      "bearish": 3
+    },
+    "JECX.JK": {
+      "bullish": 10,
+      "bearish": 1
+    },
+    "PRDA.JK": {
+      "bullish": 23,
+      "bearish": 2
+    },
+    "YULE.JK": {
+      "bullish": 149,
+      "bearish": 49
+    },
+    "EMMI.JK": {
+      "bullish": 7,
+      "bearish": 2
+    },
+    "DILD.JK": {
+      "bullish": 6,
+      "bearish": 9
+    },
+    "SRTG.JK": {
+      "bullish": 20,
+      "bearish": 9
+    },
+    "GPRA.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "COIN.JK": {
+      "bullish": 4,
+      "bearish": 5
+    },
+    "EMAS.JK": {
+      "bullish": 93,
+      "bearish": 28
+    },
+    "BNII.JK": {
+      "bullish": 39,
+      "bearish": 11
+    },
+    "ENRG.JK": {
+      "bullish": 44,
+      "bearish": 13
+    },
+    "SINI.JK": {
+      "bullish": 48,
+      "bearish": 19
+    },
+    "TRIM.JK": {
+      "bullish": 17,
+      "bearish": 9
+    },
+    "ASBI.JK": {
+      "bullish": 2,
+      "bearish": 7
+    },
+    "ACES.JK": {
+      "bullish": 33,
+      "bearish": 2
+    },
+    "PTPP.JK": {
+      "bullish": 8,
+      "bearish": 7
+    },
+    "MSJA.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "MSIE.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "SAPX.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "ACST.JK": {
+      "bullish": 0,
+      "bearish": 3
+    },
+    "MKNT.JK": {
+      "bullish": 4,
+      "bearish": 9
+    },
+    "RANS.JK": {
+      "bullish": 8,
+      "bearish": 8
+    },
+    "RAJA.JK": {
+      "bullish": 48,
+      "bearish": 12
+    },
+    "MGLV.JK": {
+      "bullish": 15,
+      "bearish": 3
+    },
+    "HRTA.JK": {
+      "bullish": 68,
+      "bearish": 13
+    },
+    "ASII.JK": {
+      "bullish": 143,
+      "bearish": 62
+    },
+    "SGER.JK": {
+      "bullish": 6,
+      "bearish": 1
+    },
+    "SMGA.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "JSKY.JK": {
+      "bullish": 8,
+      "bearish": 2
+    },
+    "ARTO.JK": {
+      "bullish": 24,
+      "bearish": 40
+    },
+    "UNTR.JK": {
+      "bullish": 54,
+      "bearish": 40
+    },
+    "RATU.JK": {
+      "bullish": 50,
+      "bearish": 48
+    },
+    "LIFE.JK": {
+      "bullish": 7,
+      "bearish": 4
+    },
+    "DKFT.JK": {
+      "bullish": 12,
+      "bearish": 0
+    },
+    "SIDO.JK": {
+      "bullish": 11,
+      "bearish": 21
+    },
+    "MITI.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "GGRM.JK": {
+      "bullish": 64,
+      "bearish": 5
+    },
+    "TINS.JK": {
+      "bullish": 138,
+      "bearish": 27
+    },
+    "INCO.JK": {
+      "bullish": 108,
+      "bearish": 21
+    },
+    "BFIN.JK": {
+      "bullish": 50,
+      "bearish": 7
+    },
+    "MIKA.JK": {
+      "bullish": 20,
+      "bearish": 8
+    },
+    "BBTN.JK": {
+      "bullish": 146,
+      "bearish": 27
+    },
+    "MAPI.JK": {
+      "bullish": 59,
+      "bearish": 20
+    },
+    "BUKA.JK": {
+      "bullish": 19,
+      "bearish": 47
+    },
+    "ARNA.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "SQMI.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "NSSS.JK": {
+      "bullish": 8,
+      "bearish": 6
+    },
+    "AMMN.JK": {
+      "bullish": 100,
+      "bearish": 86
+    },
+    "ARCI.JK": {
+      "bullish": 39,
+      "bearish": 11
+    },
+    "PSAB.JK": {
+      "bullish": 34,
+      "bearish": 8
+    },
+    "BBKP.JK": {
+      "bullish": 46,
+      "bearish": 19
+    },
+    "CSMI.JK": {
+      "bullish": 4,
+      "bearish": 2
+    },
+    "UANG.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "AUTO.JK": {
+      "bullish": 24,
+      "bearish": 1
+    },
+    "BTPN.JK": {
+      "bullish": 41,
+      "bearish": 11
+    },
+    "PTRO.JK": {
+      "bullish": 71,
+      "bearish": 29
+    },
+    "GRPH.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "ERAA.JK": {
+      "bullish": 54,
+      "bearish": 2
+    },
+    "SSIA.JK": {
+      "bullish": 36,
+      "bearish": 8
+    },
+    "JSMR.JK": {
+      "bullish": 49,
+      "bearish": 10
+    },
+    "BMAS.JK": {
+      "bullish": 6,
+      "bearish": 13
+    },
+    "ADHI.JK": {
+      "bullish": 38,
+      "bearish": 51
+    },
+    "WTON.JK": {
+      "bullish": 10,
+      "bearish": 2
+    },
+    "MEDS.JK": {
+      "bullish": 6,
+      "bearish": 3
+    },
+    "UDNG.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "LUCY.JK": {
+      "bullish": 6,
+      "bearish": 4
+    },
+    "MEDC.JK": {
+      "bullish": 40,
+      "bearish": 15
+    },
+    "SMSM.JK": {
+      "bullish": 12,
+      "bearish": 3
+    },
+    "MDLA.JK": {
+      "bullish": 5,
+      "bearish": 2
+    },
+    "INPP.JK": {
+      "bullish": 14,
+      "bearish": 0
+    },
+    "RGAS.JK": {
+      "bullish": 4,
+      "bearish": 5
+    },
+    "ITMG.JK": {
+      "bullish": 37,
+      "bearish": 18
+    },
+    "WEGE.JK": {
+      "bullish": 22,
+      "bearish": 37
+    },
+    "MCOL.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "AMOR.JK": {
+      "bullish": 5,
+      "bearish": 1
+    },
+    "MBMA.JK": {
+      "bullish": 68,
+      "bearish": 19
+    },
+    "LSIP.JK": {
+      "bullish": 30,
+      "bearish": 6
+    },
+    "BLOG.JK": {
+      "bullish": 14,
+      "bearish": 1
+    },
+    "MDKA.JK": {
+      "bullish": 105,
+      "bearish": 39
+    },
+    "RELI.JK": {
+      "bullish": 37,
+      "bearish": 2
+    },
+    "HDFA.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "PIPA.JK": {
+      "bullish": 11,
+      "bearish": 5
+    },
+    "SMGR.JK": {
+      "bullish": 67,
+      "bearish": 47
+    },
+    "TRIS.JK": {
+      "bullish": 15,
+      "bearish": 0
+    },
+    "KBAG.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "WIFI.JK": {
+      "bullish": 52,
+      "bearish": 11
+    },
+    "TLKM.JK": {
+      "bullish": 207,
+      "bearish": 88
+    },
+    "TOWR.JK": {
+      "bullish": 52,
+      "bearish": 12
+    },
+    "POLA.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "SHID.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "SOHO.JK": {
+      "bullish": 9,
+      "bearish": 2
+    },
+    "VISI.JK": {
+      "bullish": 23,
+      "bearish": 4
+    },
+    "AKRA.JK": {
+      "bullish": 45,
+      "bearish": 7
+    },
+    "WIKA.JK": {
+      "bullish": 7,
+      "bearish": 16
+    },
+    "LTLS.JK": {
+      "bullish": 7,
+      "bearish": 0
+    },
+    "GOTO.JK": {
+      "bullish": 116,
+      "bearish": 171
+    },
+    "DKHH.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "KAEF.JK": {
+      "bullish": 29,
+      "bearish": 6
+    },
+    "HALO.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "IRRA.JK": {
+      "bullish": 4,
+      "bearish": 2
+    },
+    "DMAS.JK": {
+      "bullish": 28,
+      "bearish": 4
+    },
+    "MPXL.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "FLMC.JK": {
+      "bullish": 0,
+      "bearish": 3
+    },
+    "IMPC.JK": {
+      "bullish": 20,
+      "bearish": 3
+    },
+    "KOTA.JK": {
+      "bullish": 19,
+      "bearish": 4
+    },
+    "PACK.JK": {
+      "bullish": 15,
+      "bearish": 9
+    },
+    "SOCI.JK": {
+      "bullish": 7,
+      "bearish": 0
+    },
+    "ADCP.JK": {
+      "bullish": 4,
+      "bearish": 16
+    },
+    "ISAT.JK": {
+      "bullish": 79,
+      "bearish": 19
+    },
+    "IATA.JK": {
+      "bullish": 7,
+      "bearish": 3
+    },
+    "BTPS.JK": {
+      "bullish": 29,
+      "bearish": 2
+    },
+    "NRCA.JK": {
+      "bullish": 12,
+      "bearish": 2
+    },
+    "ELSA.JK": {
+      "bullish": 50,
+      "bearish": 4
+    },
+    "PGEO.JK": {
+      "bullish": 99,
+      "bearish": 15
+    },
+    "HATM.JK": {
+      "bullish": 8,
+      "bearish": 13
+    },
+    "EMTK.JK": {
+      "bullish": 19,
+      "bearish": 9
+    },
+    "NZIA.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "ERAL.JK": {
+      "bullish": 13,
+      "bearish": 0
+    },
+    "INDF.JK": {
+      "bullish": 25,
+      "bearish": 10
+    },
+    "OMED.JK": {
+      "bullish": 19,
+      "bearish": 2
+    },
+    "BNGA.JK": {
+      "bullish": 38,
+      "bearish": 15
+    },
+    "BNLI.JK": {
+      "bullish": 16,
+      "bearish": 16
+    },
+    "GIAA.JK": {
+      "bullish": 31,
+      "bearish": 11
+    },
+    "CANI.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "LPGI.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "TOBA.JK": {
+      "bullish": 30,
+      "bearish": 2
+    },
+    "HEAL.JK": {
+      "bullish": 23,
+      "bearish": 41
+    },
+    "SILO.JK": {
+      "bullish": 23,
+      "bearish": 6
+    },
+    "BMHS.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "PEHA.JK": {
+      "bullish": 18,
+      "bearish": 1
+    },
+    "OBAT.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "HGII.JK": {
+      "bullish": 11,
+      "bearish": 2
+    },
+    "KEEN.JK": {
+      "bullish": 5,
+      "bearish": 2
+    },
+    "PPGL.JK": {
+      "bullish": 11,
+      "bearish": 2
+    },
+    "NATO.JK": {
+      "bullish": 2,
+      "bearish": 4
+    },
+    "AALI.JK": {
+      "bullish": 30,
+      "bearish": 16
+    },
+    "TAPG.JK": {
+      "bullish": 46,
+      "bearish": 22
+    },
+    "DSNG.JK": {
+      "bullish": 25,
+      "bearish": 10
+    },
+    "BEST.JK": {
+      "bullish": 10,
+      "bearish": 1
+    },
+    "KIJA.JK": {
+      "bullish": 20,
+      "bearish": 8
+    },
+    "EPAC.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "GRPM.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "PMUI.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "BULL.JK": {
+      "bullish": 21,
+      "bearish": 3
+    },
+    "MAPA.JK": {
+      "bullish": 36,
+      "bearish": 1
+    },
+    "CPIN.JK": {
+      "bullish": 75,
+      "bearish": 96
+    },
+    "SRIL.JK": {
+      "bullish": 0,
+      "bearish": 3
+    },
+    "CBRE.JK": {
+      "bullish": 15,
+      "bearish": 18
+    },
+    "SMAR.JK": {
+      "bullish": 12,
+      "bearish": 10
+    },
+    "MMIX.JK": {
+      "bullish": 10,
+      "bearish": 3
+    },
+    "CMRY.JK": {
+      "bullish": 32,
+      "bearish": 3
+    },
+    "AMRT.JK": {
+      "bullish": 67,
+      "bearish": 30
+    },
+    "SSMS.JK": {
+      "bullish": 8,
+      "bearish": 12
+    },
+    "INDY.JK": {
+      "bullish": 66,
+      "bearish": 24
+    },
+    "ADRO.JK": {
+      "bullish": 82,
+      "bearish": 30
+    },
+    "UNVR.JK": {
+      "bullish": 72,
+      "bearish": 9
+    },
+    "GPSO.JK": {
+      "bullish": 18,
+      "bearish": 2
+    },
+    "BWPT.JK": {
+      "bullish": 15,
+      "bearish": 15
+    },
+    "JPFA.JK": {
+      "bullish": 49,
+      "bearish": 13
+    },
+    "DOOH.JK": {
+      "bullish": 6,
+      "bearish": 1
+    },
+    "GTSI.JK": {
+      "bullish": 35,
+      "bearish": 8
+    },
+    "HRUM.JK": {
+      "bullish": 26,
+      "bearish": 7
+    },
+    "ADMR.JK": {
+      "bullish": 38,
+      "bearish": 14
+    },
+    "CMPP.JK": {
+      "bullish": 3,
+      "bearish": 6
+    },
+    "FUJI.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "PGAS.JK": {
+      "bullish": 57,
+      "bearish": 19
+    },
+    "BSSR.JK": {
+      "bullish": 17,
+      "bearish": 1
+    },
+    "ASLI.JK": {
+      "bullish": 2,
+      "bearish": 2
+    },
+    "WSKT.JK": {
+      "bullish": 17,
+      "bearish": 25
+    },
+    "HMSP.JK": {
+      "bullish": 35,
+      "bearish": 9
+    },
+    "WIIM.JK": {
+      "bullish": 18,
+      "bearish": 1
+    },
+    "ITIC.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "BNBR.JK": {
+      "bullish": 50,
+      "bearish": 21
+    },
+    "TRIN.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "WINR.JK": {
+      "bullish": 9,
+      "bearish": 0
+    },
+    "DCII.JK": {
+      "bullish": 22,
+      "bearish": 11
+    },
+    "NISP.JK": {
+      "bullish": 31,
+      "bearish": 3
+    },
+    "BBHI.JK": {
+      "bullish": 19,
+      "bearish": 15
+    },
+    "SUNI.JK": {
+      "bullish": 9,
+      "bearish": 0
+    },
+    "MDLN.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "GULA.JK": {
+      "bullish": 22,
+      "bearish": 1
+    },
+    "FILM.JK": {
+      "bullish": 49,
+      "bearish": 54
+    },
+    "CDIA.JK": {
+      "bullish": 31,
+      "bearish": 17
+    },
+    "EDGE.JK": {
+      "bullish": 1,
+      "bearish": 3
+    },
+    "INAI.JK": {
+      "bullish": 15,
+      "bearish": 1
+    },
+    "EXCL.JK": {
+      "bullish": 57,
+      "bearish": 10
+    },
+    "BPTR.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "ICBP.JK": {
+      "bullish": 66,
+      "bearish": 32
+    },
+    "BUVA.JK": {
+      "bullish": 17,
+      "bearish": 11
+    },
+    "MCOR.JK": {
+      "bullish": 7,
+      "bearish": 0
+    },
+    "AGRS.JK": {
+      "bullish": 4,
+      "bearish": 1
+    },
+    "PTSP.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "NICK.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "TRUK.JK": {
+      "bullish": 2,
+      "bearish": 3
+    },
+    "INKP.JK": {
+      "bullish": 27,
+      "bearish": 16
+    },
+    "ESSA.JK": {
+      "bullish": 38,
+      "bearish": 40
+    },
+    "NCKL.JK": {
+      "bullish": 56,
+      "bearish": 20
+    },
+    "SMDR.JK": {
+      "bullish": 24,
+      "bearish": 5
+    },
+    "SOFA.JK": {
+      "bullish": 6,
+      "bearish": 2
+    },
+    "SMMA.JK": {
+      "bullish": 9,
+      "bearish": 3
+    },
+    "SMRA.JK": {
+      "bullish": 29,
+      "bearish": 16
+    },
+    "PANI.JK": {
+      "bullish": 50,
+      "bearish": 15
+    },
+    "CYBR.JK": {
+      "bullish": 11,
+      "bearish": 2
+    },
+    "GHON.JK": {
+      "bullish": 19,
+      "bearish": 11
+    },
+    "DEWA.JK": {
+      "bullish": 56,
+      "bearish": 32
+    },
+    "AMAR.JK": {
+      "bullish": 21,
+      "bearish": 2
+    },
+    "BANK.JK": {
+      "bullish": 17,
+      "bearish": 11
+    },
+    "BBSI.JK": {
+      "bullish": 12,
+      "bearish": 6
+    },
+    "AGRO.JK": {
+      "bullish": 14,
+      "bearish": 3
+    },
+    "BBYB.JK": {
+      "bullish": 11,
+      "bearish": 4
+    },
+    "ALKA.JK": {
+      "bullish": 4,
+      "bearish": 1
+    },
+    "SPTO.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "GTBO.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "BTEL.JK": {
+      "bullish": 3,
+      "bearish": 12
+    },
+    "BELI.JK": {
+      "bullish": 12,
+      "bearish": 4
+    },
+    "KKES.JK": {
+      "bullish": 1,
+      "bearish": 2
+    },
+    "BSIM.JK": {
+      "bullish": 4,
+      "bearish": 2
+    },
+    "SIMP.JK": {
+      "bullish": 17,
+      "bearish": 10
+    },
+    "MYOH.JK": {
+      "bullish": 9,
+      "bearish": 2
+    },
+    "APEX.JK": {
+      "bullish": 9,
+      "bearish": 1
+    },
+    "AGAR.JK": {
+      "bullish": 10,
+      "bearish": 2
+    },
+    "JGLE.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "KETR.JK": {
+      "bullish": 13,
+      "bearish": 4
+    },
+    "BIPP.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "VICO.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "HOPE.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "PWON.JK": {
+      "bullish": 24,
+      "bearish": 15
+    },
+    "ISSP.JK": {
+      "bullish": 16,
+      "bearish": 2
+    },
+    "CMNT.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "TUGU.JK": {
+      "bullish": 32,
+      "bearish": 7
+    },
+    "PGJO.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "DEWI.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "HADE.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "DYAN.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "UCID.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "IBST.JK": {
+      "bullish": 9,
+      "bearish": 11
+    },
+    "SAFE.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "BGTG.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "PORT.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "MKPI.JK": {
+      "bullish": 9,
+      "bearish": 1
+    },
+    "SMBR.JK": {
+      "bullish": 4,
+      "bearish": 1
+    },
+    "RLCO.JK": {
+      "bullish": 9,
+      "bearish": 2
+    },
+    "AVIA.JK": {
+      "bullish": 16,
+      "bearish": 1
+    },
+    "MTEL.JK": {
+      "bullish": 65,
+      "bearish": 7
+    },
+    "TRAM.JK": {
+      "bullish": 0,
+      "bearish": 6
+    },
+    "REAL.JK": {
+      "bullish": 9,
+      "bearish": 5
+    },
+    "IPPE.JK": {
+      "bullish": 0,
+      "bearish": 4
+    },
+    "SBAT.JK": {
+      "bullish": 0,
+      "bearish": 4
+    },
+    "PURE.JK": {
+      "bullish": 0,
+      "bearish": 4
+    },
+    "KAYU.JK": {
+      "bullish": 0,
+      "bearish": 4
+    },
+    "POSA.JK": {
+      "bullish": 1,
+      "bearish": 5
+    },
+    "IBOS.JK": {
+      "bullish": 0,
+      "bearish": 4
+    },
+    "ROTI.JK": {
+      "bullish": 1,
+      "bearish": 6
+    },
+    "NUSA.JK": {
+      "bullish": 0,
+      "bearish": 4
+    },
+    "TGUK.JK": {
+      "bullish": 6,
+      "bearish": 6
+    },
+    "PMMP.JK": {
+      "bullish": 0,
+      "bearish": 17
+    },
+    "FIMP.JK": {
+      "bullish": 0,
+      "bearish": 4
+    },
+    "HOTL.JK": {
+      "bullish": 1,
+      "bearish": 4
+    },
+    "IFSH.JK": {
+      "bullish": 9,
+      "bearish": 5
+    },
+    "SGRO.JK": {
+      "bullish": 5,
+      "bearish": 8
+    },
+    "SRAJ.JK": {
+      "bullish": 9,
+      "bearish": 2
+    },
+    "KRAS.JK": {
+      "bullish": 32,
+      "bearish": 11
+    },
+    "WBSA.JK": {
+      "bullish": 13,
+      "bearish": 7
+    },
+    "TBIG.JK": {
+      "bullish": 31,
+      "bearish": 5
+    },
+    "BIPI.JK": {
+      "bullish": 18,
+      "bearish": 5
+    },
+    "KAQI.JK": {
+      "bullish": 10,
+      "bearish": 0
+    },
+    "AWAN.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "SRSN.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "FORU.JK": {
+      "bullish": 21,
+      "bearish": 4
+    },
+    "KICI.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "LEAD.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "OILS.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "PALM.JK": {
+      "bullish": 7,
+      "bearish": 4
+    },
+    "MPMX.JK": {
+      "bullish": 11,
+      "bearish": 4
+    },
+    "AGII.JK": {
+      "bullish": 11,
+      "bearish": 3
+    },
+    "BDMN.JK": {
+      "bullish": 27,
+      "bearish": 8
+    },
+    "ADMF.JK": {
+      "bullish": 11,
+      "bearish": 2
+    },
+    "YUPI.JK": {
+      "bullish": 13,
+      "bearish": 1
+    },
+    "KPIG.JK": {
+      "bullish": 7,
+      "bearish": 34
+    },
+    "TCPI.JK": {
+      "bullish": 13,
+      "bearish": 41
+    },
+    "BSDE.JK": {
+      "bullish": 17,
+      "bearish": 30
+    },
+    "BJBR.JK": {
+      "bullish": 11,
+      "bearish": 4
+    },
+    "LPKR.JK": {
+      "bullish": 9,
+      "bearish": 5
+    },
+    "LPPF.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "MNCN.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "PNLF.JK": {
+      "bullish": 3,
+      "bearish": 3
+    },
+    "SCMA.JK": {
+      "bullish": 19,
+      "bearish": 4
+    },
+    "BAJA.JK": {
+      "bullish": 5,
+      "bearish": 2
+    },
+    "MUTU.JK": {
+      "bullish": 14,
+      "bearish": 0
+    },
+    "CBDK.JK": {
+      "bullish": 43,
+      "bearish": 5
+    },
+    "CTRA.JK": {
+      "bullish": 25,
+      "bearish": 24
+    },
+    "MYOR.JK": {
+      "bullish": 32,
+      "bearish": 8
+    },
+    "STTP.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "PYFA.JK": {
+      "bullish": 9,
+      "bearish": 4
+    },
+    "CRAB.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "MBAP.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "BACH.JK": {
+      "bullish": 13,
+      "bearish": 3
+    },
+    "CASH.JK": {
+      "bullish": 1,
+      "bearish": 3
+    },
+    "PART.JK": {
+      "bullish": 6,
+      "bearish": 0
+    },
+    "APII.JK": {
+      "bullish": 3,
+      "bearish": 6
+    },
+    "FAST.JK": {
+      "bullish": 16,
+      "bearish": 3
+    },
+    "BEKS.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "ELTY.JK": {
+      "bullish": 1,
+      "bearish": 3
+    },
+    "WGSH.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "CBUT.JK": {
+      "bullish": 11,
+      "bearish": 0
+    },
+    "INAF.JK": {
+      "bullish": 8,
+      "bearish": 12
+    },
+    "ELIT.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "SDRA.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "KRYA.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "FUTR.JK": {
+      "bullish": 9,
+      "bearish": 2
+    },
+    "BIRD.JK": {
+      "bullish": 20,
+      "bearish": 8
+    },
+    "NICE.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "GRIA.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "GEMS.JK": {
+      "bullish": 10,
+      "bearish": 5
+    },
+    "COWL.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "INTP.JK": {
+      "bullish": 34,
+      "bearish": 1
+    },
+    "ARKO.JK": {
+      "bullish": 9,
+      "bearish": 2
+    },
+    "MEJA.JK": {
+      "bullish": 17,
+      "bearish": 1
+    },
+    "SMIL.JK": {
+      "bullish": 8,
+      "bearish": 1
+    },
+    "WSBP.JK": {
+      "bullish": 7,
+      "bearish": 6
+    },
+    "SWID.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "BPII.JK": {
+      "bullish": 7,
+      "bearish": 2
+    },
+    "INTA.JK": {
+      "bullish": 2,
+      "bearish": 2
+    },
+    "ASSA.JK": {
+      "bullish": 11,
+      "bearish": 2
+    },
+    "CARS.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "MAIN.JK": {
+      "bullish": 19,
+      "bearish": 2
+    },
+    "PBID.JK": {
+      "bullish": 1,
+      "bearish": 2
+    },
+    "BEEF.JK": {
+      "bullish": 8,
+      "bearish": 2
+    },
+    "CLEO.JK": {
+      "bullish": 14,
+      "bearish": 0
+    },
+    "MREI.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "PICO.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "TSPC.JK": {
+      "bullish": 8,
+      "bearish": 1
+    },
+    "BAIK.JK": {
+      "bullish": 6,
+      "bearish": 3
+    },
+    "CASA.JK": {
+      "bullish": 7,
+      "bearish": 1
+    },
+    "FPNI.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "FORE.JK": {
+      "bullish": 30,
+      "bearish": 2
+    },
+    "AHAP.JK": {
+      "bullish": 4,
+      "bearish": 1
+    },
+    "GJTL.JK": {
+      "bullish": 25,
+      "bearish": 0
+    },
+    "NOBU.JK": {
+      "bullish": 7,
+      "bearish": 1
+    },
+    "GEMA.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "PSSI.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "MAHA.JK": {
+      "bullish": 5,
+      "bearish": 1
+    },
+    "JTPE.JK": {
+      "bullish": 11,
+      "bearish": 2
+    },
+    "CHEK.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "KOBX.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "BCIC.JK": {
+      "bullish": 2,
+      "bearish": 3
+    },
+    "BNBA.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "BABP.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "PNBS.JK": {
+      "bullish": 11,
+      "bearish": 1
+    },
+    "BKSW.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "DNAR.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "BVIC.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "INPS.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "TEBE.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "SUPR.JK": {
+      "bullish": 10,
+      "bearish": 2
+    },
+    "BACA.JK": {
+      "bullish": 12,
+      "bearish": 3
+    },
+    "CASS.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "CFIN.JK": {
+      "bullish": 5,
+      "bearish": 2
+    },
+    "WOOD.JK": {
+      "bullish": 1,
+      "bearish": 2
+    },
+    "JKON.JK": {
+      "bullish": 4,
+      "bearish": 1
+    },
+    "MSTI.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "MLPL.JK": {
+      "bullish": 8,
+      "bearish": 5
+    },
+    "PNIN.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "RALS.JK": {
+      "bullish": 2,
+      "bearish": 4
+    },
+    "TPMA.JK": {
+      "bullish": 4,
+      "bearish": 3
+    },
+    "VRNA.JK": {
+      "bullish": 5,
+      "bearish": 1
+    },
+    "BCAP.JK": {
+      "bullish": 2,
+      "bearish": 5
+    },
+    "NAYZ.JK": {
+      "bullish": 4,
+      "bearish": 2
+    },
+    "PTPW.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "HUMI.JK": {
+      "bullish": 6,
+      "bearish": 5
+    },
+    "HITS.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "CNMA.JK": {
+      "bullish": 6,
+      "bearish": 14
+    },
+    "LINK.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "MTDL.JK": {
+      "bullish": 10,
+      "bearish": 0
+    },
+    "PPRE.JK": {
+      "bullish": 11,
+      "bearish": 3
+    },
+    "IRSX.JK": {
+      "bullish": 10,
+      "bearish": 4
+    },
+    "GMFI.JK": {
+      "bullish": 16,
+      "bearish": 3
+    },
+    "MYTX.JK": {
+      "bullish": 6,
+      "bearish": 2
+    },
+    "RISE.JK": {
+      "bullish": 13,
+      "bearish": 2
+    },
+    "ZONE.JK": {
+      "bullish": 6,
+      "bearish": 0
+    },
+    "PEVE.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "BLES.JK": {
+      "bullish": 13,
+      "bearish": 0
+    },
+    "BIKE.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "MENN.JK": {
+      "bullish": 1,
+      "bearish": 3
+    },
+    "META.JK": {
+      "bullish": 10,
+      "bearish": 1
+    },
+    "MIDI.JK": {
+      "bullish": 25,
+      "bearish": 6
+    },
+    "HERO.JK": {
+      "bullish": 2,
+      "bearish": 2
+    },
+    "MDIY.JK": {
+      "bullish": 24,
+      "bearish": 0
+    },
+    "PGUN.JK": {
+      "bullish": 15,
+      "bearish": 8
+    },
+    "IPCM.JK": {
+      "bullish": 11,
+      "bearish": 1
+    },
+    "MDIA.JK": {
+      "bullish": 4,
+      "bearish": 3
+    },
+    "KOKA.JK": {
+      "bullish": 2,
+      "bearish": 3
+    },
+    "MPRO.JK": {
+      "bullish": 7,
+      "bearish": 4
+    },
+    "IKBI.JK": {
+      "bullish": 5,
+      "bearish": 1
+    },
+    "CSIS.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "AISA.JK": {
+      "bullish": 2,
+      "bearish": 2
+    },
+    "RUNS.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "GOOD.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "BJTM.JK": {
+      "bullish": 6,
+      "bearish": 1
+    },
+    "YPAS.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "EKAD.JK": {
+      "bullish": 8,
+      "bearish": 0
+    },
+    "IOTF.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "TMPO.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "SLIS.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "GMTD.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "LPCK.JK": {
+      "bullish": 5,
+      "bearish": 3
+    },
+    "EURO.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "BRNA.JK": {
+      "bullish": 5,
+      "bearish": 5
+    },
+    "DAAZ.JK": {
+      "bullish": 6,
+      "bearish": 20
+    },
+    "WEHA.JK": {
+      "bullish": 1,
+      "bearish": 3
+    },
+    "GZCO.JK": {
+      "bullish": 4,
+      "bearish": 1
+    },
+    "FREN.JK": {
+      "bullish": 6,
+      "bearish": 5
+    },
+    "UNSP.JK": {
+      "bullish": 2,
+      "bearish": 7
+    },
+    "DOID.JK": {
+      "bullish": 17,
+      "bearish": 12
+    },
+    "TMAS.JK": {
+      "bullish": 12,
+      "bearish": 4
+    },
+    "PRDL.JK": {
+      "bullish": 5,
+      "bearish": 1
+    },
+    "TOTL.JK": {
+      "bullish": 6,
+      "bearish": 3
+    },
+    "COAL.JK": {
+      "bullish": 0,
+      "bearish": 8
+    },
+    "JMAS.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "MBSS.JK": {
+      "bullish": 4,
+      "bearish": 4
+    },
+    "TRUE.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "STAR.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "LABS.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "WIRG.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "SULI.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "BHIT.JK": {
+      "bullish": 10,
+      "bearish": 8
+    },
+    "BUDI.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "BSML.JK": {
+      "bullish": 4,
+      "bearish": 1
+    },
+    "MINA.JK": {
+      "bullish": 7,
+      "bearish": 2
+    },
+    "WMPP.JK": {
+      "bullish": 10,
+      "bearish": 1
+    },
+    "COCO.JK": {
+      "bullish": 21,
+      "bearish": 4
+    },
+    "KREN.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "ULTJ.JK": {
+      "bullish": 6,
+      "bearish": 0
+    },
+    "NETV.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "APLN.JK": {
+      "bullish": 7,
+      "bearish": 3
+    },
+    "RMKE.JK": {
+      "bullish": 20,
+      "bearish": 3
+    },
+    "ZINC.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "EAST.JK": {
+      "bullish": 8,
+      "bearish": 0
+    },
+    "TKIM.JK": {
+      "bullish": 11,
+      "bearish": 6
+    },
+    "TRUS.JK": {
+      "bullish": 1,
+      "bearish": 2
+    },
+    "PZZA.JK": {
+      "bullish": 6,
+      "bearish": 1
+    },
+    "BELL.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "ABMM.JK": {
+      "bullish": 5,
+      "bearish": 1
+    },
+    "AYAM.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "SIPD.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "WMUU.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "OKAS.JK": {
+      "bullish": 6,
+      "bearish": 3
+    },
+    "HAJJ.JK": {
+      "bullish": 7,
+      "bearish": 3
+    },
+    "BMTR.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "PBRX.JK": {
+      "bullish": 1,
+      "bearish": 3
+    },
+    "CITA.JK": {
+      "bullish": 6,
+      "bearish": 2
+    },
+    "BKDP.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "MARK.JK": {
+      "bullish": 8,
+      "bearish": 0
+    },
+    "BKSL.JK": {
+      "bullish": 6,
+      "bearish": 3
+    },
+    "PANR.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "DIVA.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "GGRP.JK": {
+      "bullish": 6,
+      "bearish": 2
+    },
+    "MLIA.JK": {
+      "bullish": 2,
+      "bearish": 18
+    },
+    "LABA.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "MEGA.JK": {
+      "bullish": 9,
+      "bearish": 3
+    },
+    "JELI.JK": {
+      "bullish": 5,
+      "bearish": 2
+    },
+    "SOTS.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "MTLA.JK": {
+      "bullish": 9,
+      "bearish": 4
+    },
+    "ASRI.JK": {
+      "bullish": 8,
+      "bearish": 6
+    },
+    "NPGF.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "TAMA.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "WINS.JK": {
+      "bullish": 7,
+      "bearish": 1
+    },
+    "BPFI.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "ASMI.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "ELPI.JK": {
+      "bullish": 11,
+      "bearish": 0
+    },
+    "MAYA.JK": {
+      "bullish": 0,
+      "bearish": 4
+    },
+    "TIFA.JK": {
+      "bullish": 7,
+      "bearish": 0
+    },
+    "PMJS.JK": {
+      "bullish": 6,
+      "bearish": 1
+    },
+    "DGWG.JK": {
+      "bullish": 8,
+      "bearish": 1
+    },
+    "KKGI.JK": {
+      "bullish": 4,
+      "bearish": 1
+    },
+    "DRMA.JK": {
+      "bullish": 6,
+      "bearish": 0
+    },
+    "INPC.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "BOLA.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "WOMF.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "IMAS.JK": {
+      "bullish": 2,
+      "bearish": 5
+    },
+    "PNBN.JK": {
+      "bullish": 8,
+      "bearish": 4
+    },
+    "HAIS.JK": {
+      "bullish": 5,
+      "bearish": 2
+    },
+    "CHIP.JK": {
+      "bullish": 4,
+      "bearish": 2
+    },
+    "ASLC.JK": {
+      "bullish": 6,
+      "bearish": 2
+    },
+    "MSIN.JK": {
+      "bullish": 4,
+      "bearish": 9
+    },
+    "GOLF.JK": {
+      "bullish": 7,
+      "bearish": 1
+    },
+    "TLDN.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "ADMG.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "ALTO.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "ARKA.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "BEBS.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "BHAT.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "CNTX.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "STAA.JK": {
+      "bullish": 6,
+      "bearish": 1
+    },
+    "PADA.JK": {
+      "bullish": 7,
+      "bearish": 0
+    },
+    "KDTN.JK": {
+      "bullish": 7,
+      "bearish": 0
+    },
+    "RMKO.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "MPPA.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "MAPB.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "PADI.JK": {
+      "bullish": 2,
+      "bearish": 2
+    },
+    "OASA.JK": {
+      "bullish": 9,
+      "bearish": 4
+    },
+    "AMAN.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "PDPP.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "JAYA.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "TAXI.JK": {
+      "bullish": 6,
+      "bearish": 2
+    },
+    "ASGR.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "BSWD.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "PJAA.JK": {
+      "bullish": 2,
+      "bearish": 3
+    },
+    "AEGS.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "HYGN.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "MGNA.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "DWGL.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "ECII.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "MTWI.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "KOPI.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "MCAS.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "PRAY.JK": {
+      "bullish": 6,
+      "bearish": 0
+    },
+    "CGAS.JK": {
+      "bullish": 8,
+      "bearish": 0
+    },
+    "ROCK.JK": {
+      "bullish": 0,
+      "bearish": 3
+    },
+    "POLU.JK": {
+      "bullish": 1,
+      "bearish": 2
+    },
+    "DADA.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "BUKK.JK": {
+      "bullish": 4,
+      "bearish": 4
+    },
+    "IPCC.JK": {
+      "bullish": 12,
+      "bearish": 3
+    },
+    "ASPI.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "NTBK.JK": {
+      "bullish": 12,
+      "bearish": 0
+    },
+    "DNET.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "RSGK.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "CEKA.JK": {
+      "bullish": 5,
+      "bearish": 5
+    },
+    "GUNA.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "LFLO.JK": {
+      "bullish": 11,
+      "bearish": 0
+    },
+    "PSKT.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "KARW.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "SMCB.JK": {
+      "bullish": 12,
+      "bearish": 5
+    },
+    "ATIC.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "BINA.JK": {
+      "bullish": 5,
+      "bearish": 1
+    },
+    "POLL.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "ALMI.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "KBRI.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "HELI.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "BEER.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "DLTA.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "RUIS.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "PPRO.JK": {
+      "bullish": 2,
+      "bearish": 5
+    },
+    "BOLT.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "YOII.JK": {
+      "bullish": 4,
+      "bearish": 2
+    },
+    "ZATA.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "BBSS.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "PKPK.JK": {
+      "bullish": 6,
+      "bearish": 2
+    },
+    "BRAM.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "GDYR.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "MLPT.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "TBLA.JK": {
+      "bullish": 8,
+      "bearish": 1
+    },
+    "FASW.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "BAPA.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "BOBA.JK": {
+      "bullish": 4,
+      "bearish": 1
+    },
+    "SMRU.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "ARTI.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "SNLK.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "TRIO.JK": {
+      "bullish": 0,
+      "bearish": 3
+    },
+    "IKAI.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "PNGO.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "ANJT.JK": {
+      "bullish": 5,
+      "bearish": 2
+    },
+    "CLPI.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "ASDM.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "SCPI.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "DATA.JK": {
+      "bullish": 6,
+      "bearish": 1
+    },
+    "PEGE.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "SATU.JK": {
+      "bullish": 2,
+      "bearish": 2
+    },
+    "KINO.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "CTBN.JK": {
+      "bullish": 8,
+      "bearish": 0
+    },
+    "BOGA.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "MGRO.JK": {
+      "bullish": 1,
+      "bearish": 3
+    },
+    "ACRO.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "TCID.JK": {
+      "bullish": 4,
+      "bearish": 2
+    },
+    "VICI.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "AIMS.JK": {
+      "bullish": 1,
+      "bearish": 2
+    },
+    "BMSR.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "BBMD.JK": {
+      "bullish": 5,
+      "bearish": 2
+    },
+    "SKBM.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "CLAY.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "IDEA.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "LAJU.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "PBSA.JK": {
+      "bullish": 7,
+      "bearish": 0
+    },
+    "BRRC.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "MICE.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "ESIP.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "TRST.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "SCNP.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "SCCO.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "TOSK.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "JATI.JK": {
+      "bullish": 5,
+      "bearish": 1
+    },
+    "BATA.JK": {
+      "bullish": 0,
+      "bearish": 5
+    },
+    "DEPO.JK": {
+      "bullish": 8,
+      "bearish": 0
+    },
+    "FAPA.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "AMFG.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "MBTO.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "KBLI.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "JECC.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "ALDO.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "INDS.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "HDTX.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "NINE.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "SOUL.JK": {
+      "bullish": 1,
+      "bearish": 2
+    },
+    "TIRT.JK": {
+      "bullish": 0,
+      "bearish": 3
+    },
+    "ABBA.JK": {
+      "bullish": 0,
+      "bearish": 3
+    },
+    "CNKO.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "DIGI.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "FOOD.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "IBFN.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "KOIN.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "MARI.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "MDRN.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "MTFN.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "BIKA.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "GLOB.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "WICO.JK": {
+      "bullish": 2,
+      "bearish": 2
+    },
+    "BOSS.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "DEAL.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "ETWA.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "HKMU.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "OCAP.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "POLY.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "PTDU.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "SIMA.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "IMJS.JK": {
+      "bullish": 1,
+      "bearish": 2
+    },
+    "DUCK.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "LMPI.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "ITMA.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "MSKY.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "IPTV.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "INDX.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "CSAP.JK": {
+      "bullish": 6,
+      "bearish": 0
+    },
+    "CBPE.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "DPNS.JK": {
+      "bullish": 1,
+      "bearish": 2
+    },
+    "JRPT.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "DVLA.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "IDPR.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "DMND.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "BESS.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "NEST.JK": {
+      "bullish": 6,
+      "bearish": 0
+    },
+    "TELE.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "FITT.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "LRNA.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "ADES.JK": {
+      "bullish": 7,
+      "bearish": 0
+    },
+    "ENVY.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "DMMX.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "SAMF.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "SURE.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "RDTX.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "HOKI.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "DPUM.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "VERN.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "MKAP.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "TALF.JK": {
+      "bullish": 1,
+      "bearish": 2
+    },
+    "STRK.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "MHKI.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "GTRA.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "APIC.JK": {
+      "bullish": 1,
+      "bearish": 5
+    },
+    "ALII.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "SONA.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "BDKR.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "GLVA.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "MTMH.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "TBMS.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "BATR.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "ESTI.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "SPMA.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "WINE.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "MPIX.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "DOSS.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "PPRI.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "MLBI.JK": {
+      "bullish": 7,
+      "bearish": 0
+    },
+    "MKTR.JK": {
+      "bullish": 9,
+      "bearish": 0
+    },
+    "BOAT.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "ASHA.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "MOLI.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "GSMF.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "AMMS.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "PSAT.JK": {
+      "bullish": 1,
+      "bearish": 2
+    },
+    "MMLP.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "PLIN.JK": {
+      "bullish": 3,
+      "bearish": 3
+    },
+    "SOLA.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "PTSN.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "KBLM.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "BTEK.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "TOOL.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "ATAP.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "SBMA.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "IFII.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "AMIN.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "BALI.JK": {
+      "bullish": 6,
+      "bearish": 0
+    },
+    "HILL.JK": {
+      "bullish": 2,
+      "bearish": 17
+    },
+    "TOPS.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "MERI.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "ATLA.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "BLUE.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "PUDP.JK": {
+      "bullish": 3,
+      "bearish": 1
+    },
+    "SDPC.JK": {
+      "bullish": 9,
+      "bearish": 0
+    },
+    "MFMI.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "INDO.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "IKAN.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "ARTA.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "JSPT.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "ASPR.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "INOV.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "GDST.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "BTON.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "MINE.JK": {
+      "bullish": 6,
+      "bearish": 0
+    },
+    "HBAT.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "AKPI.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "FISH.JK": {
+      "bullish": 4,
+      "bearish": 0
+    },
+    "TOTO.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "KBLV.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "CINT.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "FOLK.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "LOPI.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "UNIC.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "ISEA.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "AXIO.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "BUAH.JK": {
+      "bullish": 10,
+      "bearish": 0
+    },
+    "KOCI.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "MERK.JK": {
+      "bullish": 7,
+      "bearish": 0
+    },
+    "NASI.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "POWR.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "TGKA.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "SKRN.JK": {
+      "bullish": 4,
+      "bearish": 1
+    },
+    "MDKI.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "BISI.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "INCI.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "PSGO.JK": {
+      "bullish": 7,
+      "bearish": 2
+    },
+    "RANC.JK": {
+      "bullish": 2,
+      "bearish": 2
+    },
+    "SMMT.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "ASRM.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "SMKL.JK": {
+      "bullish": 3,
+      "bearish": 2
+    },
+    "KMDS.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "CRSN.JK": {
+      "bullish": 8,
+      "bearish": 0
+    },
+    "NELY.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "AKKU.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "APLI.JK": {
+      "bullish": 2,
+      "bearish": 1
+    },
+    "NANO.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "PTPS.JK": {
+      "bullish": 5,
+      "bearish": 0
+    },
+    "OMRE.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "RBMS.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "AMAG.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "JIHD.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "MASB.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "CSRA.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "GWSA.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "UNIQ.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "CMNP.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "BBLD.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "MRAT.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "LUCK.JK": {
+      "bullish": 3,
+      "bearish": 0
+    },
+    "PURA.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "PTMP.JK": {
+      "bullish": 1,
+      "bearish": 3
+    },
+    "PTMR.JK": {
+      "bullish": 0,
+      "bearish": 2
+    },
+    "DFAM.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "LCKM.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "PGLI.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "RONY.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "ENAK.JK": {
+      "bullish": 0,
+      "bearish": 1
+    },
+    "ARII.JK": {
+      "bullish": 1,
+      "bearish": 0
+    },
+    "SHIP.JK": {
+      "bullish": 0,
+      "bearish": 3
+    },
+    "BAUT.JK": {
+      "bullish": 2,
+      "bearish": 0
+    },
+    "BAYU.JK": {
+      "bullish": 1,
+      "bearish": 1
+    },
+    "BABY.JK": {
+      "bullish": 0,
+      "bearish": 1
+    }
+  }
+}

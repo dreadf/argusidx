@@ -1,0 +1,2047 @@
+{
+  "as_of": "2026-09-20",
+  "source_file": "corporate_actions_2026-09-20.json",
+  "window": {
+    "start": "2026-08-21",
+    "end": "2026-10-20"
+  },
+  "by_symbol": {
+    "ABDA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ABMM.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-15",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ACES.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ADHI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-30",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "AGRO.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-07",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "AHAP.JK": {
+      "dividends": [],
+      "agms": [],
+      "rights_issues": [
+        {
+          "ex_date": "2026-09-23",
+          "price": 50.0,
+          "old_ratio": 7.0,
+          "new_ratio": 5.0,
+          "trading_period_start": "2026-09-28",
+          "trading_period_end": "2026-10-02"
+        }
+      ],
+      "stock_splits": []
+    },
+    "AIMS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-17",
+          "agm_time": "11:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "AKKU.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-18",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "AKPI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-03",
+          "agm_time": "14:50:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "AMAR.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-30",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ANTM.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "16:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "APEX.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-07",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ARTO.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "11:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ASBI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-29",
+          "agm_time": "10:00:00",
+          "cancelled": true
+        },
+        {
+          "agm_date": "2026-09-30",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ASII.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BAIK.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "10:30:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BAJA.JK": {
+      "dividends": [],
+      "agms": [],
+      "rights_issues": [
+        {
+          "ex_date": "2026-08-26",
+          "price": 500.0,
+          "old_ratio": 2.0,
+          "new_ratio": 1.0,
+          "trading_period_start": "2026-08-31",
+          "trading_period_end": "2026-09-04"
+        }
+      ],
+      "stock_splits": []
+    },
+    "BBCA.JK": {
+      "dividends": [
+        {
+          "ex_date": "2026-08-31",
+          "cum_date": "2026-08-28",
+          "recording_date": "2026-09-01",
+          "payment_date": "2026-09-16",
+          "amount": 25.0,
+          "implied_yield": 0.003952569169960474
+        }
+      ],
+      "agms": [],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BBSI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-03",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BBTN.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-04",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        },
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "09:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BCIC.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-30",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BEEF.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-24",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BEER.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-02",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BESS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-21",
+          "agm_time": "10:00:00",
+          "cancelled": true
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BIPP.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-25",
+          "agm_time": "15:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BMAS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-27",
+          "agm_time": "08:30:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BMRI.JK": {
+      "dividends": [
+        {
+          "ex_date": "2026-09-16",
+          "cum_date": "2026-09-15",
+          "recording_date": "2026-09-17",
+          "payment_date": "2026-10-02",
+          "amount": 66.0,
+          "implied_yield": 0.015137614678899083
+        }
+      ],
+      "agms": [],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BNBA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "15:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BOSS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-12",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BPII.JK": {
+      "dividends": [
+        {
+          "ex_date": "2026-08-27",
+          "cum_date": "2026-08-26",
+          "recording_date": "2026-08-28",
+          "payment_date": "2026-09-11",
+          "amount": 3.54,
+          "implied_yield": 0.007405857740585774
+        }
+      ],
+      "agms": [],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BRNA.JK": {
+      "dividends": [],
+      "agms": [],
+      "rights_issues": [
+        {
+          "ex_date": "2026-10-02",
+          "price": 685.0,
+          "old_ratio": 9.0,
+          "new_ratio": 5.0,
+          "trading_period_start": "2026-10-07",
+          "trading_period_end": "2026-10-14"
+        }
+      ],
+      "stock_splits": []
+    },
+    "BTPS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        },
+        {
+          "agm_date": "2026-10-13",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "BWPT.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-27",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "CASH.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-08",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "CITA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-28",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "CLPI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-15",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "CMRY.JK": {
+      "dividends": [
+        {
+          "ex_date": "2026-09-04",
+          "cum_date": "2026-09-03",
+          "recording_date": "2026-09-07",
+          "payment_date": "2026-09-18",
+          "amount": 100.0,
+          "implied_yield": 0.022675736961451247
+        }
+      ],
+      "agms": [],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "CRAB.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-25",
+          "agm_time": "15:30:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "DADA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-24",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "DGWG.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-28",
+          "agm_time": "10:15:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "DKFT.JK": {
+      "dividends": [
+        {
+          "ex_date": "2026-09-14",
+          "cum_date": "2026-09-11",
+          "recording_date": "2026-09-15",
+          "payment_date": "2026-09-21",
+          "amount": 30.0,
+          "implied_yield": 0.04285714285714286
+        }
+      ],
+      "agms": [],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "DMAS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        },
+        {
+          "agm_date": "2026-09-22",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "DMND.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-30",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "DOOH.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-04",
+          "agm_time": "15:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "DSSA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "14:30:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "EKAD.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-08",
+          "agm_time": "10:30:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ELIT.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-26",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ELSA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "15:00:00",
+          "cancelled": false
+        },
+        {
+          "agm_date": "2026-09-09",
+          "agm_time": "09:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ENAK.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-02",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "EURO.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-18",
+          "agm_time": "13:30:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "EXCL.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-12",
+          "agm_time": "09:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "FAST.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-14",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "FORU.JK": {
+      "dividends": [],
+      "agms": [],
+      "rights_issues": [
+        {
+          "ex_date": "2026-09-22",
+          "price": 126.0,
+          "old_ratio": 100.0,
+          "new_ratio": 46235.0,
+          "trading_period_start": "2026-09-25",
+          "trading_period_end": "2026-10-06"
+        }
+      ],
+      "stock_splits": []
+    },
+    "FWCT.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-01",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "GGRM.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "09:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "GIAA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-08",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "GOTO.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-14",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "GRPH.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-15",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "HAIS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-09",
+          "agm_time": "11:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "HATM.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-21",
+          "agm_time": "09:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "HEXA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-17",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "HITS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-04",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "HRUM.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-18",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "HUMI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-08",
+          "agm_time": "14:30:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "HYGN.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-22",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "IBOS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-16",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "IKBI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-21",
+          "agm_time": "09:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "INCO.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "11:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "INPP.JK": {
+      "dividends": [
+        {
+          "ex_date": "2026-08-21",
+          "cum_date": "2026-08-20",
+          "recording_date": "2026-08-24",
+          "payment_date": "2026-09-10",
+          "amount": 4.5,
+          "implied_yield": 0.006
+        }
+      ],
+      "agms": [],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "IPAC.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-20",
+          "agm_time": "00:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "IPCC.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-03",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "IPCM.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-23",
+          "agm_time": "16:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "IRSX.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-24",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ISAT.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-29",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ISSP.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "11:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ITMG.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-09",
+          "agm_time": "09:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "JARR.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-21",
+          "agm_time": "11:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "JGLE.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-01",
+          "agm_time": "09:30:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "KBLM.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "KKGI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-15",
+          "agm_time": "10:30:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "KLBF.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-11",
+          "agm_time": "09:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "KONI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "10:30:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "KOTA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-06",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "KRAS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-26",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "LAPD.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-20",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "LIFE.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "LMPI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-25",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "LPCK.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-11",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "LPKR.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-11",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "LTLS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-08",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "LUCK.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-23",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "MAYA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-24",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "MBSS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-17",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "MCOR.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-04",
+          "agm_time": "15:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "MDLA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-08",
+          "agm_time": "15:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "MDLN.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-04",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        },
+        {
+          "agm_date": "2026-09-14",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "MEJA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-21",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "MGLV.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-03",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "MIKA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "15:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "MINE.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-31",
+          "agm_time": "09:00:00",
+          "cancelled": true
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "MKNT.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-24",
+          "agm_time": "13:30:00",
+          "cancelled": false
+        },
+        {
+          "agm_date": "2026-09-14",
+          "agm_time": "13:30:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "MPXL.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "16:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "MUTU.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-24",
+          "agm_time": "09:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "NAYZ.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-02",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "NICE.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-26",
+          "agm_time": "15:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "OBMD.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-29",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "OILS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-22",
+          "agm_time": "10:30:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "PACK.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-11",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "PADI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-21",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "PBSA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-18",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": [
+        {
+          "date": "2026-10-14",
+          "ratio": "1:2",
+          "split_ratio": 2.0
+        }
+      ]
+    },
+    "PGUN.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-21",
+          "agm_time": "09:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "PNGO.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-14",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "POOL.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-03",
+          "agm_time": "14:00:00",
+          "cancelled": true
+        },
+        {
+          "agm_date": "2026-09-22",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "PSAB.JK": {
+      "dividends": [
+        {
+          "ex_date": "2026-09-16",
+          "cum_date": "2026-09-15",
+          "recording_date": "2026-09-17",
+          "payment_date": "2026-09-29",
+          "amount": 30.0,
+          "implied_yield": 0.05172413793103448
+        }
+      ],
+      "agms": [],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "PTBA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "16:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "PTPP.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-15",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "PYFA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-21",
+          "agm_time": "15:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "RAJA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "16:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "RANS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "11:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "RATU.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-08",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        },
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "RELI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-08",
+          "agm_time": "16:15:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "RICY.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-02",
+          "agm_time": "10:20:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SCCO.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-08",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SILO.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-22",
+          "agm_time": "09:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SINI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-11",
+          "agm_time": "13:30:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SLIS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-09",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SMCB.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-25",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SMGR.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-08",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SMLE.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-11",
+          "agm_time": "09:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SMSM.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-09",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SOFA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-30",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SOHO.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-31",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SQMI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-04",
+          "agm_time": "15:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SRTG.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-21",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SSIA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "15:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "SWAT.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-11",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "TAXI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-09",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "TBIG.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-24",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "TCPI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-11",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "TEBE.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-08-27",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "TINS.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "TLKM.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        },
+        {
+          "agm_date": "2026-09-30",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "TMPO.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-02",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "TNCA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-16",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "TRIS.JK": {
+      "dividends": [
+        {
+          "ex_date": "2026-09-10",
+          "cum_date": "2026-09-09",
+          "recording_date": "2026-09-11",
+          "payment_date": "2026-09-23",
+          "amount": 2.27,
+          "implied_yield": 0.01327485380116959
+        }
+      ],
+      "agms": [],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "TUGU.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-29",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "UANG.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-25",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "UCID.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-14",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "UNIC.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "11:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "UNTR.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "UVCR.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-10",
+          "agm_time": "15:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "VICI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-18",
+          "agm_time": "11:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "VICO.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-18",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "VISI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-30",
+          "agm_time": "09:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "WIFI.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-07",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        },
+        {
+          "agm_date": "2026-09-23",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "WIKA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-01",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "WSBP.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-10-02",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "WTON.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-09",
+          "agm_time": "15:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "YELO.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-03",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        },
+        {
+          "agm_date": "2026-09-17",
+          "agm_time": "14:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "YUPI.JK": {
+      "dividends": [
+        {
+          "ex_date": "2026-09-01",
+          "cum_date": "2026-08-31",
+          "recording_date": "2026-09-02",
+          "payment_date": "2026-09-10",
+          "amount": 17.0149,
+          "implied_yield": 0.013088384615384616
+        }
+      ],
+      "agms": [],
+      "rights_issues": [],
+      "stock_splits": []
+    },
+    "ZATA.JK": {
+      "dividends": [],
+      "agms": [
+        {
+          "agm_date": "2026-09-02",
+          "agm_time": "10:00:00",
+          "cancelled": false
+        }
+      ],
+      "rights_issues": [],
+      "stock_splits": []
+    }
+  }
+}

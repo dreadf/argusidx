@@ -1,0 +1,496 @@
+{
+  "as_of": "2026-09-13",
+  "source_file": "mining_companies_2026-09-13.json",
+  "miners": {
+    "ABMM.JK": {
+      "company_type": "Trader",
+      "key_operation": "Coal Trading",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "AADI.JK": {
+      "company_type": "Holding",
+      "key_operation": "Coal Trading",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "ADMR.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal",
+        "Aluminium"
+      ]
+    },
+    "NICE.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Nickel"
+      ]
+    },
+    "ADRO.JK": {
+      "company_type": "Holding",
+      "key_operation": "Investment",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "FIRE.JK": {
+      "company_type": "Trader",
+      "key_operation": "Coal Trading",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "AMMN.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Copper",
+        "Gold"
+      ]
+    },
+    "ALII.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Logistic Management",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "ANTM.JK": {
+      "company_type": "Mine Owner",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Nickel",
+        "Gold"
+      ]
+    },
+    "ARCI.JK": {
+      "company_type": "Mine Owner",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Gold",
+        "Silver"
+      ]
+    },
+    "AIMS.JK": {
+      "company_type": "Trader",
+      "key_operation": "Coal Trading",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "BIPI.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Mining Services",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "ARII.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "DOID.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining Services",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "BSSR.JK": {
+      "company_type": "Mine Owner",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "BESS.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Logistic Management",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "BYAN.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "BSML.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Logistic Management",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "COAL.JK": {
+      "company_type": "Mine Owner",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "BOSS.JK": {
+      "company_type": "Mine Owner",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "PTBA.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "BRMS.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Gold",
+        "Copper",
+        "Zinc and Lead"
+      ]
+    },
+    "BUMI.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "CBRE.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Logistic Management",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "CANI.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Logistic Management",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "DKFT.JK": {
+      "company_type": "Holding",
+      "key_operation": "Investment",
+      "commodity_type": [
+        "Nickel"
+      ]
+    },
+    "TEBE.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Mining Services",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "DEWA.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Mining Services",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "DSSA.JK": {
+      "company_type": "Holding",
+      "key_operation": "Investment",
+      "commodity_type": [
+        "Coal",
+        "Gold"
+      ]
+    },
+    "DWGL.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Mining Services",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "CNKO.JK": {
+      "company_type": "Trader",
+      "key_operation": "Coal Trading",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "GTBO.JK": {
+      "company_type": "Mine Owner",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "SMMT.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "GEMS.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "HRUM.JK": {
+      "company_type": "Holding",
+      "key_operation": "Investment",
+      "commodity_type": [
+        "Coal",
+        "Nickel"
+      ]
+    },
+    "PSSI.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Logistic Management",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "IFSH.JK": {
+      "company_type": "Holding",
+      "key_operation": "Investment",
+      "commodity_type": [
+        "Nickel"
+      ]
+    },
+    "INDY.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal",
+        "Gold"
+      ]
+    },
+    "PTIS.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Logistic Management",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "ITMG.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "PSAB.JK": {
+      "company_type": "Mine Owner",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Gold"
+      ]
+    },
+    "KOBX.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Equipment Rental",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "IATA.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "MAHA.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Mining Services",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "MBMA.JK": {
+      "company_type": "Holding",
+      "key_operation": "Investment",
+      "commodity_type": [
+        "Nickel"
+      ]
+    },
+    "MDKA.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Copper",
+        "Gold",
+        "Silver"
+      ]
+    },
+    "MBSS.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Logistic Management",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "MBAP.JK": {
+      "company_type": "Mine Owner",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "NICL.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Nickel"
+      ]
+    },
+    "BBRM.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Logistic Management",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "PKPK.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Construction",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "CUAN.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "PTRO.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Mining Services",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "MCOL.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "RMKE.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Overburden Removal & Hauling",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "KKGI.JK": {
+      "company_type": "Mine Owner",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "RIGS.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Logistic Management",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "SMRU.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Mining Services",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "MYOH.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Mining Services",
+      "commodity_type": [
+        "Coal",
+        "Gold",
+        "Copper"
+      ]
+    },
+    "ITMA.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Mining Services",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "SGER.JK": {
+      "company_type": "Mine Owner",
+      "key_operation": "Coal Trading",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "TOBA.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining",
+      "commodity_type": [
+        "Coal",
+        "Nickel"
+      ]
+    },
+    "TRAM.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Logistic Management",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "TPMA.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Logistic Management",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "TCPI.JK": {
+      "company_type": "Contractor",
+      "key_operation": "Logistic Management",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "NCKL.JK": {
+      "company_type": "Holding",
+      "key_operation": "Investment",
+      "commodity_type": [
+        "Nickel"
+      ]
+    },
+    "UNTR.JK": {
+      "company_type": "Holding",
+      "key_operation": "Mining Services",
+      "commodity_type": [
+        "Coal"
+      ]
+    },
+    "INCO.JK": {
+      "company_type": "Holding",
+      "key_operation": "Investment",
+      "commodity_type": [
+        "Nickel"
+      ]
+    }
+  }
+}

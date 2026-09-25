@@ -1,0 +1,228 @@
+{
+  "as_of": "2026-09-13",
+  "note": "H13, a pre-registered, falsifiable hypothesis counted in the project's trial counter -- not a descriptive base rate. Verdict: falsified on the pre-registered Welch-t test at every horizon, in both explore and holdout phases (no cell clears even the plain ~1.96 threshold). But every one of the 6 (horizon x phase) Welch-t values is negative-signed, and the negative-rate/median gap between Acceleration and Main is large and consistent across all of them, matching independently-published literature's own ~2/3 figure for Acceleration closely enough to read as real underpowered evidence (group sizes of 13-21), not noise. Reported as both, not picking whichever framing looks cleaner. 'Listing price' is a same-day-close proxy from development-only Yahoo Finance data, never live in this product, NOT the actual IPO offer price. `listing_board` is the company's CURRENT board, not necessarily its board at IPO (2021+ listings carry 'Watchlist', a status assigned after listing), so board groups may partly reflect where stocks ended up; the likely direction of that bias is to exaggerate the Acceleration-vs-Main gap (inferred, not verified). Only Acceleration vs Main is part of the pre-registered test; Development/Watchlist/New Economy are descriptive only, no directional claim was pre-registered for them.",
+  "tested_boards": [
+    "Acceleration",
+    "Main"
+  ],
+  "explore": {
+    "n": 83,
+    "horizons": {
+      "180d": {
+        "by_board": {
+          "Acceleration": {
+            "n": 13,
+            "negative_rate_pct": 69.2,
+            "mean_return_pct": -1.6,
+            "median_return_pct": -54.5
+          },
+          "Development": {
+            "n": 38,
+            "negative_rate_pct": 57.9,
+            "mean_return_pct": 24.1,
+            "median_return_pct": -9.0
+          },
+          "Main": {
+            "n": 18,
+            "negative_rate_pct": 50.0,
+            "mean_return_pct": 87.2,
+            "median_return_pct": 2.8
+          },
+          "Watchlist": {
+            "n": 12,
+            "negative_rate_pct": 66.7,
+            "mean_return_pct": -20.4,
+            "median_return_pct": -23.6
+          },
+          "New Economy": {
+            "n": 2,
+            "negative_rate_pct": 50.0,
+            "mean_return_pct": -17.2,
+            "median_return_pct": -17.2
+          }
+        },
+        "acceleration_vs_main_welch_t": {
+          "t": -1.23,
+          "diff_pct": -88.8
+        }
+      },
+      "365d": {
+        "by_board": {
+          "Acceleration": {
+            "n": 13,
+            "negative_rate_pct": 69.2,
+            "mean_return_pct": 6.0,
+            "median_return_pct": -48.9
+          },
+          "Development": {
+            "n": 38,
+            "negative_rate_pct": 71.1,
+            "mean_return_pct": -5.9,
+            "median_return_pct": -28.1
+          },
+          "Main": {
+            "n": 18,
+            "negative_rate_pct": 61.1,
+            "mean_return_pct": 103.6,
+            "median_return_pct": -5.5
+          },
+          "Watchlist": {
+            "n": 12,
+            "negative_rate_pct": 91.7,
+            "mean_return_pct": -42.5,
+            "median_return_pct": -56.4
+          },
+          "New Economy": {
+            "n": 2,
+            "negative_rate_pct": 50.0,
+            "mean_return_pct": -35.3,
+            "median_return_pct": -35.3
+          }
+        },
+        "acceleration_vs_main_welch_t": {
+          "t": -1.27,
+          "diff_pct": -97.6
+        }
+      },
+      "720d": {
+        "by_board": {
+          "Acceleration": {
+            "n": 13,
+            "negative_rate_pct": 76.9,
+            "mean_return_pct": 7.6,
+            "median_return_pct": -77.8
+          },
+          "Development": {
+            "n": 38,
+            "negative_rate_pct": 68.4,
+            "mean_return_pct": -4.1,
+            "median_return_pct": -45.6
+          },
+          "Main": {
+            "n": 18,
+            "negative_rate_pct": 55.6,
+            "mean_return_pct": 81.2,
+            "median_return_pct": -6.1
+          },
+          "Watchlist": {
+            "n": 12,
+            "negative_rate_pct": 100.0,
+            "mean_return_pct": -71.9,
+            "median_return_pct": -71.3
+          },
+          "New Economy": {
+            "n": 2,
+            "negative_rate_pct": 50.0,
+            "mean_return_pct": -41.1,
+            "median_return_pct": -41.1
+          }
+        },
+        "acceleration_vs_main_welch_t": {
+          "t": -1.01,
+          "diff_pct": -73.7
+        }
+      }
+    }
+  },
+  "holdout": {
+    "n": 120,
+    "horizons": {
+      "180d": {
+        "by_board": {
+          "Acceleration": {
+            "n": 20,
+            "negative_rate_pct": 60.0,
+            "mean_return_pct": 20.5,
+            "median_return_pct": -35.8
+          },
+          "Development": {
+            "n": 76,
+            "negative_rate_pct": 64.5,
+            "mean_return_pct": -8.2,
+            "median_return_pct": -23.4
+          },
+          "Main": {
+            "n": 21,
+            "negative_rate_pct": 47.6,
+            "mean_return_pct": 94.9,
+            "median_return_pct": 2.8
+          },
+          "Watchlist": {
+            "n": 3,
+            "negative_rate_pct": 100.0,
+            "mean_return_pct": -44.1,
+            "median_return_pct": -63.0
+          }
+        },
+        "acceleration_vs_main_welch_t": {
+          "t": -1.23,
+          "diff_pct": -74.4
+        }
+      },
+      "365d": {
+        "by_board": {
+          "Acceleration": {
+            "n": 20,
+            "negative_rate_pct": 80.0,
+            "mean_return_pct": 18.3,
+            "median_return_pct": -73.0
+          },
+          "Development": {
+            "n": 76,
+            "negative_rate_pct": 69.7,
+            "mean_return_pct": -5.8,
+            "median_return_pct": -28.3
+          },
+          "Main": {
+            "n": 21,
+            "negative_rate_pct": 33.3,
+            "mean_return_pct": 186.5,
+            "median_return_pct": 18.6
+          },
+          "Watchlist": {
+            "n": 3,
+            "negative_rate_pct": 100.0,
+            "mean_return_pct": -59.7,
+            "median_return_pct": -63.0
+          }
+        },
+        "acceleration_vs_main_welch_t": {
+          "t": -1.26,
+          "diff_pct": -168.1
+        }
+      },
+      "720d": {
+        "by_board": {
+          "Acceleration": {
+            "n": 20,
+            "negative_rate_pct": 65.0,
+            "mean_return_pct": 157.7,
+            "median_return_pct": -33.7
+          },
+          "Development": {
+            "n": 72,
+            "negative_rate_pct": 61.1,
+            "mean_return_pct": 33.5,
+            "median_return_pct": -18.5
+          },
+          "Main": {
+            "n": 18,
+            "negative_rate_pct": 27.8,
+            "mean_return_pct": 233.2,
+            "median_return_pct": 6.7
+          },
+          "Watchlist": {
+            "n": 3,
+            "negative_rate_pct": 100.0,
+            "mean_return_pct": -82.0,
+            "median_return_pct": -85.8
+          }
+        },
+        "acceleration_vs_main_welch_t": {
+          "t": -0.41,
+          "diff_pct": -75.5
+        }
+      }
+    }
+  }
+}

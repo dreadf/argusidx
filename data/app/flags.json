@@ -1,0 +1,865 @@
+{
+  "as_of": "2026-09-13",
+  "source_file": "universe_2026-09-13.json",
+  "payout_above_earnings": {
+    "flagged": [
+      {
+        "symbol": "MLPT.JK",
+        "company_name": "PT Multipolar Technology Tbk",
+        "payout_ratio": 16.9148865601328
+      },
+      {
+        "symbol": "TRUS.JK",
+        "company_name": "Trust Finance Indonesia Tbk",
+        "payout_ratio": 6.26321108656099
+      },
+      {
+        "symbol": "CTBN.JK",
+        "company_name": "Citra Tubindo Tbk",
+        "payout_ratio": 4.58532552591763
+      },
+      {
+        "symbol": "APLI.JK",
+        "company_name": "Asiaplast Industries Tbk",
+        "payout_ratio": 4.11502785751255
+      },
+      {
+        "symbol": "ROTI.JK",
+        "company_name": "PT Nippon Indosari Corpindo Tbk",
+        "payout_ratio": 2.59394745331676
+      },
+      {
+        "symbol": "KKGI.JK",
+        "company_name": "Resource Alam Indonesia Tbk",
+        "payout_ratio": 2.34702635789208
+      },
+      {
+        "symbol": "RAJA.JK",
+        "company_name": "Rukun Raharja Tbk",
+        "payout_ratio": 2.06862338936549
+      },
+      {
+        "symbol": "ATLA.JK",
+        "company_name": "PT Atlantis Subsea Indonesia Tbk",
+        "payout_ratio": 1.88484824333677
+      },
+      {
+        "symbol": "CNMA.JK",
+        "company_name": "PT Nusantara Sejahtera Raya Tbk",
+        "payout_ratio": 1.69733096931337
+      },
+      {
+        "symbol": "TEBE.JK",
+        "company_name": "PT Dana Brata Luhur Tbk",
+        "payout_ratio": 1.60216193234316
+      },
+      {
+        "symbol": "ACRO.JK",
+        "company_name": "PT Samcro Hyosung Adilestari Tbk.",
+        "payout_ratio": 1.42220497816265
+      },
+      {
+        "symbol": "EAST.JK",
+        "company_name": "PT Eastparc Hotel Tbk",
+        "payout_ratio": 1.41955992484468
+      },
+      {
+        "symbol": "GHON.JK",
+        "company_name": "PT Gihon Telekomunikasi Indonesia Tbk",
+        "payout_ratio": 1.40373442394274
+      },
+      {
+        "symbol": "MPMX.JK",
+        "company_name": "PT Mitra Pinasthika Mustika Tbk",
+        "payout_ratio": 1.36512485808981
+      },
+      {
+        "symbol": "SGRO.JK",
+        "company_name": "PT Prime Agri Resources Tbk",
+        "payout_ratio": 1.34726593726948
+      },
+      {
+        "symbol": "BESS.JK",
+        "company_name": "PT Batulicin Nusantara Maritim Tbk.",
+        "payout_ratio": 1.34271503778749
+      },
+      {
+        "symbol": "BSSR.JK",
+        "company_name": "Baramulti Suksessarana Tbk",
+        "payout_ratio": 1.30371125980817
+      },
+      {
+        "symbol": "RALS.JK",
+        "company_name": "Ramayana Lestari Sentosa Tbk",
+        "payout_ratio": 1.27886506557694
+      },
+      {
+        "symbol": "TLKM.JK",
+        "company_name": "PT Telkom Indonesia (Persero) Tbk",
+        "payout_ratio": 1.265697869291
+      },
+      {
+        "symbol": "BOLT.JK",
+        "company_name": "PT Garuda Metalindo Tbk.",
+        "payout_ratio": 1.26270857093105
+      },
+      {
+        "symbol": "BBLD.JK",
+        "company_name": "Buana Finance Tbk",
+        "payout_ratio": 1.22637559910581
+      },
+      {
+        "symbol": "META.JK",
+        "company_name": "Nusantara Infrastructure Tbk",
+        "payout_ratio": 1.20186490534832
+      },
+      {
+        "symbol": "SIDO.JK",
+        "company_name": "PT Industri Jamu Dan Farmasi Sido Muncul Tbk",
+        "payout_ratio": 1.14826749922272
+      },
+      {
+        "symbol": "CMRY.JK",
+        "company_name": "PT Cisarua Mountain Dairy Tbk",
+        "payout_ratio": 1.12426169115928
+      },
+      {
+        "symbol": "ASGR.JK",
+        "company_name": "Astra Graphia Tbk",
+        "payout_ratio": 1.07329294897086
+      },
+      {
+        "symbol": "DMMX.JK",
+        "company_name": "PT Digital Mediatama Maxima Tbk",
+        "payout_ratio": 1.06475902851809
+      },
+      {
+        "symbol": "DUTI.JK",
+        "company_name": "Duta Pertiwi Tbk",
+        "payout_ratio": 1.05972812244375
+      },
+      {
+        "symbol": "MARK.JK",
+        "company_name": "PT Mark Dynamics Indonesia Tbk",
+        "payout_ratio": 1.01632052771561
+      },
+      {
+        "symbol": "CITA.JK",
+        "company_name": "Cita Mineral Investindo Tbk",
+        "payout_ratio": 1.0130383697069
+      }
+    ],
+    "evaluable_count": 326,
+    "flagged_count": 29
+  },
+  "near_ath_earnings_decline": {
+    "flagged": [
+      {
+        "symbol": "TRIO.JK",
+        "company_name": "Trikomsel Oke Tbk",
+        "pct_below_ath": 0.0,
+        "earnings_2025": -158580730376.0,
+        "earnings_2024": -121790976955.0
+      },
+      {
+        "symbol": "WSKT.JK",
+        "company_name": "PT Waskita Karya (Persero) Tbk",
+        "pct_below_ath": 0.0,
+        "earnings_2025": -3928556550176.0,
+        "earnings_2024": -2589401695989.0
+      },
+      {
+        "symbol": "META.JK",
+        "company_name": "Nusantara Infrastructure Tbk",
+        "pct_below_ath": 0.0,
+        "earnings_2025": 93897702657.0,
+        "earnings_2024": 323147573856.0
+      },
+      {
+        "symbol": "PTMR.JK",
+        "company_name": "PT Master Print Tbk",
+        "pct_below_ath": 0.0,
+        "earnings_2025": -25951998743.0,
+        "earnings_2024": 6878376686.0
+      },
+      {
+        "symbol": "PPGL.JK",
+        "company_name": "PT Prima Globalindo Logistik Tbk",
+        "pct_below_ath": 0.0,
+        "earnings_2025": 7119221079.0,
+        "earnings_2024": 9543109256.0
+      },
+      {
+        "symbol": "MSIE.JK",
+        "company_name": "PT Multisarana Intan Eduka Tbk",
+        "pct_below_ath": 0.0,
+        "earnings_2025": -986085488.0,
+        "earnings_2024": -302263486.0
+      },
+      {
+        "symbol": "OCAP.JK",
+        "company_name": "Onix Capital Tbk",
+        "pct_below_ath": 0.0,
+        "earnings_2025": -29309152008.0,
+        "earnings_2024": -12455401469.0
+      },
+      {
+        "symbol": "MFMI.JK",
+        "company_name": "Multifiling Mitra Indonesia Tbk",
+        "pct_below_ath": 0.015151515151515152,
+        "earnings_2025": 23025833479.0,
+        "earnings_2024": 26065749810.0
+      },
+      {
+        "symbol": "NEST.JK",
+        "company_name": "PT Esta Indonesia Tbk",
+        "pct_below_ath": 0.03225806451612903,
+        "earnings_2025": 22943852231.0,
+        "earnings_2024": 27060385491.0
+      },
+      {
+        "symbol": "AGAR.JK",
+        "company_name": "PT Asia Sejahtera Mina Tbk",
+        "pct_below_ath": 0.0325,
+        "earnings_2025": 2036205163.0,
+        "earnings_2024": 3333643200.0
+      },
+      {
+        "symbol": "AADI.JK",
+        "company_name": "PT Adaro Andalan Indonesia Tbk",
+        "pct_below_ath": 0.05415860735009671,
+        "earnings_2025": 12722722162800.0,
+        "earnings_2024": 19562863286000.0
+      },
+      {
+        "symbol": "MGLV.JK",
+        "company_name": "PT Panca Anugrah Wisesa Tbk",
+        "pct_below_ath": 0.0729483282674772,
+        "earnings_2025": -9019490202.0,
+        "earnings_2024": 6600646057.0
+      },
+      {
+        "symbol": "GRPH.JK",
+        "company_name": "PT Griptha Putra Persada Tbk",
+        "pct_below_ath": 0.08666666666666667,
+        "earnings_2025": 3142156993.0,
+        "earnings_2024": 3224367408.0
+      },
+      {
+        "symbol": "AYAM.JK",
+        "company_name": "PT Janu Putra Sejahtera Tbk.",
+        "pct_below_ath": 0.09811320754716982,
+        "earnings_2025": 75417863.0,
+        "earnings_2024": 7728820325.0
+      }
+    ],
+    "evaluable_count": 852,
+    "flagged_count": 14
+  },
+  "yield_far_above_average": {
+    "flagged": [
+      {
+        "symbol": "APLI.JK",
+        "company_name": "Asiaplast Industries Tbk",
+        "yield_ttm": 0.161874995512121,
+        "yield_avg": 0.00191813204437494
+      },
+      {
+        "symbol": "GGRP.JK",
+        "company_name": "PT Gunung Raja Paksi Tbk",
+        "yield_ttm": 0.0848484848484849,
+        "yield_avg": 0.00233960002660751
+      },
+      {
+        "symbol": "TRUS.JK",
+        "company_name": "Trust Finance Indonesia Tbk",
+        "yield_ttm": 0.130434782608696,
+        "yield_avg": 0.00487744398415089
+      },
+      {
+        "symbol": "SCNP.JK",
+        "company_name": "PT Selaras Citra Nusantara Perkasa Tbk",
+        "yield_ttm": 0.0283227746003594,
+        "yield_avg": 0.00195253631100059
+      },
+      {
+        "symbol": "JSPT.JK",
+        "company_name": "Jakarta Setiabudi Internasional Tbk",
+        "yield_ttm": 0.0166666666666667,
+        "yield_avg": 0.00127629544585943
+      },
+      {
+        "symbol": "PANI.JK",
+        "company_name": "PT Pantai Indah Kapuk Dua Tbk.",
+        "yield_ttm": 0.000888888888888889,
+        "yield_avg": 0.000110299093648791
+      },
+      {
+        "symbol": "BBHI.JK",
+        "company_name": "PT Allo Bank Indonesia Tbk",
+        "yield_ttm": 0.0147555552588569,
+        "yield_avg": 0.00198806989938021
+      },
+      {
+        "symbol": "CTBN.JK",
+        "company_name": "Citra Tubindo Tbk",
+        "yield_ttm": 0.152459016393443,
+        "yield_avg": 0.0217075526714325
+      },
+      {
+        "symbol": "DWGL.JK",
+        "company_name": "PT Dwi Guna Laksana Tbk",
+        "yield_ttm": 0.0363247863247863,
+        "yield_avg": 0.00552358403801918
+      },
+      {
+        "symbol": "DKFT.JK",
+        "company_name": "Central Omega Resources Tbk",
+        "yield_ttm": 0.0857142857142857,
+        "yield_avg": 0.0135830689221621
+      },
+      {
+        "symbol": "MOLI.JK",
+        "company_name": "PT Madusari Murni Indah Tbk",
+        "yield_ttm": 0.0230817614861254,
+        "yield_avg": 0.00385343795642257
+      },
+      {
+        "symbol": "DMND.JK",
+        "company_name": "PT Diamond Food Indonesia Tbk",
+        "yield_ttm": 0.0120967741935484,
+        "yield_avg": 0.00207613334059715
+      },
+      {
+        "symbol": "ARCI.JK",
+        "company_name": "PT Archi Indonesia Tbk",
+        "yield_ttm": 0.0307984790874525,
+        "yield_avg": 0.00562841668725014
+      },
+      {
+        "symbol": "KIJA.JK",
+        "company_name": "Kawasan Industri Jababeka Tbk",
+        "yield_ttm": 0.0103294413706978,
+        "yield_avg": 0.00189392771571875
+      },
+      {
+        "symbol": "ESTI.JK",
+        "company_name": "Ever Shine Textile Industry Tbk",
+        "yield_ttm": 0.0117647058823529,
+        "yield_avg": 0.00223149992525578
+      },
+      {
+        "symbol": "PNBN.JK",
+        "company_name": "Bank Pan Indonesia Tbk",
+        "yield_ttm": 0.0461538461538462,
+        "yield_avg": 0.00916763693094253
+      },
+      {
+        "symbol": "YULE.JK",
+        "company_name": "Yulie Sekuritas Indonesia Tbk",
+        "yield_ttm": 0.00285714285714286,
+        "yield_avg": 0.000589153077453375
+      },
+      {
+        "symbol": "BOLT.JK",
+        "company_name": "PT Garuda Metalindo Tbk.",
+        "yield_ttm": 0.0925925925925926,
+        "yield_avg": 0.0192308852449059
+      },
+      {
+        "symbol": "PANR.JK",
+        "company_name": "Panorama Sentrawisata Tbk",
+        "yield_ttm": 0.0707547169811321,
+        "yield_avg": 0.0152961194515228
+      },
+      {
+        "symbol": "ESSA.JK",
+        "company_name": "ESSA Industries Indonesia Tbk",
+        "yield_ttm": 0.0793893129770992,
+        "yield_avg": 0.0178674289956689
+      },
+      {
+        "symbol": "MAIN.JK",
+        "company_name": "Malindo Feedmill Tbk",
+        "yield_ttm": 0.0776119402985075,
+        "yield_avg": 0.0177387177944183
+      },
+      {
+        "symbol": "NPGF.JK",
+        "company_name": "PT Nusa Palapa Gemilang Tbk",
+        "yield_ttm": 0.00526315810387595,
+        "yield_avg": 0.00125226341187954
+      },
+      {
+        "symbol": "META.JK",
+        "company_name": "Nusantara Infrastructure Tbk",
+        "yield_ttm": 0.0220588235294118,
+        "yield_avg": 0.00534826423972845
+      },
+      {
+        "symbol": "GMTD.JK",
+        "company_name": "Gowa Makassar Tourism Development Tbk",
+        "yield_ttm": 0.00315624997019768,
+        "yield_avg": 0.000780953234061599
+      },
+      {
+        "symbol": "TCPI.JK",
+        "company_name": "PT Transcoal Pacific Tbk",
+        "yield_ttm": 0.00328282828282828,
+        "yield_avg": 0.000846234854543582
+      },
+      {
+        "symbol": "SMBR.JK",
+        "company_name": "PT Semen Baturaja Tbk",
+        "yield_ttm": 0.0201270344645478,
+        "yield_avg": 0.00549486659001559
+      },
+      {
+        "symbol": "ASSA.JK",
+        "company_name": "Adi Sarana Armada Tbk",
+        "yield_ttm": 0.0819672131147541,
+        "yield_avg": 0.0230211559683084
+      },
+      {
+        "symbol": "CINT.JK",
+        "company_name": "PT Chitose Internasional Tbk",
+        "yield_ttm": 0.0744729737977724,
+        "yield_avg": 0.0224514788016677
+      },
+      {
+        "symbol": "INPP.JK",
+        "company_name": "Indonesian Paradise Property Tbk",
+        "yield_ttm": 0.0126666666666667,
+        "yield_avg": 0.00391487432643771
+      },
+      {
+        "symbol": "CTRA.JK",
+        "company_name": "Ciputra Development Tbk",
+        "yield_ttm": 0.0585365853658537,
+        "yield_avg": 0.0182350549846888
+      },
+      {
+        "symbol": "HEAL.JK",
+        "company_name": "PT Medikaloka Hermina Tbk",
+        "yield_ttm": 0.02,
+        "yield_avg": 0.00631606266833842
+      },
+      {
+        "symbol": "DADA.JK",
+        "company_name": "PT Diamond Citra Propertindo Tbk.",
+        "yield_ttm": 0.00280000001192093,
+        "yield_avg": 0.000891527254134417
+      },
+      {
+        "symbol": "KBLI.JK",
+        "company_name": "KMI Wire and Cable Tbk",
+        "yield_ttm": 0.0588235294117647,
+        "yield_avg": 0.0187459278851748
+      },
+      {
+        "symbol": "PWON.JK",
+        "company_name": "Pakuwon Jati Tbk",
+        "yield_ttm": 0.0477941176470588,
+        "yield_avg": 0.0156829876825213
+      },
+      {
+        "symbol": "MTMH.JK",
+        "company_name": "PT Murni Sadar Tbk",
+        "yield_ttm": 0.00257446816627015,
+        "yield_avg": 0.000858156055423385
+      },
+      {
+        "symbol": "MIDI.JK",
+        "company_name": "Midi Utama Indonesia Tbk",
+        "yield_ttm": 0.0445488736145478,
+        "yield_avg": 0.0153045212849975
+      },
+      {
+        "symbol": "ESIP.JK",
+        "company_name": "PT Sinergi Inti Plastindo Tbk",
+        "yield_ttm": 0.00819672131147541,
+        "yield_avg": 0.00282729128375649
+      },
+      {
+        "symbol": "BRIS.JK",
+        "company_name": "PT Bank Syariah Indonesia Tbk",
+        "yield_ttm": 0.0190756265507188,
+        "yield_avg": 0.00672217654064298
+      },
+      {
+        "symbol": "ULTJ.JK",
+        "company_name": "PT Ultrajaya Milk Industry & Trading Company Tbk",
+        "yield_ttm": 0.0860927152317881,
+        "yield_avg": 0.030340155493468
+      },
+      {
+        "symbol": "AMIN.JK",
+        "company_name": "PT Ateliers Mecaniques D Indonesie Tbk.",
+        "yield_ttm": 0.0420168067226891,
+        "yield_avg": 0.0152874678373337
+      },
+      {
+        "symbol": "WEHA.JK",
+        "company_name": "PT WEHA Transportasi Indonesia Tbk",
+        "yield_ttm": 0.0545454545454545,
+        "yield_avg": 0.0199945867061615
+      },
+      {
+        "symbol": "AMAR.JK",
+        "company_name": "PT Bank Amar Indonesia Tbk.",
+        "yield_ttm": 0.0502173921336298,
+        "yield_avg": 0.0188617386855185
+      },
+      {
+        "symbol": "MKPI.JK",
+        "company_name": "Metropolitan Kentjana Tbk",
+        "yield_ttm": 0.0436781609195402,
+        "yield_avg": 0.0165971809066832
+      },
+      {
+        "symbol": "UNVR.JK",
+        "company_name": "Unilever Indonesia Tbk",
+        "yield_ttm": 0.123312883435583,
+        "yield_avg": 0.048763394728303
+      },
+      {
+        "symbol": "SRTG.JK",
+        "company_name": "PT Saratoga Investama Sedaya Tbk",
+        "yield_ttm": 0.0572299185882315,
+        "yield_avg": 0.0229329312220216
+      },
+      {
+        "symbol": "BPFI.JK",
+        "company_name": "PT Woori Finance Indonesia Tbk",
+        "yield_ttm": 0.0323577237323048,
+        "yield_avg": 0.0135772785171866
+      },
+      {
+        "symbol": "EAST.JK",
+        "company_name": "PT Eastparc Hotel Tbk",
+        "yield_ttm": 0.128089883354273,
+        "yield_avg": 0.0538685269653797
+      },
+      {
+        "symbol": "BELL.JK",
+        "company_name": "PT Trisula Textile Industries Tbk",
+        "yield_ttm": 0.0125454545021057,
+        "yield_avg": 0.00539764171699062
+      },
+      {
+        "symbol": "BIRD.JK",
+        "company_name": "PT Blue Bird Tbk",
+        "yield_ttm": 0.10375,
+        "yield_avg": 0.0455448180437088
+      },
+      {
+        "symbol": "PJAA.JK",
+        "company_name": "Pembangunan Jaya Ancol Tbk",
+        "yield_ttm": 0.0554255302916182,
+        "yield_avg": 0.0251393407583237
+      },
+      {
+        "symbol": "ZYRX.JK",
+        "company_name": "PT Zyrexindo Mandiri Buana Tbk",
+        "yield_ttm": 0.038582677916279,
+        "yield_avg": 0.0175662338733673
+      },
+      {
+        "symbol": "CITA.JK",
+        "company_name": "Cita Mineral Investindo Tbk",
+        "yield_ttm": 0.101152737752161,
+        "yield_avg": 0.0461084350012243
+      },
+      {
+        "symbol": "AMRT.JK",
+        "company_name": "PT Sumber Alfaria Trijaya Tbk.",
+        "yield_ttm": 0.0330677290836653,
+        "yield_avg": 0.0153708716854453
+      },
+      {
+        "symbol": "ACES.JK",
+        "company_name": "PT Aspirasi Hidup Indonesia Tbk",
+        "yield_ttm": 0.0909374952316284,
+        "yield_avg": 0.0423211140558124
+      },
+      {
+        "symbol": "BBCA.JK",
+        "company_name": "PT Bank Central Asia Tbk.",
+        "yield_ttm": 0.0602371541501976,
+        "yield_avg": 0.0283050412777811
+      },
+      {
+        "symbol": "MAPI.JK",
+        "company_name": "Mitra Adiperkasa Tbk",
+        "yield_ttm": 0.00746268656716418,
+        "yield_avg": 0.00350823970511556
+      },
+      {
+        "symbol": "JECC.JK",
+        "company_name": "Jembo Cable Company Tbk",
+        "yield_ttm": 0.0496894409937888,
+        "yield_avg": 0.0238517735153437
+      },
+      {
+        "symbol": "MEGA.JK",
+        "company_name": "Bank Mega Tbk",
+        "yield_ttm": 0.0875049853142891,
+        "yield_avg": 0.0422684131190181
+      },
+      {
+        "symbol": "RAJA.JK",
+        "company_name": "Rukun Raharja Tbk",
+        "yield_ttm": 0.0548780487804878,
+        "yield_avg": 0.0269812572747469
+      },
+      {
+        "symbol": "DUTI.JK",
+        "company_name": "Duta Pertiwi Tbk",
+        "yield_ttm": 0.10062893081761,
+        "yield_avg": 0.0496671989560127
+      },
+      {
+        "symbol": "TRIS.JK",
+        "company_name": "Trisula International Tbk",
+        "yield_ttm": 0.0585635112740143,
+        "yield_avg": 0.028964629303664
+      },
+      {
+        "symbol": "BTPS.JK",
+        "company_name": "PT Bank BTPN Syariah Tbk.",
+        "yield_ttm": 0.0828019294185915,
+        "yield_avg": 0.0410603387281299
+      },
+      {
+        "symbol": "IRSX.JK",
+        "company_name": "PT Folago Global Nusantara Tbk",
+        "yield_ttm": 0.000410628023642849,
+        "yield_avg": 0.000205314011821424
+      },
+      {
+        "symbol": "TIFA.JK",
+        "company_name": "KDB Tifa Finance Tbk",
+        "yield_ttm": 0.0126582278481013,
+        "yield_avg": 0.0063543826341629
+      },
+      {
+        "symbol": "BMHS.JK",
+        "company_name": "PT Bundamedik Tbk",
+        "yield_ttm": 0.00514999985694885,
+        "yield_avg": 0.00262322500348091
+      },
+      {
+        "symbol": "BUAH.JK",
+        "company_name": "PT Segar Kumala Indonesia Tbk",
+        "yield_ttm": 0.0504032258064516,
+        "yield_avg": 0.0260933565616768
+      },
+      {
+        "symbol": "UNIC.JK",
+        "company_name": "Unggul Indah Cahaya Tbk",
+        "yield_ttm": 0.110431893687708,
+        "yield_avg": 0.0575164930894971
+      },
+      {
+        "symbol": "MYOR.JK",
+        "company_name": "Mayora Indah Tbk",
+        "yield_ttm": 0.0396039603960396,
+        "yield_avg": 0.0206395788118243
+      },
+      {
+        "symbol": "ROTI.JK",
+        "company_name": "PT Nippon Indosari Corpindo Tbk",
+        "yield_ttm": 0.136820514385517,
+        "yield_avg": 0.071757584810257
+      },
+      {
+        "symbol": "ASGR.JK",
+        "company_name": "Astra Graphia Tbk",
+        "yield_ttm": 0.114218009478673,
+        "yield_avg": 0.0599043522030115
+      },
+      {
+        "symbol": "ZONE.JK",
+        "company_name": "PT Mega Perintis Tbk",
+        "yield_ttm": 0.0169014084507042,
+        "yield_avg": 0.00904993992298841
+      },
+      {
+        "symbol": "TPIA.JK",
+        "company_name": "PT Chandra Asri Pacific Tbk",
+        "yield_ttm": 0.00527452661636028,
+        "yield_avg": 0.0028283373452723
+      },
+      {
+        "symbol": "CMRY.JK",
+        "company_name": "PT Cisarua Mountain Dairy Tbk",
+        "yield_ttm": 0.0680272108843537,
+        "yield_avg": 0.0366569376390115
+      },
+      {
+        "symbol": "CFIN.JK",
+        "company_name": "Clipan Finance Indonesia Tbk",
+        "yield_ttm": 0.136612021857924,
+        "yield_avg": 0.0747170150279999
+      },
+      {
+        "symbol": "AMFG.JK",
+        "company_name": "Asahimas Flat Glass Tbk",
+        "yield_ttm": 0.024390243902439,
+        "yield_avg": 0.0133654188364744
+      },
+      {
+        "symbol": "SIDO.JK",
+        "company_name": "PT Industri Jamu Dan Farmasi Sido Muncul Tbk",
+        "yield_ttm": 0.10632183908046,
+        "yield_avg": 0.0593932572752237
+      },
+      {
+        "symbol": "MAPA.JK",
+        "company_name": "PT MAP Aktif Adiperkasa Tbk",
+        "yield_ttm": 0.00606060606060606,
+        "yield_avg": 0.00345281166955829
+      },
+      {
+        "symbol": "IKBI.JK",
+        "company_name": "Sumi Indo Kabel Tbk",
+        "yield_ttm": 0.0798378403122361,
+        "yield_avg": 0.04596908390522
+      },
+      {
+        "symbol": "AMOR.JK",
+        "company_name": "PT Ashmore Asset Management Indonesia Tbk.",
+        "yield_ttm": 0.0855978260869565,
+        "yield_avg": 0.0495363780297339
+      },
+      {
+        "symbol": "EXCL.JK",
+        "company_name": "PT XLSMART Telecom Sejahtera Tbk",
+        "yield_ttm": 0.0604562737642586,
+        "yield_avg": 0.0355673404410481
+      },
+      {
+        "symbol": "MTDL.JK",
+        "company_name": "Metrodata Electronics Tbk",
+        "yield_ttm": 0.0534653465346535,
+        "yield_avg": 0.0315133178606629
+      },
+      {
+        "symbol": "RUIS.JK",
+        "company_name": "Radiant Utama Interinsco Tbk",
+        "yield_ttm": 0.0283018867924528,
+        "yield_avg": 0.0167262203991413
+      },
+      {
+        "symbol": "WINS.JK",
+        "company_name": "Wintermar Offshore Marine Tbk",
+        "yield_ttm": 0.0112903225806452,
+        "yield_avg": 0.00686532435938716
+      },
+      {
+        "symbol": "BMRI.JK",
+        "company_name": "PT Bank Mandiri (Persero) Tbk",
+        "yield_ttm": 0.109393793508547,
+        "yield_avg": 0.0666762799024582
+      },
+      {
+        "symbol": "GTSI.JK",
+        "company_name": "PT GTS Internasional Tbk",
+        "yield_ttm": 0.00606060606060606,
+        "yield_avg": 0.00380645170807838
+      },
+      {
+        "symbol": "BBRI.JK",
+        "company_name": "PT Bank Rakyat Indonesia (Persero) Tbk",
+        "yield_ttm": 0.105810397553517,
+        "yield_avg": 0.0675521474331617
+      },
+      {
+        "symbol": "SIMP.JK",
+        "company_name": "Salim Ivomas Pratama Tbk",
+        "yield_ttm": 0.0422764227642276,
+        "yield_avg": 0.0275471806526184
+      },
+      {
+        "symbol": "JPFA.JK",
+        "company_name": "JAPFA Comfeed Indonesia Tbk",
+        "yield_ttm": 0.0622222222222222,
+        "yield_avg": 0.040595543757081
+      },
+      {
+        "symbol": "ANTM.JK",
+        "company_name": "Aneka Tambang Tbk.",
+        "yield_ttm": 0.0642167164280509,
+        "yield_avg": 0.0427740976214409
+      }
+    ],
+    "evaluable_count": 462,
+    "flagged_count": 89
+  },
+  "lq45_low_float": {
+    "flagged": [
+      {
+        "symbol": "SCMA.JK",
+        "company_name": "Surya Citra Media Tbk",
+        "free_float": 0.1058
+      },
+      {
+        "symbol": "PGEO.JK",
+        "company_name": "PT Pertamina Geothermal Energy Tbk",
+        "free_float": 0.11073
+      },
+      {
+        "symbol": "MAPI.JK",
+        "company_name": "Mitra Adiperkasa Tbk",
+        "free_float": 0.1276
+      },
+      {
+        "symbol": "NCKL.JK",
+        "company_name": "PT Trimegah Bangun Persada Tbk",
+        "free_float": 0.1375
+      },
+      {
+        "symbol": "ADMR.JK",
+        "company_name": "PT Alamtri Minerals Indonesia Tbk",
+        "free_float": 0.14552
+      },
+      {
+        "symbol": "UNVR.JK",
+        "company_name": "Unilever Indonesia Tbk",
+        "free_float": 0.1457
+      },
+      {
+        "symbol": "ISAT.JK",
+        "company_name": "PT Indosat Tbk",
+        "free_float": 0.16343
+      },
+      {
+        "symbol": "AADI.JK",
+        "company_name": "PT Adaro Andalan Indonesia Tbk",
+        "free_float": 0.18383
+      },
+      {
+        "symbol": "ICBP.JK",
+        "company_name": "Indofood CBP Sukses Makmur Tbk",
+        "free_float": 0.1947
+      },
+      {
+        "symbol": "CUAN.JK",
+        "company_name": "PT Petrindo Jaya Kreasi Tbk",
+        "free_float": 0.19585
+      },
+      {
+        "symbol": "INCO.JK",
+        "company_name": "Vale Indonesia Tbk",
+        "free_float": 0.20635
+      },
+      {
+        "symbol": "MEDC.JK",
+        "company_name": "PT Medco Energi Internasional Tbk",
+        "free_float": 0.2466
+      }
+    ],
+    "evaluable_count": 45,
+    "flagged_count": 12
+  }
+}

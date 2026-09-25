@@ -1,0 +1,260 @@
+{
+  "source_file": "docs/PRODUCT.md §5.3",
+  "scoreboard": [
+    {
+      "belief": "Cheap stocks (low P/E) do better",
+      "verdict": "yes",
+      "label": "Yes, modestly (H5, H10)",
+      "belief_id": "Saham dengan valuasi murah (P/E rendah) memberi hasil lebih baik",
+      "label_id": "Ya, terbukti, meski pengaruhnya tidak besar",
+      "title_short_id": "Saham murah (P/E rendah) memberi hasil lebih baik",
+      "result_short_id": "Terbukti, tapi pengaruhnya kecil",
+      "evidence": {
+        "hypothesis_id": "H5, H10",
+        "n": "n=1.148 (holdout)",
+        "period_id": "Formasi 2024–2026, hasil diukur Mei–Sep tahun berikutnya",
+        "limit_id": "Berdasarkan riwayat harga riset, belum divalidasi silang terhadap data harga Sectors."
+      }
+    },
+    {
+      "belief": "High dividend yield means better returns",
+      "verdict": "yes",
+      "label": "Yes, modestly (H10, new 2026-09-12)",
+      "belief_id": "Dividen yang tinggi berarti hasil investasi lebih baik",
+      "label_id": "Ya, terbukti, meski pengaruhnya tidak besar",
+      "title_short_id": "Dividen tinggi berarti hasil lebih baik",
+      "result_short_id": "Terbukti, tapi pengaruhnya kecil",
+      "evidence": {
+        "hypothesis_id": "H10",
+        "n": "n=701 (holdout)",
+        "period_id": "Formasi 2024–2025",
+        "limit_id": "Hanya berlaku untuk saham yang membagikan dividen pada tahun itu, tidak mencakup saham yang tidak membagikan dividen sama sekali."
+      }
+    },
+    {
+      "belief": "Small companies earn more",
+      "verdict": "yes",
+      "label": "Yes, but weaker than H5 alone suggested — H5's own diagnostic traced most of it to one 2025 rate-cut window; H10 finds the same direction re-confirmed across pooled years, so this is now on firmer footing than H5 alone (see EXPERIMENT.md)",
+      "belief_id": "Perusahaan kecil memberi keuntungan lebih besar",
+      "label_id": "Ya, tapi buktinya lebih lemah dari perkiraan awal: sebagian besar pengaruhnya berasal dari satu periode tertentu di tahun 2025, meski pengujian ulang di tahun-tahun lain menunjukkan arah yang sama",
+      "title_short_id": "Perusahaan kecil memberi untung lebih besar",
+      "result_short_id": "Terbukti, tapi lebih lemah dari perkiraan",
+      "evidence": {
+        "hypothesis_id": "H5, H10",
+        "n": "n=1.148 (H5 holdout), n=1.774 (H10 holdout)",
+        "period_id": "2022–2026",
+        "limit_id": "Hasil holdout H5 sangat didominasi oleh satu tahun (2024→2025 setelah pemangkasan suku bunga), belum direplikasi secara independen di tahun lain."
+      }
+    },
+    {
+      "belief": "Oversold (RSI < 30) means a bounce",
+      "verdict": "no",
+      "label": "No (H14)",
+      "belief_id": "Saham yang 'oversold' (RSI di bawah 30) akan segera memantul naik",
+      "label_id": "Tidak terbukti: tidak ada kaitan yang bisa diandalkan",
+      "title_short_id": "Saham oversold (RSI di bawah 30) akan memantul",
+      "result_short_id": "Tidak ada kaitan yang bisa diandalkan",
+      "evidence": {
+        "hypothesis_id": "H14",
+        "n": "n=26.701 titik data (holdout, 887 saham)",
+        "period_id": "Formasi berulang 2022–2026",
+        "limit_id": "Arah hubungan justru berbalik antara data eksplorasi dan data holdout, tidak konsisten sama sekali."
+      }
+    },
+    {
+      "belief": "Price above its 200-day average keeps going up",
+      "verdict": "no",
+      "label": "No (H14)",
+      "belief_id": "Harga di atas rata-rata 200 hari akan terus naik",
+      "label_id": "Tidak terbukti: tidak ada kaitan yang bisa diandalkan",
+      "title_short_id": "Harga di atas rata-rata 200 hari akan terus naik",
+      "result_short_id": "Tidak ada kaitan yang bisa diandalkan",
+      "evidence": {
+        "hypothesis_id": "H14",
+        "n": "n=26.701 titik data (holdout, 887 saham)",
+        "period_id": "Formasi berulang 2022–2026",
+        "limit_id": "Tidak signifikan di data eksplorasi, lalu berbalik jadi negatif di data holdout."
+      }
+    },
+    {
+      "belief": "Recent 60-day momentum predicts next month",
+      "verdict": "no",
+      "label": "No (H14)",
+      "belief_id": "Tren pergerakan harga 60 hari terakhir bisa memprediksi bulan berikutnya",
+      "label_id": "Tidak terbukti: tidak ada kaitan yang bisa diandalkan",
+      "title_short_id": "Tren 60 hari memprediksi bulan berikutnya",
+      "result_short_id": "Tidak ada kaitan yang bisa diandalkan",
+      "evidence": {
+        "hypothesis_id": "H14",
+        "n": "n=26.701 titik data (holdout, 887 saham)",
+        "period_id": "Formasi berulang 2022–2026",
+        "limit_id": "Tidak signifikan di data eksplorasi; sinyal di holdout lemah dan berlawanan arah dengan dugaan awal."
+      }
+    },
+    {
+      "belief": "High ROE (quality) predicts better returns",
+      "verdict": "no",
+      "label": "No (H10)",
+      "belief_id": "Profitabilitas tinggi (ROE) memprediksi hasil investasi yang lebih baik",
+      "label_id": "Tidak terbukti: tidak ada kaitan yang bisa diandalkan",
+      "title_short_id": "Laba tinggi dibanding modal (ROE) memprediksi hasil lebih baik",
+      "result_short_id": "Tidak ada kaitan yang bisa diandalkan",
+      "evidence": {
+        "hypothesis_id": "H10",
+        "n": "n=1.774 (holdout, pooled)",
+        "period_id": "Formasi 2024–2025",
+        "limit_id": "Arah hubungan berbalik antara eksplorasi dan holdout, dan tidak lolos koreksi uji berganda (FDR)."
+      }
+    },
+    {
+      "belief": "High leverage (debt/equity) predicts worse returns",
+      "verdict": "no",
+      "label": "No (H10)",
+      "belief_id": "Utang yang tinggi memprediksi hasil investasi yang lebih buruk",
+      "label_id": "Tidak terbukti: tidak ada kaitan yang bisa diandalkan",
+      "title_short_id": "Utang tinggi memprediksi hasil lebih buruk",
+      "result_short_id": "Tidak ada kaitan yang bisa diandalkan",
+      "evidence": {
+        "hypothesis_id": "H10",
+        "n": "n=1.774 (holdout, pooled)",
+        "period_id": "Formasi 2024–2025",
+        "limit_id": "Tidak signifikan di kedua fase, dan tidak lolos koreksi uji berganda (FDR)."
+      }
+    },
+    {
+      "belief": "A stock suspended for a sudden price spike keeps rising",
+      "verdict": "mixed_or_inconclusive",
+      "label": "Mixed (H11) — typically fades (roughly 2 in 3 underperform the index over the next 90 days), but a small minority keep running hard, skewing the average the other way. Reported as both, not one verdict — see EXPERIMENT.md",
+      "belief_id": "Saham yang disuspensi karena lonjakan harga akan terus naik",
+      "label_id": "Terbelah: sekitar 2 dari 3 saham justru kalah dari indeks dalam 90 hari setelahnya, tapi sebagian kecil terus melonjak tajam",
+      "title_short_id": "Saham yang disuspensi karena lonjakan akan terus naik",
+      "result_short_id": "Terbelah: 2 dari 3 kalah dari indeks dalam 90 hari, sebagian terus melonjak",
+      "evidence": {
+        "hypothesis_id": "H11",
+        "n": "n=91 (holdout, +30 hari), n=83 (holdout, +90 hari)",
+        "period_id": "Suspensi 2025 (data awal) dan 2026 (uji akhir)",
+        "limit_id": "Uji statistik utama (rata-rata) tidak signifikan, tapi tingkat menang saham ini terhadap indeks konsisten di bawah 50% pada data holdout (33,7%–37,4%), dua cara membaca data ini bercerita berbeda, keduanya dilaporkan."
+      }
+    },
+    {
+      "belief": "Fast revenue growth predicts better returns",
+      "verdict": "no",
+      "label": "No — sign disagreed between explore and holdout (H10)",
+      "belief_id": "Pertumbuhan pendapatan yang cepat memprediksi hasil investasi yang lebih baik",
+      "label_id": "Tidak terbukti: hasil pengujian tidak konsisten di data yang berbeda",
+      "title_short_id": "Pendapatan tumbuh cepat memprediksi hasil lebih baik",
+      "result_short_id": "Hasil tidak konsisten di data yang berbeda",
+      "evidence": {
+        "hypothesis_id": "H10",
+        "n": "n=1.774 (holdout, pooled)",
+        "period_id": "Formasi 2024–2025",
+        "limit_id": "Arah hubungan berubah dari nyaris nol di eksplorasi menjadi positif lemah di holdout, bukti lemah, bukan pola nyata."
+      }
+    },
+    {
+      "belief": "High payout ratio predicts worse returns",
+      "verdict": "no",
+      "label": "No (H10)",
+      "belief_id": "Rasio pembayaran dividen yang tinggi memprediksi hasil investasi yang lebih buruk",
+      "label_id": "Tidak terbukti: tidak ada kaitan yang bisa diandalkan",
+      "title_short_id": "Dividen besar dibanding laba memprediksi hasil lebih buruk",
+      "result_short_id": "Tidak ada kaitan yang bisa diandalkan",
+      "evidence": {
+        "hypothesis_id": "H10",
+        "n": "n=1.774 (holdout, pooled)",
+        "period_id": "Formasi 2024–2025",
+        "limit_id": "Tidak signifikan di kedua fase, dan arah hubungan berbalik antar fase."
+      }
+    },
+    {
+      "belief": "A high payout ratio predicts a dividend cut",
+      "verdict": "yes",
+      "label": "Yes, strongly (H4) — cut rate rises from ~14% (lowest payout tercile) to ~66% (highest) in holdout",
+      "belief_id": "Rasio pembayaran dividen yang tinggi memprediksi pemotongan dividen di masa depan",
+      "label_id": "Ya, terbukti kuat: kemungkinan pemotongan dividen naik dari sekitar 14% menjadi 66% pada kelompok dengan rasio pembayaran tertinggi",
+      "title_short_id": "Dividen besar dibanding laba memprediksi dividen dipotong",
+      "result_short_id": "Terbukti kuat: pemotongan naik dari 14 ke 66 dari 100",
+      "evidence": {
+        "hypothesis_id": "H4",
+        "n": "n=540 (holdout)",
+        "period_id": "Formasi 2023–2024, hasil diukur 2024–2025",
+        "limit_id": "Sebagian efek ini bersifat mekanis (aritmetika akuntansi perusahaan yang laba turun), bukan murni perilaku, 'pemotongan' didefinisikan sebagai penurunan berapa pun, termasuk yang sangat kecil."
+      }
+    },
+    {
+      "belief": "Combining a cheap/quality/leverage signal with a technical one beats either alone",
+      "verdict": "no",
+      "label": "No, all 3 tested combinations null (H15)",
+      "belief_id": "Menggabungkan sinyal fundamental (valuasi/kualitas/utang) dengan sinyal teknikal memberi hasil lebih baik daripada salah satunya saja",
+      "label_id": "Tidak terbukti: ketiga kombinasi yang diuji tidak menunjukkan hasil lebih baik",
+      "title_short_id": "Menggabungkan sinyal fundamental dan teknikal lebih baik dari salah satunya",
+      "result_short_id": "Tiga kombinasi diuji, tidak ada yang lebih baik",
+      "evidence": {
+        "hypothesis_id": "H15",
+        "n": "3 kombinasi diuji, n bervariasi per sel (13–470)",
+        "period_id": "2022–2026",
+        "limit_id": "Hanya 3 kombinasi spesifik yang diuji, ini bukan bukti bahwa tidak ada kombinasi lain yang bisa berhasil."
+      }
+    },
+    {
+      "belief": "Insiders selling before a price spike warns of a coming crash",
+      "verdict": "no",
+      "label": "Not proven — reversed in holdout, but only 4 events, too few to conclude anything (H8)",
+      "belief_id": "Penjualan oleh insider sebelum lonjakan harga adalah tanda peringatan akan terjadi crash",
+      "label_id": "Tidak terbukti: hasilnya malah terbalik saat diuji ulang, dan hanya 4 kejadian",
+      "title_short_id": "Insider menjual sebelum lonjakan adalah tanda akan anjlok",
+      "result_short_id": "Terbalik saat diuji ulang, hanya 4 kejadian",
+      "evidence": {
+        "hypothesis_id": "H8",
+        "n": "n=4 (holdout)",
+        "period_id": "Suspensi 2025 (data awal) dan 2026 (uji akhir)",
+        "limit_id": "Sampel holdout hanya 4 kejadian, terlalu kecil untuk disimpulkan apa pun, dan hasil yang ada justru berbalik arah dari dugaan awal, bukan mendukungnya."
+      }
+    },
+    {
+      "belief": "Positive news coverage predicts a stock will rise",
+      "verdict": "mixed_or_inconclusive",
+      "label": "Inconclusive (H9) — sign flips between the two halves of the only data available; promising but not confirmed, needs a longer news history to re-test",
+      "belief_id": "Pemberitaan positif memprediksi harga saham akan naik",
+      "label_id": "Belum jelas: arah hasilnya berbalik antara dua paruh data yang ada; menjanjikan tapi belum terbukti, perlu riwayat berita yang lebih panjang",
+      "title_short_id": "Berita positif memprediksi harga akan naik",
+      "result_short_id": "Arah hasilnya berbalik antar paruh data, belum jelas",
+      "evidence": {
+        "hypothesis_id": "H9",
+        "n": "n=1.863–4.555 (holdout, tergantung horizon)",
+        "period_id": "Berita 2025–2026",
+        "limit_id": "Kedua bagian data ('eksplorasi' dan 'holdout') berasal dari periode waktu yang berdekatan, bukan dua tahun yang benar-benar terpisah, jadi ini bukan holdout riil seperti pada temuan lain."
+      }
+    },
+    {
+      "belief": "Thin float means wild swings",
+      "verdict": "no",
+      "label": "Backwards — wide float is bumpier (H1)",
+      "belief_id": "Kepemilikan publik yang kecil (free float rendah) membuat harga lebih bergejolak",
+      "label_id": "Terbalik dari dugaan: justru saham dengan free float besar yang lebih bergejolak",
+      "title_short_id": "Free float kecil membuat harga lebih bergejolak",
+      "result_short_id": "Terbalik: float besar yang lebih bergejolak",
+      "evidence": {
+        "hypothesis_id": "H1",
+        "n": "n=913",
+        "period_id": "Pola ini teramati 2024–2026, tidak teramati pada 2022–2023",
+        "limit_id": "Ini hubungan yang teramati bersamaan (kepemilikan publik dan volatilitas diukur pada waktu yang sama), bukan prediksi, free float adalah angka sesaat tanpa riwayat."
+      }
+    },
+    {
+      "belief": "Rising profits mean a rising share price",
+      "verdict": "no",
+      "label": "No — holdout correlation +0.002 (H17)",
+      "belief_id": "Laba perusahaan yang naik membuat harga sahamnya ikut naik",
+      "label_id": "Tidak terbukti: pada data uji ulang, tidak ada kaitan antara kenaikan laba dan hasil harga",
+      "title_short_id": "Laba naik membuat harga saham naik",
+      "result_short_id": "Tidak ada kaitan yang bisa diandalkan",
+      "evidence": {
+        "hypothesis_id": "H17",
+        "n": "n=1.256 (holdout)",
+        "period_id": "Laba 2022–2025, hasil harga Mei–September 2023–2026",
+        "limit_id": "Hanya perusahaan yang labanya positif di tahun sebelumnya yang bisa diukur pertumbuhannya, dan hasil harga diambil dari satu jendela Mei–September per tahun, dari riwayat harga riset."
+      }
+    }
+  ]
+}

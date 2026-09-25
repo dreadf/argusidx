@@ -1,0 +1,6051 @@
+{
+  "assignments": {
+    "BBCA.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "BBRI.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "DCII.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "BREN.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "BYAN.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "BMRI.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "AMMN.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "TLKM.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "MORA.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "DSSA.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "ASII.JK": {
+      "level": "sector",
+      "group": "Industrials"
+    },
+    "SRAJ.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "TPIA.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "BRPT.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "DNET.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "BBNI.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "EMAS.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "SMMA.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "MPRO.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "CASA.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "CUAN.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "PANI.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "UNTR.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "BRMS.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "AADI.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "IMPC.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "HMSP.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "CDIA.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "ICBP.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "BUMI.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "ANTM.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "BRIS.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "ISAT.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "BNLI.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "ADRO.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "MDKA.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "ADMR.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "INDF.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "UNVR.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "NCKL.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "GOTO.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "MBMA.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "MLPT.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "PGUN.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "PTRO.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "AMRT.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "CPIN.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "INCO.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "SUPR.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "INKP.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "EXCL.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "MEGA.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "TAPG.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "GEMS.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "BDMN.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "BNGA.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "PGEO.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "BELI.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "MTEL.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "MEDC.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "ENRG.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "GGRM.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "PGAS.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "PTBA.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "TINS.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "CMRY.JK": {
+      "level": "industry",
+      "group": "Processed Foods"
+    },
+    "VKTR.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "KLBF.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "JARR.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "MYOR.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "TBIG.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "ARCI.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "EMTK.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "AKRA.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "ITMG.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "MGLV.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "NISP.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "FAPA.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "TOWR.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "LIFE.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "JPFA.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "SILO.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "GIAA.JK": {
+      "level": "sector",
+      "group": "Transportation & Logistic"
+    },
+    "MIKA.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "BINA.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "BNBR.JK": {
+      "level": "sector",
+      "group": "Industrials"
+    },
+    "BTPN.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "SRTG.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "TKIM.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "MDIY.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "MAPI.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "AVIA.JK": {
+      "level": "industry",
+      "group": "Chemicals"
+    },
+    "PNBN.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "CBDK.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BSIM.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "JSMR.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "MKPI.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "SOHO.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "BBHI.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "PACK.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "NSSS.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "ADES.JK": {
+      "level": "sub_sector",
+      "group": "Food & Beverage"
+    },
+    "MAPA.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "MSIN.JK": {
+      "level": "sub_sector",
+      "group": "Media & Entertainment"
+    },
+    "SMAR.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "INTP.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "BUVA.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "RAJA.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "DSNG.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "DEWA.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "FASW.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "SUPA.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "BBSI.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "AALI.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "BBTN.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "POWR.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "AUTO.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "SINI.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "ULTJ.JK": {
+      "level": "industry",
+      "group": "Processed Foods"
+    },
+    "PSAB.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "BFIN.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "INDY.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "JRPT.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BNII.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "MLBI.JK": {
+      "level": "sub_sector",
+      "group": "Food & Beverage"
+    },
+    "RLCO.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "ARTO.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "CITA.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "BSDE.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "ARKO.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "CARE.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "MCOL.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "PWON.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "POLU.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "STAA.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "RISE.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "CMNT.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "BSSR.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "SCMA.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "ALII.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "HRUM.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "RATU.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "STTP.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "TSPC.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "BKSL.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "GOOD.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "LSIP.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "IBST.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "SMGR.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "CTRA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "SSMS.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "ESSA.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "YUPI.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "TRIO.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "BUKA.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "ADMF.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "SGER.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "WIFI.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "COIN.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "SIDO.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "PRAY.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "HEAL.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "CLEO.JK": {
+      "level": "sub_sector",
+      "group": "Food & Beverage"
+    },
+    "HRTA.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "SMSM.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "TCPI.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "EDGE.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "BBKP.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "AGII.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "CMNP.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "SIMP.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "ERAA.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "BMAS.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "DMAS.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BIPI.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "SMMT.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "RMKE.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "PLIN.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MIDI.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "BHAT.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "DUTI.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "FILM.JK": {
+      "level": "sub_sector",
+      "group": "Media & Entertainment"
+    },
+    "SGRO.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "KPIG.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "MDIA.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "INPP.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "TMAS.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "BJBR.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "NATO.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "BBMD.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "WIKA.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "SSIA.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "TLDN.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "BTPS.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "ABMM.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "BJTM.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "INET.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "CNMA.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "VICI.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "GMFI.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "CYBR.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "PNLF.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "SHIP.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "SMCB.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "FORE.JK": {
+      "level": "sub_sector",
+      "group": "Food & Beverage"
+    },
+    "CLAY.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "EPMT.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "BULL.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "ELPI.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "SMDR.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "YULE.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "MTDL.JK": {
+      "level": "sector",
+      "group": "Technology"
+    },
+    "ACES.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "BOGA.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "WBSA.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "DMND.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "WSKT.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "OMED.JK": {
+      "level": "sub_sector",
+      "group": "Healthcare Equipment & Providers"
+    },
+    "UNIC.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "BALI.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "HATM.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "SMRA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BSWD.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "ANJT.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "PKPK.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "ELSA.JK": {
+      "level": "industry",
+      "group": "Oil, Gas & Coal Supports"
+    },
+    "APIC.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "SAME.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "TOTL.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "MAYA.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "LINK.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "TRIM.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "MBSS.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "TUGU.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "NICL.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "MSJA.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "DRMA.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "BPII.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "GJTL.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "MASB.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "PALM.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "KRAS.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "SOCI.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "UANG.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "TOBA.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "TGKA.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "SURE.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "MPMX.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "JECX.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "LPKR.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MSTI.JK": {
+      "level": "sector",
+      "group": "Technology"
+    },
+    "META.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "MARK.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "AMAR.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "JTPE.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "KIJA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MTLA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MMIX.JK": {
+      "level": "sub_sector",
+      "group": "Healthcare Equipment & Providers"
+    },
+    "BIRD.JK": {
+      "level": "sector",
+      "group": "Transportation & Logistic"
+    },
+    "GGRP.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "DKFT.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "IATA.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "BWPT.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "PBID.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "NIRO.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "CASS.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "TFCO.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "BANK.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "NOBU.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "SMIL.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "TBLA.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "HEXA.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "ARNA.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "ARGO.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "BEEF.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "AGRO.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "PSGO.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "LPPF.JK": {
+      "level": "sub_sector",
+      "group": "Retailing"
+    },
+    "MKAP.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "ROTI.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "IMAS.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "EURO.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "RDTX.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "GOLF.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "UNSP.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "JSPT.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "SAMF.JK": {
+      "level": "industry",
+      "group": "Chemicals"
+    },
+    "WIIM.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "KEJU.JK": {
+      "level": "industry",
+      "group": "Processed Foods"
+    },
+    "KEEN.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "CENT.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "CBRE.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "DAAZ.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "BBYB.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "ISSP.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "INPC.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "BESS.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "VISI.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "CBUT.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "SDRA.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "DOOH.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "BTEL.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "SKRN.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "ABDA.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "NEST.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "LPCK.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MNCN.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "FPNI.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "FISH.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "MAPB.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "SRIL.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "CPRO.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "ROCK.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "PNIN.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "MDLA.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "AGRS.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "APLN.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BGTG.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "ASGR.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "PYFA.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "WINS.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "SFAN.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "RALS.JK": {
+      "level": "sub_sector",
+      "group": "Retailing"
+    },
+    "OMRE.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "PNGO.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "KETR.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "MINA.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "PORT.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "PRDA.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "BNBA.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "DAYA.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "SMDM.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "GTSI.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "ASLI.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "MCOR.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "ALDO.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "IRSX.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "BUKK.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "VICO.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "ALKA.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "RANS.JK": {
+      "level": "sub_sector",
+      "group": "Media & Entertainment"
+    },
+    "KAEF.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "PSKT.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "MYOH.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "TOTO.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "TRAM.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "HUMI.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "ASRI.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "CTBN.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "MGRO.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "DATA.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "MAHA.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "JAWA.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "BCIC.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "BACA.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "IFSH.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "RIMO.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "ASSA.JK": {
+      "level": "sector",
+      "group": "Transportation & Logistic"
+    },
+    "PBSA.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "BHIT.JK": {
+      "level": "sector",
+      "group": "Industrials"
+    },
+    "NICE.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "TEBE.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "BABP.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "DNAR.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "DWGL.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "BISI.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "UCID.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "BCAP.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "KOTA.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "MBAP.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "BRAM.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "IFII.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "KMTR.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "MMLP.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "SCCO.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "NETV.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "IPCC.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "ACST.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "FAST.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "IMJS.JK": {
+      "level": "sector",
+      "group": "Transportation & Logistic"
+    },
+    "PTSN.JK": {
+      "level": "sector",
+      "group": "Technology"
+    },
+    "DGWG.JK": {
+      "level": "industry",
+      "group": "Chemicals"
+    },
+    "PMJS.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "FUTR.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "MTMH.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "OASA.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "AMAG.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "BMTR.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "INDR.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "KINO.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "AGAR.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "LPGI.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "PSSI.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "DOID.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "PNBS.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "AYAM.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "BOLT.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "BLES.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "TRIN.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BKSW.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "COCO.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "STAR.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "POLI.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "DVLA.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "BACH.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "BLTZ.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "MERK.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "JGLE.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "RONY.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "BVIC.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "FORU.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "CARS.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "BMHS.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "SMBR.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "INDS.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "TPMA.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "SUNI.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "SIPD.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "CSAP.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "IIKP.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "LTLS.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "ERAL.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "GSMF.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "DEPO.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "FMII.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "SPTO.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "NICK.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "CSRA.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "IPCM.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "SQMI.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "ITMA.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "ELTY.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "KKGI.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "MAIN.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "SONA.JK": {
+      "level": "sub_sector",
+      "group": "Retailing"
+    },
+    "SKLT.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "MKTR.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "CFIN.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "MLIA.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "DLTA.JK": {
+      "level": "sub_sector",
+      "group": "Food & Beverage"
+    },
+    "AMFG.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "DMMX.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "MPPA.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "EKAD.JK": {
+      "level": "industry",
+      "group": "Chemicals"
+    },
+    "MLPL.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "HERO.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "JKON.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "NRCA.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "TRGU.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "KBLI.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "IPTV.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "ATIC.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "CEKA.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "WOOD.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "PSAT.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "GWSA.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "GMTD.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "TRST.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "BKDP.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BSBK.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "TDPM.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "BLUE.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "SUGI.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "BEST.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "PTPP.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "BEKS.JK": {
+      "level": "sub_industry",
+      "group": "Banks"
+    },
+    "BLOG.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "DILD.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "GRIA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "RAAM.JK": {
+      "level": "sub_sector",
+      "group": "Media & Entertainment"
+    },
+    "BIKE.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "PANS.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "MINE.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "NFCX.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "GZCO.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "RSCH.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "ARII.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "BOLA.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "TIFA.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "ADHI.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "ADCP.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "HOME.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "VERN.JK": {
+      "level": "sub_sector",
+      "group": "Media & Entertainment"
+    },
+    "BBLD.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "AISA.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "PPRE.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "MITI.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "FOLK.JK": {
+      "level": "sector",
+      "group": "Industrials"
+    },
+    "BBRM.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "TAMU.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "JIHD.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "TCID.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "UDNG.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "GDST.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "PDPP.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "PTPW.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "WOMF.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "ADMG.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "KING.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "RELI.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "CAMP.JK": {
+      "level": "industry",
+      "group": "Processed Foods"
+    },
+    "VOKS.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "ARTA.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "BUDI.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "CITY.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BUAH.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "BSML.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "PPRO.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MFMI.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "PADI.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "TALF.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "RSGK.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "POLL.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "SKBM.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "YPAS.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "GHON.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "SOSS.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "WIRG.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "SHID.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "SPMA.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "LIVE.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "HGII.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "GULA.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "TBMS.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "RODA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "WMPP.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "AMAN.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "KSIX.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MOLI.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "ASLC.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "RANC.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "AREA.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "BLTA.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "INDO.JK": {
+      "level": "industry",
+      "group": "Real Estate Management & Development"
+    },
+    "HITS.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "INRU.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "AMOR.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "MTWI.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "BELL.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "WSBP.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "IBOS.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "SMGA.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "MABA.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "KDSI.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "ZINC.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "DGIK.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "PJAA.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "IPOL.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "VIVA.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "CMPP.JK": {
+      "level": "sector",
+      "group": "Transportation & Logistic"
+    },
+    "BDKR.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "APEX.JK": {
+      "level": "industry",
+      "group": "Oil, Gas & Coal Supports"
+    },
+    "SAFE.JK": {
+      "level": "sector",
+      "group": "Transportation & Logistic"
+    },
+    "PTMR.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "ATAP.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "URBN.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "PGJO.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "WTON.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "LABS.JK": {
+      "level": "sub_sector",
+      "group": "Healthcare Equipment & Providers"
+    },
+    "PIPA.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "LFLO.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "IKBI.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "AXIO.JK": {
+      "level": "sector",
+      "group": "Technology"
+    },
+    "STRK.JK": {
+      "level": "sub_sector",
+      "group": "Food & Beverage"
+    },
+    "BPFI.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "CBPE.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "HDFA.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "JELI.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "LEAD.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "WMUU.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "KONI.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "PADA.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "LCGP.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "CHIP.JK": {
+      "level": "sector",
+      "group": "Technology"
+    },
+    "SWID.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MDLN.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BRNA.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "SMRU.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "ZONE.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "JECC.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "EMMI.JK": {
+      "level": "sub_sector",
+      "group": "Healthcare Equipment & Providers"
+    },
+    "BABY.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "SOTS.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "KOCI.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "IRRA.JK": {
+      "level": "sub_sector",
+      "group": "Healthcare Equipment & Providers"
+    },
+    "PMUI.JK": {
+      "level": "sub_sector",
+      "group": "Retailing"
+    },
+    "TIRT.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "FITT.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "ELIT.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "PANR.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "LUCY.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "SRSN.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "PZZA.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "ZATA.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "SOFA.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "NIKL.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "PBRX.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "IDPR.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "SULI.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "BTEK.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "CASH.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "AWAN.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "SSTM.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "RMKO.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "GUNA.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "KOKA.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "PEVE.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "HOKI.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "UNTD.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "DPUM.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "SURI.JK": {
+      "level": "sub_sector",
+      "group": "Healthcare Equipment & Providers"
+    },
+    "TRIS.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "CHEK.JK": {
+      "level": "sub_sector",
+      "group": "Healthcare Equipment & Providers"
+    },
+    "INPS.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "SMKL.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "VRNA.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "BAJA.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "HYGN.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "NELY.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "MDKI.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "KDTN.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "MHKI.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "CLPI.JK": {
+      "level": "industry",
+      "group": "Chemicals"
+    },
+    "DART.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "PEGE.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "GLVA.JK": {
+      "level": "sector",
+      "group": "Technology"
+    },
+    "ENAK.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "MGNA.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "HAIS.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "MAXI.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "AHAP.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "BOAT.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "WEGE.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "MREI.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "BAYU.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "GTRA.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "TRUK.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "MUTU.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "GDYR.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "VTNY.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "ARMY.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MAGP.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "HALO.JK": {
+      "level": "sub_sector",
+      "group": "Healthcare Equipment & Providers"
+    },
+    "GPRA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BBSS.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "HOPE.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "KBRI.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "IGAR.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "SMLE.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "RIGS.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "CRAB.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "SAPX.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "UFOE.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "KMDS.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "POSA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "CCSI.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "NZIA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "ESTA.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "MTFN.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "PRDL.JK": {
+      "level": "sub_sector",
+      "group": "Healthcare Equipment & Providers"
+    },
+    "PRIM.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "KOBX.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "PNSE.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "KBLM.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "INAF.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "GTBO.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "CRSN.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "NUSA.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "DGNS.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "TYRE.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "SCNP.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "CSIS.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "UNIQ.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "ASPR.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "TRUE.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "DYAN.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "NASA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BMSR.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "DADA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "APLI.JK": {
+      "level": "industry",
+      "group": "Chemicals"
+    },
+    "TRUS.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "EAST.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "ASRM.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "HOMI.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "TOSK.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "JATI.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "PPGL.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "PTPS.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "GOLD.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "HBAT.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "WINE.JK": {
+      "level": "sub_sector",
+      "group": "Food & Beverage"
+    },
+    "PJHB.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "VAST.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "ESTI.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "SATU.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MPXL.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "BIPP.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "ASPI.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "REAL.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "CNKO.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "DEWI.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "IOTF.JK": {
+      "level": "sector",
+      "group": "Technology"
+    },
+    "AKPI.JK": {
+      "level": "industry",
+      "group": "Chemicals"
+    },
+    "ETWA.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "TGUK.JK": {
+      "level": "industry",
+      "group": "Processed Foods"
+    },
+    "MICE.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "TARA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "FUJI.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "MYTX.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "BEER.JK": {
+      "level": "sub_sector",
+      "group": "Food & Beverage"
+    },
+    "YOII.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "KIAS.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "UVCR.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "ATLA.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "NAIK.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "TFAS.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "IKPM.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "KBAG.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "KLAS.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "SOLA.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "TRON.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "WICO.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "MEJA.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "KREN.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "PART.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "ASHA.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "WGSH.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "DOSS.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "ALMI.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "BAIK.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "PTSP.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "AMMS.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "HAJJ.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "LPLI.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "OKAS.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "BATR.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "PDES.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "LAPD.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "BINO.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "GRPM.JK": {
+      "level": "sub_sector",
+      "group": "Food & Beverage"
+    },
+    "BPTR.JK": {
+      "level": "sector",
+      "group": "Transportation & Logistic"
+    },
+    "HRME.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "IKAI.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "CGAS.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "EMDE.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BTON.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "SAGE.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "AMIN.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "POLA.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "PEHA.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "SDPC.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "INOV.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "AKKU.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "BOBA.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "AKSI.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "COWL.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MSIE.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "TIRA.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "HILL.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "MCAS.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "ERTX.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "TAMA.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "WAPO.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "JMAS.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "NTBK.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "DUCK.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "ACRO.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "VINS.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "BEBS.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "ASJT.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "KBLV.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "ECII.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "LPPS.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "RELF.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "SLIS.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "GPSO.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "ITIC.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "LAND.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "PURA.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "APII.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "INTA.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "KAQI.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "PSDN.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "PTMP.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "NINE.JK": {
+      "level": "sector",
+      "group": "Technology"
+    },
+    "SDMU.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "ASDM.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "MPIX.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "MDRN.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "SEMA.JK": {
+      "level": "sector",
+      "group": "Energy"
+    },
+    "ANDI.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "LION.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "COAL.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "TRJA.JK": {
+      "level": "sector",
+      "group": "Transportation & Logistic"
+    },
+    "DIVA.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "PPRI.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "CAKK.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "MTRA.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "BAUT.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "NAYZ.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "CINT.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "NPGF.JK": {
+      "level": "industry",
+      "group": "Chemicals"
+    },
+    "GOLL.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "LPIN.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "YELO.JK": {
+      "level": "sub_sector",
+      "group": "Retailing"
+    },
+    "EPAC.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "FWCT.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "GAMA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "FIRE.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "MBTO.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "CSMI.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "IPAC.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "PUDP.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "DKHH.JK": {
+      "level": "sub_industry",
+      "group": "Healthcare Providers"
+    },
+    "HOTL.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "PAMG.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "GLOB.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "ZYRX.JK": {
+      "level": "sector",
+      "group": "Technology"
+    },
+    "MTPS.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "ENZO.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "HELI.JK": {
+      "level": "sector",
+      "group": "Transportation & Logistic"
+    },
+    "RBMS.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MRAT.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "RGAS.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "INCI.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "KLIN.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "OBAT.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "RUIS.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "DSFI.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "HKMU.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "WEHA.JK": {
+      "level": "sector",
+      "group": "Transportation & Logistic"
+    },
+    "TMPO.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "LMPI.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "PURI.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "NANO.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "DFAM.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "OBMD.JK": {
+      "level": "industry",
+      "group": "Chemicals"
+    },
+    "INTD.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "ICON.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "CTTH.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "TAXI.JK": {
+      "level": "sector",
+      "group": "Transportation & Logistic"
+    },
+    "MANG.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "LAJU.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "GEMA.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "WINR.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MSKY.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "WOWS.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "PTIS.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "OILS.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "TOOL.JK": {
+      "level": "industry",
+      "group": "Specialty Retail"
+    },
+    "ASBI.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "KOPI.JK": {
+      "level": "industry",
+      "group": "Oil & Gas"
+    },
+    "GRPH.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "LABA.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "ESIP.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "ASMI.JK": {
+      "level": "industry",
+      "group": "Insurance"
+    },
+    "MEDS.JK": {
+      "level": "sub_sector",
+      "group": "Healthcare Equipment & Providers"
+    },
+    "KKES.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "NASI.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "SMKM.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "PMMP.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "KUAS.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "BAPI.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "AYLS.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "ZBRA.JK": {
+      "level": "sector",
+      "group": "Industrials"
+    },
+    "ISEA.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "JAYA.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "KARW.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "MERI.JK": {
+      "level": "sub_sector",
+      "group": "Consumer Services"
+    },
+    "CHEM.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "CPRI.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "MARI.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "ABBA.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "POOL.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "MTSM.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "OPMS.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "FOOD.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "OLIV.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "RAFI.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "CANI.JK": {
+      "level": "sub_industry",
+      "group": "Coal Distribution"
+    },
+    "KRYA.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "INAI.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "LCKM.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "ISAP.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "AIMS.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "KIOS.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "FLMC.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "JSKY.JK": {
+      "level": "sector",
+      "group": "Energy"
+    },
+    "SNLK.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "PTDU.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "SICO.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "SCPI.JK": {
+      "level": "sub_industry",
+      "group": "Pharmaceuticals"
+    },
+    "SBMA.JK": {
+      "level": "sub_industry",
+      "group": "Basic Chemicals"
+    },
+    "DPNS.JK": {
+      "level": "industry",
+      "group": "Chemicals"
+    },
+    "PICO.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "PGLI.JK": {
+      "level": "industry",
+      "group": "Tourism & Recreation"
+    },
+    "JAST.JK": {
+      "level": "sub_sector",
+      "group": "Telecommunication"
+    },
+    "MIRA.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "IBFN.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "CBMF.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "MPOW.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "RCCC.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "ENVY.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "BCIP.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BAPA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "LUCK.JK": {
+      "level": "sector",
+      "group": "Technology"
+    },
+    "IDEA.JK": {
+      "level": "sub_sector",
+      "group": "Consumer Services"
+    },
+    "SPRE.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "POLY.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "KICI.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "BATA.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "KOIN.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Goods"
+    },
+    "HDIT.JK": {
+      "level": "sub_industry",
+      "group": "Online Applications & Services"
+    },
+    "MENN.JK": {
+      "level": "sector",
+      "group": "Technology"
+    },
+    "KJEN.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "TNCA.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "IKAN.JK": {
+      "level": "sub_industry",
+      "group": "Fish, Meat, & Poultry"
+    },
+    "TGRA.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "LRNA.JK": {
+      "level": "sector",
+      "group": "Transportation & Logistic"
+    },
+    "BRRC.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "INCF.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "DEFI.JK": {
+      "level": "sector",
+      "group": "Financials"
+    },
+    "PURE.JK": {
+      "level": "sub_industry",
+      "group": "Diversified Metals & Minerals"
+    },
+    "BOSS.JK": {
+      "level": "sub_industry",
+      "group": "Coal Production"
+    },
+    "LMAX.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "RUNS.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "LOPI.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "TELE.JK": {
+      "level": "sub_sector",
+      "group": "Retailing"
+    },
+    "IPPE.JK": {
+      "level": "sub_industry",
+      "group": "Plantations & Crops"
+    },
+    "TECH.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "PLAN.JK": {
+      "level": "sub_industry",
+      "group": "Hotels, Resorts & Cruise Lines"
+    },
+    "TRIL.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "PLAS.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "TAYS.JK": {
+      "level": "sub_industry",
+      "group": "Processed Foods"
+    },
+    "HADE.JK": {
+      "level": "sector",
+      "group": "Infrastructures"
+    },
+    "RICY.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "AEGS.JK": {
+      "level": "industry",
+      "group": "Auto Components"
+    },
+    "PCAR.JK": {
+      "level": "sector",
+      "group": "Consumer Non-Cyclicals"
+    },
+    "BIMA.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "SWAT.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "DIGI.JK": {
+      "level": "industry",
+      "group": "Media"
+    },
+    "WIDI.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "ARKA.JK": {
+      "level": "industry",
+      "group": "Machinery"
+    },
+    "OCAP.JK": {
+      "level": "industry",
+      "group": "Holding & Investment Companies"
+    },
+    "SOUL.JK": {
+      "level": "sub_sector",
+      "group": "Food & Beverage"
+    },
+    "ALTO.JK": {
+      "level": "sub_sector",
+      "group": "Food & Beverage"
+    },
+    "LMAS.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "TOPS.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "BIKA.JK": {
+      "level": "sub_industry",
+      "group": "Real Estate Development & Management"
+    },
+    "BMBL.JK": {
+      "level": "sub_sector",
+      "group": "Consumer Services"
+    },
+    "SKYB.JK": {
+      "level": "sub_sector",
+      "group": "Software & IT Services"
+    },
+    "FIMP.JK": {
+      "level": "sub_industry",
+      "group": "Heavy Constructions & Civil Engineering"
+    },
+    "INDX.JK": {
+      "level": "sub_sector",
+      "group": "Industrial Services"
+    },
+    "LMSH.JK": {
+      "level": "industry",
+      "group": "Metals & Minerals"
+    },
+    "UNIT.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    },
+    "SIMA.JK": {
+      "level": "sub_industry",
+      "group": "Containers & Packaging"
+    },
+    "ARTI.JK": {
+      "level": "sub_industry",
+      "group": "Oil, Gas & Coal Equipment & Services"
+    },
+    "KAYU.JK": {
+      "level": "sub_sector",
+      "group": "Basic Materials"
+    },
+    "TOYS.JK": {
+      "level": "sector",
+      "group": "Consumer Cyclicals"
+    },
+    "DEAL.JK": {
+      "level": "sub_industry",
+      "group": "Logistics & Deliveries"
+    },
+    "MKNT.JK": {
+      "level": "sub_sector",
+      "group": "Retailing"
+    },
+    "SBAT.JK": {
+      "level": "industry",
+      "group": "Apparel & Luxury Goods"
+    }
+  },
+  "group_members": {
+    "sub_industry:Banks": [
+      "BBCA.JK",
+      "BBRI.JK",
+      "BMRI.JK",
+      "BBNI.JK",
+      "BRIS.JK",
+      "BNLI.JK",
+      "MEGA.JK",
+      "BDMN.JK",
+      "BNGA.JK",
+      "NISP.JK",
+      "BINA.JK",
+      "BTPN.JK",
+      "PNBN.JK",
+      "BSIM.JK",
+      "BBHI.JK",
+      "SUPA.JK",
+      "BBSI.JK",
+      "BBTN.JK",
+      "BNII.JK",
+      "ARTO.JK",
+      "BBKP.JK",
+      "BMAS.JK",
+      "BJBR.JK",
+      "BBMD.JK",
+      "BTPS.JK",
+      "BJTM.JK",
+      "BSWD.JK",
+      "MAYA.JK",
+      "MASB.JK",
+      "AMAR.JK",
+      "BANK.JK",
+      "NOBU.JK",
+      "AGRO.JK",
+      "BBYB.JK",
+      "INPC.JK",
+      "SDRA.JK",
+      "AGRS.JK",
+      "BGTG.JK",
+      "BNBA.JK",
+      "MCOR.JK",
+      "BCIC.JK",
+      "BACA.JK",
+      "BABP.JK",
+      "DNAR.JK",
+      "PNBS.JK",
+      "BKSW.JK",
+      "BVIC.JK",
+      "BEKS.JK"
+    ],
+    "sector:Financials": [
+      "BBCA.JK",
+      "BBRI.JK",
+      "BMRI.JK",
+      "DNET.JK",
+      "BBNI.JK",
+      "SMMA.JK",
+      "CASA.JK",
+      "BRIS.JK",
+      "BNLI.JK",
+      "MEGA.JK",
+      "BDMN.JK",
+      "BNGA.JK",
+      "NISP.JK",
+      "LIFE.JK",
+      "BINA.JK",
+      "BTPN.JK",
+      "SRTG.JK",
+      "PNBN.JK",
+      "BSIM.JK",
+      "BBHI.JK",
+      "SUPA.JK",
+      "BBSI.JK",
+      "BBTN.JK",
+      "BFIN.JK",
+      "BNII.JK",
+      "ARTO.JK",
+      "ADMF.JK",
+      "COIN.JK",
+      "BBKP.JK",
+      "BMAS.JK",
+      "BHAT.JK",
+      "BJBR.JK",
+      "BBMD.JK",
+      "BTPS.JK",
+      "BJTM.JK",
+      "PNLF.JK",
+      "YULE.JK",
+      "BSWD.JK",
+      "APIC.JK",
+      "MAYA.JK",
+      "TRIM.JK",
+      "TUGU.JK",
+      "BPII.JK",
+      "MASB.JK",
+      "PALM.JK",
+      "AMAR.JK",
+      "BANK.JK",
+      "NOBU.JK",
+      "AGRO.JK",
+      "BBYB.JK",
+      "INPC.JK",
+      "SDRA.JK",
+      "ABDA.JK",
+      "PNIN.JK",
+      "AGRS.JK",
+      "BGTG.JK",
+      "SFAN.JK",
+      "BNBA.JK",
+      "MCOR.JK",
+      "VICO.JK",
+      "BCIC.JK",
+      "BACA.JK",
+      "BABP.JK",
+      "DNAR.JK",
+      "BCAP.JK",
+      "AMAG.JK",
+      "LPGI.JK",
+      "PNBS.JK",
+      "BKSW.JK",
+      "STAR.JK",
+      "BVIC.JK",
+      "GSMF.JK",
+      "NICK.JK",
+      "CFIN.JK",
+      "BEKS.JK",
+      "PANS.JK",
+      "TIFA.JK",
+      "BBLD.JK",
+      "WOMF.JK",
+      "RELI.JK",
+      "PADI.JK",
+      "AMOR.JK",
+      "MTWI.JK",
+      "BPFI.JK",
+      "HDFA.JK",
+      "VRNA.JK",
+      "PEGE.JK",
+      "MGNA.JK",
+      "AHAP.JK",
+      "MREI.JK",
+      "VTNY.JK",
+      "TRUS.JK",
+      "ASRM.JK",
+      "FUJI.JK",
+      "YOII.JK",
+      "POLA.JK",
+      "JMAS.JK",
+      "VINS.JK",
+      "ASJT.JK",
+      "LPPS.JK",
+      "ASDM.JK",
+      "ASBI.JK",
+      "ASMI.JK",
+      "POOL.JK",
+      "DEFI.JK",
+      "PLAS.JK",
+      "OCAP.JK"
+    ],
+    "sub_sector:Software & IT Services": [
+      "DCII.JK",
+      "GOTO.JK",
+      "MLPT.JK",
+      "BELI.JK",
+      "EMTK.JK",
+      "BUKA.JK",
+      "WIFI.JK",
+      "EDGE.JK",
+      "CYBR.JK",
+      "IRSX.JK",
+      "DMMX.JK",
+      "ATIC.JK",
+      "NFCX.JK",
+      "WIRG.JK",
+      "AREA.JK",
+      "PGJO.JK",
+      "ELIT.JK",
+      "CASH.JK",
+      "AWAN.JK",
+      "TOSK.JK",
+      "JATI.JK",
+      "UVCR.JK",
+      "TFAS.JK",
+      "TRON.JK",
+      "KREN.JK",
+      "WGSH.JK",
+      "MCAS.JK",
+      "MPIX.JK",
+      "DIVA.JK",
+      "KIOS.JK",
+      "ENVY.JK",
+      "HDIT.JK",
+      "RUNS.JK",
+      "TECH.JK",
+      "LMAS.JK",
+      "SKYB.JK"
+    ],
+    "sector:Technology": [
+      "DCII.JK",
+      "GOTO.JK",
+      "MLPT.JK",
+      "BELI.JK",
+      "EMTK.JK",
+      "BUKA.JK",
+      "WIFI.JK",
+      "EDGE.JK",
+      "CYBR.JK",
+      "MTDL.JK",
+      "MSTI.JK",
+      "IRSX.JK",
+      "PTSN.JK",
+      "DMMX.JK",
+      "ATIC.JK",
+      "NFCX.JK",
+      "WIRG.JK",
+      "AREA.JK",
+      "PGJO.JK",
+      "AXIO.JK",
+      "CHIP.JK",
+      "ELIT.JK",
+      "CASH.JK",
+      "AWAN.JK",
+      "GLVA.JK",
+      "TOSK.JK",
+      "JATI.JK",
+      "IOTF.JK",
+      "UVCR.JK",
+      "TFAS.JK",
+      "TRON.JK",
+      "KREN.JK",
+      "WGSH.JK",
+      "MCAS.JK",
+      "NINE.JK",
+      "MPIX.JK",
+      "DIVA.JK",
+      "ZYRX.JK",
+      "KIOS.JK",
+      "ENVY.JK",
+      "LUCK.JK",
+      "HDIT.JK",
+      "MENN.JK",
+      "RUNS.JK",
+      "TECH.JK",
+      "LMAS.JK",
+      "SKYB.JK"
+    ],
+    "sector:Infrastructures": [
+      "BREN.JK",
+      "TLKM.JK",
+      "MORA.JK",
+      "CDIA.JK",
+      "ISAT.JK",
+      "SUPR.JK",
+      "EXCL.JK",
+      "PGEO.JK",
+      "MTEL.JK",
+      "TBIG.JK",
+      "TOWR.JK",
+      "JSMR.JK",
+      "POWR.JK",
+      "ARKO.JK",
+      "IBST.JK",
+      "CMNP.JK",
+      "WIKA.JK",
+      "SSIA.JK",
+      "INET.JK",
+      "GMFI.JK",
+      "WSKT.JK",
+      "BALI.JK",
+      "TOTL.JK",
+      "LINK.JK",
+      "META.JK",
+      "CASS.JK",
+      "KEEN.JK",
+      "CENT.JK",
+      "BTEL.JK",
+      "KETR.JK",
+      "PORT.JK",
+      "ASLI.JK",
+      "BUKK.JK",
+      "DATA.JK",
+      "PBSA.JK",
+      "IPCC.JK",
+      "ACST.JK",
+      "OASA.JK",
+      "RONY.JK",
+      "IPCM.JK",
+      "JKON.JK",
+      "NRCA.JK",
+      "PTPP.JK",
+      "ADHI.JK",
+      "PPRE.JK",
+      "PTPW.JK",
+      "GHON.JK",
+      "HGII.JK",
+      "DGIK.JK",
+      "BDKR.JK",
+      "IDPR.JK",
+      "KOKA.JK",
+      "WEGE.JK",
+      "GOLD.JK",
+      "LAPD.JK",
+      "TAMA.JK",
+      "KBLV.JK",
+      "MTRA.JK",
+      "MTPS.JK",
+      "MANG.JK",
+      "SMKM.JK",
+      "KARW.JK",
+      "KRYA.JK",
+      "LCKM.JK",
+      "PTDU.JK",
+      "JAST.JK",
+      "MPOW.JK",
+      "TGRA.JK",
+      "HADE.JK",
+      "TOPS.JK",
+      "FIMP.JK"
+    ],
+    "sub_industry:Coal Production": [
+      "BYAN.JK",
+      "DSSA.JK",
+      "CUAN.JK",
+      "AADI.JK",
+      "BUMI.JK",
+      "ADRO.JK",
+      "ADMR.JK",
+      "GEMS.JK",
+      "PTBA.JK",
+      "ITMG.JK",
+      "INDY.JK",
+      "MCOL.JK",
+      "BSSR.JK",
+      "HRUM.JK",
+      "SMMT.JK",
+      "ABMM.JK",
+      "TOBA.JK",
+      "IATA.JK",
+      "TRAM.JK",
+      "MBAP.JK",
+      "KKGI.JK",
+      "ARII.JK",
+      "GTBO.JK",
+      "COAL.JK",
+      "AIMS.JK",
+      "BOSS.JK"
+    ],
+    "sector:Energy": [
+      "BYAN.JK",
+      "DSSA.JK",
+      "CUAN.JK",
+      "AADI.JK",
+      "BUMI.JK",
+      "ADRO.JK",
+      "ADMR.JK",
+      "PTRO.JK",
+      "GEMS.JK",
+      "MEDC.JK",
+      "ENRG.JK",
+      "PGAS.JK",
+      "PTBA.JK",
+      "AKRA.JK",
+      "ITMG.JK",
+      "RAJA.JK",
+      "DEWA.JK",
+      "INDY.JK",
+      "MCOL.JK",
+      "BSSR.JK",
+      "ALII.JK",
+      "HRUM.JK",
+      "RATU.JK",
+      "SGER.JK",
+      "TCPI.JK",
+      "BIPI.JK",
+      "SMMT.JK",
+      "RMKE.JK",
+      "ABMM.JK",
+      "SHIP.JK",
+      "BULL.JK",
+      "PKPK.JK",
+      "ELSA.JK",
+      "MBSS.JK",
+      "SOCI.JK",
+      "TOBA.JK",
+      "SURE.JK",
+      "IATA.JK",
+      "MKAP.JK",
+      "CBRE.JK",
+      "BESS.JK",
+      "WINS.JK",
+      "GTSI.JK",
+      "MYOH.JK",
+      "TRAM.JK",
+      "HUMI.JK",
+      "MAHA.JK",
+      "TEBE.JK",
+      "DWGL.JK",
+      "MBAP.JK",
+      "PSSI.JK",
+      "DOID.JK",
+      "TPMA.JK",
+      "SUNI.JK",
+      "ITMA.JK",
+      "KKGI.JK",
+      "PSAT.JK",
+      "SUGI.JK",
+      "ARII.JK",
+      "BBRM.JK",
+      "TAMU.JK",
+      "BSML.JK",
+      "HITS.JK",
+      "APEX.JK",
+      "LEAD.JK",
+      "SMRU.JK",
+      "RMKO.JK",
+      "INPS.JK",
+      "BOAT.JK",
+      "RIGS.JK",
+      "MTFN.JK",
+      "GTBO.JK",
+      "UNIQ.JK",
+      "CNKO.JK",
+      "ATLA.JK",
+      "CGAS.JK",
+      "HILL.JK",
+      "SEMA.JK",
+      "COAL.JK",
+      "FIRE.JK",
+      "RGAS.JK",
+      "RUIS.JK",
+      "WOWS.JK",
+      "PTIS.JK",
+      "KOPI.JK",
+      "CANI.JK",
+      "AIMS.JK",
+      "JSKY.JK",
+      "SICO.JK",
+      "BOSS.JK",
+      "ARTI.JK"
+    ],
+    "sub_sector:Basic Materials": [
+      "AMMN.JK",
+      "TPIA.JK",
+      "BRPT.JK",
+      "EMAS.JK",
+      "BRMS.JK",
+      "ANTM.JK",
+      "MDKA.JK",
+      "NCKL.JK",
+      "MBMA.JK",
+      "INCO.JK",
+      "INKP.JK",
+      "TINS.JK",
+      "ARCI.JK",
+      "TKIM.JK",
+      "AVIA.JK",
+      "PACK.JK",
+      "INTP.JK",
+      "FASW.JK",
+      "PSAB.JK",
+      "CITA.JK",
+      "CMNT.JK",
+      "SMGR.JK",
+      "ESSA.JK",
+      "AGII.JK",
+      "SMCB.JK",
+      "UNIC.JK",
+      "NICL.JK",
+      "KRAS.JK",
+      "GGRP.JK",
+      "DKFT.JK",
+      "PBID.JK",
+      "SAMF.JK",
+      "DAAZ.JK",
+      "ISSP.JK",
+      "FPNI.JK",
+      "PNGO.JK",
+      "ALDO.JK",
+      "ALKA.JK",
+      "CTBN.JK",
+      "IFSH.JK",
+      "NICE.JK",
+      "IFII.JK",
+      "KMTR.JK",
+      "DGWG.JK",
+      "BLES.JK",
+      "SMBR.JK",
+      "LTLS.JK",
+      "SQMI.JK",
+      "EKAD.JK",
+      "TRST.JK",
+      "TDPM.JK",
+      "MINE.JK",
+      "GDST.JK",
+      "PDPP.JK",
+      "ADMG.JK",
+      "TALF.JK",
+      "YPAS.JK",
+      "SPMA.JK",
+      "TBMS.JK",
+      "MOLI.JK",
+      "INRU.JK",
+      "WSBP.JK",
+      "SMGA.JK",
+      "KDSI.JK",
+      "ZINC.JK",
+      "IPOL.JK",
+      "PTMR.JK",
+      "WTON.JK",
+      "BRNA.JK",
+      "TIRT.JK",
+      "SRSN.JK",
+      "NIKL.JK",
+      "SULI.JK",
+      "SMKL.JK",
+      "BAJA.JK",
+      "MDKI.JK",
+      "CLPI.JK",
+      "KBRI.JK",
+      "IGAR.JK",
+      "SMLE.JK",
+      "ASPR.JK",
+      "BMSR.JK",
+      "APLI.JK",
+      "AKPI.JK",
+      "ETWA.JK",
+      "SOLA.JK",
+      "ALMI.JK",
+      "OKAS.JK",
+      "BATR.JK",
+      "BTON.JK",
+      "BEBS.JK",
+      "PPRI.JK",
+      "NPGF.JK",
+      "EPAC.JK",
+      "FWCT.JK",
+      "INCI.JK",
+      "HKMU.JK",
+      "OBMD.JK",
+      "INTD.JK",
+      "ESIP.JK",
+      "KKES.JK",
+      "AYLS.JK",
+      "CHEM.JK",
+      "OPMS.JK",
+      "INAI.JK",
+      "SBMA.JK",
+      "DPNS.JK",
+      "PICO.JK",
+      "INCF.JK",
+      "PURE.JK",
+      "SWAT.JK",
+      "LMSH.JK",
+      "SIMA.JK",
+      "KAYU.JK"
+    ],
+    "industry:Metals & Minerals": [
+      "AMMN.JK",
+      "EMAS.JK",
+      "BRMS.JK",
+      "ANTM.JK",
+      "MDKA.JK",
+      "NCKL.JK",
+      "MBMA.JK",
+      "INCO.JK",
+      "TINS.JK",
+      "ARCI.JK",
+      "PSAB.JK",
+      "CITA.JK",
+      "NICL.JK",
+      "KRAS.JK",
+      "GGRP.JK",
+      "DKFT.JK",
+      "DAAZ.JK",
+      "ISSP.JK",
+      "ALKA.JK",
+      "CTBN.JK",
+      "IFSH.JK",
+      "NICE.JK",
+      "SQMI.JK",
+      "MINE.JK",
+      "GDST.JK",
+      "TBMS.JK",
+      "SMGA.JK",
+      "ZINC.JK",
+      "NIKL.JK",
+      "BAJA.JK",
+      "ALMI.JK",
+      "BTON.JK",
+      "HKMU.JK",
+      "OPMS.JK",
+      "INAI.JK",
+      "PURE.JK",
+      "LMSH.JK"
+    ],
+    "sub_sector:Telecommunication": [
+      "TLKM.JK",
+      "MORA.JK",
+      "ISAT.JK",
+      "SUPR.JK",
+      "EXCL.JK",
+      "MTEL.JK",
+      "TBIG.JK",
+      "TOWR.JK",
+      "IBST.JK",
+      "INET.JK",
+      "BALI.JK",
+      "LINK.JK",
+      "CENT.JK",
+      "BTEL.JK",
+      "KETR.JK",
+      "DATA.JK",
+      "OASA.JK",
+      "GHON.JK",
+      "GOLD.JK",
+      "KBLV.JK",
+      "LCKM.JK",
+      "JAST.JK"
+    ],
+    "sector:Industrials": [
+      "ASII.JK",
+      "UNTR.JK",
+      "IMPC.JK",
+      "BNBR.JK",
+      "SINI.JK",
+      "MARK.JK",
+      "JTPE.JK",
+      "SMIL.JK",
+      "HEXA.JK",
+      "ARNA.JK",
+      "VISI.JK",
+      "SKRN.JK",
+      "ASGR.JK",
+      "TOTO.JK",
+      "BHIT.JK",
+      "SCCO.JK",
+      "BACH.JK",
+      "SPTO.JK",
+      "MLIA.JK",
+      "AMFG.JK",
+      "KBLI.JK",
+      "BLUE.JK",
+      "FOLK.JK",
+      "KING.JK",
+      "VOKS.JK",
+      "MFMI.JK",
+      "SOSS.JK",
+      "PIPA.JK",
+      "IKBI.JK",
+      "KONI.JK",
+      "PADA.JK",
+      "JECC.JK",
+      "HYGN.JK",
+      "MHKI.JK",
+      "MUTU.JK",
+      "HOPE.JK",
+      "CCSI.JK",
+      "KOBX.JK",
+      "KBLM.JK",
+      "CRSN.JK",
+      "DYAN.JK",
+      "KIAS.JK",
+      "NAIK.JK",
+      "BINO.JK",
+      "IKAI.JK",
+      "AMIN.JK",
+      "TIRA.JK",
+      "NTBK.JK",
+      "GPSO.JK",
+      "APII.JK",
+      "INTA.JK",
+      "PTMP.JK",
+      "MDRN.JK",
+      "LION.JK",
+      "CAKK.JK",
+      "ICON.JK",
+      "CTTH.JK",
+      "LABA.JK",
+      "KUAS.JK",
+      "ZBRA.JK",
+      "IBFN.JK",
+      "KOIN.JK",
+      "TRIL.JK",
+      "WIDI.JK",
+      "ARKA.JK",
+      "INDX.JK"
+    ],
+    "sub_industry:Healthcare Providers": [
+      "SRAJ.JK",
+      "SILO.JK",
+      "MIKA.JK",
+      "CARE.JK",
+      "PRAY.JK",
+      "HEAL.JK",
+      "SAME.JK",
+      "JECX.JK",
+      "PRDA.JK",
+      "MTMH.JK",
+      "BMHS.JK",
+      "RSCH.JK",
+      "RSGK.JK",
+      "PRIM.JK",
+      "DGNS.JK",
+      "DKHH.JK"
+    ],
+    "sub_sector:Healthcare Equipment & Providers": [
+      "SRAJ.JK",
+      "SILO.JK",
+      "MIKA.JK",
+      "CARE.JK",
+      "PRAY.JK",
+      "HEAL.JK",
+      "OMED.JK",
+      "SAME.JK",
+      "JECX.JK",
+      "MMIX.JK",
+      "PRDA.JK",
+      "MTMH.JK",
+      "BMHS.JK",
+      "RSCH.JK",
+      "RSGK.JK",
+      "LABS.JK",
+      "EMMI.JK",
+      "IRRA.JK",
+      "SURI.JK",
+      "CHEK.JK",
+      "HALO.JK",
+      "PRDL.JK",
+      "PRIM.JK",
+      "DGNS.JK",
+      "DKHH.JK",
+      "MEDS.JK"
+    ],
+    "industry:Chemicals": [
+      "TPIA.JK",
+      "BRPT.JK",
+      "AVIA.JK",
+      "ESSA.JK",
+      "AGII.JK",
+      "UNIC.JK",
+      "SAMF.JK",
+      "FPNI.JK",
+      "DGWG.JK",
+      "LTLS.JK",
+      "EKAD.JK",
+      "TDPM.JK",
+      "ADMG.JK",
+      "MOLI.JK",
+      "SRSN.JK",
+      "MDKI.JK",
+      "CLPI.JK",
+      "SMLE.JK",
+      "BMSR.JK",
+      "APLI.JK",
+      "AKPI.JK",
+      "ETWA.JK",
+      "OKAS.JK",
+      "NPGF.JK",
+      "INCI.JK",
+      "OBMD.JK",
+      "KKES.JK",
+      "CHEM.JK",
+      "SBMA.JK",
+      "DPNS.JK"
+    ],
+    "sub_industry:Basic Chemicals": [
+      "TPIA.JK",
+      "BRPT.JK",
+      "ESSA.JK",
+      "AGII.JK",
+      "UNIC.JK",
+      "FPNI.JK",
+      "LTLS.JK",
+      "TDPM.JK",
+      "ADMG.JK",
+      "MOLI.JK",
+      "SRSN.JK",
+      "MDKI.JK",
+      "SMLE.JK",
+      "BMSR.JK",
+      "ETWA.JK",
+      "OKAS.JK",
+      "INCI.JK",
+      "KKES.JK",
+      "CHEM.JK",
+      "SBMA.JK"
+    ],
+    "industry:Holding & Investment Companies": [
+      "DNET.JK",
+      "SMMA.JK",
+      "CASA.JK",
+      "SRTG.JK",
+      "COIN.JK",
+      "APIC.JK",
+      "BPII.JK",
+      "PALM.JK",
+      "SFAN.JK",
+      "VICO.JK",
+      "BCAP.JK",
+      "STAR.JK",
+      "GSMF.JK",
+      "NICK.JK",
+      "PEGE.JK",
+      "MGNA.JK",
+      "LPPS.JK",
+      "POOL.JK",
+      "PLAS.JK",
+      "OCAP.JK"
+    ],
+    "industry:Real Estate Management & Development": [
+      "MPRO.JK",
+      "PANI.JK",
+      "CBDK.JK",
+      "MKPI.JK",
+      "JRPT.JK",
+      "BSDE.JK",
+      "PWON.JK",
+      "RISE.JK",
+      "BKSL.JK",
+      "CTRA.JK",
+      "DMAS.JK",
+      "PLIN.JK",
+      "DUTI.JK",
+      "INPP.JK",
+      "SMRA.JK",
+      "UANG.JK",
+      "LPKR.JK",
+      "KIJA.JK",
+      "MTLA.JK",
+      "NIRO.JK",
+      "RDTX.JK",
+      "LPCK.JK",
+      "ROCK.JK",
+      "APLN.JK",
+      "OMRE.JK",
+      "SMDM.JK",
+      "ASRI.JK",
+      "RIMO.JK",
+      "MMLP.JK",
+      "TRIN.JK",
+      "POLI.JK",
+      "FMII.JK",
+      "ELTY.JK",
+      "GMTD.JK",
+      "BKDP.JK",
+      "BSBK.JK",
+      "BEST.JK",
+      "DILD.JK",
+      "GRIA.JK",
+      "ADCP.JK",
+      "CITY.JK",
+      "PPRO.JK",
+      "POLL.JK",
+      "RODA.JK",
+      "AMAN.JK",
+      "KSIX.JK",
+      "INDO.JK",
+      "ATAP.JK",
+      "URBN.JK",
+      "CBPE.JK",
+      "LCGP.JK",
+      "SWID.JK",
+      "MDLN.JK",
+      "KOCI.JK",
+      "DART.JK",
+      "ARMY.JK",
+      "GPRA.JK",
+      "BBSS.JK",
+      "POSA.JK",
+      "NZIA.JK",
+      "CSIS.JK",
+      "TRUE.JK",
+      "NASA.JK",
+      "DADA.JK",
+      "HOMI.JK",
+      "HBAT.JK",
+      "VAST.JK",
+      "SATU.JK",
+      "BIPP.JK",
+      "ASPI.JK",
+      "REAL.JK",
+      "TARA.JK",
+      "KBAG.JK",
+      "LPLI.JK",
+      "EMDE.JK",
+      "SAGE.JK",
+      "COWL.JK",
+      "MSIE.JK",
+      "RELF.JK",
+      "LAND.JK",
+      "GAMA.JK",
+      "IPAC.JK",
+      "PUDP.JK",
+      "PAMG.JK",
+      "RBMS.JK",
+      "PURI.JK",
+      "WINR.JK",
+      "BAPI.JK",
+      "CPRI.JK",
+      "MTSM.JK",
+      "BCIP.JK",
+      "BAPA.JK",
+      "BIKA.JK"
+    ],
+    "sub_industry:Real Estate Development & Management": [
+      "MPRO.JK",
+      "PANI.JK",
+      "CBDK.JK",
+      "MKPI.JK",
+      "JRPT.JK",
+      "BSDE.JK",
+      "PWON.JK",
+      "RISE.JK",
+      "BKSL.JK",
+      "CTRA.JK",
+      "DMAS.JK",
+      "PLIN.JK",
+      "DUTI.JK",
+      "INPP.JK",
+      "SMRA.JK",
+      "UANG.JK",
+      "LPKR.JK",
+      "KIJA.JK",
+      "MTLA.JK",
+      "NIRO.JK",
+      "RDTX.JK",
+      "LPCK.JK",
+      "ROCK.JK",
+      "APLN.JK",
+      "OMRE.JK",
+      "SMDM.JK",
+      "ASRI.JK",
+      "RIMO.JK",
+      "MMLP.JK",
+      "TRIN.JK",
+      "POLI.JK",
+      "FMII.JK",
+      "ELTY.JK",
+      "GMTD.JK",
+      "BKDP.JK",
+      "BSBK.JK",
+      "BEST.JK",
+      "DILD.JK",
+      "GRIA.JK",
+      "ADCP.JK",
+      "CITY.JK",
+      "PPRO.JK",
+      "POLL.JK",
+      "RODA.JK",
+      "AMAN.JK",
+      "KSIX.JK",
+      "ATAP.JK",
+      "URBN.JK",
+      "CBPE.JK",
+      "LCGP.JK",
+      "SWID.JK",
+      "MDLN.JK",
+      "KOCI.JK",
+      "DART.JK",
+      "ARMY.JK",
+      "GPRA.JK",
+      "BBSS.JK",
+      "POSA.JK",
+      "NZIA.JK",
+      "CSIS.JK",
+      "TRUE.JK",
+      "NASA.JK",
+      "DADA.JK",
+      "HOMI.JK",
+      "HBAT.JK",
+      "VAST.JK",
+      "SATU.JK",
+      "BIPP.JK",
+      "ASPI.JK",
+      "REAL.JK",
+      "TARA.JK",
+      "KBAG.JK",
+      "LPLI.JK",
+      "EMDE.JK",
+      "SAGE.JK",
+      "COWL.JK",
+      "MSIE.JK",
+      "RELF.JK",
+      "LAND.JK",
+      "GAMA.JK",
+      "IPAC.JK",
+      "PUDP.JK",
+      "PAMG.JK",
+      "RBMS.JK",
+      "PURI.JK",
+      "WINR.JK",
+      "BAPI.JK",
+      "CPRI.JK",
+      "MTSM.JK",
+      "BCIP.JK",
+      "BAPA.JK",
+      "BIKA.JK"
+    ],
+    "industry:Machinery": [
+      "UNTR.JK",
+      "MARK.JK",
+      "SMIL.JK",
+      "HEXA.JK",
+      "SKRN.JK",
+      "HOPE.JK",
+      "KOBX.JK",
+      "AMIN.JK",
+      "NTBK.JK",
+      "GPSO.JK",
+      "APII.JK",
+      "INTA.JK",
+      "PTMP.JK",
+      "LABA.JK",
+      "IBFN.JK",
+      "WIDI.JK",
+      "ARKA.JK"
+    ],
+    "sub_sector:Industrial Goods": [
+      "UNTR.JK",
+      "IMPC.JK",
+      "SINI.JK",
+      "MARK.JK",
+      "SMIL.JK",
+      "HEXA.JK",
+      "ARNA.JK",
+      "SKRN.JK",
+      "TOTO.JK",
+      "SCCO.JK",
+      "SPTO.JK",
+      "MLIA.JK",
+      "AMFG.JK",
+      "KBLI.JK",
+      "VOKS.JK",
+      "PIPA.JK",
+      "IKBI.JK",
+      "JECC.JK",
+      "HOPE.JK",
+      "CCSI.JK",
+      "KOBX.JK",
+      "KBLM.JK",
+      "KIAS.JK",
+      "IKAI.JK",
+      "AMIN.JK",
+      "NTBK.JK",
+      "GPSO.JK",
+      "APII.JK",
+      "INTA.JK",
+      "PTMP.JK",
+      "CAKK.JK",
+      "CTTH.JK",
+      "LABA.JK",
+      "KUAS.JK",
+      "IBFN.JK",
+      "KOIN.JK",
+      "WIDI.JK",
+      "ARKA.JK"
+    ],
+    "sub_industry:Diversified Metals & Minerals": [
+      "BRMS.JK",
+      "ANTM.JK",
+      "NCKL.JK",
+      "MBMA.JK",
+      "INCO.JK",
+      "TINS.JK",
+      "NICL.JK",
+      "DKFT.JK",
+      "DAAZ.JK",
+      "IFSH.JK",
+      "NICE.JK",
+      "MINE.JK",
+      "SMGA.JK",
+      "ZINC.JK",
+      "NIKL.JK",
+      "PURE.JK"
+    ],
+    "sector:Consumer Non-Cyclicals": [
+      "HMSP.JK",
+      "ICBP.JK",
+      "INDF.JK",
+      "UNVR.JK",
+      "PGUN.JK",
+      "AMRT.JK",
+      "CPIN.JK",
+      "TAPG.JK",
+      "GGRM.JK",
+      "CMRY.JK",
+      "JARR.JK",
+      "MYOR.JK",
+      "FAPA.JK",
+      "JPFA.JK",
+      "NSSS.JK",
+      "ADES.JK",
+      "SMAR.JK",
+      "DSNG.JK",
+      "AALI.JK",
+      "ULTJ.JK",
+      "MLBI.JK",
+      "RLCO.JK",
+      "STAA.JK",
+      "STTP.JK",
+      "GOOD.JK",
+      "LSIP.JK",
+      "SSMS.JK",
+      "YUPI.JK",
+      "CLEO.JK",
+      "SIMP.JK",
+      "MIDI.JK",
+      "SGRO.JK",
+      "TLDN.JK",
+      "VICI.JK",
+      "FORE.JK",
+      "EPMT.JK",
+      "DMND.JK",
+      "ANJT.JK",
+      "MSJA.JK",
+      "TGKA.JK",
+      "BWPT.JK",
+      "TBLA.JK",
+      "BEEF.JK",
+      "PSGO.JK",
+      "ROTI.JK",
+      "EURO.JK",
+      "UNSP.JK",
+      "WIIM.JK",
+      "KEJU.JK",
+      "CBUT.JK",
+      "NEST.JK",
+      "FISH.JK",
+      "CPRO.JK",
+      "DAYA.JK",
+      "MGRO.JK",
+      "JAWA.JK",
+      "BISI.JK",
+      "UCID.JK",
+      "KINO.JK",
+      "AGAR.JK",
+      "AYAM.JK",
+      "COCO.JK",
+      "SIPD.JK",
+      "CSRA.JK",
+      "MAIN.JK",
+      "SKLT.JK",
+      "MKTR.JK",
+      "DLTA.JK",
+      "MPPA.JK",
+      "MLPL.JK",
+      "HERO.JK",
+      "TRGU.JK",
+      "CEKA.JK",
+      "GZCO.JK",
+      "AISA.JK",
+      "TCID.JK",
+      "UDNG.JK",
+      "CAMP.JK",
+      "BUDI.JK",
+      "BUAH.JK",
+      "SKBM.JK",
+      "GULA.JK",
+      "WMPP.JK",
+      "RANC.JK",
+      "IBOS.JK",
+      "STRK.JK",
+      "JELI.JK",
+      "WMUU.JK",
+      "BTEK.JK",
+      "GUNA.JK",
+      "HOKI.JK",
+      "DPUM.JK",
+      "MAXI.JK",
+      "MAGP.JK",
+      "CRAB.JK",
+      "KMDS.JK",
+      "PTPS.JK",
+      "WINE.JK",
+      "DEWI.JK",
+      "TGUK.JK",
+      "BEER.JK",
+      "WICO.JK",
+      "ASHA.JK",
+      "AMMS.JK",
+      "GRPM.JK",
+      "SDPC.JK",
+      "BOBA.JK",
+      "WAPO.JK",
+      "ITIC.JK",
+      "PSDN.JK",
+      "ANDI.JK",
+      "NAYZ.JK",
+      "GOLL.JK",
+      "MBTO.JK",
+      "ENZO.JK",
+      "MRAT.JK",
+      "DSFI.JK",
+      "NANO.JK",
+      "OILS.JK",
+      "NASI.JK",
+      "PMMP.JK",
+      "ISEA.JK",
+      "FOOD.JK",
+      "FLMC.JK",
+      "IKAN.JK",
+      "BRRC.JK",
+      "IPPE.JK",
+      "TAYS.JK",
+      "PCAR.JK",
+      "SOUL.JK",
+      "ALTO.JK"
+    ],
+    "sub_industry:Processed Foods": [
+      "ICBP.JK",
+      "INDF.JK",
+      "MYOR.JK",
+      "STTP.JK",
+      "GOOD.JK",
+      "YUPI.JK",
+      "TGKA.JK",
+      "TBLA.JK",
+      "BEEF.JK",
+      "ROTI.JK",
+      "COCO.JK",
+      "SKLT.JK",
+      "TRGU.JK",
+      "CEKA.JK",
+      "AISA.JK",
+      "BUDI.JK",
+      "SKBM.JK",
+      "GULA.JK",
+      "IBOS.JK",
+      "JELI.JK",
+      "HOKI.JK",
+      "MAXI.JK",
+      "BOBA.JK",
+      "PSDN.JK",
+      "NAYZ.JK",
+      "NASI.JK",
+      "PMMP.JK",
+      "FOOD.JK",
+      "BRRC.JK",
+      "TAYS.JK"
+    ],
+    "sub_sector:Food & Beverage": [
+      "ICBP.JK",
+      "INDF.JK",
+      "PGUN.JK",
+      "CPIN.JK",
+      "TAPG.JK",
+      "CMRY.JK",
+      "JARR.JK",
+      "MYOR.JK",
+      "FAPA.JK",
+      "JPFA.JK",
+      "NSSS.JK",
+      "ADES.JK",
+      "SMAR.JK",
+      "DSNG.JK",
+      "AALI.JK",
+      "ULTJ.JK",
+      "MLBI.JK",
+      "RLCO.JK",
+      "STAA.JK",
+      "STTP.JK",
+      "GOOD.JK",
+      "LSIP.JK",
+      "SSMS.JK",
+      "YUPI.JK",
+      "CLEO.JK",
+      "SIMP.JK",
+      "SGRO.JK",
+      "TLDN.JK",
+      "FORE.JK",
+      "ANJT.JK",
+      "TGKA.JK",
+      "BWPT.JK",
+      "TBLA.JK",
+      "BEEF.JK",
+      "PSGO.JK",
+      "ROTI.JK",
+      "UNSP.JK",
+      "KEJU.JK",
+      "CBUT.JK",
+      "NEST.JK",
+      "FISH.JK",
+      "CPRO.JK",
+      "MGRO.JK",
+      "JAWA.JK",
+      "BISI.JK",
+      "AGAR.JK",
+      "AYAM.JK",
+      "COCO.JK",
+      "SIPD.JK",
+      "CSRA.JK",
+      "MAIN.JK",
+      "SKLT.JK",
+      "MKTR.JK",
+      "DLTA.JK",
+      "TRGU.JK",
+      "CEKA.JK",
+      "GZCO.JK",
+      "AISA.JK",
+      "UDNG.JK",
+      "CAMP.JK",
+      "BUDI.JK",
+      "SKBM.JK",
+      "GULA.JK",
+      "WMPP.JK",
+      "IBOS.JK",
+      "STRK.JK",
+      "JELI.JK",
+      "WMUU.JK",
+      "BTEK.JK",
+      "GUNA.JK",
+      "HOKI.JK",
+      "DPUM.JK",
+      "MAXI.JK",
+      "MAGP.JK",
+      "CRAB.JK",
+      "PTPS.JK",
+      "WINE.JK",
+      "DEWI.JK",
+      "TGUK.JK",
+      "BEER.JK",
+      "ASHA.JK",
+      "AMMS.JK",
+      "GRPM.JK",
+      "BOBA.JK",
+      "WAPO.JK",
+      "PSDN.JK",
+      "ANDI.JK",
+      "NAYZ.JK",
+      "GOLL.JK",
+      "ENZO.JK",
+      "DSFI.JK",
+      "OILS.JK",
+      "NASI.JK",
+      "PMMP.JK",
+      "ISEA.JK",
+      "FOOD.JK",
+      "IKAN.JK",
+      "BRRC.JK",
+      "IPPE.JK",
+      "TAYS.JK",
+      "SOUL.JK",
+      "ALTO.JK"
+    ],
+    "industry:Processed Foods": [
+      "ICBP.JK",
+      "INDF.JK",
+      "CMRY.JK",
+      "MYOR.JK",
+      "ULTJ.JK",
+      "STTP.JK",
+      "GOOD.JK",
+      "YUPI.JK",
+      "TGKA.JK",
+      "TBLA.JK",
+      "BEEF.JK",
+      "ROTI.JK",
+      "KEJU.JK",
+      "COCO.JK",
+      "SKLT.JK",
+      "TRGU.JK",
+      "CEKA.JK",
+      "AISA.JK",
+      "CAMP.JK",
+      "BUDI.JK",
+      "SKBM.JK",
+      "GULA.JK",
+      "IBOS.JK",
+      "JELI.JK",
+      "HOKI.JK",
+      "MAXI.JK",
+      "TGUK.JK",
+      "BOBA.JK",
+      "PSDN.JK",
+      "NAYZ.JK",
+      "NASI.JK",
+      "PMMP.JK",
+      "FOOD.JK",
+      "BRRC.JK",
+      "TAYS.JK"
+    ],
+    "sub_industry:Online Applications & Services": [
+      "GOTO.JK",
+      "BELI.JK",
+      "EMTK.JK",
+      "BUKA.JK",
+      "WIFI.JK",
+      "NFCX.JK",
+      "PGJO.JK",
+      "CASH.JK",
+      "AWAN.JK",
+      "TOSK.JK",
+      "JATI.JK",
+      "UVCR.JK",
+      "TFAS.JK",
+      "KREN.JK",
+      "MCAS.JK",
+      "MPIX.JK",
+      "DIVA.JK",
+      "KIOS.JK",
+      "HDIT.JK"
+    ],
+    "sub_industry:Plantations & Crops": [
+      "PGUN.JK",
+      "TAPG.JK",
+      "JARR.JK",
+      "FAPA.JK",
+      "NSSS.JK",
+      "SMAR.JK",
+      "DSNG.JK",
+      "AALI.JK",
+      "STAA.JK",
+      "LSIP.JK",
+      "SSMS.JK",
+      "SIMP.JK",
+      "SGRO.JK",
+      "TLDN.JK",
+      "ANJT.JK",
+      "BWPT.JK",
+      "PSGO.JK",
+      "UNSP.JK",
+      "CBUT.JK",
+      "FISH.JK",
+      "MGRO.JK",
+      "JAWA.JK",
+      "BISI.JK",
+      "CSRA.JK",
+      "MKTR.JK",
+      "GZCO.JK",
+      "BTEK.JK",
+      "GUNA.JK",
+      "MAGP.JK",
+      "PTPS.JK",
+      "WAPO.JK",
+      "ANDI.JK",
+      "GOLL.JK",
+      "OILS.JK",
+      "IPPE.JK"
+    ],
+    "industry:Oil, Gas & Coal Supports": [
+      "PTRO.JK",
+      "DEWA.JK",
+      "PKPK.JK",
+      "ELSA.JK",
+      "MKAP.JK",
+      "WINS.JK",
+      "MYOH.JK",
+      "DOID.JK",
+      "SUNI.JK",
+      "ITMA.JK",
+      "TAMU.JK",
+      "APEX.JK",
+      "SMRU.JK",
+      "RMKO.JK",
+      "BOAT.JK",
+      "UNIQ.JK",
+      "ATLA.JK",
+      "HILL.JK",
+      "RGAS.JK",
+      "RUIS.JK",
+      "WOWS.JK",
+      "SICO.JK",
+      "ARTI.JK"
+    ],
+    "sub_industry:Oil, Gas & Coal Equipment & Services": [
+      "PTRO.JK",
+      "DEWA.JK",
+      "PKPK.JK",
+      "MKAP.JK",
+      "WINS.JK",
+      "MYOH.JK",
+      "DOID.JK",
+      "SUNI.JK",
+      "ITMA.JK",
+      "TAMU.JK",
+      "SMRU.JK",
+      "RMKO.JK",
+      "BOAT.JK",
+      "UNIQ.JK",
+      "ATLA.JK",
+      "HILL.JK",
+      "RGAS.JK",
+      "RUIS.JK",
+      "WOWS.JK",
+      "SICO.JK",
+      "ARTI.JK"
+    ],
+    "sub_industry:Fish, Meat, & Poultry": [
+      "CPIN.JK",
+      "JPFA.JK",
+      "RLCO.JK",
+      "NEST.JK",
+      "CPRO.JK",
+      "AGAR.JK",
+      "AYAM.JK",
+      "SIPD.JK",
+      "MAIN.JK",
+      "UDNG.JK",
+      "WMPP.JK",
+      "WMUU.JK",
+      "DPUM.JK",
+      "CRAB.JK",
+      "DEWI.JK",
+      "ASHA.JK",
+      "AMMS.JK",
+      "ENZO.JK",
+      "DSFI.JK",
+      "ISEA.JK",
+      "IKAN.JK"
+    ],
+    "industry:Oil & Gas": [
+      "MEDC.JK",
+      "ENRG.JK",
+      "PGAS.JK",
+      "AKRA.JK",
+      "RAJA.JK",
+      "RATU.JK",
+      "SHIP.JK",
+      "BULL.JK",
+      "SOCI.JK",
+      "SURE.JK",
+      "GTSI.JK",
+      "HUMI.JK",
+      "SUGI.JK",
+      "HITS.JK",
+      "LEAD.JK",
+      "INPS.JK",
+      "MTFN.JK",
+      "CGAS.JK",
+      "KOPI.JK"
+    ],
+    "industry:Auto Components": [
+      "VKTR.JK",
+      "AUTO.JK",
+      "SMSM.JK",
+      "DRMA.JK",
+      "GJTL.JK",
+      "BRAM.JK",
+      "BOLT.JK",
+      "INDS.JK",
+      "GDYR.JK",
+      "TYRE.JK",
+      "PART.JK",
+      "KAQI.JK",
+      "LPIN.JK",
+      "ISAP.JK",
+      "LMAX.JK",
+      "AEGS.JK"
+    ],
+    "sector:Consumer Cyclicals": [
+      "VKTR.JK",
+      "MGLV.JK",
+      "MDIY.JK",
+      "MAPI.JK",
+      "MAPA.JK",
+      "MSIN.JK",
+      "BUVA.JK",
+      "AUTO.JK",
+      "POLU.JK",
+      "SCMA.JK",
+      "TRIO.JK",
+      "HRTA.JK",
+      "SMSM.JK",
+      "ERAA.JK",
+      "FILM.JK",
+      "KPIG.JK",
+      "MDIA.JK",
+      "NATO.JK",
+      "CNMA.JK",
+      "CLAY.JK",
+      "ACES.JK",
+      "BOGA.JK",
+      "DRMA.JK",
+      "GJTL.JK",
+      "MPMX.JK",
+      "TFCO.JK",
+      "ARGO.JK",
+      "LPPF.JK",
+      "IMAS.JK",
+      "GOLF.JK",
+      "JSPT.JK",
+      "DOOH.JK",
+      "MNCN.JK",
+      "MAPB.JK",
+      "SRIL.JK",
+      "RALS.JK",
+      "MINA.JK",
+      "RANS.JK",
+      "PSKT.JK",
+      "KOTA.JK",
+      "BRAM.JK",
+      "NETV.JK",
+      "FAST.JK",
+      "PMJS.JK",
+      "FUTR.JK",
+      "BMTR.JK",
+      "INDR.JK",
+      "BOLT.JK",
+      "BLTZ.JK",
+      "JGLE.JK",
+      "FORU.JK",
+      "CARS.JK",
+      "INDS.JK",
+      "CSAP.JK",
+      "IIKP.JK",
+      "ERAL.JK",
+      "DEPO.JK",
+      "SONA.JK",
+      "IPTV.JK",
+      "WOOD.JK",
+      "GWSA.JK",
+      "RAAM.JK",
+      "BIKE.JK",
+      "BOLA.JK",
+      "HOME.JK",
+      "VERN.JK",
+      "JIHD.JK",
+      "ARTA.JK",
+      "SHID.JK",
+      "LIVE.JK",
+      "ASLC.JK",
+      "BELL.JK",
+      "MABA.JK",
+      "PJAA.JK",
+      "VIVA.JK",
+      "LFLO.JK",
+      "ZONE.JK",
+      "BABY.JK",
+      "SOTS.JK",
+      "PMUI.JK",
+      "FITT.JK",
+      "PANR.JK",
+      "LUCY.JK",
+      "PZZA.JK",
+      "ZATA.JK",
+      "SOFA.JK",
+      "PBRX.JK",
+      "SSTM.JK",
+      "UNTD.JK",
+      "TRIS.JK",
+      "KDTN.JK",
+      "ENAK.JK",
+      "BAYU.JK",
+      "GDYR.JK",
+      "UFOE.JK",
+      "ESTA.JK",
+      "PNSE.JK",
+      "NUSA.JK",
+      "TYRE.JK",
+      "SCNP.JK",
+      "EAST.JK",
+      "ESTI.JK",
+      "MICE.JK",
+      "MYTX.JK",
+      "MEJA.JK",
+      "PART.JK",
+      "DOSS.JK",
+      "BAIK.JK",
+      "PTSP.JK",
+      "HAJJ.JK",
+      "PDES.JK",
+      "HRME.JK",
+      "INOV.JK",
+      "AKKU.JK",
+      "ERTX.JK",
+      "DUCK.JK",
+      "ACRO.JK",
+      "ECII.JK",
+      "SLIS.JK",
+      "KAQI.JK",
+      "BAUT.JK",
+      "CINT.JK",
+      "LPIN.JK",
+      "YELO.JK",
+      "CSMI.JK",
+      "HOTL.JK",
+      "GLOB.JK",
+      "KLIN.JK",
+      "TMPO.JK",
+      "LMPI.JK",
+      "DFAM.JK",
+      "GEMA.JK",
+      "MSKY.JK",
+      "TOOL.JK",
+      "GRPH.JK",
+      "MERI.JK",
+      "MARI.JK",
+      "ABBA.JK",
+      "OLIV.JK",
+      "RAFI.JK",
+      "ISAP.JK",
+      "SNLK.JK",
+      "PGLI.JK",
+      "CBMF.JK",
+      "IDEA.JK",
+      "SPRE.JK",
+      "POLY.JK",
+      "KICI.JK",
+      "BATA.JK",
+      "LMAX.JK",
+      "TELE.JK",
+      "PLAN.JK",
+      "RICY.JK",
+      "AEGS.JK",
+      "BIMA.JK",
+      "DIGI.JK",
+      "BMBL.JK",
+      "UNIT.JK",
+      "TOYS.JK",
+      "MKNT.JK",
+      "SBAT.JK"
+    ],
+    "sub_industry:Pharmaceuticals": [
+      "KLBF.JK",
+      "SOHO.JK",
+      "TSPC.JK",
+      "SIDO.JK",
+      "MDLA.JK",
+      "PYFA.JK",
+      "KAEF.JK",
+      "DVLA.JK",
+      "MERK.JK",
+      "PEVE.JK",
+      "INAF.JK",
+      "IKPM.JK",
+      "PEHA.JK",
+      "OBAT.JK",
+      "SCPI.JK"
+    ],
+    "industry:Insurance": [
+      "LIFE.JK",
+      "BHAT.JK",
+      "PNLF.JK",
+      "TUGU.JK",
+      "ABDA.JK",
+      "PNIN.JK",
+      "AMAG.JK",
+      "LPGI.JK",
+      "MTWI.JK",
+      "AHAP.JK",
+      "MREI.JK",
+      "ASRM.JK",
+      "YOII.JK",
+      "JMAS.JK",
+      "VINS.JK",
+      "ASJT.JK",
+      "ASDM.JK",
+      "ASBI.JK",
+      "ASMI.JK"
+    ],
+    "sector:Transportation & Logistic": [
+      "GIAA.JK",
+      "TMAS.JK",
+      "ELPI.JK",
+      "SMDR.JK",
+      "WBSA.JK",
+      "HATM.JK",
+      "BIRD.JK",
+      "ASSA.JK",
+      "IMJS.JK",
+      "BLOG.JK",
+      "MITI.JK",
+      "BLTA.JK",
+      "CMPP.JK",
+      "SAFE.JK",
+      "NELY.JK",
+      "HAIS.JK",
+      "GTRA.JK",
+      "TRUK.JK",
+      "SAPX.JK",
+      "PPGL.JK",
+      "PJHB.JK",
+      "MPXL.JK",
+      "KLAS.JK",
+      "BPTR.JK",
+      "AKSI.JK",
+      "PURA.JK",
+      "SDMU.JK",
+      "TRJA.JK",
+      "HELI.JK",
+      "WEHA.JK",
+      "TAXI.JK",
+      "LAJU.JK",
+      "JAYA.JK",
+      "MIRA.JK",
+      "RCCC.JK",
+      "KJEN.JK",
+      "TNCA.JK",
+      "LRNA.JK",
+      "LOPI.JK",
+      "DEAL.JK"
+    ],
+    "sub_sector:Retailing": [
+      "MDIY.JK",
+      "MAPI.JK",
+      "MAPA.JK",
+      "TRIO.JK",
+      "ERAA.JK",
+      "ACES.JK",
+      "BOGA.JK",
+      "MPMX.JK",
+      "LPPF.JK",
+      "IMAS.JK",
+      "RALS.JK",
+      "PMJS.JK",
+      "CARS.JK",
+      "CSAP.JK",
+      "ERAL.JK",
+      "DEPO.JK",
+      "SONA.JK",
+      "ASLC.JK",
+      "ZONE.JK",
+      "BABY.JK",
+      "PMUI.JK",
+      "ZATA.JK",
+      "UFOE.JK",
+      "ECII.JK",
+      "SLIS.JK",
+      "BAUT.JK",
+      "YELO.JK",
+      "GLOB.JK",
+      "KLIN.JK",
+      "TOOL.JK",
+      "TELE.JK",
+      "MKNT.JK"
+    ],
+    "industry:Specialty Retail": [
+      "MDIY.JK",
+      "MAPI.JK",
+      "MAPA.JK",
+      "TRIO.JK",
+      "ERAA.JK",
+      "ACES.JK",
+      "BOGA.JK",
+      "MPMX.JK",
+      "IMAS.JK",
+      "PMJS.JK",
+      "CARS.JK",
+      "CSAP.JK",
+      "ERAL.JK",
+      "DEPO.JK",
+      "ASLC.JK",
+      "ZONE.JK",
+      "BABY.JK",
+      "ZATA.JK",
+      "UFOE.JK",
+      "ECII.JK",
+      "SLIS.JK",
+      "BAUT.JK",
+      "GLOB.JK",
+      "KLIN.JK",
+      "TOOL.JK"
+    ],
+    "sub_industry:Containers & Packaging": [
+      "PACK.JK",
+      "FASW.JK",
+      "PBID.JK",
+      "ALDO.JK",
+      "TRST.JK",
+      "PDPP.JK",
+      "TALF.JK",
+      "YPAS.JK",
+      "SPMA.JK",
+      "KDSI.JK",
+      "IPOL.JK",
+      "PTMR.JK",
+      "BRNA.JK",
+      "SMKL.JK",
+      "IGAR.JK",
+      "ASPR.JK",
+      "PPRI.JK",
+      "EPAC.JK",
+      "ESIP.JK",
+      "PICO.JK",
+      "SIMA.JK"
+    ],
+    "sub_sector:Media & Entertainment": [
+      "MSIN.JK",
+      "SCMA.JK",
+      "FILM.JK",
+      "MDIA.JK",
+      "DOOH.JK",
+      "MNCN.JK",
+      "RANS.JK",
+      "NETV.JK",
+      "FUTR.JK",
+      "BMTR.JK",
+      "FORU.JK",
+      "IPTV.JK",
+      "RAAM.JK",
+      "VERN.JK",
+      "VIVA.JK",
+      "TMPO.JK",
+      "MSKY.JK",
+      "MARI.JK",
+      "ABBA.JK",
+      "DIGI.JK"
+    ],
+    "sub_industry:Hotels, Resorts & Cruise Lines": [
+      "BUVA.JK",
+      "KPIG.JK",
+      "NATO.JK",
+      "CLAY.JK",
+      "JSPT.JK",
+      "MINA.JK",
+      "PSKT.JK",
+      "KOTA.JK",
+      "JGLE.JK",
+      "GWSA.JK",
+      "HOME.JK",
+      "JIHD.JK",
+      "ARTA.JK",
+      "SHID.JK",
+      "MABA.JK",
+      "SOTS.JK",
+      "FITT.JK",
+      "KDTN.JK",
+      "ESTA.JK",
+      "PNSE.JK",
+      "NUSA.JK",
+      "EAST.JK",
+      "HRME.JK",
+      "AKKU.JK",
+      "HOTL.JK",
+      "DFAM.JK",
+      "GRPH.JK",
+      "SNLK.JK",
+      "PLAN.JK"
+    ],
+    "sub_sector:Consumer Services": [
+      "BUVA.JK",
+      "KPIG.JK",
+      "NATO.JK",
+      "CNMA.JK",
+      "CLAY.JK",
+      "GOLF.JK",
+      "JSPT.JK",
+      "MAPB.JK",
+      "MINA.JK",
+      "PSKT.JK",
+      "KOTA.JK",
+      "FAST.JK",
+      "BLTZ.JK",
+      "JGLE.JK",
+      "GWSA.JK",
+      "BOLA.JK",
+      "HOME.JK",
+      "JIHD.JK",
+      "ARTA.JK",
+      "SHID.JK",
+      "MABA.JK",
+      "PJAA.JK",
+      "SOTS.JK",
+      "FITT.JK",
+      "PANR.JK",
+      "LUCY.JK",
+      "PZZA.JK",
+      "KDTN.JK",
+      "ENAK.JK",
+      "BAYU.JK",
+      "ESTA.JK",
+      "PNSE.JK",
+      "NUSA.JK",
+      "EAST.JK",
+      "BAIK.JK",
+      "PTSP.JK",
+      "HAJJ.JK",
+      "PDES.JK",
+      "HRME.JK",
+      "AKKU.JK",
+      "DUCK.JK",
+      "CSMI.JK",
+      "HOTL.JK",
+      "DFAM.JK",
+      "GRPH.JK",
+      "MERI.JK",
+      "RAFI.JK",
+      "SNLK.JK",
+      "PGLI.JK",
+      "IDEA.JK",
+      "PLAN.JK",
+      "BMBL.JK"
+    ],
+    "industry:Tourism & Recreation": [
+      "BUVA.JK",
+      "KPIG.JK",
+      "NATO.JK",
+      "CNMA.JK",
+      "CLAY.JK",
+      "GOLF.JK",
+      "JSPT.JK",
+      "MAPB.JK",
+      "MINA.JK",
+      "PSKT.JK",
+      "KOTA.JK",
+      "FAST.JK",
+      "BLTZ.JK",
+      "JGLE.JK",
+      "GWSA.JK",
+      "BOLA.JK",
+      "HOME.JK",
+      "JIHD.JK",
+      "ARTA.JK",
+      "SHID.JK",
+      "MABA.JK",
+      "PJAA.JK",
+      "SOTS.JK",
+      "FITT.JK",
+      "PANR.JK",
+      "LUCY.JK",
+      "PZZA.JK",
+      "KDTN.JK",
+      "ENAK.JK",
+      "BAYU.JK",
+      "ESTA.JK",
+      "PNSE.JK",
+      "NUSA.JK",
+      "EAST.JK",
+      "BAIK.JK",
+      "PTSP.JK",
+      "HAJJ.JK",
+      "PDES.JK",
+      "HRME.JK",
+      "AKKU.JK",
+      "DUCK.JK",
+      "CSMI.JK",
+      "HOTL.JK",
+      "DFAM.JK",
+      "GRPH.JK",
+      "RAFI.JK",
+      "SNLK.JK",
+      "PGLI.JK",
+      "PLAN.JK"
+    ],
+    "industry:Apparel & Luxury Goods": [
+      "POLU.JK",
+      "HRTA.JK",
+      "TFCO.JK",
+      "ARGO.JK",
+      "SRIL.JK",
+      "INDR.JK",
+      "BELL.JK",
+      "PBRX.JK",
+      "SSTM.JK",
+      "TRIS.JK",
+      "ESTI.JK",
+      "MYTX.JK",
+      "INOV.JK",
+      "ERTX.JK",
+      "ACRO.JK",
+      "SPRE.JK",
+      "POLY.JK",
+      "BATA.JK",
+      "RICY.JK",
+      "BIMA.JK",
+      "UNIT.JK",
+      "SBAT.JK"
+    ],
+    "industry:Media": [
+      "SCMA.JK",
+      "MDIA.JK",
+      "DOOH.JK",
+      "MNCN.JK",
+      "NETV.JK",
+      "FUTR.JK",
+      "BMTR.JK",
+      "FORU.JK",
+      "IPTV.JK",
+      "VIVA.JK",
+      "TMPO.JK",
+      "MSKY.JK",
+      "MARI.JK",
+      "ABBA.JK",
+      "DIGI.JK"
+    ],
+    "sub_industry:Coal Distribution": [
+      "ALII.JK",
+      "SGER.JK",
+      "TCPI.JK",
+      "BIPI.JK",
+      "RMKE.JK",
+      "MBSS.JK",
+      "CBRE.JK",
+      "BESS.JK",
+      "MAHA.JK",
+      "TEBE.JK",
+      "DWGL.JK",
+      "PSSI.JK",
+      "TPMA.JK",
+      "PSAT.JK",
+      "BBRM.JK",
+      "BSML.JK",
+      "RIGS.JK",
+      "CNKO.JK",
+      "FIRE.JK",
+      "PTIS.JK",
+      "CANI.JK"
+    ],
+    "sub_industry:Logistics & Deliveries": [
+      "TMAS.JK",
+      "ELPI.JK",
+      "SMDR.JK",
+      "WBSA.JK",
+      "HATM.JK",
+      "BLOG.JK",
+      "MITI.JK",
+      "BLTA.JK",
+      "NELY.JK",
+      "HAIS.JK",
+      "GTRA.JK",
+      "TRUK.JK",
+      "SAPX.JK",
+      "PPGL.JK",
+      "PJHB.JK",
+      "MPXL.JK",
+      "KLAS.JK",
+      "AKSI.JK",
+      "PURA.JK",
+      "SDMU.JK",
+      "LAJU.JK",
+      "JAYA.JK",
+      "MIRA.JK",
+      "RCCC.JK",
+      "KJEN.JK",
+      "TNCA.JK",
+      "LOPI.JK",
+      "DEAL.JK"
+    ],
+    "sub_industry:Heavy Constructions & Civil Engineering": [
+      "WIKA.JK",
+      "SSIA.JK",
+      "WSKT.JK",
+      "TOTL.JK",
+      "ASLI.JK",
+      "BUKK.JK",
+      "PBSA.JK",
+      "ACST.JK",
+      "RONY.JK",
+      "JKON.JK",
+      "NRCA.JK",
+      "PTPP.JK",
+      "ADHI.JK",
+      "PPRE.JK",
+      "PTPW.JK",
+      "DGIK.JK",
+      "BDKR.JK",
+      "IDPR.JK",
+      "KOKA.JK",
+      "WEGE.JK",
+      "TAMA.JK",
+      "MTRA.JK",
+      "MTPS.JK",
+      "MANG.JK",
+      "SMKM.JK",
+      "KRYA.JK",
+      "PTDU.JK",
+      "TOPS.JK",
+      "FIMP.JK"
+    ],
+    "sub_sector:Industrial Services": [
+      "JTPE.JK",
+      "VISI.JK",
+      "ASGR.JK",
+      "BACH.JK",
+      "BLUE.JK",
+      "KING.JK",
+      "MFMI.JK",
+      "SOSS.JK",
+      "KONI.JK",
+      "PADA.JK",
+      "HYGN.JK",
+      "MHKI.JK",
+      "MUTU.JK",
+      "CRSN.JK",
+      "DYAN.JK",
+      "NAIK.JK",
+      "BINO.JK",
+      "TIRA.JK",
+      "MDRN.JK",
+      "LION.JK",
+      "ICON.JK",
+      "TRIL.JK",
+      "INDX.JK"
+    ]
+  },
+  "summary": {
+    "total_companies": 962,
+    "total_groups": 49,
+    "smallest_group": 15,
+    "median_group_size": 29,
+    "largest_group": 161,
+    "companies_by_level_used": {
+      "sub_industry": 487,
+      "sub_sector": 145,
+      "sector": 118,
+      "industry": 212
+    }
+  }
+}

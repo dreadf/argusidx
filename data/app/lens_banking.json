@@ -1,0 +1,1266 @@
+{
+  "as_of": "2026-09-13",
+  "source_file": "universe_2026-09-13.json",
+  "banks": {
+    "BBCA.JK": {
+      "company_name": "PT Bank Central Asia Tbk.",
+      "loan_to_deposit_ratio": 0.759352781119553,
+      "loan_growth": 0.08264778371467414,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.842819493270248,
+          "better_than_count": 41,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.303675089516605,
+          "better_than_count": 21,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.056691619448969,
+          "better_than_count": 34,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.01706305559324312,
+          "better_than_count": 32,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BBRI.JK": {
+      "company_name": "PT Bank Rakyat Indonesia (Persero) Tbk",
+      "loan_to_deposit_ratio": 0.97774126694118,
+      "loan_growth": 0.13168048859395096,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.706136682937471,
+          "better_than_count": 38,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.210671020117154,
+          "better_than_count": 8,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0748966344366264,
+          "better_than_count": 39,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.03232698805597585,
+          "better_than_count": 11,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BMRI.JK": {
+      "company_name": "PT Bank Mandiri (Persero) Tbk",
+      "loan_to_deposit_ratio": 0.991760691287358,
+      "loan_growth": 0.14491123734004296,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.708913291870769,
+          "better_than_count": 39,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.193582438133378,
+          "better_than_count": 5,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.039350462809288,
+          "better_than_count": 24,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.011328320744978995,
+          "better_than_count": 41,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BBNI.JK": {
+      "company_name": "PT Bank Negara Indonesia (Persero) Tbk",
+      "loan_to_deposit_ratio": 0.82978974952682,
+      "loan_growth": 0.17157486870181363,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.697480871035616,
+          "better_than_count": 37,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": null,
+        "net_interest_margin[2025]": {
+          "value": 0.0286411175186955,
+          "better_than_count": 11,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.020114838645009653,
+          "better_than_count": 27,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BRIS.JK": {
+      "company_name": "PT Bank Syariah Indonesia Tbk",
+      "loan_to_deposit_ratio": 3.33688211496187,
+      "loan_growth": 0.14686073033413155,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 1.0,
+          "better_than_count": 42,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.209769888621247,
+          "better_than_count": 7,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0441736895104556,
+          "better_than_count": 30,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.018885246979309215,
+          "better_than_count": 30,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BNLI.JK": {
+      "company_name": "Bank Permata Tbk",
+      "loan_to_deposit_ratio": 0.78803608607767,
+      "loan_growth": 0.05736204884405272,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.63830632850119,
+          "better_than_count": 35,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.346370650892019,
+          "better_than_count": 24,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0343593805095019,
+          "better_than_count": 17,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.02249614609046238,
+          "better_than_count": 26,
+          "comparable_count": 45
+        }
+      }
+    },
+    "MEGA.JK": {
+      "company_name": "Bank Mega Tbk",
+      "loan_to_deposit_ratio": 0.637905783782934,
+      "loan_growth": 0.03821998373126872,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.2702403131872,
+          "better_than_count": 13,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.304913936761725,
+          "better_than_count": 22,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0375922028593371,
+          "better_than_count": 22,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.016691241981609116,
+          "better_than_count": 33,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BDMN.JK": {
+      "company_name": "PT Bank Danamon Indonesia Tbk",
+      "loan_to_deposit_ratio": 0.955219387741423,
+      "loan_growth": 0.11852718764085603,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.422931355661142,
+          "better_than_count": 25,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.253717987592982,
+          "better_than_count": 15,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0677618247897419,
+          "better_than_count": 37,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.016480087199408692,
+          "better_than_count": 35,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BNGA.JK": {
+      "company_name": "PT Bank CIMB Niaga Tbk",
+      "loan_to_deposit_ratio": 0.791482774656609,
+      "loan_growth": 0.0599792259049582,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.692277822062032,
+          "better_than_count": 36,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.248878878727082,
+          "better_than_count": 14,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0387026208524807,
+          "better_than_count": 23,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.04688621618548118,
+          "better_than_count": 5,
+          "comparable_count": 45
+        }
+      }
+    },
+    "NISP.JK": {
+      "company_name": "PT Bank OCBC NISP Tbk",
+      "loan_to_deposit_ratio": 0.681172674236736,
+      "loan_growth": 0.021253859133132703,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.579610853554371,
+          "better_than_count": 33,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.245293691824815,
+          "better_than_count": 12,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0365746625451328,
+          "better_than_count": 20,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.0200078856430914,
+          "better_than_count": 28,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BINA.JK": {
+      "company_name": "PT Bank Ina Perdana Tbk.",
+      "loan_to_deposit_ratio": 0.545056841830634,
+      "loan_growth": 0.15726749149150146,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.374925631916855,
+          "better_than_count": 20,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.19295723498136,
+          "better_than_count": 4,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0184264995712163,
+          "better_than_count": 1,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.030653501927638806,
+          "better_than_count": 13,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BTPN.JK": {
+      "company_name": "PT Bank SMBC Indonesia Tbk",
+      "loan_to_deposit_ratio": 1.25128971698989,
+      "loan_growth": 0.03190250228779528,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.432274440466413,
+          "better_than_count": 28,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.293089153985648,
+          "better_than_count": 19,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0673341941431166,
+          "better_than_count": 36,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.015624219757193934,
+          "better_than_count": 38,
+          "comparable_count": 45
+        }
+      }
+    },
+    "PNBN.JK": {
+      "company_name": "Bank Pan Indonesia Tbk",
+      "loan_to_deposit_ratio": 0.907870919640842,
+      "loan_growth": -0.01816802720181273,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.428092549253807,
+          "better_than_count": 27,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.374913474442881,
+          "better_than_count": 29,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0408968985157607,
+          "better_than_count": 25,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.02683428802743921,
+          "better_than_count": 19,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BSIM.JK": {
+      "company_name": "Bank Sinarmas Tbk",
+      "loan_to_deposit_ratio": 0.275004749444962,
+      "loan_growth": -0.1436445239748258,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.720261829327717,
+          "better_than_count": 40,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.351968549301772,
+          "better_than_count": 26,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.033385623732829,
+          "better_than_count": 16,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.016399686542958005,
+          "better_than_count": 36,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BBHI.JK": {
+      "company_name": "PT Allo Bank Indonesia Tbk",
+      "loan_to_deposit_ratio": 0.943692961023059,
+      "loan_growth": 0.21827367694050268,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.155357502054256,
+          "better_than_count": 2,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.739394616650045,
+          "better_than_count": 40,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0797662233236361,
+          "better_than_count": 40,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.016643688336637135,
+          "better_than_count": 34,
+          "comparable_count": 45
+        }
+      }
+    },
+    "SUPA.JK": {
+      "company_name": "PT Super Bank Indonesia Tbk",
+      "loan_to_deposit_ratio": 0.777836954344541,
+      "loan_growth": 0.5194077737458407,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.213804804192125,
+          "better_than_count": 7,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.9324331876192,
+          "better_than_count": 43,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0798899251430762,
+          "better_than_count": 41,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.027163202486027077,
+          "better_than_count": 18,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BBSI.JK": {
+      "company_name": "PT Krom Bank Indonesia Tbk",
+      "loan_to_deposit_ratio": 0.919818411078057,
+      "loan_growth": 0.9981801921347943,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.213136193764789,
+          "better_than_count": 6,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.453063819896902,
+          "better_than_count": 32,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.170471107392888,
+          "better_than_count": 42,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.04135479239272643,
+          "better_than_count": 6,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BBTN.JK": {
+      "company_name": "PT Bank Tabungan Negara (Persero) Tbk",
+      "loan_to_deposit_ratio": 0.950091508198806,
+      "loan_growth": 0.11697380181933997,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.504015619186687,
+          "better_than_count": 31,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.19024331584505,
+          "better_than_count": 3,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0356318558280532,
+          "better_than_count": 19,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.0320750859913197,
+          "better_than_count": 12,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BNII.JK": {
+      "company_name": "PT Bank Maybank Indonesia Tbk",
+      "loan_to_deposit_ratio": 0.973787170735422,
+      "loan_growth": -0.028650080078967327,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.575507235754904,
+          "better_than_count": 32,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.273111240980176,
+          "better_than_count": 16,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.041494499312947,
+          "better_than_count": 26,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.022631683793449164,
+          "better_than_count": 25,
+          "comparable_count": 45
+        }
+      }
+    },
+    "ARTO.JK": {
+      "company_name": "PT Bank Jago Tbk.",
+      "loan_to_deposit_ratio": 0.929554965745846,
+      "loan_growth": 0.3664725356520553,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.501906233747086,
+          "better_than_count": 30,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.31630960205089,
+          "better_than_count": 23,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0740683494400739,
+          "better_than_count": 38,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.006198798291746603,
+          "better_than_count": 42,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BBKP.JK": {
+      "company_name": "PT Bank KB Indonesia Tbk",
+      "loan_to_deposit_ratio": 0.861918265054942,
+      "loan_growth": 0.057463442080728386,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.305814067002785,
+          "better_than_count": 17,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.170525970414805,
+          "better_than_count": 1,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0154064602214319,
+          "better_than_count": 0,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.10261890787957134,
+          "better_than_count": 1,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BMAS.JK": {
+      "company_name": "PT Bank Maspion Indonesia Tbk.",
+      "loan_to_deposit_ratio": 1.43633054177143,
+      "loan_growth": 0.06545400982206197,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.271577684117714,
+          "better_than_count": 14,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.457566234135187,
+          "better_than_count": 33,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.027544538314996,
+          "better_than_count": 10,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.01715871879697276,
+          "better_than_count": 31,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BJBR.JK": {
+      "company_name": "Bank Pembangunan Daerah Jawa Barat dan Banten Tbk",
+      "loan_to_deposit_ratio": 0.969163613447294,
+      "loan_growth": -0.045852808256366215,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.424889657822,
+          "better_than_count": 26,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.197430781075866,
+          "better_than_count": 6,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0355581450586494,
+          "better_than_count": 18,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.027737834341013144,
+          "better_than_count": 17,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BBMD.JK": {
+      "company_name": "PT Bank Mestika Dharma Tbk.",
+      "loan_to_deposit_ratio": 1.0059494405936,
+      "loan_growth": 0.03528118392291881,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.488161232435323,
+          "better_than_count": 29,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.464934042001161,
+          "better_than_count": 34,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0573608806362915,
+          "better_than_count": 35,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.015816880972448592,
+          "better_than_count": 37,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BTPS.JK": {
+      "company_name": "PT Bank BTPN Syariah Tbk.",
+      "loan_to_deposit_ratio": 4.15482592014515,
+      "loan_growth": 0.02420095842274954,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 1.0,
+          "better_than_count": 42,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.577412616439099,
+          "better_than_count": 38,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.215473538798456,
+          "better_than_count": 45,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.028330586257426793,
+          "better_than_count": 16,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BJTM.JK": {
+      "company_name": "Bank Pembangunan Daerah Jawa Timur Tbk",
+      "loan_to_deposit_ratio": 0.971301182973156,
+      "loan_growth": 0.4580787644746314,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.609182382638954,
+          "better_than_count": 34,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.290888402388002,
+          "better_than_count": 18,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0442562827449755,
+          "better_than_count": 31,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.03537295602861954,
+          "better_than_count": 10,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BSWD.JK": {
+      "company_name": "Bank of India Indonesia Tbk",
+      "loan_to_deposit_ratio": 1.14032884988793,
+      "loan_growth": 0.0259002503270791,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.19005984678518,
+          "better_than_count": 4,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.877931448404658,
+          "better_than_count": 42,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.041858272745656,
+          "better_than_count": 28,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.05662031910222442,
+          "better_than_count": 3,
+          "comparable_count": 45
+        }
+      }
+    },
+    "MAYA.JK": {
+      "company_name": "PT Bank Mayapada Internasional Tbk",
+      "loan_to_deposit_ratio": 0.769848714968306,
+      "loan_growth": 0.01619282979802329,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.121158624129379,
+          "better_than_count": 0,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.101020055530682,
+          "better_than_count": 0,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0231195429367431,
+          "better_than_count": 4,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.03699776490600091,
+          "better_than_count": 9,
+          "comparable_count": 45
+        }
+      }
+    },
+    "MASB.JK": {
+      "company_name": "PT Bank Multiarta Sentosa Tbk",
+      "loan_to_deposit_ratio": 0.475024653381789,
+      "loan_growth": 0.1554627842262741,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.384451356124984,
+          "better_than_count": 24,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.227546390265999,
+          "better_than_count": 10,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0288537145268414,
+          "better_than_count": 12,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.02566227838118501,
+          "better_than_count": 20,
+          "comparable_count": 45
+        }
+      }
+    },
+    "AMAR.JK": {
+      "company_name": "PT Bank Amar Indonesia Tbk.",
+      "loan_to_deposit_ratio": 1.20972335040012,
+      "loan_growth": 0.3597722463867146,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.128671323785018,
+          "better_than_count": 1,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.984749624882523,
+          "better_than_count": 44,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.204132349819978,
+          "better_than_count": 43,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.10109909596129814,
+          "better_than_count": 2,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BANK.JK": {
+      "company_name": "PT Bank Aladin Syariah Tbk",
+      "loan_to_deposit_ratio": 920.379155435759,
+      "loan_growth": 0.0928074849880348,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 1.0,
+          "better_than_count": 42,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.492905413338359,
+          "better_than_count": 36,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0217470240578383,
+          "better_than_count": 3,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.002216751172902296,
+          "better_than_count": 45,
+          "comparable_count": 45
+        }
+      }
+    },
+    "NOBU.JK": {
+      "company_name": "PT Bank Nationalnobu Tbk",
+      "loan_to_deposit_ratio": 0.828384053053071,
+      "loan_growth": 0.19794770308905307,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.35970821584105,
+          "better_than_count": 19,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.222983982043813,
+          "better_than_count": 9,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0308879971366764,
+          "better_than_count": 15,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.004475501315068909,
+          "better_than_count": 43,
+          "comparable_count": 45
+        }
+      }
+    },
+    "AGRO.JK": {
+      "company_name": "PT Bank Raya Indonesia Tbk",
+      "loan_to_deposit_ratio": 0.657214585761318,
+      "loan_growth": 0.03180526727717914,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.336203317714797,
+          "better_than_count": 18,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.402447701574051,
+          "better_than_count": 30,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0555491287029094,
+          "better_than_count": 33,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.17237590505160957,
+          "better_than_count": 0,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BBYB.JK": {
+      "company_name": "PT Bank Neo Commerce Tbk.",
+      "loan_to_deposit_ratio": 0.475364073741732,
+      "loan_growth": -0.18558634091214735,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.297939518935428,
+          "better_than_count": 16,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.490687168829473,
+          "better_than_count": 35,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.208407094420894,
+          "better_than_count": 44,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.038557791468017216,
+          "better_than_count": 8,
+          "comparable_count": 45
+        }
+      }
+    },
+    "INPC.JK": {
+      "company_name": "Bank Artha Graha Internasional Tbk",
+      "loan_to_deposit_ratio": 0.418354006976886,
+      "loan_growth": -0.0592443276327404,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.37697374339996,
+          "better_than_count": 21,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.277656436178327,
+          "better_than_count": 17,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0304656620050505,
+          "better_than_count": 14,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.02347761948427576,
+          "better_than_count": 23,
+          "comparable_count": 45
+        }
+      }
+    },
+    "SDRA.JK": {
+      "company_name": "PT Bank Woori Saudara Indonesia 1906 Tbk",
+      "loan_to_deposit_ratio": null,
+      "loan_growth": null,
+      "ratios": {
+        "casa_ratio[2025]": null,
+        "capital_adequacy_ratio[2025]": null,
+        "net_interest_margin[2025]": null,
+        "npl_ratio": null
+      }
+    },
+    "AGRS.JK": {
+      "company_name": "PT Bank IBK Indonesia Tbk.",
+      "loan_to_deposit_ratio": 1.19451445635885,
+      "loan_growth": 0.2369420960656415,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.378606054182214,
+          "better_than_count": 22,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.348572549159516,
+          "better_than_count": 25,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0247121754534826,
+          "better_than_count": 7,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.019481467482293693,
+          "better_than_count": 29,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BGTG.JK": {
+      "company_name": "PT Bank Ganesha Tbk.",
+      "loan_to_deposit_ratio": 0.748679777665563,
+      "loan_growth": 0.17521821054694944,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.256658418483926,
+          "better_than_count": 11,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.787306175185305,
+          "better_than_count": 41,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0367508134929199,
+          "better_than_count": 21,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.014490813584285517,
+          "better_than_count": 40,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BNBA.JK": {
+      "company_name": "Bank Bumi Arta Tbk",
+      "loan_to_deposit_ratio": 0.888384093996562,
+      "loan_growth": 0.050356757972277864,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.257843815411384,
+          "better_than_count": 12,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.632891924032865,
+          "better_than_count": 39,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0423156891693239,
+          "better_than_count": 29,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.03910700754589425,
+          "better_than_count": 7,
+          "comparable_count": 45
+        }
+      }
+    },
+    "MCOR.JK": {
+      "company_name": "PT Bank China Construction Bank Indonesia Tbk",
+      "loan_to_deposit_ratio": 0.911831823694206,
+      "loan_growth": 0.13582407485825654,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.242077028363764,
+          "better_than_count": 10,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.29479172219301,
+          "better_than_count": 20,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0259067442133294,
+          "better_than_count": 8,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.01544521428132559,
+          "better_than_count": 39,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BCIC.JK": {
+      "company_name": "PT Bank JTrust Indonesia Tbk.",
+      "loan_to_deposit_ratio": null,
+      "loan_growth": null,
+      "ratios": {
+        "casa_ratio[2025]": null,
+        "capital_adequacy_ratio[2025]": null,
+        "net_interest_margin[2025]": null,
+        "npl_ratio": null
+      }
+    },
+    "BACA.JK": {
+      "company_name": "PT Bank Capital Indonesia Tbk",
+      "loan_to_deposit_ratio": 0.604567772421392,
+      "loan_growth": 0.4157955796731729,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.381215302844557,
+          "better_than_count": 23,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.368556023784864,
+          "better_than_count": 28,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0244009137505244,
+          "better_than_count": 6,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.0035480012261921235,
+          "better_than_count": 44,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BABP.JK": {
+      "company_name": "PT Bank MNC Internasional Tbk.",
+      "loan_to_deposit_ratio": 0.773312882516608,
+      "loan_growth": 0.034098585143805094,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.198007767987677,
+          "better_than_count": 5,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.246582527862274,
+          "better_than_count": 13,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.029594261623429,
+          "better_than_count": 13,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.030405271253098033,
+          "better_than_count": 14,
+          "comparable_count": 45
+        }
+      }
+    },
+    "DNAR.JK": {
+      "company_name": "PT Bank Oke Indonesia Tbk",
+      "loan_to_deposit_ratio": 1.28392239106339,
+      "loan_growth": 0.15429033095654468,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.232745785748695,
+          "better_than_count": 8,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.422024031152619,
+          "better_than_count": 31,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0523863254822572,
+          "better_than_count": 32,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.02506945096201035,
+          "better_than_count": 22,
+          "comparable_count": 45
+        }
+      }
+    },
+    "PNBS.JK": {
+      "company_name": "PT Bank Panin Dubai Syariah Tbk",
+      "loan_to_deposit_ratio": 14.6509449726326,
+      "loan_growth": 0.17525570644931673,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 1.0,
+          "better_than_count": 42,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.18856145011304,
+          "better_than_count": 2,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0216459997380501,
+          "better_than_count": 2,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.02880952332635994,
+          "better_than_count": 15,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BKSW.JK": {
+      "company_name": "PT Bank QNB Indonesia Tbk",
+      "loan_to_deposit_ratio": 1.15831704033797,
+      "loan_growth": 0.18046061583581763,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.172894877659643,
+          "better_than_count": 3,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.522232840577201,
+          "better_than_count": 37,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0274596376629566,
+          "better_than_count": 9,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.023313060505717877,
+          "better_than_count": 24,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BVIC.JK": {
+      "company_name": "Bank Victoria International Tbk",
+      "loan_to_deposit_ratio": 0.898200901471881,
+      "loan_growth": 0.08495173580521934,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.293327252246312,
+          "better_than_count": 15,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.238448278193165,
+          "better_than_count": 11,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0416096341252023,
+          "better_than_count": 27,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.025512395134905705,
+          "better_than_count": 21,
+          "comparable_count": 45
+        }
+      }
+    },
+    "BEKS.JK": {
+      "company_name": "PT Bank Pembangunan Daerah Banten Tbk.",
+      "loan_to_deposit_ratio": 0.761450489578782,
+      "loan_growth": 0.35511119599272545,
+      "ratios": {
+        "casa_ratio[2025]": {
+          "value": 0.234316384787974,
+          "better_than_count": 9,
+          "comparable_count": 45
+        },
+        "capital_adequacy_ratio[2025]": {
+          "value": 0.367314035476796,
+          "better_than_count": 27,
+          "comparable_count": 44
+        },
+        "net_interest_margin[2025]": {
+          "value": 0.0232358816621413,
+          "better_than_count": 5,
+          "comparable_count": 45
+        },
+        "npl_ratio": {
+          "value": 0.04841174189240935,
+          "better_than_count": 4,
+          "comparable_count": 45
+        }
+      }
+    }
+  }
+}

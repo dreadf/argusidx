@@ -1,0 +1,50 @@
+{
+  "as_of": "2026-09-20",
+  "source_file": "commodity_prices_2026-09-20.json",
+  "commodities": {
+    "Coal": {
+      "latest_date": "2026-02-15",
+      "latest_price": 102.87,
+      "year_ago_date": "2025-02-01",
+      "change_12m_pct": -17.20057952350289,
+      "range_start": "2024-01-01",
+      "range_low": 97.65,
+      "range_high": 131.17,
+      "position_in_range": 0.155727923627685,
+      "n_points": 38
+    },
+    "Nickel": {
+      "latest_date": "2026-02-15",
+      "latest_price": 17670.31,
+      "year_ago_date": "2025-02-01",
+      "change_12m_pct": 15.672838176734793,
+      "range_start": "2024-01-01",
+      "range_low": 14599.33,
+      "range_high": 18962.11,
+      "position_in_range": 0.7039043912367804,
+      "n_points": 38
+    },
+    "Gold": {
+      "latest_date": "2026-09-01",
+      "latest_price": 4389.39,
+      "year_ago_date": "2025-09-01",
+      "change_12m_pct": 19.991306938867016,
+      "range_start": "2024-01-01",
+      "range_low": 2025.66,
+      "range_high": 5011.83,
+      "position_in_range": 0.7915590873928813,
+      "n_points": 33
+    },
+    "Copper": {
+      "latest_date": "2026-02-15",
+      "latest_price": 13066.44,
+      "year_ago_date": "2025-02-01",
+      "change_12m_pct": 46.89414669133933,
+      "range_start": "2024-01-01",
+      "range_low": 8313.83,
+      "range_high": 13066.44,
+      "position_in_range": 1.0,
+      "n_points": 38
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "as_of": "2026-09-13",
+  "source_file": "universe_2026-09-13.json",
+  "breadth": {
+    "near_high": 60,
+    "middle": 528,
+    "near_low": 299,
+    "excluded": 75,
+    "total_evaluable": 887
+  },
+  "movers": {
+    "up": 197,
+    "down": 471,
+    "flat": 294
+  },
+  "intensity": {
+    "calm": 337,
+    "moderate": 458,
+    "choppy": 167
+  }
+}

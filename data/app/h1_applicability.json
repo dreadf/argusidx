@@ -1,0 +1,4814 @@
+{
+  "as_of": "2026-09-13",
+  "source_file": "universe_2026-09-13.json",
+  "note": "H1's free-float/volatility finding (docs/PRODUCT.md §5.2), resolved per stock using the CURRENT full universe - a live application of the tested size-bucket/float-tercile rule, not a replay of the original study's exact historical cut points. Always carries the 2024-2026 calendar-period caveat.",
+  "evaluable_count": 961,
+  "universe_count": 962,
+  "by_symbol": {
+    "SCPI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "WICO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "COWL.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BINO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "AKSI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ERTX.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MSKY.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ALMI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "KLIN.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "KOIN.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "IPAC.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BPTR.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "GLOB.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "TRJA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "KOPI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CAKK.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "OCAP.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PSDN.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BATA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ECII.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "INTD.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "LMPI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "HRME.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PURI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "HELI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "VINS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ASBI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ASDM.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "POLA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SDPC.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CANI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PTIS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PDES.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "FWCT.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BTON.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "LPIN.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "AMIN.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MTSM.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "HOTL.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BOBA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "DOSS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "NPGF.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "RCCC.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "TOOL.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MANG.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SAGE.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BAIK.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "GEMA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "DIVA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "DKHH.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ISEA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "GRPM.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "EMDE.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "TECH.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ACRO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "INOV.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "KAQI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BATR.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MTRA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SWAT.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SBMA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "OBAT.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "LRNA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "APII.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ZBRA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ASJT.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MERI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SDMU.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "RGAS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "KARW.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "FOOD.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "DFAM.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "RELF.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "TIRA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "WAPO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PTMP.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "GOLL.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PGLI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "OPMS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CBMF.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PPRI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "WGSH.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PUDP.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ITIC.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "LMAX.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MSIE.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "KICI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "OBMD.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ZYRX.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AMMS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TMPO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MTPS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "NASI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SEMA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "JAYA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "RUNS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PTDU.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "LUCK.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SICO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SOUL.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "OKAS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TAMA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MPOW.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "LAND.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "IBFN.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BIKA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TRIL.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "CPRI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PART.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "HAJJ.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MRAT.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BAPA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "CHEM.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "POLY.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MDRN.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "GRPH.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AIMS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "CGAS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "NAYZ.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ICON.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BAUT.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SPRE.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TNCA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PMMP.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PLAN.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AYLS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TELE.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "DSFI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "DIGI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "HILL.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ENZO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "CINT.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ALTO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PICO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PTSP.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "LCKM.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MPIX.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "INAI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "WEHA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "LPLI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PAMG.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "OLIV.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "LPPS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "LAJU.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PEHA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "LOPI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MBTO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "KAYU.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "IDEA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "JMAS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "DPNS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "OILS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "EPAC.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "KKES.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ABBA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "INTA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SKYB.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ESIP.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "RUIS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TOYS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AEGS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SNLK.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "TRON.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ANDI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "KJEN.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "WIDI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "LION.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "NTBK.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MCAS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BAPI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "JAST.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MEDS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MARI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "TAYS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "CTTH.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "INCF.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "CSMI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ASHA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ARKA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "INDX.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "TOPS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SLIS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "NANO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "LMSH.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "HADE.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "KUAS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "RBMS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "HDIT.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "FIRE.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "IKAN.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "INCI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "WINR.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ISAP.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "LAPD.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "FLMC.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BMBL.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "WOWS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SBAT.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "RICY.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BRRC.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PURA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "IPPE.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ARTI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "KBLV.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MENN.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "GPSO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "FIMP.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "NINE.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "KIOS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MEJA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "RAFI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "AKKU.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BCIP.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "LABA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PURE.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BEBS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "YELO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PCAR.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "JSKY.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "POOL.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MKNT.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "KRYA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "GAMA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "DEFI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ASMI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "UNIT.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BOSS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "KREN.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SMKM.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "LMAS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "TGRA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "COAL.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "DEAL.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "IKAI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MIRA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PLAS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ENVY.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "DUCK.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SIMA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "TAXI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "HKMU.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MFMI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SOSS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "INAF.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "HITS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "INRU.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "VRNA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "WOMF.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BABY.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CMPP.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "GTBO.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "HDFA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MTWI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "KIAS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "IKBI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SAFE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "NELY.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "AMOR.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PNSE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MYTX.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "DART.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ESTI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "KING.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SAPX.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BBRM.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ESTA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MOLI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "TALF.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CAMP.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "RSGK.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PTPW.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CCSI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ENAK.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "JECC.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PJAA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ADCP.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "YPAS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BPFI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "GOLD.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BBSS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "KOBX.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "IDPR.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "AMAN.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "IGAR.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "AWAN.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "RANC.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "INDO.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "HALO.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "INPS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "APLI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SMKL.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "HYGN.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "URBN.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "GHON.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BELL.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "IPOL.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "TBMS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "RELI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ADMG.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CASH.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "RODA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SURI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "UFOE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "NIKL.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SPMA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SHID.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "TRIS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "GDYR.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "POLL.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PDPP.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CRAB.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ZONE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CSIS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SSTM.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "IRRA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "KDSI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "LFLO.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "KDTN.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "HGII.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ASRM.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "KBLM.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SATU.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "WINE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PGJO.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PZZA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ARTA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BOAT.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PEVE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AKPI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MITI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "VERN.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TYRE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "KSIX.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SOLA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SCNP.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ASLC.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "RIGS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "UNIQ.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "HAIS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "JATI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "GTRA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MHKI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "GUNA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PMUI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "CBPE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ATAP.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SMGA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TAMU.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AREA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "VOKS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "IKPM.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "POSA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "CRSN.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SWID.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "EMMI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TIRT.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TGUK.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TRUS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TCID.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ETWA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "FITT.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "LIVE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "NZIA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "JELI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "KOCI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PTPS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "KONI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TFAS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "KOKA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PRIM.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "VAST.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "GDST.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PPRO.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "CHEK.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "KMDS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "VTNY.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "FUJI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "STRK.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PTMR.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PPRE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "YOII.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "HBAT.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BSML.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AXIO.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BEER.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "HOMI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PPGL.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MGNA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SKBM.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BAJA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BIPP.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "KBRI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "UNTD.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SOTS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AHAP.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AISA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ZATA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "DYAN.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "FOLK.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PANR.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "WMPP.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "GULA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BBLD.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "RMKO.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "TOSK.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MPXL.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PJHB.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "NAIK.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MAGP.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "LABS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BUAH.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "KLAS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "CLPI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PADA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SMRU.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ELIT.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MDKI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SOFA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "TRUK.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BRNA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ASPR.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "DGNS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PRDL.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "DGIK.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "WEGE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PEGE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "IOTF.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MAXI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "HOKI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "TRUE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MICE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "JIHD.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BDKR.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SRSN.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SMLE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ZINC.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "KBAG.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "DPUM.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "DEWI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "REAL.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MUTU.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SULI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "APEX.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ATLA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "LUCY.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "WTON.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "CHIP.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BUDI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "GLVA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BMSR.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "IBOS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "GPRA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "LEAD.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MDLN.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BTEK.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BAYU.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ASPI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "UDNG.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ARMY.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PIPA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PBRX.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "CITY.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "CNKO.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "VIVA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MTFN.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "EAST.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "HOPE.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "NASA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MREI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "WMUU.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "WSBP.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "UVCR.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "HOME.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "TARA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MABA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BLTA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "DADA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "NUSA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "LCGP.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PADI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "WIRG.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "META.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "SMDM.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "PNGO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "KMTR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "JAWA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "FPNI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "TIFA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "DEPO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "LPGI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "PNBS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "ROTI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "SONA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "BLES.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "INDR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "SURE.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "TOTO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "CENT.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "DVLA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "MAPB.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "IMJS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "BNBA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "BKSW.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "AGRS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "PALM.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "MMLP.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "AMAR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "DAYA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "TGKA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "ACST.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "PMJS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "BLTZ.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "SKRN.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "SIPD.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "SDRA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "JSPT.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "DNAR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "MBAP.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "HERO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "PTSN.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "BUKK.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "IFSH.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "KAEF.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "NICE.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "FISH.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "CSAP.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "KEJU.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "LPCK.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "AMAG.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "CTBN.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "INDS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "GOLF.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "CASS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "FORU.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "NETV.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "BLUE.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "IMAS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "FMII.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "IPCM.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "BABP.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "AGRO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "MINE.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "PSGO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "ABDA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "MERK.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "KINO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "GGRP.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "BOLT.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "AMFG.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "PBID.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "UANG.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "CEKA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "NOBU.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "TFCO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "NEST.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "BKDP.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "BCIC.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "DGWG.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "MSTI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "PSAT.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "BSBK.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "GTSI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "SMIL.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "DLTA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "RONY.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "BESS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "PBSA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "DAAZ.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "MPPA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "PSSI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "ALKA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "BRAM.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "SMBR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "SAMF.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "SKLT.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "APLN.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "MDLA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "BACH.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "EKAD.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "IFII.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "MGRO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "KKGI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "TRGU.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "BIKE.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "CSRA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "PORT.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "ARGO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "MARK.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "DATA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "DMMX.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "ERAL.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "RSCH.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "BLOG.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "UCID.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "PSKT.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "ROCK.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "VISI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "MKAP.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "POLI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "SUNI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "BCAP.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "GWSA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "MTLA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "KRAS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "RDTX.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "BEEF.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "NRCA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "MAHA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "FAST.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "HEXA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "OMRE.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "NICK.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "AYAM.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "RAAM.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "MTMH.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "CBRE.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "BVIC.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "TEBE.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "ASGR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "IPCC.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "RALS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "MKTR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "HUMI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "BWPT.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "SCCO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "SQMI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "NIRO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "MCOR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "AGAR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "WOOD.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "ALDO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "BACA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "TRIN.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "PRDA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "KEEN.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "ATIC.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "TDPM.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "JTPE.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "PNIN.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "VICO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "SFAN.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "RANS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "GRIA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "GSMF.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "MMIX.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "TOBA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "CBUT.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "SOCI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "PYFA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "NFCX.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "JECX.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "MYOH.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "ITMA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "BIRD.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "MLIA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "KETR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "ISSP.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "DKFT.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "DWGL.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "MPMX.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "BEKS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "DOOH.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "SPTO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "GMTD.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "JGLE.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "TPMA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "IRSX.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "LTLS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "BMHS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "WIIM.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "ADHI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "BGTG.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "IPTV.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "MAIN.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "WINS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "TRST.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "ARNA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "ASLI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "JKON.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "BISI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "PANS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "SRIL.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "TBLA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "CFIN.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "MLPL.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "ARII.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "GZCO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "MNCN.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "BEST.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "LPKR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "EURO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "IATA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "MINA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "ASRI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "BOLA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "DOID.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "BMTR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "ASSA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "FUTR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "LPPF.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "TRAM.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "COCO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "BANK.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "PTPP.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "BBYB.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "BTEL.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "KBLI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "KOTA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "CPRO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "UNSP.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "OASA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "INPC.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "IIKP.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "DILD.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "BHIT.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "SUGI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "KIJA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "STAR.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "RIMO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "ELTY.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "CARS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "IBST.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "FASW.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "DUTI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SGRO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SMCB.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SUPR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PLIN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ANJT.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ADMF.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "TRIO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "GMFI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BDMN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PSAB.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "LIFE.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "AGII.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "HMSP.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "LINK.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "EPMT.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SMAR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PGUN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "TLDN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "EDGE.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CITA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "DMND.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CNMA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MSJA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PRAY.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "TBIG.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ADES.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BNGA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "GIAA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "TSPC.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BTPN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "INPP.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BBMD.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BSWD.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SOHO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BSSR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MCOL.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "FAPA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "WIKA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CDIA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BRIS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "YUPI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BPII.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SCMA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MLBI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BNLI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PGEO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "POLU.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SMMT.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "GEMS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CBDK.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BNII.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MDIA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SUPA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "CMNT.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BREN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MAPI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MTEL.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "JARR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "HATM.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "NCKL.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BMAS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BBHI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MYOR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "RLCO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ADMR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "UNVR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SIMP.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "VICI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "POWR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "OMED.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "NISP.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "JRPT.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ABMM.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MLPT.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "PNBN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SAME.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "ALII.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "DNET.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SILO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "FORE.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TMAS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ARCI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BBKP.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PANI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ISAT.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TAPG.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ELPI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SRAJ.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "HRUM.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MBSS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AVIA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SRTG.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "DMAS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ULTJ.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MDIY.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SHIP.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AADI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MORA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "CMRY.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MPRO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ICBP.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "CUAN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "RISE.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "STTP.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TCPI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AUTO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AALI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TUGU.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "DSSA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SIDO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "CLAY.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "INCO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BINA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "NSSS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MAYA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "WBSA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "CLEO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BYAN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MKPI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "IMPC.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MIDI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "DCII.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "DRMA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "GGRM.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BELI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "RAJA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PKPK.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MGLV.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "FILM.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BSDE.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BJBR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MEDC.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BBSI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SMDR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "EMAS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "AMMN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "WSKT.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "CYBR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TOWR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ARTO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "NICL.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BKSL.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "STAA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "HRTA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MASB.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "EMTK.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "INDY.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BRPT.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MSIN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SSMS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TPIA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "BTPS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "PTRO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "SGER.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "TOTL.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "JSMR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MAPA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "GOOD.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PWON.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "RATU.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ITMG.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PNLF.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BUKA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "AKRA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "CARE.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "EXCL.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "GJTL.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "UNTR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MIKA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PTBA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ARKO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "TINS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ANTM.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MBMA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "UNIC.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BNBR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PACK.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "KLBF.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "CPIN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BUVA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ACES.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BSIM.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "INET.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BALI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "WIFI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "TKIM.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ADRO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BMRI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MTDL.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BBNI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "LSIP.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BBTN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "CMNP.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "RMKE.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "INTP.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SMSM.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SINI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "TLKM.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "INKP.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ERAA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MEGA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PGAS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "COIN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ELSA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "DSNG.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "JPFA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BFIN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BBCA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "AMRT.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "CTRA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BBRI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "CASA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ASII.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BJTM.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SMGR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SMMA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "INDF.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "TRIM.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SSIA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "HEAL.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "KPIG.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BUMI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "MDKA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ENRG.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "SMRA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ESSA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BRMS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BIPI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "VKTR.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "APIC.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "NATO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "DEWA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BHAT.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BOGA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BULL.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "YULE.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "GOTO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    }
+  }
+}

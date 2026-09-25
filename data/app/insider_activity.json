@@ -1,0 +1,2738 @@
+{
+  "as_of": "2026-09-13",
+  "source_files": [
+    "insider_buys_2025_2026_2026-09-13.jsonl",
+    "insider_sells_2025_2026_2026-09-13.jsonl"
+  ],
+  "window": {
+    "start": "2025-01-02",
+    "end": "2026-09-11"
+  },
+  "summary": {
+    "universe_count": 962,
+    "companies_with_activity": 451,
+    "net_buying": 235,
+    "net_selling": 162,
+    "balanced": 54
+  },
+  "by_symbol": {
+    "PPRI.JK": {
+      "buy_count": 6,
+      "sell_count": 7,
+      "last_transaction_date": "2026-09-11",
+      "net_direction": "net_selling"
+    },
+    "IMPC.JK": {
+      "buy_count": 40,
+      "sell_count": 13,
+      "last_transaction_date": "2026-09-11",
+      "net_direction": "net_buying"
+    },
+    "SQMI.JK": {
+      "buy_count": 6,
+      "sell_count": 7,
+      "last_transaction_date": "2026-09-11",
+      "net_direction": "net_selling"
+    },
+    "EMMI.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2026-09-11",
+      "net_direction": "net_buying"
+    },
+    "VICI.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-09-10",
+      "net_direction": "net_buying"
+    },
+    "SRTG.JK": {
+      "buy_count": 3,
+      "sell_count": 3,
+      "last_transaction_date": "2026-09-10",
+      "net_direction": "balanced"
+    },
+    "HEAL.JK": {
+      "buy_count": 45,
+      "sell_count": 4,
+      "last_transaction_date": "2026-09-10",
+      "net_direction": "net_buying"
+    },
+    "PKPK.JK": {
+      "buy_count": 9,
+      "sell_count": 1,
+      "last_transaction_date": "2026-09-10",
+      "net_direction": "net_buying"
+    },
+    "CYBR.JK": {
+      "buy_count": 109,
+      "sell_count": 75,
+      "last_transaction_date": "2026-09-09",
+      "net_direction": "net_buying"
+    },
+    "GULA.JK": {
+      "buy_count": 4,
+      "sell_count": 7,
+      "last_transaction_date": "2026-09-09",
+      "net_direction": "net_selling"
+    },
+    "GMFI.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2026-09-09",
+      "net_direction": "net_buying"
+    },
+    "TAMA.JK": {
+      "buy_count": 7,
+      "sell_count": 7,
+      "last_transaction_date": "2026-09-08",
+      "net_direction": "balanced"
+    },
+    "BMRI.JK": {
+      "buy_count": 7,
+      "sell_count": 0,
+      "last_transaction_date": "2026-09-08",
+      "net_direction": "net_buying"
+    },
+    "EDGE.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-09-08",
+      "net_direction": "net_buying"
+    },
+    "BUKA.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2026-09-08",
+      "net_direction": "net_buying"
+    },
+    "BALI.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-09-08",
+      "net_direction": "net_buying"
+    },
+    "INPP.JK": {
+      "buy_count": 1,
+      "sell_count": 3,
+      "last_transaction_date": "2026-09-07",
+      "net_direction": "net_selling"
+    },
+    "TEBE.JK": {
+      "buy_count": 3,
+      "sell_count": 1,
+      "last_transaction_date": "2026-09-07",
+      "net_direction": "net_buying"
+    },
+    "RGAS.JK": {
+      "buy_count": 1,
+      "sell_count": 7,
+      "last_transaction_date": "2026-09-08",
+      "net_direction": "net_selling"
+    },
+    "NICK.JK": {
+      "buy_count": 8,
+      "sell_count": 6,
+      "last_transaction_date": "2026-09-03",
+      "net_direction": "net_buying"
+    },
+    "DRMA.JK": {
+      "buy_count": 8,
+      "sell_count": 23,
+      "last_transaction_date": "2026-09-03",
+      "net_direction": "net_selling"
+    },
+    "JECX.JK": {
+      "buy_count": 7,
+      "sell_count": 0,
+      "last_transaction_date": "2026-09-02",
+      "net_direction": "net_buying"
+    },
+    "JSMR.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-09-02",
+      "net_direction": "net_buying"
+    },
+    "CSIS.JK": {
+      "buy_count": 22,
+      "sell_count": 0,
+      "last_transaction_date": "2026-09-02",
+      "net_direction": "net_buying"
+    },
+    "ISSP.JK": {
+      "buy_count": 28,
+      "sell_count": 0,
+      "last_transaction_date": "2026-09-02",
+      "net_direction": "net_buying"
+    },
+    "DYAN.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-09-02",
+      "net_direction": "net_buying"
+    },
+    "JATI.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2026-09-02",
+      "net_direction": "net_buying"
+    },
+    "MICE.JK": {
+      "buy_count": 46,
+      "sell_count": 0,
+      "last_transaction_date": "2026-09-01",
+      "net_direction": "net_buying"
+    },
+    "BCIC.JK": {
+      "buy_count": 34,
+      "sell_count": 7,
+      "last_transaction_date": "2026-08-31",
+      "net_direction": "net_buying"
+    },
+    "SURI.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-31",
+      "net_direction": "net_buying"
+    },
+    "DILD.JK": {
+      "buy_count": 5,
+      "sell_count": 5,
+      "last_transaction_date": "2026-08-31",
+      "net_direction": "balanced"
+    },
+    "ATIC.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-28",
+      "net_direction": "net_buying"
+    },
+    "TRIS.JK": {
+      "buy_count": 4,
+      "sell_count": 3,
+      "last_transaction_date": "2026-08-27",
+      "net_direction": "net_buying"
+    },
+    "KKGI.JK": {
+      "buy_count": 5,
+      "sell_count": 3,
+      "last_transaction_date": "2026-08-27",
+      "net_direction": "net_buying"
+    },
+    "LUCY.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-27",
+      "net_direction": "net_buying"
+    },
+    "MCOR.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-26",
+      "net_direction": "net_buying"
+    },
+    "KLBF.JK": {
+      "buy_count": 9,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-24",
+      "net_direction": "net_buying"
+    },
+    "NASI.JK": {
+      "buy_count": 8,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-22",
+      "net_direction": "net_buying"
+    },
+    "BAIK.JK": {
+      "buy_count": 3,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-21",
+      "net_direction": "net_buying"
+    },
+    "TSPC.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-21",
+      "net_direction": "net_buying"
+    },
+    "CASH.JK": {
+      "buy_count": 14,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-21",
+      "net_direction": "net_buying"
+    },
+    "NAYZ.JK": {
+      "buy_count": 1,
+      "sell_count": 3,
+      "last_transaction_date": "2026-08-20",
+      "net_direction": "net_selling"
+    },
+    "TRJA.JK": {
+      "buy_count": 2,
+      "sell_count": 12,
+      "last_transaction_date": "2026-08-20",
+      "net_direction": "net_selling"
+    },
+    "GOOD.JK": {
+      "buy_count": 16,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-20",
+      "net_direction": "net_buying"
+    },
+    "BBMD.JK": {
+      "buy_count": 6,
+      "sell_count": 1,
+      "last_transaction_date": "2026-09-02",
+      "net_direction": "net_buying"
+    },
+    "HGII.JK": {
+      "buy_count": 16,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-18",
+      "net_direction": "net_buying"
+    },
+    "BBKP.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-18",
+      "net_direction": "net_buying"
+    },
+    "WINS.JK": {
+      "buy_count": 4,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-14",
+      "net_direction": "net_buying"
+    },
+    "ENRG.JK": {
+      "buy_count": 2,
+      "sell_count": 2,
+      "last_transaction_date": "2026-08-14",
+      "net_direction": "balanced"
+    },
+    "EMAS.JK": {
+      "buy_count": 2,
+      "sell_count": 3,
+      "last_transaction_date": "2026-08-24",
+      "net_direction": "net_selling"
+    },
+    "AKRA.JK": {
+      "buy_count": 21,
+      "sell_count": 11,
+      "last_transaction_date": "2026-09-10",
+      "net_direction": "net_buying"
+    },
+    "ASII.JK": {
+      "buy_count": 20,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-13",
+      "net_direction": "net_buying"
+    },
+    "CBRE.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-12",
+      "net_direction": "net_buying"
+    },
+    "SUPA.JK": {
+      "buy_count": 12,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-12",
+      "net_direction": "net_buying"
+    },
+    "CUAN.JK": {
+      "buy_count": 10,
+      "sell_count": 9,
+      "last_transaction_date": "2026-08-11",
+      "net_direction": "net_buying"
+    },
+    "SINI.JK": {
+      "buy_count": 11,
+      "sell_count": 3,
+      "last_transaction_date": "2026-08-11",
+      "net_direction": "net_buying"
+    },
+    "FLMC.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-11",
+      "net_direction": "net_buying"
+    },
+    "NANO.JK": {
+      "buy_count": 2,
+      "sell_count": 3,
+      "last_transaction_date": "2026-08-11",
+      "net_direction": "net_selling"
+    },
+    "PANS.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-11",
+      "net_direction": "net_buying"
+    },
+    "HELI.JK": {
+      "buy_count": 8,
+      "sell_count": 3,
+      "last_transaction_date": "2026-08-10",
+      "net_direction": "net_buying"
+    },
+    "OKAS.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-10",
+      "net_direction": "net_buying"
+    },
+    "FUTR.JK": {
+      "buy_count": 9,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-06",
+      "net_direction": "net_buying"
+    },
+    "BIKE.JK": {
+      "buy_count": 2,
+      "sell_count": 9,
+      "last_transaction_date": "2026-08-06",
+      "net_direction": "net_selling"
+    },
+    "IKBI.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-07",
+      "net_direction": "balanced"
+    },
+    "TALF.JK": {
+      "buy_count": 1,
+      "sell_count": 2,
+      "last_transaction_date": "2026-08-06",
+      "net_direction": "net_selling"
+    },
+    "FUJI.JK": {
+      "buy_count": 10,
+      "sell_count": 6,
+      "last_transaction_date": "2026-08-06",
+      "net_direction": "net_buying"
+    },
+    "ARCI.JK": {
+      "buy_count": 11,
+      "sell_count": 4,
+      "last_transaction_date": "2026-08-05",
+      "net_direction": "net_buying"
+    },
+    "SOLA.JK": {
+      "buy_count": 17,
+      "sell_count": 2,
+      "last_transaction_date": "2026-08-05",
+      "net_direction": "net_buying"
+    },
+    "KDTN.JK": {
+      "buy_count": 3,
+      "sell_count": 17,
+      "last_transaction_date": "2026-09-11",
+      "net_direction": "net_selling"
+    },
+    "WINE.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-05",
+      "net_direction": "net_buying"
+    },
+    "PACK.JK": {
+      "buy_count": 6,
+      "sell_count": 2,
+      "last_transaction_date": "2026-08-04",
+      "net_direction": "net_buying"
+    },
+    "SONA.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-04",
+      "net_direction": "net_buying"
+    },
+    "DEWI.JK": {
+      "buy_count": 5,
+      "sell_count": 4,
+      "last_transaction_date": "2026-08-04",
+      "net_direction": "net_buying"
+    },
+    "ISAT.JK": {
+      "buy_count": 8,
+      "sell_count": 0,
+      "last_transaction_date": "2026-08-03",
+      "net_direction": "net_buying"
+    },
+    "MAPI.JK": {
+      "buy_count": 5,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-03",
+      "net_direction": "net_buying"
+    },
+    "LRNA.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-07-31",
+      "net_direction": "net_buying"
+    },
+    "NTBK.JK": {
+      "buy_count": 2,
+      "sell_count": 5,
+      "last_transaction_date": "2026-07-30",
+      "net_direction": "net_selling"
+    },
+    "OMED.JK": {
+      "buy_count": 16,
+      "sell_count": 1,
+      "last_transaction_date": "2026-07-29",
+      "net_direction": "net_buying"
+    },
+    "BULL.JK": {
+      "buy_count": 18,
+      "sell_count": 3,
+      "last_transaction_date": "2026-07-28",
+      "net_direction": "net_buying"
+    },
+    "BIRD.JK": {
+      "buy_count": 5,
+      "sell_count": 4,
+      "last_transaction_date": "2026-07-28",
+      "net_direction": "net_buying"
+    },
+    "GJTL.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-07-27",
+      "net_direction": "net_buying"
+    },
+    "TOWR.JK": {
+      "buy_count": 1,
+      "sell_count": 6,
+      "last_transaction_date": "2026-07-27",
+      "net_direction": "net_selling"
+    },
+    "SMRA.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-07-27",
+      "net_direction": "net_buying"
+    },
+    "NSSS.JK": {
+      "buy_count": 22,
+      "sell_count": 24,
+      "last_transaction_date": "2026-08-07",
+      "net_direction": "net_selling"
+    },
+    "BKSL.JK": {
+      "buy_count": 14,
+      "sell_count": 9,
+      "last_transaction_date": "2026-07-24",
+      "net_direction": "net_buying"
+    },
+    "FILM.JK": {
+      "buy_count": 19,
+      "sell_count": 17,
+      "last_transaction_date": "2026-08-11",
+      "net_direction": "net_buying"
+    },
+    "LFLO.JK": {
+      "buy_count": 15,
+      "sell_count": 0,
+      "last_transaction_date": "2026-07-24",
+      "net_direction": "net_buying"
+    },
+    "HYGN.JK": {
+      "buy_count": 5,
+      "sell_count": 0,
+      "last_transaction_date": "2026-07-23",
+      "net_direction": "net_buying"
+    },
+    "EPAC.JK": {
+      "buy_count": 3,
+      "sell_count": 10,
+      "last_transaction_date": "2026-07-23",
+      "net_direction": "net_selling"
+    },
+    "ATAP.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-13",
+      "net_direction": "net_buying"
+    },
+    "REAL.JK": {
+      "buy_count": 3,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-21",
+      "net_direction": "net_buying"
+    },
+    "AMMN.JK": {
+      "buy_count": 11,
+      "sell_count": 11,
+      "last_transaction_date": "2026-07-22",
+      "net_direction": "balanced"
+    },
+    "AKPI.JK": {
+      "buy_count": 4,
+      "sell_count": 57,
+      "last_transaction_date": "2026-09-08",
+      "net_direction": "net_selling"
+    },
+    "MCAS.JK": {
+      "buy_count": 17,
+      "sell_count": 0,
+      "last_transaction_date": "2026-07-21",
+      "net_direction": "net_buying"
+    },
+    "MTLA.JK": {
+      "buy_count": 2,
+      "sell_count": 2,
+      "last_transaction_date": "2026-07-20",
+      "net_direction": "balanced"
+    },
+    "RATU.JK": {
+      "buy_count": 2,
+      "sell_count": 2,
+      "last_transaction_date": "2026-07-20",
+      "net_direction": "balanced"
+    },
+    "BMBL.JK": {
+      "buy_count": 6,
+      "sell_count": 23,
+      "last_transaction_date": "2026-08-24",
+      "net_direction": "net_selling"
+    },
+    "BATA.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2026-07-17",
+      "net_direction": "net_buying"
+    },
+    "PGAS.JK": {
+      "buy_count": 8,
+      "sell_count": 0,
+      "last_transaction_date": "2026-07-16",
+      "net_direction": "net_buying"
+    },
+    "BJTM.JK": {
+      "buy_count": 15,
+      "sell_count": 0,
+      "last_transaction_date": "2026-07-15",
+      "net_direction": "net_buying"
+    },
+    "DATA.JK": {
+      "buy_count": 5,
+      "sell_count": 1,
+      "last_transaction_date": "2026-07-13",
+      "net_direction": "net_buying"
+    },
+    "SAME.JK": {
+      "buy_count": 2,
+      "sell_count": 2,
+      "last_transaction_date": "2026-07-13",
+      "net_direction": "balanced"
+    },
+    "RLCO.JK": {
+      "buy_count": 3,
+      "sell_count": 2,
+      "last_transaction_date": "2026-07-13",
+      "net_direction": "net_buying"
+    },
+    "BMSR.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-07-10",
+      "net_direction": "balanced"
+    },
+    "KRYA.JK": {
+      "buy_count": 3,
+      "sell_count": 6,
+      "last_transaction_date": "2026-07-09",
+      "net_direction": "net_selling"
+    },
+    "GGRM.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-07-09",
+      "net_direction": "net_buying"
+    },
+    "MDLA.JK": {
+      "buy_count": 4,
+      "sell_count": 1,
+      "last_transaction_date": "2026-07-08",
+      "net_direction": "net_buying"
+    },
+    "SKBM.JK": {
+      "buy_count": 1,
+      "sell_count": 2,
+      "last_transaction_date": "2026-07-08",
+      "net_direction": "net_selling"
+    },
+    "CPRO.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-07-08",
+      "net_direction": "net_buying"
+    },
+    "UFOE.JK": {
+      "buy_count": 6,
+      "sell_count": 2,
+      "last_transaction_date": "2026-09-08",
+      "net_direction": "net_buying"
+    },
+    "BRRC.JK": {
+      "buy_count": 2,
+      "sell_count": 6,
+      "last_transaction_date": "2026-07-07",
+      "net_direction": "net_selling"
+    },
+    "SIDO.JK": {
+      "buy_count": 7,
+      "sell_count": 0,
+      "last_transaction_date": "2026-07-07",
+      "net_direction": "net_buying"
+    },
+    "CTRA.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-07-06",
+      "net_direction": "net_buying"
+    },
+    "VRNA.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-07-03",
+      "net_direction": "balanced"
+    },
+    "BRMS.JK": {
+      "buy_count": 6,
+      "sell_count": 1,
+      "last_transaction_date": "2026-07-03",
+      "net_direction": "net_buying"
+    },
+    "MEDC.JK": {
+      "buy_count": 1,
+      "sell_count": 2,
+      "last_transaction_date": "2026-07-03",
+      "net_direction": "net_selling"
+    },
+    "BYAN.JK": {
+      "buy_count": 21,
+      "sell_count": 20,
+      "last_transaction_date": "2026-07-03",
+      "net_direction": "net_buying"
+    },
+    "HALO.JK": {
+      "buy_count": 6,
+      "sell_count": 2,
+      "last_transaction_date": "2026-06-30",
+      "net_direction": "net_buying"
+    },
+    "TAYS.JK": {
+      "buy_count": 1,
+      "sell_count": 4,
+      "last_transaction_date": "2026-07-24",
+      "net_direction": "net_selling"
+    },
+    "HERO.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-06-30",
+      "net_direction": "net_buying"
+    },
+    "SMDR.JK": {
+      "buy_count": 16,
+      "sell_count": 0,
+      "last_transaction_date": "2026-06-29",
+      "net_direction": "net_buying"
+    },
+    "ATLA.JK": {
+      "buy_count": 5,
+      "sell_count": 30,
+      "last_transaction_date": "2026-06-29",
+      "net_direction": "net_selling"
+    },
+    "AVIA.JK": {
+      "buy_count": 5,
+      "sell_count": 0,
+      "last_transaction_date": "2026-06-26",
+      "net_direction": "net_buying"
+    },
+    "CLEO.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-06-26",
+      "net_direction": "net_buying"
+    },
+    "GSMF.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-06-26",
+      "net_direction": "net_buying"
+    },
+    "BAPA.JK": {
+      "buy_count": 2,
+      "sell_count": 5,
+      "last_transaction_date": "2026-07-10",
+      "net_direction": "net_selling"
+    },
+    "MYOR.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-06-22",
+      "net_direction": "net_buying"
+    },
+    "SPMA.JK": {
+      "buy_count": 7,
+      "sell_count": 5,
+      "last_transaction_date": "2026-06-26",
+      "net_direction": "net_buying"
+    },
+    "GOTO.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-06-18",
+      "net_direction": "net_buying"
+    },
+    "VISI.JK": {
+      "buy_count": 3,
+      "sell_count": 1,
+      "last_transaction_date": "2026-06-18",
+      "net_direction": "net_buying"
+    },
+    "TPIA.JK": {
+      "buy_count": 23,
+      "sell_count": 2,
+      "last_transaction_date": "2026-06-15",
+      "net_direction": "net_buying"
+    },
+    "BEEF.JK": {
+      "buy_count": 3,
+      "sell_count": 2,
+      "last_transaction_date": "2026-06-11",
+      "net_direction": "net_buying"
+    },
+    "IMAS.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-06-10",
+      "net_direction": "balanced"
+    },
+    "TAPG.JK": {
+      "buy_count": 12,
+      "sell_count": 10,
+      "last_transaction_date": "2026-09-11",
+      "net_direction": "net_buying"
+    },
+    "RAJA.JK": {
+      "buy_count": 6,
+      "sell_count": 1,
+      "last_transaction_date": "2026-06-10",
+      "net_direction": "net_buying"
+    },
+    "HRTA.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-06-09",
+      "net_direction": "net_buying"
+    },
+    "BAUT.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-06-09",
+      "net_direction": "net_buying"
+    },
+    "TOTL.JK": {
+      "buy_count": 4,
+      "sell_count": 7,
+      "last_transaction_date": "2026-08-06",
+      "net_direction": "net_selling"
+    },
+    "BFIN.JK": {
+      "buy_count": 7,
+      "sell_count": 3,
+      "last_transaction_date": "2026-06-09",
+      "net_direction": "net_buying"
+    },
+    "BBRI.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-06-05",
+      "net_direction": "net_buying"
+    },
+    "NFCX.JK": {
+      "buy_count": 4,
+      "sell_count": 2,
+      "last_transaction_date": "2026-06-04",
+      "net_direction": "net_buying"
+    },
+    "DSNG.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-06-04",
+      "net_direction": "net_buying"
+    },
+    "SRSN.JK": {
+      "buy_count": 7,
+      "sell_count": 11,
+      "last_transaction_date": "2026-06-04",
+      "net_direction": "net_selling"
+    },
+    "PMUI.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-06-04",
+      "net_direction": "net_buying"
+    },
+    "AMRT.JK": {
+      "buy_count": 4,
+      "sell_count": 4,
+      "last_transaction_date": "2026-06-03",
+      "net_direction": "balanced"
+    },
+    "BUVA.JK": {
+      "buy_count": 10,
+      "sell_count": 9,
+      "last_transaction_date": "2026-08-05",
+      "net_direction": "net_buying"
+    },
+    "SIMP.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-06-01",
+      "net_direction": "balanced"
+    },
+    "PURA.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-05-28",
+      "net_direction": "net_buying"
+    },
+    "RDTX.JK": {
+      "buy_count": 10,
+      "sell_count": 2,
+      "last_transaction_date": "2026-05-26",
+      "net_direction": "net_buying"
+    },
+    "JAST.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-05-25",
+      "net_direction": "net_buying"
+    },
+    "BIPI.JK": {
+      "buy_count": 3,
+      "sell_count": 3,
+      "last_transaction_date": "2026-05-25",
+      "net_direction": "balanced"
+    },
+    "ULTJ.JK": {
+      "buy_count": 9,
+      "sell_count": 0,
+      "last_transaction_date": "2026-05-22",
+      "net_direction": "net_buying"
+    },
+    "HRUM.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-05-20",
+      "net_direction": "net_buying"
+    },
+    "DKFT.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-05-20",
+      "net_direction": "net_buying"
+    },
+    "BUMI.JK": {
+      "buy_count": 9,
+      "sell_count": 16,
+      "last_transaction_date": "2026-06-19",
+      "net_direction": "net_selling"
+    },
+    "BABY.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-05-15",
+      "net_direction": "net_buying"
+    },
+    "BJBR.JK": {
+      "buy_count": 11,
+      "sell_count": 0,
+      "last_transaction_date": "2026-05-13",
+      "net_direction": "net_buying"
+    },
+    "FORE.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-05-13",
+      "net_direction": "net_buying"
+    },
+    "SAFE.JK": {
+      "buy_count": 13,
+      "sell_count": 14,
+      "last_transaction_date": "2026-05-11",
+      "net_direction": "net_selling"
+    },
+    "SOSS.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-05-11",
+      "net_direction": "balanced"
+    },
+    "BSDE.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2026-05-08",
+      "net_direction": "net_buying"
+    },
+    "INPS.JK": {
+      "buy_count": 1,
+      "sell_count": 6,
+      "last_transaction_date": "2026-09-09",
+      "net_direction": "net_selling"
+    },
+    "ASLI.JK": {
+      "buy_count": 3,
+      "sell_count": 4,
+      "last_transaction_date": "2026-05-06",
+      "net_direction": "net_selling"
+    },
+    "SMSM.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2026-05-05",
+      "net_direction": "net_buying"
+    },
+    "HOPE.JK": {
+      "buy_count": 5,
+      "sell_count": 6,
+      "last_transaction_date": "2026-04-30",
+      "net_direction": "net_selling"
+    },
+    "ESSA.JK": {
+      "buy_count": 1,
+      "sell_count": 3,
+      "last_transaction_date": "2026-04-24",
+      "net_direction": "net_selling"
+    },
+    "SKRN.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-04-23",
+      "net_direction": "balanced"
+    },
+    "SMGR.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-05-28",
+      "net_direction": "balanced"
+    },
+    "UVCR.JK": {
+      "buy_count": 9,
+      "sell_count": 3,
+      "last_transaction_date": "2026-05-25",
+      "net_direction": "net_buying"
+    },
+    "KEJU.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-04-18",
+      "net_direction": "net_buying"
+    },
+    "BELI.JK": {
+      "buy_count": 11,
+      "sell_count": 11,
+      "last_transaction_date": "2026-04-16",
+      "net_direction": "balanced"
+    },
+    "STTP.JK": {
+      "buy_count": 5,
+      "sell_count": 0,
+      "last_transaction_date": "2026-04-16",
+      "net_direction": "net_buying"
+    },
+    "PTRO.JK": {
+      "buy_count": 11,
+      "sell_count": 0,
+      "last_transaction_date": "2026-04-15",
+      "net_direction": "net_buying"
+    },
+    "JAYA.JK": {
+      "buy_count": 9,
+      "sell_count": 0,
+      "last_transaction_date": "2026-04-14",
+      "net_direction": "net_buying"
+    },
+    "BOLT.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2026-04-13",
+      "net_direction": "net_buying"
+    },
+    "ARNA.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-04-10",
+      "net_direction": "net_buying"
+    },
+    "MDIA.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-04-10",
+      "net_direction": "net_buying"
+    },
+    "PADA.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-04-09",
+      "net_direction": "net_buying"
+    },
+    "KOTA.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-04-09",
+      "net_direction": "net_buying"
+    },
+    "WGSH.JK": {
+      "buy_count": 2,
+      "sell_count": 6,
+      "last_transaction_date": "2026-05-04",
+      "net_direction": "net_selling"
+    },
+    "TRUK.JK": {
+      "buy_count": 7,
+      "sell_count": 3,
+      "last_transaction_date": "2026-04-08",
+      "net_direction": "net_buying"
+    },
+    "SWAT.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-04-07",
+      "net_direction": "net_buying"
+    },
+    "BOBA.JK": {
+      "buy_count": 8,
+      "sell_count": 2,
+      "last_transaction_date": "2026-04-07",
+      "net_direction": "net_buying"
+    },
+    "CSAP.JK": {
+      "buy_count": 3,
+      "sell_count": 1,
+      "last_transaction_date": "2026-06-11",
+      "net_direction": "net_buying"
+    },
+    "INET.JK": {
+      "buy_count": 7,
+      "sell_count": 0,
+      "last_transaction_date": "2026-04-01",
+      "net_direction": "net_buying"
+    },
+    "ITIC.JK": {
+      "buy_count": 5,
+      "sell_count": 0,
+      "last_transaction_date": "2026-03-31",
+      "net_direction": "net_buying"
+    },
+    "YULE.JK": {
+      "buy_count": 3,
+      "sell_count": 2,
+      "last_transaction_date": "2026-03-30",
+      "net_direction": "net_buying"
+    },
+    "BBCA.JK": {
+      "buy_count": 10,
+      "sell_count": 0,
+      "last_transaction_date": "2026-03-26",
+      "net_direction": "net_buying"
+    },
+    "RELI.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-07",
+      "net_direction": "balanced"
+    },
+    "CMRY.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-03-16",
+      "net_direction": "net_buying"
+    },
+    "DUTI.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-03-12",
+      "net_direction": "net_buying"
+    },
+    "LOPI.JK": {
+      "buy_count": 21,
+      "sell_count": 11,
+      "last_transaction_date": "2026-09-09",
+      "net_direction": "net_buying"
+    },
+    "EXCL.JK": {
+      "buy_count": 10,
+      "sell_count": 2,
+      "last_transaction_date": "2026-03-10",
+      "net_direction": "net_buying"
+    },
+    "SGRO.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-03-06",
+      "net_direction": "net_buying"
+    },
+    "ALII.JK": {
+      "buy_count": 8,
+      "sell_count": 6,
+      "last_transaction_date": "2026-03-05",
+      "net_direction": "net_buying"
+    },
+    "SCMA.JK": {
+      "buy_count": 12,
+      "sell_count": 0,
+      "last_transaction_date": "2026-03-04",
+      "net_direction": "net_buying"
+    },
+    "IRSX.JK": {
+      "buy_count": 7,
+      "sell_count": 8,
+      "last_transaction_date": "2026-03-04",
+      "net_direction": "net_selling"
+    },
+    "DIVA.JK": {
+      "buy_count": 3,
+      "sell_count": 0,
+      "last_transaction_date": "2026-03-03",
+      "net_direction": "net_buying"
+    },
+    "HILL.JK": {
+      "buy_count": 6,
+      "sell_count": 51,
+      "last_transaction_date": "2026-06-02",
+      "net_direction": "net_selling"
+    },
+    "BACA.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-02-25",
+      "net_direction": "net_buying"
+    },
+    "MDKA.JK": {
+      "buy_count": 7,
+      "sell_count": 3,
+      "last_transaction_date": "2026-03-11",
+      "net_direction": "net_buying"
+    },
+    "MEDS.JK": {
+      "buy_count": 3,
+      "sell_count": 42,
+      "last_transaction_date": "2026-09-08",
+      "net_direction": "net_selling"
+    },
+    "EMTK.JK": {
+      "buy_count": 12,
+      "sell_count": 0,
+      "last_transaction_date": "2026-02-20",
+      "net_direction": "net_buying"
+    },
+    "INDS.JK": {
+      "buy_count": 2,
+      "sell_count": 2,
+      "last_transaction_date": "2026-02-20",
+      "net_direction": "balanced"
+    },
+    "PYFA.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-02-18",
+      "net_direction": "net_buying"
+    },
+    "MGLV.JK": {
+      "buy_count": 1,
+      "sell_count": 9,
+      "last_transaction_date": "2026-09-10",
+      "net_direction": "net_selling"
+    },
+    "PSSI.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-02-12",
+      "net_direction": "balanced"
+    },
+    "ESTA.JK": {
+      "buy_count": 1,
+      "sell_count": 2,
+      "last_transaction_date": "2026-02-16",
+      "net_direction": "net_selling"
+    },
+    "CCSI.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-02-11",
+      "net_direction": "net_buying"
+    },
+    "TOBA.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-02-06",
+      "net_direction": "net_buying"
+    },
+    "STRK.JK": {
+      "buy_count": 1,
+      "sell_count": 3,
+      "last_transaction_date": "2026-02-11",
+      "net_direction": "net_selling"
+    },
+    "GMTD.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-02-05",
+      "net_direction": "net_buying"
+    },
+    "MINE.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2026-02-04",
+      "net_direction": "net_buying"
+    },
+    "AYLS.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-02-02",
+      "net_direction": "net_buying"
+    },
+    "ASRI.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-02-02",
+      "net_direction": "net_buying"
+    },
+    "MDIY.JK": {
+      "buy_count": 9,
+      "sell_count": 0,
+      "last_transaction_date": "2026-01-30",
+      "net_direction": "net_buying"
+    },
+    "SILO.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2026-01-30",
+      "net_direction": "net_buying"
+    },
+    "BIPP.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-02-02",
+      "net_direction": "net_buying"
+    },
+    "VICO.JK": {
+      "buy_count": 11,
+      "sell_count": 2,
+      "last_transaction_date": "2026-01-30",
+      "net_direction": "net_buying"
+    },
+    "CDIA.JK": {
+      "buy_count": 8,
+      "sell_count": 0,
+      "last_transaction_date": "2026-01-30",
+      "net_direction": "net_buying"
+    },
+    "BRPT.JK": {
+      "buy_count": 4,
+      "sell_count": 2,
+      "last_transaction_date": "2026-01-29",
+      "net_direction": "net_buying"
+    },
+    "MAIN.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-01-29",
+      "net_direction": "net_buying"
+    },
+    "NEST.JK": {
+      "buy_count": 3,
+      "sell_count": 0,
+      "last_transaction_date": "2026-01-28",
+      "net_direction": "net_buying"
+    },
+    "GRPM.JK": {
+      "buy_count": 1,
+      "sell_count": 3,
+      "last_transaction_date": "2026-02-13",
+      "net_direction": "net_selling"
+    },
+    "VINS.JK": {
+      "buy_count": 3,
+      "sell_count": 0,
+      "last_transaction_date": "2026-01-28",
+      "net_direction": "net_buying"
+    },
+    "FAPA.JK": {
+      "buy_count": 1,
+      "sell_count": 3,
+      "last_transaction_date": "2026-07-24",
+      "net_direction": "net_selling"
+    },
+    "BREN.JK": {
+      "buy_count": 4,
+      "sell_count": 7,
+      "last_transaction_date": "2026-04-06",
+      "net_direction": "net_selling"
+    },
+    "UNTR.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-01-23",
+      "net_direction": "net_buying"
+    },
+    "SULI.JK": {
+      "buy_count": 4,
+      "sell_count": 5,
+      "last_transaction_date": "2026-02-06",
+      "net_direction": "net_selling"
+    },
+    "SSMS.JK": {
+      "buy_count": 2,
+      "sell_count": 2,
+      "last_transaction_date": "2026-04-29",
+      "net_direction": "balanced"
+    },
+    "PANR.JK": {
+      "buy_count": 5,
+      "sell_count": 2,
+      "last_transaction_date": "2026-01-19",
+      "net_direction": "net_buying"
+    },
+    "LUCK.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-16",
+      "net_direction": "balanced"
+    },
+    "BBYB.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-01-15",
+      "net_direction": "net_buying"
+    },
+    "KMDS.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-15",
+      "net_direction": "balanced"
+    },
+    "PTSP.JK": {
+      "buy_count": 3,
+      "sell_count": 0,
+      "last_transaction_date": "2026-01-13",
+      "net_direction": "net_buying"
+    },
+    "INCO.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-12",
+      "net_direction": "balanced"
+    },
+    "EURO.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-09",
+      "net_direction": "balanced"
+    },
+    "TYRE.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-01-07",
+      "net_direction": "net_buying"
+    },
+    "INTA.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-01-07",
+      "net_direction": "net_buying"
+    },
+    "BNGA.JK": {
+      "buy_count": 6,
+      "sell_count": 0,
+      "last_transaction_date": "2026-01-07",
+      "net_direction": "net_buying"
+    },
+    "JECC.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2026-01-06",
+      "net_direction": "net_buying"
+    },
+    "GLVA.JK": {
+      "buy_count": 2,
+      "sell_count": 2,
+      "last_transaction_date": "2026-01-05",
+      "net_direction": "balanced"
+    },
+    "MMLP.JK": {
+      "buy_count": 2,
+      "sell_count": 2,
+      "last_transaction_date": "2026-01-05",
+      "net_direction": "balanced"
+    },
+    "AMMS.JK": {
+      "buy_count": 3,
+      "sell_count": 3,
+      "last_transaction_date": "2026-03-17",
+      "net_direction": "balanced"
+    },
+    "LPGI.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-02",
+      "net_direction": "balanced"
+    },
+    "PRAY.JK": {
+      "buy_count": 3,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-31",
+      "net_direction": "net_buying"
+    },
+    "PANI.JK": {
+      "buy_count": 6,
+      "sell_count": 3,
+      "last_transaction_date": "2025-12-30",
+      "net_direction": "net_buying"
+    },
+    "MAXI.JK": {
+      "buy_count": 7,
+      "sell_count": 10,
+      "last_transaction_date": "2026-04-30",
+      "net_direction": "net_selling"
+    },
+    "MSTI.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-29",
+      "net_direction": "net_buying"
+    },
+    "SMIL.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-26",
+      "net_direction": "net_buying"
+    },
+    "AYAM.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-24",
+      "net_direction": "net_buying"
+    },
+    "FOLK.JK": {
+      "buy_count": 1,
+      "sell_count": 7,
+      "last_transaction_date": "2026-05-19",
+      "net_direction": "net_selling"
+    },
+    "CBDK.JK": {
+      "buy_count": 2,
+      "sell_count": 2,
+      "last_transaction_date": "2025-12-24",
+      "net_direction": "balanced"
+    },
+    "FITT.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-19",
+      "net_direction": "net_buying"
+    },
+    "KETR.JK": {
+      "buy_count": 2,
+      "sell_count": 16,
+      "last_transaction_date": "2026-06-25",
+      "net_direction": "net_selling"
+    },
+    "RAAM.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-19",
+      "net_direction": "net_buying"
+    },
+    "POWR.JK": {
+      "buy_count": 3,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-16",
+      "net_direction": "net_buying"
+    },
+    "MAHA.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-15",
+      "net_direction": "net_buying"
+    },
+    "IDPR.JK": {
+      "buy_count": 13,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-15",
+      "net_direction": "net_buying"
+    },
+    "IATA.JK": {
+      "buy_count": 1,
+      "sell_count": 9,
+      "last_transaction_date": "2026-07-30",
+      "net_direction": "net_selling"
+    },
+    "GIAA.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-11",
+      "net_direction": "net_buying"
+    },
+    "MEJA.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-11",
+      "net_direction": "net_buying"
+    },
+    "HOKI.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-11",
+      "net_direction": "net_buying"
+    },
+    "DGIK.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-11",
+      "net_direction": "net_buying"
+    },
+    "KINO.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-12-10",
+      "net_direction": "balanced"
+    },
+    "INKP.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-10",
+      "net_direction": "net_buying"
+    },
+    "PGJO.JK": {
+      "buy_count": 2,
+      "sell_count": 7,
+      "last_transaction_date": "2025-12-08",
+      "net_direction": "net_selling"
+    },
+    "GPSO.JK": {
+      "buy_count": 4,
+      "sell_count": 11,
+      "last_transaction_date": "2026-05-08",
+      "net_direction": "net_selling"
+    },
+    "ITMA.JK": {
+      "buy_count": 20,
+      "sell_count": 12,
+      "last_transaction_date": "2025-12-02",
+      "net_direction": "net_buying"
+    },
+    "HATM.JK": {
+      "buy_count": 3,
+      "sell_count": 0,
+      "last_transaction_date": "2025-12-02",
+      "net_direction": "net_buying"
+    },
+    "GEMA.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2025-11-28",
+      "net_direction": "net_buying"
+    },
+    "MKPI.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-11-26",
+      "net_direction": "net_buying"
+    },
+    "OLIV.JK": {
+      "buy_count": 1,
+      "sell_count": 3,
+      "last_transaction_date": "2025-11-26",
+      "net_direction": "net_selling"
+    },
+    "VKTR.JK": {
+      "buy_count": 13,
+      "sell_count": 2,
+      "last_transaction_date": "2026-01-23",
+      "net_direction": "net_buying"
+    },
+    "MREI.JK": {
+      "buy_count": 4,
+      "sell_count": 1,
+      "last_transaction_date": "2025-11-25",
+      "net_direction": "net_buying"
+    },
+    "TRIM.JK": {
+      "buy_count": 1,
+      "sell_count": 5,
+      "last_transaction_date": "2026-03-05",
+      "net_direction": "net_selling"
+    },
+    "CMNP.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-11-19",
+      "net_direction": "net_buying"
+    },
+    "MITI.JK": {
+      "buy_count": 3,
+      "sell_count": 3,
+      "last_transaction_date": "2025-11-28",
+      "net_direction": "balanced"
+    },
+    "ENAK.JK": {
+      "buy_count": 3,
+      "sell_count": 0,
+      "last_transaction_date": "2025-11-14",
+      "net_direction": "net_buying"
+    },
+    "PJHB.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-11-14",
+      "net_direction": "net_buying"
+    },
+    "ANTM.JK": {
+      "buy_count": 2,
+      "sell_count": 2,
+      "last_transaction_date": "2025-12-29",
+      "net_direction": "balanced"
+    },
+    "UANG.JK": {
+      "buy_count": 2,
+      "sell_count": 2,
+      "last_transaction_date": "2025-11-11",
+      "net_direction": "balanced"
+    },
+    "LAPD.JK": {
+      "buy_count": 4,
+      "sell_count": 10,
+      "last_transaction_date": "2025-11-11",
+      "net_direction": "net_selling"
+    },
+    "ERAA.JK": {
+      "buy_count": 3,
+      "sell_count": 0,
+      "last_transaction_date": "2025-11-07",
+      "net_direction": "net_buying"
+    },
+    "MRAT.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-11-07",
+      "net_direction": "balanced"
+    },
+    "MCOL.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-11-06",
+      "net_direction": "net_buying"
+    },
+    "AMIN.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2025-11-05",
+      "net_direction": "net_buying"
+    },
+    "DIGI.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-11-04",
+      "net_direction": "net_buying"
+    },
+    "BBHI.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-11-04",
+      "net_direction": "net_buying"
+    },
+    "PDES.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-10-31",
+      "net_direction": "net_buying"
+    },
+    "YELO.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-06-18",
+      "net_direction": "balanced"
+    },
+    "BAYU.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-10-29",
+      "net_direction": "net_buying"
+    },
+    "SMKM.JK": {
+      "buy_count": 1,
+      "sell_count": 6,
+      "last_transaction_date": "2026-01-30",
+      "net_direction": "net_selling"
+    },
+    "SOFA.JK": {
+      "buy_count": 1,
+      "sell_count": 3,
+      "last_transaction_date": "2025-10-27",
+      "net_direction": "net_selling"
+    },
+    "TFCO.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-10-24",
+      "net_direction": "net_buying"
+    },
+    "TRUE.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-10-20",
+      "net_direction": "net_buying"
+    },
+    "DADA.JK": {
+      "buy_count": 12,
+      "sell_count": 33,
+      "last_transaction_date": "2026-01-12",
+      "net_direction": "net_selling"
+    },
+    "ADMR.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-10-17",
+      "net_direction": "net_buying"
+    },
+    "ADRO.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-10-17",
+      "net_direction": "net_buying"
+    },
+    "MPRO.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-06-18",
+      "net_direction": "net_buying"
+    },
+    "PIPA.JK": {
+      "buy_count": 1,
+      "sell_count": 3,
+      "last_transaction_date": "2025-10-13",
+      "net_direction": "net_selling"
+    },
+    "BNBR.JK": {
+      "buy_count": 1,
+      "sell_count": 10,
+      "last_transaction_date": "2026-03-12",
+      "net_direction": "net_selling"
+    },
+    "SICO.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-10-09",
+      "net_direction": "balanced"
+    },
+    "AMAR.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-10-09",
+      "net_direction": "net_buying"
+    },
+    "WICO.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-10-01",
+      "net_direction": "balanced"
+    },
+    "CNTX.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-09-30",
+      "net_direction": "net_buying"
+    },
+    "MSJA.JK": {
+      "buy_count": 1,
+      "sell_count": 2,
+      "last_transaction_date": "2026-02-06",
+      "net_direction": "net_selling"
+    },
+    "GPRA.JK": {
+      "buy_count": 6,
+      "sell_count": 11,
+      "last_transaction_date": "2025-10-31",
+      "net_direction": "net_selling"
+    },
+    "KLIN.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-09-23",
+      "net_direction": "net_buying"
+    },
+    "NINE.JK": {
+      "buy_count": 2,
+      "sell_count": 4,
+      "last_transaction_date": "2025-09-19",
+      "net_direction": "net_selling"
+    },
+    "WIDI.JK": {
+      "buy_count": 1,
+      "sell_count": 4,
+      "last_transaction_date": "2025-09-16",
+      "net_direction": "net_selling"
+    },
+    "NICL.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2025-09-15",
+      "net_direction": "net_buying"
+    },
+    "WOWS.JK": {
+      "buy_count": 5,
+      "sell_count": 0,
+      "last_transaction_date": "2025-09-15",
+      "net_direction": "net_buying"
+    },
+    "NPGF.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-09-15",
+      "net_direction": "net_buying"
+    },
+    "BMAS.JK": {
+      "buy_count": 1,
+      "sell_count": 3,
+      "last_transaction_date": "2025-09-15",
+      "net_direction": "net_selling"
+    },
+    "ROTI.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-09-12",
+      "net_direction": "balanced"
+    },
+    "LABA.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-11-28",
+      "net_direction": "balanced"
+    },
+    "DAAZ.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-09-10",
+      "net_direction": "net_buying"
+    },
+    "BUAH.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-09-10",
+      "net_direction": "net_buying"
+    },
+    "TMAS.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-09-04",
+      "net_direction": "net_buying"
+    },
+    "PPGL.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2025-09-04",
+      "net_direction": "net_buying"
+    },
+    "RMKE.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-10-03",
+      "net_direction": "balanced"
+    },
+    "BATR.JK": {
+      "buy_count": 4,
+      "sell_count": 0,
+      "last_transaction_date": "2025-09-01",
+      "net_direction": "net_buying"
+    },
+    "BVIC.JK": {
+      "buy_count": 4,
+      "sell_count": 3,
+      "last_transaction_date": "2025-12-02",
+      "net_direction": "net_buying"
+    },
+    "DGWG.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-02-27",
+      "net_direction": "balanced"
+    },
+    "WIFI.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-08-20",
+      "net_direction": "net_buying"
+    },
+    "KBLM.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-08-19",
+      "net_direction": "net_buying"
+    },
+    "ADHI.JK": {
+      "buy_count": 5,
+      "sell_count": 0,
+      "last_transaction_date": "2025-08-08",
+      "net_direction": "net_buying"
+    },
+    "TRON.JK": {
+      "buy_count": 1,
+      "sell_count": 3,
+      "last_transaction_date": "2025-12-04",
+      "net_direction": "net_selling"
+    },
+    "MKAP.JK": {
+      "buy_count": 2,
+      "sell_count": 0,
+      "last_transaction_date": "2025-08-07",
+      "net_direction": "net_buying"
+    },
+    "MPXL.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-08-01",
+      "net_direction": "net_buying"
+    },
+    "ARKO.JK": {
+      "buy_count": 1,
+      "sell_count": 2,
+      "last_transaction_date": "2026-01-12",
+      "net_direction": "net_selling"
+    },
+    "ERAL.JK": {
+      "buy_count": 3,
+      "sell_count": 0,
+      "last_transaction_date": "2025-07-29",
+      "net_direction": "net_buying"
+    },
+    "MASA.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-07-25",
+      "net_direction": "net_buying"
+    },
+    "ARKA.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-07-23",
+      "net_direction": "net_buying"
+    },
+    "DOOH.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-03",
+      "net_direction": "net_buying"
+    },
+    "IOTF.JK": {
+      "buy_count": 5,
+      "sell_count": 3,
+      "last_transaction_date": "2025-07-17",
+      "net_direction": "net_buying"
+    },
+    "SBMA.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-07-15",
+      "net_direction": "net_buying"
+    },
+    "RSGK.JK": {
+      "buy_count": 1,
+      "sell_count": 4,
+      "last_transaction_date": "2026-06-04",
+      "net_direction": "net_selling"
+    },
+    "NICE.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-07-08",
+      "net_direction": "net_buying"
+    },
+    "ITMG.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-07-08",
+      "net_direction": "net_buying"
+    },
+    "WIRG.JK": {
+      "buy_count": 1,
+      "sell_count": 6,
+      "last_transaction_date": "2025-09-30",
+      "net_direction": "net_selling"
+    },
+    "BCIP.JK": {
+      "buy_count": 1,
+      "sell_count": 4,
+      "last_transaction_date": "2025-11-28",
+      "net_direction": "net_selling"
+    },
+    "BHIT.JK": {
+      "buy_count": 1,
+      "sell_count": 3,
+      "last_transaction_date": "2026-03-04",
+      "net_direction": "net_selling"
+    },
+    "KPIG.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-07-03",
+      "net_direction": "net_buying"
+    },
+    "BPTR.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-04-07",
+      "net_direction": "balanced"
+    },
+    "MTWI.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-06-30",
+      "net_direction": "balanced"
+    },
+    "VIVA.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-21",
+      "net_direction": "balanced"
+    },
+    "MPOW.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-12-01",
+      "net_direction": "balanced"
+    },
+    "MDLN.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-05-13",
+      "net_direction": "balanced"
+    },
+    "INCF.JK": {
+      "buy_count": 1,
+      "sell_count": 2,
+      "last_transaction_date": "2026-05-12",
+      "net_direction": "net_selling"
+    },
+    "OBMD.JK": {
+      "buy_count": 3,
+      "sell_count": 1,
+      "last_transaction_date": "2025-05-05",
+      "net_direction": "net_buying"
+    },
+    "BTPS.JK": {
+      "buy_count": 2,
+      "sell_count": 1,
+      "last_transaction_date": "2025-09-12",
+      "net_direction": "net_buying"
+    },
+    "MARK.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-01-23",
+      "net_direction": "net_buying"
+    },
+    "CAMP.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-01-23",
+      "net_direction": "balanced"
+    },
+    "AGII.JK": {
+      "buy_count": 3,
+      "sell_count": 1,
+      "last_transaction_date": "2025-10-01",
+      "net_direction": "net_buying"
+    },
+    "SRAJ.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-01-22",
+      "net_direction": "net_buying"
+    },
+    "TKIM.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-01-20",
+      "net_direction": "balanced"
+    },
+    "OASA.JK": {
+      "buy_count": 1,
+      "sell_count": 4,
+      "last_transaction_date": "2026-08-07",
+      "net_direction": "net_selling"
+    },
+    "SWID.JK": {
+      "buy_count": 1,
+      "sell_count": 0,
+      "last_transaction_date": "2025-01-08",
+      "net_direction": "net_buying"
+    },
+    "ALKA.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-01-07",
+      "net_direction": "balanced"
+    },
+    "PZZA.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2025-01-13",
+      "net_direction": "balanced"
+    },
+    "BELL.JK": {
+      "buy_count": 1,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-23",
+      "net_direction": "balanced"
+    },
+    "CPIN.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-09-10",
+      "net_direction": "net_selling"
+    },
+    "JARR.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-09-08",
+      "net_direction": "net_selling"
+    },
+    "AXIO.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-09-02",
+      "net_direction": "net_selling"
+    },
+    "WINR.JK": {
+      "buy_count": 0,
+      "sell_count": 56,
+      "last_transaction_date": "2026-09-01",
+      "net_direction": "net_selling"
+    },
+    "TGKA.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-08-18",
+      "net_direction": "net_selling"
+    },
+    "RUNS.JK": {
+      "buy_count": 0,
+      "sell_count": 2,
+      "last_transaction_date": "2026-08-13",
+      "net_direction": "net_selling"
+    },
+    "JGLE.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-07-31",
+      "net_direction": "net_selling"
+    },
+    "MTSM.JK": {
+      "buy_count": 0,
+      "sell_count": 2,
+      "last_transaction_date": "2026-07-29",
+      "net_direction": "net_selling"
+    },
+    "KOKA.JK": {
+      "buy_count": 0,
+      "sell_count": 3,
+      "last_transaction_date": "2026-07-20",
+      "net_direction": "net_selling"
+    },
+    "SOCI.JK": {
+      "buy_count": 0,
+      "sell_count": 3,
+      "last_transaction_date": "2026-07-13",
+      "net_direction": "net_selling"
+    },
+    "SMLE.JK": {
+      "buy_count": 0,
+      "sell_count": 7,
+      "last_transaction_date": "2026-07-06",
+      "net_direction": "net_selling"
+    },
+    "CEKA.JK": {
+      "buy_count": 0,
+      "sell_count": 2,
+      "last_transaction_date": "2026-06-23",
+      "net_direction": "net_selling"
+    },
+    "YOII.JK": {
+      "buy_count": 0,
+      "sell_count": 8,
+      "last_transaction_date": "2026-05-13",
+      "net_direction": "net_selling"
+    },
+    "IDEA.JK": {
+      "buy_count": 0,
+      "sell_count": 6,
+      "last_transaction_date": "2026-05-12",
+      "net_direction": "net_selling"
+    },
+    "GZCO.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-05-11",
+      "net_direction": "net_selling"
+    },
+    "NAIK.JK": {
+      "buy_count": 0,
+      "sell_count": 3,
+      "last_transaction_date": "2026-05-07",
+      "net_direction": "net_selling"
+    },
+    "PNGO.JK": {
+      "buy_count": 0,
+      "sell_count": 4,
+      "last_transaction_date": "2026-05-06",
+      "net_direction": "net_selling"
+    },
+    "COAL.JK": {
+      "buy_count": 0,
+      "sell_count": 5,
+      "last_transaction_date": "2026-05-05",
+      "net_direction": "net_selling"
+    },
+    "CBUT.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-05-04",
+      "net_direction": "net_selling"
+    },
+    "ESIP.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-04-30",
+      "net_direction": "net_selling"
+    },
+    "PRDA.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-03-30",
+      "net_direction": "net_selling"
+    },
+    "GRPH.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-03-27",
+      "net_direction": "net_selling"
+    },
+    "DGNS.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-03-12",
+      "net_direction": "net_selling"
+    },
+    "MORA.JK": {
+      "buy_count": 0,
+      "sell_count": 3,
+      "last_transaction_date": "2026-03-11",
+      "net_direction": "net_selling"
+    },
+    "ELSA.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-03-10",
+      "net_direction": "net_selling"
+    },
+    "RMKO.JK": {
+      "buy_count": 0,
+      "sell_count": 3,
+      "last_transaction_date": "2026-03-10",
+      "net_direction": "net_selling"
+    },
+    "PADI.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-03-05",
+      "net_direction": "net_selling"
+    },
+    "NCKL.JK": {
+      "buy_count": 0,
+      "sell_count": 3,
+      "last_transaction_date": "2026-03-02",
+      "net_direction": "net_selling"
+    },
+    "DOID.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-02-26",
+      "net_direction": "net_selling"
+    },
+    "PSGO.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-02-18",
+      "net_direction": "net_selling"
+    },
+    "ARTA.JK": {
+      "buy_count": 0,
+      "sell_count": 2,
+      "last_transaction_date": "2026-02-13",
+      "net_direction": "net_selling"
+    },
+    "TIRT.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-02-13",
+      "net_direction": "net_selling"
+    },
+    "FWCT.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-02-11",
+      "net_direction": "net_selling"
+    },
+    "PEGE.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-02-11",
+      "net_direction": "net_selling"
+    },
+    "VTNY.JK": {
+      "buy_count": 0,
+      "sell_count": 7,
+      "last_transaction_date": "2026-02-05",
+      "net_direction": "net_selling"
+    },
+    "HITS.JK": {
+      "buy_count": 0,
+      "sell_count": 2,
+      "last_transaction_date": "2026-02-02",
+      "net_direction": "net_selling"
+    },
+    "INAI.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-02-02",
+      "net_direction": "net_selling"
+    },
+    "IBOS.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-30",
+      "net_direction": "net_selling"
+    },
+    "ELIT.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-28",
+      "net_direction": "net_selling"
+    },
+    "KLAS.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-26",
+      "net_direction": "net_selling"
+    },
+    "VAST.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-26",
+      "net_direction": "net_selling"
+    },
+    "SDMU.JK": {
+      "buy_count": 0,
+      "sell_count": 2,
+      "last_transaction_date": "2026-01-23",
+      "net_direction": "net_selling"
+    },
+    "ISAP.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-23",
+      "net_direction": "net_selling"
+    },
+    "INOV.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-21",
+      "net_direction": "net_selling"
+    },
+    "TLDN.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-19",
+      "net_direction": "net_selling"
+    },
+    "NRCA.JK": {
+      "buy_count": 0,
+      "sell_count": 4,
+      "last_transaction_date": "2026-01-19",
+      "net_direction": "net_selling"
+    },
+    "MSIN.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2026-01-15",
+      "net_direction": "net_selling"
+    },
+    "DEWA.JK": {
+      "buy_count": 0,
+      "sell_count": 13,
+      "last_transaction_date": "2026-01-07",
+      "net_direction": "net_selling"
+    },
+    "ASHA.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-12-30",
+      "net_direction": "net_selling"
+    },
+    "NELY.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-12-30",
+      "net_direction": "net_selling"
+    },
+    "PSAB.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-12-29",
+      "net_direction": "net_selling"
+    },
+    "MTEL.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-12-11",
+      "net_direction": "net_selling"
+    },
+    "MAYA.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-12-09",
+      "net_direction": "net_selling"
+    },
+    "KKES.JK": {
+      "buy_count": 0,
+      "sell_count": 13,
+      "last_transaction_date": "2025-12-04",
+      "net_direction": "net_selling"
+    },
+    "VOKS.JK": {
+      "buy_count": 0,
+      "sell_count": 8,
+      "last_transaction_date": "2025-12-01",
+      "net_direction": "net_selling"
+    },
+    "SKLT.JK": {
+      "buy_count": 0,
+      "sell_count": 6,
+      "last_transaction_date": "2025-11-28",
+      "net_direction": "net_selling"
+    },
+    "AWAN.JK": {
+      "buy_count": 0,
+      "sell_count": 2,
+      "last_transaction_date": "2025-11-19",
+      "net_direction": "net_selling"
+    },
+    "MAPB.JK": {
+      "buy_count": 0,
+      "sell_count": 5,
+      "last_transaction_date": "2025-11-11",
+      "net_direction": "net_selling"
+    },
+    "UDNG.JK": {
+      "buy_count": 0,
+      "sell_count": 2,
+      "last_transaction_date": "2025-11-04",
+      "net_direction": "net_selling"
+    },
+    "IBST.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-10-27",
+      "net_direction": "net_selling"
+    },
+    "TOSK.JK": {
+      "buy_count": 0,
+      "sell_count": 3,
+      "last_transaction_date": "2025-10-25",
+      "net_direction": "net_selling"
+    },
+    "TUGU.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-10-24",
+      "net_direction": "net_selling"
+    },
+    "COCO.JK": {
+      "buy_count": 0,
+      "sell_count": 11,
+      "last_transaction_date": "2025-10-14",
+      "net_direction": "net_selling"
+    },
+    "BOLA.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-10-13",
+      "net_direction": "net_selling"
+    },
+    "CARS.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-10-02",
+      "net_direction": "net_selling"
+    },
+    "EPMT.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-10-02",
+      "net_direction": "net_selling"
+    },
+    "HUMI.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-10-01",
+      "net_direction": "net_selling"
+    },
+    "LIVE.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-09-25",
+      "net_direction": "net_selling"
+    },
+    "IKAN.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-09-25",
+      "net_direction": "net_selling"
+    },
+    "MPIX.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-08-20",
+      "net_direction": "net_selling"
+    },
+    "AIMS.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-08-12",
+      "net_direction": "net_selling"
+    },
+    "GHON.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-08-08",
+      "net_direction": "net_selling"
+    },
+    "SSIA.JK": {
+      "buy_count": 0,
+      "sell_count": 3,
+      "last_transaction_date": "2025-08-06",
+      "net_direction": "net_selling"
+    },
+    "ZATA.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-08-04",
+      "net_direction": "net_selling"
+    },
+    "SFAN.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-08-01",
+      "net_direction": "net_selling"
+    },
+    "BBNI.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-07-30",
+      "net_direction": "net_selling"
+    },
+    "KBLV.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-07-17",
+      "net_direction": "net_selling"
+    },
+    "LPLI.JK": {
+      "buy_count": 0,
+      "sell_count": 2,
+      "last_transaction_date": "2025-07-17",
+      "net_direction": "net_selling"
+    },
+    "BPFI.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-07-04",
+      "net_direction": "net_selling"
+    },
+    "NOBU.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-07-02",
+      "net_direction": "net_selling"
+    },
+    "BSIM.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-05-07",
+      "net_direction": "net_selling"
+    },
+    "KEEN.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-05-07",
+      "net_direction": "net_selling"
+    },
+    "ANJT.JK": {
+      "buy_count": 0,
+      "sell_count": 4,
+      "last_transaction_date": "2025-05-06",
+      "net_direction": "net_selling"
+    },
+    "BPII.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-05-05",
+      "net_direction": "net_selling"
+    },
+    "TIFA.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-05-02",
+      "net_direction": "net_selling"
+    },
+    "MINA.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-02-04",
+      "net_direction": "net_selling"
+    },
+    "PGUN.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-01-17",
+      "net_direction": "net_selling"
+    },
+    "KARW.JK": {
+      "buy_count": 0,
+      "sell_count": 3,
+      "last_transaction_date": "2025-01-14",
+      "net_direction": "net_selling"
+    },
+    "MLPL.JK": {
+      "buy_count": 0,
+      "sell_count": 2,
+      "last_transaction_date": "2025-01-14",
+      "net_direction": "net_selling"
+    },
+    "OMRE.JK": {
+      "buy_count": 0,
+      "sell_count": 1,
+      "last_transaction_date": "2025-01-03",
+      "net_direction": "net_selling"
+    }
+  }
+}
