@@ -51,6 +51,10 @@ calls count toward the total.
 | 2026-09-20 | `/v2/mining/commodities/Coal%20(HBA%201)/price/?start_year=2024&end_year=2026` | Test whether the HBA coal benchmark series is fresher than plain `Coal`, whose data ends 2026-02-15 (seven months before today); coal is 55 of 68 listed miners. Result: no, it also ends 2026-02-15, so plain Coal stays. Saved to `data/raw/commodity_prices_hba_2026-09-20.json` (38 records). A first attempt failed client-side on an unencoded space in the URL before any request was sent, so it billed nothing. | 1 | 574 |
 | 2026-09-20 | `/v2/daily/{symbol}/?start=2026-06-12&end=2026-09-09` (20 symbols, 1 call each) | Sectors-vs-Yahoo price cross-check (owed per docs/PLAN.md 8.3 / BACKLOG.md): the research layer's outcome prices come from the Yahoo dev cache, so a seeded, stratified sample (7 large, 7 mid, 6 small by market cap) was checked against Sectors' own daily closes. Schema-checked first: 1 credit/call, 90-day max window. Kept at exactly 20 credits to stay within the standing <=20 limit. `pipeline/dev/crosscheck_sectors_prices.py` -> `data/raw/sectors_daily_crosscheck_2026-09-20.json`. **Result: 1,218 matched trading days, zero differences (Yahoo `close` equals Sectors `close` on every matched day); 2 of 20 symbols (UANG, CNKO) each missing one Yahoo day (min coverage 98.4%).** Scope limit: one recent 90-day window, 20 symbols; older years in the cache are unchecked. | 20 | 594 |
 | 2026-09-20 | `/v2/corporate-actions/?start=2026-08-21&end=2026-10-20&type=dividend,upcoming_dividend,agm,right_issue,stock_split` (1 call, 5 types) | Dated corporate-actions section on stock pages. Schema-checked first: **billed 1 credit per requested type (default all 7 = 7), not 1 per call**; my earlier "1 credit" estimate was wrong and is corrected here. Skipped `bonus` and `warrant` (rare). `pipeline/appdata/fetch_corporate_actions.py` -> `data/raw/corporate_actions_2026-09-20.json`: dividend 9, upcoming_dividend 7, agm 160, right_issue 4, stock_split 1 rows. Meant to be re-pulled near the final refresh, since events announced later are not in this file. | 5 | 599 |
+| 2026-09-26 | MCP `fetch-listing-performance` (ASLI) | Step-0 probe: v8 plan, confirms IPO fields incl. book-building range and offering price (H13/H20). Approved with the v8 plan | 1 | 600 |
+| 2026-09-26 | MCP `fetch-daily-close` (date 2024-06-14, limit 30, page 1) | Step-0 probe: confirms a past-date universe close works through MCP. Approved with the v8 plan | 1 | 601 |
+| 2026-09-26 | REST `/v2/foreign-flow/?date=2021-10-15&limit=30` | Step-0 H6 probe: **returned 0 results (total_count 0)**, so full-market foreign-flow list history does not reach Oct 2021 (billed as an empty result, assumed 1). Approved with the v8 plan | 1 | 602 |
+| 2026-09-26 | REST `/v2/foreign-flow/?date=2025-06-13&limit=30` | Step-0 H6 probe: 561 tickers that day, fields net/buy/sell IDR, investor-origin attribution. Approved with the v8 plan | 1 | 603 |
 
 **Total spent as of 2026-09-20: 599 credits.**
 
@@ -70,7 +74,7 @@ uncertainty is unrelated to the current 29-credit total, which reflects
 the real, newly-logged Phase 0 call. Recheck the portal before either
 number matters for a decision.)*
 
-**Remaining: ~401** (1,000 budget − 599 spent as of 2026-09-20).
+**Remaining: ~397** (1,000 budget − 603 spent as of 2026-09-26; the 4 step-0 probes above are unverified against the portal, and any extra credits from outside this 1,000 are tracked separately once their source is confirmed).
 
 ## Rules for this ledger
 
