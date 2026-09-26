@@ -4,6 +4,7 @@ import { AxisColumns } from "@/components/charts/axis-charts";
 import { Card, Cells, H2, Page, PageTitle, ResearchNote, Stat, TwoCol } from "@/components/kit";
 import { QCard } from "@/components/qcard";
 import { findingSlug, getFindingsData, VERDICT_TAB, type FindingRow } from "@/lib/findings-data";
+import { isRetested, sampleLine } from "@/lib/finding-copy";
 import { idNum } from "@/lib/format";
 import { H1_VOL_TERCILES, H4_CUT_RATES } from "@/lib/situations";
 import { VerdictMark } from "@/components/verdict-mark";
@@ -95,7 +96,7 @@ export default async function TemuanDetailPage({ params }: { params: Promise<{ s
         <p className="text-sm leading-normal">{row.belief_id}</p>
         <div className="mt-3.5">
           <Cells>
-            {[<Stat key="n" value={ev.n} label="sampel" size={15} />, <Stat key="p" value={ev.period_id} label="periode" size={15} />]}
+            {[<Stat key="n" value={sampleLine(ev)} label={isRetested(ev) ? "sampel, diuji ulang pada data terpisah" : "sampel"} size={15} />, <Stat key="p" value={ev.period_id} label="periode" size={15} />]}
           </Cells>
         </div>
         <p className="mt-3.5 text-xs text-muted-foreground">Kode uji: {ev.hypothesis_id}</p>

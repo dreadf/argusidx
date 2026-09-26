@@ -6,6 +6,8 @@ import { getNewsSentiment } from "@/lib/news-data";
 import { getRoeHistory } from "@/lib/roe-data";
 import { getSituations } from "@/lib/situations";
 import { getAllStockCodes, type StockPageData } from "@/lib/stock-data";
+import { isRetested, sampleLine } from "@/lib/finding-copy";
+import { formatPe, peVsSector } from "@/lib/pe";
 import { fiveYearPhrase, newsRelative, pricePosition, relativeToTypical } from "@/lib/stock-summary";
 import { matchFindingTopics } from "./finding-topics";
 import { escapeRegExp } from "./text-utils";
@@ -126,7 +128,8 @@ function stockEvidence(code: string, d: StockPageData, ctx: { universe: number; 
     add(`ROE ${code} lebih tinggi dari ${pc.better_than_count} dari ${pc.comparable_count} perusahaan sejenis di kelompok ${pc.group}.`);
   }
   if (sc && sc.own_pe !== null && sc.sector_typical_pe !== null) {
-    add(`P/E ${code} ${idNum(sc.own_pe)}x, ${relativeToTypical(sc.own_pe, sc.sector_typical_pe)} nilai tengah sektor (${idNum(sc.sector_typical_pe)}x).`);
+    const peRel = peVsSector(sc.own_pe, sc.sector_typical_pe);
+    add(peRel === null ? `P/E ${code}: ${formatPe(sc.own_pe)}, jadi tidak dibandingkan dengan sektor.` : `P/E ${code} ${formatPe(sc.own_pe)}, ${peRel} nilai tengah sektor (${formatPe(sc.sector_typical_pe)}).`);
   }
   if (ctx.roeSeries) add(ctx.roeSeries);
 
@@ -203,7 +206,7 @@ export async function retrieveEvidence(question: string, stockCode: string | nul
     evidence.push({
       id,
       kind: "temuan",
-      text: `Keyakinan yang diuji: "${row.title_short_id}". Hasil: ${verdict}, ${row.result_short_id.toLowerCase()}. Diuji dengan ${row.evidence.n}, periode ${row.evidence.period_id}. Batasan: ${row.evidence.limit_id}`,
+      text: `Keyakinan yang diuji: "${row.title_short_id}". Hasil: ${verdict}, ${row.result_short_id.toLowerCase()}. Sampel: ${sampleLine(row.evidence)}${isRetested(row.evidence) ? " (diuji ulang pada data terpisah)" : ""}. Periode: ${row.evidence.period_id}. Batasan: ${row.evidence.limit_id}`,
       href: `/temuan/${findingSlug(row)}`,
       linkLabel: "Buktinya",
     });

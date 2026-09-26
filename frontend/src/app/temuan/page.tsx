@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { PageTitle, ResearchNote, Sub, TextLink, UnderlineTabs } from "@/components/kit";
+import { PageTitle, Sub, TextLink, UnderlineTabs } from "@/components/kit";
 import { VerdictMark } from "@/components/verdict-mark";
+import { sampleLine } from "@/lib/finding-copy";
 import { findingSlug, getFindingsData, VERDICT_TAB, type Verdict } from "@/lib/findings-data";
 
 const ORDER: Verdict[] = ["yes", "mixed_or_inconclusive", "no"];
@@ -26,7 +27,6 @@ export default async function TemuanPage({ searchParams }: { searchParams: Promi
       <TextLink href="/temuan/cara-kami-menguji" className="-mt-0.5">
         Cara kami menguji
       </TextLink>
-      <ResearchNote className="-mt-1 mb-1" />
       <div className="mt-2.5 md:mt-3">
         <UnderlineTabs
           items={ORDER.map((v) => ({
@@ -55,7 +55,7 @@ export default async function TemuanPage({ searchParams }: { searchParams: Promi
               <span className="min-w-0 flex-1 md:flex md:flex-1 md:items-center md:gap-4">
                 <span className="block text-[15px] font-semibold leading-snug md:flex-[1.2]">{row.title_short_id}</span>
                 <span className="mt-0.5 block text-[13px] leading-snug text-muted-foreground md:mt-0 md:flex-1 md:text-[13.5px]">{row.result_short_id}</span>
-                <span className="mt-0.5 block text-[11.5px] text-muted-foreground md:mt-0 md:w-[170px] md:shrink-0 md:text-xs">{row.evidence.n}</span>
+                <span className="mt-0.5 block text-[11.5px] text-muted-foreground md:mt-0 md:w-[170px] md:shrink-0 md:text-xs">{sampleLine(row.evidence)}</span>
               </span>
               <ChevronRight className="mt-1 size-[18px] shrink-0 text-muted-foreground md:mt-0" />
             </Link>

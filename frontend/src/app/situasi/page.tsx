@@ -1,4 +1,4 @@
-import { H2, LinkRow, Page, PageTitle, ResearchNote, Sub, ThreeCol } from "@/components/kit";
+import { H2, LinkRow, Page, PageTitle, Sub, ThreeCol } from "@/components/kit";
 import { getSituations, type SituationGroup } from "@/lib/situations";
 
 const GROUPS: SituationGroup[] = ["Harga & penurunan", "Perusahaan & IPO", "Perbandingan"];
@@ -26,7 +26,6 @@ export default async function SituasiPage() {
     <Page>
       <PageTitle title="Situasi" back={{ href: "/", label: "Beranda" }} />
       <Sub>Apa yang biasanya terjadi saat Anda mengalami ini.</Sub>
-      <ResearchNote className="mt-1.5" />
       <div className="mt-6 md:mt-7">
         <ThreeCol>{[columns[0], columns[1], columns[2]]}</ThreeCol>
       </div>

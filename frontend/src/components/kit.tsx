@@ -20,6 +20,11 @@ export function DatePill({ children }: { children: ReactNode }) {
   );
 }
 
+/** Small uppercase label above a block. `muted` for secondary blocks. */
+export function Eyebrow({ children, muted = false, className = "" }: { children: ReactNode; muted?: boolean; className?: string }) {
+  return <div className={`text-[11px] font-semibold uppercase tracking-[0.08em] ${muted ? "text-muted-foreground" : "text-[var(--viz-accent)]"} ${className}`}>{children}</div>;
+}
+
 export function PageTitle({ title, pill, back }: { title: string; pill?: ReactNode; back?: { href: string; label: string } }) {
   return (
     <div>

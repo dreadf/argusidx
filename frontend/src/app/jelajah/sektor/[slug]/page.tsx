@@ -56,7 +56,7 @@ export default async function SektorDetailPage({ params }: { params: Promise<{ s
           <Cells>
             {[
               <Stat key="r" value={row.typical_roe_pct == null ? "-" : `${idNum(row.typical_roe_pct)}%`} label={`laba dibanding modal (ROE), ${row.roe_n} dari ${row.company_count} melapor`} />,
-              <Stat key="p" value={row.typical_pe == null ? "-" : `${idNum(row.typical_pe)}x`} label={`harga dibanding laba (P/E), ${row.pe_n} dari ${row.company_count} melapor`} />,
+              <Stat key="p" value={row.typical_pe == null || row.typical_pe <= 0 ? "-" : `${idNum(row.typical_pe)}x`} label={`harga dibanding laba (P/E), ${row.pe_n} dari ${row.company_count} melapor`} />,
             ]}
           </Cells>
         </div>

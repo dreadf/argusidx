@@ -11,11 +11,11 @@ import { WatchlistButton } from "@/components/watchlist-button";
 import { formatDateId, formatPrice, idNum, pctFrom, signedPct } from "@/lib/format";
 import { BackLink } from "@/components/back-link";
 import { getInsiderSummary } from "@/lib/insider-data";
-import { getNewsSentiment } from "@/lib/news-data";
+import { formatPe, isMeaningfulPe, peVsSector } from "@/lib/pe";
 import { getRoeHistory } from "@/lib/roe-data";
 import { getSuspensionSummary } from "@/lib/suspensions-data";
 import { sectorByKey } from "@/lib/sectors-id";
-import { fiveYearPhrase, newsRelative, pricePosition, relativeToTypical, sizePhrase } from "@/lib/stock-summary";
+import { fiveYearPhrase, pricePosition, relativeToTypical, sizePhrase } from "@/lib/stock-summary";
 import { getAllStockCodes, getStockData, getStocksAsOf } from "@/lib/stock-data";
 import type { StockPageData } from "@/lib/stock-data";
 
@@ -106,7 +106,7 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
   if (!data) notFound();
 
   const code = data.snapshot.symbol.replace(".JK", "");
-  const [asOf, news, insiderMarket, allCodes, suspMarket] = await Promise.all([getStocksAsOf(), getNewsSentiment(), getInsiderSummary(), getAllStockCodes(), getSuspensionSummary()]);
+  const [asOf, insiderMarket, allCodes, suspMarket] = await Promise.all([getStocksAsOf(),getInsiderSummary(), getAllStockCodes(), getSuspensionSummary()]);
   const { snapshot, peer_comparison, sector_context, flags, suspension_history, lens_banking, lens_extractive, beat_gold, h1_finding, insider_activity, corporate_actions } = data;
   const roe = await getRoeHistory(code, snapshot.sector);
   const sectorMeta = sectorByKey(snapshot.sector);
@@ -116,9 +116,6 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
   const hasRange = price !== null && low !== null && high !== null && high > low;
   const distHigh = price !== null && high ? pctFrom(price, high) : null;
   const distLow = price !== null && low ? pctFrom(price, low) : null;
-  const newsCounts = news.by_symbol[code];
-  const newsTotal = newsCounts ? newsCounts.bullish + newsCounts.bearish : 0;
-  const newsShare = newsTotal > 0 ? (newsCounts.bullish / newsTotal) * 100 : null;
 
   /* ---------------- Ringkasan: six short rows, each one comparison ---------------- */
   const rows: { label: string; text: ReactNode }[] = [];
@@ -148,27 +145,24 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
       );
     }
     if (sector_context.own_pe !== null && sector_context.sector_typical_pe !== null) {
+      const peRel = peVsSector(sector_context.own_pe, sector_context.sector_typical_pe);
       parts.push(
         <span key="pe">
-          Harga dibanding laba (<GlossaryTerm term="pe_ratio">P/E</GlossaryTerm>) {idNum(sector_context.own_pe)}x, <Bold>{relativeToTypical(sector_context.own_pe, sector_context.sector_typical_pe)}</Bold> sektor ({idNum(sector_context.sector_typical_pe)}x).
+          Harga dibanding laba (<GlossaryTerm term="pe_ratio">P/E</GlossaryTerm>){" "}
+          {peRel === null ? (
+            <Bold>{formatPe(sector_context.own_pe)}</Bold>
+          ) : (
+            <>
+              {formatPe(sector_context.own_pe)}, <Bold>{peRel}</Bold> sektor ({formatPe(sector_context.sector_typical_pe)})
+            </>
+          )}
+          .
         </span>,
       );
     }
     if (parts.length > 0) rows.push({ label: "Laba dan valuasi", text: <>{parts}</> });
   }
 
-  if (newsShare !== null && newsTotal >= 5) {
-    rows.push({
-      label: "Berita",
-      text: (
-        <>
-          {idNum(newsShare, 0)}% bullish, <Bold>{newsRelative(newsShare, news.bullish_mentions_pct)}</Bold> rata-rata semua saham ({idNum(news.bullish_mentions_pct, 0)}%).
-        </>
-      ),
-    });
-  } else {
-    rows.push({ label: "Berita", text: "Belum cukup berita tercatat untuk dibandingkan." });
-  }
 
   rows.push({
     label: "Tanda",
@@ -213,7 +207,6 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
           </div>
         ))}
       </div>
-      {rows.some((r) => r.label === "Lima tahun") && <ResearchNote className="border-t border-border px-[18px] py-2.5 md:px-[22px]" />}
     </section>
   );
 
@@ -237,7 +230,7 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
           <Cells>
             {[
               <Stat key="r" value={sector_context.own_roe_pct === null ? "-" : `${idNum(sector_context.own_roe_pct)}%`} label={`laba dibanding modal (ROE), sektor ${sector_context.sector_typical_roe_pct === null ? "-" : idNum(sector_context.sector_typical_roe_pct) + "%"}`} size={24} />,
-              <Stat key="p" value={sector_context.own_pe === null ? "-" : `${idNum(sector_context.own_pe)}x`} label={`harga dibanding laba (P/E), sektor ${sector_context.sector_typical_pe === null ? "-" : idNum(sector_context.sector_typical_pe) + "x"}`} size={24} />,
+              <Stat key="p" value={isMeaningfulPe(sector_context.own_pe) ? formatPe(sector_context.own_pe) : <span className="text-base leading-tight">{formatPe(sector_context.own_pe)}</span>} size={isMeaningfulPe(sector_context.own_pe) ? 24 : 16} label={`harga dibanding laba (P/E), sektor ${sector_context.sector_typical_pe === null ? "-" : formatPe(sector_context.sector_typical_pe)}`} />,
             ]}
           </Cells>
           <p className={fine}>
@@ -289,22 +282,6 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
     </Section>
   );
 
-  const berita = (
-    <Section title="Berita" sub={`${newsTotal > 0 ? idNum(newsTotal, 0) : "0"} berita, ${formatDateId(news.first_date)} sampai ${formatDateId(news.last_date)}`}>
-      {newsTotal > 0 && newsShare !== null ? (
-        <Card className="p-[18px]">
-          <Cells>{[<Stat key="b" value={newsCounts.bullish} label="bullish" tone="pos" size={26} />, <Stat key="r" value={newsCounts.bearish} label="bearish" tone="neg" size={26} />]}</Cells>
-          <p className="mt-3.5 text-[13.5px] leading-normal">
-            {idNum(newsShare, 0)}% bullish, rata-rata semua saham {idNum(news.bullish_mentions_pct, 0)}%.
-          </p>
-          <p className="mt-1 text-xs text-muted-foreground">Tanda bullish atau bearish dari Sectors, bukan dari kami.</p>
-          <TextLink href="/temuan?hasil=tidak-konsisten">Apakah berita memprediksi kenaikan? Belum jelas</TextLink>
-        </Card>
-      ) : (
-        <p className={fine}>Tidak ada berita yang menyebut saham ini pada periode data.</p>
-      )}
-    </Section>
-  );
 
   const h1 = h1_finding ? h1Sentences(h1_finding, snapshot.free_float) : null;
   const temuan = (
@@ -551,7 +528,7 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
     ) : null;
   // mobile order: harga, sektor, berita, temuan, insider, suspensi, bank, tambang, aksi, jangka panjang
   const leftColumn = [place(harga, 0, "harga"), place(sektor, 1, "sektor"), place(lensBank, 6, "bank"), place(lensMining, 7, "tambang"), place(jangkaPanjang, 9, "panjang")];
-  const rightColumn = [place(berita, 2, "berita"), place(temuan, 3, "temuan"), place(insider, 4, "insider"), place(suspensi, 5, "suspensi"), place(aksi, 8, "aksi")];
+  const rightColumn = [place(temuan, 3, "temuan"), place(insider, 4, "insider"), place(suspensi, 5, "suspensi"), place(aksi, 8, "aksi")];
 
   return (
     <main className="mx-auto w-full max-w-6xl px-[18px] py-5 md:px-8 md:py-8">
