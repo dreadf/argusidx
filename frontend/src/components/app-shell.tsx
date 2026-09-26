@@ -14,7 +14,7 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
     <>
       <TrailTracker />
       <Sidebar index={index} />
-      <div className="flex min-h-screen min-w-0 flex-col md:pl-60">
+      <div className="flex min-h-screen min-w-0 flex-col app-main">
         <MobileHeader />
         <div className="app-content min-w-0 flex-1">{children}</div>
         <footer className="border-t border-border px-[18px] py-4 text-center text-[11px] text-[var(--viz-ink-muted)] md:px-8 md:text-left">

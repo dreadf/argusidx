@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Search } from "lucide-react";
 import type { SearchEntry } from "@/lib/stock-data";
 
 /**
@@ -16,7 +17,7 @@ import type { SearchEntry } from "@/lib/stock-data";
  * "BBCA" would work — the same case-sensitivity mistake already fixed
  * once in lib/ask/stock-lookup.ts must not be reintroduced here).
  */
-export function StockSearch({ index }: { index: SearchEntry[] }) {
+export function StockSearch({ index, inputId }: { index: SearchEntry[]; inputId?: string }) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
@@ -39,7 +40,9 @@ export function StockSearch({ index }: { index: SearchEntry[] }) {
 
   return (
     <div className="relative">
+      <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
       <input
+        id={inputId}
         type="search"
         value={query}
         onChange={(e) => {
@@ -73,7 +76,7 @@ export function StockSearch({ index }: { index: SearchEntry[] }) {
         aria-expanded={open && results.length > 0}
         aria-controls="stock-search-list"
         role="combobox"
-        className="w-full rounded-md border border-border bg-[var(--viz-surface)] px-3 py-2 text-sm text-[var(--viz-ink-primary)] outline-none focus:border-[var(--viz-diverging-pos)]"
+        className="w-full rounded-md border border-border bg-[var(--viz-surface)] py-2 pl-9 pr-3 text-sm text-[var(--viz-ink-primary)] outline-none focus:border-[var(--viz-diverging-pos)]"
       />
       {open && results.length > 0 && (
         <ul

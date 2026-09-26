@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Compass, FlaskConical, House, MessageCircle, Search, Star, type LucideIcon } from "lucide-react";
+import { Compass, FlaskConical, House, MessageCircle, PanelLeftClose, PanelLeftOpen, Search, Star, type LucideIcon } from "lucide-react";
 import { StockSearch } from "@/components/stock-search";
 import type { SearchEntry } from "@/lib/stock-data";
 
@@ -79,14 +79,47 @@ export function BottomNav() {
   );
 }
 
+const SIDEBAR_KEY = "argus_sidebar";
+
+function setSidebar(collapsed: boolean) {
+  if (collapsed) document.documentElement.dataset.sidebar = "collapsed";
+  else delete document.documentElement.dataset.sidebar;
+  try {
+    localStorage.setItem(SIDEBAR_KEY, collapsed ? "collapsed" : "open");
+  } catch {
+    // storage blocked: the state still works for this visit
+  }
+}
+
 export function Sidebar({ index }: { index: SearchEntry[] }) {
   const pathname = usePathname();
+
+  // State lives on <html data-sidebar>; layout.tsx restores it before first paint.
+  function toggle(next: boolean, focusSearch = false) {
+    setSidebar(next);
+    if (focusSearch) setTimeout(() => document.getElementById("sidebar-search")?.focus(), 0);
+  }
+
+  const toggleBtn = "flex size-8 shrink-0 items-center justify-center rounded-md text-muted-foreground hover:text-foreground";
   return (
-    <aside className="fixed inset-y-0 left-0 z-30 hidden w-60 flex-col gap-6 border-r border-border bg-background px-4 py-6 md:flex">
-      <div className="pl-2">
+    <aside className="app-sidebar fixed inset-y-0 left-0 z-30 hidden flex-col gap-6 overflow-hidden border-r border-border bg-background px-4 py-6 md:flex">
+      <div className="flex items-center justify-between pl-2 sb-expanded">
         <Logo />
+        <button type="button" onClick={() => toggle(true)} aria-label="Ciutkan sidebar" title="Ciutkan sidebar" className={toggleBtn}>
+          <PanelLeftClose className="size-4" strokeWidth={1.7} />
+        </button>
       </div>
-      <StockSearch index={index} />
+      <div className="flex flex-col items-center gap-3 sb-collapsed">
+        <button type="button" onClick={() => toggle(false)} aria-label="Buka sidebar" title="Buka sidebar" className={toggleBtn}>
+          <PanelLeftOpen className="size-4" strokeWidth={1.7} />
+        </button>
+        <button type="button" onClick={() => toggle(false, true)} aria-label="Cari saham" title="Cari saham" className={toggleBtn}>
+          <Search className="size-4" strokeWidth={1.7} />
+        </button>
+      </div>
+      <div className="sb-expanded">
+        <StockSearch index={index} inputId="sidebar-search" />
+      </div>
       <nav aria-label="Navigasi utama" className="flex flex-col gap-0.5">
         {NAV_ITEMS.map((item) => {
           const active = item.isActive(pathname);
@@ -94,13 +127,15 @@ export function Sidebar({ index }: { index: SearchEntry[] }) {
             <Link
               key={item.href}
               href={item.href}
+              title={item.label}
+              aria-label={item.label}
               aria-current={active ? "page" : undefined}
               className={`flex items-center gap-2.5 rounded-[10px] px-3 py-2.5 text-[13.5px] ${
                 active ? "bg-accent text-accent-foreground" : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              <item.icon className="size-4" strokeWidth={1.7} />
-              {item.label}
+              <item.icon className="size-4 shrink-0" strokeWidth={1.7} />
+              <span className="sb-expanded">{item.label}</span>
             </Link>
           );
         })}

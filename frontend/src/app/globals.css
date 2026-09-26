@@ -233,3 +233,13 @@
     padding-bottom: 0;
   }
 }
+
+/* Desktop sidebar: expanded (15rem) or collapsed to an icon rail (4rem); state lives on <html data-sidebar>. */
+@media (min-width: 768px) {
+  .app-sidebar { width: 15rem; }
+  .app-main { padding-left: 15rem; }
+  html[data-sidebar="collapsed"] .app-sidebar { width: 4rem; padding-left: 0.5rem; padding-right: 0.5rem; }
+  html[data-sidebar="collapsed"] .app-main { padding-left: 4rem; }
+}
+html[data-sidebar="collapsed"] .sb-expanded { display: none; }
+html:not([data-sidebar="collapsed"]) .sb-collapsed { display: none; }

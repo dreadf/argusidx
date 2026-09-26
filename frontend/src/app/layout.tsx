@@ -25,7 +25,16 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="id"
       className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        {/* Restore the sidebar state before first paint so a collapsed sidebar does not flash open. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem("argus_sidebar")==="collapsed")document.documentElement.dataset.sidebar="collapsed"}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <TooltipProvider delay={150}>
           <AppShell>{children}</AppShell>
