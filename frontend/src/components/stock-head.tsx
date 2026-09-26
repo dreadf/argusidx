@@ -47,7 +47,10 @@ export function StockHead({ code, data, asOf, rank, universe, below }: { code: s
             <p className="truncate text-xs text-muted-foreground md:text-[13px]">{snapshot.company_name}</p>
           </div>
         </div>
-        <WatchlistButton symbol={code} companyName={snapshot.company_name} />
+        <div className="flex shrink-0 items-center gap-3">
+          <span className="hidden whitespace-nowrap rounded-md border border-border px-[9px] py-[3px] text-[11.5px] text-muted-foreground md:inline">Data {formatDateId(asOf)}</span>
+          <WatchlistButton symbol={code} companyName={snapshot.company_name} />
+        </div>
       </div>
 
       {price !== null && (

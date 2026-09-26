@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { BarChart3, ChartNoAxesColumnIncreasing, Circle, Coins, Droplets, Mountain, Pause, Rocket, TrendingDown, TrendingUp, Wallet, type LucideIcon } from "lucide-react";
+import { BarChart3, ChartNoAxesColumnIncreasing, Circle, Coins, Droplets, Info, Mountain, Pause, Rocket, TrendingDown, TrendingUp, Wallet, type LucideIcon } from "lucide-react";
 import { PairBars, Note } from "@/components/situation-ui";
 import type { BaseRatesData } from "@/lib/base-rates-data";
 import { formatDateId, formatPrice, idNum } from "@/lib/format";
@@ -31,6 +31,8 @@ interface KindMeta {
 }
 
 const META: Record<StockKind, KindMeta> = {
+  long_below_peak: { group: "Harga & penurunan", icon: TrendingDown, title: "Masih di bawah puncak lama", short: "Masih di bawah puncak lama", href: `/situasi/${SLUG_BY_KIND.long_below_peak}` },
+  repeat_suspension: { group: "Harga & penurunan", icon: Pause, title: "Langganan suspensi", short: "Langganan suspensi", href: `/situasi/${SLUG_BY_KIND.repeat_suspension}` },
   fall: { group: "Harga & penurunan", icon: TrendingDown, title: "Jatuh jauh dari puncak", short: "Jatuh 30% dari puncak", href: `/situasi/${SLUG_BY_KIND.fall}` },
   recent_spike: { group: "Harga & penurunan", icon: TrendingUp, title: "Harga baru melonjak", short: "Harga baru melonjak", href: `/situasi/${SLUG_BY_KIND.recent_spike}` },
   recent_price_suspension: { group: "Harga & penurunan", icon: Pause, title: "Suspensi karena lonjakan", short: "Suspensi lonjakan, 90 hari", href: `/situasi/${SLUG_BY_KIND.recent_price_suspension}` },
@@ -44,7 +46,7 @@ const META: Record<StockKind, KindMeta> = {
 };
 
 /** Order used everywhere on the stock page. */
-export const KIND_ORDER: StockKind[] = ["fall", "recent_price_suspension", "recent_spike", "loss_year", "earnings_two_year_decline", "recent_ipo", "earnings_more_than_doubled", "payout_above_earnings", "near_ath_earnings_decline", "thin_float"];
+export const KIND_ORDER: StockKind[] = ["fall", "long_below_peak", "recent_price_suspension", "repeat_suspension", "recent_spike", "loss_year", "earnings_two_year_decline", "recent_ipo", "earnings_more_than_doubled", "payout_above_earnings", "near_ath_earnings_decline", "thin_float"];
 
 const GROUPS: Group[] = ["Harga & penurunan", "Perusahaan & IPO"];
 const BOARD_ID: Record<string, string> = { Acceleration: "Akselerasi", Main: "Utama", Development: "Pengembangan", Watchlist: "Pemantauan Khusus" };
@@ -59,15 +61,20 @@ function rpLong(v: number): string {
 
 const yearOf = (iso: string) => iso.slice(0, 4);
 
+/** Kinds shown as one-line rows when they are all a stock is in (board Saham-ASII); next to other active kinds they get a card like the rest. */
+const ROW_KINDS: StockKind[] = ["long_below_peak", "repeat_suspension"];
+
 export interface Ctx {
   code: string;
+  /** Situations listed on the hub (it also holds two comparisons that are not per-stock kinds); defaults to the kinds checked here. */
+  hubCount?: number;
   entry: StockSituationEntry | undefined;
   data: StockPageData;
   base: BaseRatesData;
   ipo: IpoBoardsData;
 }
 
-/** Which of the ten kinds this stock is in right now. */
+/** Which kinds this stock is in right now. */
 export function activeKinds(ctx: Ctx): StockKind[] {
   const { entry, data } = ctx;
   const active: StockKind[] = [];
@@ -109,6 +116,37 @@ function contentFor(kind: StockKind, ctx: Ctx): CardContent {
         n: `Dari ${idNum(rec.n_events, 0)} kejadian.`,
         note: depth >= 40 ? `${code} kini jauh lebih dalam dari 30%. Angka ini mencampur semua kedalaman.` : `${code} kini ${idNum(depth, 0)}% di bawah puncaknya. Angka ini mencampur semua kedalaman.`,
         chip: "Riwayat harga riset",
+      };
+    }
+    case "long_below_peak": {
+      const l = entry!.long_below_peak!;
+      const back = Math.round((base.long_below_peak.recovered_by_504.rate ?? 0) * 100);
+      return {
+        sub: `Puncak ${formatPrice(l.peak_price)}, kini ${idNum(Math.abs(l.pct_below_peak) * 100, 0)}% di bawahnya`,
+        pair: { a: { n: back, label: "Kembali ke puncak" }, b: { n: 100 - back, label: "Masih di bawah" }, unit: "dari 100 saham" },
+        sentence: (
+          <>
+            Dari 100 saham yang sudah lebih dari setahun di bawah puncak, <b>{back}</b> kembali ke puncak setahun kemudian.
+          </>
+        ),
+        n: `Dari ${idNum(base.long_below_peak.still_below_at_252, 0)} kejadian.`,
+        note: `${code} sudah ${idNum(l.trading_days_since_trigger, 0)} hari bursa sejak jatuh 30%. Ini situasi yang umum, bukan yang jarang.`,
+        chip: "Riwayat harga riset",
+      };
+    }
+    case "repeat_suspension": {
+      const r = entry!.repeat_suspension!;
+      const again = Math.round(base.repeat_spike_suspension.share_followed * 100);
+      return {
+        sub: `${r.n_events} kali disuspensi karena lonjakan, terakhir ${formatDateId(r.last_date)}`,
+        pair: { a: { n: again, label: "Disuspensi lagi" }, b: { n: 100 - again, label: "Tidak lagi" }, unit: "dari 100 suspensi" },
+        sentence: (
+          <>
+            Dari 100 suspensi karena lonjakan harga, <b>{again}</b> diikuti suspensi serupa dalam setahun.
+          </>
+        ),
+        n: `Dari ${base.repeat_spike_suspension.eligible_events} kejadian dengan setahun pengamatan.`,
+        note: "Pengumuman yang beruntun bisa jadi satu episode yang sama.",
       };
     }
     case "recent_spike": {
@@ -298,6 +336,10 @@ function absentReason(kind: StockKind, ctx: Ctx): string {
       const dates = data.suspension_history?.events.map((e) => e.date) ?? [];
       return dates.length === 0 ? "belum pernah disuspensi" : `terakhir ${formatDateId(dates.reduce((a, b) => (a > b ? a : b)))}`;
     }
+    case "long_below_peak":
+      return entry?.fall ? "baru jatuh, belum setahun" : "tidak";
+    case "repeat_suspension":
+      return "tidak";
     case "recent_spike":
       return "tidak dalam 20 hari bursa terakhir";
     case "loss_year":
@@ -317,29 +359,75 @@ function absentReason(kind: StockKind, ctx: Ctx): string {
   }
 }
 
+/** One line of the active row: the frequency, in the words of the hub. */
+function rowLine(kind: StockKind, ctx: Ctx): string {
+  const { base } = ctx;
+  if (kind === "long_below_peak") return `${Math.round((base.long_below_peak.recovered_by_504.rate ?? 0) * 100)} dari 100 kembali ke puncak setahun kemudian`;
+  if (kind === "repeat_suspension") return `${Math.round(base.repeat_spike_suspension.share_followed * 100)} dari 100 disuspensi lagi dalam setahun`;
+  return "sedang dialami";
+}
+
+/**
+ * A note box for a part of the page that has nothing to show (board
+ * Kondisi-Kosong): what is missing and what stays available, in the tone of
+ * the rest of the page. Never worded as a verdict.
+ */
+export function EmptyNote({ title, children, extra }: { title: string; children: ReactNode; extra?: string }) {
+  return (
+    <div className="rounded-2xl border border-border bg-card p-4">
+      <div className="flex items-start gap-3">
+        <span className="flex size-[34px] shrink-0 items-center justify-center rounded-[10px] bg-accent text-accent-foreground">
+          <Info className="size-[18px]" strokeWidth={1.7} />
+        </span>
+        <div className="min-w-0 flex-1">
+          <div className="text-[15px] font-semibold leading-snug">{title}</div>
+          <p className="mt-1.5 text-[13.5px] leading-[1.55] text-muted-foreground">{children}</p>
+          {extra && <div className="mt-2.5 text-xs text-muted-foreground">{extra}</div>}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function StockSituations({ ctx }: { ctx: Ctx }) {
   const { code } = ctx;
   const active = activeKinds(ctx);
+  const heading = <h2 className="text-xl font-bold leading-tight tracking-[-0.01em] md:text-2xl">Situasi saham ini</h2>;
 
   if (active.length === 0) {
-    // Saham-ASII-Mobile: none of the ten kinds; list them all, say we have no frequency to show.
     return (
       <div>
-        <h2 className="text-xl font-bold leading-tight tracking-[-0.01em]">Situasi saham ini</h2>
-        <p className="mt-1.5 text-[13px] leading-normal text-muted-foreground">Tidak ada dari {KIND_ORDER.length} jenis situasi yang sedang dialami {code} sekarang. Bukan penilaian: kami belum punya frekuensi untuk ditampilkan.</p>
-        <div className="mt-4 rounded-[20px] border border-border bg-card p-[18px]">
+        {heading}
+        <div className="mt-3.5">
+          <EmptyNote title="Belum ada situasi untuk saham ini">Saham ini tidak masuk salah satu situasi yang kami uji. Itu bukan tanda aman atau tidak aman, hanya berarti tidak ada angka kebiasaan untuk ditampilkan.</EmptyNote>
+        </div>
+      </div>
+    );
+  }
+
+  // Saham-ASII: only the one-line kinds are active, so the whole list stays one card, the active rows carrying their frequency.
+  if (active.every((k) => ROW_KINDS.includes(k))) {
+    return (
+      <div>
+        {heading}
+        <p className="mt-1.5 text-[13px] leading-normal text-muted-foreground md:text-sm">
+          {active.length} dari {KIND_ORDER.length} situasi sedang dialami {code}. Masing-masing berdiri sendiri, tanpa nilai gabungan.
+        </p>
+        <div className="mt-4 rounded-2xl border border-border bg-card p-[18px] md:p-[22px]">
           {GROUPS.map((g, gi) => (
-            <div key={g} className={gi > 0 ? "mt-4" : ""}>
-              <div className="text-[11px] font-semibold uppercase tracking-[0.07em] text-muted-foreground">{g}</div>
-              {KIND_ORDER.filter((k) => META[k].group === g).map((k) => (
-                <Link key={k} href={META[k].href} className="flex items-baseline justify-between gap-3 border-b border-border py-2.5 text-[13.5px] last:border-0">
-                  <span className="flex items-center gap-2 text-foreground">
-                    <Circle className="size-3 shrink-0 text-muted-foreground" strokeWidth={1.7} />
-                    {META[k].short}
-                  </span>
-                  <span className="text-right text-xs text-muted-foreground">{absentReason(k, ctx)}</span>
-                </Link>
-              ))}
+            <div key={g} className={gi > 0 ? "mt-[18px] border-t border-border pt-[18px]" : ""}>
+              <div className="mb-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--viz-accent)]">{g}</div>
+              {KIND_ORDER.filter((k) => META[k].group === g).map((k) => {
+                const on = active.includes(k);
+                const Icon = META[k].icon;
+                return (
+                  <Link key={k} href={META[k].href} className="flex items-center gap-3 border-b border-border py-3 text-sm last:border-0">
+                    <Icon className={`size-5 shrink-0 text-muted-foreground ${on ? "" : "opacity-55"}`} strokeWidth={1.7} />
+                    <span className="min-w-0 flex-1">{META[k].short}</span>
+                    <span className={`max-w-[48%] text-right text-xs ${on ? "text-foreground" : "text-muted-foreground"}`}>{on ? rowLine(k, ctx) : absentReason(k, ctx)}</span>
+                  </Link>
+                );
+              })}
             </div>
           ))}
         </div>
@@ -353,7 +441,7 @@ export function StockSituations({ ctx }: { ctx: Ctx }) {
   return (
     <div>
       <div>
-        <h2 className="text-xl font-bold leading-tight tracking-[-0.01em]">Situasi saham ini</h2>
+        {heading}
         <p className="mt-1.5 text-[13px] leading-normal text-muted-foreground">{active.length} situasi sedang dialami. Masing-masing berdiri sendiri, tanpa nilai gabungan.</p>
       </div>
       {GROUPS.map((g) => {
@@ -377,10 +465,10 @@ export function StockSituations({ ctx }: { ctx: Ctx }) {
   );
 }
 
-/** "Situasi lain yang kami periksa": what the stock is NOT in. Hidden when it is in none (the empty state already lists them). */
+/** "Situasi lain yang kami periksa": what the stock is NOT in. Hidden when it is in none of them or in only the one-line kinds (the list above already shows every row). */
 export function OtherSituations({ ctx }: { ctx: Ctx }) {
   const active = activeKinds(ctx);
-  if (active.length === 0) return null;
+  if (active.length > 0 && active.every((k) => ROW_KINDS.includes(k))) return null;
   const inactive = KIND_ORDER.filter((k) => !active.includes(k));
   return (
     <div>
@@ -398,7 +486,7 @@ export function OtherSituations({ ctx }: { ctx: Ctx }) {
         ))}
       </div>
       <Link href="/situasi" className="inline-flex min-h-11 items-center text-[13.5px] font-semibold text-[var(--viz-accent)]">
-        Semua {KIND_ORDER.length} jenis situasi &rarr;
+        Semua {ctx.hubCount ?? KIND_ORDER.length} jenis situasi &rarr;
       </Link>
     </div>
   );

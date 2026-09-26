@@ -3,16 +3,17 @@ import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { AxisColumns, RangeChart, TwoLineChart } from "@/components/charts/axis-charts";
 import { IconDots, Key } from "@/components/charts/dots";
-import { H2, Page, PageTitle, ResearchNote, TwoCol } from "@/components/kit";
-import { Legend, QCard } from "@/components/qcard";
+import { H2, Page, PageTitle, ResearchNote, Sub, TwoCol } from "@/components/kit";
+import { EvidenceSide, Legend, LimitList, QCard, SideBlock } from "@/components/qcard";
 import { PairBars, StockListRow } from "@/components/situation-ui";
 import { getBaseRatesData } from "@/lib/base-rates-data";
 import { getBeatGoldData } from "@/lib/beat-gold-data";
+import { PRICE_CACHE_START_YEAR, PRICE_SUSPENSION_SINCE_YEAR } from "@/lib/evidence-constants";
 import { getFlagsData } from "@/lib/flags-data";
 import { idNum, signedPct } from "@/lib/format";
 import { getIpoBoardsData } from "@/lib/ipo-boards-data";
 import { getSituation, getSituations, H1_VOL_TERCILES, H11_UNDERPERFORM, H4_CUT_RATES, type SituationMeta } from "@/lib/situations";
-import { getSituationRows, kindOfSlug, LIST_SUB } from "@/lib/stock-situations";
+import { getSituationRows, getSituationsFile, kindOfSlug, LIST_SUB } from "@/lib/stock-situations";
 import { getSuspensionSummary } from "@/lib/suspensions-data";
 
 export async function generateStaticParams() {
@@ -39,6 +40,20 @@ function DotsBlock({ filled, keyA, keyB, note, size = 170 }: { filled: number; k
       </div>
     </div>
   );
+}
+
+/** Chart and basis for a QCard that puts 100 dots beside its text: spread onto the card. */
+function dots({ filled, keyA, keyB, note }: { filled: number; keyA: ReactNode; keyB: ReactNode; note: string }) {
+  return {
+    children: <IconDots filled={filled} size={128} label={`${filled} dari 100`} />,
+    basis: (
+      <div className="flex flex-col gap-2">
+        <Key color="var(--viz-chart-blue)">{keyA}</Key>
+        <Key color="#3a4358">{keyB}</Key>
+        <span>{note}</span>
+      </div>
+    ),
+  };
 }
 
 async function cardsFor(slug: string): Promise<ReactNode[]> {
@@ -78,9 +93,8 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
           define={`${idNum(rec.n_events, 0)} kejadian harga -30% atau lebih dari puncaknya, di ${idNum(rec.n_stocks, 0)} saham. Pulih: kembali ke harga tertinggi sebelum jatuh.`}
           howTo={`Dari 100 kejadian, ${below} harganya masih di bawah puncak lama setahun kemudian.`}
           takeaway={`Yang belum pulih, nilai tengahnya masih ${signedPct(rec.still_down_median_gap_pct ?? 0)} dari puncak lamanya.`}
-        >
-          <DotsBlock filled={below} keyA={<><b>{below}</b> masih di bawah puncak lama</>} keyB={<><b>{100 - below}</b> sudah kembali</>} note="Dari 100 kejadian harga -30% atau lebih dari puncaknya" />
-        </QCard>,
+          {...dots({ filled: below, keyA: <><b>{below}</b> masih di bawah puncak lama</>, keyB: <><b>{100 - below}</b> sudah kembali</>, note: "Dari 100 kejadian harga -30% atau lebih dari puncaknya" })}
+        />,
       ];
     }
     case "perusahaan-rugi": {
@@ -160,14 +174,8 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
           define={`${H11_UNDERPERFORM.n} kejadian suspensi di 2026 (data uji akhir), diukur 90 hari sesudahnya.`}
           howTo={`Dari 100 saham seperti ini, ${H11_UNDERPERFORM.holdout} kalah dari indeks dalam 90 hari.`}
           takeaway={`Data awal (2025) lebih seimbang: ${H11_UNDERPERFORM.explore} dari 100 kalah. Sebagian kecil terus melonjak, jadi nilai rata-ratanya bisa tampak naik.`}
-        >
-          <DotsBlock
-            filled={H11_UNDERPERFORM.holdout}
-            keyA={<><b>{H11_UNDERPERFORM.holdout}</b> kalah dari indeks</>}
-            keyB="sisanya sama atau lebih baik"
-            note="Dari 100 saham, 90 hari setelah suspensi"
-          />
-        </QCard>,
+          {...dots({ filled: H11_UNDERPERFORM.holdout, keyA: <><b>{H11_UNDERPERFORM.holdout}</b> kalah dari indeks</>, keyB: "sisanya sama atau lebih baik", note: "Dari 100 saham, 90 hari setelah suspensi" })}
+        />,
         <QCard
           key="b"
           question="Kenapa saham disuspensi?"
@@ -315,11 +323,9 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
           define={`${idNum(sp.pooled.n_events, 0)} kejadian di ${idNum(sp.stocks_with_event, 0)} saham, 2021 sampai 2026.`}
           howTo={`Dari 100 kejadian seperti ini, ${below} berakhir lebih rendah dan ${100 - below} sama atau lebih tinggi.`}
           takeaway={below < 60 ? `Lebih dari empat dari sepuluh tidak turun, jadi ini bukan pola satu arah.` : `Lebih dari separuh berakhir lebih rendah, tetapi sebagian tidak.`}
+          basis={`Sekitar ${below} dari 100 kejadian berakhir lebih rendah dari harga hari lonjakan, 60 hari bursa kemudian.`}
         >
-          <div className="flex items-end gap-[18px]">
-            <PairBars a={{ n: below, label: "Lebih rendah" }} b={{ n: 100 - below, label: "Sama atau lebih tinggi" }} />
-            <span className="pb-6 text-[12.5px] leading-normal text-muted-foreground">Sekitar {below} dari 100 kejadian berakhir lebih rendah dari harga hari lonjakan, 60 hari bursa kemudian.</span>
-          </div>
+          <PairBars a={{ n: below, label: "Lebih rendah" }} b={{ n: 100 - below, label: "Sama atau lebih tinggi" }} />
         </QCard>,
         <QCard
           key="b"
@@ -349,9 +355,8 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
           define="Penutupan harian, dalam 60 hari bursa setelah hari lonjakan."
           howTo={`Dari 100 kejadian, ${deep} pernah ditutup sedalam itu pada satu hari atau lebih.`}
           takeaway="Ini menghitung titik terendah selama 60 hari, bukan harga di akhir."
-        >
-          <DotsBlock filled={deep} keyA={<><b>{deep}</b> pernah ditutup 30% atau lebih di bawah harga hari lonjakan</>} keyB="sisanya tidak" note="Dari 100 kejadian" />
-        </QCard>,
+          {...dots({ filled: deep, keyA: <><b>{deep}</b> pernah ditutup 30% atau lebih di bawah harga hari lonjakan</>, keyB: "sisanya tidak", note: "Dari 100 kejadian" })}
+        />,
       ];
     }
     case "laba-turun-dua-tahun": {
@@ -366,11 +371,9 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
           define={`${idNum(d.pooled.n, 0)} pengamatan perusahaan yang labanya turun dua tahun berturut-turut, tahun pengamatan ${years.map(([y]) => y).join(" dan ")}.`}
           howTo={`Dari 100 perusahaan seperti ini, ${up} labanya naik lagi tahun berikutnya dan ${100 - up} tidak.`}
           takeaway="Lebih dari separuh naik lagi, tetapi hampir setengahnya tidak."
+          basis={`Sekitar ${up} dari 100 perusahaan labanya lebih tinggi di tahun berikutnya.`}
         >
-          <div className="flex items-end gap-[18px]">
-            <PairBars a={{ n: up, label: "Laba naik lagi" }} b={{ n: 100 - up, label: "Laba tidak naik" }} />
-            <span className="pb-6 text-[12.5px] leading-normal text-muted-foreground">Sekitar {up} dari 100 perusahaan labanya lebih tinggi di tahun berikutnya.</span>
-          </div>
+          <PairBars a={{ n: up, label: "Laba naik lagi" }} b={{ n: 100 - up, label: "Laba tidak naik" }} />
         </QCard>,
         <QCard
           key="b"
@@ -405,11 +408,9 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
           define={`${idNum(d.gave_part_back.n, 0)} pengamatan, tahun lonjakan ${years[0][0]} sampai ${years[years.length - 1][0]}.`}
           howTo={`Dari 100 perusahaan seperti ini, ${lower} labanya lebih rendah tahun berikutnya dan ${100 - lower} sama atau lebih tinggi.`}
           takeaway="Hampir separuh mempertahankan atau menambah labanya."
+          basis={`Sekitar ${lower} dari 100 perusahaan labanya lebih rendah dari tahun lonjakan.`}
         >
-          <div className="flex items-end gap-[18px]">
-            <PairBars a={{ n: lower, label: "Lebih rendah" }} b={{ n: 100 - lower, label: "Sama atau lebih tinggi" }} />
-            <span className="pb-6 text-[12.5px] leading-normal text-muted-foreground">Sekitar {lower} dari 100 perusahaan labanya lebih rendah dari tahun lonjakan.</span>
-          </div>
+          <PairBars a={{ n: lower, label: "Lebih rendah" }} b={{ n: 100 - lower, label: "Sama atau lebih tinggi" }} />
         </QCard>,
         <QCard
           key="b"
@@ -417,9 +418,8 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
           define="Laba tahun berikutnya dibanding laba sebelum lonjakan."
           howTo={`Dari 100 perusahaan, ${all} kehilangan seluruh kenaikannya, ${100 - all} masih di atas tingkat semula.`}
           takeaway="Kehilangan sebagian jauh lebih umum daripada kehilangan semuanya."
-        >
-          <DotsBlock filled={all} keyA={<><b>{all}</b> berakhir di bawah tingkat sebelum lonjakan</>} keyB="sisanya masih di atas" note="Dari 100 perusahaan" />
-        </QCard>,
+          {...dots({ filled: all, keyA: <><b>{all}</b> berakhir di bawah tingkat sebelum lonjakan</>, keyB: "sisanya masih di atas", note: "Dari 100 perusahaan" })}
+        />,
         <QCard
           key="c"
           question="Stabil dari tahun ke tahun?"
@@ -440,6 +440,40 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
         </QCard>,
       ];
     }
+    case "bawah-puncak-lama": {
+      const [{ long_below_peak: lbp, as_of }, file] = await Promise.all([getBaseRatesData(), getSituationsFile()]);
+      const back = Math.round((lbp.recovered_by_504.rate ?? 0) * 100);
+      const fallPct = Math.round((1 - file.definitions.fall_threshold) * 100);
+      return [
+        <QCard
+          key="a"
+          question="Kalau sudah lebih dari setahun di bawah puncak, seberapa sering kembali?"
+          define={`Saham yang jatuh ${fallPct}% atau lebih dan setahun kemudian masih di bawah puncaknya, dilihat lagi satu tahun sesudahnya.`}
+          howTo="batang kiri pendek berarti jarang ada yang pulih penuh setelah dua tahun."
+          takeaway={`${back} dari 100 kembali ke puncak. Sisanya masih di bawah.`}
+          basis={`Dari 100 kejadian, hasil dua tahun setelah jatuh. Dasar: ${idNum(lbp.still_below_at_252, 0)} kejadian, ${PRICE_CACHE_START_YEAR} sampai ${as_of.slice(0, 4)}.`}
+        >
+          <PairBars a={{ n: back, label: "Kembali ke puncak" }} b={{ n: 100 - back, label: "Masih di bawah" }} />
+        </QCard>,
+      ];
+    }
+    case "langganan-suspensi": {
+      const { repeat_spike_suspension: r } = await getBaseRatesData();
+      const again = Math.round(r.share_followed * 100);
+      const spaced = Math.round(r.share_followed_by_gap_over_7d * 100);
+      return [
+        <QCard
+          key="a"
+          question="Setelah disuspensi karena harga melonjak, seberapa sering disuspensi lagi?"
+          define={`Semua suspensi karena kenaikan harga di data Sectors sejak ${PRICE_SUSPENSION_SINCE_YEAR}, dilihat setahun sesudahnya.`}
+          howTo="batang kiri lebih tinggi berarti suspensi berulang itu biasa, bukan kejadian langka."
+          takeaway={`Sekitar ${again} dari 100 disuspensi lagi. Bila pengumuman yang hanya berselang 7 hari tidak dihitung, ${spaced} dari 100.`}
+          basis={`Dari 100 suspensi, yang diikuti suspensi serupa dalam setahun. Dasar: ${r.eligible_events} kejadian dengan setahun pengamatan.`}
+        >
+          <PairBars a={{ n: again, label: "Disuspensi lagi" }} b={{ n: 100 - again, label: "Tidak lagi" }} />
+        </QCard>,
+      ];
+    }
     default:
       return [];
   }
@@ -451,29 +485,39 @@ export default async function SituasiDetailPage({ params }: { params: Promise<{ 
   if (!situation) notFound();
   const cards = await cardsFor(slug);
 
+  const kind = kindOfSlug(slug);
+  // "Kapan situasi ini berlaku": the rule that puts a stock here, from the list definition and the current count.
+  const when =
+    situation.when ?? (kind && situation.count !== null ? { title: "Kapan situasi ini berlaku", text: `${LIST_SUB[kind].sub} Sekarang ${idNum(situation.count, 0)} ${kind === "loss_year" ? "perusahaan" : "saham"}.` } : null);
+
   const side = (
-    <div>
-      <H2 className="!text-lg">Batasan</H2>
-      <ul className="mt-2.5 list-disc space-y-1 pl-[18px] text-[13.5px] leading-[1.7] text-muted-foreground">
-        {situation.limits.map((l) => (
-          <li key={l}>{l}</li>
-        ))}
-      </ul>
-      {situation.researchPrices && <ResearchNote className="mt-5" />}
-      <H2 className="!text-lg mt-7">Terkait</H2>
-      <div className="mt-2.5 flex flex-col gap-2.5">
-        {situation.related.map((r) => (
-          <Link key={r.href + r.label} href={r.href} className="text-[13.5px] font-medium text-[var(--viz-accent)]">
-            {r.label} &rarr;
-          </Link>
-        ))}
-      </div>
-    </div>
+    <EvidenceSide>
+      {when && (
+        <SideBlock title={when.title}>
+          <p className="text-[13px] leading-normal text-muted-foreground">{when.text}</p>
+        </SideBlock>
+      )}
+      <SideBlock title="Batasan">
+        <LimitList items={situation.limits} />
+        {situation.researchPrices && <ResearchNote className="mt-4" />}
+      </SideBlock>
+      {situation.related.length > 0 && (
+        <SideBlock title="Terkait">
+          <div className="flex flex-col gap-2.5">
+            {situation.related.map((r) => (
+              <Link key={r.href + r.label} href={r.href} className="text-[13.5px] font-medium text-[var(--viz-accent)]">
+                {r.label} &rarr;
+              </Link>
+            ))}
+          </div>
+        </SideBlock>
+      )}
+    </EvidenceSide>
   );
 
-  const kind = kindOfSlug(slug);
+  // The two newest boards end at the card and the side column: no stock list under them.
   let listBlock: ReactNode = null;
-  if (kind) {
+  if (kind && !situation.isNew) {
     const all = await getSituationRows(kind);
     const meta = LIST_SUB[kind];
     const sorted = [...all].sort((a, b) => (meta.datedOrder ? (b.date ?? "").localeCompare(a.date ?? "") : 0) || a.code.localeCompare(b.code));
@@ -504,8 +548,9 @@ export default async function SituasiDetailPage({ params }: { params: Promise<{ 
 
   return (
     <Page>
-      <PageTitle title={situation.title} pill={situation.asOf} back={{ href: "/situasi", label: "Situasi" }} />
-      <div className="mt-5 md:mt-7">
+      <PageTitle title={situation.title} pill={`Data ${situation.asOf}`} back={{ href: "/situasi", label: "Situasi" }} />
+      {situation.sub && <Sub>{situation.sub}</Sub>}
+      <div className="mt-5 md:mt-6">
         <TwoCol left={body} right={side} ratio="1.5fr 1fr" />
       </div>
     </Page>

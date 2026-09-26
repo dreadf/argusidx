@@ -8,7 +8,7 @@ import { GlossaryTerm } from "@/components/glossary-term";
 import { Card, Cells, Neg, Pos, Stat } from "@/components/kit";
 import { RecentTracker } from "@/components/recent-tracker";
 import { StockHead, getFarRank } from "@/components/stock-head";
-import { OtherSituations, StockSituations, type Ctx } from "@/components/stock-situation-blocks";
+import { EmptyNote, OtherSituations, StockSituations, type Ctx } from "@/components/stock-situation-blocks";
 import { EmphasisStrip } from "@/components/viz/emphasis-strip";
 import { BackLink } from "@/components/back-link";
 import { getBaseRatesData } from "@/lib/base-rates-data";
@@ -19,7 +19,10 @@ import { getIpoBoardsData } from "@/lib/ipo-boards-data";
 import { formatPe, isMeaningfulPe } from "@/lib/pe";
 import { getRoeHistory } from "@/lib/roe-data";
 import { sectorByKey } from "@/lib/sectors-id";
+import { getSituations } from "@/lib/situations";
 import { getSituationsFile } from "@/lib/stock-situations";
+import { getForeignFlow, getIpoPrice } from "@/lib/stock-optional-data";
+import { foreignFlowLine, ipoPriceLine } from "@/lib/stock-summary";
 import { getAllStockCodes, getStockData, getStocksAsOf } from "@/lib/stock-data";
 import type { StockPageData } from "@/lib/stock-data";
 import { getSuspensionSummary } from "@/lib/suspensions-data";
@@ -115,7 +118,7 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
   if (!data) notFound();
 
   const code = data.snapshot.symbol.replace(".JK", "");
-  const [asOf, insiderMarket, suspMarket, situationsFile, base, ipo, gold] = await Promise.all([
+  const [asOf, insiderMarket, suspMarket, situationsFile, base, ipo, gold, hubSituations, foreignFlow, ipoPrice] = await Promise.all([
     getStocksAsOf(),
     getInsiderSummary(),
     getSuspensionSummary(),
@@ -123,6 +126,9 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
     getBaseRatesData(),
     getIpoBoardsData(),
     getBeatGoldData(),
+    getSituations(),
+    getForeignFlow(code),
+    getIpoPrice(code),
   ]);
   const { snapshot, peer_comparison, sector_context, flags, suspension_history, lens_banking, lens_extractive, beat_gold, h1_finding, insider_activity, corporate_actions } = data;
   const roe = await getRoeHistory(code, snapshot.sector);
@@ -136,7 +142,7 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
 
   const { rank: farRank, universe } = await getFarRank(price, high);
 
-  const ctx: Ctx = { code, entry: situationsFile.by_symbol[`${code}.JK`], data, base, ipo };
+  const ctx: Ctx = { code, entry: situationsFile.by_symbol[`${code}.JK`], data, base, ipo, hubCount: hubSituations.length };
   const summary = gold.summary;
 
   const header = (
@@ -158,7 +164,12 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
   );
 
   /* ---------------- Data lengkap rows ---------------- */
-  const sectorBody = (
+  const noFinancials = sector_context !== null && sector_context.own_roe_pct === null && sector_context.own_pe === null;
+  const sectorBody = noFinancials ? (
+    <EmptyNote title="Belum ada data untuk bagian ini" extra="Bagian lain di halaman ini tetap tersedia.">
+      Perusahaan ini belum punya laporan keuangan tahunan yang lengkap, jadi bagian laba dan valuasi tidak dihitung.
+    </EmptyNote>
+  ) : (
     <div>
       {sector_context ? (
         <>
@@ -458,6 +469,20 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
         <DataRow title="Transaksi insider" summary={insiderSummaryText}>
           {insiderBody}
         </DataRow>
+        {foreignFlow && (
+          <DataRow title="Arus asing 20 hari" summary={foreignFlowLine(foreignFlow.net_idr, foreignFlow.as_of)}>
+            <p className={body}>Aliran bersih investor asing dalam 20 hari bursa terakhir, dari data Sectors.</p>
+            <p className={fine}>Angka harian yang dijumlahkan, bukan kepemilikan asing selama berbulan-bulan.</p>
+          </DataRow>
+        )}
+        {ipoPrice && price !== null && (
+          <DataRow title="Harga IPO" summary={ipoPriceLine(ipoPrice.offer_price, price)}>
+            <p className={body}>
+              Harga penawaran saat IPO {formatDateId(ipoPrice.listing_date)} {formatPrice(ipoPrice.offer_price)}, dibanding harga terakhir {formatPrice(price)}.
+            </p>
+            <p className={fine}>Perbandingan dua angka, bukan ukuran hasil bagi pembeli mana pun.</p>
+          </DataRow>
+        )}
         <DataRow title="Lima tahun" summary={beatSummary}>
           {lima}
         </DataRow>

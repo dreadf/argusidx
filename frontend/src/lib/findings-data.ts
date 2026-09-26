@@ -58,3 +58,26 @@ export const VERDICT_TAB: Record<Verdict, { key: string; label: string }> = {
   mixed_or_inconclusive: { key: "tidak-konsisten", label: "Tidak konsisten" },
   no: { key: "tidak-terbukti", label: "Tidak terbukti" },
 };
+
+/** Verdict chip on the list (board Temuan-List-2): "Belum jelas" covers the mixed and inconclusive results. */
+export const VERDICT_CHIP: Record<Verdict, { label: string; color: string }> = {
+  yes: { label: "Terbukti", color: "var(--viz-diverging-pos)" },
+  mixed_or_inconclusive: { label: "Belum jelas", color: "var(--viz-ink-muted)" },
+  no: { label: "Tidak terbukti", color: "var(--viz-diverging-neg)" },
+};
+
+const VERDICT_RANK: Record<Verdict, number> = { yes: 0, no: 1, mixed_or_inconclusive: 2 };
+/** Newest tests lead their verdict group; everything else keeps the file's order. */
+const FEATURED = ["H6", "H18", "H17"];
+
+/** List order: proven, then not proven, then unclear; the newest tests lead their group. */
+export function orderFindings(rows: FindingRow[]): FindingRow[] {
+  const featured = (r: FindingRow) => {
+    const i = FEATURED.indexOf(r.evidence.hypothesis_id);
+    return i === -1 ? FEATURED.length : i;
+  };
+  return rows
+    .map((r, i) => ({ r, i }))
+    .sort((a, b) => VERDICT_RANK[a.r.verdict] - VERDICT_RANK[b.r.verdict] || featured(a.r) - featured(b.r) || a.i - b.i)
+    .map((x) => x.r);
+}

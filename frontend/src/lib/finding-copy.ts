@@ -1,3 +1,5 @@
+import { H18 } from "@/lib/evidence-constants";
+import { idNum } from "@/lib/format";
 import type { FindingEvidence } from "@/lib/findings-data";
 
 /**
@@ -38,8 +40,34 @@ function countOf(n: string, hypothesis: string): string | null {
   return first[2] ? `${first[1]} sampai ${first[2]} ${unit}` : `${first[1]} ${unit}`;
 }
 
+const MONTH_SHORT: Record<string, string> = { Januari: "Jan", Februari: "Feb", Maret: "Mar", April: "Apr", Mei: "Mei", Juni: "Jun", Juli: "Jul", Agustus: "Agu", September: "Sep", Oktober: "Okt", November: "Nov", Desember: "Des" };
+
+/**
+ * H6 and H18 (board Temuan-List-2): their sample text is not "n=... (holdout)".
+ * H6 counts list appearances over a month-to-month range; H18 counts the
+ * events of both phases (evidence.n only carries the holdout's 292).
+ */
+function specialLine(evidence: FindingEvidence): string | null {
+  const id = evidence.hypothesis_id;
+  if (id === "H6") {
+    const lists = evidence.n.match(/(\d[\d.]*)\s+saham di daftar/);
+    const range = evidence.period_id.match(/([A-Z][a-z]+) (\d{4}) sampai ([A-Z][a-z]+) (\d{4})/);
+    if (!lists || !range) return null;
+    const short = (m: string) => MONTH_SHORT[m] ?? m;
+    return `${lists[1]} saham di daftar, ${short(range[1])} ${range[2]} sampai ${short(range[3])} ${range[4]}`;
+  }
+  if (id === "H18") {
+    const years = [...evidence.period_id.matchAll(/\d{4}/g)].map((m) => m[0]);
+    if (years.length < 2) return null;
+    return `${idNum(H18.events, 0)} kejadian, ${years[0]} sampai ${years[years.length - 1]}`;
+  }
+  return null;
+}
+
 /** One short line: "1.148 saham, 2024-2026". Falls back to the raw text only if nothing parses. */
 export function sampleLine(evidence: FindingEvidence): string {
+  const special = specialLine(evidence);
+  if (special) return special;
   const count = countOf(evidence.n, evidence.hypothesis_id);
   const years = yearsOf(evidence.period_id);
   if (count === null) return evidence.n.replace(/\(([^)]*)\)/g, "").replace(/\bn=/g, "").trim();

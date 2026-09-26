@@ -68,6 +68,32 @@ export interface EarningsMoreThanDoubled {
   by_year: Record<string, { gave_part_back: RateCell; gave_all_back: RateCell }>;
 }
 
+export interface LongBelowPeak {
+  events_measurable: number;
+  still_below_at_252: number;
+  recovered_by_504: RateCell;
+}
+
+export interface RepeatSpikeSuspension {
+  events: number;
+  stocks: number;
+  eligible_events: number;
+  followed_within_365d: number;
+  share_followed: number;
+  followed_by_gap_over_7d: number;
+  share_followed_by_gap_over_7d: number;
+  stocks_with_2_or_more: number;
+}
+
+export interface NearPeakEarningsDecline {
+  pooled: { n: number; negative: number; share_negative: number };
+}
+
+export interface PayoutAbove100CutRate {
+  explore: { n: number; cuts: number; cut_rate: number };
+  holdout: { n: number; cuts: number; cut_rate: number };
+}
+
 export interface BaseRatesData {
   as_of: string;
   note: string;
@@ -77,6 +103,10 @@ export interface BaseRatesData {
   loss_maker_turnaround: LossMakerTurnaround;
   typical_drawdown: TypicalDrawdown;
   recovery_after_fall: RecoveryAfterFall;
+  long_below_peak: LongBelowPeak;
+  repeat_spike_suspension: RepeatSpikeSuspension;
+  near_peak_earnings_decline: NearPeakEarningsDecline;
+  payout_above_100_cut_rate: PayoutAbove100CutRate;
 }
 
 /**

@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { formatDateId, idNum, shortName, signedPct } from "@/lib/format";
+import { formatDateId, formatPrice, idNum, shortName, signedPct } from "@/lib/format";
 import { getSearchIndex } from "@/lib/stock-data";
 
 /**
@@ -9,9 +9,9 @@ import { getSearchIndex } from "@/lib/stock-data";
  * `older_fall` is deliberately not a situation: a fall older than the
  * window is context, not something the stock is in now.
  */
-export type SituationKey = "fall" | "loss_year" | "recent_price_suspension" | "recent_ipo" | "recent_spike" | "earnings_two_year_decline" | "earnings_more_than_doubled";
+export type SituationKey = "fall" | "loss_year" | "recent_price_suspension" | "recent_ipo" | "recent_spike" | "earnings_two_year_decline" | "earnings_more_than_doubled" | "long_below_peak" | "repeat_suspension";
 
-export const SITUATION_KEYS: SituationKey[] = ["fall", "loss_year", "recent_price_suspension", "recent_ipo", "recent_spike", "earnings_two_year_decline", "earnings_more_than_doubled"];
+export const SITUATION_KEYS: SituationKey[] = ["fall", "loss_year", "recent_price_suspension", "recent_ipo", "recent_spike", "earnings_two_year_decline", "earnings_more_than_doubled", "long_below_peak", "repeat_suspension"];
 
 export interface FallInfo {
   peak_price: number;
@@ -51,6 +51,19 @@ export interface EarningsRunInfo {
   earnings: number[];
 }
 
+export interface LongBelowPeakInfo {
+  peak_price: number;
+  last_close: number;
+  /** Fraction, negative: -0.36 is 36% below the old peak. */
+  pct_below_peak: number;
+  trading_days_since_trigger: number;
+}
+export interface RepeatSuspensionInfo {
+  n_events: number;
+  first_date: string;
+  last_date: string;
+}
+
 export interface StockSituationEntry {
   fall: FallInfo | null;
   older_fall: FallInfo | null;
@@ -60,6 +73,8 @@ export interface StockSituationEntry {
   recent_spike: SpikeInfo | null;
   earnings_two_year_decline: EarningsRunInfo | null;
   earnings_more_than_doubled: EarningsRunInfo | null;
+  long_below_peak: LongBelowPeakInfo | null;
+  repeat_suspension: RepeatSuspensionInfo | null;
 }
 
 export interface SituationsFile {
@@ -95,6 +110,8 @@ export const SLUG_BY_KIND: Record<SituationKey, string> = {
   recent_spike: "harga-baru-melonjak",
   earnings_two_year_decline: "laba-turun-dua-tahun",
   earnings_more_than_doubled: "laba-dua-kali-lipat",
+  long_below_peak: "bawah-puncak-lama",
+  repeat_suspension: "langganan-suspensi",
 };
 
 export function kindOfSlug(slug: string): SituationKey | null {
@@ -145,6 +162,12 @@ export async function getSituationRows(kind: SituationKey): Promise<SituationRow
     } else if (kind === "loss_year") {
       const i = info as LossYearInfo;
       rows.push({ ...base, value: `${rpShort(i.net_income)}`, sub: `rugi bersih ${i.year}`, date: null });
+    } else if (kind === "long_below_peak") {
+      const i = info as LongBelowPeakInfo;
+      rows.push({ ...base, value: signedPct(i.pct_below_peak * 100), sub: `puncak ${formatPrice(i.peak_price)}`, date: null });
+    } else if (kind === "repeat_suspension") {
+      const i = info as RepeatSuspensionInfo;
+      rows.push({ ...base, value: `${i.n_events} kali`, sub: `terakhir ${formatDateId(i.last_date)}`, date: i.last_date });
     } else if (kind === "recent_price_suspension") {
       const i = info as SuspensionInfo;
       rows.push({ ...base, value: `${i.days_ago} hari lalu`, sub: formatDateId(i.date), date: i.date });
@@ -165,4 +188,6 @@ export const LIST_SUB: Record<SituationKey, { title: string; sub: string; datedO
   loss_year: { title: "perusahaan sedang di sini", sub: "Rugi bersih tahun 2025.", datedOrder: false },
   recent_price_suspension: { title: "saham sedang di sini", sub: "Disuspensi karena lonjakan harga dalam 90 hari terakhir.", datedOrder: true },
   recent_ipo: { title: "saham sedang di sini", sub: "Listing dalam 365 hari terakhir.", datedOrder: true },
+  long_below_peak: { title: "saham sedang di sini", sub: "Pernah jatuh 30% atau lebih, dan sudah lebih dari 252 hari bursa di bawah puncak itu.", datedOrder: false },
+  repeat_suspension: { title: "saham sedang di sini", sub: "Disuspensi karena lonjakan harga dua kali atau lebih.", datedOrder: true },
 };

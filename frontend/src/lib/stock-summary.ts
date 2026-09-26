@@ -1,6 +1,5 @@
 import { formatMarketCap, idNum, signedPct } from "@/lib/format";
 import type { StockPageData } from "@/lib/stock-data";
-
 /**
  * Wording rules for the "Ringkasan" card on a stock page. Every phrase is
  * a deterministic comparison against a named yardstick, never a verdict:
@@ -52,6 +51,19 @@ export function fiveYearPhrase(bg: NonNullable<StockPageData["beat_gold"]>): { w
     ["deposito", bg.beat_deposit],
   ];
   return { won: items.filter(([, v]) => v === true).map(([k]) => k), lost: items.filter(([, v]) => v === false).map(([k]) => k) };
+}
+
+/** "Rp 12,4 M jual bersih, per 06/10/2026": one line of the foreign-flow row. Direction is a fact about the sign, not a call. */
+export function foreignFlowLine(netIdr: number, asOf: string): string {
+  const [year, month, day] = asOf.split("-");
+  const abs = Math.abs(netIdr);
+  const amount = abs >= 1e12 ? `${idNum(abs / 1e12, 1)} T` : `${idNum(abs / 1e9, 1)} M`;
+  return `Rp ${amount} ${netIdr < 0 ? "jual" : "beli"} bersih, per ${day}/${month}/${year}`;
+}
+
+/** "Rp 100 ke Rp 560": offer price against the last close, for the IPO price row. */
+export function ipoPriceLine(offerPrice: number, lastClose: number): string {
+  return `Rp ${offerPrice.toLocaleString("id-ID")} ke Rp ${lastClose.toLocaleString("id-ID")}`;
 }
 
 export { idNum, signedPct };
