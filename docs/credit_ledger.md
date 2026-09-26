@@ -55,6 +55,7 @@ calls count toward the total.
 | 2026-09-26 | MCP `fetch-daily-close` (date 2024-06-14, limit 30, page 1) | Step-0 probe: confirms a past-date universe close works through MCP. Approved with the v8 plan | 1 | 601 |
 | 2026-09-26 | REST `/v2/foreign-flow/?date=2021-10-15&limit=30` | Step-0 H6 probe: **returned 0 results (total_count 0)**, so full-market foreign-flow list history does not reach Oct 2021 (billed as an empty result, assumed 1). Approved with the v8 plan | 1 | 602 |
 | 2026-09-26 | REST `/v2/foreign-flow/?date=2025-06-13&limit=30` | Step-0 H6 probe: 561 tickers that day, fields net/buy/sell IDR, investor-origin attribution. Approved with the v8 plan | 1 | 603 |
+| 2026-09-26 | REST `/v2/foreign-flow/?limit=1` x5 (2023-06-14, 2024-06-14, 2024-12-13 all empty; 2025-03-14 = 491, 2025-01-31 = 518 tickers) | H6 history-floor search, approved by user (up to 5). **Full-market foreign-flow list starts between 2024-12-13 and 2025-01-31** | 5 | 608 |
 
 **Total spent as of 2026-09-20: 599 credits.**
 
@@ -74,7 +75,7 @@ uncertainty is unrelated to the current 29-credit total, which reflects
 the real, newly-logged Phase 0 call. Recheck the portal before either
 number matters for a decision.)*
 
-**Remaining: ~397** (1,000 budget − 603 spent as of 2026-09-26; the 4 step-0 probes above are unverified against the portal, and any extra credits from outside this 1,000 are tracked separately once their source is confirmed).
+**Remaining: ~392** (1,000 budget − 608 spent as of 2026-09-26; the 4 step-0 probes above are unverified against the portal, and any extra credits from outside this 1,000 are tracked separately once their source is confirmed).
 
 ## Rules for this ledger
 
