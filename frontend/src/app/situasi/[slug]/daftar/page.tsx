@@ -41,10 +41,10 @@ export default async function SituasiDaftarPage({ params, searchParams }: { para
       <div className="md:max-w-2xl">
         {meta.datedOrder && (
           <div className="mt-3 flex gap-2 text-[12.5px]">
-            <Link href={`${base}?urut=terbaru`} replace scroll={false} className={`rounded-full border px-3 py-1.5 ${order === "terbaru" ? "border-[var(--viz-accent)] text-[var(--viz-accent)]" : "border-border text-muted-foreground"}`}>
+            <Link href={`${base}?urut=terbaru`} replace scroll={false} className={`rounded-md border px-3 py-1.5 ${order === "terbaru" ? "border-[var(--viz-accent)] text-[var(--viz-accent)]" : "border-border text-muted-foreground"}`}>
               Terbaru
             </Link>
-            <Link href={`${base}?urut=kode`} replace scroll={false} className={`rounded-full border px-3 py-1.5 ${order === "kode" ? "border-[var(--viz-accent)] text-[var(--viz-accent)]" : "border-border text-muted-foreground"}`}>
+            <Link href={`${base}?urut=kode`} replace scroll={false} className={`rounded-md border px-3 py-1.5 ${order === "kode" ? "border-[var(--viz-accent)] text-[var(--viz-accent)]" : "border-border text-muted-foreground"}`}>
               Kode A-Z
             </Link>
           </div>

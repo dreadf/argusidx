@@ -127,7 +127,7 @@ export default async function TandaPage({ searchParams }: { searchParams: Promis
         <Link
           href={`/jelajah/tanda?jenis=${kind}&tampil=${Math.min(100, shown + PAGE)}`}
           scroll={false}
-          className="mt-4 flex h-11 items-center justify-center rounded-full border border-border text-[13.5px] font-semibold text-[var(--viz-accent)]"
+          className="mt-4 flex h-9 items-center justify-center rounded-md border border-border text-[13.5px] font-semibold text-[var(--viz-accent)]"
         >
           Tampilkan {Math.min(PAGE, flagged - shown)} lainnya
         </Link>

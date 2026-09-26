@@ -120,7 +120,7 @@ export default async function JelajahPage({ searchParams }: { searchParams: Prom
         <RankList rows={rows} />
       </div>
       {shown < Math.min(100, total) && (
-        <Link href={nextHref} scroll={false} className="mt-4 flex h-11 items-center justify-center rounded-full border border-border text-[13.5px] font-semibold text-[var(--viz-accent)]">
+        <Link href={nextHref} scroll={false} className="mt-4 flex h-9 items-center justify-center rounded-md border border-border text-[13.5px] font-semibold text-[var(--viz-accent)]">
           Tampilkan {PAGE} berikutnya
         </Link>
       )}

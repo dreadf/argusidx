@@ -11,7 +11,7 @@ import { VerdictMark } from "@/components/verdict-mark";
 function Step({ n, title, children }: { n: number; title: string; children?: React.ReactNode }) {
   return (
     <div className="flex gap-3.5">
-      <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-accent text-[13px] font-bold text-accent-foreground">{n}</span>
+      <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-accent text-[13px] font-bold text-accent-foreground">{n}</span>
       <div className="min-w-0 flex-1">
         <div className="text-[15px] font-semibold leading-snug">{title}</div>
         {children}

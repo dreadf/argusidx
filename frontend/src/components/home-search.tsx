@@ -86,7 +86,7 @@ export function HomeSearch({ index, examples }: { index: SearchEntry[]; examples
       <div className="mt-4 flex flex-wrap items-center gap-2.5">
         <span className="text-xs text-muted-foreground">Coba</span>
         {examples.map((code) => (
-          <Link key={code} href={`/saham/${code}`} className="inline-flex min-h-10 items-center rounded-full border border-border bg-[var(--viz-raised)] px-3.5 text-[13.5px] font-bold text-foreground">
+          <Link key={code} href={`/saham/${code}`} className="inline-flex min-h-8 items-center rounded-md border border-border bg-[var(--viz-raised)] px-3.5 text-[13.5px] font-bold text-foreground">
             {code}
           </Link>
         ))}

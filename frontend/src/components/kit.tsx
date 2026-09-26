@@ -16,7 +16,7 @@ export function Page({ children, className = "" }: { children: ReactNode; classN
 
 export function DatePill({ children }: { children: ReactNode }) {
   return (
-    <span className="whitespace-nowrap rounded-full border border-border px-2.5 py-1 text-[11.5px] text-muted-foreground">{children}</span>
+    <span className="whitespace-nowrap rounded-md border border-border px-2.5 py-1 text-[11.5px] text-muted-foreground">{children}</span>
   );
 }
 

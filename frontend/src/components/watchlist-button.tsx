@@ -35,7 +35,7 @@ export function WatchlistButton({ symbol, companyName }: { symbol: string; compa
       onClick={() => toggleWatchlist({ symbol, company_name: companyName })}
       aria-pressed={watched}
       aria-label={watched ? `Hapus ${symbol} dari watchlist` : `Tambah ${symbol} ke watchlist`}
-      className="inline-flex size-11 items-center justify-center rounded-full border border-border bg-[var(--viz-raised)] text-muted-foreground hover:text-foreground"
+      className="inline-flex size-10 items-center justify-center rounded-lg border border-border bg-[var(--viz-raised)] text-muted-foreground hover:text-foreground"
     >
       <Star className="size-5" strokeWidth={1.7} fill={watched ? "var(--viz-accent)" : "none"} stroke={watched ? "var(--viz-accent)" : "currentColor"} />
     </button>

@@ -105,12 +105,12 @@ export default async function Home() {
             {STEPS.map((s, i) => (
               <li key={s.title}>
                 <div className="flex items-center gap-1.5 md:hidden">
-                  <span className="inline-flex size-[18px] shrink-0 items-center justify-center rounded-full bg-accent text-[10.5px] font-bold text-accent-foreground">{i + 1}</span>
+                  <span className="inline-flex size-[18px] shrink-0 items-center justify-center rounded-md bg-accent text-[10.5px] font-bold text-accent-foreground">{i + 1}</span>
                   <span className="text-xs font-semibold text-[var(--viz-ink-secondary,#B4BFD1)]">{s.title}</span>
                 </div>
                 <div className="mt-[5px] text-[11.5px] leading-normal text-muted-foreground md:hidden">{s.short}</div>
                 <div className="hidden items-start gap-2.5 md:flex">
-                  <span className="inline-flex size-[18px] shrink-0 items-center justify-center rounded-full bg-accent text-[10.5px] font-bold text-accent-foreground">{i + 1}</span>
+                  <span className="inline-flex size-[18px] shrink-0 items-center justify-center rounded-md bg-accent text-[10.5px] font-bold text-accent-foreground">{i + 1}</span>
                   <span className="text-[12.5px] leading-normal text-muted-foreground">{s.long}</span>
                 </div>
               </li>

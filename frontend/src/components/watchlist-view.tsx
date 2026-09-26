@@ -23,7 +23,7 @@ export function WatchlistView({ quotes }: { quotes: QuoteMap }) {
         </div>
         <div className="text-xl font-bold">Belum ada saham</div>
         <p className="max-w-[260px] text-[13px] leading-normal text-muted-foreground">Ketuk bintang di halaman saham untuk menyimpannya.</p>
-        <Link href="/cari" className="mt-2 inline-flex h-12 items-center rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground">
+        <Link href="/cari" className="mt-2 inline-flex h-10 items-center rounded-md bg-primary px-7 text-sm font-semibold text-primary-foreground">
           Cari saham
         </Link>
       </div>
@@ -49,7 +49,7 @@ export function WatchlistView({ quotes }: { quotes: QuoteMap }) {
               type="button"
               onClick={() => removeFromWatchlist(entry.symbol)}
               aria-label={`Hapus ${entry.symbol} dari watchlist`}
-              className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[rgba(230,103,103,0.12)]"
+              className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[rgba(230,103,103,0.12)]"
             >
               <Trash2 className="size-5 text-[#e66767]" strokeWidth={1.8} />
             </button>

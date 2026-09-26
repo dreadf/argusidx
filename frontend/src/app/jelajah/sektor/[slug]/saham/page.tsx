@@ -65,7 +65,7 @@ export default async function SektorSahamPage({
           <Link
             href={`/jelajah/sektor/${meta.slug}/saham?urut=${urut}&tampil=${shown + PAGE}`}
             scroll={false}
-            className="mt-4 flex h-11 items-center justify-center rounded-full border border-border text-[13.5px] font-semibold text-[var(--viz-accent)]"
+            className="mt-4 flex h-9 items-center justify-center rounded-md border border-border text-[13.5px] font-semibold text-[var(--viz-accent)]"
           >
             Tampilkan {PAGE} berikutnya
           </Link>

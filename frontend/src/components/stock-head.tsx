@@ -65,7 +65,7 @@ export function StockHead({ code, data, asOf, rank, universe, below }: { code: s
         <div className="mt-4 max-w-xl">
           <div className="flex items-center justify-between">
             <span className="text-xs text-muted-foreground">Rentang setahun</span>
-            {pos && <span className="inline-flex h-6 items-center rounded-full border border-border px-2.5 text-[11px] text-muted-foreground">{pos}</span>}
+            {pos && <span className="inline-flex h-6 items-center rounded-md border border-border px-2.5 text-[11px] text-muted-foreground">{pos}</span>}
           </div>
           <RangeBar low={low} high={high} price={price} />
         </div>

@@ -280,7 +280,7 @@ function SituationCard({ kind, ctx }: { kind: StockKind; ctx: Ctx }) {
         <Link href={m.href} className="inline-flex min-h-11 items-center text-[13.5px] font-semibold text-[var(--viz-accent)]">
           Lihat buktinya &rarr;
         </Link>
-        {c.chip && <span className="inline-flex h-6 items-center rounded-full border border-border px-2.5 text-[11px] text-muted-foreground">{c.chip}</span>}
+        {c.chip && <span className="inline-flex h-6 items-center rounded-md border border-border px-2.5 text-[11px] text-muted-foreground">{c.chip}</span>}
       </div>
     </section>
   );

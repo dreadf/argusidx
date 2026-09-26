@@ -45,7 +45,7 @@ export function CariView({ quotes, asOf }: { quotes: QuoteEntry[]; asOf: string 
 
   return (
     <div>
-      <label className="flex min-h-[46px] items-center gap-2.5 rounded-full border border-[var(--viz-accent)] bg-card px-4 md:max-w-[560px]">
+      <label className="flex min-h-10 items-center gap-2.5 rounded-md border border-[var(--viz-accent)] bg-card px-4 md:max-w-[560px]">
         <Search className="size-[18px] shrink-0 text-muted-foreground" />
         <input
           autoFocus

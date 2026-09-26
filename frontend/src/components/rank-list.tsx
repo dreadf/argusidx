@@ -29,7 +29,7 @@ export function RankList({ rows, startRank = 1 }: { rows: RankRow[]; startRank?:
             className={`flex items-center gap-3 px-3 py-3 ${first ? "mb-1 rounded-[14px] bg-[var(--viz-raised)]" : "border-b border-border"}`}
           >
             <span
-              className={`flex size-7 shrink-0 items-center justify-center rounded-full text-[12.5px] font-bold ${
+              className={`flex size-7 shrink-0 items-center justify-center rounded-md text-[12.5px] font-bold ${
                 first ? "bg-accent text-accent-foreground" : "bg-[var(--viz-raised)] text-muted-foreground"
               }`}
             >
