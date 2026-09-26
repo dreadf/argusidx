@@ -226,3 +226,66 @@ Extends `docs/PLAN.md` §4.5.
 *Every claim from this file that reaches `EXPERIMENT.md`, `docs/PLAN.md`,
 or `BACKLOG.md` links back here rather than restating the source inline —
 if a citation here turns out to be wrong, there is one place to fix it.*
+
+
+---
+
+## Problem statement and market facts (checked 2026-09-27)
+
+Each figure below was read on the page named, in this session. "Secondary"
+means the primary document (a regulator PDF) was blocked or unreadable, so a
+news report quoting it was used instead, and the primary is still to be read.
+The WebFetch tool returns page text through a summariser, so quotes marked
+(summariser) were not seen verbatim.
+
+- **KSEI: 20.32 million investors (SID) at end-2025, up 37% from 14.87 million.**
+  Secondary: IPOT report of the KSEI director's statement, 29 Dec 2025.
+  <https://www.indopremier.com/ipotnews/newsDetail.php?jdl=KSEI__Jumlah_Investor_Pasar_Modal_di_2025_Melonjak_37__Jadi_20_32_Juta_SID&news_id=210837&group_news=IPOTNEWS&news_date=&taging_subtype=REGULATIONS&name=&search=y_general&q=KSEI&halaman=1>
+  The "5.45 million added" is our subtraction, not a stated figure. The KSEI
+  statistics PDF was unreadable. **This corrects the earlier README figure of
+  "4.28 million new investors in 2025".**
+- **OJK and BPS, SNLIK 2025: capital-market literacy 17.78%, inclusion 1.34%.**
+  Primary, released 2 May 2025. Overall literacy 66.46% and inclusion 80.51%
+  (sustainability method) or 66.64% and 92.74% (DNKI coverage method); 10,800
+  respondents, 34 provinces.
+  <https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/OJK-dan-BPS-Umumkan-Hasil-Survei-Nasional-Literasi-Dan-Inklusi-Keuangan-SNLIK-Tahun-2025.aspx>
+  **This corrects the earlier README figure of "1.55%".**
+- **Retail share of trading 38% (2024) to 50% (end-2025).** Secondary: detik,
+  2 Jan 2026, attributing it to OJK.
+  <https://finance.detik.com/bursa-dan-valas/d-8288678/porsi-transaksi-investor-ritel-naik-ojk-bidik-aksi-goreng-saham>
+  OJK's own release (SP 01/GKPB/OJK/I/2026) was an unreadable PDF and is not yet confirmed.
+- **OJK "2L" (legal and logical).** Secondary: detik, 2 May 2025, quoting the
+  head of the Satgas PASTI secretariat; Kontak OJK 157 is named for checking
+  legality. The definition (legal = licensed or on the whitelist, logical = the
+  promised return is plausible) comes from a search snippet and is not yet read
+  on an ojk.go.id page.
+  <https://news.detik.com/berita/d-7897116/ramai-scam-trading-kripto-ojk-ingatkan-2l-sebelum-investasi>
+- **Minimum free float to 15%.** Glass Lewis (see section 1) says the regulator
+  "indicated it would raise" it and states no effective dates. IPOT, 29 Jan
+  2026: OJK's chair said the exchange would issue rules for a 15% minimum, with
+  an adjustment period. No effective date was found; none is stated in this project.
+  <https://www.indopremier.com/ipotnews/newsDetail.php?jdl=OJK_Tanggapi_Evaluasi_MSCI__BEI_akan_Revisi_Aturan_Free_Float_Saham_Jadi_15_&news_id=483970&group_news=RESEARCHNEWS&news_date=&taging_subtype=INDONESIA&name=&search=y_general&q=INDONESIA,+&halaman=1>
+- **IDX price rules change on 28 Sep 2026.** Secondary: Katadata reporting exchange
+  decision Kep-00136/BEI/09-2026 (21 Sep 2026): the minimum share price falls
+  from Rp50 to Rp1 and auto-rejection bands change (the 15% lower limit widens from
+  1 Jan 2027). The project's data is dated 13 Sep 2026 and predates it. Tick-size
+  bands are not confirmed.
+  <https://katadata.co.id/finansial/bursa/6ab0fe985f085/harga-minimum-saham-jadi-rp-1-mulai-pekan-depan-auto-rejection-disesuaikan>
+- **Trading costs.** Secondary and old (CNBC Indonesia, 26 Jun 2019): broker
+  commission 0.15% to 0.35% including VAT, levy about 0.04%, final income tax
+  0.1% on sales only. A round trip of about 0.4% is therefore a low-end figure,
+  not a typical one (inferred: roughly 0.4% to 0.75%).
+  <https://www.cnbcindonesia.com/mymoney/20190626164219-72-80860/sebelum-jual-beli-saham-kenali-dulu-biaya-biaya-transaksinya>
+- **Foreign net purchases and returns on the IDX.** Rudiawarni, Sulistiawan and
+  Sergi, "The role of the net purchase of stocks by foreign investors in boosting
+  stock returns: Evidence from the Indonesian stock market", *Economic Modelling*
+  vol. 135, June 2024. Abstract read via RePEc (ScienceDirect blocked): net
+  purchases "lead to higher excess returns" (summariser). The sample period and the
+  horizon were not visible, so they are **not cited**.
+  <https://ideas.repec.org/a/eee/ecmode/v135y2024ics0264999324000865.html>
+- **Listed companies.** OJK's Hasan Fawzi, as reported by detik on 29 Jul 2026:
+  "Saat ini perusahaan tercatat ada 963." Our universe of 962 (data of 13 Sep 2026)
+  is consistent. <https://finance.detik.com/bursa-dan-valas/d-8595961/bursa-butuh-30-perusahaan-ipo-tiap-tahun-buat-capai-target-1-100-emiten/amp>
+- **Listing boards (Utama, Akselerasi).** Only a 2023 secondary description was
+  found; the IDX rule text was not opened, so no numeric listing criteria are
+  stated in this project.
