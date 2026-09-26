@@ -3,6 +3,7 @@ import path from "node:path";
 import { getBaseRatesData, type BaseRatesData } from "@/lib/base-rates-data";
 import { getFlagsData, type FlagsData } from "@/lib/flags-data";
 import { getSituations, H11_UNDERPERFORM } from "@/lib/situations";
+import { STRESS } from "@/lib/evidence-constants";
 
 /**
  * "Deteksi anomali" list rows. Every count and rate comes from
@@ -61,6 +62,7 @@ export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, e
   const withRate = years.map((y) => extra.yield_spike_cut[y]).reverse().find((y) => y.cut_missing_counted_as_cut.rate !== null);
   const cutRate = withRate?.cut_missing_counted_as_cut.rate ?? null;
   const cutCases = withRate?.cut_missing_counted_as_cut.n ?? null;
+  const cutYear = years.find((y) => extra.yield_spike_cut[y] === withRate) ?? "";
 
   return [
     {
@@ -139,7 +141,7 @@ export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, e
       icon: "flag",
       title: "Dividen jauh di atas rata-rata sendiri",
       isNew: true,
-      line: `${flags.yield_far_above_average.flagged_count} perusahaan. ${cutRate === null ? "Belum ada hasil tahun berikutnya" : `${of100(cutRate)} dari 100 memangkas dividen${cutCases ? ` (dari ${cutCases} kasus tahun lalu)` : ""}`}`,
+      line: `${flags.yield_far_above_average.flagged_count} perusahaan. ${cutRate === null ? "Belum ada hasil tahun berikutnya" : `${of100(cutRate)} dari 100 memangkas dividen tahun berikutnya${cutCases ? ` (${cutCases} kasus, ${cutYear}, satu tahun saja); semua pembayar dividen: ${Math.round(STRESS.ordinary.i9CutAllPayers)}` : ""}`}`,
       situationSlug: null,
       flagKind: "dividen-tinggi",
     },

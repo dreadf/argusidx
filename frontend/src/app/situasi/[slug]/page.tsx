@@ -4,11 +4,12 @@ import type { ReactNode } from "react";
 import { AxisColumns, RangeChart, TwoLineChart } from "@/components/charts/axis-charts";
 import { IconDots, Key } from "@/components/charts/dots";
 import { H2, Page, PageTitle, ResearchNote, Sub, TwoCol } from "@/components/kit";
+import { rangeNote } from "@/lib/uncertainty-data";
 import { EvidenceSide, Legend, LimitList, QCard, SideBlock } from "@/components/qcard";
 import { PairBars, StockListRow } from "@/components/situation-ui";
 import { getBaseRatesData } from "@/lib/base-rates-data";
 import { getBeatGoldData } from "@/lib/beat-gold-data";
-import { PRICE_CACHE_START_YEAR, PRICE_SUSPENSION_SINCE_YEAR } from "@/lib/evidence-constants";
+import { PRICE_CACHE_START_YEAR, PRICE_SUSPENSION_SPAN, SUSPENSIONS_SINCE_2025 } from "@/lib/evidence-constants";
 import { getFlagsData } from "@/lib/flags-data";
 import { idNum, signedPct } from "@/lib/format";
 import { getIpoBoardsData } from "@/lib/ipo-boards-data";
@@ -179,7 +180,7 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
         <QCard
           key="b"
           question="Kenapa saham disuspensi?"
-          define={`${idNum(s.total_events, 0)} suspensi, 2021 sampai 2026.`}
+          define={`${idNum(s.total_events, 0)} suspensi sejak 2018, ${SUSPENSIONS_SINCE_2025} di antaranya sejak 2025.`}
           howTo={`Batang Harga tak wajar: ${price?.count ?? 0} dari ${idNum(s.total_events, 0)} suspensi.`}
           takeaway={`${idNum(s.companies_with_suspensions, 0)} dari ${idNum(s.universe_count, 0)} perusahaan (${idNum(s.base_rate_pct)}%) pernah disuspensi.`}
         >
@@ -323,7 +324,7 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
           define={`${idNum(sp.pooled.n_events, 0)} kejadian di ${idNum(sp.stocks_with_event, 0)} saham, 2021 sampai 2026.`}
           howTo={`Dari 100 kejadian seperti ini, ${below} berakhir lebih rendah dan ${100 - below} sama atau lebih tinggi.`}
           takeaway={below < 60 ? `Lebih dari empat dari sepuluh tidak turun, jadi ini bukan pola satu arah.` : `Lebih dari separuh berakhir lebih rendah, tetapi sebagian tidak.`}
-          basis={`Sekitar ${below} dari 100 kejadian berakhir lebih rendah dari harga hari lonjakan, 60 hari bursa kemudian.`}
+          basis={`Sekitar ${below} dari 100 kejadian berakhir lebih rendah dari harga hari lonjakan, 60 hari bursa kemudian; ${await rangeNote("recent_spike_pooled")}.`}
         >
           <PairBars a={{ n: below, label: "Lebih rendah" }} b={{ n: 100 - below, label: "Sama atau lebih tinggi" }} />
         </QCard>,
@@ -451,7 +452,7 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
           define={`Saham yang jatuh ${fallPct}% atau lebih dan setahun kemudian masih di bawah puncaknya, dilihat lagi satu tahun sesudahnya.`}
           howTo="batang kiri pendek berarti jarang ada yang pulih penuh setelah dua tahun."
           takeaway={`${back} dari 100 kembali ke puncak. Sisanya masih di bawah.`}
-          basis={`Dari 100 kejadian, hasil dua tahun setelah jatuh. Dasar: ${idNum(lbp.still_below_at_252, 0)} kejadian, ${PRICE_CACHE_START_YEAR} sampai ${as_of.slice(0, 4)}.`}
+          basis={`Dari 100 kejadian, hasil dua tahun setelah jatuh. Dasar: ${idNum(lbp.still_below_at_252, 0)} kejadian, ${PRICE_CACHE_START_YEAR} sampai ${as_of.slice(0, 4)}; ${await rangeNote("c_recovered_by_trigger_plus_504")}.`}
         >
           <PairBars a={{ n: back, label: "Kembali ke puncak" }} b={{ n: 100 - back, label: "Masih di bawah" }} />
         </QCard>,
@@ -465,10 +466,10 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
         <QCard
           key="a"
           question="Setelah disuspensi karena harga melonjak, seberapa sering disuspensi lagi?"
-          define={`Semua suspensi karena kenaikan harga di data Sectors sejak ${PRICE_SUSPENSION_SINCE_YEAR}, dilihat setahun sesudahnya.`}
+          define={`Semua suspensi karena kenaikan harga di data Sectors, ${PRICE_SUSPENSION_SPAN}, dilihat setahun sesudahnya.`}
           howTo="batang kiri lebih tinggi berarti suspensi berulang itu biasa, bukan kejadian langka."
           takeaway={`Sekitar ${again} dari 100 disuspensi lagi. Bila pengumuman yang hanya berselang 7 hari tidak dihitung, ${spaced} dari 100.`}
-          basis={`Dari 100 suspensi, yang diikuti suspensi serupa dalam setahun. Dasar: ${r.eligible_events} kejadian dengan setahun pengamatan.`}
+          basis={`Dari 100 suspensi, yang diikuti suspensi serupa dalam setahun. Dasar: ${r.eligible_events} kejadian dengan setahun pengamatan; ${await rangeNote("s2_followed_within_365d")}.`}
         >
           <PairBars a={{ n: again, label: "Disuspensi lagi" }} b={{ n: 100 - again, label: "Tidak lagi" }} />
         </QCard>,

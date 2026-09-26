@@ -2,7 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import { BarChart3, ChartNoAxesColumnIncreasing, Coins, Droplets, Mountain, Pause, Rocket, Scale, TrendingDown, TrendingUp, Wallet } from "lucide-react";
 import { getBaseRatesData } from "@/lib/base-rates-data";
 import { getBeatGoldData } from "@/lib/beat-gold-data";
-import { CACHED_STOCKS, PRICE_CACHE_START_YEAR } from "@/lib/evidence-constants";
+import { CACHED_STOCKS, PRICE_CACHE_START_YEAR, PRICE_SUSPENSION_SPAN, STRESS } from "@/lib/evidence-constants";
 import { getFlagsData } from "@/lib/flags-data";
 import { formatDateId, idNum, signedPct } from "@/lib/format";
 import { getIpoBoardsData } from "@/lib/ipo-boards-data";
@@ -102,10 +102,10 @@ export async function getSituations(): Promise<SituationMeta[]> {
       group: "Laporan keuangan",
       count: flags.near_ath_earnings_decline.flagged_count,
       icon: Mountain,
-      line: `${Math.round(npd.share_negative * 100)} dari 100 rugi dalam 4 bulan berikutnya (${npd.n} kasus)`,
+      line: `${Math.round(npd.share_negative * 100)} dari 100 rugi dalam 4 bulan berikutnya (${npd.n} kasus); semua saham: ${Math.round(STRESS.ordinary.i3Negative)}`,
       explain: `${flags.near_ath_earnings_decline.flagged_count} dari ${flags.near_ath_earnings_decline.evaluable_count} perusahaan sekarang berharga dalam 10% dari tertinggi sepanjang masa, sementara laba tahunan 2025 lebih rendah dari 2024. Dari ${npd.n} kasus tahun-saham sebelumnya, ${Math.round(npd.share_negative * 100)} dari 100 harganya lebih rendah dalam 4 bulan berikutnya (Mei sampai September). Ini fakta dari laporan perusahaan dan harga, bukan penilaian.`,
       asOf: formatDateId(flags.as_of),
-      limits: ["Laba bersih tahunan 2024 dan 2025.", "Sebagian adalah rugi yang makin dalam, bukan laba yang menyusut."],
+      limits: ["Laba bersih tahunan 2024 dan 2025.", "Sebagian adalah rugi yang makin dalam, bukan laba yang menyusut.", `Sebagai pembanding, pada semua saham ${Math.round(STRESS.ordinary.i3Negative)} dari 100 harganya lebih rendah dalam periode yang sama. Selisihnya belum bisa dibedakan dari kebetulan (68 kasus).`],
       related: [
         { label: "Jelajah: daftar lengkap tanda ini", href: "/jelajah/tanda?jenis=puncak-laba" },
         { label: "Situasi: perusahaan sedang rugi", href: "/situasi/perusahaan-rugi" },
@@ -277,6 +277,7 @@ export async function getSituations(): Promise<SituationMeta[]> {
       limits: [
         "Hanya saham yang masih tercatat. Yang sudah dihapus dari bursa tidak ikut, jadi angka ini cenderung lebih baik dari kenyataan.",
         `Riwayat harga mulai September ${PRICE_CACHE_START_YEAR}, jadi banyak puncak lama sebenarnya lebih baru dari kelihatannya.`,
+        `Angkanya goyah menurut tahun: dari kejadian 2021 sekitar ${Math.round(STRESS.c.year2021)} dari 100 kembali, dari 2023 sekitar ${Math.round(STRESS.c.year2023)}. Saham terkecil ${Math.round(STRESS.c.smallest)} dari 100, terbesar ${Math.round(STRESS.c.largest)}.`,
         "Ini frekuensi masa lalu, bukan ramalan.",
       ],
       related: [],
@@ -299,7 +300,8 @@ export async function getSituations(): Promise<SituationMeta[]> {
       },
       limits: [
         "Pengumuman yang beruntun bisa jadi satu episode yang sama.",
-        "Satu saham bisa menyumbang banyak kejadian, jadi angka ini bukan 100 saham yang berbeda.",
+        `Satu saham bisa menyumbang banyak kejadian, jadi angka ini bukan 100 saham yang berbeda. Bila hanya kejadian pertama tiap saham dihitung (${STRESS.s2.firstStocks} saham): ${Math.round(STRESS.s2.firstPerStock)} dari 100; dengan jendela 180 hari: ${Math.round(STRESS.s2.window180)} dari 100.`,
+        `Semua kejadian ada di ${PRICE_SUSPENSION_SPAN}, satu keadaan pasar. Angka ini goyah menurut cara menghitungnya.`,
         "Data suspensi Sectors, tanpa riwayat harga.",
       ],
       related: [],

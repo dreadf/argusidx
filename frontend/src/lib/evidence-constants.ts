@@ -10,8 +10,27 @@ export const CACHED_STOCKS = 887;
 /** First year of the price cache (Sep 2021): "2021 sampai 2026" on the old-peak page. */
 export const PRICE_CACHE_START_YEAR = 2021;
 
-/** Earliest event in data/app/suspensions.json is 2018-12-28 (checked 2026-09-27): "sejak 2018" on the repeat-suspension page. */
-export const PRICE_SUSPENSION_SINCE_YEAR = 2018;
+/**
+ * All 437 price-increase suspensions in data/raw/suspensions_2026-09-13.json fall between
+ * January 2025 and September 2026 (323 in 2025, 114 in 2026; checked 2026-09-27). The
+ * file holds 588 events in all, 535 of them since 2025 and the first in December 2018.
+ */
+export const PRICE_SUSPENSION_SPAN = "Januari 2025 sampai September 2026";
+export const SUSPENSIONS_SINCE_2025 = 535;
+export const SUSPENSIONS_TOTAL = 588;
+
+/**
+ * Stress-test results (EXPERIMENT.md "Results, stress tests 2026-09-27", run once,
+ * pre-registered 2026-09-27). Percent values are as printed there.
+ */
+export const STRESS = {
+  /** Situation C by trigger year and by size tercile (description only). */
+  c: { year2021: 7.0, year2023: 18.0, smallest: 7.7, largest: 19.5 },
+  /** Situation S2: one event per stock, and a 180-day instead of 365-day window. */
+  s2: { firstPerStock: 68.0, firstStocks: 97, window180: 44.4 },
+  /** Ordinary rates for comparison (EXPERIMENT.md ST3). */
+  ordinary: { i3Negative: 35.5, i3BeatMedian: 48.7, i9CutAllPayers: 46.0 },
+};
 
 /** H6 results, run once 2026-09-26 (EXPERIMENT.md "Results, H6"). Share of each list beating ^JKSE over 5 trading days. */
 export const H6 = {
