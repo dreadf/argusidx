@@ -29,3 +29,6 @@ venv/
 # Claude Code: machine-specific settings (absolute paths). CLAUDE.md itself
 # IS committed -- it carries the project rules.
 .claude/settings.local.json
+
+# Agent worktrees (local isolation copies)
+.claude/worktrees/
