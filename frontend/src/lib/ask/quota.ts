@@ -1,13 +1,13 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 
 /**
- * Per-user allowance for AI-written answers: 3 per rolling 6 hours. Kept in a
+ * Per-user allowance for AI-written answers: 3 per rolling 24 hours. Kept in a
  * signed cookie, not server memory, so it holds across serverless instances.
  * Clearing cookies resets it; the per-IP limit and the daily global cap in
  * rate-limit.ts stay as the backstop against that.
  */
 export const QUOTA_LIMIT = 3;
-export const QUOTA_WINDOW_MS = 6 * 60 * 60 * 1000;
+export const QUOTA_WINDOW_MS = 24 * 60 * 60 * 1000;
 export const QUOTA_COOKIE = "argus_ai";
 
 export interface Quota {

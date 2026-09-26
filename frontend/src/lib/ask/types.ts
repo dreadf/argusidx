@@ -16,7 +16,7 @@ export interface AskResponse {
   links: { label: string; href: string }[];
   /** Which path actually produced `prose`. */
   source: "template" | "gemini";
-  /** AI answers left for this user in the current 6 hours; null when no model is configured. */
+  /** AI answers left for this user in the current 24 hours; null when no model is configured. */
   quota: Quota | null;
   /** Set when the AI allowance ran out and the answer came from data only. */
   limitReached: boolean;

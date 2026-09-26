@@ -85,8 +85,8 @@ export default function TanyaView({ asOf }: { asOf: string }) {
   const lastQuota = [...turns].reverse().find((t): t is Extract<Turn, { state: "done" }> => t.state === "done" && t.data.quota !== null)?.data.quota ?? initialQuota;
   const quotaLine = lastQuota
     ? lastQuota.remaining > 0
-      ? `Sisa ${lastQuota.remaining} dari ${lastQuota.limit} jawaban AI dalam 6 jam.`
-      : `Jawaban AI habis (${lastQuota.limit} per 6 jam). Sisanya dijawab dari data tanpa AI${lastQuota.resetAt ? `, AI kembali ${formatWait(lastQuota.resetAt)}` : ""}.`
+      ? `Sisa ${lastQuota.remaining} dari ${lastQuota.limit} jawaban AI hari ini.`
+      : `Jawaban AI habis (${lastQuota.limit} per hari). Sisanya dijawab dari data tanpa AI${lastQuota.resetAt ? `, AI kembali ${formatWait(lastQuota.resetAt)}` : ""}.`
     : null;
 
   const input = (
@@ -95,7 +95,7 @@ export default function TanyaView({ asOf }: { asOf: string }) {
         e.preventDefault();
         void submit(question);
       }}
-      className="flex items-center gap-2.5 rounded-full border border-border bg-card py-1.5 pl-[18px] pr-1.5"
+      className="flex items-center gap-2.5 rounded-md border border-border bg-card py-1.5 pl-[18px] pr-1.5"
     >
       <input
         value={question}
@@ -107,13 +107,13 @@ export default function TanyaView({ asOf }: { asOf: string }) {
       />
       {lastQuota && (
         <span
-          title={`Sisa ${lastQuota.remaining} dari ${lastQuota.limit} jawaban AI dalam 6 jam`}
-          className={`shrink-0 whitespace-nowrap rounded-full border px-2.5 py-1 font-mono text-[12px] font-semibold tabular-nums ${lastQuota.remaining > 0 ? "border-border text-[var(--viz-accent)]" : "border-[var(--viz-status-critical)] text-[var(--viz-status-critical)]"}`}
+          title={`Sisa ${lastQuota.remaining} dari ${lastQuota.limit} jawaban AI hari ini`}
+          className={`shrink-0 whitespace-nowrap rounded-md border px-2.5 py-1 font-mono text-[12px] font-semibold tabular-nums ${lastQuota.remaining > 0 ? "border-border text-[var(--viz-accent)]" : "border-[var(--viz-status-critical)] text-[var(--viz-status-critical)]"}`}
         >
           AI {lastQuota.remaining}/{lastQuota.limit}
         </span>
       )}
-      <button type="submit" disabled={busy || question.trim().length === 0} aria-label="Kirim" className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground disabled:opacity-50">
+      <button type="submit" disabled={busy || question.trim().length === 0} aria-label="Kirim" className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground disabled:opacity-50">
         <Send className="size-[18px]" />
       </button>
     </form>
@@ -152,7 +152,7 @@ export default function TanyaView({ asOf }: { asOf: string }) {
             {quotaLine && <p className="mt-2 px-1 text-[11.5px] text-muted-foreground">{quotaLine}</p>}
             <div className="mt-2.5 flex gap-2 overflow-x-auto md:hidden">
               {EXAMPLE_QUESTIONS.slice(0, 3).map((q) => (
-                <button key={q} type="button" onClick={() => void submit(q)} className="shrink-0 whitespace-nowrap rounded-full border border-border px-3.5 py-2 text-[12.5px] text-[var(--viz-accent)]">
+                <button key={q} type="button" onClick={() => void submit(q)} className="shrink-0 whitespace-nowrap rounded-md border border-border px-3.5 py-2 text-[12.5px] text-[var(--viz-accent)]">
                   {q}
                 </button>
               ))}
@@ -224,7 +224,7 @@ function AnswerView({ data }: { data: AskResponse }) {
         {data.source === "gemini"
           ? "Kalimat dirangkai dengan bantuan AI (Gemini), hanya dari fakta di atas."
           : data.limitReached
-            ? `Batas jawaban AI (${data.quota?.limit ?? 3} per 6 jam) tercapai. Dijawab dari data kami, tanpa AI${data.quota?.resetAt ? `. AI kembali ${formatWait(data.quota.resetAt)}` : ""}.`
+            ? `Batas jawaban AI (${data.quota?.limit ?? 3} per hari) tercapai. Dijawab dari data kami, tanpa AI${data.quota?.resetAt ? `. AI kembali ${formatWait(data.quota.resetAt)}` : ""}.`
             : "Dijawab dari data kami, tanpa AI."}
       </p>
     </div>
