@@ -1,232 +1,290 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import { ChevronRight, Send } from "lucide-react";
-import { DatePill } from "@/components/kit";
-import { VerdictMark } from "@/components/verdict-mark";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { TanyaComposer, aiUsable, type AskMode } from "@/components/tanya-composer";
+import { ClaimRow, ConfirmRow, DATA_ONLY_LINE, LimitNote, StockCardView, TipNoticeView, UnavailableCard, UserBubble } from "@/components/tanya-results";
 import type { Quota } from "@/lib/ask/quota";
+import { readTip, type TipReading } from "@/lib/ask/tip-reader";
+import { beliefSlug, buildTipView, findUnknownCodes, routeInput, tipDeps, type ClaimRowView, type TipBundle } from "@/lib/ask/tip-view";
 import type { AskResponse } from "@/lib/ask/types";
+import type { FindingRow } from "@/lib/findings-data";
 
-const EXAMPLE_QUESTIONS = [
-  "Jelaskan BBCA dengan bahasa sederhana",
-  "Apakah ada tanda peringatan di TLKM?",
-  "Apakah saham murah (P/E rendah) lebih untung?",
-  "Apa yang biasanya terjadi kalau saham turun 30%?",
-];
+const EXAMPLES = ["BBCA oversold pasti mantul, asing borong", "Jelaskan BBCA dengan bahasa sederhana", "Dividen gede, TLKM wajib koleksi"];
 
-type Turn = { q: string; state: "loading" } | { q: string; state: "error"; message: string } | { q: string; state: "done"; data: AskResponse };
+type Turn =
+  | { kind: "tip"; q: string; reading: TipReading; unknown: string[]; confirmed: string[] }
+  | { kind: "ask"; q: string; state: "loading" }
+  | { kind: "ask"; q: string; state: "error" }
+  | { kind: "ask"; q: string; state: "done"; data: AskResponse; limitNote: boolean }
+  | { kind: "unavailable"; q: string };
 
 /**
- * Tanya: ask a question about the data. Not search (the magnifier in the
- * header finds a stock by code or name). Every answer lists the facts it
- * rests on, names whether AI wrote the sentence, and never advises.
+ * Tanya: one composer for two things. A pasted message is read in the
+ * browser against the tested findings and never leaves it; a question goes
+ * to /api/ask, answered from data and, when the user picks it and has
+ * allowance left, worded by AI. Neither path gives advice.
  */
 export default function TanyaView({ asOf }: { asOf: string }) {
-  const [question, setQuestion] = useState("");
+  const [text, setText] = useState("");
+  const [mode, setMode] = useState<AskMode>("ai");
   const [turns, setTurns] = useState<Turn[]>([]);
-  const [initialQuota, setInitialQuota] = useState<Quota | null>(null);
-  const busy = turns.some((t) => t.state === "loading");
+  const [quota, setQuota] = useState<Quota | null>(null);
+  const [aiConfigured, setAiConfigured] = useState<boolean | null>(null);
+  const bundleRef = useRef<Promise<TipBundle | null> | null>(null);
+  const [bundle, setBundle] = useState<TipBundle | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
+  const busy = turns.some((t) => t.kind === "ask" && t.state === "loading");
 
   useEffect(() => {
     fetch("/api/ask", { cache: "no-store" })
       .then((r) => r.json())
-      .then((j: { quota: Quota | null }) => setInitialQuota(j.quota))
+      .then((j: { quota: Quota | null }) => {
+        setQuota(j.quota);
+        setAiConfigured(j.quota !== null);
+      })
       .catch(() => {});
   }, []);
 
-  async function submit(q: string) {
-    const trimmed = q.trim();
-    if (!trimmed || busy) return;
-    setQuestion("");
+  /** Stocks, findings and situation lines for reading a message. Fetched once, and only when the user starts typing. */
+  function loadBundle(): Promise<TipBundle | null> {
+    bundleRef.current ??= fetch("/api/ask/tip-data")
+      .then((r) => (r.ok ? (r.json() as Promise<TipBundle>) : null))
+      .catch(() => null)
+      .then((b) => {
+        if (b) setBundle(b);
+        else bundleRef.current = null;
+        return b;
+      });
+    return bundleRef.current;
+  }
+  useEffect(() => {
+    if (text.length > 0) void loadBundle();
+  }, [text.length > 0]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  function scrollToEnd() {
+    setTimeout(() => endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" }), 50);
+  }
+
+  async function submit() {
+    const q = text.trim();
+    if (!q || busy) return;
+    setText("");
+
+    const b = await loadBundle();
+    let route: "tip" | "question" = q.length <= 300 ? "question" : "tip";
+    let reading: TipReading | null = null;
+    let unknown: string[] = [];
+    if (b) {
+      reading = readTip(q, tipDeps(b));
+      unknown = findUnknownCodes(q, new Set(b.stocks.map((s) => s.code)));
+      route = routeInput(q, reading, unknown);
+    } else if (route === "tip") {
+      setTurns((prev) => [...prev, { kind: "unavailable", q }]);
+      scrollToEnd();
+      return;
+    }
+
+    if (route === "tip" && reading) {
+      setTurns((prev) => [...prev, { kind: "tip", q, reading, unknown, confirmed: [] }]);
+      scrollToEnd();
+      return;
+    }
+
+    const usable = aiUsable(aiConfigured, quota);
+    // The user wanted AI but the allowance is used up: answer from data and say why.
+    const limitNote = mode === "ai" && aiConfigured === true && quota !== null && quota.remaining === 0;
+    const sendMode: AskMode = usable ? mode : "data";
     const index = turns.length;
-    setTurns((prev) => [...prev, { q: trimmed, state: "loading" }]);
+    setTurns((prev) => [...prev, { kind: "ask", q, state: "loading" }]);
+    scrollToEnd();
     const settle = (turn: Turn) => {
       setTurns((prev) => prev.map((t, i) => (i === index ? turn : t)));
-      setTimeout(() => endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" }), 50);
+      scrollToEnd();
     };
     try {
       const history = turns
-        .filter((t): t is Extract<Turn, { state: "done" }> => t.state === "done")
+        .filter((t): t is Extract<Turn, { kind: "ask"; state: "done" }> => t.kind === "ask" && t.state === "done")
         .slice(-2)
         .map((t) => ({ q: t.q, a: t.data.prose, stockCode: t.data.stockCode }));
       const res = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: trimmed, history }),
+        body: JSON.stringify({ question: q, history, mode: sendMode }),
       });
       const json = await res.json();
-      if (!res.ok) settle({ q: trimmed, state: "error", message: json.error ?? "Terjadi kesalahan." });
-      else settle({ q: trimmed, state: "done", data: json as AskResponse });
+      if (!res.ok) {
+        settle({ kind: "ask", q, state: "error" });
+      } else {
+        const data = json as AskResponse;
+        if (data.quota) setQuota(data.quota);
+        settle({ kind: "ask", q, state: "done", data, limitNote: limitNote || data.notice === "limit" });
+      }
     } catch {
-      settle({ q: trimmed, state: "error", message: "Tidak bisa menghubungi server. Coba lagi." });
+      settle({ kind: "ask", q, state: "error" });
     }
   }
 
-  const examples = (
-    <div>
-      <div className="text-[15px] font-semibold">Contoh pertanyaan</div>
-      <ul className="mt-1">
-        {EXAMPLE_QUESTIONS.map((q) => (
-          <li key={q}>
-            <button type="button" onClick={() => void submit(q)} className="flex min-h-[52px] w-full items-center justify-between gap-3 border-b border-border text-left text-sm">
-              <span>{q}</span>
-              <ChevronRight className="size-[18px] shrink-0 text-muted-foreground" />
-            </button>
-          </li>
-        ))}
-      </ul>
-      <div className="mt-6 text-[15px] font-semibold">Tidak dijawab</div>
-      <p className="mt-1.5 text-[13.5px] leading-normal text-muted-foreground">Saran beli, jual, tahan, dan prediksi harga.</p>
-    </div>
+  const composer = (
+    <TanyaComposer value={text} onChange={setText} onSubmit={() => void submit()} mode={mode} onMode={setMode} aiConfigured={aiConfigured} quota={quota} busy={busy} menuUp={turns.length > 0} />
   );
 
-  const lastQuota = [...turns].reverse().find((t): t is Extract<Turn, { state: "done" }> => t.state === "done" && t.data.quota !== null)?.data.quota ?? initialQuota;
-  const quotaLine = lastQuota
-    ? lastQuota.remaining > 0
-      ? `Sisa ${lastQuota.remaining} dari ${lastQuota.limit} jawaban AI hari ini.`
-      : `Jawaban AI habis (${lastQuota.limit} per hari). Sisanya dijawab dari data tanpa AI${lastQuota.resetAt ? `, AI kembali ${formatWait(lastQuota.resetAt)}` : ""}.`
-    : null;
-
-  const input = (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        void submit(question);
-      }}
-      className="flex items-center gap-2.5 rounded-md border border-border bg-card py-1.5 pl-[18px] pr-1.5"
-    >
-      <input
-        value={question}
-        onChange={(e) => setQuestion(e.target.value)}
-        placeholder="Tanya tentang saham IDX..."
-        maxLength={300}
-        aria-label="Pertanyaan"
-        className="min-w-0 flex-1 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
-      />
-      {lastQuota && (
-        <span
-          title={`Sisa ${lastQuota.remaining} dari ${lastQuota.limit} jawaban AI hari ini`}
-          className={`shrink-0 whitespace-nowrap rounded-md border px-2.5 py-1 font-mono text-[12px] font-semibold tabular-nums ${lastQuota.remaining > 0 ? "border-border text-[var(--viz-accent)]" : "border-[var(--viz-status-critical)] text-[var(--viz-status-critical)]"}`}
-        >
-          AI {lastQuota.remaining}/{lastQuota.limit}
-        </span>
-      )}
-      <button type="submit" disabled={busy || question.trim().length === 0} aria-label="Kirim" className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground disabled:opacity-50">
-        <Send className="size-[18px]" />
-      </button>
-    </form>
-  );
-
-  const conversation = (
-    <div className="flex flex-col gap-3.5">
-      {turns.length === 0 && (
-        <p className="text-sm text-muted-foreground md:hidden">Pilih contoh di bawah, atau ketik pertanyaan sendiri.</p>
-      )}
-      {turns.map((turn, i) => (
-        <div key={i} className="flex flex-col gap-3.5">
-          <div className="max-w-[86%] self-end rounded-[18px_18px_4px_18px] bg-primary px-[15px] py-[11px] text-sm leading-snug text-primary-foreground">{turn.q}</div>
-          {turn.state === "loading" && <div className="self-start text-sm text-muted-foreground">Memproses...</div>}
-          {turn.state === "error" && <p className="self-start text-sm text-[var(--viz-status-critical)]">{turn.message}</p>}
-          {turn.state === "done" && <AnswerView data={turn.data} />}
+  if (turns.length === 0) {
+    return (
+      <main className="mx-auto w-full max-w-[784px] px-4 pb-8 pt-10 md:px-8 md:pt-[72px]">
+        <div className="hidden justify-end md:flex">
+          <DatePill>Data {asOf}</DatePill>
         </div>
-      ))}
-      <div ref={endRef} />
-    </div>
-  );
+        <div className="text-center md:mt-8">
+          <h1 className="text-[26px] font-bold leading-tight tracking-[-0.02em] md:text-[32px]">Tanya</h1>
+          <p className="mt-1.5 text-[13px] leading-normal text-muted-foreground">Tanya soal saham, atau tempel pesan yang Anda terima.</p>
+        </div>
+        <div className="mt-7">{composer}</div>
+        <p className="mt-2.5 text-center text-[11.5px] leading-normal text-muted-foreground">Pesan yang ditempel dibaca di peramban Anda dan tidak dikirim ke AI.</p>
+        <div className="mt-4 flex flex-wrap justify-center gap-2">
+          {EXAMPLES.map((e) => (
+            <button key={e} type="button" onClick={() => setText(e)} className="inline-flex h-8 items-center rounded-md border border-border bg-muted px-3 text-[12.5px] text-foreground">
+              {e}
+            </button>
+          ))}
+        </div>
+      </main>
+    );
+  }
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-[18px] py-5 md:px-8 md:py-8">
-      <div className="flex items-center justify-between gap-3">
-        <h1 className="text-[26px] font-bold leading-tight tracking-[-0.02em] md:text-[32px]">Tanya</h1>
+    <main className="mx-auto w-full max-w-[784px] px-4 pb-8 pt-4 md:px-8 md:pt-8">
+      <div className="flex justify-center md:justify-end">
         <DatePill>Data {asOf}</DatePill>
       </div>
-      <p className="mt-1.5 text-[13px] text-muted-foreground md:text-sm">Tanya apa saja tentang data saham IDX. Bukan saran.</p>
-
-      <div className="mt-5 grid gap-8 md:mt-6 md:grid-cols-[1.5fr_1fr] md:gap-0">
-        <div className="min-w-0 md:pr-10">
-          {conversation}
-          <div className="sticky bottom-[66px] mt-5 bg-background pb-2 pt-2 md:static md:bg-transparent md:pb-0">
-            {input}
-            {quotaLine && <p className="mt-2 px-1 text-[11.5px] text-muted-foreground">{quotaLine}</p>}
-            <div className="mt-2.5 flex gap-2 overflow-x-auto md:hidden">
-              {EXAMPLE_QUESTIONS.slice(0, 3).map((q) => (
-                <button key={q} type="button" onClick={() => void submit(q)} className="shrink-0 whitespace-nowrap rounded-md border border-border px-3.5 py-2 text-[12.5px] text-[var(--viz-accent)]">
-                  {q}
-                </button>
-              ))}
-            </div>
+      <div className="mt-3.5 flex flex-col gap-3.5">
+        {turns.map((turn, i) => (
+          <div key={i} className="flex flex-col gap-3.5">
+            <UserBubble>{turn.q}</UserBubble>
+            {turn.kind === "tip" && bundle && (
+              <TipResult
+                turn={turn}
+                bundle={bundle}
+                onConfirm={(code) => setTurns((prev) => prev.map((t, j) => (j === i && t.kind === "tip" ? { ...t, confirmed: [...t.confirmed, code] } : t)))}
+              />
+            )}
+            {turn.kind === "ask" && turn.state === "loading" && <p className="text-sm text-muted-foreground">Memproses...</p>}
+            {(turn.kind === "unavailable" || (turn.kind === "ask" && turn.state === "error")) && <UnavailableCard />}
+            {turn.kind === "ask" && turn.state === "done" && <AnswerView data={turn.data} limitNote={turn.limitNote} />}
           </div>
-        </div>
-        <div className="hidden min-w-0 md:block md:border-l md:border-border md:pl-10">{examples}</div>
+        ))}
+        <div ref={endRef} />
       </div>
+      <div className="mt-5">{composer}</div>
     </main>
   );
 }
 
-function formatWait(resetAt: string): string {
-  const minutes = Math.max(1, Math.ceil((new Date(resetAt).getTime() - Date.now()) / 60000));
-  const h = Math.floor(minutes / 60);
-  const m = minutes % 60;
-  return `dalam ${h > 0 ? `${h} jam ` : ""}${m > 0 || h === 0 ? `${m} menit` : ""}`.trim();
+function DatePill({ children }: { children: React.ReactNode }) {
+  return <span className="whitespace-nowrap rounded-lg border border-border px-2.5 py-[3px] text-[11.5px] text-muted-foreground">{children}</span>;
 }
 
-function AnswerView({ data }: { data: AskResponse }) {
+/** The deterministic reading of a pasted message: stock cards, claim rows, one muted line. */
+function TipResult({ turn, bundle, onConfirm }: { turn: Extract<Turn, { kind: "tip" }>; bundle: TipBundle; onConfirm: (code: string) => void }) {
+  const view = useMemo(() => buildTipView(turn.q, turn.reading, bundle, turn.unknown, turn.confirmed), [turn, bundle]);
   return (
-    <div className="max-w-[96%] self-start rounded-[18px_18px_18px_4px] border border-border bg-card px-4 py-3.5">
-      <p className="text-sm leading-normal">{data.prose}</p>
-
-      {data.findings.length > 0 && (
-        <ul className="mt-3 space-y-2.5 border-t border-border pt-3">
-          {data.findings.map((row) => (
-            <li key={row.belief} className="flex items-start gap-3">
-              <span className="mt-0.5 shrink-0">
-                <VerdictMark verdict={row.verdict} size={18} />
-              </span>
-              <div>
-                <p className="text-sm leading-snug">{row.title_short_id ?? row.belief_id}</p>
-                <p className="text-[13px] leading-snug text-muted-foreground">{row.result_short_id ?? row.label_id}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {data.facts.length > 0 && (
-        <ul className="mt-3 space-y-1 border-t border-border pt-3 text-[13px] leading-normal text-muted-foreground">
-          {data.facts.map((fact) => (
-            <li key={fact} className="flex gap-2">
-              <span>&bull;</span>
-              <span>{fact}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {data.stockCode && (
-        <Link href={`/saham/${data.stockCode}`} className="mt-2.5 inline-flex min-h-11 items-center text-[13px] font-medium text-[var(--viz-accent)]">
-          Halaman {data.stockCode} &rarr;
-        </Link>
-      )}
-
-      {data.links.length > 0 && (
-        <div className="mt-2 flex flex-wrap gap-x-4">
-          {data.links.map((l) => (
-            <Link key={l.href} href={l.href} className="inline-flex min-h-11 items-center text-[13px] font-medium text-[var(--viz-accent)]">
-              {l.label} &rarr;
-            </Link>
+    <>
+      {view.notices.map((n) => (
+        <TipNoticeView key={n.kind} notice={n} />
+      ))}
+      {view.stocks.map((s) => (
+        <StockCardView key={s.code} card={{ code: s.code, name: s.short, price: s.price, change: s.change, negative: s.negative, situations: s.situations }} />
+      ))}
+      {view.ambiguous.map((a) => (
+        <ConfirmRow key={a.code} prompt={a.prompt} code={a.code} onConfirm={() => onConfirm(a.code)} />
+      ))}
+      {view.claims.length > 0 && (
+        <div className="border-t border-border">
+          {view.claims.map((row) => (
+            <ClaimRow key={row.key} row={row} />
           ))}
         </div>
       )}
-
-      <p className="mt-2.5 text-[11px] text-muted-foreground">
-        {data.source === "gemini"
-          ? "Kalimat dirangkai dengan bantuan AI (Gemini), hanya dari fakta di atas."
-          : data.limitReached
-            ? `Batas jawaban AI (${data.quota?.limit ?? 3} per hari) tercapai. Dijawab dari data kami, tanpa AI${data.quota?.resetAt ? `. AI kembali ${formatWait(data.quota.resetAt)}` : ""}.`
-            : "Dijawab dari data kami, tanpa AI."}
+      <p className="text-xs leading-normal text-muted-foreground">
+        {view.untested.length > 0 && <>Tidak ada uji untuk {view.untested.map((u) => `“${u}”`).join(", ")}. </>}
+        {DATA_ONLY_LINE}
       </p>
-    </div>
+    </>
+  );
+}
+
+const PROSE_ONLY = new Set<AskResponse["bucket"]>(["advice_seeking", "unanswerable", "no_data", "ambiguous"]);
+
+function findingRow(f: FindingRow): ClaimRowView {
+  return { key: f.belief, title: f.title_short_id ?? f.belief_id, line: f.result_short_id ?? f.label_id, verdict: f.verdict, href: `/temuan/${beliefSlug(f.belief)}` };
+}
+
+function AnswerView({ data, limitNote }: { data: AskResponse; limitNote: boolean }) {
+  const asProse = data.source === "gemini" || PROSE_ONLY.has(data.bucket) || (data.facts.length === 0 && data.findings.length === 0);
+  const limit = data.quota?.limit ?? 3;
+  return (
+    <>
+      {asProse ? (
+        <div>
+          <p className="text-sm leading-[1.55]">{data.prose}</p>
+          <div className="mt-2 flex flex-wrap gap-x-4">
+            {data.stockCode && (
+              <Link href={`/saham/${data.stockCode}`} className="inline-flex min-h-11 items-center text-[13px] font-semibold text-[var(--viz-accent)]">
+                Halaman {data.stockCode} &rarr;
+              </Link>
+            )}
+            {data.links.map((l) => (
+              <Link key={l.href} href={l.href} className="inline-flex min-h-11 items-center text-[13px] font-semibold text-[var(--viz-accent)]">
+                {l.label} &rarr;
+              </Link>
+            ))}
+          </div>
+          <p className="text-[11.5px] text-muted-foreground">{data.source === "gemini" ? "Dirangkai dengan AI (Gemini), hanya dari fakta di halaman saham." : DATA_ONLY_LINE}</p>
+        </div>
+      ) : (
+        <>
+          {data.card && <StockCardView card={data.card} />}
+          {data.findings.length > 0 && (
+            <div className="border-t border-border">
+              {data.findings.map((f) => (
+                <ClaimRow key={f.belief} row={findingRow(f)} />
+              ))}
+            </div>
+          )}
+          {data.card && data.bucket === "untested_data" && data.card.rows.length > 0 ? (
+            <div className="border-t border-border">
+              {data.card.rows.map((r) => (
+                <div key={r.label} className="flex min-h-10 items-center gap-2.5 border-b border-border py-2">
+                  <span className="w-24 shrink-0 text-[13px] text-muted-foreground">{r.label}</span>
+                  <span className="flex-1 text-[13.5px]">{r.value}</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            data.facts.length > 0 && (
+              <ul className="border-t border-border">
+                {data.facts.map((fact) => (
+                  <li key={fact} className="border-b border-border py-2.5 text-[13.5px] leading-normal">
+                    {fact}
+                  </li>
+                ))}
+              </ul>
+            )
+          )}
+          {data.links.length > 0 && (
+            <div className="flex flex-wrap gap-x-4">
+              {data.links.map((l) => (
+                <Link key={l.href} href={l.href} className="inline-flex min-h-11 items-center text-[13px] font-semibold text-[var(--viz-accent)]">
+                  {l.label} &rarr;
+                </Link>
+              ))}
+            </div>
+          )}
+          <p className="text-xs text-muted-foreground">{DATA_ONLY_LINE}</p>
+        </>
+      )}
+      {limitNote && <LimitNote>Jawaban AI hari ini habis ({limit} per hari). Pertanyaan tetap dijawab dari data kami, tanpa AI. AI kembali besok.</LimitNote>}
+      {data.notice === "unavailable" && <UnavailableCard />}
+    </>
   );
 }

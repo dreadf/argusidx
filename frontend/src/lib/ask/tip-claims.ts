@@ -314,7 +314,7 @@ export const CLAIMS: readonly ClaimDef[] = [
     kind: "promotion",
     label: "Target harga / kelipatan",
     variants: [
-      "\\b(tp|tgt|target)( harga)? ?[:@=]? ?\\d",
+      "\\b(tp|tgt|target)( harga)? ?[:@=]? ?\\d+(?:[.,]\\d+)*",
       "\\btarget( harga)? (x|\\d+ ?x|\\d+ ?kali|double)",
       "\\b\\d+ ?x (lipat|lagi)\\b",
       "\\bx\\d+\\b",

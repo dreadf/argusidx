@@ -6,10 +6,11 @@ import { askGemini, type HistoryTurn } from "@/lib/ask/gemini-client";
 import { ungroundedNumbers } from "@/lib/ask/grounding";
 import { QUOTA_COOKIE, QUOTA_WINDOW_MS, parseCookie, quotaFrom, readCookieHeader, serializeCookie } from "@/lib/ask/quota";
 import { allowGeminiCall, allowRequest, clientIp, releaseModelCall, reserveModelCall } from "@/lib/ask/rate-limit";
+import { buildStockCard } from "@/lib/ask/stock-card";
 import { findStockInText } from "@/lib/ask/stock-lookup";
 import { buildTemplateProse } from "@/lib/ask/template-answers";
 import type { AskResponse } from "@/lib/ask/types";
-import { getStockData } from "@/lib/stock-data";
+import { getAllStockCodes, getStockData } from "@/lib/stock-data";
 
 const MAX_QUESTION_LENGTH = 300;
 const MAX_HISTORY = 2;
@@ -42,11 +43,14 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: `Pertanyaan terlalu panjang (maks ${MAX_QUESTION_LENGTH} karakter).` }, { status: 400 });
   }
   const { history, carriedStock } = parseHistory((body as { history?: unknown })?.history);
+  // "data": the user chose to be answered from data only. The model is not called and no allowance is spent.
+  const wantsModel = (body as { mode?: unknown })?.mode !== "data";
 
   try {
     const now = Date.now();
     const usedTimes = parseCookie(readCookieHeader(request), now);
     const modelConfigured = Boolean(process.env.GEMINI_API_KEY);
+    const modelOn = modelConfigured && wantsModel;
 
     const named = await findStockInText(question);
     const stockCode = named ?? (carriedStock && (await getStockData(carriedStock)) ? carriedStock : null);
@@ -82,12 +86,17 @@ export async function POST(request: Request) {
     const refused = deterministic.bucket === "advice_seeking" || deterministic.bucket === "unanswerable";
     const skipModel = refused || deterministic.bucket === "ambiguous" || retrieved.evidence.length === 0;
     const allowance = quotaFrom(usedTimes);
-    const limitReached = modelConfigured && !skipModel && allowance.remaining === 0;
+    const limitReached = modelOn && !skipModel && allowance.remaining === 0;
+    let modelFailed = false;
 
     let newTimes = usedTimes;
-    if (modelConfigured && !skipModel && !limitReached && reserveModelCall(clientIp(request), now) && allowGeminiCall()) {
+    if (modelOn && !skipModel && !limitReached && !(reserveModelCall(clientIp(request), now) && allowGeminiCall())) modelFailed = true;
+    else if (modelOn && !skipModel && !limitReached) {
       const result = await askGemini(question, history, retrieved.evidence);
-      if (!result) releaseModelCall(clientIp(request));
+      if (!result) {
+        releaseModelCall(clientIp(request));
+        modelFailed = true;
+      }
       if (result && (result.bucket === "advice_seeking" || result.bucket === "unanswerable")) {
         // The model spotted a request for advice or a forecast that the wording patterns missed: use the fixed refusal.
         bucket = result.bucket;
@@ -109,6 +118,7 @@ export async function POST(request: Request) {
           usedIds = validIds.length > 0 ? validIds : result.bucket === "answered" ? retrieved.evidence.filter((e) => e.kind !== "istilah").slice(0, 4).map((e) => e.id) : [];
         } else {
           console.warn(`/api/ask: model answer rejected (${rejected}), using template`);
+          modelFailed = true;
         }
       }
     }
@@ -123,9 +133,15 @@ export async function POST(request: Request) {
       .slice(0, 3)
       .map((e) => ({ label: e.linkLabel!, href: e.href! }));
 
+    // Why the answer came from data when the user asked for AI: shown as one note under it.
+    const notice: AskResponse["notice"] = !wantsModel ? null : limitReached ? "limit" : !modelConfigured || modelFailed ? "unavailable" : null;
+    const card = stockCode && stockData ? buildStockCard(stockCode, stockData, (await getAllStockCodes()).length) : null;
+
     const response: AskResponse = {
       bucket,
       stockCode,
+      card,
+      notice,
       prose,
       facts,
       findings,
