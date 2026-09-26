@@ -56,6 +56,7 @@ calls count toward the total.
 | 2026-09-26 | REST `/v2/foreign-flow/?date=2021-10-15&limit=30` | Step-0 H6 probe: **returned 0 results (total_count 0)**, so full-market foreign-flow list history does not reach Oct 2021 (billed as an empty result, assumed 1). Approved with the v8 plan | 1 | 602 |
 | 2026-09-26 | REST `/v2/foreign-flow/?date=2025-06-13&limit=30` | Step-0 H6 probe: 561 tickers that day, fields net/buy/sell IDR, investor-origin attribution. Approved with the v8 plan | 1 | 603 |
 | 2026-09-26 | REST `/v2/foreign-flow/?limit=1` x5 (2023-06-14, 2024-06-14, 2024-12-13 all empty; 2025-03-14 = 491, 2025-01-31 = 518 tickers) | H6 history-floor search, approved by user (up to 5). **Full-market foreign-flow list starts between 2024-12-13 and 2025-01-31** | 5 | 608 |
+| 2026-09-26 | REST `/v2/foreign-flow/?date=D&limit=30` (+ `order_by=net_foreign_inflow` for sell) x126, 63 dates x 2 lists, H6 main pull | Approved by user ("Alright go, I approve", 126 credits). First run made 25 billed calls then hit a free 429 (data saved incrementally, nothing lost); resumed with a 2 s pause and 429 backoff, 101 more calls. **Two dates returned empty lists: 2026-03-27 and 2026-04-15 (probably exchange holidays that Yahoo still shows as bars); their 4 calls were billed.** `data/raw/foreign_flow_lists_2026-09-26.json`. | 126 | 734 |
 
 **Total spent as of 2026-09-20: 599 credits.**
 
@@ -75,7 +76,7 @@ uncertainty is unrelated to the current 29-credit total, which reflects
 the real, newly-logged Phase 0 call. Recheck the portal before either
 number matters for a decision.)*
 
-**Remaining: ~392** (1,000 budget − 608 spent as of 2026-09-26; the 4 step-0 probes above are unverified against the portal, and any extra credits from outside this 1,000 are tracked separately once their source is confirmed).
+**Remaining: ~266** (1,000 budget − 734 spent as of 2026-09-26; the 4 step-0 probes above are unverified against the portal, and any extra credits from outside this 1,000 are tracked separately once their source is confirmed).
 
 ## Rules for this ledger
 
