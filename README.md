@@ -144,7 +144,7 @@ nothing is mistaken for something it isn't.
 | Banking and mining lenses, commodity price trends for miners | Sectors `/v2/companies/`, `/v2/mining/companies/`, `/v2/mining/commodities/{name}/price/` | Snapshot (commodity series end Feb 2026 for coal, nickel, copper; the date is shown) |
 | IDX total market cap chart | Sectors `/v2/idx-total/` | Snapshot |
 | Where a stock sits on the free-float finding (H1) | Sectors market cap and free float, applied to the H1 result | Snapshot |
-| **Findings scoreboard verdicts** (`/temuan`) | Sectors fundamentals as predictors; **outcomes measured on research price history** (16 of 17 rows; only H4, dividend cuts, uses Sectors data alone) | **Frozen research results** |
+| **Findings scoreboard verdicts** (`/temuan`) | Sectors fundamentals as predictors; **outcomes measured on research price history** (18 of 19 rows; only H4, dividend cuts, uses Sectors data alone) | **Frozen research results** |
 | **Beat gold / index / deposit comparison** | Research price history, gold and index series | **Frozen, dated 2026-09-12** |
 | **IPO board and recovery / drawdown base rates** | Research price history plus Sectors listing fields | **Frozen, dated 2026-09-13** |
 

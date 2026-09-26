@@ -94,6 +94,14 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "belief_id": "Laba perusahaan yang naik membuat harga sahamnya ikut naik",
         "label_id": "Tidak terbukti: pada data uji ulang, tidak ada kaitan antara kenaikan laba dan hasil harga",
     },
+    "Foreign investors buying heavily means the price will rise": {
+        "belief_id": "Kalau asing sedang borong suatu saham, harganya akan naik",
+        "label_id": "Tidak terbukti: saham di daftar asing beli terbanyak tidak lebih sering mengungguli IHSG pekan berikutnya daripada daftar asing jual",
+    },
+    "Insiders buying their own stock means the price will rise": {
+        "belief_id": "Kalau orang dalam membeli saham perusahaannya, harganya akan naik",
+        "label_id": "Tidak terbukti: pada data uji, kejadian yang biasa tidak mengungguli IHSG; rata-rata terdongkrak beberapa kenaikan besar",
+    },
     "Positive news coverage predicts a stock will rise": {
         "belief_id": "Pemberitaan positif memprediksi harga saham akan naik",
         "label_id": (
@@ -173,6 +181,14 @@ SHORT_COPY: dict[str, dict[str, str]] = {
     "Rising profits mean a rising share price": {
         "title_short_id": "Laba naik membuat harga saham naik",
         "result_short_id": "Tidak ada kaitan yang bisa diandalkan",
+    },
+    "Foreign investors buying heavily means the price will rise": {
+        "title_short_id": "Asing borong membuat harga naik",
+        "result_short_id": "Daftar asing beli tidak beda dari daftar jual",
+    },
+    "Insiders buying their own stock means the price will rise": {
+        "title_short_id": "Orang dalam beli membuat harga naik",
+        "result_short_id": "Tidak lebih sering menang dari IHSG",
     },
     "Positive news coverage predicts a stock will rise": {
         "title_short_id": "Berita positif memprediksi harga akan naik",

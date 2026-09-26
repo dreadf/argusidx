@@ -52,7 +52,7 @@ export default function CaraKamiMengujiPage() {
   const right = (
     <div className="flex flex-col gap-[22px]">
       <Step n={5} title="Ambang naik seiring jumlah uji">
-        <p className={line}>33 percobaan sejauh ini.</p>
+        <p className={line}>35 percobaan sejauh ini.</p>
       </Step>
       <Step n={6} title="Kami koreksi diri sendiri">
         <ul className="mt-2 flex flex-col gap-1.5 text-[13.5px] leading-normal text-muted-foreground">
@@ -79,7 +79,7 @@ export default function CaraKamiMengujiPage() {
       <div className="mt-6 md:mt-8">
         <TwoCol left={left} right={right} ratio="1fr 1fr" />
       </div>
-      <p className="mt-8 text-[13px] text-muted-foreground">33 percobaan untuk 17 keyakinan, termasuk yang gagal.</p>
+      <p className="mt-8 text-[13px] text-muted-foreground">35 percobaan untuk 19 keyakinan, termasuk yang gagal.</p>
     </Page>
   );
 }

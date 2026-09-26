@@ -14,7 +14,7 @@ import { escapeRegExp } from "./text-utils";
  * findings, never collapsed into one, matching the no-combined-verdict
  * rule everywhere else findings are shown.
  *
- * Verified against the real, current `data/app/findings.json` (17 rows,
+ * Verified against the real, current `data/app/findings.json` (19 rows,
  * checked 2026-09-22) — every `belief` string below is copied verbatim
  * from that file, not retyped from memory.
  */
@@ -82,6 +82,14 @@ export const FINDING_TOPIC_KEYWORDS: { belief: string; keywords: string[] }[] = 
   {
     belief: "Rising profits mean a rising share price",
     keywords: ["laba naik", "kenaikan laba", "pertumbuhan laba", "earnings growth", "profit growth", "laba bertumbuh"],
+  },
+  {
+    belief: "Foreign investors buying heavily means the price will rise",
+    keywords: ["asing borong", "asing beli", "asing masuk", "net buy asing", "foreign buy", "top foreign buy", "asing akumulasi", "foreign flow"],
+  },
+  {
+    belief: "Insiders buying their own stock means the price will rise",
+    keywords: ["orang dalam beli", "insider beli", "pembelian insider", "direksi beli", "komisaris beli", "insider buying", "insider buy"],
   },
   {
     belief: "Insiders selling before a price spike warns of a coming crash",

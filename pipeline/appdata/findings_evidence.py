@@ -115,6 +115,18 @@ EVIDENCE: dict[str, dict[str, str]] = {
         "period_id": "Laba 2022–2025, hasil harga Mei–September 2023–2026",
         "limit_id": "Hanya perusahaan yang labanya positif di tahun sebelumnya yang bisa diukur pertumbuhannya, dan hasil harga diambil dari satu jendela Mei–September per tahun, dari riwayat harga riset.",
     },
+    "Foreign investors buying heavily means the price will rise": {
+        "hypothesis_id": "H6",
+        "n": "n=61 hari, 3.660 saham di daftar",
+        "period_id": "Daftar asing harian Januari 2025 sampai September 2026, hasil 5 hari bursa",
+        "limit_id": "Riwayat daftar asing hanya sekitar 20 bulan dalam satu keadaan pasar, dan selisih di bawah sekitar 1,2% per lima hari tidak akan terdeteksi; hasil harga dari riwayat harga riset.",
+    },
+    "Insiders buying their own stock means the price will rise": {
+        "hypothesis_id": "H18",
+        "n": "n=292 kejadian (uji akhir 2026)",
+        "period_id": "Pemberitahuan pembelian 2025 (data awal) dan 2026 (uji akhir), hasil 20 hari bursa",
+        "limit_id": "Hanya 20 bulan pemberitahuan dan 8 bulan uji akhir; pemberitahuan berarti perubahan kepemilikan, belum tentu orang dalam seperti yang dimaksud di grup; hasil harga dari riwayat harga riset.",
+    },
     "Thin float means wild swings": {
         "hypothesis_id": "H1",
         "n": "n=913",
