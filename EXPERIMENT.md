@@ -3313,3 +3313,112 @@ repeat-suspension and price-spike pages; the ordinary rate beside I3 and I9;
 "fragile" lines in the Batasan of C and S2; the suspension span corrected to
 January 2025 to September 2026; the H6 permutation and the H18 non-registered
 variants disclosed on their pages.
+
+## Pre-registration, 2026-09-27 — H18b "Orang dalam beli → harga naik dalam 60 hari" on an independent sample (a falsifiable hypothesis, +1 trial if it runs)
+
+Written before any new filings were pulled and before any outcome is computed.
+**Why it exists.** In the H18 stress tests (ST4) the 60-trading-day horizon was
+significant in both phases (explore +22.4%, p 0.027; holdout +10.4%, p 0.025;
+holdout median +5.0%), but it was not pre-registered and rests on 6 holdout
+months. That result was found by looking at the 2025-2026 data, so those months
+cannot confirm it. H18b tests the same idea on data that has not been seen.
+
+**Sample.** Insider buy filings dated 2021-01-01 to 2024-12-31 (the earlier
+pull covers 2025-01-01 onward only). It runs only if the Sectors filings endpoint
+returns filings for that period (a one-credit size probe decides). If it returns
+none, H18b is dropped, is not counted as a trial, and this is stated.
+
+**Everything else is copied from H18 unchanged:** the buy-filing definition,
+one event per stock per 60 days, entry at the close after the filing date's next
+trading day, excess return over ^JKSE, `adjclose`, events without prices dropped
+and counted. **Only the horizon differs: 60 trading days.**
+
+**Primary statistic.** Mean over calendar months of the month's mean 60-day
+excess return; t-test across months with Newey-West standard errors, lag 2
+(60-day windows of adjacent months overlap). Months are those of the filing date.
+
+**Split.** None: the whole 2021-2024 sample is a single independent holdout,
+because the exploration was done on 2025-2026.
+
+**Power rule (checked with a count before any outcome is computed).** At least 24
+calendar months with 10 or more events each. Otherwise H18b is not run and not counted.
+
+**Decision.** CONFIRMED only if the mean is above 0 with p < 0.05 (two-sided) and
+the median event excess return is above 0. A significant negative result is
+reported as the opposite. Anything else is NOT confirmed, with the minimum
+detectable effect stated. Trial counter 36 if it runs.
+
+**Robustness (reported, not extra trials).** Winsorised at the pooled 1st and 99th
+percentiles; equal-weight universe benchmark; events without takeover-tagged
+filings; stock-resampled bootstrap interval for the mean and median; the same test
+by calendar year. Survivorship: the price cache holds only stocks still listed, so
+delisted names are missing (disclosed; a bias toward better outcomes).
+
+### H18b outcome, 2026-09-27: not run, not counted
+
+The one-credit size probe (`docs/credit_ledger.md`, 2026-09-27) found 76 insider buy
+filings for 2021-01-01 to 2024-12-31, against the 24 months with 10 or more events
+each that the pre-registration requires. The power rule fails, so H18b was **not run
+and is not a trial** (the counter stays at 35). No outcome was computed. The 60-day
+result from ST4 therefore stays an unconfirmed lead: it can only be tested on
+filings that do not exist yet, so the earliest independent check is after the
+2026-2027 filings accumulate, which is after this project's freeze.
+
+## Pre-registration, 2026-09-27 — V: the three "proven" price-outcome results re-checked on Sectors' own closing prices
+
+Written before any Sectors closing price was pulled. **Purpose.** The three
+findings that held up on price outcomes (cheap earnings multiple, small size,
+high dividend yield: H5 and H10) were measured on a free public price history,
+which is a weakness for a Sectors-track project even though the sample check
+(20 symbols) matched. V repeats their **holdout** with Sectors' prices. This is a
+replication of tests already counted, not a new trial: the trial counter stays
+at 35 whatever it shows.
+
+**Data.** MCP tool `fetch-daily-close` (1 credit per page of 30 tickers; about
+32 pages, about 128 credits for four dates) for the four dates the research
+module's nearest-price rule selects: 2025-04-30 and 2025-09-04 (formation year
+2024), 2026-04-30 and 2026-09-04 (formation year 2025). The explore windows
+(2023 and 2024) are not re-pulled (another 128 credits); this is stated as a limit.
+Cap: 140 credits. If any date returns more than 34 pages or covers fewer than 95%
+of the tickers in the universe, the pull stops and is reported.
+
+**Method.** The H10 holdout is run again with its own code, unchanged (same
+formation fields, same filters, same sector-neutral rank statistic, same p-value),
+on a price table built from the Sectors closes, for the three features
+`earnings_yield`, `size` and `total_yield`. Sectors closes are not adjusted for
+dividends, so two references are also printed: (a) the research history on its
+dividend-adjusted `adjclose` (the frozen H10 figure, reproduced first) and (b) the
+research history on its unadjusted `close`, the like-for-like comparison. The
+difference between (b) and the Sectors run isolates the price source; the
+difference between (a) and (b) isolates dividend adjustment.
+
+**Decision (per feature, fixed now).** "Replicated on Sectors prices" if the
+holdout statistic has the same sign as the frozen H10 holdout and p < 0.0167 (0.05
+divided by the three checks). Otherwise "not replicated on Sectors prices", with
+the numbers. If (b) and the Sectors run disagree by more than 0.02 in the
+statistic, the price source itself is reported as inconsistent. Every result is
+published whichever way it falls; the app's "Terbukti" label for a feature
+changes only through a stated rule (it is annotated, not removed, unless the
+Sectors run shows the opposite sign with p < 0.0167).
+
+### Results, V (Sectors closes), run once 2026-09-27 (`v_sectors_recheck.py`)
+
+Data: 129 pages of `fetch-daily-close` (955, 954, 957 and 962 tickers on the four dates; 129
+credits, running total 864 of 1,000). H10's holdout was run again with its own code on three price
+tables. **Not a trial; the counter stays at 35.** Universe rows with a Sectors close: see the JSON.
+
+| Feature | (a) research adjclose | (b) research close, like-for-like | (c) Sectors closes | Rule |
+|---|---|---|---|---|
+| earnings yield (cheap P/E) | rho +0.120 | rho +0.070 (n 1,246) | **rho +0.080, t +2.85, p 0.0043 (n 1,274)** | replicated |
+| size (small companies) | rho -0.199 | rho -0.225 (n 1,549) | **rho -0.226, t -9.25, p below 0.0001 (n 1,598)** | replicated |
+| dividend yield | rho +0.078 | rho +0.004 (n 701) | **rho +0.010, t +0.27, p 0.79 (n 709)** | **not replicated** |
+
+The price source is consistent: |rho(b) - rho(c)| is at most 0.01 for all three (limit 0.02), so
+Sectors' closes and the research closes agree. **The dividend-yield result does not survive when
+dividends are left out of the return.** It is present on the dividend-adjusted series (a) and absent
+on the same history without adjustment (b) and on Sectors' prices (c). The likely reading
+(inferred): a stock that pays a high yield has that income counted in a dividend-adjusted return, so
+part of the "proven" association is the dividend itself, not the price. By the pre-registered rule the
+label is annotated, not removed (the Sectors sign is the same and not opposite). The value result is
+weaker on prices alone (+0.12 to +0.08) but stays significant; the size result is, if anything,
+stronger. Only the holdout was repeated; the explore windows were not re-pulled.

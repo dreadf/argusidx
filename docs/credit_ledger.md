@@ -9,6 +9,13 @@ Free responses (400/401/403/429/5xx) are not logged individually here
 unless they're notable (e.g. revealed something useful) — only billed
 calls count toward the total.
 
+**Credit source (stated by the account owner, 2026-09-27):** all credits belong
+to one Sectors account. Outside the tournament a new account is given 600
+credits; the hackathon allowance on the same account brings the budget to
+1,000. No second account or extra registration was used, which is what
+hackathon rules section 04 forbids. This line records the owner's statement; the
+portal's credit history is the primary record.
+
 | Date | Endpoint | Purpose | Cost | Running total |
 |---|---|---|---|---|
 | 2026-09-05 | `/v2/daily/BBCA/` (2 calls) | Verify split-adjustment + freshness | 2 | 2 |
@@ -57,6 +64,8 @@ calls count toward the total.
 | 2026-09-26 | REST `/v2/foreign-flow/?date=2025-06-13&limit=30` | Step-0 H6 probe: 561 tickers that day, fields net/buy/sell IDR, investor-origin attribution. Approved with the v8 plan | 1 | 603 |
 | 2026-09-26 | REST `/v2/foreign-flow/?limit=1` x5 (2023-06-14, 2024-06-14, 2024-12-13 all empty; 2025-03-14 = 491, 2025-01-31 = 518 tickers) | H6 history-floor search, approved by user (up to 5). **Full-market foreign-flow list starts between 2024-12-13 and 2025-01-31** | 5 | 608 |
 | 2026-09-26 | REST `/v2/foreign-flow/?date=D&limit=30` (+ `order_by=net_foreign_inflow` for sell) x126, 63 dates x 2 lists, H6 main pull | Approved by user ("Alright go, I approve", 126 credits). First run made 25 billed calls then hit a free 429 (data saved incrementally, nothing lost); resumed with a 2 s pause and 429 backoff, 101 more calls. **Two dates returned empty lists: 2026-03-27 and 2026-04-15 (probably exchange holidays that Yahoo still shows as bars); their 4 calls were billed.** `data/raw/foreign_flow_lists_2026-09-26.json`. | 126 | 734 |
+| 2026-09-27 | REST `/v2/filings/?holder_type=insider&transaction_type=buy&start=2021-01-01&end=2024-12-31&limit=1` | H18b size probe, approved by the user ("go ahead and do what you need to do with the credits", after the 1-credit probe was stated). Result: `total_count=76` insider buys for four years (the newest dated 2024-12-31), so the endpoint holds almost nothing before 2025. H18b's power rule (24 months with 10 or more events) cannot be met; no bulk pull was made. | 1 | 735 |
+| 2026-09-27 | MCP `fetch-daily-close` x129 pages (dates 2025-04-30, 2025-09-04, 2026-04-30, 2026-09-04; 32, 32, 32 and 33 pages of 30 tickers) | V: the three proven price-outcome results re-checked on Sectors closes (pre-registration in EXPERIMENT.md, 2026-09-27). Stated before the run: about 128 credits, cap 140; approved by the user ("go ahead and do what you need to do with the credits, just make sure we have a buffer"). `pipeline/appdata/fetch_sectors_closes.py` saves after every page and skips saved pages. A first run stopped on a 429 after 25 pages (not billed, data kept); the second run resumed and waited out further 429s. 129 pages billed, matching 129 saved pages. `data/raw/sectors_daily_close_2026-09-27.json`. | 129 | 864 |
 
 **Total spent as of 2026-09-20: 599 credits.**
 
