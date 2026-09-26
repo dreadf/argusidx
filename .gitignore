@@ -32,3 +32,14 @@ venv/
 
 # Agent worktrees (local isolation copies)
 .claude/worktrees/
+
+# Development and planning files: kept locally, not part of the submission.
+/RULES.md
+/CLAUDE.md
+/BACKLOG.md
+/docs/PLAN.md
+/docs/PRODUCT.md
+/docs/SUBMISSION.md
+/.claude/
+/frontend/CLAUDE.md
+/frontend/AGENTS.md

@@ -29,7 +29,7 @@ step "secret scan"
 python3 scripts/check_no_secrets.py || fail "check_no_secrets"
 
 step "advice-language scan (review hits by hand)"
-python3 scripts/check_no_advice_language.py --dir frontend/src README.md docs/PRODUCT.md || \
+python3 scripts/check_no_advice_language.py --dir frontend/src README.md docs/FINDINGS.md docs/SETUP.md docs/ARCHITECTURE.md || \
   echo "(hits above need a human read; known-good: disclaimers, refusal templates, classifier regexes)"
 
 step "frontend production build"

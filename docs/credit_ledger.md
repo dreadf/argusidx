@@ -9,6 +9,8 @@ Free responses (400/401/403/429/5xx) are not logged individually here
 unless they're notable (e.g. revealed something useful) — only billed
 calls count toward the total.
 
+**Portal balance (read from Sectors "Plans & Usage", 2026-09-27 02:47 GMT+7):** Sectors Hackathon 2026 credits 136 (expire 2026-09-30), plus 600 account credits (expire 2027-03-04). Hackathon credits are spent first, then account credits. 864 + 136 = 1,000 matches this ledger.
+
 **Credit source (stated by the account owner, 2026-09-27):** all credits belong
 to one Sectors account. Outside the tournament a new account is given 600
 credits; the hackathon allowance on the same account brings the budget to

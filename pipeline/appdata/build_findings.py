@@ -1,5 +1,5 @@
-"""Build data/app/findings.json from docs/PRODUCT.md's honesty scoreboard
-table (§5.3/§7.1).
+"""Build data/app/findings.json from docs/FINDINGS.md's scoreboard
+table.
 
 Parses the live markdown table directly rather than hand-transcribing a
 copy - the table's content is genuinely curated research conclusions (not
@@ -30,7 +30,7 @@ from pipeline.appdata.common import APP_DIR, REPO_ROOT
 from pipeline.appdata.findings_evidence import EVIDENCE
 from pipeline.appdata.findings_translations import TRANSLATIONS
 
-PRODUCT_DOC = REPO_ROOT / "docs" / "PRODUCT.md"
+FINDINGS_DOC = REPO_ROOT / "docs" / "FINDINGS.md"
 
 TABLE_HEADER = "| What people believe | | Verdict |"
 
@@ -50,7 +50,7 @@ def parse_scoreboard(markdown_text: str) -> list[dict]:
     try:
         header_idx = next(i for i, line in enumerate(lines) if line.strip() == TABLE_HEADER)
     except StopIteration:
-        raise ValueError(f"Honesty scoreboard table header not found in {PRODUCT_DOC}")
+        raise ValueError(f"Honesty scoreboard table header not found in {FINDINGS_DOC}")
 
     # header_idx+1 is the `|---|---|---|` separator; rows start after that.
     rows = []
@@ -105,18 +105,18 @@ def attach_evidence(scoreboard: list[dict]) -> list[dict]:
 
 
 def main() -> None:
-    markdown_text = PRODUCT_DOC.read_text()
+    markdown_text = FINDINGS_DOC.read_text()
     scoreboard = attach_evidence(attach_translations(parse_scoreboard(markdown_text)))
 
     output = {
-        "source_file": "docs/PRODUCT.md §5.3",
+        "source_file": "docs/FINDINGS.md",
         "scoreboard": scoreboard,
     }
 
     APP_DIR.mkdir(parents=True, exist_ok=True)
     out_path = APP_DIR / "findings.json"
     out_path.write_text(json.dumps(output, indent=2, ensure_ascii=False))
-    print(f"Wrote {out_path} from {PRODUCT_DOC}")
+    print(f"Wrote {out_path} from {FINDINGS_DOC}")
     print(f"{len(scoreboard)} rows")
     for row in scoreboard:
         print(f"  [{row['verdict']:22s}] {row['belief']}")

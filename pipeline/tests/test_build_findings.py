@@ -58,7 +58,7 @@ def test_attach_translations_adds_bahasa_fields():
 
 
 def test_attach_translations_fails_loudly_on_untranslated_row():
-    """A belief added to docs/PRODUCT.md's table with no matching entry
+    """A belief added to docs/FINDINGS.md's table with no matching entry
     in findings_translations.py must fail the build, not ship
     English/research-shorthand copy silently (2026-09-13 user feedback)."""
     rows = [{"belief": "A brand new untranslated belief", "verdict": "no", "label": "No (H99)"}]
@@ -74,7 +74,7 @@ def test_attach_evidence_adds_evidence_field():
 
 
 def test_attach_evidence_fails_loudly_on_missing_row():
-    """A belief added to docs/PRODUCT.md's table with no matching entry
+    """A belief added to docs/FINDINGS.md's table with no matching entry
     in findings_evidence.py must fail the build, not ship a scoreboard
     row with no evidence behind it (2026-09-19 usability audit)."""
     rows = [{"belief": "A brand new belief with no evidence yet", "verdict": "no", "label": "No (H99)"}]

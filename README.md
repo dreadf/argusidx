@@ -2,85 +2,129 @@
 
 [![CI](https://github.com/dreadf/argusidx/actions/workflows/ci.yml/badge.svg)](https://github.com/dreadf/argusidx/actions/workflows/ci.yml)
 
-> For Indonesia's millions of new retail investors, ArgusIDX checks the tips
-> and popular beliefs they act on against IDX data, and shows what has
-> actually held up.
+**A fact-checker for stock tips, built on Sectors data.** You paste a tip you
+received ("BBCA oversold banget, pasti mantul! Asing borong...") and ArgusIDX
+tells you, in plain Bahasa Indonesia, whether the *idea behind the tip* has ever
+held up on Indonesian stock market data, and what usually happens to a stock in
+the situation yours is in. It never says buy, sell or hold.
 
 Built for the **Sectors Hackathon 2026**, Track 03 (Market Intelligence).
-Bahasa Indonesia, mobile-first, no account, no backend to keep running.
+Live app: _link added at deployment_.
 
-| Paste a tip (Tanya) | Beranda | A stock's page |
-|---|---|---|
-| ![Pasting a tip into Tanya, then opening the foreign-flow test](docs/img/tanya.gif) | ![Mobile home](docs/img/mobile-beranda.png) | ![Mobile stock page](docs/img/mobile-saham.png) |
+![Pasting a tip into Tanya, then opening the foreign-flow test](docs/img/tanya.gif)
 
-## The problem
+> For Indonesia's millions of new retail investors, ArgusIDX checks the tips and
+> popular beliefs they act on against IDX data, and shows what has actually held up.
 
-Indonesia's retail investor base is growing faster than its financial
-literacy. KSEI counted **20.32 million** capital-market investors at the end
-of 2025, up 37% from 14.87 million a year earlier ([KSEI, via IPOT, 29 Dec
-2025](https://www.indopremier.com/ipotnews/newsDetail.php?jdl=KSEI__Jumlah_Investor_Pasar_Modal_di_2025_Melonjak_37__Jadi_20_32_Juta_SID&news_id=210837&group_news=IPOTNEWS&news_date=&taging_subtype=REGULATIONS&name=&search=y_general&q=KSEI&halaman=1)).
-OJK's 2025 national survey put capital-market financial **literacy at 17.78%
-and inclusion at 1.34%** ([OJK and BPS, SNLIK 2025](https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/OJK-dan-BPS-Umumkan-Hasil-Survei-Nasional-Literasi-Dan-Inklusi-Keuangan-SNLIK-Tahun-2025.aspx)).
-Retail investors' share of trading rose from 38% in 2024 to 50% by the end
-of 2025, and OJK has said it is targeting "saham gorengan" price
-manipulation ([detik, 2 Jan 2026](https://finance.detik.com/bursa-dan-valas/d-8288678/porsi-transaksi-investor-ritel-naik-ojk-bidik-aksi-goreng-saham)).
-In our own Sectors suspension data, 464 of 588 IDX trading suspensions
-were for unusual price movement.
+## Contents
 
-Tips arrive in chat groups and social media. Screeners and flow trackers show
+1. [Why this exists](#why-this-exists)
+2. [What you can do in the app](#what-you-can-do-in-the-app)
+3. [The research](#the-research) (what we tested, what held up, how we kept it honest)
+4. [How Sectors powers it](#how-sectors-powers-it)
+5. [Engineering](#engineering)
+6. [Try it in three minutes](#try-it-in-three-minutes)
+7. [Run it yourself](#run-it-yourself), [data and limits](#data-provenance-and-limits), [repo map](#repo-map)
+
+## Why this exists
+
+Indonesia's retail investor base is growing faster than its financial literacy.
+KSEI counted **20.32 million** capital-market investors at the end of 2025, up 37%
+from 14.87 million a year earlier ([KSEI, via IPOT, 29 Dec 2025](https://www.indopremier.com/ipotnews/newsDetail.php?jdl=KSEI__Jumlah_Investor_Pasar_Modal_di_2025_Melonjak_37__Jadi_20_32_Juta_SID&news_id=210837&group_news=IPOTNEWS&news_date=&taging_subtype=REGULATIONS&name=&search=y_general&q=KSEI&halaman=1)).
+OJK's 2025 national survey put capital-market financial **literacy at 17.78% and
+inclusion at 1.34%** ([OJK and BPS, SNLIK 2025](https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/OJK-dan-BPS-Umumkan-Hasil-Survei-Nasional-Literasi-Dan-Inklusi-Keuangan-SNLIK-Tahun-2025.aspx)).
+Retail investors' share of trading rose from 38% (2024) to 50% by the end of 2025,
+and OJK says it is targeting "saham gorengan" manipulation ([detik, 2 Jan 2026](https://finance.detik.com/bursa-dan-valas/d-8288678/porsi-transaksi-investor-ritel-naik-ojk-bidik-aksi-goreng-saham)).
+In Sectors' own suspension data, 464 of 588 IDX trading suspensions were for
+unusual price movement.
+
+Tips travel through chat groups and social media. Screeners and flow trackers show
 signals as if they work, and **none of them publish whether they actually do.**
-ArgusIDX does not add a new signal. It publishes honest, tested evidence
-about the signals people already believe, and never tells anyone what to do.
+ArgusIDX does not add another signal. It tests the signals people already believe,
+shows the result, and keeps the failures on the page.
 
-## What it does
+## What you can do in the app
 
-| The moment | What ArgusIDX does |
+The app is in Bahasa Indonesia; each section below names the page and what it does.
+
+| Page | What you do | What you get |
+|---|---|---|
+| **Tanya** (ask) | Paste a message you received, or type a question about a stock. | The stock it mentions (price, and what situation it is in) and, for each claim in the message, whether we tested it and how it came out. Example: "oversold, pasti mantul" is matched to the oversold test and shown as "Tidak terbukti" (not proven). A claim we never tested, like a target price, is labelled "no test for this". The pasted text is read in your browser and never sent anywhere. Optional AI wording; without it, the same facts are shown as plain rows. |
+| **Temuan** (findings) | Open the list of 19 popular beliefs. | One verdict per belief (held up, unclear, did not hold up) with its sample size and its main limit. Open one to see the chart and the method. |
+| **Situasi** (situations) | Pick a situation, for example "a stock that fell 30% and is still below its old peak". | How often that has happened, and what followed, as "N of 100": "of 100 such stocks, 12 got back to their peak within a year". With a plausible range and the caveats. |
+| **Stock page** (`/saham/BBCA`, all 962 companies) | Search any listed company. | Price against its 52-week range, how it compares with its sector, which of the 13 situations it is in now, insider and suspension history. No combined score. |
+| **Jelajah** (explore) | Browse. | *Deteksi anomali*: nine rule-based signals, each with the companies that trigger it, how often the situation ends badly, and how the count changes if the rule is loosened. *Peringkat*: six lists, each ordered by one visible rule (for example ROE compared with similar companies). *Sektor* and *Pasar*: sector breakdowns and today's market. |
+| **Watchlist** | Star stocks. | Saved on your device, no account. |
+
+## The research
+
+Sectors asked for insight that is derived, not a reformatted view of raw data. The
+core of this project is a research programme that tests popular market beliefs the
+way a researcher would, and publishes every result.
+
+**35 counted tests of 19 beliefs. 4 held up, 2 are unclear, 13 did not.**
+
+| Belief | Result | What we found |
+|---|---|---|
+| Cheap stocks (low P/E) do better | Held up | Modest edge; **re-run on Sectors' own closing prices, it still holds** (ρ +0.08, p 0.004) |
+| Small companies do better | Held up | **Re-run on Sectors prices: holds, strongly** (ρ −0.23) |
+| High dividend yield means better returns | Held up, with a caveat | On Sectors prices, which exclude dividends, the association vanishes (ρ +0.01): part of the result is the dividend itself |
+| A payout above earnings predicts a dividend cut | Held up | Cut rate rises from about 14% to 66% across payout groups; 79% for payouts above 100% in the holdout |
+| Oversold (RSI below 30) means a bounce | Did not hold | |
+| **"Asing borong": foreign net buying lifts the price** | Did not hold | Top-30 foreign-buy list against the top-30 sell list, 61 dates: 49 of 100 vs 50 of 100 beat the index over the next 5 days. The buy list had already risen before it was published |
+| **Insiders buying lifts the price** | Not confirmed | Holdout +3.0% (p 0.25), median event about 0 |
+| Positive news predicts a rise | Unclear | The two halves of the data disagree |
+| Rising profits mean a rising share price | Did not hold | Correlation +0.00 on the holdout |
+| Small free float means wild swings | Did not hold | The opposite: wide-float stocks are bumpier |
+
+The full list is in [`docs/FINDINGS.md`](docs/FINDINGS.md); every sample, limit and
+number is in [`EXPERIMENT.md`](EXPERIMENT.md).
+
+**How we kept it honest**
+
+- **Pre-registered.** Each test's rule, sample split and decision criterion is
+  written in `EXPERIMENT.md` and committed to git *before* any result is computed.
+  A trial counter records every test, including the ones that failed.
+- **Explore, then holdout.** Ideas are found on one period and only "held up" if they
+  also hold on a later period the search never saw.
+- **Stress-tested after the fact.** We re-tested our newest results with variations
+  fixed in advance (other windows, benchmarks, resampling by stock, permutation tests)
+  and published 95% ranges for every "N of 100" figure. It found two situations that are
+  fragile (the answer depends on the year or the counting method) and one wrong claim
+  in our own copy (a date range), and we corrected all three on the pages.
+- **Checked on Sectors' own prices.** Price outcomes came from a free public history
+  during research. We then pulled Sectors' closing prices for all listed stocks on four
+  dates through the MCP server and re-ran the three price findings. Two replicated; one
+  did not, and the page says so.
+- **Limits stay on the page.** Survivorship (delisted companies are missing), sample size
+  and the one caveat that matters are next to every number.
+
+## How Sectors powers it
+
+| Sectors data | What it drives |
 |---|---|
-| A friend sends a stock tip | **Tanya**: paste it. The stock and each claim ("oversold", "asing borong") are matched to what we tested. Read entirely in your browser; the pasted text is never sent anywhere. |
-| "Is that belief actually true?" | **Temuan**: 19 popular beliefs, tested against IDX data with their real sample sizes and limits. 4 held up, 2 are unclear, 13 did not. |
-| "My stock fell a lot. Is that normal?" | **Situasi**: 13 situations (a big fall, a suspension, an IPO, a loss year...) as natural frequencies, "88 of 100 had not recovered a year later", never a forecast for one stock. |
-| "What looks unusual right now?" | **Deteksi anomali**: nine rule-based signals, each with its count, its base rate and its sensitivity. |
-| "Which stocks stand out on one open rule?" | **Peringkat**: six lists, each ordered by one visible rule. No combined score. |
+| `companies` (all 962 companies: fundamentals, price bands, banking and mining fields, index membership) | Stock pages, the 13 situations, anomaly signals, rankings, peer comparison |
+| `suspensions` (588 events with IDX's stated reasons) | Suspension situations, the "repeat suspension" analysis |
+| `filings` (insider buy and sell filings) | The insider-buying test, per-stock insider activity |
+| `foreign-flow` (the full-market daily list, 61 usable dates) | The "asing borong" test |
+| `news` (8,801 sentiment-tagged articles) | The news-sentiment tests |
+| `idx-total`, `corporate-actions`, `mining` (commodity prices) | Market chart, dividend history, commodity context |
+| `daily-close` through **MCP** (whole universe, 4 dates) | The re-check of the three price findings on Sectors prices |
+| `daily` (per stock) | A 20-symbol cross-check of the research price history |
 
-Every one of the 962 IDX-listed companies has its own page. Questions can
-also be typed: an LLM (Gemini, optional) may word the answer, every number in
-it is checked against the retrieved facts, and without a key or after the
-3-per-day allowance the same facts are shown without AI.
+- **Two ways in.** REST for the bulk research pulls; a small MCP client
+  (`pipeline/sectors_mcp.py`) that speaks JSON-RPC to the Sectors MCP server, with a
+  billing guard and a call log. The full-market foreign-flow list has no MCP tool, so
+  that test uses REST.
+- **Every call is accounted for.** [`docs/credit_ledger.md`](docs/credit_ledger.md) logs each
+  billed call with its reason: 864 of the 1,000 hackathon credits are spent.
+- **Nothing calls Sectors at request time.** Every number is precomputed, so the app
+  does not depend on any API being reachable.
+- **The foreign-flow test is new to us.** We found no published test of the retail
+  version of the claim (does the daily top-foreign-buy list predict the next weeks); it uses
+  the feed as retail apps show it, with each day's list built from that day's data only.
 
-## How we test, and what we found
-
-- Each hypothesis is **pre-registered with its explore/holdout split before
-  any outcome is computed**, run once, and reported whether it passes or fails.
-  The log is [`EXPERIMENT.md`](EXPERIMENT.md), with a **trial counter (35)**.
-- A belief is only "proven" if it holds on data the search never saw.
-- Nulls get the same space as positives. Descriptive base rates are not
-  counted as tests.
-- Survivorship, sample size and the single limit that matters most are shown
-  next to every result.
-
-**Held up (4):** cheap stocks (low P/E), high dividend yield, small companies,
-and "a dividend larger than earnings predicts a dividend cut" (checked with a
-placebo and three ways of handling missing dividends). Re-run on Sectors' own
-prices, cheap P/E and small size hold; the dividend-yield result only appears
-when dividends count as part of the return.
-**Unclear (2):** price-spike suspensions, and positive news.
-**Did not hold (13):** oversold bounces, trend and moving-average rules, ROE,
-debt, revenue growth, combined signals, insider selling, small free float,
-earnings growth, and the two newest tests, **"foreign buying lifts the price"**
-(the daily top-30 foreign-buy list against the top-30 sell list, 61 days) and
-**"insiders buying lifts the price"**.
-
-## Built on Sectors
-
-| | |
-|---|---|
-| **Data** | Fundamentals and price bands for all 962 companies, suspensions with IDX's stated reasons, insider filings, corporate actions, peer groups, banking and mining fields, IDX total market cap, IPO listing performance, the daily foreign-flow list. |
-| **Access** | REST for the bulk research pulls; an MCP client (`pipeline/sectors_mcp.py`, JSON-RPC over the Sectors MCP server, with a billing guard and a call log) for the daily-close feed used to re-check the price findings, and for probes. The full-market foreign-flow list has no MCP tool, so that test uses REST. |
-| **Credits** | 864 of 1,000 used, every call logged with its reason in [`docs/credit_ledger.md`](docs/credit_ledger.md). |
-| **At request time** | Nothing. Every number is precomputed, so judging does not depend on any API being reachable. |
-| **Price cross-check** | Price outcomes come from a free public history (development only, never shipped), checked against Sectors' own daily closes on a sample of 20 symbols (identical on 1,218 matched days). The three findings that held up on prices were then **re-run on Sectors' closing prices for all listed stocks**: cheap P/E and small size hold; the dividend-yield result does not once dividends are left out of the return. |
-
-## Architecture
+## Engineering
 
 ```mermaid
 flowchart LR
@@ -92,43 +136,58 @@ flowchart LR
   J --> A["/api/ask<br/>optional Gemini"]
 ```
 
-More in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+- **433 Python tests and 159 frontend tests**, run by CI on every push together with
+  a secret scan and a production build ([`ci.yml`](.github/workflows/ci.yml)).
+- **Guards against expensive mistakes:** the client refuses queries below Sectors' data
+  floor (they return empty and still bill), unknown tickers, and billed MCP calls
+  without an explicit flag.
+- **Reproducible:** `scripts/rebuild_app_data.sh` rebuilds every data file; each
+  hypothesis is one module you can run and compare with `EXPERIMENT.md`.
+- **Advice-language scan:** a script fails the build if user-facing text turns into a
+  recommendation. The app works with the LLM switched off.
+- More in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) and [`docs/DATA.md`](docs/DATA.md).
 
-## Run it
+## Try it in three minutes
+
+1. **Tanya:** paste "BBCA oversold banget, pasti mantul! Asing borong, TP 12000". You get BBCA and each claim checked; the target price is marked untested.
+2. **Temuan:** open "Asing borong membuat harga naik" and read the chart and the limits.
+3. **Situasi:** open "Masih di bawah puncak lama".
+4. **A stock page:** `/saham/ASII`.
+5. **Sumber data:** `/temuan/sumber-data` shows the Sectors endpoints and the credit count.
+
+## Run it yourself
 
 ```bash
 cd frontend && npm ci && npm run dev      # http://localhost:3000, no keys needed
 ```
 
-Tests: `python -m pytest pipeline/tests scripts` (358) and `npm test` (159).
-Full instructions, rebuilding the data and the optional Gemini key:
-[`docs/SETUP.md`](docs/SETUP.md).
+Tests, rebuilding the data and the optional Gemini key: [`docs/SETUP.md`](docs/SETUP.md).
 
-## Data provenance
+## Data provenance and limits
 
 | What | Source | Live or frozen |
 |---|---|---|
-| Stock snapshot, peers, flags, rankings, suspensions, insider filings, corporate actions, IPO fields, market cap | Sectors | Snapshot, dated on every page (data as of 13 Sep 2026) |
-| Foreign-flow and insider-buying tests | Sectors daily lists and filings, with price outcomes from the research history | Frozen research results |
-| Beat-gold, drawdown and recovery base rates, other price outcomes | Research price history | Frozen, dated |
+| Stock snapshot, peers, flags, rankings, suspensions, insider filings, corporate actions, market cap | Sectors | Snapshot, dated on every page (13 Sep 2026) |
+| Foreign-flow and insider-buying tests; Sectors closes for the re-check | Sectors | Frozen research results |
+| Most price outcomes, drawdown and recovery base rates | Free public price history (research only, never shipped) | Frozen, dated |
 
-`data/raw/` (the purchased data) is kept in a private data repository:
-Sectors' terms do not allow republishing it. The app and all derived data
-(`data/app/`) are here. Data is frozen at submission, as the rules require.
-All Sectors-sourced data is provided by [Sectors](https://sectors.app).
+`data/raw/` (the purchased data) is kept in a private repository, because Sectors'
+terms do not allow republishing it; the app and all derived data (`data/app/`) are
+here. Data is frozen at submission, as the rules require. Sources for the facts above:
+[`docs/SOURCES.md`](docs/SOURCES.md). Notes may still mention internal planning files
+(`RULES.md`, `BACKLOG.md`, `docs/PLAN.md`, `docs/PRODUCT.md`) that are not part of
+this repository.
 
-## Repo layout
+## Repo map
 
-`pipeline/` research and builders, `frontend/` the Next.js app, `data/app/`
-what the app reads, [`EXPERIMENT.md`](EXPERIMENT.md) the research log,
-[`docs/`](docs/) plan, product spec, sources ([`SOURCES.md`](docs/SOURCES.md))
-and the credit ledger, [`RULES.md`](RULES.md) the hackathon rules and our
-process rules.
+`pipeline/` research modules and data builders, `frontend/` the Next.js app,
+`data/app/` what the app reads, [`EXPERIMENT.md`](EXPERIMENT.md) the research log,
+[`docs/`](docs/) findings, sources, data dictionary, credit ledger, setup and
+architecture.
 
 ## Disclaimer
 
-ArgusIDX is an information and analysis tool. It is not financial advice and
-never recommends buying, selling, or holding any security. Everything shown
-describes historical, statistical relationships in past IDX data. They are
-not predictions and not guarantees. To check whether an offer is legal and
-logical, contact OJK on 157.
+ArgusIDX is an information and analysis tool. It is not financial advice and never
+recommends buying, selling, or holding any security. Everything shown describes
+historical, statistical relationships in past IDX data; they are not predictions and
+not guarantees. To check whether an offer is legal and logical, contact OJK on 157.
