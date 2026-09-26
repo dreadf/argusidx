@@ -2805,6 +2805,49 @@ confirmed. **Known limits, disclosed now:** only about 20 months of list
 history exist, all in one market regime (including the 2026 sell-off), so a
 holdout that agrees with explore is weaker evidence than for H5 or H10.
 
+### Amendment to the H6 pre-registration, 2026-09-26 (before any outcome was computed)
+
+Two clarifications made after the pull and **before the analysis was run**:
+1. The p-value is the exact Student-t value (n is 26 and 35, too few for
+   the normal approximation this project uses elsewhere). Same test.
+2. Two of the 63 dates, 2026-03-27 and 2026-04-15, returned an empty list
+   (probably exchange holidays that the price cache still lists as bars).
+   With no list there is nothing to test, so they are excluded and
+   reported: **61 dates, 26 explore and 35 holdout.** The minimum
+   detectable effect on the holdout rises slightly (about 1.25%).
+
+### Results, H6, run once on 2026-09-26
+
+**H6 — NOT confirmed. No detectable effect in either phase.** Trial
+count: **34**.
+
+| | Explore (26 dates, to 2025-09-30) | Holdout (35 dates, from 2025-10-01) |
+|---|---|---|
+| Mean spread, buy list minus sell list (5-day excess return) | +0.05% (t +0.17, p 0.87) | −0.03% (t −0.05, p 0.96) |
+| Share beating ^JKSE, buy list / sell list | 44.7% / 45.9% | 48.9% / 50.3% |
+| Median excess return, buy / sell | −0.64% / −0.41% | −0.14% / +0.03% |
+| Regression: list membership, controlling past 20-day return, size, date effects | −0.18% (p 0.59) | −0.19% (p 0.72) |
+| Large half / small half spread | −0.47% (p 0.42) / +0.37% (p 0.47) | −0.51% (p 0.41) / +0.02% (p 0.98) |
+
+**In plain numbers:** of 100 stocks on the top foreign-buy list, about 45
+(explore) and 49 (holdout) beat the index over the next 5 trading days;
+of 100 on the sell list, about 46 and 50. No difference.
+
+**What the lists do show (descriptive, not tested).** The buy list had
+already risen: +2.4% on the list day itself versus −0.7% for the sell
+list, and +9.0% versus +5.3% over the previous 20 days (holdout: +2.6%
+vs −0.8% and +6.7% vs +2.6%). So "asing borong" describes a move that
+already happened; after the list appears, the two lists behave alike.
+
+**Limits.** About 20 months of list history, one market regime (including
+the 2026 sell-off); the minimum detectable effect was about 1.2–1.25%
+per 5 days, so an effect smaller than that would not show. 149 of the
+3,660 list appearances had no price in the research cache (39 in explore,
+110 in holdout, mostly delisted or newly listed names), counted here, not
+dropped silently. 2 of 63 dates had an empty list and were excluded (see
+the amendment above). Daily lists only: this says nothing about foreign
+ownership over months or years.
+
 ---
 
 *(Next entries land here as later hypotheses are tested — see the
