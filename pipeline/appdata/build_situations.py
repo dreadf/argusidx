@@ -51,6 +51,9 @@ from datetime import date, datetime, timezone
 
 from pipeline.appdata.common import APP_DIR, RAW_DIR, REPO_ROOT, UNIVERSE_GLOB, latest_dated_file
 from pipeline.hypotheses.m_earnings_streaks import is_more_than_doubled, is_two_year_decline
+from pipeline.hypotheses.m_long_below_peak import in_situation_now as long_below_peak_now
+from pipeline.hypotheses.m_long_below_peak import usable_closes as long_usable_closes
+from pipeline.hypotheses.m_repeat_spike_suspension import price_increase_events
 from pipeline.hypotheses.m_recent_spike import LOOKBACK_BARS as SPIKE_LOOKBACK_BARS
 from pipeline.hypotheses.m_recent_spike import detect_spike_events, usable_closes
 
@@ -209,6 +212,30 @@ def build_earnings_more_than_doubled(qv: dict) -> dict | None:
     return {"year": EARNINGS_YEAR, "earnings": [qv[f"earnings[{y}]"] for y in (EARNINGS_YEAR - 1, EARNINGS_YEAR)]}
 
 
+def build_long_below_peak(entry: dict | None) -> dict | None:
+    """m_long_below_peak's own trigger (a fall event at least 252 bars ago, still below the pre-fall peak)."""
+    closes = long_usable_closes(entry)
+    if closes is None:
+        return None
+    ev = long_below_peak_now(closes)
+    if ev is None:
+        return None
+    last = len(closes) - 1
+    return {
+        "peak_price": ev["peak_price"],
+        "last_close": closes[last],
+        "pct_below_peak": closes[last] / ev["peak_price"] - 1,
+        "trading_days_since_trigger": last - ev["trigger_idx"],
+    }
+
+
+def build_repeat_suspension(dates: list[date] | None) -> dict | None:
+    """Two or more price-increase suspensions of one stock (m_repeat_spike_suspension's events)."""
+    if not dates or len(dates) < 2:
+        return None
+    return {"n_events": len(dates), "first_date": dates[0].isoformat(), "last_date": dates[-1].isoformat()}
+
+
 def build_for_stock(row: dict, prices: dict, suspension_events: list[dict] | None, as_of: date) -> dict:
     qv = row["query_values"]
     return {
@@ -232,10 +259,12 @@ def summarize(by_symbol: dict[str, dict]) -> dict:
         "recent_spike",
         "earnings_two_year_decline",
         "earnings_more_than_doubled",
+        "long_below_peak",
+        "repeat_suspension",
     )
-    counts = {k: sum(1 for v in by_symbol.values() if v[k] is not None) for k in kinds}
+    counts = {k: sum(1 for v in by_symbol.values() if v.get(k) is not None) for k in kinds}
     counts["older_fall_not_a_situation"] = sum(1 for v in by_symbol.values() if v["older_fall"] is not None)
-    counts["no_situation"] = sum(1 for v in by_symbol.values() if all(v[k] is None for k in kinds))
+    counts["no_situation"] = sum(1 for v in by_symbol.values() if all(v.get(k) is None for k in kinds))
     counts["universe"] = len(by_symbol)
     return counts
 
@@ -254,6 +283,12 @@ def main() -> None:
     prices = json.loads(PRICES_5Y_PATH.read_text())
 
     by_symbol = {row["symbol"]: build_for_stock(row, prices, suspensions.get(row["symbol"]), as_of) for row in rows}
+    spike_suspensions = price_increase_events(
+        json.loads(latest_dated_file(RAW_DIR, "suspensions_????-??-??.json").read_text())
+    )
+    for sym, entry in by_symbol.items():
+        entry["long_below_peak"] = build_long_below_peak(prices.get(sym))
+        entry["repeat_suspension"] = build_repeat_suspension(spike_suspensions.get(sym))
     counts = summarize(by_symbol)
 
     output = {

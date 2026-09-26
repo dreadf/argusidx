@@ -164,5 +164,312 @@
         }
       }
     }
+  },
+  "long_below_peak": {
+    "events_measurable": 1096,
+    "still_below_at_252": 999,
+    "recovered_by_504": {
+      "n": 999,
+      "count": 121,
+      "rate": 0.12112112112112113
+    },
+    "of_which_truncated_endpoint": 25,
+    "recovered_exact_504_only": {
+      "n": 974,
+      "count": 119,
+      "rate": 0.12217659137577003
+    }
+  },
+  "repeat_spike_suspension": {
+    "events": 437,
+    "stocks": 229,
+    "eligible_events": 174,
+    "followed_within_365d": 100,
+    "share_followed": 0.5747126436781609,
+    "followed_first_gap_within_7d": 46,
+    "followed_by_gap_over_7d": 72,
+    "share_followed_by_gap_over_7d": 0.41379310344827586,
+    "stocks_with_2_or_more": 134
+  },
+  "near_peak_earnings_decline": {
+    "by_year": {
+      "2022": {
+        "n": 41,
+        "negative": 17,
+        "share_negative": 0.4146341463414634,
+        "beat_median": 12,
+        "share_beat_median": 0.2926829268292683,
+        "median_stock_return": 0.0,
+        "stocks_with_return": 806
+      },
+      "2023": {
+        "n": 13,
+        "negative": 4,
+        "share_negative": 0.3076923076923077,
+        "beat_median": 7,
+        "share_beat_median": 0.5384615384615384,
+        "median_stock_return": 0.03301688400691127,
+        "stocks_with_return": 870
+      },
+      "2024": {
+        "n": 14,
+        "negative": 4,
+        "share_negative": 0.2857142857142857,
+        "beat_median": 7,
+        "share_beat_median": 0.5,
+        "median_stock_return": 0.15156257356051062,
+        "stocks_with_return": 887
+      }
+    },
+    "pooled": {
+      "n": 68,
+      "negative": 25,
+      "share_negative": 0.36764705882352944,
+      "beat_median": 26,
+      "share_beat_median": 0.38235294117647056
+    }
+  },
+  "dividend_streaks": {
+    "N=1,Y=2022": {
+      "paid_again": {
+        "n": 283,
+        "count": 249,
+        "rate": 0.8798586572438163
+      },
+      "paid_at_least_as_much": {
+        "n": 283,
+        "count": 176,
+        "rate": 0.6219081272084805
+      },
+      "paid_again_reported_only": {
+        "n": 281,
+        "count": 248,
+        "rate": 0.8825622775800712
+      },
+      "paid_at_least_as_much_reported_only": {
+        "n": 281,
+        "count": 175,
+        "rate": 0.6227758007117438
+      }
+    },
+    "N=1,Y=2023": {
+      "paid_again": {
+        "n": 322,
+        "count": 285,
+        "rate": 0.8850931677018633
+      },
+      "paid_at_least_as_much": {
+        "n": 322,
+        "count": 167,
+        "rate": 0.5186335403726708
+      },
+      "paid_again_reported_only": {
+        "n": 319,
+        "count": 284,
+        "rate": 0.890282131661442
+      },
+      "paid_at_least_as_much_reported_only": {
+        "n": 319,
+        "count": 166,
+        "rate": 0.5203761755485894
+      }
+    },
+    "N=1,Y=2024": {
+      "paid_again": {
+        "n": 341,
+        "count": 296,
+        "rate": 0.8680351906158358
+      },
+      "paid_at_least_as_much": {
+        "n": 341,
+        "count": 184,
+        "rate": 0.5395894428152492
+      },
+      "paid_again_reported_only": {
+        "n": 335,
+        "count": 292,
+        "rate": 0.8716417910447761
+      },
+      "paid_at_least_as_much_reported_only": {
+        "n": 335,
+        "count": 181,
+        "rate": 0.5402985074626866
+      }
+    },
+    "N=2,Y=2022": {
+      "paid_again": {
+        "n": 209,
+        "count": 191,
+        "rate": 0.9138755980861244
+      },
+      "paid_at_least_as_much": {
+        "n": 209,
+        "count": 129,
+        "rate": 0.6172248803827751
+      },
+      "paid_again_reported_only": {
+        "n": 208,
+        "count": 191,
+        "rate": 0.9182692307692307
+      },
+      "paid_at_least_as_much_reported_only": {
+        "n": 208,
+        "count": 129,
+        "rate": 0.6201923076923077
+      }
+    },
+    "N=2,Y=2023": {
+      "paid_again": {
+        "n": 249,
+        "count": 226,
+        "rate": 0.9076305220883534
+      },
+      "paid_at_least_as_much": {
+        "n": 249,
+        "count": 128,
+        "rate": 0.5140562248995983
+      },
+      "paid_again_reported_only": {
+        "n": 247,
+        "count": 225,
+        "rate": 0.9109311740890689
+      },
+      "paid_at_least_as_much_reported_only": {
+        "n": 247,
+        "count": 127,
+        "rate": 0.5141700404858299
+      }
+    },
+    "N=2,Y=2024": {
+      "paid_again": {
+        "n": 285,
+        "count": 259,
+        "rate": 0.9087719298245615
+      },
+      "paid_at_least_as_much": {
+        "n": 285,
+        "count": 160,
+        "rate": 0.5614035087719298
+      },
+      "paid_again_reported_only": {
+        "n": 281,
+        "count": 256,
+        "rate": 0.9110320284697508
+      },
+      "paid_at_least_as_much_reported_only": {
+        "n": 281,
+        "count": 158,
+        "rate": 0.5622775800711743
+      }
+    },
+    "N=3,Y=2022": null,
+    "N=3,Y=2023": {
+      "paid_again": {
+        "n": 191,
+        "count": 177,
+        "rate": 0.9267015706806283
+      },
+      "paid_at_least_as_much": {
+        "n": 191,
+        "count": 97,
+        "rate": 0.5078534031413613
+      },
+      "paid_again_reported_only": {
+        "n": 189,
+        "count": 176,
+        "rate": 0.9312169312169312
+      },
+      "paid_at_least_as_much_reported_only": {
+        "n": 189,
+        "count": 96,
+        "rate": 0.5079365079365079
+      }
+    },
+    "N=3,Y=2024": {
+      "paid_again": {
+        "n": 226,
+        "count": 212,
+        "rate": 0.9380530973451328
+      },
+      "paid_at_least_as_much": {
+        "n": 226,
+        "count": 134,
+        "rate": 0.5929203539823009
+      },
+      "paid_again_reported_only": {
+        "n": 224,
+        "count": 211,
+        "rate": 0.9419642857142857
+      },
+      "paid_at_least_as_much_reported_only": {
+        "n": 224,
+        "count": 134,
+        "rate": 0.5982142857142857
+      }
+    },
+    "N=4,Y=2022": null,
+    "N=4,Y=2023": null,
+    "N=4,Y=2024": {
+      "paid_again": {
+        "n": 177,
+        "count": 170,
+        "rate": 0.96045197740113
+      },
+      "paid_at_least_as_much": {
+        "n": 177,
+        "count": 101,
+        "rate": 0.5706214689265536
+      },
+      "paid_again_reported_only": {
+        "n": 177,
+        "count": 170,
+        "rate": 0.96045197740113
+      },
+      "paid_at_least_as_much_reported_only": {
+        "n": 177,
+        "count": 101,
+        "rate": 0.5706214689265536
+      }
+    }
+  },
+  "yield_spike_cut": {
+    "2024": {
+      "triggered": 47,
+      "cut_missing_counted_as_cut": {
+        "n": 47,
+        "count": 26,
+        "rate": 0.5531914893617021
+      },
+      "cut_missing_left_out": {
+        "n": 47,
+        "count": 26,
+        "rate": 0.5531914893617021
+      }
+    },
+    "2025": {
+      "triggered": 62,
+      "cut_missing_counted_as_cut": {
+        "n": 0,
+        "count": 0,
+        "rate": null
+      },
+      "cut_missing_left_out": {
+        "n": 0,
+        "count": 0,
+        "rate": null
+      }
+    }
+  },
+  "payout_above_100_cut_rate": {
+    "explore": {
+      "n": 82,
+      "cuts": 50,
+      "cut_rate": 0.6097560975609756
+    },
+    "holdout": {
+      "n": 88,
+      "cuts": 70,
+      "cut_rate": 0.7954545454545454
+    }
   }
 }

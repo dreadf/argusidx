@@ -205,6 +205,8 @@ def test_build_for_stock_and_summary_count_the_no_situation_case():
         "recent_spike": 0,
         "earnings_two_year_decline": 0,
         "earnings_more_than_doubled": 0,
+        "long_below_peak": 0,
+        "repeat_suspension": 0,
         "older_fall_not_a_situation": 0,
         "no_situation": 1,
         "universe": 2,
@@ -253,3 +255,25 @@ def test_earnings_more_than_doubled_is_strictly_more_than_twice_a_positive_base(
     }
     assert build_earnings_more_than_doubled({"earnings[2024]": 10.0, "earnings[2025]": 20.0}) is None  # exactly 2x
     assert build_earnings_more_than_doubled({"earnings[2024]": -10.0, "earnings[2025]": 5.0}) is None  # a loss base
+
+
+def test_build_long_below_peak_reports_pct_below_and_none_for_short_history():
+    from pipeline.appdata.build_situations import build_long_below_peak
+
+    assert build_long_below_peak(None) is None
+    assert build_long_below_peak({"close": [100.0] * 50}) is None  # too little history
+    fall = [100.0] * 20 + [60.0] * 300  # a 40% fall well over 252 bars ago, no recovery
+    out = build_long_below_peak({"close": fall})
+    assert out["peak_price"] == 100.0 and abs(out["pct_below_peak"] + 0.40) < 1e-9
+    assert out["trading_days_since_trigger"] >= 252
+
+
+def test_build_repeat_suspension_needs_two_events():
+    from datetime import date
+
+    from pipeline.appdata.build_situations import build_repeat_suspension
+
+    assert build_repeat_suspension(None) is None
+    assert build_repeat_suspension([date(2024, 1, 5)]) is None
+    out = build_repeat_suspension([date(2024, 1, 5), date(2024, 6, 1), date(2025, 2, 3)])
+    assert out == {"n_events": 3, "first_date": "2024-01-05", "last_date": "2025-02-03"}

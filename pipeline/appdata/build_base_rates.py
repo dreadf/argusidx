@@ -50,7 +50,13 @@ import json
 import statistics
 
 from pipeline.appdata.common import APP_DIR, RAW_DIR, REPO_ROOT, UNIVERSE_GLOB, latest_dated_file
+from pipeline.hypotheses.m_dividend_streaks import build_dividend_streaks
 from pipeline.hypotheses.m_earnings_streaks import build_more_than_doubled, build_two_year_decline
+from pipeline.hypotheses.m_long_below_peak import build_long_below_peak
+from pipeline.hypotheses.m_near_peak_earnings_decline import build_near_peak_earnings_decline
+from pipeline.hypotheses.m_payout_flag_check import EXPLORE_YEARS, H4_UNIVERSE_PATH, HOLDOUT_YEARS, cut_rate_above_100
+from pipeline.hypotheses.m_repeat_spike_suspension import build_repeat_spike_suspension
+from pipeline.hypotheses.m_yield_spike_cut import build_yield_spike_cut
 from pipeline.hypotheses.m_recent_spike import build_spike_base_rate
 from pipeline.stats import max_drawdown
 
@@ -236,6 +242,23 @@ def build_recovery_after_fall(prices5y: dict) -> dict:
 
 # --- Assembly ----------------------------------------------------------------
 
+def _without(d: dict, key: str) -> dict:
+    return {k: v for k, v in d.items() if k != key}
+
+
+def _read_suspensions() -> list[dict]:
+    return json.loads(latest_dated_file(RAW_DIR, "suspensions_????-??-??.json").read_text())
+
+
+def _payout_cut_rates() -> dict:
+    """H4's own universe file, payout ratio strictly above 100%, per phase (no new test)."""
+    h4_universe = json.loads(H4_UNIVERSE_PATH.read_text())
+    return {
+        "explore": cut_rate_above_100(h4_universe, EXPLORE_YEARS),
+        "holdout": cut_rate_above_100(h4_universe, HOLDOUT_YEARS),
+    }
+
+
 def main() -> None:
     if not PRICES_1Y_PATH.exists() or not PRICES_5Y_PATH.exists():
         raise FileNotFoundError(
@@ -271,6 +294,14 @@ def main() -> None:
         "recent_spike": build_spike_base_rate(prices5y),
         "earnings_two_year_decline": build_two_year_decline(universe),
         "earnings_more_than_doubled": build_more_than_doubled(universe),
+        # Added 2026-09-26 (EXPERIMENT.md "Pre-registration, 2026-09-26 (batch 1)"): same rule,
+        # imported from the finished modules so trigger and base rate cannot drift.
+        "long_below_peak": _without(build_long_below_peak(prices5y), "in_situation_now"),
+        "repeat_spike_suspension": build_repeat_spike_suspension(_read_suspensions()),
+        "near_peak_earnings_decline": build_near_peak_earnings_decline(universe, prices5y),
+        "dividend_streaks": build_dividend_streaks(universe),
+        "yield_spike_cut": build_yield_spike_cut(universe),
+        "payout_above_100_cut_rate": _payout_cut_rates(),
     }
 
     APP_DIR.mkdir(parents=True, exist_ok=True)
