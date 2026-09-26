@@ -1,0 +1,2 @@
+{"ts": "2026-09-26T15:58:51", "tool": "fetch-listing-performance", "arguments": {"symbol": "ASLI"}, "is_error": false}
+{"ts": "2026-09-26T15:58:52", "tool": "fetch-daily-close", "arguments": {"date": "2024-06-14", "limit": 30}, "is_error": false}
