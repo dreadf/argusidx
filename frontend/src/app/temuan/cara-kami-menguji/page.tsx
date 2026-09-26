@@ -1,85 +1,66 @@
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
-import { Page, PageTitle, Sub, TwoCol } from "@/components/kit";
-import { VerdictMark } from "@/components/verdict-mark";
+import { Page, PageTitle, Sub, TextLink } from "@/components/kit";
+import { getFindingsData } from "@/lib/findings-data";
+import { summarizeFindings, TRIAL_COUNT } from "@/lib/findings-summary";
+import { formatDateId } from "@/lib/format";
+import { getMarketData } from "@/lib/market-data";
 
 /**
- * "Cara kami menguji": the process behind every verdict, and how this
- * project has caught its own mistakes. Every claim traces to
- * EXPERIMENT.md; nothing is asserted that is not on record there.
+ * "Cara kami menguji": board "Cara-Menguji-2". Keyakinan and terbukti are
+ * counted from data/app/findings.json; the trial count is the pinned
+ * EXPERIMENT.md counter (lib/findings-summary.ts).
  */
-function Step({ n, title, children }: { n: number; title: string; children?: React.ReactNode }) {
-  return (
-    <div className="flex gap-3.5">
-      <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-accent text-[13px] font-bold text-accent-foreground">{n}</span>
-      <div className="min-w-0 flex-1">
-        <div className="text-[15px] font-semibold leading-snug">{title}</div>
-        {children}
-      </div>
-    </div>
-  );
-}
+const RULES = [
+  { title: "Tulis dulu", line: "Aturan uji dicatat dengan tanggal sebelum hasilnya dilihat." },
+  { title: "Dua data terpisah", line: "Ditemukan di data awal, diuji ulang di data yang belum dilihat." },
+  { title: "Semua hasil tampil", line: "Yang gagal ditampilkan sama jelasnya." },
+];
 
-const line = "mt-1 text-[13.5px] leading-normal text-muted-foreground";
+const LIMITS = [
+  "Hanya perusahaan yang masih tercatat, jadi angka cenderung lebih baik dari kenyataan.",
+  "Batas pada tanda diuji sampai +/-20% dan tidak diubah setelah melihat hasil.",
+  "Beberapa uji punya data pendek, dan ditandai begitu.",
+];
 
-export default function CaraKamiMengujiPage() {
-  const left = (
-    <div className="flex flex-col gap-[22px]">
-      <Step n={1} title="Tiga hasil pengujian">
-        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2 text-[13.5px]">
-          <span className="inline-flex items-center gap-1.5">
-            <VerdictMark verdict="yes" size={18} /> Terbukti
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <VerdictMark verdict="mixed_or_inconclusive" size={18} /> Tidak konsisten
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <VerdictMark verdict="no" size={18} /> Tidak terbukti
-          </span>
-        </div>
-      </Step>
-      <Step n={2} title="Tebakan ditulis dulu">
-        <p className={line}>Sebelum data dilihat.</p>
-      </Step>
-      <Step n={3} title="Sebab sebelum akibat">
-        <p className={line}>Penyebab diukur sebelum hasilnya.</p>
-      </Step>
-      <Step n={4} title="Data dibagi dua">
-        <p className={line}>Satu bagian untuk mencari, satu untuk memastikan.</p>
-      </Step>
-    </div>
-  );
-  const right = (
-    <div className="flex flex-col gap-[22px]">
-      <Step n={5} title="Ambang naik seiring jumlah uji">
-        <p className={line}>35 percobaan sejauh ini.</p>
-      </Step>
-      <Step n={6} title="Kami koreksi diri sendiri">
-        <ul className="mt-2 flex flex-col gap-1.5 text-[13.5px] leading-normal text-muted-foreground">
-          <li>P/E rendah: sebagian efek dari satu periode suku bunga.</li>
-          <li>Suspensi: rata-rata naik, tapi 2 dari 3 saham tertinggal.</li>
-          <li>Angka penurunan pertama (-74,7%) salah, jadi -49,5%.</li>
-        </ul>
-      </Step>
-      <Step n={7} title="Setiap baris punya buktinya">
-        <Link href="/temuan/a-high-payout-ratio-predicts-a-dividend-cut" className="mt-2.5 flex items-center justify-between gap-3 border-y border-border py-3.5">
-          <span>
-            <span className="block text-sm font-semibold">Contoh: dividen besar dan pemotongan dividen</span>
-            <span className="mt-0.5 block text-xs text-muted-foreground">Lihat angka aslinya</span>
-          </span>
-          <ChevronRight className="size-[18px] shrink-0 text-muted-foreground" />
-        </Link>
-      </Step>
-    </div>
-  );
+export default async function CaraKamiMengujiPage() {
+  const [findings, market] = await Promise.all([getFindingsData(), getMarketData()]);
+  const { beliefs, proven } = summarizeFindings(findings.scoreboard);
+  const stats = [
+    { value: TRIAL_COUNT, label: "uji", accent: false },
+    { value: beliefs, label: "keyakinan", accent: false },
+    { value: proven, label: "terbukti", accent: true },
+  ];
   return (
     <Page>
-      <PageTitle title="Cara kami menguji" back={{ href: "/temuan", label: "Temuan" }} />
-      <Sub>7 aturan di balik setiap hasil.</Sub>
-      <div className="mt-6 md:mt-8">
-        <TwoCol left={left} right={right} ratio="1fr 1fr" />
+      <PageTitle title="Cara kami menguji" pill={`Data ${formatDateId(market.as_of)}`} back={{ href: "/temuan", label: "Temuan" }} />
+      <div className="md:max-w-3xl">
+        <Sub>Bagaimana keyakinan diuji dan apa batasnya.</Sub>
+        <div className="mt-4 flex gap-7">
+          {stats.map((s) => (
+            <div key={s.label}>
+              <div className={`font-mono text-[28px] font-bold leading-none tabular-nums ${s.accent ? "text-[var(--viz-diverging-pos)]" : ""}`}>{s.value}</div>
+              <div className="mt-1 text-xs text-muted-foreground">{s.label}</div>
+            </div>
+          ))}
+        </div>
+        <ul className="mt-4 border-t border-border">
+          {RULES.map((r) => (
+            <li key={r.title} className="border-b border-border py-2.5">
+              <div className="text-sm font-semibold leading-snug">{r.title}</div>
+              <div className="mt-0.5 text-xs leading-normal text-muted-foreground">{r.line}</div>
+            </li>
+          ))}
+        </ul>
+        <h2 className="mt-6 text-lg font-bold leading-tight tracking-[-0.01em]">Batasan</h2>
+        <ul className="mt-2.5 list-disc space-y-1 pl-[18px] text-[13.5px] leading-[1.7] text-muted-foreground">
+          {LIMITS.map((l) => (
+            <li key={l}>{l}</li>
+          ))}
+        </ul>
+        <div className="mt-2 flex flex-wrap gap-x-6">
+          <TextLink href="/temuan">Catatan lengkap</TextLink>
+          <TextLink href="/temuan/sumber-data">Sumber data</TextLink>
+        </div>
       </div>
-      <p className="mt-8 text-[13px] text-muted-foreground">35 percobaan untuk 19 keyakinan, termasuk yang gagal.</p>
     </Page>
   );
 }

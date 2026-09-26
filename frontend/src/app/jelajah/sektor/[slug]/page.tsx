@@ -82,17 +82,17 @@ export default async function SektorDetailPage({ params }: { params: Promise<{ s
         <TextLink href={`/jelajah/sektor/${meta.slug}/saham`}>Lihat {row.company_count} saham di sektor ini</TextLink>
       </section>
       <section>
-        <H2>Saham dengan tanda</H2>
-        <p className="mt-2 text-sm">{totalFlagged} dari {row.company_count} saham kena satu tanda atau lebih.</p>
+        <H2>Saham dengan anomali</H2>
+        <p className="mt-2 text-sm">{totalFlagged} dari {row.company_count} saham kena satu anomali atau lebih.</p>
         <div className="mt-2 flex flex-col">
           {flagged.map((s) => (
             <Link key={s.code} href={`/saham/${s.code}`} className="flex items-center justify-between border-b border-border py-3 text-sm">
               <b>{s.code}</b>
-              <span className="text-xs text-muted-foreground">{s.flagCount} tanda</span>
+              <span className="text-xs text-muted-foreground">{s.flagCount} anomali</span>
             </Link>
           ))}
         </div>
-        <TextLink href="/jelajah/tanda">Lihat semua tanda</TextLink>
+        <TextLink href="/jelajah/anomali">Lihat semua anomali</TextLink>
       </section>
     </div>
   );

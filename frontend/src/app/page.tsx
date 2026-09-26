@@ -51,7 +51,7 @@ export default async function Home() {
   const ways = [
     { href: "/jelajah", icon: BarChart3, title: "Peringkat", line: "Jauh dari puncak dan lainnya" },
     { href: "/jelajah/sektor", icon: LayoutGrid, title: "Sektor", line: `${sectors.sectors.length} sektor, daftar saham` },
-    { href: "/jelajah/tanda", icon: Flag, title: "Tanda", line: "Fakta tak biasa dari laporan" },
+    { href: "/jelajah/anomali", icon: Flag, title: "Deteksi anomali", line: "Kejadian tak biasa dan seberapa sering" },
     { href: "/jelajah/pasar", icon: TrendingUp, title: `Pasar per ${asOf.slice(0, 5)}`, line: "Nilai pasar, naik-turun" },
   ];
 

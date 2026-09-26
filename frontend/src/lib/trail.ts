@@ -63,8 +63,8 @@ export function labelForPath(url: string): string {
       return seg[1] ?? "Saham";
     case "jelajah":
       if (seg[1] === "sektor") return seg[3] === "saham" ? "Daftar saham" : "Sektor";
-      if (seg[1] === "tanda") return "Tanda";
-      if (seg[1] === "berita") return "Berita";
+      if (seg[1] === "anomali" || seg[1] === "tanda") return "Deteksi anomali";
+      if (seg[1] === "peringkat") return "Peringkat";
       return "Jelajah";
     case "situasi":
       return "Situasi";

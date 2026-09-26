@@ -1,11 +1,11 @@
 import { PageTitle, UnderlineTabs } from "@/components/kit";
 
-export type JelajahTab = "peringkat" | "sektor" | "tanda" | "pasar";
+export type JelajahTab = "peringkat" | "sektor" | "anomali" | "pasar";
 
 const TABS: { key: JelajahTab; label: string; href: string }[] = [
   { key: "peringkat", label: "Peringkat", href: "/jelajah" },
   { key: "sektor", label: "Sektor", href: "/jelajah/sektor" },
-  { key: "tanda", label: "Tanda", href: "/jelajah/tanda" },
+  { key: "anomali", label: "Deteksi anomali", href: "/jelajah/anomali" },
   { key: "pasar", label: "Pasar", href: "/jelajah/pasar" },
 ];
 

@@ -94,7 +94,7 @@ export default async function PasarPage() {
           <Mover key={m.symbol} code={m.symbol} name={shortName(m.company_name)} change={m.daily_close_change} last={i === topMoves.length - 1} />
         ))}
       </div>
-      <TextLink href="/jelajah?urut=pergerakan">Lihat semua pergerakan</TextLink>
+      <TextLink href="/jelajah/peringkat/pergerakan">Lihat semua pergerakan</TextLink>
     </div>
   );
 
