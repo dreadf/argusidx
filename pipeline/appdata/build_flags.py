@@ -1,9 +1,24 @@
 """Build data/app/flags.json from the purchased universe sweep.
 
-All four anomaly flags (docs/PRODUCT.md §6). Thresholds and year pairs
-below were reverse-derived to match the plan's already-stated,
-hand-verified counts exactly (29/326, 14/852, 89/462) - not re-invented -
-confirmed by running each against the real universe sweep. The 4th flag
+All four anomaly flags (docs/PRODUCT.md §6). Each threshold has a stated
+rationale, and EXPERIMENT.md ("Results, batch 2", F1) reports how many
+stocks each flag marks at -20% / as shipped / +20% of its threshold, with
+no outcome read and no threshold changed afterwards:
+  - payout above earnings: prior-year dividend paid is more than the year's
+    earnings (ratio above 100%). Since 2026-09-26 this uses H4's own
+    construct (2025 dividend x shares / 2025 earnings) rather than the
+    trailing snapshot `payout_ratio`, which disagreed with H4 for 17 of the
+    29 stocks it flagged (EXPERIMENT.md, batch 1 I2). The count moved from
+    29 to the H4-construct count; the old snapshot version is kept as
+    `build_payout_snapshot_flag` for that comparison.
+  - near the high, earnings down: within 10% of the all-time high while
+    2025 earnings are below 2024's (a round 10% band).
+  - yield far above own average: at least 1.5x the company's own average
+    dividend yield ("at least 50% above").
+  - LQ45 member with free float under 25% (a quarter of shares).
+The counts of the older version (29/326, 14/852, 89/462) were once
+reverse-derived to match the plan's hand-verified numbers; that is now
+disclosed rather than defended. The 4th flag
 (free float < 25% while in LQ45) needed a real re-sweep with `indices`
 added (2026-09-13, ~6 credits, see docs/credit_ledger.md) - the field
 existed in the live schema but not the original 2026-09-12 sweep.
@@ -15,6 +30,7 @@ from __future__ import annotations
 import json
 
 from pipeline.appdata.common import APP_DIR, RAW_DIR, UNIVERSE_GLOB, latest_dated_file
+from pipeline.stats import payout_ratio_from_totals
 
 PAYOUT_RATIO_THRESHOLD = 1.0  # exactly 100% does NOT trip the flag (§26)
 NEAR_ATH_THRESHOLD = 0.10  # within 10% of all-time high
@@ -22,7 +38,31 @@ YIELD_ABOVE_AVG_MULTIPLIER = 1.5  # "far above" = at least 50% above own average
 LQ45_LOW_FLOAT_THRESHOLD = 0.25  # free float strictly under 25%
 
 
+PAYOUT_YEAR = 2025
+
+
 def build_payout_above_earnings(rows: list[dict]) -> dict:
+    """H4's construct: PAYOUT_YEAR dividend x shares / PAYOUT_YEAR earnings above 100%."""
+    evaluable = []
+    flagged = []
+    for row in rows:
+        qv = row["query_values"]
+        ratio = payout_ratio_from_totals(
+            qv.get(f"total_dividend[{PAYOUT_YEAR}]"),
+            qv.get(f"earnings[{PAYOUT_YEAR}]"),
+            qv.get(f"outstanding_shares[{PAYOUT_YEAR}]"),
+        )
+        if ratio is None:
+            continue
+        evaluable.append(row["symbol"])
+        if ratio > PAYOUT_RATIO_THRESHOLD:
+            flagged.append({"symbol": row["symbol"], "company_name": row.get("company_name"), "payout_ratio": ratio})
+    flagged.sort(key=lambda r: r["payout_ratio"], reverse=True)
+    return {"flagged": flagged, "evaluable_count": len(evaluable), "flagged_count": len(flagged)}
+
+
+def build_payout_snapshot_flag(rows: list[dict]) -> dict:
+    """The pre-2026-09-26 flag on the trailing snapshot `payout_ratio` (kept for the I2 comparison)."""
     evaluable = []
     flagged = []
     for row in rows:

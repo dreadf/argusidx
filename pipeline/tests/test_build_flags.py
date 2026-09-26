@@ -5,6 +5,7 @@ from pipeline.appdata.build_flags import (
     build_lq45_low_float,
     build_near_ath_earnings_decline,
     build_payout_above_earnings,
+    build_payout_snapshot_flag,
     build_yield_far_above_average,
 )
 
@@ -13,19 +14,40 @@ def _row(symbol, **qv):
     return {"symbol": symbol, "query_values": qv}
 
 
-def test_payout_exactly_100_percent_does_not_trip():
+def _h4_row(symbol, dps, earnings, shares):
+    return _row(symbol, **{"total_dividend[2025]": dps, "earnings[2025]": earnings, "outstanding_shares[2025]": shares})
+
+
+def test_payout_h4_construct_exactly_100_percent_does_not_trip():
+    rows = [_h4_row("A.JK", 100, 1000, 10), _h4_row("B.JK", 100.01, 1000, 10)]  # 1.0 and 1.0001
+    result = build_payout_above_earnings(rows)
+    assert result["flagged_count"] == 1
+    assert result["flagged"][0]["symbol"] == "B.JK"
+
+
+def test_payout_h4_construct_ignores_the_snapshot_ratio_and_undefined_rows():
+    rows = [
+        _row("A.JK", payout_ratio=1.42, **{"total_dividend[2025]": 30, "earnings[2025]": 1000, "outstanding_shares[2025]": 10}),  # 0.3 by H4's construct
+        _row("B.JK", payout_ratio=0.2),  # nothing to recompute
+    ]
+    result = build_payout_above_earnings(rows)
+    assert result["flagged_count"] == 0
+    assert result["evaluable_count"] == 1
+
+
+def test_payout_snapshot_exactly_100_percent_does_not_trip():
     """§26: exactly 100% payout must fall on the non-flagged side of the
     line, per the plan's explicit `> 1.0` rule."""
     rows = [_row("A.JK", payout_ratio=1.0), _row("B.JK", payout_ratio=1.0001)]
-    result = build_payout_above_earnings(rows)
+    result = build_payout_snapshot_flag(rows)
     assert result["flagged_count"] == 1
     assert result["flagged"][0]["symbol"] == "B.JK"
     assert result["evaluable_count"] == 2
 
 
-def test_payout_excludes_nulls_from_denominator():
+def test_payout_snapshot_excludes_nulls_from_denominator():
     rows = [_row("A.JK", payout_ratio=1.5), _row("B.JK", payout_ratio=None)]
-    result = build_payout_above_earnings(rows)
+    result = build_payout_snapshot_flag(rows)
     assert result["evaluable_count"] == 1
     assert result["flagged_count"] == 1
 

@@ -6,7 +6,7 @@ counted in the trial counter, no new outcome test. Definitions were frozen
 in EXPERIMENT.md ("Pre-registration, 2026-09-26 (batch 1)"); run once.
 
 (a) Construct check. The app flag `payout_above_earnings`
-    (`pipeline.appdata.build_flags.build_payout_above_earnings`) trips on the
+    (`pipeline.appdata.build_flags.build_payout_snapshot_flag`, the pre-2026-09-26 flag) trips on the
     snapshot field `payout_ratio` > 1.0 (exactly 100% does not trip it). H4
     measures the payout ratio as `stats.payout_ratio_from_totals(
     total_dividend[Y], earnings[Y], outstanding_shares[Y])`. For every flagged
@@ -35,7 +35,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from pipeline.appdata.build_flags import PAYOUT_RATIO_THRESHOLD, build_payout_above_earnings
+from pipeline.appdata.build_flags import PAYOUT_RATIO_THRESHOLD, build_payout_snapshot_flag
 from pipeline.hypotheses.h4_payout_dividend_cuts import (
     EXPLORE_YEARS,
     HOLDOUT_YEARS,
@@ -58,7 +58,7 @@ def h4_ratio(qv: dict, year: int) -> float | None:
 
 def check_flag_construct(universe: list[dict], year: int) -> dict:
     """Recompute the H4 ratio for every stock the flag marks; list those that do not exceed 1.0."""
-    flagged = build_payout_above_earnings(universe)["flagged"]
+    flagged = build_payout_snapshot_flag(universe)["flagged"]
     by_symbol = {r["symbol"]: r.get("query_values") or {} for r in universe}
     agree = 0
     disagree: list[dict] = []

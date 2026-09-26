@@ -6,151 +6,191 @@
       {
         "symbol": "MLPT.JK",
         "company_name": "PT Multipolar Technology Tbk",
-        "payout_ratio": 16.9148865601328
+        "payout_ratio": 19.4019471488178
       },
       {
-        "symbol": "TRUS.JK",
-        "company_name": "Trust Finance Indonesia Tbk",
-        "payout_ratio": 6.26321108656099
-      },
-      {
-        "symbol": "CTBN.JK",
-        "company_name": "Citra Tubindo Tbk",
-        "payout_ratio": 4.58532552591763
-      },
-      {
-        "symbol": "APLI.JK",
-        "company_name": "Asiaplast Industries Tbk",
-        "payout_ratio": 4.11502785751255
-      },
-      {
-        "symbol": "ROTI.JK",
-        "company_name": "PT Nippon Indosari Corpindo Tbk",
-        "payout_ratio": 2.59394745331676
+        "symbol": "PSSI.JK",
+        "company_name": "PT IMC Pelita Logistik Tbk",
+        "payout_ratio": 10.536337814067764
       },
       {
         "symbol": "KKGI.JK",
         "company_name": "Resource Alam Indonesia Tbk",
-        "payout_ratio": 2.34702635789208
+        "payout_ratio": 5.616480426587886
       },
       {
-        "symbol": "RAJA.JK",
-        "company_name": "Rukun Raharja Tbk",
-        "payout_ratio": 2.06862338936549
-      },
-      {
-        "symbol": "ATLA.JK",
-        "company_name": "PT Atlantis Subsea Indonesia Tbk",
-        "payout_ratio": 1.88484824333677
-      },
-      {
-        "symbol": "CNMA.JK",
-        "company_name": "PT Nusantara Sejahtera Raya Tbk",
-        "payout_ratio": 1.69733096931337
-      },
-      {
-        "symbol": "TEBE.JK",
-        "company_name": "PT Dana Brata Luhur Tbk",
-        "payout_ratio": 1.60216193234316
+        "symbol": "FISH.JK",
+        "company_name": "FKS Multi Agro Tbk",
+        "payout_ratio": 4.4812343829073855
       },
       {
         "symbol": "ACRO.JK",
         "company_name": "PT Samcro Hyosung Adilestari Tbk.",
-        "payout_ratio": 1.42220497816265
+        "payout_ratio": 3.3355263154699557
       },
       {
-        "symbol": "EAST.JK",
-        "company_name": "PT Eastparc Hotel Tbk",
-        "payout_ratio": 1.41955992484468
+        "symbol": "YUPI.JK",
+        "company_name": "PT Yupi Indo Jelly Gum Tbk",
+        "payout_ratio": 3.098814605370623
       },
       {
-        "symbol": "GHON.JK",
-        "company_name": "PT Gihon Telekomunikasi Indonesia Tbk",
-        "payout_ratio": 1.40373442394274
+        "symbol": "RAJA.JK",
+        "company_name": "Rukun Raharja Tbk",
+        "payout_ratio": 2.7815690966860918
       },
       {
-        "symbol": "MPMX.JK",
-        "company_name": "PT Mitra Pinasthika Mustika Tbk",
-        "payout_ratio": 1.36512485808981
+        "symbol": "SCMA.JK",
+        "company_name": "Surya Citra Media Tbk",
+        "payout_ratio": 2.5903524944636325
       },
       {
-        "symbol": "SGRO.JK",
-        "company_name": "PT Prime Agri Resources Tbk",
-        "payout_ratio": 1.34726593726948
+        "symbol": "EURO.JK",
+        "company_name": "PT Estee Gold Feet Tbk",
+        "payout_ratio": 1.9230769227287883
       },
       {
-        "symbol": "BESS.JK",
-        "company_name": "PT Batulicin Nusantara Maritim Tbk.",
-        "payout_ratio": 1.34271503778749
+        "symbol": "KDSI.JK",
+        "company_name": "Kedawung Setia Industrial Tbk",
+        "payout_ratio": 1.8537074148663442
       },
       {
-        "symbol": "BSSR.JK",
-        "company_name": "Baramulti Suksessarana Tbk",
-        "payout_ratio": 1.30371125980817
+        "symbol": "MBAP.JK",
+        "company_name": "PT Mitrabara Adiperdana Tbk",
+        "payout_ratio": 1.799487153764074
+      },
+      {
+        "symbol": "DMAS.JK",
+        "company_name": "PT Puradelta Lestari Tbk",
+        "payout_ratio": 1.7469879518163969
+      },
+      {
+        "symbol": "ROTI.JK",
+        "company_name": "PT Nippon Indosari Corpindo Tbk",
+        "payout_ratio": 1.7341191878397488
+      },
+      {
+        "symbol": "LIFE.JK",
+        "company_name": "PT MSIG Life Insurance Indonesia Tbk",
+        "payout_ratio": 1.63265306127199
       },
       {
         "symbol": "RALS.JK",
         "company_name": "Ramayana Lestari Sentosa Tbk",
-        "payout_ratio": 1.27886506557694
+        "payout_ratio": 1.604909418514358
+      },
+      {
+        "symbol": "FWCT.JK",
+        "company_name": "PT Wijaya Cahaya Timber Tbk",
+        "payout_ratio": 1.6032064128941887
+      },
+      {
+        "symbol": "ATLA.JK",
+        "company_name": "PT Atlantis Subsea Indonesia Tbk",
+        "payout_ratio": 1.4971066667469861
+      },
+      {
+        "symbol": "SKRN.JK",
+        "company_name": "PT Superkrane Mitra Utama Tbk",
+        "payout_ratio": 1.397624039104934
+      },
+      {
+        "symbol": "BUAH.JK",
+        "company_name": "PT Segar Kumala Indonesia Tbk",
+        "payout_ratio": 1.330420968731381
+      },
+      {
+        "symbol": "PTBA.JK",
+        "company_name": "Bukit Asam Tbk",
+        "payout_ratio": 1.308807086667777
+      },
+      {
+        "symbol": "NICL.JK",
+        "company_name": "PT PAM Mineral Tbk",
+        "payout_ratio": 1.2966965112817848
+      },
+      {
+        "symbol": "MMLP.JK",
+        "company_name": "PT Mega Manunggal Property Tbk",
+        "payout_ratio": 1.2899999999183662
+      },
+      {
+        "symbol": "AMAG.JK",
+        "company_name": "Asuransi Multi Artha Guna Tbk",
+        "payout_ratio": 1.2654223345970625
+      },
+      {
+        "symbol": "PTPS.JK",
+        "company_name": "PT Pulau Subur Tbk",
+        "payout_ratio": 1.2350119904923633
+      },
+      {
+        "symbol": "PGAS.JK",
+        "company_name": "PT Perusahaan Gas Negara Tbk",
+        "payout_ratio": 1.224576559585413
+      },
+      {
+        "symbol": "ADRO.JK",
+        "company_name": "Alamtri Resources Indonesia Tbk",
+        "payout_ratio": 1.2209944341976797
+      },
+      {
+        "symbol": "CRSN.JK",
+        "company_name": "PT Carsurin Tbk",
+        "payout_ratio": 1.1948717947236747
       },
       {
         "symbol": "TLKM.JK",
         "company_name": "PT Telkom Indonesia (Persero) Tbk",
-        "payout_ratio": 1.265697869291
+        "payout_ratio": 1.1814976269352058
       },
       {
-        "symbol": "BOLT.JK",
-        "company_name": "PT Garuda Metalindo Tbk.",
-        "payout_ratio": 1.26270857093105
+        "symbol": "CTBN.JK",
+        "company_name": "Citra Tubindo Tbk",
+        "payout_ratio": 1.1728662823382225
       },
       {
-        "symbol": "BBLD.JK",
-        "company_name": "Buana Finance Tbk",
-        "payout_ratio": 1.22637559910581
+        "symbol": "MPMX.JK",
+        "company_name": "PT Mitra Pinasthika Mustika Tbk",
+        "payout_ratio": 1.1485664677251255
       },
       {
-        "symbol": "META.JK",
-        "company_name": "Nusantara Infrastructure Tbk",
-        "payout_ratio": 1.20186490534832
+        "symbol": "MFMI.JK",
+        "company_name": "Multifiling Mitra Indonesia Tbk",
+        "payout_ratio": 1.1333333338747542
+      },
+      {
+        "symbol": "BTPN.JK",
+        "company_name": "PT Bank SMBC Indonesia Tbk",
+        "payout_ratio": 1.1128254847492622
+      },
+      {
+        "symbol": "SGRO.JK",
+        "company_name": "PT Prime Agri Resources Tbk",
+        "payout_ratio": 1.096870945986698
+      },
+      {
+        "symbol": "ASDM.JK",
+        "company_name": "Asuransi Dayin Mitra Tbk",
+        "payout_ratio": 1.063676141195695
+      },
+      {
+        "symbol": "ITMG.JK",
+        "company_name": "Indo Tambangraya Megah Tbk",
+        "payout_ratio": 1.0514515758685243
       },
       {
         "symbol": "SIDO.JK",
         "company_name": "PT Industri Jamu Dan Farmasi Sido Muncul Tbk",
-        "payout_ratio": 1.14826749922272
+        "payout_ratio": 1.0396518375149082
       },
       {
-        "symbol": "CMRY.JK",
-        "company_name": "PT Cisarua Mountain Dairy Tbk",
-        "payout_ratio": 1.12426169115928
-      },
-      {
-        "symbol": "ASGR.JK",
-        "company_name": "Astra Graphia Tbk",
-        "payout_ratio": 1.07329294897086
-      },
-      {
-        "symbol": "DMMX.JK",
-        "company_name": "PT Digital Mediatama Maxima Tbk",
-        "payout_ratio": 1.06475902851809
-      },
-      {
-        "symbol": "DUTI.JK",
-        "company_name": "Duta Pertiwi Tbk",
-        "payout_ratio": 1.05972812244375
-      },
-      {
-        "symbol": "MARK.JK",
-        "company_name": "PT Mark Dynamics Indonesia Tbk",
-        "payout_ratio": 1.01632052771561
-      },
-      {
-        "symbol": "CITA.JK",
-        "company_name": "Cita Mineral Investindo Tbk",
-        "payout_ratio": 1.0130383697069
+        "symbol": "PBID.JK",
+        "company_name": "PT Panca Budi Idaman Tbk",
+        "payout_ratio": 1.0297697060577622
       }
     ],
-    "evaluable_count": 326,
-    "flagged_count": 29
+    "evaluable_count": 306,
+    "flagged_count": 37
   },
   "near_ath_earnings_decline": {
     "flagged": [
