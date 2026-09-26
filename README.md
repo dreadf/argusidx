@@ -9,9 +9,9 @@
 Built for the **Sectors Hackathon 2026**, Track 03 (Market Intelligence).
 Bahasa Indonesia, mobile-first, no account, no backend to keep running.
 
-| Beranda | A stock's page | Beliefs, tested |
+| Paste a tip (Tanya) | Beranda | A stock's page |
 |---|---|---|
-| ![Mobile home](docs/img/mobile-beranda.png) | ![Mobile stock page](docs/img/mobile-saham.png) | ![Temuan](docs/img/desktop-temuan.png) |
+| ![Pasting a tip into Tanya, then opening the foreign-flow test](docs/img/tanya.gif) | ![Mobile home](docs/img/mobile-beranda.png) | ![Mobile stock page](docs/img/mobile-saham.png) |
 
 ## The problem
 
@@ -60,7 +60,9 @@ it is checked against the retrieved facts, and without a key or after the
 
 **Held up (4):** cheap stocks (low P/E), high dividend yield, small companies,
 and "a dividend larger than earnings predicts a dividend cut" (checked with a
-placebo and three ways of handling missing dividends).
+placebo and three ways of handling missing dividends). Re-run on Sectors' own
+prices, cheap P/E and small size hold; the dividend-yield result only appears
+when dividends count as part of the return.
 **Unclear (2):** price-spike suspensions, and positive news.
 **Did not hold (13):** oversold bounces, trend and moving-average rules, ROE,
 debt, revenue growth, combined signals, insider selling, small free float,
@@ -73,10 +75,10 @@ earnings growth, and the two newest tests, **"foreign buying lifts the price"**
 | | |
 |---|---|
 | **Data** | Fundamentals and price bands for all 962 companies, suspensions with IDX's stated reasons, insider filings, corporate actions, peer groups, banking and mining fields, IDX total market cap, IPO listing performance, the daily foreign-flow list. |
-| **Access** | REST for the bulk pulls; an MCP client (`pipeline/sectors_mcp.py`, JSON-RPC over the Sectors MCP server, with a billing guard and a call log) for probes such as `listing-performance` and daily closes. The full-market foreign-flow list has no MCP tool, so that test uses REST. |
-| **Credits** | 734 of 1,000 used, every call logged with its reason in [`docs/credit_ledger.md`](docs/credit_ledger.md). |
+| **Access** | REST for the bulk research pulls; an MCP client (`pipeline/sectors_mcp.py`, JSON-RPC over the Sectors MCP server, with a billing guard and a call log) for the daily-close feed used to re-check the price findings, and for probes. The full-market foreign-flow list has no MCP tool, so that test uses REST. |
+| **Credits** | 864 of 1,000 used, every call logged with its reason in [`docs/credit_ledger.md`](docs/credit_ledger.md). |
 | **At request time** | Nothing. Every number is precomputed, so judging does not depend on any API being reachable. |
-| **Price cross-check** | Price outcomes come from a free public history (development only, never shipped) and were checked against Sectors' own daily closes: identical on all 1,218 matched days for a stratified sample of 20 symbols. |
+| **Price cross-check** | Price outcomes come from a free public history (development only, never shipped), checked against Sectors' own daily closes on a sample of 20 symbols (identical on 1,218 matched days). The three findings that held up on prices were then **re-run on Sectors' closing prices for all listed stocks**: cheap P/E and small size hold; the dividend-yield result does not once dividends are left out of the return. |
 
 ## Architecture
 

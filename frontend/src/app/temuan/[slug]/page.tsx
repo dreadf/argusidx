@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { AxisColumns } from "@/components/charts/axis-charts";
 import { BackLink } from "@/components/back-link";
 import { Card, Cells, Page, ResearchNote, Stat, TwoCol } from "@/components/kit";
+import { recheckNote } from "@/lib/sectors-recheck";
 import { EvidenceSide, LimitList, NumberRow, QCard, SideBlock } from "@/components/qcard";
 import { PairBars } from "@/components/situation-ui";
 import { VerdictMark } from "@/components/verdict-mark";
@@ -233,6 +234,7 @@ export default async function TemuanDetailPage({ params }: { params: Promise<{ s
   const appears = APPEARS[ev.hypothesis_id] ?? [];
   const extra = EXTRA[ev.hypothesis_id];
   const chart = chartFor(row);
+  const recheck = await recheckNote(row.belief);
   const tab = VERDICT_TAB[row.verdict];
   const chip = VERDICT_CHIP[row.verdict];
 
@@ -275,6 +277,11 @@ export default async function TemuanDetailPage({ params }: { params: Promise<{ s
       </div>
     </SideBlock>
   );
+  const rechecked = recheck ? (
+    <SideBlock title="Dicek ulang dengan data Sectors">
+      <p className="text-[13.5px] leading-relaxed text-muted-foreground">{recheck}</p>
+    </SideBlock>
+  ) : null;
   const limits = (
     <SideBlock title="Batasan">
       <LimitList items={extra?.limits ?? [ev.limit_id]} />
@@ -299,6 +306,7 @@ export default async function TemuanDetailPage({ params }: { params: Promise<{ s
   const side = (
     <EvidenceSide>
       {tested}
+      {rechecked}
       {links}
       {limits}
       <Link href="/temuan/cara-kami-menguji" className="text-[13.5px] font-medium text-[var(--viz-accent)]">

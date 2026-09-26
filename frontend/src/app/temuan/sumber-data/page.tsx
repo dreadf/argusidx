@@ -5,14 +5,15 @@ import { getMarketData } from "@/lib/market-data";
 
 /** Where each block of numbers comes from. Copy is the board's ("Sumber-Data"). */
 const SOURCES = [
-  { title: "Daftar perusahaan dan laporan keuangan", endpoint: "companies", usedFor: "Semua situasi dan tanda", via: "MCP" },
-  { title: "Suspensi", endpoint: "suspensions", usedFor: "Pernah disuspensi, langganan suspensi", via: "MCP" },
-  { title: "Transaksi insider", endpoint: "filings", usedFor: "Orang dalam beli", via: "MCP" },
-  { title: "Berita bertanda bullish dan bearish", endpoint: "news", usedFor: "Temuan sentimen berita", via: "MCP" },
-  { title: "Harga komoditas dan tambang", endpoint: "mining", usedFor: "Konteks komoditas", via: "MCP" },
-  { title: "Kinerja sejak IPO", endpoint: "listing-performance", usedFor: "Harga IPO dibanding sekarang", via: "MCP" },
+  { title: "Daftar perusahaan dan laporan keuangan", endpoint: "companies", usedFor: "Semua situasi dan tanda", via: "REST" },
+  { title: "Suspensi", endpoint: "suspensions", usedFor: "Pernah disuspensi, langganan suspensi", via: "REST" },
+  { title: "Transaksi insider", endpoint: "filings", usedFor: "Orang dalam beli", via: "REST" },
+  { title: "Berita bertanda bullish dan bearish", endpoint: "news", usedFor: "Temuan sentimen berita", via: "REST" },
+  { title: "Harga komoditas dan tambang", endpoint: "mining", usedFor: "Konteks komoditas", via: "REST" },
+  { title: "Harga penutupan semua saham, empat tanggal", endpoint: "daily-close", usedFor: "Cek ulang tiga temuan harga dengan harga Sectors", via: "MCP" },
+  { title: "Riwayat harga saham untuk uji hasil harga", endpoint: "sumber publik gratis, hanya saat riset", usedFor: "Sebagian besar hasil uji harga; tiga temuan dicek ulang dengan harga Sectors", via: "Luar Sectors" },
   { title: "Arus asing harian semua saham", endpoint: "foreign-flow (daftar)", usedFor: "Asing borong", via: "REST" },
-  { title: "Total IHSG dan indeks", endpoint: "idx-total, index-daily", usedFor: "Pasar per tanggal", via: "MCP" },
+  { title: "Total IHSG dan indeks", endpoint: "idx-total", usedFor: "Pasar per tanggal", via: "REST" },
 ];
 
 const BUDGET = 1000;
@@ -44,7 +45,7 @@ export default async function SumberDataPage() {
           ))}
         </ul>
         <h2 className="mt-6 text-lg font-bold leading-tight tracking-[-0.01em]">Data dibekukan</h2>
-        <Sub>Terakhir diambil 6 Oktober 2026 dan tidak diperbarui lagi, sesuai aturan lomba. Setiap halaman menyebut tanggal datanya.</Sub>
+        <Sub>Data Sectors terakhir diambil per {formatDateId(market.as_of)} dan tidak diperbarui lagi, sesuai aturan lomba. Setiap halaman menyebut tanggal datanya.</Sub>
       </div>
     </Page>
   );
