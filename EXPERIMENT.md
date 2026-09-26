@@ -2744,6 +2744,67 @@ Earlier notes said 77 stocks for A; the pre-registered definition
 (`earnings[Y-2] > 0`, all three years reported) gives 136. The
 pre-registered number is the one used.
 
+## Pre-registration, 2026-09-26 — H6 "Asing borong → harga naik" (a falsifiable hypothesis, +1 trial)
+
+Written **before any list data was pulled**. Only availability probes were
+run (5 + 4 credits, ledger 2026-09-26): they show the full-market
+foreign-flow list is empty until between 2024-12-13 and 2025-01-31, and
+they looked at no prices or outcomes.
+
+**Belief.** The stocks on a day's "top foreign net buy" list (what retail
+apps show as *asing borong*) do better afterwards than the stocks on the
+"top foreign net sell" list.
+
+**Why it is not obvious.** Foreign flow follows past returns (feedback
+trading) and moves the price the same day (price impact), so a rise on
+the day is not evidence. Studies of Indonesia disagree on whether it
+predicts later returns (Ekaputra 2014 same-day only; Arroisi &
+Koesrindartoto 2019 no effect on returns; Froot et al. 2001 country-level
+predictive). No study found tests the retail "daily list".
+
+**Data.** Sectors REST `/v2/foreign-flow/?date=D` (no MCP tool exists),
+page 1 of the two orderings: top 30 by `net_foreign_inflow` (buy list) and
+top 30 by ascending `net_foreign_inflow` (sell list). Investor-origin
+attribution. Outcomes from the Yahoo dev cache `adjclose` (research only,
+never shipped) and `^JKSE`.
+
+**Dates.** ^JKSE trading days from 2025-01-31 (first verified list date)
+to 2026-09-11; every 6th trading day from a seeded random offset (seed
+20260926, offset 0), so outcome windows never overlap. 63 dates. Explore =
+dates up to 2025-09-30 (26); holdout = from 2025-10-01 (37).
+
+**Outcome.** From the close of D+1 to the close of D+6 (5 trading days,
+starting the first day a user who saw the list that evening could act),
+minus the same-window ^JKSE return. Stocks with a missing price are counted
+and reported, not silently dropped.
+
+**Primary statistic.** Per date: mean excess return of the buy list minus
+mean excess return of the sell list (stock returns winsorised at the pooled
+1st/99th percentile). A one-sample t-test of that spread across dates,
+per phase.
+
+**Decision.** CONFIRMED only if the holdout spread is > 0 with p < 0.05
+(two-sided) and the explore spread has the same sign. A significant
+negative holdout spread is reported as the opposite of the belief. Anything
+else: NOT confirmed, stated with the minimum detectable effect. +1 trial
+(33 → 34).
+
+**Robustness (pre-registered, not extra trials).** (1) Regress the spread's
+stock-level returns on list membership plus past 20-day return and log size
+(price × prior-year shares), date fixed effects, errors clustered by date;
+(2) medians and the share beating ^JKSE; (3) large half vs small half by
+market cap; (4) same-day return and past-20-day return of each list,
+descriptive only, to show price pressure and feedback.
+
+**Power, stated up front.** Simulated on the price cache (500 random dates,
+two random groups of 30 among the 200 largest, 2025–26 volatility): the
+per-date spread has SD about 2.5% at 5 days. With 37 holdout dates the
+minimum detectable effect (80% power) is about **1.2%** per 5 days; pooled
+over 63 dates about 0.85%. A smaller true effect would come out as NOT
+confirmed. **Known limits, disclosed now:** only about 20 months of list
+history exist, all in one market regime (including the 2026 sell-off), so a
+holdout that agrees with explore is weaker evidence than for H5 or H10.
+
 ---
 
 *(Next entries land here as later hypotheses are tested — see the
