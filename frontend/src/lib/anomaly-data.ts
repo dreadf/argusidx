@@ -33,7 +33,7 @@ export interface AnomalyRow {
 export interface ExtraBaseRates {
   repeat_spike_suspension: { share_followed: number };
   near_peak_earnings_decline: { pooled: { share_negative: number } };
-  yield_spike_cut: Record<string, { triggered: number; cut_missing_counted_as_cut: { rate: number | null } }>;
+  yield_spike_cut: Record<string, { triggered: number; cut_missing_counted_as_cut: { rate: number | null; n?: number } }>;
   payout_above_100_cut_rate: { explore: { cut_rate: number }; holdout: { cut_rate: number } };
 }
 
@@ -56,11 +56,11 @@ export function outOfTen(a: number, b: number): string {
 }
 
 export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, extra: ExtraBaseRates, flags: FlagsData): AnomalyRow[] {
-  // Count: the newest year's spikes. Rate: the newest year whose next-year cut is already known.
+  // Count: stocks flagged now (the same definition the flag page lists). Rate: the newest past year whose next-year cut is already known, with its case count.
   const years = Object.keys(extra.yield_spike_cut).sort();
-  const newest = extra.yield_spike_cut[years[years.length - 1]];
   const withRate = years.map((y) => extra.yield_spike_cut[y]).reverse().find((y) => y.cut_missing_counted_as_cut.rate !== null);
   const cutRate = withRate?.cut_missing_counted_as_cut.rate ?? null;
+  const cutCases = withRate?.cut_missing_counted_as_cut.n ?? null;
 
   return [
     {
@@ -139,7 +139,7 @@ export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, e
       icon: "flag",
       title: "Dividen jauh di atas rata-rata sendiri",
       isNew: true,
-      line: `${newest.triggered} perusahaan. ${cutRate === null ? "Belum ada hasil tahun berikutnya" : `${of100(cutRate)} dari 100 memangkas dividen`}`,
+      line: `${flags.yield_far_above_average.flagged_count} perusahaan. ${cutRate === null ? "Belum ada hasil tahun berikutnya" : `${of100(cutRate)} dari 100 memangkas dividen${cutCases ? ` (dari ${cutCases} kasus tahun lalu)` : ""}`}`,
       situationSlug: null,
       flagKind: "dividen-tinggi",
     },

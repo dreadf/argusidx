@@ -2,13 +2,12 @@ import { GLOSSARY, type GlossaryKey } from "@/lib/glossary";
 import { findingSlug, getFindingsData, type FindingRow } from "@/lib/findings-data";
 import { formatDateId, idNum, pctFrom, shortName, signedPct } from "@/lib/format";
 import { getMarketData } from "@/lib/market-data";
-import { getNewsSentiment } from "@/lib/news-data";
 import { getRoeHistory } from "@/lib/roe-data";
 import { getSituations } from "@/lib/situations";
 import { getAllStockCodes, type StockPageData } from "@/lib/stock-data";
 import { isRetested, sampleLine } from "@/lib/finding-copy";
 import { formatPe, peVsSector } from "@/lib/pe";
-import { fiveYearPhrase, newsRelative, pricePosition, relativeToTypical } from "@/lib/stock-summary";
+import { fiveYearPhrase, pricePosition, relativeToTypical } from "@/lib/stock-summary";
 import { matchFindingTopics } from "./finding-topics";
 import { escapeRegExp } from "./text-utils";
 
@@ -99,7 +98,7 @@ const GLOSSARY_TRIGGERS: { key: GlossaryKey; re: RegExp }[] = [
   { key: "beat_gold", re: /\bemas\b/i },
 ];
 
-function stockEvidence(code: string, d: StockPageData, ctx: { universe: number; newsShare: number | null; newsTotal: number; marketBullish: number; roeSeries: string | null }): Evidence[] {
+function stockEvidence(code: string, d: StockPageData, ctx: { universe: number; roeSeries: string | null }): Evidence[] {
   const out: Evidence[] = [];
   const href = `/saham/${code}`;
   const add = (text: string) => out.push({ id: `S${out.length + 1}`, kind: "saham", text, href, linkLabel: `Halaman ${code}` });
@@ -134,10 +133,6 @@ function stockEvidence(code: string, d: StockPageData, ctx: { universe: number; 
     add(peRel === null ? `P/E ${code}: ${formatPe(sc.own_pe)}, jadi tidak dibandingkan dengan sektor.` : `P/E ${code} ${formatPe(sc.own_pe)}, ${peRel} nilai tengah sektor (${formatPe(sc.sector_typical_pe)}).`);
   }
   if (ctx.roeSeries) add(ctx.roeSeries);
-
-  if (ctx.newsShare !== null && ctx.newsTotal >= 5) {
-    add(`Berita tentang ${code}: ${ctx.newsTotal} berita, ${idNum(ctx.newsShare, 0)}% bertanda bullish, ${newsRelative(ctx.newsShare, ctx.marketBullish)} rata-rata semua saham (${idNum(ctx.marketBullish, 0)}%). Penandaan bullish atau bearish datang dari Sectors.`);
-  }
 
   add(
     flags.length === 0
@@ -179,9 +174,7 @@ export async function retrieveEvidence(question: string, stockCode: string | nul
   const q = question.toLowerCase();
 
   if (stockCode && stockData) {
-    const [news, roe, universe] = await Promise.all([getNewsSentiment(), getRoeHistory(stockCode, stockData.snapshot.sector), getAllStockCodes()]);
-    const counts = news.by_symbol[stockCode];
-    const total = counts ? counts.bullish + counts.bearish : 0;
+    const [roe, universe] = await Promise.all([getRoeHistory(stockCode, stockData.snapshot.sector), getAllStockCodes()]);
     let roeSeries: string | null = null;
     if (roe) {
       const pairs = roe.years.map((y, i) => [y, roe.own[i]] as const).filter((p): p is readonly [number, number] => p[1] !== null);
@@ -189,7 +182,7 @@ export async function retrieveEvidence(question: string, stockCode: string | nul
         roeSeries = `ROE ${stockCode} per tahun: ${pairs.map(([y, v]) => `${y} ${idNum(v)}%`).join(", ")}.`;
       }
     }
-    evidence.push(...stockEvidence(stockCode, stockData, { universe: universe.length, newsShare: total > 0 ? (counts.bullish / total) * 100 : null, newsTotal: total, marketBullish: news.bullish_mentions_pct, roeSeries }));
+    evidence.push(...stockEvidence(stockCode, stockData, { universe: universe.length, roeSeries }));
   }
 
   const [findings, situations] = await Promise.all([getFindingsData(), getSituations()]);

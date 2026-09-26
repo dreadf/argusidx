@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
   // request. Trace from the repo root and include the folder explicitly.
   outputFileTracingRoot: path.join(__dirname, ".."),
   outputFileTracingIncludes: {
-    "/*": ["../data/app/**/*"],
+    "/*": ["../data/app/**/*", "../docs/credit_ledger.md"],
   },
   // Peringkat, Sektor and Tanda became tabs under Jelajah. The old URLs
   // stay valid so existing links, the README and scripts/preflight.sh keep
