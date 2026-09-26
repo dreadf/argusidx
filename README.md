@@ -1,5 +1,7 @@
 # ArgusIDX
 
+[![CI](https://github.com/dreadf/argusidx/actions/workflows/ci.yml/badge.svg)](https://github.com/dreadf/argusidx/actions/workflows/ci.yml)
+
 Built for the **Sectors Hackathon 2026** (Track 03: Market Intelligence).
 
 An evidence layer for Indonesian retail investors: for a given stock,

@@ -4,6 +4,7 @@ figures asserted against the real sweep are the ones the stock page draws
 (BBCA 15.5 to 20.4 percent, sector median 4.2 to 4.7); a mismatch means
 the aggregation drifted.
 """
+from pipeline.tests.raw_data import needs_raw
 import json
 
 from pipeline.appdata.build_roe_history import YEARS, build, roe_percent
@@ -34,6 +35,7 @@ def test_sector_median_ignores_missing_and_counts_reporters():
     assert out["by_symbol"]["A.JK"][1] is None
 
 
+@needs_raw
 def test_real_sweep_matches_the_stock_page_figures():
     rows = json.loads(latest_dated_file(RAW_DIR, UNIVERSE_GLOB).read_text())
     out = build(rows)

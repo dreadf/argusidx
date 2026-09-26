@@ -1,6 +1,7 @@
 """
 Tests for pipeline/guards.py.
 """
+from pipeline.tests.raw_data import needs_raw
 from datetime import date
 
 import pytest
@@ -25,11 +26,13 @@ def test_data_floor_accepts_later_date():
     assert_within_data_floor(date(2024, 1, 1))  # must not raise
 
 
+@needs_raw
 def test_known_ticker_case_insensitive():
     assert is_known_ticker("BBCA.JK")
     assert is_known_ticker("bbca.jk")
 
 
+@needs_raw
 def test_unknown_ticker_rejected():
     assert not is_known_ticker("NOTAREALTICKER.JK")
 

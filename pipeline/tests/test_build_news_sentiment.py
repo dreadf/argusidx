@@ -4,6 +4,7 @@ against the real corpus (8,801 articles, 15,820 mentions, 795 symbols,
 BBCA 389/208) are the ones EXPERIMENT.md and the UI quote; a mismatch means
 the aggregation drifted.
 """
+from pipeline.tests.raw_data import needs_raw
 import json
 
 import pytest
@@ -39,6 +40,7 @@ def test_untagged_articles_are_ignored_and_dates_bound_the_window():
     assert (result["first_date"], result["last_date"]) == ("2026-05-16", "2026-09-12")
 
 
+@needs_raw
 def test_real_corpus_matches_the_quoted_figures():
     source = latest_dated_file(RAW_DIR, SENTIMENT_GLOB)
     articles = [json.loads(line) for line in source.read_text().splitlines() if line.strip()]
