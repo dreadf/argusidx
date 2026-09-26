@@ -5,12 +5,14 @@ import { AxisColumns, RangeChart, TwoLineChart } from "@/components/charts/axis-
 import { IconDots, Key } from "@/components/charts/dots";
 import { H2, Page, PageTitle, ResearchNote, TwoCol } from "@/components/kit";
 import { Legend, QCard } from "@/components/qcard";
+import { PairBars, StockListRow } from "@/components/situation-ui";
 import { getBaseRatesData } from "@/lib/base-rates-data";
 import { getBeatGoldData } from "@/lib/beat-gold-data";
 import { getFlagsData } from "@/lib/flags-data";
 import { idNum, signedPct } from "@/lib/format";
 import { getIpoBoardsData } from "@/lib/ipo-boards-data";
 import { getSituation, getSituations, H1_VOL_TERCILES, H11_UNDERPERFORM, H4_CUT_RATES, type SituationMeta } from "@/lib/situations";
+import { getSituationRows, kindOfSlug, LIST_SUB } from "@/lib/stock-situations";
 import { getSuspensionSummary } from "@/lib/suspensions-data";
 
 export async function generateStaticParams() {
@@ -42,7 +44,8 @@ function DotsBlock({ filled, keyA, keyB, note, size = 170 }: { filled: number; k
 async function cardsFor(slug: string): Promise<ReactNode[]> {
   switch (slug) {
     case "turun-banyak": {
-      const { typical_drawdown: dd } = await getBaseRatesData();
+      const { typical_drawdown: dd, recovery_after_fall: rec } = await getBaseRatesData();
+      const below = Math.round(rec.still_below_peak.pct ?? 0);
       const group = (l1: string, l2: string | undefined, b: { median_pct: number; p25_pct: number; p75_pct: number }) => ({ l1, l2, median: b.median_pct, p25: b.p25_pct, p75: b.p75_pct });
       const small = dd.by_size_tercile.smallest;
       return [
@@ -69,14 +72,8 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
             <Key color="#fff">Garis putih: nilai tengah</Key>
           </Legend>
         </QCard>,
-      ];
-    }
-    case "beli-saat-turun": {
-      const { recovery_after_fall: rec } = await getBaseRatesData();
-      const below = Math.round(rec.still_below_peak.pct ?? 0);
-      return [
         <QCard
-          key="a"
+          key="b"
           question="Setelah harga -30% atau lebih dari puncaknya, berapa yang pulih dalam setahun?"
           define={`${idNum(rec.n_events, 0)} kejadian harga -30% atau lebih dari puncaknya, di ${idNum(rec.n_stocks, 0)} saham. Pulih: kembali ke harga tertinggi sebelum jatuh.`}
           howTo={`Dari 100 kejadian, ${below} harganya masih di bawah puncak lama setahun kemudian.`}
@@ -306,6 +303,143 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
         </QCard>,
       ];
     }
+    case "harga-baru-melonjak": {
+      const { recent_spike: sp } = await getBaseRatesData();
+      const below = Math.round(sp.pooled.share_below_event_close * 100);
+      const deep = Math.round(sp.pooled.share_deep_drop * 100);
+      const pc = (v: number) => signedPct(v * 100, 0, true);
+      return [
+        <QCard
+          key="a"
+          question="Setelah harga naik 40% atau lebih dalam 20 hari bursa, bagaimana 60 hari bursa berikutnya?"
+          define={`${idNum(sp.pooled.n_events, 0)} kejadian di ${idNum(sp.stocks_with_event, 0)} saham, 2021 sampai 2026.`}
+          howTo={`Dari 100 kejadian seperti ini, ${below} berakhir lebih rendah dan ${100 - below} sama atau lebih tinggi.`}
+          takeaway={below < 60 ? `Lebih dari empat dari sepuluh tidak turun, jadi ini bukan pola satu arah.` : `Lebih dari separuh berakhir lebih rendah, tetapi sebagian tidak.`}
+        >
+          <div className="flex items-end gap-[18px]">
+            <PairBars a={{ n: below, label: "Lebih rendah" }} b={{ n: 100 - below, label: "Sama atau lebih tinggi" }} />
+            <span className="pb-6 text-[12.5px] leading-normal text-muted-foreground">Sekitar {below} dari 100 kejadian berakhir lebih rendah dari harga hari lonjakan, 60 hari bursa kemudian.</span>
+          </div>
+        </QCard>,
+        <QCard
+          key="b"
+          question="Seberapa lebar sebarannya?"
+          define={`Perubahan harga 60 hari bursa setelah hari lonjakan, dari ${idNum(sp.pooled.n_events, 0)} kejadian.`}
+          howTo={`Urutkan 100 kejadian dari yang terburuk. Kejadian ke-25 ${sp.pooled.p25_change < 0 ? "turun" : "naik"} ${Math.abs(Math.round(sp.pooled.p25_change * 100))}%, ke-50 ${sp.pooled.median_change < 0 ? "turun" : "naik"} ${Math.abs(Math.round(sp.pooled.median_change * 100))}%, ke-75 ${sp.pooled.p75_change < 0 ? "turun" : "naik"} ${Math.abs(Math.round(sp.pooled.p75_change * 100))}%.`}
+          takeaway="Rentangnya lebar ke dua arah."
+        >
+          <div className="flex gap-3.5">
+            {[
+              { v: sp.pooled.p25_change, cap: "Seperempat terburuk sama atau lebih rendah dari ini" },
+              { v: sp.pooled.median_change, cap: "Nilai tengah" },
+              { v: sp.pooled.p75_change, cap: "Seperempat terbaik sama atau lebih tinggi dari ini" },
+            ].map((x) => (
+              <div key={x.cap} className="min-w-0 flex-1">
+                <div className="font-mono text-[26px] font-bold tracking-[-0.02em]" style={{ color: x.v < 0 ? "var(--viz-diverging-neg)" : "var(--viz-diverging-pos)" }}>
+                  {pc(x.v)}
+                </div>
+                <div className="mt-1 text-xs leading-snug text-muted-foreground">{x.cap}</div>
+              </div>
+            ))}
+          </div>
+        </QCard>,
+        <QCard
+          key="c"
+          question="Berapa yang sempat turun jauh?"
+          define="Penutupan harian, dalam 60 hari bursa setelah hari lonjakan."
+          howTo={`Dari 100 kejadian, ${deep} pernah ditutup sedalam itu pada satu hari atau lebih.`}
+          takeaway="Ini menghitung titik terendah selama 60 hari, bukan harga di akhir."
+        >
+          <DotsBlock filled={deep} keyA={<><b>{deep}</b> pernah ditutup 30% atau lebih di bawah harga hari lonjakan</>} keyB="sisanya tidak" note="Dari 100 kejadian" />
+        </QCard>,
+      ];
+    }
+    case "laba-turun-dua-tahun": {
+      const { earnings_two_year_decline: d } = await getBaseRatesData();
+      const up = Math.round(d.pooled.rate * 100);
+      const years = Object.entries(d.by_year);
+      const rates = years.map(([, c]) => Math.round(c.rate * 100));
+      return [
+        <QCard
+          key="a"
+          question="Setelah laba bersih turun dua tahun berturut-turut, bagaimana tahun berikutnya?"
+          define={`${idNum(d.pooled.n, 0)} pengamatan perusahaan yang labanya turun dua tahun berturut-turut, tahun pengamatan ${years.map(([y]) => y).join(" dan ")}.`}
+          howTo={`Dari 100 perusahaan seperti ini, ${up} labanya naik lagi tahun berikutnya dan ${100 - up} tidak.`}
+          takeaway="Lebih dari separuh naik lagi, tetapi hampir setengahnya tidak."
+        >
+          <div className="flex items-end gap-[18px]">
+            <PairBars a={{ n: up, label: "Laba naik lagi" }} b={{ n: 100 - up, label: "Laba tidak naik" }} />
+            <span className="pb-6 text-[12.5px] leading-normal text-muted-foreground">Sekitar {up} dari 100 perusahaan labanya lebih tinggi di tahun berikutnya.</span>
+          </div>
+        </QCard>,
+        <QCard
+          key="b"
+          question="Apakah stabil dari tahun ke tahun?"
+          define="Bagian yang laba tahun berikutnya lebih tinggi, per tahun pengamatan."
+          howTo={`${years.length} tahun saja yang bisa diuji. Angkanya dekat, tetapi ${years.length} tahun bukan pola panjang.`}
+          takeaway={`Selisih ${Math.max(...rates) - Math.min(...rates)} poin antar tahun.`}
+        >
+          <div className="flex gap-3.5">
+            {years.map(([y, c]) => (
+              <div key={y} className="min-w-0 flex-1">
+                <div className="font-mono text-[26px] font-bold">{Math.round(c.rate * 100)}</div>
+                <div className="mt-1 text-xs leading-snug text-muted-foreground">
+                  dari 100, tahun {y} ({idNum(c.n, 0)} pengamatan)
+                </div>
+              </div>
+            ))}
+          </div>
+        </QCard>,
+      ];
+    }
+    case "laba-dua-kali-lipat": {
+      const { earnings_more_than_doubled: d } = await getBaseRatesData();
+      const lower = Math.round(d.gave_part_back.rate * 100);
+      const all = Math.round(d.gave_all_back.rate * 100);
+      const years = Object.entries(d.by_year);
+      const ys = years.map(([, c]) => Math.round(c.gave_part_back.rate * 100));
+      return [
+        <QCard
+          key="a"
+          question="Setelah laba bersih lebih dari dua kali lipat, bagaimana tahun berikutnya?"
+          define={`${idNum(d.gave_part_back.n, 0)} pengamatan, tahun lonjakan ${years[0][0]} sampai ${years[years.length - 1][0]}.`}
+          howTo={`Dari 100 perusahaan seperti ini, ${lower} labanya lebih rendah tahun berikutnya dan ${100 - lower} sama atau lebih tinggi.`}
+          takeaway="Hampir separuh mempertahankan atau menambah labanya."
+        >
+          <div className="flex items-end gap-[18px]">
+            <PairBars a={{ n: lower, label: "Lebih rendah" }} b={{ n: 100 - lower, label: "Sama atau lebih tinggi" }} />
+            <span className="pb-6 text-[12.5px] leading-normal text-muted-foreground">Sekitar {lower} dari 100 perusahaan labanya lebih rendah dari tahun lonjakan.</span>
+          </div>
+        </QCard>,
+        <QCard
+          key="b"
+          question="Seberapa banyak yang kembali ke bawah tingkat semula?"
+          define="Laba tahun berikutnya dibanding laba sebelum lonjakan."
+          howTo={`Dari 100 perusahaan, ${all} kehilangan seluruh kenaikannya, ${100 - all} masih di atas tingkat semula.`}
+          takeaway="Kehilangan sebagian jauh lebih umum daripada kehilangan semuanya."
+        >
+          <DotsBlock filled={all} keyA={<><b>{all}</b> berakhir di bawah tingkat sebelum lonjakan</>} keyB="sisanya masih di atas" note="Dari 100 perusahaan" />
+        </QCard>,
+        <QCard
+          key="c"
+          question="Stabil dari tahun ke tahun?"
+          define="Bagian yang labanya lebih rendah dari tahun lonjakan, per tahun."
+          howTo={`Antara ${Math.min(...ys)} dan ${Math.max(...ys)}, dengan sampel per tahun ${Math.min(...years.map(([, c]) => c.gave_part_back.n))} sampai ${Math.max(...years.map(([, c]) => c.gave_part_back.n))}.`}
+          takeaway="Sampel tiap tahun kecil, jadi selisih ini bisa kebetulan."
+        >
+          <div className="flex gap-3.5">
+            {years.map(([y, c]) => (
+              <div key={y} className="min-w-0 flex-1">
+                <div className="font-mono text-[26px] font-bold">{Math.round(c.gave_part_back.rate * 100)}</div>
+                <div className="mt-1 text-xs leading-snug text-muted-foreground">
+                  dari 100, {y} ({c.gave_part_back.n})
+                </div>
+              </div>
+            ))}
+          </div>
+        </QCard>,
+      ];
+    }
     default:
       return [];
   }
@@ -337,9 +471,34 @@ export default async function SituasiDetailPage({ params }: { params: Promise<{ 
     </div>
   );
 
+  const kind = kindOfSlug(slug);
+  let listBlock: ReactNode = null;
+  if (kind) {
+    const all = await getSituationRows(kind);
+    const meta = LIST_SUB[kind];
+    const sorted = [...all].sort((a, b) => (meta.datedOrder ? (b.date ?? "").localeCompare(a.date ?? "") : 0) || a.code.localeCompare(b.code));
+    listBlock = (
+      <div className="mt-7">
+        <H2 className="!text-lg">
+          {sorted.length} {meta.title}
+        </H2>
+        <p className="mt-1.5 text-[13px] leading-normal text-muted-foreground">{meta.sub} Diurutkan {meta.datedOrder ? "menurut tanggal, lalu kode" : "menurut kode"}.</p>
+        <div className="mt-1.5 border-t border-border">
+          {sorted.slice(0, 4).map((r) => (
+            <StockListRow key={r.code} code={r.code} name={r.name} value={r.value} sub={r.sub} />
+          ))}
+        </div>
+        <Link href={`/situasi/${slug}/daftar`} className="inline-flex min-h-11 items-center text-[13.5px] font-semibold text-[var(--viz-accent)]">
+          Lihat semua {sorted.length} &rarr;
+        </Link>
+      </div>
+    );
+  }
+
   const body = (
     <div className="flex flex-col gap-4">
       {cards}
+      {listBlock}
     </div>
   );
 

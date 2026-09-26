@@ -36,9 +36,44 @@ export interface RecoveryAfterFall {
   still_down_median_gap_pct: number | null;
 }
 
+export interface SpikeBucket {
+  n_events: number;
+  share_below_event_close: number;
+  median_change: number;
+  p25_change: number;
+  p75_change: number;
+  share_deep_drop: number;
+}
+
+export interface RateCell {
+  n: number;
+  count: number;
+  rate: number;
+}
+
+export interface RecentSpikeRates {
+  pooled: SpikeBucket;
+  first_event_per_stock: SpikeBucket;
+  stocks_with_event: number;
+}
+
+export interface EarningsTwoYearDecline {
+  pooled: RateCell;
+  by_year: Record<string, RateCell>;
+}
+
+export interface EarningsMoreThanDoubled {
+  gave_part_back: RateCell;
+  gave_all_back: RateCell;
+  by_year: Record<string, { gave_part_back: RateCell; gave_all_back: RateCell }>;
+}
+
 export interface BaseRatesData {
   as_of: string;
   note: string;
+  recent_spike: RecentSpikeRates;
+  earnings_two_year_decline: EarningsTwoYearDecline;
+  earnings_more_than_doubled: EarningsMoreThanDoubled;
   loss_maker_turnaround: LossMakerTurnaround;
   typical_drawdown: TypicalDrawdown;
   recovery_after_fall: RecoveryAfterFall;

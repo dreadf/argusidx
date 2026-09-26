@@ -4,7 +4,7 @@ import { getSituations, type SituationGroup } from "@/lib/situations";
 const GROUPS: SituationGroup[] = ["Harga & penurunan", "Perusahaan & IPO", "Perbandingan"];
 
 /**
- * Hub of the nine "situations": what usually happens when you are in a
+ * Hub of the situations: what usually happens when you are in a
  * given circumstance. Reached from Beranda. Distinct from /temuan, which
  * asks whether a popular belief is true.
  */
@@ -25,7 +25,7 @@ export default async function SituasiPage() {
   return (
     <Page>
       <PageTitle title="Situasi" back={{ href: "/", label: "Beranda" }} />
-      <Sub>Apa yang biasanya terjadi saat Anda mengalami ini.</Sub>
+      <Sub>Apa yang biasanya terjadi saat Anda mengalami ini. {situations.length} situasi.</Sub>
       <div className="mt-6 md:mt-7">
         <ThreeCol>{[columns[0], columns[1], columns[2]]}</ThreeCol>
       </div>

@@ -6,7 +6,6 @@ import { RankList, type RankRow } from "@/components/rank-list";
 import { Card, H2, Neg, Pos, Sub, TwoCol } from "@/components/kit";
 import { distanceBins } from "@/lib/distribution";
 import { formatDateId, formatPrice, idNum, sharePct, shortName, signedPct } from "@/lib/format";
-import { getNewsSentiment } from "@/lib/news-data";
 import { getRankingsData } from "@/lib/rankings-data";
 import { getQuoteIndex } from "@/lib/stock-data";
 
@@ -14,7 +13,6 @@ const MEASURES = [
   { value: "jauh-dari-puncak", label: "Jauh dari puncak" },
   { value: "float-terendah", label: "Free float terendah" },
   { value: "pergerakan", label: "Pergerakan hari ini" },
-  { value: "banyak-diberitakan", label: "Banyak diberitakan" },
   { value: "nilai-pasar-naik", label: "Nilai pasar naik terbanyak, setahun" },
   { value: "nilai-pasar-turun", label: "Nilai pasar turun terbanyak, setahun" },
 ] as const;
@@ -32,7 +30,7 @@ export default async function JelajahPage({ searchParams }: { searchParams: Prom
   const measure = pickMeasure(sp.urut);
   const shown = Math.min(100, Math.max(PAGE, Number(Array.isArray(sp.tampil) ? sp.tampil[0] : sp.tampil) || PAGE));
 
-  const [rankings, quotes, news] = await Promise.all([getRankingsData(), getQuoteIndex(), getNewsSentiment()]);
+  const [rankings, quotes] = await Promise.all([getRankingsData(), getQuoteIndex()]);
   const quote = new Map(quotes.map((q) => [q.code, q]));
   const priceOf = (code: string) => {
     const p = quote.get(code)?.price;
@@ -99,32 +97,6 @@ export default async function JelajahPage({ searchParams }: { searchParams: Prom
       value: r.daily_close_change < 0 ? <Neg>{signedPct(r.daily_close_change * 100, 1)}</Neg> : <Pos>{signedPct(r.daily_close_change * 100, 1, true)}</Pos>,
       sub: priceOf(r.symbol),
     }));
-  } else if (measure === "banyak-diberitakan") {
-    const all = news.most_covered;
-    total = all.length;
-    title = "Paling banyak diberitakan";
-    line = `Jumlah berita yang menyebut saham ini, ${formatDateId(news.first_date)} sampai ${formatDateId(news.last_date)}.`;
-    rows = all.slice(0, shown).map((r) => ({
-      code: r.symbol,
-      name: shortName(r.company_name ?? r.symbol),
-      value: idNum(r.mentions, 0),
-      sub: (
-        <>
-          <span className="text-[var(--viz-diverging-pos)]">{r.bullish}</span> &middot; <span className="text-[var(--viz-diverging-neg)]">{r.bearish}</span>
-        </>
-      ),
-    }));
-    side = (
-      <Card className="md:p-5">
-        <div className="text-[15px] font-semibold">Pembanding</div>
-        <p className="mt-2 text-[13.5px] leading-normal">
-          Dari {idNum(news.n_mentions, 0)} penyebutan saham, <b className="font-mono text-[var(--viz-diverging-pos)]">{idNum(news.bullish_mentions_pct, 0)}%</b> bertanda bullish. Angka kecil: bullish &middot; bearish.
-        </p>
-        <Link href="/jelajah/berita" className="mt-2 inline-flex min-h-11 items-center text-[13px] font-medium text-[var(--viz-accent)]">
-          Ringkasan berita &rarr;
-        </Link>
-      </Card>
-    );
   } else {
     const inc = measure === "nilai-pasar-naik";
     const all = inc ? rankings.mcap_change.increases : rankings.mcap_change.decreases;

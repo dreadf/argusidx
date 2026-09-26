@@ -1,23 +1,28 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
+import { ChevronRight } from "lucide-react";
 import { CompareLines } from "@/components/charts/axis-charts";
 import { RangeBar } from "@/components/charts/range-bar";
 import { GlossaryTerm } from "@/components/glossary-term";
-import { Card, Cells, DatePill, H2, Neg, Pos, ResearchNote, Stat, TextLink } from "@/components/kit";
+import { Card, Cells, Neg, Pos, Stat } from "@/components/kit";
 import { RecentTracker } from "@/components/recent-tracker";
+import { StockHead, getFarRank } from "@/components/stock-head";
+import { OtherSituations, StockSituations, type Ctx } from "@/components/stock-situation-blocks";
 import { EmphasisStrip } from "@/components/viz/emphasis-strip";
-import { WatchlistButton } from "@/components/watchlist-button";
-import { formatDateId, formatPrice, idNum, pctFrom, signedPct } from "@/lib/format";
 import { BackLink } from "@/components/back-link";
+import { getBaseRatesData } from "@/lib/base-rates-data";
+import { getBeatGoldData } from "@/lib/beat-gold-data";
+import { formatDateId, formatPrice, idNum, pctFrom, signedPct } from "@/lib/format";
 import { getInsiderSummary } from "@/lib/insider-data";
-import { formatPe, isMeaningfulPe, peVsSector } from "@/lib/pe";
+import { getIpoBoardsData } from "@/lib/ipo-boards-data";
+import { formatPe, isMeaningfulPe } from "@/lib/pe";
 import { getRoeHistory } from "@/lib/roe-data";
-import { getSuspensionSummary } from "@/lib/suspensions-data";
 import { sectorByKey } from "@/lib/sectors-id";
-import { fiveYearPhrase, pricePosition, relativeToTypical, sizePhrase } from "@/lib/stock-summary";
+import { getSituationsFile } from "@/lib/stock-situations";
 import { getAllStockCodes, getStockData, getStocksAsOf } from "@/lib/stock-data";
 import type { StockPageData } from "@/lib/stock-data";
+import { getSuspensionSummary } from "@/lib/suspensions-data";
 
 export async function generateStaticParams() {
   const codes = await getAllStockCodes();
@@ -83,22 +88,26 @@ function h1Sentences(finding: NonNullable<StockPageData["h1_finding"]>, freeFloa
   return { lead: `${floatText} (saham beredar di publik), ${FLOAT_TERCILE_ID.mid} untuk ukuran ${size}. Tidak condong ke sisi lebih bergejolak maupun lebih tenang.`, caveat };
 }
 
-function Bold({ children }: { children: ReactNode }) {
-  return <b className="font-semibold text-foreground">{children}</b>;
-}
-
-function Section({ title, sub, children }: { title: string; sub?: string; children: ReactNode }) {
-  return (
-    <section>
-      <H2>{title}</H2>
-      {sub && <p className="mt-0.5 text-xs text-muted-foreground">{sub}</p>}
-      <div className="mt-3">{children}</div>
-    </section>
-  );
-}
-
 const body = "text-sm leading-normal";
 const fine = "mt-2 text-xs leading-normal text-muted-foreground";
+
+/**
+ * One row of "Data lengkap": a title with a one-line summary that opens to
+ * the detail. Native <details name="..."> so only one is open at a time
+ * (board: Saham-Data-Mobile, "Di aplikasi, satu per satu"), no client JS.
+ */
+function DataRow({ title, summary, children }: { title: string; summary: string; children: ReactNode }) {
+  return (
+    <details name="data-lengkap" className="group border-b border-border">
+      <summary className="flex min-h-[52px] cursor-pointer list-none items-center gap-2.5 py-2 [&::-webkit-details-marker]:hidden">
+        <span className="flex-1 text-sm">{title}</span>
+        <span className="text-right text-[13px] text-muted-foreground">{summary}</span>
+        <ChevronRight className="size-[18px] shrink-0 text-muted-foreground transition-transform group-open:rotate-90" />
+      </summary>
+      <div className="pb-4 pt-1">{children}</div>
+    </details>
+  );
+}
 
 export default async function StockPage(props: PageProps<"/saham/[kode]">) {
   const { kode } = await props.params;
@@ -106,7 +115,15 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
   if (!data) notFound();
 
   const code = data.snapshot.symbol.replace(".JK", "");
-  const [asOf, insiderMarket, allCodes, suspMarket] = await Promise.all([getStocksAsOf(),getInsiderSummary(), getAllStockCodes(), getSuspensionSummary()]);
+  const [asOf, insiderMarket, suspMarket, situationsFile, base, ipo, gold] = await Promise.all([
+    getStocksAsOf(),
+    getInsiderSummary(),
+    getSuspensionSummary(),
+    getSituationsFile(),
+    getBaseRatesData(),
+    getIpoBoardsData(),
+    getBeatGoldData(),
+  ]);
   const { snapshot, peer_comparison, sector_context, flags, suspension_history, lens_banking, lens_extractive, beat_gold, h1_finding, insider_activity, corporate_actions } = data;
   const roe = await getRoeHistory(code, snapshot.sector);
   const sectorMeta = sectorByKey(snapshot.sector);
@@ -117,124 +134,42 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
   const distHigh = price !== null && high ? pctFrom(price, high) : null;
   const distLow = price !== null && low ? pctFrom(price, low) : null;
 
-  /* ---------------- Ringkasan: six short rows, each one comparison ---------------- */
-  const rows: { label: string; text: ReactNode }[] = [];
+  const { rank: farRank, universe } = await getFarRank(price, high);
 
-  const pos = pricePosition(snapshot.position_in_52w_range);
-  if (pos) {
-    rows.push({
-      label: "Harga",
-      text: (
-        <>
-          <Bold>{pos}</Bold> rentang setahun. {distHigh !== null && <Neg>{signedPct(distHigh)}</Neg>}
-          {distHigh !== null && " dari tertinggi."}
-        </>
-      ),
-    });
-  }
-  const size = sizePhrase(snapshot.market_cap, snapshot.market_cap_rank, allCodes.length);
-  if (size) rows.push({ label: "Ukuran", text: size });
+  const ctx: Ctx = { code, entry: situationsFile.by_symbol[`${code}.JK`], data, base, ipo };
+  const summary = gold.summary;
 
-  if (sector_context) {
-    const parts: ReactNode[] = [];
-    if (sector_context.own_roe_pct !== null && sector_context.sector_typical_roe_pct !== null) {
-      parts.push(
-        <span key="roe">
-          Laba dibanding modal (<GlossaryTerm term="roe">ROE</GlossaryTerm>) {idNum(sector_context.own_roe_pct)}%, <Bold>{relativeToTypical(sector_context.own_roe_pct, sector_context.sector_typical_roe_pct)}</Bold> sektor ({idNum(sector_context.sector_typical_roe_pct)}%).{" "}
-        </span>,
-      );
-    }
-    if (sector_context.own_pe !== null && sector_context.sector_typical_pe !== null) {
-      const peRel = peVsSector(sector_context.own_pe, sector_context.sector_typical_pe);
-      parts.push(
-        <span key="pe">
-          Harga dibanding laba (<GlossaryTerm term="pe_ratio">P/E</GlossaryTerm>){" "}
-          {peRel === null ? (
-            <Bold>{formatPe(sector_context.own_pe)}</Bold>
-          ) : (
-            <>
-              {formatPe(sector_context.own_pe)}, <Bold>{peRel}</Bold> sektor ({formatPe(sector_context.sector_typical_pe)})
-            </>
-          )}
-          .
-        </span>,
-      );
-    }
-    if (parts.length > 0) rows.push({ label: "Laba dan valuasi", text: <>{parts}</> });
-  }
-
-
-  rows.push({
-    label: "Tanda",
-    text: flags.length === 0 ? <><Bold>Tidak ada tanda</Bold> dari 4 jenis.</> : <><Bold>{flags.length} tanda</Bold>: {flags[0].label.toLowerCase()}{flags.length > 1 ? `, dan ${flags.length - 1} lainnya` : ""}.</>,
-  });
-
-  if (beat_gold) {
-    const { won, lost } = fiveYearPhrase(beat_gold);
-    if (won.length + lost.length > 0) {
-      rows.push({
-        label: "Lima tahun",
-        text: (
-          <>
-            {won.length > 0 && (
-              <>
-                <Bold>Menang</Bold> dari {won.join(" dan ")}
-              </>
-            )}
-            {won.length > 0 && lost.length > 0 && ", "}
-            {lost.length > 0 && (
-              <>
-                <Bold>kalah</Bold> dari {lost.join(" dan ")}
-              </>
-            )}
-            .
-          </>
-        ),
-      });
-    }
-  }
-
-  const ringkasan = (
-    <section aria-label="Ringkasan" className="overflow-hidden rounded-[20px] border border-[var(--viz-accent)] bg-card">
-      <div className="px-[18px] pt-[18px] md:px-[22px]">
-        <span className="inline-flex rounded-full bg-accent px-3 py-1.5 text-[11.5px] font-bold uppercase tracking-[0.06em] text-accent-foreground">Ringkasan</span>
-      </div>
-      <div className="mt-3 grid border-t border-border md:grid-cols-3">
-        {rows.map((r, i) => (
-          <div key={r.label} className={`flex gap-3 px-[18px] py-3 md:block md:px-[22px] md:py-4 ${i > 0 ? "border-t border-border" : ""} ${i % 3 !== 0 ? "md:border-l md:border-border" : ""} ${i < 3 ? "md:border-t-0" : ""}`}>
-            <div className="w-[84px] shrink-0 text-[12.5px] font-semibold text-[var(--viz-accent)] md:w-auto">{r.label}</div>
-            <div className="min-w-0 flex-1 text-sm leading-normal md:mt-1.5 md:text-[14.5px]">{r.text}</div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-
-  /* ---------------- sections ---------------- */
-  const harga = price !== null && (
-    <Section title="Harga setahun terakhir">
-      <div className="font-mono text-[22px] font-bold tabular-nums">{formatPrice(price)}</div>
-      {distHigh !== null && (
-        <div className="mt-1 text-[13px]">
-          <Neg>{signedPct(distHigh)}</Neg> dari tertinggi{distLow !== null && <> &middot; <Pos>{signedPct(distLow, 1, true)}</Pos> dari terendah</>}
+  const header = (
+    <StockHead
+      code={code}
+      data={data}
+      asOf={asOf}
+      rank={farRank}
+      universe={universe}
+      below={
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
+          <span>Menampilkan semua data {code}.</span>
+          <Link href={`/saham/${code}/alasan`} className="inline-flex min-h-11 items-center text-[13px] font-semibold text-[var(--viz-accent)]">
+            Pilih alasan Anda &rarr;
+          </Link>
         </div>
-      )}
-      {hasRange ? <RangeBar low={low} high={high} price={price} /> : <p className={fine}>Harga tertinggi dan terendah setahun sama, atau datanya tidak lengkap, jadi posisi tidak bisa dihitung.</p>}
-    </Section>
+      }
+    />
   );
 
-  const sektor = (
-    <Section title={sectorMeta ? `Dibanding sektor ${sectorMeta.label}` : "Dibanding sektor"}>
+  /* ---------------- Data lengkap rows ---------------- */
+  const sectorBody = (
+    <div>
       {sector_context ? (
         <>
           <Cells>
             {[
               <Stat key="r" value={sector_context.own_roe_pct === null ? "-" : `${idNum(sector_context.own_roe_pct)}%`} label={`laba dibanding modal (ROE), sektor ${sector_context.sector_typical_roe_pct === null ? "-" : idNum(sector_context.sector_typical_roe_pct) + "%"}`} size={24} />,
-              <Stat key="p" value={isMeaningfulPe(sector_context.own_pe) ? formatPe(sector_context.own_pe) : <span className="text-base leading-tight">{formatPe(sector_context.own_pe)}</span>} size={isMeaningfulPe(sector_context.own_pe) ? 24 : 16} label={`harga dibanding laba (P/E), sektor ${sector_context.sector_typical_pe === null ? "-" : formatPe(sector_context.sector_typical_pe)}`} />,
+              <Stat key="p" value={isMeaningfulPe(sector_context.own_pe) ? formatPe(sector_context.own_pe) : <span className="text-base leading-tight">{formatPe(sector_context.own_pe)}</span>} size={isMeaningfulPe(sector_context.own_pe) ? 24 : 16} label={`harga dibanding laba (P/E), sektor ${sector_context.sector_typical_pe === null || sector_context.sector_typical_pe <= 0 ? "-" : formatPe(sector_context.sector_typical_pe)}`} />,
             ]}
           </Cells>
           <p className={fine}>
-            Nilai tipikal sektor: nilai tengah dari yang melapor ({sector_context.sector_roe_n} dari {sector_context.sector_company_count} untuk ROE). Bukan peringkat antar sektor.{" "}
+            Nilai tipikal sektor{sectorMeta ? ` ${sectorMeta.label}` : ""}: nilai tengah dari yang melapor ({sector_context.sector_roe_n} dari {sector_context.sector_company_count} untuk ROE). Bukan peringkat antar sektor.{" "}
             <Link href="/jelajah/sektor" className="underline">
               Lihat semua sektor
             </Link>
@@ -265,89 +200,40 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
         <div className="mt-5">
           <div className="text-[15px] font-semibold">Laba dibanding modal (ROE) per tahun</div>
           <Card className="mt-2.5 px-3 pb-3 pt-4">
-            <CompareLines
-              years={roe.years}
-              own={roe.own}
-              sector={roe.sector}
-              ownLabel={code}
-              sectorLabel="Nilai tengah sektor"
-              yTitle="ROE (%)"
-              xTitle="Tahun laporan"
-              label={`ROE ${code} per tahun dibanding nilai tengah sektor`}
-            />
+            <CompareLines years={roe.years} own={roe.own} sector={roe.sector} ownLabel={code} sectorLabel="Nilai tengah sektor" yTitle="ROE (%)" xTitle="Tahun laporan" label={`ROE ${code} per tahun dibanding nilai tengah sektor`} />
             <p className="mx-2 mt-1.5 text-xs text-muted-foreground">Bukan grafik harga. ROE tahunan dari laporan; angka di atas memakai 12 bulan terakhir, jadi bisa sedikit berbeda.</p>
           </Card>
         </div>
       )}
-    </Section>
+    </div>
   );
 
-
-  const h1 = h1_finding ? h1Sentences(h1_finding, snapshot.free_float) : null;
-  const temuan = (
-    <Section title="Temuan untuk saham ini">
-      <Card className="p-[18px]">
-        {h1 ? (
-          <>
-            <span className="mb-2.5 inline-flex rounded-full bg-accent px-2.5 py-1 text-[11.5px] font-semibold text-accent-foreground">Free float</span>
-            <p className="text-sm leading-normal">{h1.lead}</p>
-            <p className="mt-2 border-t border-border pt-2 text-xs text-muted-foreground">{h1.caveat}</p>
-          </>
-        ) : (
-          <p className={body}>Belum bisa ditempatkan di kelompok ukuran dan kepemilikan publik untuk temuan ini (data nilai pasar atau free float tidak lengkap).</p>
-        )}
-        <p className="mt-2 text-xs text-muted-foreground">Temuan lain (nilai murah, pemotongan dividen, dan lainnya) berlaku umum di pasar, bukan dihitung khusus untuk saham ini.</p>
-        <TextLink href="/temuan">Lihat semua temuan</TextLink>
-      </Card>
-    </Section>
-  );
-
-  const insider = (
-    <Section title="Transaksi insider" sub={`Direksi, komisaris dan pemegang besar, ${insiderMarket.window.start.slice(0, 4)} sampai ${String(insiderMarket.window.end).slice(0, 4)}`}>
-      <Card className="p-[18px]">
-        {insider_activity ? (
-          <p className="text-sm leading-normal">
-            <b>
-              {snapshot.symbol.replace(".JK", "")}{" "}
-              {insider_activity.net_direction === "net_buying" ? "pembeli bersih" : insider_activity.net_direction === "net_selling" ? "penjual bersih" : "seimbang"}
-            </b>
-            : {insider_activity.buy_count} pembelian, {insider_activity.sell_count} penjualan{insider_activity.last_transaction_date ? `, terakhir ${formatDate(insider_activity.last_transaction_date)}` : ""}.
-          </p>
-        ) : (
-          <p className="text-sm leading-normal">Tidak ada transaksi insider tercatat untuk saham ini pada periode data.</p>
-        )}
-        <div className="mb-2 mt-3.5 text-xs text-muted-foreground">Dari {idNum(insiderMarket.companies_with_activity, 0)} saham dengan catatan insider</div>
-        <Cells>
-          {[
-            <Stat key="b" value={insiderMarket.net_buying} label="pembeli bersih" tone="pos" size={22} />,
-            <Stat key="s" value={insiderMarket.net_selling} label="penjual bersih" tone="neg" size={22} />,
-            <Stat key="e" value={insiderMarket.balanced} label="seimbang" size={22} />,
-          ]}
-        </Cells>
-        <div className="my-3.5 h-px bg-border" />
-        <p className="text-[13px] leading-normal text-muted-foreground">
-          Insider menjual sebelum lonjakan sebagai tanda akan anjlok: <b className="text-foreground">tidak terbukti</b> saat diuji (4 kejadian).
-        </p>
-        <TextLink href="/temuan?hasil=tidak-terbukti">Lihat temuannya</TextLink>
-      </Card>
-    </Section>
-  );
-
-  const suspensi = (
-    <Section title="Tanda dan riwayat suspensi">
-      {flags.length === 0 ? (
-        <p className={body}>Tidak ada tanda dari 4 jenis yang terdeteksi saat ini.</p>
-      ) : (
-        <ul className={`${body} space-y-1`}>
-          {flags.map((flag) => (
-            <li key={flag.key}>&bull; {flag.label}</li>
-          ))}
-        </ul>
+  const hargaBody = (
+    <div>
+      {price !== null && (
+        <div className="flex items-baseline gap-2">
+          <span className="font-mono text-[22px] font-bold tabular-nums">{formatPrice(price)}</span>
+          <span className="text-xs text-muted-foreground">per {formatDateId(asOf)}</span>
+        </div>
       )}
+      {hasRange ? <RangeBar low={low} high={high} price={price} /> : <p className={fine}>Harga tertinggi dan terendah setahun sama, atau datanya tidak lengkap, jadi posisi tidak bisa dihitung.</p>}
+      {distHigh !== null && (
+        <div className="mt-3 text-[13px]">
+          <Neg>{signedPct(distHigh)}</Neg> dari tertinggi{distLow !== null && <> &middot; <Pos>{signedPct(distLow, 1, true)}</Pos> dari terendah</>}
+        </div>
+      )}
+    </div>
+  );
+
+  const suspensiBody = (
+    <div>
       {suspension_history ? (
-        <div className="mt-3 border-t border-border pt-3">
+        <>
           <p className={`${body} mb-2`}>
-            <b>Pernah <GlossaryTerm term="suspensi">disuspensi</GlossaryTerm> {suspension_history.count}x</b>, lebih sering dari {suspension_history.more_than_pct}% perusahaan ({idNum(suspension_history.universe_count, 0)} perusahaan). {idNum(suspension_history.base_rate_pct)}% perusahaan IDX pernah disuspensi setidaknya sekali.
+            <b>
+              Pernah <GlossaryTerm term="suspensi">disuspensi</GlossaryTerm> {suspension_history.count}x
+            </b>
+            , lebih sering dari {suspension_history.more_than_pct}% perusahaan ({idNum(suspension_history.universe_count, 0)} perusahaan).
           </p>
           <ul className="space-y-2 text-sm">
             {suspension_history.events.slice(0, 5).map((s) => (
@@ -358,18 +244,79 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
             ))}
           </ul>
           {suspension_history.count > 5 && <p className={fine}>Menampilkan 5 dari {suspension_history.count} riwayat suspensi.</p>}
-        </div>
+        </>
       ) : (
-        <p className={`${body} mt-3 border-t border-border pt-3`}>
-          <b>{code} belum pernah disuspensi.</b> Dari {idNum(suspMarket.universe_count, 0)} perusahaan, {idNum(suspMarket.companies_with_suspensions, 0)} pernah ({Math.round(suspMarket.base_rate_pct)} dari 100).
+        <p className={body}>
+          <b>{code} belum pernah disuspensi.</b>
         </p>
       )}
-      <TextLink href="/situasi/pernah-disuspensi">Lihat alasan suspensi</TextLink>
-    </Section>
+      <p className={fine}>
+        {idNum(suspMarket.base_rate_pct, 0)} dari 100 perusahaan IDX ({idNum(suspMarket.companies_with_suspensions, 0)} dari {idNum(suspMarket.universe_count, 0)}) pernah disuspensi setidaknya sekali.{" "}
+        <Link href="/situasi/pernah-disuspensi" className="underline">
+          Lihat alasan suspensi
+        </Link>
+      </p>
+    </div>
+  );
+
+  const insiderBody = (
+    <div>
+      {insider_activity ? (
+        <p className={body}>
+          <b>
+            {code} {insider_activity.net_direction === "net_buying" ? "pembeli bersih" : insider_activity.net_direction === "net_selling" ? "penjual bersih" : "seimbang"}
+          </b>
+          : {insider_activity.buy_count} pembelian, {insider_activity.sell_count} penjualan{insider_activity.last_transaction_date ? `, terakhir ${formatDate(insider_activity.last_transaction_date)}` : ""}. Direksi, komisaris, dan pemegang besar, {insiderMarket.window.start.slice(0, 4)} sampai {String(insiderMarket.window.end).slice(0, 4)}.
+        </p>
+      ) : (
+        <p className={body}>Tidak ada transaksi insider tercatat untuk saham ini pada periode data.</p>
+      )}
+      <div className="mb-2 mt-3.5 text-xs text-muted-foreground">Dari {idNum(insiderMarket.companies_with_activity, 0)} saham dengan catatan insider</div>
+      <Cells>
+        {[
+          <Stat key="b" value={insiderMarket.net_buying} label="pembeli bersih" tone="pos" size={22} />,
+          <Stat key="s" value={insiderMarket.net_selling} label="penjual bersih" tone="neg" size={22} />,
+          <Stat key="e" value={insiderMarket.balanced} label="seimbang" size={22} />,
+        ]}
+      </Cells>
+      <p className="mt-3.5 text-[13px] leading-normal text-muted-foreground">
+        Insider menjual sebelum lonjakan sebagai tanda akan anjlok: <b className="text-foreground">tidak terbukti</b> saat diuji (4 kejadian).{" "}
+        <Link href="/temuan?hasil=tidak-terbukti" className="underline">
+          Lihat temuannya
+        </Link>
+      </p>
+    </div>
+  );
+
+  const lima = beat_gold ? (
+    <div>
+      <ul className={`${body} space-y-2.5`}>
+        {(
+          [
+            ["deposito", beat_gold.beat_deposit, summary.beat_deposit.pct],
+            ["IHSG", beat_gold.beat_index, summary.beat_index.pct],
+            ["saham tipikal", beat_gold.beat_typical_stock, summary.beat_typical_stock.pct],
+            ["sub-sektornya", beat_gold.beat_sector_peer, summary.beat_sector_peer.pct],
+            ["emas", beat_gold.beat_gold, summary.beat_gold.pct],
+          ] as [string, boolean | null, number | null][]
+        ).map(([label, won, pct]) => (
+          <li key={label}>
+            <div>{won === null ? `Tidak tersedia: ${label}` : `${won ? "Menang" : "Kalah"} dari ${label}`}</div>
+            {pct !== null && <div className="text-xs text-muted-foreground">{Math.round(pct)} dari 100 saham menang</div>}
+          </li>
+        ))}
+      </ul>
+      <p className={fine}>Lima tahun sampai {formatDateId(summary.research_date)}. Riwayat harga riset, dibekukan sejak dihitung, bukan data Sectors. Mengukur masa lalu, bukan prediksi.</p>
+      <Link href="/situasi/vs-emas-deposito" className="inline-flex min-h-11 items-center text-[13px] font-medium text-[var(--viz-accent)]">
+        Lihat pembandingnya untuk semua saham &rarr;
+      </Link>
+    </div>
+  ) : (
+    <p className={`${body} text-muted-foreground`}>Belum cukup riwayat harga untuk menghitung perbandingan ini (minimal 1 tahun).</p>
   );
 
   const lensBank = lens_banking && (
-    <Section title="Sudut pandang perbankan" sub="Bank dinilai dengan ukuran berbeda: seberapa murah dananya dan seberapa sehat pinjamannya.">
+    <div>
       <ul className={`${body} space-y-1.5`}>
         {lens_banking.ratios["casa_ratio[2025]"] && (
           <li>
@@ -404,11 +351,11 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
           </p>
         )}
       </div>
-    </Section>
+    </div>
   );
 
   const lensMining = lens_extractive && (
-    <Section title="Eksposur komoditas">
+    <div>
       <p className={body}>
         {COMPANY_TYPE_ID[lens_extractive.company_type ?? ""] ?? lens_extractive.company_type ?? "Perusahaan tambang"}
         {lens_extractive.commodity_type.length > 0 && (
@@ -435,24 +382,18 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
               </li>
             ))}
           </ul>
-          <p className={fine}>
-            Riwayat harga komoditas dari Sectors berakhir pada tanggal yang tertera, yang bisa berbeda dari tanggal data saham di halaman ini. Ini konteks tentang komoditasnya, bukan prediksi harga saham perusahaan ini.
-          </p>
+          <p className={fine}>Riwayat harga komoditas dari Sectors berakhir pada tanggal yang tertera, yang bisa berbeda dari tanggal data saham di halaman ini. Ini konteks tentang komoditasnya, bukan prediksi harga saham perusahaan ini.</p>
         </>
       )}
-      <p className={fine}>
-        Ini fakta keterkaitan komoditas, bukan perbandingan dengan perusahaan tambang lain: data reservasi, produksi, dan ekspor yang tersedia hanya angka nasional, bukan per perusahaan, jadi tidak bisa dijadikan dasar perbandingan yang adil di sini.
-      </p>
-    </Section>
+      <p className={fine}>Ini fakta keterkaitan komoditas, bukan perbandingan dengan perusahaan tambang lain: data reservasi, produksi, dan ekspor yang tersedia hanya angka nasional, bukan per perusahaan.</p>
+    </div>
   );
 
   const nActions = corporate_actions.dividends.length + corporate_actions.agms.length + corporate_actions.rights_issues.length + corporate_actions.stock_splits.length;
   const aksi = (
-    <Section title="Aksi korporasi">
+    <div>
       {nActions === 0 ? (
-        <p className={`${body} text-muted-foreground`}>
-          Tidak ada dividen, RUPS, penawaran saham baru, atau pemecahan saham yang tercatat untuk perusahaan ini antara {formatDate(corporate_actions.window_start)} dan {formatDate(corporate_actions.window_end)}.
-        </p>
+        <p className={`${body} text-muted-foreground`}>Tidak ada dividen, RUPS, penawaran saham baru, atau pemecahan saham yang tercatat untuk perusahaan ini antara {formatDate(corporate_actions.window_start)} dan {formatDate(corporate_actions.window_end)}.</p>
       ) : (
         <ul className={`${body} space-y-1`}>
           {corporate_actions.dividends.map((d) => (
@@ -485,75 +426,92 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
           ))}
         </ul>
       )}
-      <p className={fine}>
-        Data per {formatDate(corporate_actions.as_of)}, hanya peristiwa yang tercatat antara {formatDate(corporate_actions.window_start)} dan {formatDate(corporate_actions.window_end)}; kejadian yang diumumkan setelahnya belum ada di sini. Tanggal ex adalah hari pertama saham diperdagangkan tanpa hak atas dividen tersebut. Ini catatan peristiwa, bukan penilaian.
-      </p>
-    </Section>
+      <p className={fine}>Data per {formatDate(corporate_actions.as_of)}. Tanggal ex adalah hari pertama saham diperdagangkan tanpa hak atas dividen tersebut. Ini catatan peristiwa, bukan penilaian.</p>
+    </div>
   );
 
-  const jangkaPanjang = (
-    <Section title="Perbandingan jangka panjang" sub={beat_gold ? `Riwayat harga ${beat_gold.years} tahun. Mengukur masa lalu, bukan prediksi.` : undefined}>
-      {beat_gold ? (
-        <>
-          <ul className={`${body} space-y-1`}>
-            <li>
-              &bull; <GlossaryTerm term="beat_gold">Mengalahkan emas</GlossaryTerm>: {beat_gold.beat_gold === null ? "tidak tersedia" : beat_gold.beat_gold ? "ya" : "tidak"}
-            </li>
-            <li>
-              &bull; Mengalahkan <GlossaryTerm term="ihsg">IHSG</GlossaryTerm>: {beat_gold.beat_index === null ? "tidak tersedia" : beat_gold.beat_index ? "ya" : "tidak"}
-            </li>
-            <li>&bull; Mengalahkan deposito (proxy suku bunga BI): {beat_gold.beat_deposit === null ? "tidak tersedia" : beat_gold.beat_deposit ? "ya" : "tidak"}</li>
-            <li>&bull; Mengalahkan saham tipikal di pasar: {beat_gold.beat_typical_stock ? "ya" : "tidak"}</li>
-            <li>&bull; Mengalahkan rata-rata sub-sektornya sendiri: {beat_gold.beat_sector_peer === null ? "tidak tersedia" : beat_gold.beat_sector_peer ? "ya" : "tidak"}</li>
-          </ul>
-          <p className={fine}>Angka dibekukan sejak dihitung, tidak berjalan langsung, dan sumbernya bukan Sectors (emas tidak punya padanan di data IDX).</p>
-          <ResearchNote className="mt-1" />
-          <TextLink href="/situasi/vs-emas-deposito">Lihat pembandingnya untuk semua saham</TextLink>
-        </>
-      ) : (
-        <p className={`${body} text-muted-foreground`}>Belum cukup riwayat harga untuk menghitung perbandingan ini (minimal 1 tahun).</p>
-      )}
-    </Section>
-  );
+  const h1 = h1_finding ? h1Sentences(h1_finding, snapshot.free_float) : null;
 
-  // One tree, reordered with CSS (not rendered twice): on phones every
-  // section is a flex item in the mobile order below; from md up the two
-  // wrappers become real columns. Tailwind needs the order classes spelled out.
-  const MOBILE_ORDER = ["order-1", "order-2", "order-3", "order-4", "order-5", "order-6", "order-7", "order-8", "order-9", "order-10"];
-  const place = (node: ReactNode, mobileIndex: number, key: string) =>
-    node ? (
-      <div key={key} className={`${MOBILE_ORDER[mobileIndex]} md:order-none`}>
-        {node}
+  const beatSummary = beat_gold ? (beat_gold.beat_gold === null ? "emas: tidak tersedia" : `${beat_gold.beat_gold ? "menang" : "kalah"} dari emas`) : "belum cukup riwayat";
+  const insiderSummaryText = insider_activity ? `${insider_activity.buy_count} beli, ${insider_activity.sell_count} jual` : "tidak ada catatan";
+  const suspSummary = suspension_history ? `${suspension_history.count} kali, ${formatDateId(suspension_history.events.map((e) => e.date).reduce((a, b) => (a > b ? a : b)))}` : "belum pernah";
+  const sectorSummary =
+    sector_context && sector_context.own_roe_pct !== null && sector_context.sector_typical_roe_pct !== null
+      ? `ROE ${idNum(sector_context.own_roe_pct)}% vs ${idNum(sector_context.sector_typical_roe_pct)}%`
+      : sector_context
+        ? "ROE tidak tersedia"
+        : "sektor belum diketahui";
+
+  const dataLengkap = (
+    <section>
+      <h3 className="text-[15px] font-semibold leading-snug">Data lengkap {code}</h3>
+      <div className="mt-2 border-t border-border">
+        <DataRow title="Harga setahun" summary={low !== null && high !== null ? `${formatPrice(low)} sampai ${high.toLocaleString("id-ID")}` : "tidak lengkap"}>
+          {hargaBody}
+        </DataRow>
+        <DataRow title="Dibanding sektor" summary={sectorSummary}>
+          {sectorBody}
+        </DataRow>
+        <DataRow title="Riwayat suspensi" summary={suspSummary}>
+          {suspensiBody}
+        </DataRow>
+        <DataRow title="Transaksi insider" summary={insiderSummaryText}>
+          {insiderBody}
+        </DataRow>
+        <DataRow title="Lima tahun" summary={beatSummary}>
+          {lima}
+        </DataRow>
+        <DataRow title="Tanda dari laporan" summary={flags.length === 0 ? "tidak ada tanda" : `${flags.length} tanda`}>
+          {flags.length === 0 ? (
+            <p className={body}>Tidak ada tanda dari 4 jenis yang terdeteksi saat ini.</p>
+          ) : (
+            <ul className={`${body} space-y-1`}>
+              {flags.map((flag) => (
+                <li key={flag.key}>&bull; {flag.label}</li>
+              ))}
+            </ul>
+          )}
+          <Link href="/jelajah/tanda" className="inline-flex min-h-11 items-center text-[13px] font-medium text-[var(--viz-accent)]">
+            Lihat semua tanda &rarr;
+          </Link>
+        </DataRow>
+        {h1 && (
+          <DataRow title="Free float dan gejolak harga" summary={snapshot.free_float === null ? "tidak tersedia" : `${idNum(snapshot.free_float * 100)}%`}>
+            <p className={body}>{h1.lead}</p>
+            <p className={fine}>{h1.caveat}</p>
+            <Link href="/situasi/float-tipis" className="inline-flex min-h-11 items-center text-[13px] font-medium text-[var(--viz-accent)]">
+              Lihat situasi free float &rarr;
+            </Link>
+          </DataRow>
+        )}
+        {lensBank && (
+          <DataRow title="Sudut pandang perbankan" summary="dibanding bank lain">
+            {lensBank}
+          </DataRow>
+        )}
+        {lensMining && (
+          <DataRow title="Eksposur komoditas" summary="komoditas terkait">
+            {lensMining}
+          </DataRow>
+        )}
+        <DataRow title="Aksi korporasi" summary={nActions === 0 ? "tidak ada tercatat" : `${nActions} tercatat`}>
+          {aksi}
+        </DataRow>
       </div>
-    ) : null;
-  // mobile order: harga, sektor, berita, temuan, insider, suspensi, bank, tambang, aksi, jangka panjang
-  const leftColumn = [place(harga, 0, "harga"), place(sektor, 1, "sektor"), place(lensBank, 6, "bank"), place(lensMining, 7, "tambang"), place(jangkaPanjang, 9, "panjang")];
-  const rightColumn = [place(temuan, 3, "temuan"), place(insider, 4, "insider"), place(suspensi, 5, "suspensi"), place(aksi, 8, "aksi")];
+    </section>
+  );
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-[18px] py-5 md:px-8 md:py-8">
+    <main className="mx-auto w-full max-w-3xl px-[18px] py-5 md:px-8 md:py-8">
       <RecentTracker code={code} />
-      <BackLink fallback={{ href: "/jelajah", label: "Jelajah" }} />
-      <div className="flex items-center justify-between gap-3">
-        <div className="flex min-w-0 items-center gap-3">
-          <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent font-mono text-[13px] font-bold text-accent-foreground md:size-[52px]">{code.slice(0, 2)}</span>
-          <div className="min-w-0">
-            <h1 className="text-2xl font-bold leading-tight tracking-[-0.02em] md:text-[32px]">{code}</h1>
-            <p className="truncate text-xs text-muted-foreground md:text-[13px]">{snapshot.company_name}</p>
-          </div>
-        </div>
-        <div className="flex shrink-0 items-center gap-2.5">
-          <DatePill>{formatDateId(asOf)}</DatePill>
-          <WatchlistButton symbol={code} companyName={snapshot.company_name} />
-        </div>
+      <BackLink fallback={{ href: "/", label: "Beranda" }} />
+      {header}
+      <div className="mt-8">
+        <StockSituations ctx={ctx} />
       </div>
-      <p className="mt-2 text-[11.5px] text-muted-foreground">Nilai pasar dan free float adalah angka sesaat per {formatDateId(asOf)}, bisa berubah tiap hari.</p>
-
-      <div className="mt-5 md:mt-6">{ringkasan}</div>
-
-      <div className="mt-8 flex flex-col gap-8 md:grid md:grid-cols-[1.2fr_1fr] md:gap-0">
-        <div className="contents md:flex md:min-w-0 md:flex-col md:gap-8 md:pr-10">{leftColumn}</div>
-        <div className="contents md:flex md:min-w-0 md:flex-col md:gap-8 md:border-l md:border-border md:pl-10">{rightColumn}</div>
+      <div className="mt-8">{dataLengkap}</div>
+      <div className="mt-8">
+        <OtherSituations ctx={ctx} />
       </div>
     </main>
   );

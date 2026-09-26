@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Coins, Droplets, Mountain, Pause, RotateCcw, Rocket, Scale, TrendingDown, Wallet } from "lucide-react";
+import { BarChart3, ChartNoAxesColumnIncreasing, Coins, Droplets, Mountain, Pause, Rocket, Scale, TrendingDown, TrendingUp, Wallet } from "lucide-react";
 import { getBaseRatesData } from "@/lib/base-rates-data";
 import { getBeatGoldData } from "@/lib/beat-gold-data";
 import { getFlagsData } from "@/lib/flags-data";
@@ -7,7 +7,7 @@ import { formatDateId, idNum, signedPct } from "@/lib/format";
 import { getIpoBoardsData } from "@/lib/ipo-boards-data";
 
 /**
- * The nine "situations": the circumstance a user is actually in ("saham
+ * The eleven "situations": the circumstance a user is actually in ("saham
  * saya turun banyak"), answered with a frequency: "what usually happens".
  * Distinct from /temuan, which asks "is this belief true".
  *
@@ -51,6 +51,9 @@ export async function getSituations(): Promise<SituationMeta[]> {
   const [base, ipo, flags, gold] = await Promise.all([getBaseRatesData(), getIpoBoardsData(), getFlagsData(), getBeatGoldData()]);
   const rec = base.recovery_after_fall;
   const lmt = base.loss_maker_turnaround;
+  const spike = base.recent_spike;
+  const decl = base.earnings_two_year_decline;
+  const dbl = base.earnings_more_than_doubled;
   const acc365 = ipo.holdout.horizons["365d"].by_board["Acceleration"]?.negative_rate_pct ?? 0;
   const asOfResearch = formatDateId(base.as_of);
 
@@ -61,25 +64,10 @@ export async function getSituations(): Promise<SituationMeta[]> {
       title: "Saham saya turun banyak",
       group: "Harga & penurunan",
       icon: TrendingDown,
-      line: `Penurunan terdalam setahun: biasanya ${signedPct(base.typical_drawdown.overall.median_pct)}`,
-      explain: `Dari ${idNum(base.typical_drawdown.overall.n, 0)} saham IDX, penurunan terdalam dalam satu tahun biasanya ${signedPct(base.typical_drawdown.overall.median_pct)} (nilai tengah). Seperempat saham turun lebih dalam dari ${signedPct(base.typical_drawdown.overall.p25_pct)}. Saham kecil biasanya ${signedPct(base.typical_drawdown.by_size_tercile.smallest.median_pct)}, saham besar ${signedPct(base.typical_drawdown.by_size_tercile.largest.median_pct)}.`,
+      line: `Biasanya ${signedPct(base.typical_drawdown.overall.median_pct)}; ${Math.round(rec.still_below_peak.pct ?? 0)} dari 100 belum pulih setahun kemudian`,
+      explain: `Dari ${idNum(base.typical_drawdown.overall.n, 0)} saham IDX, penurunan terdalam dalam satu tahun biasanya ${signedPct(base.typical_drawdown.overall.median_pct)} (nilai tengah). Seperempat saham turun lebih dalam dari ${signedPct(base.typical_drawdown.overall.p25_pct)}. Saham kecil biasanya ${signedPct(base.typical_drawdown.by_size_tercile.smallest.median_pct)}, saham besar ${signedPct(base.typical_drawdown.by_size_tercile.largest.median_pct)}. Dari ${idNum(rec.n_events, 0)} kejadian saham IDX jatuh 30% atau lebih, ${idNum(rec.still_below_peak.n, 0)} (${idNum(rec.still_below_peak.pct ?? 0)}%) masih di bawah puncak lamanya setahun kemudian dan ${idNum(rec.recovered.n, 0)} (${idNum(rec.recovered.pct ?? 0)}%) sudah kembali. Yang belum pulih, nilai tengah jaraknya ke puncak lama masih ${signedPct(rec.still_down_median_gap_pct ?? 0)}.`,
       asOf: asOfResearch,
-      limits: [`Riwayat harga riset per ${asOfResearch}, bukan data langsung.`, "Kecil, menengah, besar: sepertiga saham menurut nilai pasar."],
-      related: [
-        { label: "Jelajah: peringkat jauh dari puncak", href: "/jelajah" },
-        { label: "Situasi: ingin beli saat harga turun", href: "/situasi/beli-saat-turun" },
-      ],
-    },
-    {
-      slug: "beli-saat-turun",
-      researchPrices: true,
-      title: "Ingin beli saat harga turun",
-      group: "Harga & penurunan",
-      icon: RotateCcw,
-      line: `${Math.round(rec.still_below_peak.pct ?? 0)} dari 100 belum pulih setahun kemudian`,
-      explain: `Dari ${idNum(rec.n_events, 0)} kejadian saham IDX jatuh 30% atau lebih, ${idNum(rec.still_below_peak.n, 0)} (${idNum(rec.still_below_peak.pct ?? 0)}%) masih di bawah puncak lamanya setahun kemudian dan ${idNum(rec.recovered.n, 0)} (${idNum(rec.recovered.pct ?? 0)}%) sudah kembali. Yang belum pulih, nilai tengah jaraknya ke puncak lama masih ${signedPct(rec.still_down_median_gap_pct ?? 0)}.`,
-      asOf: asOfResearch,
-      limits: ["Pulih berarti kembali ke puncak lama, bukan sekadar naik dari dasar.", `Riwayat harga riset per ${asOfResearch}, bukan data langsung.`],
+      limits: [`Riwayat harga riset per ${asOfResearch}, bukan data langsung.`, "Kecil, menengah, besar: sepertiga saham menurut nilai pasar.", "Pulih berarti kembali ke puncak lama, bukan sekadar naik dari dasar."],
       related: [
         { label: "Jelajah: peringkat jauh dari puncak", href: "/jelajah" },
         { label: "Temuan: apakah oversold berarti memantul?", href: "/temuan?hasil=tidak-terbukti" },
@@ -113,6 +101,27 @@ export async function getSituations(): Promise<SituationMeta[]> {
       related: [{ label: "Temuan: suspensi karena lonjakan akan terus naik?", href: "/temuan?hasil=tidak-konsisten" }],
     },
     {
+      slug: "harga-baru-melonjak",
+      researchPrices: true,
+      title: "Harga baru melonjak",
+      group: "Harga & penurunan",
+      icon: TrendingUp,
+      line: `${Math.round(spike.pooled.share_below_event_close * 100)} dari 100 berakhir lebih rendah 60 hari bursa kemudian`,
+      explain: `Dari ${idNum(spike.pooled.n_events, 0)} kejadian harga naik 40% atau lebih dalam 20 hari bursa, ${idNum(spike.pooled.share_below_event_close * 100, 0)}% berakhir lebih rendah dari harga hari lonjakan 60 hari bursa kemudian. Nilai tengah perubahan ${signedPct(spike.pooled.median_change * 100, 0)}, dan ${idNum(spike.pooled.share_deep_drop * 100, 0)}% pernah ditutup 30% atau lebih di bawah harga hari lonjakan.`,
+      asOf: asOfResearch,
+      limits: [
+        `Kejadian satu saham bisa saling tumpang tindih. Hanya menghitung kejadian pertama tiap saham (${idNum(spike.first_event_per_stock.n_events, 0)}): ${Math.round(spike.first_event_per_stock.share_below_event_close * 100)} dari 100 lebih rendah.`,
+        "Lima tahun data, satu kondisi pasar.",
+        "Tidak dibandingkan dengan saham lain, jadi tidak berarti saham lain naik atau turun.",
+        "Ini deskripsi, bukan uji signifikansi, dan tidak dihitung sebagai percobaan.",
+        "Dari riwayat harga riset, dibekukan sebagai angka turunan.",
+      ],
+      related: [
+        { label: "Temuan: suspensi karena lonjakan akan terus naik?", href: "/temuan?hasil=tidak-konsisten" },
+        { label: "Situasi: saham pernah disuspensi", href: "/situasi/pernah-disuspensi" },
+      ],
+    },
+    {
       slug: "perusahaan-rugi",
       researchPrices: false,
       title: "Perusahaan sedang rugi",
@@ -123,7 +132,7 @@ export async function getSituations(): Promise<SituationMeta[]> {
       asOf: asOfResearch,
       limits: ["Untung lagi: laba bersih positif tahun berikutnya, sekecil apa pun.", "Satu perusahaan bisa dihitung lebih dari sekali."],
       related: [
-        { label: "Situasi: ingin beli saat harga turun", href: "/situasi/beli-saat-turun" },
+        { label: "Situasi: saham saya turun banyak", href: "/situasi/turun-banyak" },
         { label: "Jelajah: tanda harga dekat tertinggi, laba turun", href: "/jelajah/tanda?jenis=puncak-laba" },
       ],
     },
@@ -174,6 +183,47 @@ export async function getSituations(): Promise<SituationMeta[]> {
       related: [
         { label: "Temuan: free float kecil membuat harga bergejolak?", href: "/temuan?hasil=tidak-terbukti" },
         { label: "Jelajah: free float terendah", href: "/jelajah?urut=float-terendah" },
+      ],
+    },
+    {
+      slug: "laba-turun-dua-tahun",
+      researchPrices: false,
+      title: "Laba turun dua tahun berturut-turut",
+      group: "Perusahaan & IPO",
+      icon: BarChart3,
+      line: `${Math.round(decl.pooled.rate * 100)} dari 100 labanya naik lagi tahun berikutnya`,
+      explain: `Dari ${idNum(decl.pooled.n, 0)} pengamatan perusahaan yang labanya turun dua tahun berturut-turut, ${idNum(decl.pooled.rate * 100, 0)}% labanya lebih tinggi di tahun berikutnya. Per tahun: ${Object.entries(decl.by_year).map(([y, c]) => `${y} ${idNum(c.rate * 100, 0)}%`).join(", ")}.`,
+      asOf: asOfResearch,
+      limits: [
+        `Hanya dua tahun pengamatan (${Object.keys(decl.by_year).join(" dan ")}), ${idNum(decl.pooled.n, 0)} pengamatan. Satu perusahaan bisa dihitung dua kali.`,
+        "Laba naik lagi tidak berarti kembali ke tingkat semula, dan turun bisa berarti berubah jadi rugi.",
+        "Tidak dipisah menurut sektor.",
+        "Hasil tahun 2026 belum diketahui.",
+        "Dari laba bersih tahunan Sectors. Ini deskripsi, bukan uji signifikansi.",
+      ],
+      related: [
+        { label: "Situasi: perusahaan sedang rugi", href: "/situasi/perusahaan-rugi" },
+        { label: "Temuan: laba naik membuat harga saham naik?", href: "/temuan?hasil=tidak-terbukti" },
+      ],
+    },
+    {
+      slug: "laba-dua-kali-lipat",
+      researchPrices: false,
+      title: "Laba lebih dari dua kali lipat",
+      group: "Perusahaan & IPO",
+      icon: ChartNoAxesColumnIncreasing,
+      line: `${Math.round(dbl.gave_part_back.rate * 100)} dari 100 labanya lebih rendah tahun berikutnya`,
+      explain: `Dari ${idNum(dbl.gave_part_back.n, 0)} pengamatan perusahaan yang labanya lebih dari dua kali lipat, ${idNum(dbl.gave_part_back.rate * 100, 0)}% labanya lebih rendah tahun berikutnya, dan ${idNum(dbl.gave_all_back.rate * 100, 0)}% berakhir di bawah tingkat sebelum lonjakan.`,
+      asOf: asOfResearch,
+      limits: [
+        "Dua kali lipat dari laba kecil tetap laba kecil. Contoh: Rp 0,9 miliar ke Rp 31,3 miliar.",
+        `Sampel per tahun hanya ${Math.min(...Object.values(dbl.by_year).map((y) => y.gave_part_back.n))} sampai ${Math.max(...Object.values(dbl.by_year).map((y) => y.gave_part_back.n))} pengamatan.`,
+        "Hasil tahun 2026 belum diketahui.",
+        "Dari laba bersih tahunan Sectors. Ini deskripsi, bukan uji signifikansi.",
+      ],
+      related: [
+        { label: "Situasi: perusahaan sedang rugi", href: "/situasi/perusahaan-rugi" },
+        { label: "Temuan: laba naik membuat harga saham naik?", href: "/temuan?hasil=tidak-terbukti" },
       ],
     },
     {

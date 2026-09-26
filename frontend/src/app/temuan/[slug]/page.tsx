@@ -24,7 +24,6 @@ const APPEARS: Record<string, { label: string; href: string }[]> = {
     { label: "Halaman saham: bagian temuan untuk saham ini", href: "/saham/BBCA" },
   ],
   H11: [{ label: "Situasi: saham pernah disuspensi", href: "/situasi/pernah-disuspensi" }],
-  H9: [{ label: "Jelajah: berita dan sentimen", href: "/jelajah/berita" }],
 };
 
 function chartFor(row: FindingRow) {
@@ -50,6 +49,30 @@ function chartFor(row: FindingRow) {
           colors={["#2C4A7C", "#3F73C4", "#6FA4F5"]}
           label="Persentase perusahaan yang memotong dividen menurut kelompok rasio dividen"
         />
+      </QCard>
+    );
+  }
+  if (id === "H17") {
+    // Spearman rho, sector-neutral, from EXPERIMENT.md "H17 - NOT confirmed" (run 2026-09-22): explore 2022-2023 n=1,196 rho +0.050; holdout 2024-2025 n=1,256 rho +0.002.
+    const cells = [
+      { v: "+0,05", cap: "Data awal, 2022 sampai 2023 (1.196 pengamatan)" },
+      { v: "+0,00", cap: "Data uji, 2024 sampai 2025 (1.256 pengamatan)" },
+    ];
+    return (
+      <QCard
+        question="Apakah perusahaan yang labanya naik hasil harganya lebih baik?"
+        define="Kenaikan laba bersih dibanding tahun sebelumnya, dicocokkan dengan hasil harga Mei sampai September tahun berikutnya."
+        howTo="Angka ini korelasi: 0 berarti kenaikan laba tidak membantu menebak hasil harga, +1 berarti selalu sejalan."
+        takeaway="Di data uji, tidak ada kaitan. Di data awal pun hanya samar."
+      >
+        <div className="flex gap-3.5">
+          {cells.map((c) => (
+            <div key={c.cap} className="min-w-0 flex-1">
+              <div className="font-mono text-[26px] font-bold tracking-[-0.02em] text-muted-foreground">{c.v}</div>
+              <div className="mt-1 text-xs leading-snug text-muted-foreground">{c.cap}</div>
+            </div>
+          ))}
+        </div>
       </QCard>
     );
   }

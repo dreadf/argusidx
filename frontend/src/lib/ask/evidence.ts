@@ -70,8 +70,10 @@ const FINDING_MIN_SCORE = 3.5;
 
 /** Everyday wording for each situation page; matched as plain phrases. */
 const SITUATION_KEYWORDS: Record<string, string[]> = {
-  "turun-banyak": ["turun banyak", "saham turun", "anjlok", "jatuh", "drawdown", "nyangkut", "rugi besar", "turun 30", "turun 40", "turun 50"],
-  "beli-saat-turun": ["beli saat turun", "beli saat harga turun", "average down", "rata-rata turun", "saham turun", "pulih", "kembali naik", "balik ke harga", "serok", "turun 30", "turun 40", "turun 50"],
+  "turun-banyak": ["turun banyak", "saham turun", "anjlok", "jatuh", "drawdown", "nyangkut", "rugi besar", "turun 30", "turun 40", "turun 50", "beli saat turun", "beli saat harga turun", "average down", "rata-rata turun", "pulih", "kembali naik", "balik ke harga", "serok"],
+  "harga-baru-melonjak": ["melonjak", "naik tajam", "naik 40", "terbang", "roket", "harga baru naik"],
+  "laba-turun-dua-tahun": ["laba turun dua tahun", "laba turun berturut", "laba menurun dua tahun"],
+  "laba-dua-kali-lipat": ["laba dua kali lipat", "laba naik dua kali", "laba melonjak", "laba naik tajam"],
   "dekat-puncak-laba-turun": ["puncak", "tertinggi sepanjang masa", "all time high", "laba turun", "laba menurun"],
   "pernah-disuspensi": ["suspen", "dihentikan sementara", "digembok"],
   "perusahaan-rugi": ["rugi", "merugi", "laba negatif", "untung lagi", "balik untung", "turnaround"],
