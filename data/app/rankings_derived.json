@@ -1,0 +1,1149 @@
+{
+  "as_of": "2026-09-13",
+  "source_files": [
+    "universe_2026-09-13.json",
+    "insider_buys_2025_2026_2026-09-13.jsonl",
+    "insider_sells_2025_2026_2026-09-13.jsonl"
+  ],
+  "roe_vs_peers": {
+    "cara_menghitung": "Cara menghitung: ROE 2025 tiap saham dibandingkan dengan ROE 2025 saham lain dalam kelompok sebanding (kelompok sub-industri, industri, sub-sektor, atau sektor; minimal 15 saham). Persentil = jumlah pesaing dengan ROE lebih rendah dibagi (jumlah pesaing - 1). Banyak kelompok punya satu saham di 100%, jadi urutan seri: kelompok lebih besar, lalu ROE lebih tinggi, lalu kode saham. Bukan skor gabungan.",
+    "evaluable_count": 837,
+    "excluded_over_100_percent": [
+      {
+        "symbol": "ACST.JK",
+        "company_name": "PT Acset Indonusa Tbk.",
+        "roe_2025": 2.10267494944358,
+        "percentile": 100.0,
+        "group": "Heavy Constructions & Civil Engineering",
+        "group_level": "sub_industry",
+        "group_size": 24
+      },
+      {
+        "symbol": "LPPF.JK",
+        "company_name": "PT MDS Retailing Tbk",
+        "roe_2025": 2.65799087594584,
+        "percentile": 100.0,
+        "group": "Retailing",
+        "group_level": "sub_sector",
+        "group_size": 30
+      },
+      {
+        "symbol": "MPPA.JK",
+        "company_name": "Matahari Putra Prima Tbk",
+        "roe_2025": 67.8613464110566,
+        "percentile": 100.0,
+        "group": "Consumer Non-Cyclicals",
+        "group_level": "sector",
+        "group_size": 122
+      },
+      {
+        "symbol": "PGJO.JK",
+        "company_name": "PT Bahtera Bumi Raya Tbk",
+        "roe_2025": 3.40796266307102,
+        "percentile": 100.0,
+        "group": "Online Applications & Services",
+        "group_level": "sub_industry",
+        "group_size": 17
+      },
+      {
+        "symbol": "UNVR.JK",
+        "company_name": "Unilever Indonesia Tbk",
+        "roe_2025": 1.707476987199,
+        "percentile": 99.17355371900827,
+        "group": "Consumer Non-Cyclicals",
+        "group_level": "sector",
+        "group_size": 122
+      }
+    ],
+    "top": [
+      {
+        "symbol": "MLBI.JK",
+        "company_name": "Multi Bintang Indonesia Tbk",
+        "roe_2025": 0.871419418977135,
+        "percentile": 100.0,
+        "group": "Food & Beverage",
+        "group_level": "sub_sector",
+        "group_size": 94
+      },
+      {
+        "symbol": "LPLI.JK",
+        "company_name": "Star Pacific Tbk",
+        "roe_2025": 0.286798360184689,
+        "percentile": 100.0,
+        "group": "Real Estate Development & Management",
+        "group_level": "sub_industry",
+        "group_size": 81
+      },
+      {
+        "symbol": "BBCA.JK",
+        "company_name": "PT Bank Central Asia Tbk.",
+        "roe_2025": 0.204259243898794,
+        "percentile": 100.0,
+        "group": "Banks",
+        "group_level": "sub_industry",
+        "group_size": 48
+      },
+      {
+        "symbol": "SAFE.JK",
+        "company_name": "Steady Safe Tbk",
+        "roe_2025": 0.626188197192186,
+        "percentile": 100.0,
+        "group": "Transportation & Logistic",
+        "group_level": "sector",
+        "group_size": 37
+      },
+      {
+        "symbol": "KRAS.JK",
+        "company_name": "Krakatau Steel (Persero) Tbk",
+        "roe_2025": 0.613034435134506,
+        "percentile": 100.0,
+        "group": "Metals & Minerals",
+        "group_level": "industry",
+        "group_size": 35
+      },
+      {
+        "symbol": "SSMS.JK",
+        "company_name": "PT Sawit Sumbermas Sarana Tbk",
+        "roe_2025": 0.394598609439701,
+        "percentile": 100.0,
+        "group": "Plantations & Crops",
+        "group_level": "sub_industry",
+        "group_size": 32
+      },
+      {
+        "symbol": "FOOD.JK",
+        "company_name": "PT Sentra Food Indonesia Tbk",
+        "roe_2025": 0.61998225115468,
+        "percentile": 100.0,
+        "group": "Processed Foods",
+        "group_level": "sub_industry",
+        "group_size": 28
+      },
+      {
+        "symbol": "CLAY.JK",
+        "company_name": "PT Citra Putra Realty Tbk",
+        "roe_2025": 0.283776903701286,
+        "percentile": 100.0,
+        "group": "Hotels, Resorts & Cruise Lines",
+        "group_level": "sub_industry",
+        "group_size": 25
+      },
+      {
+        "symbol": "BLOG.JK",
+        "company_name": "PT Trimitra Trans Persada Tbk",
+        "roe_2025": 0.232766453767079,
+        "percentile": 100.0,
+        "group": "Logistics & Deliveries",
+        "group_level": "sub_industry",
+        "group_size": 25
+      },
+      {
+        "symbol": "MDIY.JK",
+        "company_name": "PT Daya Intiguna Yasa Tbk",
+        "roe_2025": 0.263154136421069,
+        "percentile": 100.0,
+        "group": "Specialty Retail",
+        "group_level": "industry",
+        "group_size": 24
+      },
+      {
+        "symbol": "GEMS.JK",
+        "company_name": "Golden Energy Mines Tbk",
+        "roe_2025": 0.364435992189714,
+        "percentile": 100.0,
+        "group": "Coal Production",
+        "group_level": "sub_industry",
+        "group_size": 21
+      },
+      {
+        "symbol": "DEWA.JK",
+        "company_name": "Darma Henwa Tbk",
+        "roe_2025": 0.501299963537267,
+        "percentile": 100.0,
+        "group": "Oil, Gas & Coal Equipment & Services",
+        "group_level": "sub_industry",
+        "group_size": 20
+      },
+      {
+        "symbol": "PACK.JK",
+        "company_name": "PT Abadi Nusantara Hijau Investama Tbk",
+        "roe_2025": 0.296306462091061,
+        "percentile": 100.0,
+        "group": "Containers & Packaging",
+        "group_level": "sub_industry",
+        "group_size": 20
+      },
+      {
+        "symbol": "DATA.JK",
+        "company_name": "PT Remala Abadi Tbk",
+        "roe_2025": 0.258517859239937,
+        "percentile": 100.0,
+        "group": "Telecommunication",
+        "group_level": "sub_sector",
+        "group_size": 20
+      },
+      {
+        "symbol": "JPFA.JK",
+        "company_name": "JAPFA Comfeed Indonesia Tbk",
+        "roe_2025": 0.200010420123286,
+        "percentile": 100.0,
+        "group": "Fish, Meat, & Poultry",
+        "group_level": "sub_industry",
+        "group_size": 20
+      },
+      {
+        "symbol": "DWGL.JK",
+        "company_name": "PT Dwi Guna Laksana Tbk",
+        "roe_2025": 0.449321106768967,
+        "percentile": 100.0,
+        "group": "Coal Distribution",
+        "group_level": "sub_industry",
+        "group_size": 19
+      },
+      {
+        "symbol": "BATA.JK",
+        "company_name": "Sepatu Bata Tbk",
+        "roe_2025": 0.882825226265245,
+        "percentile": 100.0,
+        "group": "Apparel & Luxury Goods",
+        "group_level": "industry",
+        "group_size": 18
+      },
+      {
+        "symbol": "INPS.JK",
+        "company_name": "PT Indah Prakasa Sentosa Tbk",
+        "roe_2025": 0.373745038458059,
+        "percentile": 100.0,
+        "group": "Oil & Gas",
+        "group_level": "industry",
+        "group_size": 18
+      },
+      {
+        "symbol": "NICK.JK",
+        "company_name": "PT Charnic Capital Tbk",
+        "roe_2025": 0.347550690903517,
+        "percentile": 100.0,
+        "group": "Holding & Investment Companies",
+        "group_level": "industry",
+        "group_size": 18
+      },
+      {
+        "symbol": "BACH.JK",
+        "company_name": "PT Bach Multi Global Tbk",
+        "roe_2025": 0.290226887656971,
+        "percentile": 100.0,
+        "group": "Industrial Services",
+        "group_level": "sub_sector",
+        "group_size": 18
+      }
+    ]
+  },
+  "dividend_consistency": {
+    "cara_menghitung": "Cara menghitung: jumlah tahun dari 2021-2025 dengan dividen per saham lebih dari nol. Seri diurutkan dari variasi dividen yang lebih kecil (simpangan baku dibagi rata-rata dari tahun-tahun berdividen), lalu kode saham. Daftar ini menunjukkan riwayat, bukan janji dividen berikutnya.",
+    "evaluable_count": 474,
+    "top": [
+      {
+        "symbol": "HOKI.JK",
+        "company_name": "PT Buyung Poetra Sembada Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.0
+      },
+      {
+        "symbol": "INKP.JK",
+        "company_name": "Indah Kiat Pulp & Paper Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.0
+      },
+      {
+        "symbol": "TKIM.JK",
+        "company_name": "Pabrik Kertas Tjiwi Kimia Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.0
+      },
+      {
+        "symbol": "INDF.JK",
+        "company_name": "Indofood Sukses Makmur Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.03230276858307176
+      },
+      {
+        "symbol": "BJTM.JK",
+        "company_name": "Bank Pembangunan Daerah Jawa Timur Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.040031635370885735
+      },
+      {
+        "symbol": "DVLA.JK",
+        "company_name": "Darya-Varia Laboratoria Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.04407044105482737
+      },
+      {
+        "symbol": "BBMD.JK",
+        "company_name": "PT Bank Mestika Dharma Tbk.",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.05361470185956617
+      },
+      {
+        "symbol": "BJBR.JK",
+        "company_name": "Bank Pembangunan Daerah Jawa Barat dan Banten Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.06580473819191883
+      },
+      {
+        "symbol": "TGKA.JK",
+        "company_name": "Tigaraksa Satria Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.07503612037598746
+      },
+      {
+        "symbol": "POWR.JK",
+        "company_name": "PT Cikarang Listrindo Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.08013023806312666
+      },
+      {
+        "symbol": "MIKA.JK",
+        "company_name": "PT Mitra Keluarga Karyasehat Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.08224225021923846
+      },
+      {
+        "symbol": "EPMT.JK",
+        "company_name": "Enseval Putera Megatrading Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.08251680965380333
+      },
+      {
+        "symbol": "SIDO.JK",
+        "company_name": "PT Industri Jamu Dan Farmasi Sido Muncul Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.0832502629542852
+      },
+      {
+        "symbol": "ICBP.JK",
+        "company_name": "Indofood CBP Sukses Makmur Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.09751323117565604
+      },
+      {
+        "symbol": "KLBF.JK",
+        "company_name": "Kalbe Farma Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.10747303622183207
+      },
+      {
+        "symbol": "HMSP.JK",
+        "company_name": "HM Sampoerna Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.11191459861663919
+      },
+      {
+        "symbol": "JRPT.JK",
+        "company_name": "Jaya Real Property Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.1145374449339207
+      },
+      {
+        "symbol": "TLKM.JK",
+        "company_name": "PT Telkom Indonesia (Persero) Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.11817245504947774
+      },
+      {
+        "symbol": "UNVR.JK",
+        "company_name": "Unilever Indonesia Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.118505523825279
+      },
+      {
+        "symbol": "VICI.JK",
+        "company_name": "PT Victoria Care Indonesia Tbk",
+        "years_paid": 5,
+        "of_years": 5,
+        "variation": 0.13608276348795434
+      }
+    ]
+  },
+  "earnings_streaks": {
+    "cara_menghitung": "Cara menghitung: jumlah tahun beruntun sampai 2025 di mana laba tahunan lebih tinggi dari tahun sebelumnya, dengan semua laba dalam rentang itu positif. Seri diurutkan menurut kode saham; jumlah saham di panjang teratas dicatat di daftar.",
+    "evaluable_count": 345,
+    "longest_run": 4,
+    "stocks_at_longest_run": 54,
+    "top": [
+      {
+        "symbol": "ADES.JK",
+        "company_name": "Akasha Wira International Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "ASGR.JK",
+        "company_name": "Astra Graphia Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "ASJT.JK",
+        "company_name": "Asuransi Jasa Tania Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "AUTO.JK",
+        "company_name": "Astra Otoparts Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "BAYU.JK",
+        "company_name": "Bayu Buana Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "BBCA.JK",
+        "company_name": "PT Bank Central Asia Tbk.",
+        "rising_years": 4
+      },
+      {
+        "symbol": "BBHI.JK",
+        "company_name": "PT Allo Bank Indonesia Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "BELL.JK",
+        "company_name": "PT Trisula Textile Industries Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "BGTG.JK",
+        "company_name": "PT Bank Ganesha Tbk.",
+        "rising_years": 4
+      },
+      {
+        "symbol": "BIRD.JK",
+        "company_name": "PT Blue Bird Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "BMRI.JK",
+        "company_name": "PT Bank Mandiri (Persero) Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "BNLI.JK",
+        "company_name": "Bank Permata Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "BREN.JK",
+        "company_name": "PT Barito Renewables Energy Tbk.",
+        "rising_years": 4
+      },
+      {
+        "symbol": "BRIS.JK",
+        "company_name": "PT Bank Syariah Indonesia Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "CASA.JK",
+        "company_name": "PT Capital Financial Indonesia Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "CASS.JK",
+        "company_name": "Cahaya Aero Services Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "CMRY.JK",
+        "company_name": "PT Cisarua Mountain Dairy Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "DCII.JK",
+        "company_name": "PT DCI Indonesia Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "DGIK.JK",
+        "company_name": "Nusa Konstruksi Enjiniring  Tbk",
+        "rising_years": 4
+      },
+      {
+        "symbol": "ELSA.JK",
+        "company_name": "Elnusa Tbk",
+        "rising_years": 4
+      }
+    ]
+  },
+  "net_insider": {
+    "cara_menghitung": "Cara menghitung: selisih saham yang dibeli dikurangi dijual dalam laporan kepemilikan Januari 2025 sampai September 2026 (dari kepemilikan sebelum dan sesudah tiap laporan), dibagi jumlah saham beredar 2025. Laporan bertanda takeover ditampilkan terpisah. Sebuah laporan belum tentu berasal dari orang dalam dalam arti umum.",
+    "filings_used": 3143,
+    "filings_tagged_takeover": 45,
+    "evaluable_count": 378,
+    "excluded_over_100_percent": [
+      {
+        "symbol": "BIKE.JK",
+        "company_name": "PT Sepeda Bersama Indonesia Tbk",
+        "buy_shares": 75962140.0,
+        "sell_shares": 1843000000.0,
+        "net_shares": -1767037860.0,
+        "share_of_outstanding": -1.3653975654759765,
+        "n_filings": 7,
+        "over_100_percent": true
+      },
+      {
+        "symbol": "LOPI.JK",
+        "company_name": "PT Logisticsplus International Tbk",
+        "buy_shares": 8208600.0,
+        "sell_shares": 1196003160.0,
+        "net_shares": -1187794560.0,
+        "share_of_outstanding": -1.0788025876198541,
+        "n_filings": 31,
+        "over_100_percent": true
+      },
+      {
+        "symbol": "MAPI.JK",
+        "company_name": "Mitra Adiperkasa Tbk",
+        "buy_shares": 20496303804.0,
+        "sell_shares": 0.0,
+        "net_shares": 20496303804.0,
+        "share_of_outstanding": 1.2309783402907994,
+        "n_filings": 4,
+        "over_100_percent": true
+      },
+      {
+        "symbol": "PACK.JK",
+        "company_name": "PT Abadi Nusantara Hijau Investama Tbk",
+        "buy_shares": 7269322100.0,
+        "sell_shares": 522701400.0,
+        "net_shares": 6746620700.0,
+        "share_of_outstanding": 4.223503802545292,
+        "n_filings": 7,
+        "over_100_percent": true
+      }
+    ],
+    "top_net_buyers": [
+      {
+        "symbol": "GIAA.JK",
+        "company_name": "Garuda Indonesia (Persero) Tbk",
+        "buy_shares": 324704165600.0,
+        "sell_shares": 0.0,
+        "net_shares": 324704165600.0,
+        "share_of_outstanding": 0.7976192158659463,
+        "n_filings": 2,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "RLCO.JK",
+        "company_name": "PT Abadi Lestari Indonesia Tbk",
+        "buy_shares": 1819268700.0,
+        "sell_shares": 44493900.0,
+        "net_shares": 1774774800.0,
+        "share_of_outstanding": 0.567927936,
+        "n_filings": 5,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "ITMG.JK",
+        "company_name": "Indo Tambangraya Megah Tbk",
+        "buy_shares": 585000000.0,
+        "sell_shares": 0.0,
+        "net_shares": 585000000.0,
+        "share_of_outstanding": 0.5178471368364586,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "OKAS.JK",
+        "company_name": "Ancora Indonesia Resources Tbk",
+        "buy_shares": 1215042776.0,
+        "sell_shares": 0.0,
+        "net_shares": 1215042776.0,
+        "share_of_outstanding": 0.5119312407940281,
+        "n_filings": 2,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "PADA.JK",
+        "company_name": "PT Personel Alih Daya Tbk",
+        "buy_shares": 2052002200.0,
+        "sell_shares": 364547200.0,
+        "net_shares": 1687455000.0,
+        "share_of_outstanding": 0.5028698684499511,
+        "n_filings": 3,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "MEJA.JK",
+        "company_name": "PT Harta Djaya Karya Tbk",
+        "buy_shares": 878845100.0,
+        "sell_shares": 0.0,
+        "net_shares": 878845100.0,
+        "share_of_outstanding": 0.44247933374236675,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "UANG.JK",
+        "company_name": "PT Pakuan Tbk",
+        "buy_shares": 430624350.0,
+        "sell_shares": 2427184.0,
+        "net_shares": 428197166.0,
+        "share_of_outstanding": 0.3538819553719008,
+        "n_filings": 3,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "SGRO.JK",
+        "company_name": "PT Prime Agri Resources Tbk",
+        "buy_shares": 599671657.0,
+        "sell_shares": 0.0,
+        "net_shares": 599671657.0,
+        "share_of_outstanding": 0.3297395813973437,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "NASI.JK",
+        "company_name": "PT Wahana Inti Makmur Tbk",
+        "buy_shares": 229157800.0,
+        "sell_shares": 2900000.0,
+        "net_shares": 226257800.0,
+        "share_of_outstanding": 0.28020172813427385,
+        "n_filings": 9,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "TRUK.JK",
+        "company_name": "PT Guna Timur Raya Tbk",
+        "buy_shares": 174575300.0,
+        "sell_shares": 65250000.0,
+        "net_shares": 109325300.0,
+        "share_of_outstanding": 0.2512352513419729,
+        "n_filings": 8,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "VICI.JK",
+        "company_name": "PT Victoria Care Indonesia Tbk",
+        "buy_shares": 3354000000.0,
+        "sell_shares": 1677000000.0,
+        "net_shares": 1677000000.0,
+        "share_of_outstanding": 0.24994502751989098,
+        "n_filings": 3,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "PKPK.JK",
+        "company_name": "Perdana Karya Perkasa Tbk",
+        "buy_shares": 288834000.0,
+        "sell_shares": 0.0,
+        "net_shares": 288834000.0,
+        "share_of_outstanding": 0.240695,
+        "n_filings": 8,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "PANI.JK",
+        "company_name": "PT Pantai Indah Kapuk Dua Tbk.",
+        "buy_shares": 4645725913.0,
+        "sell_shares": 363175600.0,
+        "net_shares": 4282550313.0,
+        "share_of_outstanding": 0.2363826385205729,
+        "n_filings": 8,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "HELI.JK",
+        "company_name": "PT Jaya Trishindo Tbk",
+        "buy_shares": 358750100.0,
+        "sell_shares": 167150600.0,
+        "net_shares": 191599500.0,
+        "share_of_outstanding": 0.23002032924014532,
+        "n_filings": 11,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "INET.JK",
+        "company_name": "PT Sinergi Inti Andalan Prima Tbk",
+        "buy_shares": 2169706599.0,
+        "sell_shares": 0.0,
+        "net_shares": 2169706599.0,
+        "share_of_outstanding": 0.22658146076890187,
+        "n_filings": 7,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "BACA.JK",
+        "company_name": "PT Bank Capital Indonesia Tbk",
+        "buy_shares": 6622619800.0,
+        "sell_shares": 2600469751.0,
+        "net_shares": 4022150049.0,
+        "share_of_outstanding": 0.20158096690510893,
+        "n_filings": 3,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "NAYZ.JK",
+        "company_name": "PT Hassana Boga Sejahtera Tbk",
+        "buy_shares": 750000000.0,
+        "sell_shares": 250000000.0,
+        "net_shares": 500000000.0,
+        "share_of_outstanding": 0.19607754925425686,
+        "n_filings": 3,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "SPMA.JK",
+        "company_name": "Suparma Tbk",
+        "buy_shares": 924885865.0,
+        "sell_shares": 213028705.0,
+        "net_shares": 711857160.0,
+        "share_of_outstanding": 0.1742275510027314,
+        "n_filings": 12,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "BAPA.JK",
+        "company_name": "Bekasi Asri Pemula Tbk",
+        "buy_shares": 104214800.0,
+        "sell_shares": 600000.0,
+        "net_shares": 103614800.0,
+        "share_of_outstanding": 0.1544870887250249,
+        "n_filings": 7,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "LUCY.JK",
+        "company_name": "PT Lima Dua Lima Tiga Tbk",
+        "buy_shares": 227216084.0,
+        "sell_shares": 0.0,
+        "net_shares": 227216084.0,
+        "share_of_outstanding": 0.149975926640355,
+        "n_filings": 1,
+        "over_100_percent": false
+      }
+    ],
+    "top_net_sellers": [
+      {
+        "symbol": "ANJT.JK",
+        "company_name": "PT Austindo Nusantara Jaya Tbk.",
+        "buy_shares": 0.0,
+        "sell_shares": 3057981688.0,
+        "net_shares": -3057981688.0,
+        "share_of_outstanding": -0.9116941387971707,
+        "n_filings": 4,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "PNGO.JK",
+        "company_name": "PT Pinago Utama Tbk",
+        "buy_shares": 0.0,
+        "sell_shares": 586855500.0,
+        "net_shares": -586855500.0,
+        "share_of_outstanding": -0.7517470403537808,
+        "n_filings": 4,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "FAPA.JK",
+        "company_name": "PT FAP Agri Tbk",
+        "buy_shares": 240924800.0,
+        "sell_shares": 2898121330.0,
+        "net_shares": -2657196530.0,
+        "share_of_outstanding": -0.7397282754960196,
+        "n_filings": 4,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "SOFA.JK",
+        "company_name": "PT Solusi Environment Asia Tbk",
+        "buy_shares": 0.0,
+        "sell_shares": 1173500000.0,
+        "net_shares": -1173500000.0,
+        "share_of_outstanding": -0.7093304883936076,
+        "n_filings": 3,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "LAPD.JK",
+        "company_name": "Leyand International Tbk",
+        "buy_shares": 235328700.0,
+        "sell_shares": 2902396276.0,
+        "net_shares": -2667067576.0,
+        "share_of_outstanding": -0.672423634458158,
+        "n_filings": 12,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "MMLP.JK",
+        "company_name": "PT Mega Manunggal Property Tbk",
+        "buy_shares": 534813870.0,
+        "sell_shares": 4598344558.0,
+        "net_shares": -4063530688.0,
+        "share_of_outstanding": -0.5785832854839719,
+        "n_filings": 3,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "AMMS.JK",
+        "company_name": "PT Agung Menjangan Mas Tbk",
+        "buy_shares": 40270100.0,
+        "sell_shares": 690530912.0,
+        "net_shares": -650260812.0,
+        "share_of_outstanding": -0.54037676276352,
+        "n_filings": 5,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "MDLA.JK",
+        "company_name": "PT Medela Potentia Tbk",
+        "buy_shares": 1213600.0,
+        "sell_shares": 6300000000.0,
+        "net_shares": -6298786400.0,
+        "share_of_outstanding": -0.4844516252654689,
+        "n_filings": 5,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "PGJO.JK",
+        "company_name": "PT Bahtera Bumi Raya Tbk",
+        "buy_shares": 185299350.0,
+        "sell_shares": 510712750.0,
+        "net_shares": -325413400.0,
+        "share_of_outstanding": -0.4295775453332971,
+        "n_filings": 9,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "DATA.JK",
+        "company_name": "PT Remala Abadi Tbk",
+        "buy_shares": 2201800.0,
+        "sell_shares": 550000900.0,
+        "net_shares": -547799100.0,
+        "share_of_outstanding": -0.39839607976566177,
+        "n_filings": 5,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "LPLI.JK",
+        "company_name": "Star Pacific Tbk",
+        "buy_shares": 0.0,
+        "sell_shares": 423666412.0,
+        "net_shares": -423666412.0,
+        "share_of_outstanding": -0.36197516181563955,
+        "n_filings": 2,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "IOTF.JK",
+        "company_name": "PT Sumber Sinergi Makmur Tbk",
+        "buy_shares": 435493100.0,
+        "sell_shares": 2383038200.0,
+        "net_shares": -1947545100.0,
+        "share_of_outstanding": -0.3616961394228887,
+        "n_filings": 7,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "SKBM.JK",
+        "company_name": "Sekar Bumi Tbk",
+        "buy_shares": 554706046.0,
+        "sell_shares": 1109412092.0,
+        "net_shares": -554706046.0,
+        "share_of_outstanding": -0.3206394011533524,
+        "n_filings": 3,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "DEWA.JK",
+        "company_name": "Darma Henwa Tbk",
+        "buy_shares": 0.0,
+        "sell_shares": 10731338030.0,
+        "net_shares": -10731338030.0,
+        "share_of_outstanding": -0.2790768217711009,
+        "n_filings": 13,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "NICK.JK",
+        "company_name": "PT Charnic Capital Tbk",
+        "buy_shares": 210000.0,
+        "sell_shares": 166021800.0,
+        "net_shares": -165811800.0,
+        "share_of_outstanding": -0.25464128538945424,
+        "n_filings": 14,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "MORA.JK",
+        "company_name": "PT Ekamas Mora Republik Tbk",
+        "buy_shares": 0.0,
+        "sell_shares": 5478055710.0,
+        "net_shares": -5478055710.0,
+        "share_of_outstanding": -0.23166289432071105,
+        "n_filings": 3,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "BNBR.JK",
+        "company_name": "Bakrie & Brothers Tbk",
+        "buy_shares": 14685041055.0,
+        "sell_shares": 52564303680.0,
+        "net_shares": -37879262625.0,
+        "share_of_outstanding": -0.2185996988593909,
+        "n_filings": 11,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "HOPE.JK",
+        "company_name": "PT Harapan Duta Pertiwi Tbk",
+        "buy_shares": 644155400.0,
+        "sell_shares": 1108240067.0,
+        "net_shares": -464084667.0,
+        "share_of_outstanding": -0.21784328600697203,
+        "n_filings": 11,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "WINR.JK",
+        "company_name": "PT Winner Nusantara Jaya Tbk",
+        "buy_shares": 0.0,
+        "sell_shares": 1136010300.0,
+        "net_shares": -1136010300.0,
+        "share_of_outstanding": -0.21677834511546637,
+        "n_filings": 56,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "TRIM.JK",
+        "company_name": "PT Trimegah Sekuritas Indonesia Tbk",
+        "buy_shares": 3146700.0,
+        "sell_shares": 1375742500.0,
+        "net_shares": -1372595800.0,
+        "share_of_outstanding": -0.1930704554862018,
+        "n_filings": 6,
+        "over_100_percent": false
+      }
+    ],
+    "takeover_tagged_separate": [
+      {
+        "symbol": "PACK.JK",
+        "company_name": "PT Abadi Nusantara Hijau Investama Tbk",
+        "buy_shares": 0.0,
+        "sell_shares": 6836867700.0,
+        "net_shares": -6836867700.0,
+        "share_of_outstanding": -4.280000019631914,
+        "n_filings": 1,
+        "over_100_percent": true
+      },
+      {
+        "symbol": "MMLP.JK",
+        "company_name": "PT Mega Manunggal Property Tbk",
+        "buy_shares": 5764371329.0,
+        "sell_shares": 0.0,
+        "net_shares": 5764371329.0,
+        "share_of_outstanding": 0.8207564205511001,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "SOFA.JK",
+        "company_name": "PT Solusi Environment Asia Tbk",
+        "buy_shares": 1173500000.0,
+        "sell_shares": 0.0,
+        "net_shares": 1173500000.0,
+        "share_of_outstanding": 0.7093304883936076,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "AYLS.JK",
+        "company_name": "PT Agro Yasa Lestari Tbk",
+        "buy_shares": 594720000.0,
+        "sell_shares": 0.0,
+        "net_shares": 594720000.0,
+        "share_of_outstanding": 0.6970023606981943,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "DOOH.JK",
+        "company_name": "PT Era Media Sejahtera Tbk",
+        "buy_shares": 0.0,
+        "sell_shares": 3946835000.0,
+        "net_shares": -3946835000.0,
+        "share_of_outstanding": -0.5110010667473455,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "DATA.JK",
+        "company_name": "PT Remala Abadi Tbk",
+        "buy_shares": 701250900.0,
+        "sell_shares": 0.0,
+        "net_shares": 701250900.0,
+        "share_of_outstanding": 0.5099964740579934,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "MAPI.JK",
+        "company_name": "Mitra Adiperkasa Tbk",
+        "buy_shares": 1000000.0,
+        "sell_shares": 8466000000.0,
+        "net_shares": -8465000000.0,
+        "share_of_outstanding": -0.5083956478303192,
+        "n_filings": 2,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "AMMS.JK",
+        "company_name": "PT Agung Menjangan Mas Tbk",
+        "buy_shares": 599563869.0,
+        "sell_shares": 0.0,
+        "net_shares": 599563869.0,
+        "share_of_outstanding": 0.4982468213080495,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "LAPD.JK",
+        "company_name": "Leyand International Tbk",
+        "buy_shares": 1509087600.0,
+        "sell_shares": 0.0,
+        "net_shares": 1509087600.0,
+        "share_of_outstanding": 0.38047261263234633,
+        "n_filings": 2,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "NAYZ.JK",
+        "company_name": "PT Hassana Boga Sejahtera Tbk",
+        "buy_shares": 0.0,
+        "sell_shares": 750000000.0,
+        "net_shares": -750000000.0,
+        "share_of_outstanding": -0.29411632388138526,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "IOTF.JK",
+        "company_name": "PT Sumber Sinergi Makmur Tbk",
+        "buy_shares": 1567500000.0,
+        "sell_shares": 0.0,
+        "net_shares": 1567500000.0,
+        "share_of_outstanding": 0.29111454135022496,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "LOPI.JK",
+        "company_name": "PT Logisticsplus International Tbk",
+        "buy_shares": 304000000.0,
+        "sell_shares": 0.0,
+        "net_shares": 304000000.0,
+        "share_of_outstanding": 0.2761049744464528,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "GPSO.JK",
+        "company_name": "PT Geoprima Solusi Tbk",
+        "buy_shares": 0.0,
+        "sell_shares": 170000000.0,
+        "net_shares": -170000000.0,
+        "share_of_outstanding": -0.2548250058075368,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "PKPK.JK",
+        "company_name": "Perdana Karya Perkasa Tbk",
+        "buy_shares": 612000000.0,
+        "sell_shares": 900000000.0,
+        "net_shares": -288000000.0,
+        "share_of_outstanding": -0.24,
+        "n_filings": 2,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "TRUK.JK",
+        "company_name": "PT Guna Timur Raya Tbk",
+        "buy_shares": 0.0,
+        "sell_shares": 104325300.0,
+        "net_shares": -104325300.0,
+        "share_of_outstanding": -0.2397449901059199,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "UANG.JK",
+        "company_name": "PT Pakuan Tbk",
+        "buy_shares": 0.0,
+        "sell_shares": 234178350.0,
+        "net_shares": -234178350.0,
+        "share_of_outstanding": -0.19353582644628098,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "IRSX.JK",
+        "company_name": "PT Folago Global Nusantara Tbk",
+        "buy_shares": 760000000.0,
+        "sell_shares": 0.0,
+        "net_shares": 760000000.0,
+        "share_of_outstanding": 0.12267864210717884,
+        "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "VISI.JK",
+        "company_name": "PT Satu Visi Putra Tbk",
+        "buy_shares": 1901580000.0,
+        "sell_shares": 2200000000.0,
+        "net_shares": -298420000.0,
+        "share_of_outstanding": -0.09704715447154472,
+        "n_filings": 2,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "INPS.JK",
+        "company_name": "PT Indah Prakasa Sentosa Tbk",
+        "buy_shares": 568613000.0,
+        "sell_shares": 518613000.0,
+        "net_shares": 50000000.0,
+        "share_of_outstanding": 0.07745180812570496,
+        "n_filings": 2,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "ENAK.JK",
+        "company_name": "PT Champ Resto Indonesia Tbk",
+        "buy_shares": 165500100.0,
+        "sell_shares": 0.0,
+        "net_shares": 165500100.0,
+        "share_of_outstanding": 0.07637691401705747,
+        "n_filings": 1,
+        "over_100_percent": false
+      }
+    ]
+  }
+}
