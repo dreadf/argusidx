@@ -2946,10 +2946,13 @@ covers 29 stocks, but only **12 agree** with H4's own construct
 snapshot vs 0.32 recomputed). Recomputed with the H4 module unchanged,
 stock-years with payout strictly above 100% saw a dividend cut the next
 year in **50 of 82 (61.0%, explore) and 70 of 88 (79.5%, holdout)**.
-**Decision:** the situation triggers on H4's construct (12 stocks), and
-the flag is rebased to that construct, a definition change disclosed here,
-made because the snapshot ratio is trailing and does not match the tested
-quantity, not to move a count.
+**Decision:** the situation and the flag are rebased to H4's construct
+(2025 dividend x shares / 2025 earnings above 100%). Run on the whole
+universe this marks **37 of 306** evaluable stocks now (the 12 above are
+only the overlap with the old 29), a definition change disclosed here, made
+because the snapshot ratio is trailing and does not match the tested
+quantity, not to move a count. The old snapshot version is kept in the code
+for the comparison.
 
 **I3 — near the high, earnings down.** Stock-years (evaluated 1 May): 2022:
 41, 2023: 13, 2024: 14 (68 pooled). Negative return over 1 May to 4 Sep:
@@ -3003,6 +3006,143 @@ window (35 of the 54 lack the window). No winsorising was pre-registered.
 **S2 diagnostic added after seeing the counts.** Follow-ups more than 7
 days after the event, within 365 days: 72 of 174 (41.4%); the frozen figure
 stays 100 of 174 (57.5%).
+
+## Pre-registration, 2026-09-26 (batch 2) — E, F1, P3, I7, I8, I10 and H19
+
+Written before any of these was computed. All are descriptive or
+disclosure items, not counted in the trial counter, run once each,
+**except H19**, which is a falsifiable test (+1 trial) **only if** its
+power rule passes; the first step for H19 is a count, with no outcome
+computed.
+
+**E — H4 robustness (disclosure, not a new trial).** H4's tercile design is
+unchanged. (a) Recompute the payout-tercile cut rates three ways for the
+holdout and explore phases: missing next-year dividend counted as a cut
+(as now, if that is what H4 does; state it), excluded, and as a separate
+bucket. (b) Mechanical-effect check: restrict to stock-years whose earnings
+did not fall (`earnings[Y+1] >= earnings[Y]`) and report the cut rate by
+payout tercile. (c) Placebo: shuffle payout ratios within sub-sector 1,000
+times (seed 20260926) and report where the real holdout rho falls in that
+distribution. (d) A note that H10 reused the H5 holdout years for its
+second screen (a disclosure item, no computation).
+
+**F1 — flag thresholds (disclosure, outcome-free).** For each flag in
+`build_flags.py` (payout ratio 1.0; near-high 0.10; yield multiplier 1.5;
+LQ45 float 0.25) report the number of stocks flagged at the threshold and
+at ±20% of it. No outcomes are read and no threshold is changed. The
+rationale text per threshold is written by the lead.
+
+**P3 — survivorship, counted from owned data.** From the suspensions file:
+count events whose reason mentions delisting (`delisting`, `penghapusan
+pencatatan`, `go private`), the distinct symbols, and how many of those
+symbols are absent from the 962-company universe (i.e. really gone).
+Also the count of universe companies missing from the 887-stock price
+cache. Descriptive, to state how many companies the base rates cannot see.
+
+**I7 — typical drawdown by sector.** Same method as `m_typical_drawdown`
+(1-year cache `close`, one `max_drawdown` per stock) grouped by `sector`
+(the 11 IDX sectors) instead of size tercile; median, 25th/75th
+percentile, share with a drawdown of at least 30%; groups with fewer than
+15 stocks are marked "too few". Descriptive.
+
+**I8 — "LQ45 lebih aman?" (contemporaneous association only, like H1).**
+LQ45 members (from `indices`) versus the 45 largest non-members by
+`market_cap` (a size-matched comparison), over the 1-year cache: median
+max drawdown, median annualised volatility, share with a drawdown of at
+least 30%. `indices` and `market_cap` are current snapshots, so this is
+an association, never a prediction.
+
+**I10 — derived rankings (a documented method, not a score), a new builder
+`pipeline/appdata/build_derived_rankings.py` writing
+`data/app/rankings_derived.json`.** (a) ROE percentile within the stock's
+peer group, using `peer_groups.py`'s cascade and minimum group size,
+`roe[2025]`, top 20 with group name and size. (b) Dividend consistency:
+years of positive `total_dividend` out of 2021–2025, ties broken by the
+smaller variation of the dividend, top 20. (c) Earnings streaks: longest
+current run of rising annual earnings ending 2025 (all years positive),
+top 20. (d) Net insider buying: (sum of buy shares − sum of sell shares
+over 2025-01 to 2026-09, from the filings' `holding_before`/`holding_after`)
+as a share of `outstanding_shares[2025]`, top 20 net buyers and top 20 net
+sellers, filings tagged `takeover` shown separately. Each list carries a
+short "Cara menghitung" text and no combined score.
+
+**H19 — coal price → coal miners (step 1: count only).** Series: monthly
+`Coal` and `Coal (HBA 1)` prices (owned). Count the usable monthly changes
+per series. **Power rule:** if fewer than 24, H19 becomes a descriptive chart
+(commodity price index beside the equal-weight coal-miner price index, no
+verdict). If 24 or more, a test is pre-registered separately before any
+outcome is computed: predictor = the month-t change, outcome = the
+equal-weight excess return of the 55 listed coal miners in month t+1,
+Spearman, with a stated assumption on when each monthly price becomes
+public.
+
+### Results, batch 2 (descriptive and disclosure items), run once 2026-09-26
+
+None is a counted trial.
+
+**E — H4 robustness.** H4 excludes stock-years with a missing next-year
+dividend (so its published rates are the "excluded" variant; the row counts
+match: 450 explore, 540 holdout). Cut rate by payout tercile, low to high:
+*excluded (as published)* explore 8.0% / 28.0% / 51.3%, holdout 13.9% /
+39.4% / 65.6%; *missing counted as a cut* explore 18.8% / 32.3% / 54.9%,
+holdout 21.5% / 43.5% / 71.9%. The rise with payout holds in every variant.
+Missing next-year dividend: 43 (explore) and 59 (holdout) rows, with a
+lower typical payout (0.31, 0.45). **Mechanical-effect check** (only
+stock-years whose earnings did not fall): explore 4.7% / 23.5% / 44.7%,
+holdout 11.1% / 34.3% / 66.3%, so the pattern is not just "earnings fell".
+**Placebo** (payout shuffled within sub-sector, 1,000 draws, holdout): real
+rho +0.441 against a placebo mean +0.025 (sd 0.042, max +0.156); 0 of 1,000
+draws reached it. Disclosure: H10's second screen reused the H5 holdout
+years. H4's verdict stands.
+
+**F1 — flag sensitivity (counts only, no outcomes).** Flags at −20% / as
+shipped / +20% of the threshold: payout above earnings (H4 construct,
+shipped from 2026-09-26) 56 / 37 / 26 (of 306; the earlier snapshot version
+was 56 / 29 / 22 of 326); near the high with lower earnings 12 / 14 / 15 (of 852); yield far
+above average (multiplier 1.2 / 1.5 / 1.8) 122 / 89 / 75 (of 462); LQ45
+with low float 10 / 12 / 17 (of 45). Counts move a lot for the payout and
+yield flags, which is why the app states the rule with each flag.
+
+**P3 — survivorship.** The owned suspensions file has only 3 delisting
+events over 2 symbols, and 1 of them (HDTX) is absent from the 962-company
+universe. **So our data cannot count how many companies disappeared;** the
+universe holds only listed companies. 75 universe companies are missing
+from the 5-year price cache (49 from the 1-year cache), so their outcomes
+are not in the price-based base rates either. Every base rate is therefore
+"of companies that are still listed", which is likely optimistic.
+
+**I7 — typical drawdown by sector** (1-year, 913 stocks; median max
+drawdown, share with 30%+): Financials −41.5% (72%), Healthcare −41.6%
+(81%), Basic Materials −45.8% (73%), Consumer Non-Cyclicals −45.6% (81%),
+Industrials −49.7% (77%), Infrastructures −50.9% (84%), Technology −51.3%
+(88%), Energy −51.8% (83%), Consumer Cyclicals −52.6% (88%), Properties
+−54.0% (86%), Transportation −57.6% (95%). Every group has 37+ stocks.
+
+**I8 — LQ45 vs the 45 largest non-members** (association only): median
+max drawdown −44.7% vs −46.0%; median annualised volatility 0.49 vs 0.55;
+share with a 30%+ drawdown 82.2% vs 80.0%. LQ45 membership is not
+associated with a smaller fall, only slightly lower volatility. `indices`
+is a current snapshot, and a null `indices` was treated as non-member.
+
+**I10 — derived rankings** written to `data/app/rankings_derived.json`
+(ROE percentile within peer group: 837 evaluable; dividend consistency: 474,
+the top 20 all 5 of 5 years with zero variation; earnings streaks: 345,
+longest run 4 years shared by 54 stocks, so the top 20 is an alphabetical
+cut inside a 54-way tie; net insider: 382 stocks, 378 after the exclusion below). **Decisions:** net
+changes above 100% of outstanding shares (PACK +4.22×, MAPI +1.23×, BIKE
+−1.37×, LOPI −1.08×, and takeover-tagged PACK) are likely artefacts or
+takeover-scale events, so they are kept out of the ranked lists and
+reported separately as `excluded_over_100_percent`. The large ties will be
+stated on the page instead of ranking within them.
+
+**H19 — coal price and coal miners: descriptive only, no test, no trial.**
+The owned Coal and HBA series have 26 first-of-month points, so 25 monthly
+changes (37 if the two-per-month points from March 2025 are counted, which
+would mix spacings). That passes the pre-registered count of 24 by one
+change, but a rank correlation on 25 points can only detect a very strong
+relationship (roughly |rho| above 0.5), and the outcome month depends on an
+unverified publication lag. **Decision (before any outcome was computed):**
+H19 stays a descriptive chart, the trial count stays 35.
 
 ---
 
