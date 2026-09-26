@@ -3148,3 +3148,168 @@ H19 stays a descriptive chart, the trial count stays 35.
 
 *(Next entries land here as later hypotheses are tested — see the
 hypothesis register in `docs/PLAN.md` §6 for what's queued.)*
+
+## Pre-registration, 2026-09-27 — stress tests of the newest hypotheses and situations
+
+Written before any of the checks below was computed. Purpose: find where the
+recently added results (H6, H18 and the situations C, S2, I2, I3, I6, I9) are
+fragile, and fill the gaps. **None of this is a new trial and none changes a
+verdict by itself.** A verdict changes only if the decision rule stated here
+is met, and every variant examined is reported, including those that favour
+the belief. No thresholds of the app flags change. Owned data only, no Sectors
+calls. Each module is run once. Bootstrap replicates B = 2,000, permutation
+shuffles 10,000, seed 20260927, Wilson 95% intervals for proportions.
+
+**ST0 — uncertainty for every base rate the app quotes.** For each proportion
+shown as "N dari 100" (recent spike, price-spike suspension, S2, C, I2 by
+phase, I3, I6 by streak, I9, loss turnaround, earnings two-year decline,
+earnings more than doubled, IPO by board): count, n, Wilson 95% interval. For
+event-based rates where one stock contributes several events (C, S2, recent
+spike): a cluster bootstrap that resamples stocks, and the number of distinct
+stocks. Output a file the app can read (`data/app/base_rate_uncertainty.json`).
+Rule: an interval wider than 20 points is marked "lebar" and the page says so.
+
+**ST1 — situation C (still below the old peak).** Report the recovery rate
+(a) by trigger year, (b) with one event per stock (the first), (c) by size
+tercile (market cap, a snapshot, description only), (d) with the trigger drop
+at -20% and -40% instead of -30%, and the wait at 126 and 378 trading days
+instead of 252. Fragile if the rate varies by more than 10 points across
+trigger years, or the one-per-stock rate differs from the pooled rate by more
+than 5 points, or any sensitivity variant moves it by more than 5 points.
+
+**ST2 — situation S2 (repeat suspension).** (a) One event per stock; (b)
+leaving out the three stocks with the most events; (c) by year of the first
+event; (d) the follow-up window at 180 and 730 days; (e) **a baseline**: among
+stocks with any price-increase suspension, the share that had one in an
+arbitrary 365-day window, computed over the same calendar span, so that
+"57 of 100" can be compared with a stock's ordinary chance. Fragile under the
+same 5/10-point rules; the baseline is reported as a comparison, with no
+threshold.
+
+**ST3 — baselines for I2, I3, I6, I9.** A statement like "55 of 100 cut the
+dividend" means little without the ordinary rate. Report (a) the cut rate among
+all dividend payers of the same year Y (Y = 2024; and pooled 2022 to 2024 where
+the fields allow) next to I9 and I2; (b) for I3, the share of all evaluable
+stock-years with a negative 1 May to 4 Sep return and the share beating the
+median stock, per year, next to the 68 flagged; (c) for I6, the overall share of
+payers that paid again next year, per year. Each with a Wilson interval and the
+difference in points with its interval. Rule: if the interval of the difference
+includes 0, the app copy must not imply the situation raises or lowers the
+ordinary rate (it currently says only the rate).
+
+**ST4 — H18 (insiders buy).** Variants, each in explore and holdout: (a)
+winsorised event returns at the pooled 1st and 99th percentiles; (b) dedupe
+window 30 and 90 days instead of 60; (c) horizons 5, 10 and 60 trading days;
+(d) benchmark = the equal-weight median return of the cached universe over the
+same window instead of ^JKSE; (e) excluding the lowest market-cap tercile; (f)
+event-level cluster bootstrap by stock for the mean and the median; (g) the
+minimum detectable effect for each phase. 17 variants in total (a to f, each
+per phase, are counted). **Decision rule:** H18 stays NOT confirmed unless the
+holdout mean is above 0 with p < 0.05 and the median is above 0 in the
+holdout under the primary definition; variants are reported as sensitivity,
+never as a second chance. If a variant is significant, it is reported as
+"significant only under a variant not pre-registered".
+
+**ST5 — H6 (foreign buying).** (a) A permutation test: shuffle the buy/sell list
+labels within each date 10,000 times and report where the real holdout and
+explore spreads fall; (b) horizons of 1, 10 and 20 trading days after D+1
+(descriptive); (c) top 10 buys versus top 10 sells; (d) equal-weight universe
+benchmark instead of ^JKSE; (e) excluding dates within the last 3 trading days
+of Feb, May, Aug and Nov (index-review windows, dates inferred and labelled
+so); (f) the same comparison using only the net foreign-flow amount above its
+list median (a large-net-inflow subset). Same decision rule as ST4: H6 stays NOT
+confirmed unless the pre-registered primary result is significant.
+
+**Gap fills that follow (decided now, not from the results).** (1) The app shows
+the ST0 interval next to each "N dari 100" in the page's basis line. (2) Where ST3
+finds an ordinary rate, the page states it beside the situation's rate. (3) Any
+"fragile" outcome from ST1 or ST2 is written on that situation's page in the
+Batasan list. (4) Every result is added to this file under a Results heading, with
+the count of variants examined.
+
+### Results, stress tests, run once 2026-09-27 (`stress_*.py`, `build_base_rate_uncertainty.py`)
+
+Every frozen figure was reproduced exactly before any variant (C 121/999, S2
+100/174, I9 26/47, I2 50/82 and 70/88, H18 explore +7.2% p 0.039 and holdout
++3.0% p 0.25, H6 explore +0.05% and holdout -0.03%). No verdict changed. The
+modules were executed a few times while being written; no definition changed
+after numbers were seen. Counts: ST0 80 rates; ST1 7 variants; ST2 6; ST3 22
+comparisons; ST4 18 phase-cells (the pre-registration said 17, an arithmetic
+slip in the text, all cells were run); ST5 16 phase-cells.
+
+**ST0.** 80 rates with Wilson 95% intervals (file `data/app/base_rate_uncertainty.json`),
+39 marked wide (more than 20 points). Stock-resampled intervals: C 121/999,
+Wilson 10.2 to 14.3, stock-resampled 9.9 to 14.4 (799 stocks); S2 100/174,
+50.0 to 64.6, 50.6 to 63.3 (97 stocks); recent spike 1,762/3,081, 55.4 to 58.9.
+I9 26/47: 41.2 to 68.6 (wide). I3 pooled 25/68: 26.3 to 48.6 (wide); every I3
+cell and every IPO-by-board cell is wide.
+
+**ST1 (C), FRAGILE by the pre-registered rule.** Recovery by trigger year: 2021
+9/129 (7.0%), 2022 41/454 (9.0%), 2023 49/272 (18.0%), 2024 22/144 (15.3%), a
+range of 11.0 points (rule: more than 10 points). One event per stock 96/799
+(12.0%, -0.1 point). By size tercile (description only): smallest 7.7%, middle
+10.7%, largest 19.5%. Trigger -20%: 157/1,283 (12.2%); -40%: 78/778 (10.0%);
+wait 126 days: 112/1,131 (9.9%); wait 378 days: 90/885 (10.2%). The one-per-stock
+and sensitivity rules were not triggered. The outcome horizon stays 252 bars after the wait.
+
+**ST2 (S2), FRAGILE by the 5-point rule.** First event per stock 66/97 (68.0%,
++10.6 points). Without the three stocks with the most events (MGLV, UDNG, INET;
+a four-way tie, broken alphabetically) 89/162 (54.9%, -2.5). Follow-up window
+180 days: 175/394 (44.4%, -13.1). A 730-day window has no eligible event, and a
+by-year split is measurable only for 2025. **A finding not in the plan:** all 437
+price-increase suspensions in the data fall between 2025-01-08 and 2026-09-11 (323
+in 2025, 114 in 2026), so S2 describes one 20-month regime, and the app's earlier
+"since 2018" wording was wrong (fixed). The pre-registered baseline (share of the
+229 stocks with an event in an arbitrary 365-day window: mean 83.5%) is
+**not informative**: the stocks are selected for having events in that same span,
+so it cannot be compared with 57.5%. It is not shown in the app.
+
+**ST3 (22 comparisons; the interval of the difference includes 0 in 13).** I9
+55.3% versus all 2024 dividend payers 46.0% (157/341): +9.3 points [-5.8, +23.5],
+includes 0 with missing-as-cut, and vs 37.8% (112/296) with missing left out
+[+2.3, +31.8] excludes 0; the answer depends on the convention. I2: explore 61.0%
+versus payers of 2021-22 29.0%, +31.9 [+20.3, +42.5]; holdout 79.5% versus 39.6%,
++40.0 [+29.6, +48.1]; both exclude 0. I3: negative-return share 36.8% versus
+35.5% (911/2,563) of all stock-years, +1.2 [-9.4, +13.2]; beat-the-median 38.2%
+versus 48.7%, -10.4 [-21.2, +1.6]; 7 of 8 per-year cells include 0. I6: streak 2
+includes 0 in all three years; streak 3 in 2024 (+7.0 [+1.9, +11.7]) and streak 4
+in 2024 (+9.2 [+4.1, +13.7]) exclude 0. **Rule triggered** (the app copy must not
+imply the situation raises or lowers the ordinary rate) for I9 under its main
+convention, 7 of 8 I3 cells and I6 streak 2. The app now shows the ordinary rate
+beside I3 and I9.
+
+**ST4 (H18), stays NOT confirmed.** Mean of monthly means (p), explore /
+holdout: primary +7.24% (0.039) / +2.97% (0.247), holdout median +0.07%;
+winsorised +5.13% (0.010) / +3.16% (0.209); refractory 30 days +7.07% (0.017) /
++2.37% (0.296), 90 days +7.54% (0.043) / +1.75% (0.469); horizon 5 days +0.01%
+(0.996) / +1.52% (0.136), 10 days +3.18% (0.124) / +3.08% (0.116), 60 days
++22.42% (0.027) / +10.41% (0.025; 213 events, 6 months, median +5.04%);
+equal-weight benchmark +8.71% (0.040) / +2.03% (0.363); without the lowest size
+tercile +8.62% (0.091) / +3.49% (0.174). Stock-resampled: explore event mean
++8.12% [+3.03, +15.04] but median -2.08% [-3.12, -0.33]; holdout mean +1.95%
+[-0.54, +4.34], median +0.07% [-1.49, +1.66]. Minimum detectable effect (5%
+level, 80% power, an assumption made here): 9.46% (explore, 10 months), 7.66%
+(holdout, 8 months); the observed holdout was +2.97%, so the holdout was
+underpowered for anything but a large effect. Rule: holdout p 0.247, so not
+confirmed. Six cells reach p < 0.05 and are labelled "significant only under a
+variant not pre-registered": winsorised explore, refractory 30 and 90 explore,
+horizon 60 explore and holdout, equal-weight benchmark explore. The 60-day
+horizon is the one to watch: it is significant in both phases, on 6 holdout
+months. It is outside what was registered, and it stays a lead for later, not a
+finding.
+
+**ST5 (H6), stays NOT confirmed.** Explore / holdout spread (p): primary +0.048%
+(0.869) / -0.027% (0.961). Permutation test (10,000 shuffles of the list labels
+within each date): the real spread sits at percentile 54.5 (p 0.90) and 47.3 (p
+0.95). Horizon 1 day -0.197% (0.298) / +0.021% (0.927); 10 days -0.064% (0.908) /
++0.341% (0.687); 20 days -0.103% (0.914) / +0.424% (0.690). Top 10 versus top 10
+-0.426% (0.549) / -0.312% (0.707). Without index-review windows (dates inferred)
++0.062% (0.850) / -0.024% (0.965). Largest-net-inflow subset -0.509% (0.323) /
++0.088% (0.895). No variant has p < 0.05. The equal-weight benchmark cancels out
+of a same-date buy-minus-sell spread by construction, so it is a near no-op.
+
+**Gap fills made in the app.** Intervals ("kisaran wajar") on the old-peak,
+repeat-suspension and price-spike pages; the ordinary rate beside I3 and I9;
+"fragile" lines in the Batasan of C and S2; the suspension span corrected to
+January 2025 to September 2026; the H6 permutation and the H18 non-registered
+variants disclosed on their pages.
