@@ -2848,6 +2848,162 @@ dropped silently. 2 of 63 dates had an empty list and were excluded (see
 the amendment above). Daily lists only: this says nothing about foreign
 ownership over months or years.
 
+## Pre-registration, 2026-09-26 (batch 1) — situations C, I2, I3, S2, I6, I9 and hypothesis H18
+
+Written **before any of these was computed**. Descriptive items (C, I2,
+I3, S2, I6, I9) are base rates: no explore/holdout split, no significance
+test, not counted in the trial counter, each run once. H18 is a
+falsifiable test (+1 trial, 34 → 35). Definitions are frozen; a bug fixed
+after seeing numbers is disclosed as a correction. Outcomes for any
+"still below / recovered" item are read only after the definition is fixed
+here.
+
+**C — "Masih di bawah puncak lama".** Uses `m_recovery_after_fall`'s fall
+event (first close ≤70% of the running peak, re-armed only by a new peak).
+A stock is *in the situation now* if a fall event triggered at least 252
+trading days ago and its latest close is still below that event's
+pre-fall peak. Base rate, from earlier events: of events still below the
+peak 252 trading days after the trigger, how many were back at or above
+the peak 252 trading days later (trigger + 504)? Events with fewer than
+200 bars after trigger + 252 are left out; report n. Research prices
+(`close`, 5-year cache). Target: none of the 15 famous tickers left with
+no situation.
+
+**I2 — "Dividen besar dibanding laba".** (a) Verify that the flag
+`payout_above_earnings` (payout ratio > 100%) uses the same construct as
+H4 (`payout_ratio_from_totals`, prior-year dividend ÷ earnings): recompute
+it for every flagged stock and report any that disagree. (b) If they
+agree, the situation triggers for the flagged stocks and shows H4's
+already-published cut rates for payout ratio above 100% (both phases),
+recomputed from the H4 module without changing it. No new outcome test.
+
+**I3 — "Dekat puncak, laba menurun".** Trigger as in the flag: close within
+10% of the running maximum close in the 5-year cache and earnings[Y] <
+earnings[Y-1] (both reported). Evaluated on 1 May of Y+1 for Y = 2022,
+2023, 2024 (earnings known by then, as in H5/H10). Outcome over the H5/H10
+window (1 May to 4 Sep): share with a negative return and share beating
+the median stock. Report n per year and pooled. (The flag uses all-time
+high from Sectors; the base rate can only use the 5-year cache high, so it
+is a proxy, and disclosed as one.)
+
+**S2 — "Langganan suspensi".** From the owned Sectors suspensions file: an
+event is a suspension whose reason mentions a price increase
+("peningkatan harga" or "kenaikan harga"), 437 events over 229 stocks.
+Base rate: of events with at least 365 days of follow-up (event date on or
+before 2025-09-11), the share followed by another price-increase
+suspension of the same stock within 365 days. Also stock-level: of stocks
+with at least one such event, how many have two or more (134 of 229 now).
+Sectors-only data, no prices.
+
+**I6 — "Dividen rutin".** From `total_dividend[2021..2025]`: a stock has a
+streak of N years if it paid a dividend (> 0) in each of the N years
+ending Y. Base rate: for N = 1 to 4 and Y = 2022 to 2024, the share that
+paid again in Y+1 (> 0), and the share that paid at least as much as in Y.
+Report n per cell.
+
+**I9 — "Dividen jauh di atas rata-rata sendiri".** Historical version of the
+flag with the same multiplier (1.5, from `build_flags.py`, not changed):
+`total_yield[Y]` at least 1.5 times the mean of `total_yield[Y-3..Y-1]`
+(needs all three). Outcome: `total_dividend[Y+1] < total_dividend[Y]` (a
+cut, missing counted as a cut, and reported both ways). Y = 2024 and 2025
+where Y+1 is known; report n. Descriptive.
+
+**H18 — "Orang dalam beli → harga naik" (falsifiable, +1 trial).** Events:
+insider-buy filings in the owned file (`insider_buys_2025_2026`), one
+event per stock per 60 days (the first filing, then none for the next 60
+calendar days), the filing date counting only if it is a trading day (else
+the next). Outcome: adjclose return from the close of the day after the
+filing to 20 trading days later, minus the same-window ^JKSE return.
+**Power rule, checked before any outcome is read:** count events per phase
+(explore = filings in 2025, holdout = 2026). If either phase has fewer
+than 100 events, H18 is reported as descriptive only ("belum cukup
+data"), with no verdict. If both have at least 100: per phase, average the
+excess returns by calendar month, then a one-sample t-test across months
+(exact Student-t); CONFIRMED only if holdout mean > 0 with p < 0.05 and
+explore has the same sign. Filings that are ownership changes above 10%,
+takeovers or tender offers are reported separately by tag (`takeover`),
+not dropped. Limits stated up front: 20 months of filings, clustered in
+time, and a filing is not proof the person is an "insider" in the popular
+sense.
+
+### Results, batch 1 descriptive items, run once 2026-09-26
+
+None is a trial. Each was run once by `m_*.py`; the numbers below are the
+printed ones.
+
+**C — still below the old peak.** 703 of 887 cached stocks are in it now
+(a fall event at least 252 trading days ago and still below the pre-fall
+peak). Of 999 earlier events still below the peak one year after the
+trigger, **121 (12.1%) were back at or above it a year later**; 119 of 974
+(12.2%) using only exact-date outcomes. Because 79% of the cached stocks
+qualify, this is a broad situation, not a rare one; the cache starts in
+Sep 2021, so many stocks are still below a 2021–2022 peak.
+
+**I2 — payout above 100% (flag vs H4).** The flag `payout_above_earnings`
+covers 29 stocks, but only **12 agree** with H4's own construct
+(prior-year dividend ÷ earnings, Y = 2025); 10 have an undefined ratio and
+7 have a recomputed ratio at or below 100% (for example EAST 1.42 in the
+snapshot vs 0.32 recomputed). Recomputed with the H4 module unchanged,
+stock-years with payout strictly above 100% saw a dividend cut the next
+year in **50 of 82 (61.0%, explore) and 70 of 88 (79.5%, holdout)**.
+**Decision:** the situation triggers on H4's construct (12 stocks), and
+the flag is rebased to that construct, a definition change disclosed here,
+made because the snapshot ratio is trailing and does not match the tested
+quantity, not to move a count.
+
+**I3 — near the high, earnings down.** Stock-years (evaluated 1 May): 2022:
+41, 2023: 13, 2024: 14 (68 pooled). Negative return over 1 May to 4 Sep:
+41.5%, 30.8%, 28.6% (pooled 36.8%); beat the median stock: 29.3%, 53.8%,
+50.0% (pooled 38.2%). Small n, and the 5-year cache high covers only about
+7 months in 2022, so it is a proxy for the all-time high the flag uses.
+
+**S2 — repeat price-increase suspension.** 437 events, 229 stocks (134 with
+two or more). Of 174 events with at least a year of follow-up, **100
+(57.5%) were followed by another one within 365 days**; 46 of those 100
+within 7 days (consecutive notices can be one episode).
+
+**I6 — dividend streaks.** The share that paid again the next year rises
+with the streak: 1 year: 87–89%; 2: 91%; 3: 93–94%; 4: 96% (Y = 2024). The
+share paying at least as much: 50–62%. Non-payers are missing in the data,
+so "missing" counts as "did not pay"; a variant on reported values only
+differs by under 1 point.
+
+**I9 — yield far above own average (≥ 1.5×).** Y = 2024: 47 stocks; **26
+(55.3%) cut the dividend the next year**. Y = 2025: 62 stocks now; no
+outcome yet (owned fields end 2025).
+
+### Results, H18 "Orang dalam beli → harga naik", run once 2026-09-26
+
+**H18 — NOT confirmed.** Trial count: **35**. The power rule was met (314
+events in 2025, 346 in 2026), so the test ran.
+
+| | Explore (2025) | Holdout (2026) |
+|---|---|---|
+| Events used (of all) | 300 (of 314) | 292 (of 346) |
+| Months averaged | 10 | 8 |
+| Mean of monthly mean 20-day excess return | +7.2% (t +2.41, p 0.039) | +3.0% (t +1.26, p 0.25) |
+| Median event excess return | −2.1% | +0.07% |
+| Events beating ^JKSE | 43.3% | 50.7% |
+| Without takeover-tagged events | +7.9% (p 0.023) | +3.0% (p 0.23) |
+
+**How to read it.** The explore mean is positive and would pass alone, but
+the **median event and the share beating the index are at or below zero**:
+a few large winners lift the monthly means, not a broad edge. The
+holdout, which decides, is not significant. **In plain numbers:** of 100
+stocks after an insider-buy filing, about 43 (2025) and 51 (2026) beat the
+index over the next 20 trading days.
+
+**Limits.** 20 months of filings; only 8 holdout months (the latest events
+have no full 20-day window); filings are ownership changes, not proof of an
+"insider" in the popular sense; the calendar month is that of the filing
+date (the pre-registration did not specify it, disclosed here). 14 (explore)
+and 54 (holdout) events were dropped for missing prices or an incomplete
+window (35 of the 54 lack the window). No winsorising was pre-registered.
+
+**S2 diagnostic added after seeing the counts.** Follow-ups more than 7
+days after the event, within 365 days: 72 of 174 (41.4%); the frozen figure
+stays 100 of 174 (57.5%).
+
 ---
 
 *(Next entries land here as later hypotheses are tested — see the
