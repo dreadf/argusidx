@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 from pipeline.stats import (
     annualized_volatility,
     closes_in_year,
+    holm_bonferroni,
     log_returns,
     max_drawdown,
     median_of,
@@ -355,3 +356,38 @@ def test_payout_ratio_from_totals_none_for_missing_or_undefined_inputs():
     assert payout_ratio_from_totals(5.0, 100.0, None) is None
     assert payout_ratio_from_totals(5.0, -100.0, 10.0) is None  # loss-making
     assert payout_ratio_from_totals(5.0, 100.0, 0.0) is None  # no shares
+
+
+def test_holm_bonferroni_all_reject_when_all_tiny():
+    assert holm_bonferroni([0.001, 0.002, 0.003]) == [True, True, True]
+
+
+def test_holm_bonferroni_none_reject_when_all_large():
+    assert holm_bonferroni([0.5, 0.6, 0.7]) == [False, False, False]
+
+
+def test_holm_bonferroni_stops_at_the_first_failure():
+    # Sorted: 0.01, 0.02, 0.20. Thresholds (m=3): rank1 alpha/3=.0167,
+    # rank2 alpha/2=.025, rank3 alpha/1=.05. p(1)=.01 <= .0167: reject.
+    # p(2)=.02 <= .025: reject. p(3)=.20 > .05: stop, do not reject.
+    p = [0.02, 0.01, 0.20]
+    assert holm_bonferroni(p) == [True, True, False]
+
+
+def test_holm_bonferroni_is_more_conservative_than_uncorrected():
+    # A single borderline p-value (0.03 < 0.05) would pass uncorrected,
+    # but Holm's rank-1 threshold with m=3 is alpha/3 ~ 0.0167.
+    assert holm_bonferroni([0.03, 0.9, 0.9]) == [False, False, False]
+
+
+def test_holm_bonferroni_nan_never_rejected():
+    p = [0.001, float("nan"), 0.002]
+    result = holm_bonferroni(p)
+    assert result[1] is False
+
+
+def test_holm_bonferroni_matches_plain_bonferroni_at_rank_one():
+    # The strictest (first) threshold in Holm's step-down IS alpha/m,
+    # identical to a plain Bonferroni correction.
+    p = [0.05 / 3 - 1e-6, 0.9, 0.9]
+    assert holm_bonferroni(p)[0] is True

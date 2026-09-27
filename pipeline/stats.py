@@ -526,6 +526,39 @@ def benjamini_hochberg(p_values: list[float], q: float = 0.10) -> list[bool]:
     return [(not math.isnan(p)) and p <= threshold for p in p_values]
 
 
+def holm_bonferroni(p_values: list[float], alpha: float = 0.05) -> list[bool]:
+    """Holm-Bonferroni step-down procedure: which entries of `p_values` are
+    declared significant at family-wise error rate `alpha`.
+
+    Standard procedure: sort ascending p(1) <= p(2) <= ... <= p(m); reject
+    hypotheses 1..k-1 where k is the first rank whose p-value exceeds
+    alpha/(m-rank+1) (i.e. testing stops at the first failure, unlike
+    Benjamini-Hochberg's `benjamini_hochberg` above, which finds the LARGEST
+    passing rank and rejects everything up to it). Holm controls the
+    family-wise error rate (the chance of even one false positive among the
+    m tests); Benjamini-Hochberg controls the weaker false-discovery rate.
+    Added for R2b (`pipeline/hypotheses/r2b_warning_pairs.py`), which
+    pre-registered Holm specifically (3 tests, family-wise control) rather
+    than reusing H10's Benjamini-Hochberg (7 tests, discovery-rate control)
+    -- the two hypothesis batches asked for different guarantees and
+    shouldn't share one correction.
+
+    A NaN p-value (insufficient data) is never rejected, same convention as
+    `benjamini_hochberg`.
+    """
+    m = len(p_values)
+    if m == 0:
+        return []
+    order = sorted(range(m), key=lambda i: p_values[i])
+    reject = [False] * m
+    for rank, idx in enumerate(order, start=1):
+        p = p_values[idx]
+        if math.isnan(p) or p > alpha / (m - rank + 1):
+            break
+        reject[idx] = True
+    return reject
+
+
 def welch_ttest(a: list[float], b: list[float]) -> TTestResult:
     """Welch's t-test (unequal-variance two-sample t-test) for whether two
     groups' means differ.
