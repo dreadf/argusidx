@@ -6,6 +6,7 @@ from pipeline.hypotheses._stress_common import (
     cluster_bootstrap_rate,
     is_wide,
     mde_mean,
+    moving_block_bootstrap,
     newcombe_diff,
     percentile,
     permutation_position,
@@ -78,6 +79,38 @@ def test_cluster_bootstrap_general_stat_matches_the_point_estimate():
     clusters = {"A": [1.0, 3.0], "B": [5.0]}
     res = cluster_bootstrap(clusters, lambda s: sum(s) / len(s), b=50)
     assert res["estimate"] == 3.0
+
+
+def test_moving_block_bootstrap_is_deterministic_and_collapses_when_all_equal():
+    series = [1.0] * 100
+    r1 = moving_block_bootstrap(series, lambda s: sum(s) / len(s), block_len=20, b=200, seed=7)
+    r2 = moving_block_bootstrap(series, lambda s: sum(s) / len(s), block_len=20, b=200, seed=7)
+    assert r1 == r2
+    assert r1["estimate"] == 1.0 and r1["low"] == r1["high"] == 1.0
+
+
+def test_moving_block_bootstrap_resample_is_always_original_length():
+    series = list(range(137))  # not a multiple of block_len, exercises the truncation
+
+    def stat(sample: list) -> float:
+        assert len(sample) == len(series)
+        return sum(sample) / len(sample)
+
+    moving_block_bootstrap(series, stat, block_len=20, b=25, seed=1)
+
+
+def test_moving_block_bootstrap_wider_than_iid_would_be_for_correlated_blocks():
+    # Blocks of 20 alternate between "all 0" and "all 1": a plain i.i.d.
+    # resample of points would average toward 0.5 with a narrow interval;
+    # a block resample keeps whole runs together and stays much wider.
+    series: list[float] = []
+    for block in range(10):
+        series.extend([float(block % 2)] * 20)
+    res = moving_block_bootstrap(series, lambda s: sum(s) / len(s), block_len=20, b=1000, seed=3)
+    # An i.i.d. resample of 200 near-binary points would give a width around
+    # 2*1.96*sqrt(0.25/200) =~ 0.14; keeping whole 20-point blocks together
+    # should land well above that.
+    assert res["high"] - res["low"] > 0.25
 
 
 def test_permutation_position_counts():

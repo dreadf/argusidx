@@ -113,6 +113,48 @@ def cluster_bootstrap(
     return {"estimate": stat(pooled), "low": lo, "high": hi, "n_clusters": len(keys), "n_valid_replicates": len(draws)}
 
 
+def moving_block_bootstrap(
+    series: Sequence,
+    stat: Callable[[list], float | None],
+    block_len: int = 20,
+    b: int = BOOTSTRAP_B,
+    seed: int = SEED,
+) -> dict:
+    """Overlapping moving-block bootstrap (Kunsch 1989): resample blocks of
+    `block_len` CONSECUTIVE items, with replacement, concatenated back up to
+    the original length. Unlike `cluster_bootstrap` (which resamples whole,
+    already-independent clusters), this is for a single ordered time series
+    where nearby observations are themselves correlated (e.g. a market state
+    label and its next-20-day outcome, which overlaps with its neighbours'
+    outcome windows) -- resampling individual points with replacement would
+    treat that overlap as independent information and understate the true
+    variance. `stat` takes one resampled list and returns a number (or None
+    to skip that replicate, matching `cluster_bootstrap`'s convention).
+
+    Added for T1 (`pipeline/hypotheses/t1_market_state.py`), which
+    pre-registered this exact method (`kind-juggling-hoare.md` plan
+    section 4.7 / EXPERIMENT.md, 2026-09-27) for its market-level
+    difference-in-differences statistic.
+    """
+    n = len(series)
+    if n == 0:
+        return {"estimate": None, "low": float("nan"), "high": float("nan"), "n": 0, "n_valid_replicates": 0}
+    rng = random.Random(seed)
+    n_blocks_needed = math.ceil(n / block_len)
+    max_start = max(0, n - block_len)  # last valid block start index (inclusive)
+    draws: list[float] = []
+    for _ in range(b):
+        sample: list = []
+        for _ in range(n_blocks_needed):
+            start = rng.randrange(0, max_start + 1)
+            sample.extend(series[start : start + block_len])
+        v = stat(sample[:n])
+        if v is not None and not (isinstance(v, float) and math.isnan(v)):
+            draws.append(v)
+    lo, hi = percentile_interval(draws) if draws else (float("nan"), float("nan"))
+    return {"estimate": stat(list(series)), "low": lo, "high": hi, "n": n, "n_valid_replicates": len(draws)}
+
+
 def cluster_bootstrap_rate(clusters: dict[str, tuple[int, int]], b: int = BOOTSTRAP_B, seed: int = SEED) -> dict:
     """Cluster bootstrap of a pooled proportion; `clusters` maps stock -> (count, n) over its events."""
     items = {k: [v] for k, v in clusters.items() if v[1] > 0}
