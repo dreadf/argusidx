@@ -1,10 +1,20 @@
 #!/usr/bin/env python3
 """
-Guard against the em dash (U+2014, "—") reaching GitHub or the app.
+Guard against the em dash (U+2014) reaching GitHub or the app.
 
 Style rule from the project owner (2026-09-27): no em dash anywhere in the
 repository or the shipped product. Scans every git-tracked file, skipping
 binary/generated formats by extension.
+
+This file never spells out the character itself, in code or in prose: it
+is built from `chr(8212)` (same fix `scripts/test_check_no_em_dash.py`
+already uses), and this docstring describes it only as "U+2014" rather
+than typing the glyph. A literal em dash anywhere in this file, including
+a future comment, would make the scanner flag itself and fail CI on
+every run -- found the hard way, 2026-09-27: the very first version of
+this file had one in its own docstring and constant, so the no-args scan
+(which includes this file, since nothing here was ever excluded from its
+own rule) always failed, silently, until now.
 
 This is a style gate, not a correctness one: a hit is always a real em
 dash, so unlike check_no_advice_language.py there is nothing to judge by
@@ -27,7 +37,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-EM_DASH = "—"
+EM_DASH = chr(8212)  # never spelled out literally here -- see the module docstring
 
 # Extensions this rule skips: binary formats, and generated/vendored output
 # an em dash inside would not mean anything (a font, an image, a lockfile).
