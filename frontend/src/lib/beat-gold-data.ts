@@ -41,10 +41,10 @@ export interface BeatGoldData {
 
 /**
  * Reads data/app/beat_gold.json, written by pipeline/appdata/build_beat_gold.py.
- * Server-only (fs) — never import from a "use client" component.
+ * Server-only (fs): never import from a "use client" component.
  *
  * This is the ONE place in the product that traces back to Yahoo-sourced
- * data (docs/PRODUCT.md §7.3) — a frozen, dated research result, computed
+ * data (docs/PRODUCT.md §7.3): a frozen, dated research result, computed
  * once, never a live Yahoo call. `note` and `research_date` carry that
  * disclosure through to whatever renders this data; never drop them.
  */

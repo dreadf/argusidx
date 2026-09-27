@@ -1,21 +1,21 @@
-"""Build data/app/beat_gold.json — the one-time, dated "beat gold" base-rate
+"""Build data/app/beat_gold.json: the one-time, dated "beat gold" base-rate
 result (docs/PRODUCT.md §7.3; research done as EXPERIMENT.md/docs/PLAN.md's
 H16, 2026-09-12, by the hypothesis-testing session).
 
 **Why this is compliant despite reading Yahoo dev-cache data**, restated
 because it's the one place in the whole app-build where that's true:
-`CLAUDE.md` bans Yahoo from shipping IN THE PRODUCT — the live frontend
+`CLAUDE.md` bans Yahoo from shipping IN THE PRODUCT: the live frontend
 never calls Yahoo, and nothing under `pipeline/dev/` is imported by
 `frontend/`. This script is neither: it's a build-time-only precompute step
 (same category as every other `pipeline/appdata/build_*.py` module) that
 reads the already-fetched, free, dev-only cache
-(`data/dev_cache/prices_5y.json`, `benchmarks_5y.json` — gitignored,
+(`data/dev_cache/prices_5y.json`, `benchmarks_5y.json`: gitignored,
 re-fetchable, zero cost) ONCE, and freezes only DERIVED FACTS (booleans and
 percentages, never a raw price series) into `data/app/beat_gold.json`. That
 frozen fact file is what the frontend actually reads. docs/PRODUCT.md §7.3
 states explicitly why gold can never be reproduced from Sectors data at
 all, and that this one disclosed, dated statistic is the deliberate
-exception to "Sectors data must be core" — not an accidental live Yahoo
+exception to "Sectors data must be core": not an accidental live Yahoo
 dependency.
 
 Computation duplicates the small pieces of
@@ -29,7 +29,7 @@ shared, not owned by either track.
 
 Verified against docs/PLAN.md's own recorded H16 result before shipping:
 n=887, beat index 49.7%, beat gold 15.9%, beat BI-rate deposit 42.4%, 47.1%
-negative annualized return — this script's own output must match those
+negative annualized return: this script's own output must match those
 exactly or something has drifted (see the pipeline test).
 
 Run: .venv/bin/python -m pipeline.appdata.build_beat_gold

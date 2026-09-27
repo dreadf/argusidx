@@ -2,7 +2,7 @@
  * Shared display formatters. Extracted from `saham/[kode]/page.tsx` (which
  * had its own private copies) so the Ask layer can render the exact same
  * numbers, in the exact same words, without a second implementation
- * drifting from the first — the same "fix the class, not the instance"
+ * drifting from the first: the same "fix the class, not the instance"
  * discipline `pipeline/stats.py` documents on the Python side.
  */
 export function formatMarketCap(value: number | null): string {

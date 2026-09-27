@@ -19,8 +19,21 @@ describe("containsAdviceLanguage", () => {
     "a good buy",
     "strong buy",
     "buy now",
+    "Waspada, saham ini sedang turun",
+    "Hindari membeli saat kondisi begini",
+    "Ini saham bahaya",
+    "Hati-hati dengan saham ini",
+    "Hati hati dengan saham ini",
   ])("flags: %s", (text) => {
     expect(containsAdviceLanguage(text)).toBe(true);
+  });
+
+  it("does not flag OJK's own programme name, a quoted proper noun", () => {
+    expect(containsAdviceLanguage('Panduan OJK Waspada Investasi: cek "2L: Legal dan Logis".')).toBe(false);
+  });
+
+  it("still flags a real hit sharing a sentence with the OJK programme name", () => {
+    expect(containsAdviceLanguage("Waspada Investasi kata OJK, tapi Anda harus jual sekarang.")).toBe(true);
   });
 
   it.each([

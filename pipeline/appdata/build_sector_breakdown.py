@@ -1,7 +1,7 @@
 """Build data/app/sector_breakdown.json from the purchased universe sweep.
 
 Fills a real gap: an earlier planning pass sketched a per-sector
-breakdown but it never landed in `docs/PRODUCT.md` or got built — the
+breakdown but it never landed in `docs/PRODUCT.md` or got built: the
 only place "sector" appeared anywhere in the product was a single
 stock's own sector name on its own page (2026-09-19 user question: "why
 can't I see sector analysis in the app?").
@@ -9,10 +9,10 @@ can't I see sector analysis in the app?").
 Per sector: company count, the same price-position breadth reading
 Home already shows for the whole market (reusing `build_market.
 build_breadth` directly rather than re-deriving the 0.8/0.2 thresholds
-a second time — "fix the class, not the instance"), and a typical ROE/
+a second time: "fix the class, not the instance"), and a typical ROE/
 P/E computed with `pipeline.stats.median_of` (shared, common ground).
 
-Sectors are ordered by company count, descending — NOT by any
+Sectors are ordered by company count, descending: NOT by any
 performance metric. Sorting sectors by how well they're doing would
 itself be a cross-sector ranking, which nothing else in this product
 does (§0's no-verdict rule applies to sectors exactly as it does to
@@ -58,7 +58,7 @@ def build_sector_row(sector: str, rows: list[dict]) -> dict:
 def build_sectors(rows: list[dict]) -> list[dict]:
     groups = group_by_sector(rows)
     sector_rows = [build_sector_row(sector, rows_for_sector) for sector, rows_for_sector in groups.items()]
-    # Company count, descending — never by a performance metric (see module docstring).
+    # Company count, descending: never by a performance metric (see module docstring).
     sector_rows.sort(key=lambda r: r["company_count"], reverse=True)
     return sector_rows
 

@@ -1,10 +1,10 @@
 /**
  * Watchlist persistence (docs/PRODUCT.md §11): "save stocks locally on the
- * device, no account needed." Plain localStorage, no backend, no database —
+ * device, no account needed." Plain localStorage, no backend, no database:
  * consistent with §2's architecture (nothing runs live except the Ask
  * layer). Stores {symbol, company_name} pairs, not just symbols, so the
  * /watchlist page can render immediately from what's already saved without
- * a second data fetch — the trade-off is a saved name won't update if a
+ * a second data fetch: the trade-off is a saved name won't update if a
  * company is later renamed, an acceptable, disclosed limitation for a v1.
  *
  * Not a React hook itself (plain functions) so it can be called from event

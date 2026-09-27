@@ -4,7 +4,7 @@ import { matchFindingTopics } from "./finding-topics";
  * The routing buckets from docs/PRODUCT.md §7, plus one internal 6th
  * state ("ambiguous") the plan names separately from `no_data`:
  * `no_data` means "a real, intelligible question about something we
- * genuinely don't have" — `ambiguous` means the classifier can't tell
+ * genuinely don't have": `ambiguous` means the classifier can't tell
  * what's even being asked. Conflating the two would give a confused
  * question ("asu") the same "here's what's known instead" treatment
  * meant for a real, answerless question, which isn't honest either way.
@@ -13,17 +13,17 @@ export type Bucket = "finding" | "untested_data" | "answered" | "no_data" | "una
 
 export interface Classification {
   bucket: Bucket;
-  /** `belief` keys from findings.json this question's wording matched — only
+  /** `belief` keys from findings.json this question's wording matched: only
    * populated when bucket is "finding"; may be more than one, never merged. */
   matchedBeliefs: string[];
 }
 
-// Question-shaped patterns — these look at what the USER is asking, which is
+// Question-shaped patterns: these look at what the USER is asking, which is
 // a different job from advice-language-guard.ts (which looks at what an LLM
 // wrote back). A question can ask for advice using words that, phrased as a
 // statement, wouldn't trip the output guard at all ("mending beli yang mana"
 // has no imperative verb aimed at the reader the way "sebaiknya membeli"
-// does) — so this list is deliberately its own, not reused from there.
+// does): so this list is deliberately its own, not reused from there.
 const ADVICE_SEEKING_PATTERNS: RegExp[] = [
   /\b(apakah )?(saya )?(harus|sebaiknya|perlu) (beli|jual|membeli|menjual|menahan)\b/i,
   /\bharus (beli|jual)\b/i,
@@ -58,7 +58,7 @@ function looksAmbiguous(text: string): boolean {
 }
 
 /**
- * Deterministic classification — the guaranteed-available path (docs/
+ * Deterministic classification: the guaranteed-available path (docs/
  * PRODUCT.md §0 rule 4: "the app must work fully with the LLM switched
  * off"). `hasRecognizedStock` comes from stock-lookup.ts, computed by the
  * caller so this function stays a pure, easily-reasoned-about string
@@ -66,7 +66,7 @@ function looksAmbiguous(text: string): boolean {
  *
  * Precedence matters and is deliberate: advice-seeking is checked first
  * because a question can be BOTH advice-seeking and about a real stock
- * ("apakah saya harus jual BBCA sekarang?") — the advice framing must win,
+ * ("apakah saya harus jual BBCA sekarang?"): the advice framing must win,
  * never get quietly absorbed into a data lookup. Unanswerable is checked
  * next for the same reason relative to a finding/data match.
  */

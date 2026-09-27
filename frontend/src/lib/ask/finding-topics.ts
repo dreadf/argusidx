@@ -5,17 +5,17 @@ import { escapeRegExp } from "./text-utils";
  * lebih untung?") can surface the matching row(s) of the honesty
  * scoreboard (data/app/findings.json) without an LLM. Keyed by the exact
  * English `belief` string findings.json uses as its row identity (same
- * key pipeline/appdata/findings_translations.py matches on) — never by
+ * key pipeline/appdata/findings_translations.py matches on): never by
  * `belief_id`, which is Bahasa display text and could be edited without
  * this file's knowledge.
  *
  * A question may legitimately match more than one row (e.g. both payout
- * findings share "rasio pembayaran") — that's surfaced as multiple
+ * findings share "rasio pembayaran"): that's surfaced as multiple
  * findings, never collapsed into one, matching the no-combined-verdict
  * rule everywhere else findings are shown.
  *
  * Verified against the real, current `data/app/findings.json` (19 rows,
- * checked 2026-09-22) — every `belief` string below is copied verbatim
+ * checked 2026-09-22): every `belief` string below is copied verbatim
  * from that file, not retyped from memory.
  */
 export const FINDING_TOPIC_KEYWORDS: { belief: string; keywords: string[] }[] = [
@@ -101,11 +101,11 @@ export const FINDING_TOPIC_KEYWORDS: { belief: string; keywords: string[] }[] = 
   },
 ];
 
-/** Word-boundary-safe, case-insensitive match against the question text —
+/** Word-boundary-safe, case-insensitive match against the question text:
  * plain `.includes()` would let a short keyword like "roe" match inside an
  * unrelated word ("heroes") or "der" inside "border"; `\b...\b` requires it
  * stand as its own word (or phrase, for multi-word keywords). Returns the
- * matching `belief` keys — 0, 1, or several. */
+ * matching `belief` keys: 0, 1, or several. */
 export function matchFindingTopics(text: string): string[] {
   return FINDING_TOPIC_KEYWORDS.filter((entry) =>
     entry.keywords.some((kw) => new RegExp(`\\b${escapeRegExp(kw)}\\b`, "i").test(text))

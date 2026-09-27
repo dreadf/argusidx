@@ -1,11 +1,11 @@
 /**
- * EmphasisStrip — the "emphasis" chart form (docs/PRODUCT.md §25): one
+ * EmphasisStrip: the "emphasis" chart form (docs/PRODUCT.md §25): one
  * series is the point, the rest is context. Built to the dataviz skill's
  * mark specs (r>=4 markers, 2px surface ring, single accent hue for the
- * highlighted entity, gray for peers) — same conventions as IconArray.
+ * highlighted entity, gray for peers): same conventions as IconArray.
  *
  * Positions this company by RANK among its peer group (better_than_count
- * of comparable_count), not by raw metric value — the pipeline only ships
+ * of comparable_count), not by raw metric value: the pipeline only ships
  * peer-group aggregate counts, not each individual peer's own value
  * (`pipeline/appdata/build_stock_pages.py`'s `build_peer_comparison`), so
  * a rank position is what's honestly available; it is not a claim about

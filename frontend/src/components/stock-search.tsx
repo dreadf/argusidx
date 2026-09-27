@@ -6,15 +6,15 @@ import { Search } from "lucide-react";
 import type { SearchEntry } from "@/lib/stock-data";
 
 /**
- * Site-wide stock search — the thing this app was missing entirely
+ * Site-wide stock search: the thing this app was missing entirely
  * before: 962 stock pages existed, but nothing let a user type a ticker
  * or company name and land on one (BACKLOG.md's "Product & features"
  * audit, 2026-09-19). Client-side filter over a small pre-fetched index
- * (~40KB, passed down from SiteHeader) — no live lookup call, matching
+ * (~40KB, passed down from SiteHeader): no live lookup call, matching
  * this product's "everything precomputed" architecture.
  *
  * Case-insensitive by design (a trader typing "bbca" must not fail where
- * "BBCA" would work — the same case-sensitivity mistake already fixed
+ * "BBCA" would work: the same case-sensitivity mistake already fixed
  * once in lib/ask/stock-lookup.ts must not be reintroduced here).
  */
 export function StockSearch({ index, inputId }: { index: SearchEntry[]; inputId?: string }) {

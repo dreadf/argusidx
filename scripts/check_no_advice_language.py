@@ -2,18 +2,18 @@
 """
 Guard against financial-advice language reaching the product.
 
-CLAUDE.md's hard constraint: "No financial-advice language anywhere — UI
+CLAUDE.md's hard constraint: "No financial-advice language anywhere: UI
 copy, README, commit messages, video script. This is an information tool.
 It never recommends buying, selling, or holding." docs/PLAN.md §14 makes
 this a required build gate, not a style preference.
 
 Scans for imperative/recommendation phrasing in both Bahasa Indonesia and
 English. Deliberately broad, same philosophy as check_no_secrets.py: false
-positives are cheap (a human reviews each hit — some are legitimate, e.g.
+positives are cheap (a human reviews each hit: some are legitimate, e.g.
 a disclaimer sentence that names the very question it refuses to answer);
 a missed real recommendation is not. A bare word like "beli"/"jual"/"buy"/
-"sell" is NOT itself flagged — "diperjualbelikan" (tradable) and "beat
-gold" style factual language would false-positive constantly — only
+"sell" is NOT itself flagged: "diperjualbelikan" (tradable) and "beat
+gold" style factual language would false-positive constantly: only
 imperative/recommendation-shaped phrases around them are.
 
 Usage:
@@ -41,6 +41,19 @@ PATTERNS = [
     re.compile(r"(?i)\bpatut (dibeli|dijual|dimiliki)\b"),
     re.compile(r"(?i)\bhindari saham\b"),
     re.compile(r"(?i)\blebih baik (membeli|menjual|beli|jual|menahan)\b"),
+    # The four alarm-style words below (a market-pressure state pill, an
+    # avoidance directive, a danger word, and a caution phrase) must never
+    # reach the product as an imperative; the Pasar/Kesimpulan state labels
+    # use "tertekan" and "risiko aktif" instead. Added 2026-09-27, bare-word
+    # and deliberately broad, like the rest of this file. This comment
+    # deliberately doesn't spell the words out, in case this file's own
+    # extension is ever added to a future scan. OJK's programme name built
+    # on the first word is the one legitimate exception, masked out below
+    # rather than narrowing the pattern.
+    re.compile(r"(?i)\bwaspada\b"),
+    re.compile(r"(?i)\bhindari\b"),
+    re.compile(r"(?i)\bbahaya\b"),
+    re.compile(r"(?i)\bhati[- ]?hati\b"),
     # English: direct recommendation / imperative framing
     re.compile(r"(?i)\byou should (buy|sell|hold)\b"),
     re.compile(r"(?i)\bwe recommend\b"),
@@ -52,14 +65,25 @@ PATTERNS = [
     re.compile(r"(?i)\bbetter to (buy|sell|hold)\b"),
 ]
 
+# Legitimate uses of an otherwise-flagged word: OJK's own consumer-protection
+# programme name, quoted verbatim in the product's tip-claims copy. Stripped
+# out of the line before matching (not a whole-line skip) so any other,
+# unrelated advice pattern on the same line still gets caught.
+ALLOWLIST_PHRASES = [
+    re.compile(r"(?i)waspada investasi"),
+]
+
 DEFAULT_EXTENSIONS = {".tsx", ".ts", ".md"}
 
 
 def find_advice_language(text: str) -> list[tuple[int, str]]:
     hits = []
     for lineno, line in enumerate(text.splitlines(), start=1):
+        masked = line
+        for allowed in ALLOWLIST_PHRASES:
+            masked = allowed.sub("", masked)
         for pattern in PATTERNS:
-            if pattern.search(line):
+            if pattern.search(masked):
                 hits.append((lineno, line.strip()))
                 break
     return hits
@@ -99,7 +123,7 @@ def main() -> int:
 
     if any_hits:
         print("\ncheck_no_advice_language: possible advice-sounding language found above.")
-        print("Review each hit — a disclaimer naming the question it refuses to answer")
+        print("Review each hit: a disclaimer naming the question it refuses to answer")
         print("is fine; an actual recommendation is not. Rewrite or add context.")
         return 1
 

@@ -1,19 +1,19 @@
 """Build data/app/insider_activity.json from the purchased insider filing
 feeds (data/raw/insider_buys_*.jsonl, insider_sells_*.jsonl).
 
-This is a DERIVED aggregate, not the raw feed reformatted — Track 03's
+This is a DERIVED aggregate, not the raw feed reformatted: Track 03's
 qualifying test explicitly excludes reformatted raw data, and both feeds
 are already-purchased research inputs that six hypotheses (H8, H8b, H9d,
 plus H9/H9b/H9c on the sentiment side) were run against, all coming back
 null, falsified, or inconclusive (EXPERIMENT.md). What ships here is a
 per-stock and market-wide COUNT and NET DIRECTION over the disclosed
-window — a fact log, paired on the stock page with the shipped null
-finding that insider selling did not predict a crash (H8) — never a
+window: a fact log, paired on the stock page with the shipped null
+finding that insider selling did not predict a crash (H8): never a
 signal, never a raw transaction dump.
 
 Deliberately NOT surfaced: `share_percentage_after` and similar
 magnitude fields. A quick scan of the raw feed turned up values over
-900% (a real record, not a parsing bug — an apparent data-quality
+900% (a real record, not a parsing bug: an apparent data-quality
 artifact in the purchased feed itself), so this module only derives
 counts and dates, values simple enough that one bad record can't distort
 the shown aggregate the way a magnitude figure could.

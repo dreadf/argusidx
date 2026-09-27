@@ -178,7 +178,7 @@ async function loadStocksFile(): Promise<StocksFile> {
 
 /**
  * Reads data/app/stocks.json, written by
- * pipeline/appdata/build_stock_pages.py. Server-only (fs) — never import
+ * pipeline/appdata/build_stock_pages.py. Server-only (fs): never import
  * from a "use client" component. `code` is the bare ticker (e.g. "BBCA");
  * the sweep's own symbol format ("BBCA.JK") is an implementation detail.
  */
@@ -216,7 +216,7 @@ export interface QuoteEntry extends SearchEntry {
 /**
  * Flat {code, name} index for every stock, used by the site-wide search
  * box (components/stock-search.tsx). Derived from the already-cached
- * stocks.json rather than a separate build artifact — no new pipeline
+ * stocks.json rather than a separate build artifact: no new pipeline
  * output needed for a projection this small (~40KB) of data already
  * loaded into memory by every other function in this module.
  */

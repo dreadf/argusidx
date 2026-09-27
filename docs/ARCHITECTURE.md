@@ -66,5 +66,5 @@ sample of symbols. The three "proven" findings are re-checkable that way.
 
 - `pytest pipeline/tests scripts` (358 tests): statistics, guards, builders, one test module per hypothesis.
 - `npm test` in `frontend/` (159 tests): the tip reader, question classifier, advice-language guard, view models.
-- `scripts/check_no_secrets.py`, `scripts/check_no_advice_language.py`, `scripts/preflight.sh` (production build, with the LLM switched off).
+- `scripts/check_no_secrets.py`, `scripts/check_no_advice_language.py`, `scripts/check_no_em_dash.py`, `scripts/preflight.sh` (production build, with the LLM switched off).
 - `.github/workflows/ci.yml` runs the tests, both scans and the production build on every push.

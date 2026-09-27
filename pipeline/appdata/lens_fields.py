@@ -8,7 +8,7 @@ testing session's active territory), plus the fields this session's own
 live schema check confirmed exist for: the LQ45 anomaly flag (`indices`)
 and the Banking lens (casa/LDR/NIM/CAR/NPL/net_loan). Also includes
 `INSURANCE_YEARLY` (premium income/expense/net), fetched on the same
-sweep but never used for a lens — `docs/PRODUCT.md`'s "Cut, and why"
+sweep but never used for a lens: `docs/PRODUCT.md`'s "Cut, and why"
 section (2026-09-13) confirms these fields populate for Banks, not the
 Insurance sub-sector, and that no substitute field exists anywhere in
 the schema. Kept here rather than deleted since the data was already
@@ -16,7 +16,7 @@ paid for and is a documented, correct fact about the schema even though
 no lens consumes it.
 
 `indices` needs the `in` operator per the schema (`where=indices in
-['LQ45', 'IDX30']` — confirmed at https://api.sectors.app/schema/,
+['LQ45', 'IDX30']`: confirmed at https://api.sectors.app/schema/,
 2026-09-13), not `is not null` like every other field here. The exact
 enum list below is read off a real example response for BBCA in the live
 schema doc, not guessed.
@@ -43,13 +43,13 @@ YEARLY = [
     "debt_to_equity_ratio", "revenue", "outstanding_shares", "earnings",
 ]
 
-# New this sweep — Banking lens (docs/PRODUCT.md §9).
+# New this sweep: Banking lens (docs/PRODUCT.md §9).
 BANKING_YEARLY = [
     "casa_ratio", "loan_to_deposit_ratio", "net_interest_margin",
     "capital_adequacy_ratio", "non_performing_loan", "net_loan",
 ]
 # Fetched this sweep, but the Insurance lens was cut 2026-09-13 (docs/PRODUCT.md
-# §3, "Cut, and why") — these fields populate for Banks, not Insurance, and no
+# §3, "Cut, and why"): these fields populate for Banks, not Insurance, and no
 # substitute exists. Unused by any builder; kept only as a documented schema fact.
 INSURANCE_YEARLY = [
     "premium_income", "premium_expense", "net_premium_income",
@@ -67,7 +67,7 @@ YEARS = [2021, 2022, 2023, 2024, 2025]
 LENS_YEARS = [2024, 2025]
 
 # Real enum values confirmed via a live example response (BBCA) in the
-# Sectors schema doc, 2026-09-13 — not guessed.
+# Sectors schema doc, 2026-09-13: not guessed.
 INDEX_MEMBERSHIP_VALUES = [
     "LQ45", "IDX30", "IDXG30", "ECONOMIC30", "IDXESGL", "FTSE",
     "SRIKEHATI", "KOMPAS100", "IDXHIDIV20", "IDXQ30",

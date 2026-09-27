@@ -34,7 +34,7 @@
     {
       "belief": "Small companies earn more",
       "verdict": "yes",
-      "label": "Yes, but weaker than H5 alone suggested — H5's own diagnostic traced most of it to one 2025 rate-cut window; H10 finds the same direction re-confirmed across pooled years, so this is now on firmer footing than H5 alone (see EXPERIMENT.md)",
+      "label": "Yes, but weaker than H5 alone suggested: H5's own diagnostic traced most of it to one 2025 rate-cut window; H10 finds the same direction re-confirmed across pooled years, so this is now on firmer footing than H5 alone (see EXPERIMENT.md)",
       "belief_id": "Perusahaan kecil memberi keuntungan lebih besar",
       "label_id": "Ya, tapi buktinya lebih lemah dari perkiraan awal: sebagian besar pengaruhnya berasal dari satu periode tertentu di tahun 2025, meski pengujian ulang di tahun-tahun lain menunjukkan arah yang sama",
       "title_short_id": "Perusahaan kecil memberi untung lebih besar",
@@ -124,7 +124,7 @@
     {
       "belief": "A stock suspended for a sudden price spike keeps rising",
       "verdict": "mixed_or_inconclusive",
-      "label": "Mixed (H11) — typically fades (roughly 2 in 3 underperform the index over the next 90 days), but a small minority keep running hard, skewing the average the other way. Reported as both, not one verdict — see EXPERIMENT.md",
+      "label": "Mixed (H11): typically fades (roughly 2 in 3 underperform the index over the next 90 days), but a small minority keep running hard, skewing the average the other way. Reported as both, not one verdict; see EXPERIMENT.md",
       "belief_id": "Saham yang disuspensi karena lonjakan harga akan terus naik",
       "label_id": "Terbelah: sekitar 2 dari 3 saham justru kalah dari indeks dalam 90 hari setelahnya, tapi sebagian kecil terus melonjak tajam",
       "title_short_id": "Saham yang disuspensi karena lonjakan akan terus naik",
@@ -139,7 +139,7 @@
     {
       "belief": "Fast revenue growth predicts better returns",
       "verdict": "no",
-      "label": "No — sign disagreed between explore and holdout (H10)",
+      "label": "No: sign disagreed between explore and holdout (H10)",
       "belief_id": "Pertumbuhan pendapatan yang cepat memprediksi hasil investasi yang lebih baik",
       "label_id": "Tidak terbukti: hasil pengujian tidak konsisten di data yang berbeda",
       "title_short_id": "Pendapatan tumbuh cepat memprediksi hasil lebih baik",
@@ -169,7 +169,7 @@
     {
       "belief": "A high payout ratio predicts a dividend cut",
       "verdict": "yes",
-      "label": "Yes, strongly (H4) — cut rate rises from ~14% (lowest payout tercile) to ~66% (highest) in holdout",
+      "label": "Yes, strongly (H4): cut rate rises from ~14% (lowest payout tercile) to ~66% (highest) in holdout",
       "belief_id": "Rasio pembayaran dividen yang tinggi memprediksi pemotongan dividen di masa depan",
       "label_id": "Ya, terbukti kuat: kemungkinan pemotongan dividen naik dari sekitar 14% menjadi 66% pada kelompok dengan rasio pembayaran tertinggi",
       "title_short_id": "Dividen besar dibanding laba memprediksi dividen dipotong",
@@ -199,7 +199,7 @@
     {
       "belief": "Insiders selling before a price spike warns of a coming crash",
       "verdict": "no",
-      "label": "Not proven — reversed in holdout, but only 4 events, too few to conclude anything (H8)",
+      "label": "Not proven: reversed in holdout, but only 4 events, too few to conclude anything (H8)",
       "belief_id": "Penjualan oleh insider sebelum lonjakan harga adalah tanda peringatan akan terjadi crash",
       "label_id": "Tidak terbukti: hasilnya malah terbalik saat diuji ulang, dan hanya 4 kejadian",
       "title_short_id": "Insider menjual sebelum lonjakan adalah tanda akan anjlok",
@@ -214,7 +214,7 @@
     {
       "belief": "Positive news coverage predicts a stock will rise",
       "verdict": "mixed_or_inconclusive",
-      "label": "Inconclusive (H9) — sign flips between the two halves of the only data available; promising but not confirmed, needs a longer news history to re-test",
+      "label": "Inconclusive (H9): sign flips between the two halves of the only data available; promising but not confirmed, needs a longer news history to re-test",
       "belief_id": "Pemberitaan positif memprediksi harga saham akan naik",
       "label_id": "Belum jelas: arah hasilnya berbalik antara dua paruh data yang ada; menjanjikan tapi belum terbukti, perlu riwayat berita yang lebih panjang",
       "title_short_id": "Berita positif memprediksi harga akan naik",
@@ -229,7 +229,7 @@
     {
       "belief": "Thin float means wild swings",
       "verdict": "no",
-      "label": "Backwards — wide float is bumpier (H1)",
+      "label": "Backwards: wide float is bumpier (H1)",
       "belief_id": "Kepemilikan publik yang kecil (free float rendah) membuat harga lebih bergejolak",
       "label_id": "Terbalik dari dugaan: justru saham dengan free float besar yang lebih bergejolak",
       "title_short_id": "Free float kecil membuat harga lebih bergejolak",
@@ -244,7 +244,7 @@
     {
       "belief": "Rising profits mean a rising share price",
       "verdict": "no",
-      "label": "No — holdout correlation +0.002 (H17)",
+      "label": "No: holdout correlation +0.002 (H17)",
       "belief_id": "Laba perusahaan yang naik membuat harga sahamnya ikut naik",
       "label_id": "Tidak terbukti: pada data uji ulang, tidak ada kaitan antara kenaikan laba dan hasil harga",
       "title_short_id": "Laba naik membuat harga saham naik",
@@ -259,7 +259,7 @@
     {
       "belief": "Foreign investors buying heavily means the price will rise",
       "verdict": "no",
-      "label": "No — top foreign-buy vs top foreign-sell list, next 5 trading days: holdout spread −0.03% (H6)",
+      "label": "No: top foreign-buy vs top foreign-sell list, next 5 trading days: holdout spread −0.03% (H6)",
       "belief_id": "Kalau asing sedang borong suatu saham, harganya akan naik",
       "label_id": "Tidak terbukti: saham di daftar asing beli terbanyak tidak lebih sering mengungguli IHSG pekan berikutnya daripada daftar asing jual",
       "title_short_id": "Asing borong membuat harga naik",
@@ -274,7 +274,7 @@
     {
       "belief": "Insiders buying their own stock means the price will rise",
       "verdict": "no",
-      "label": "No — holdout mean +3.0% (p 0.25); the typical event did not beat the index (H18)",
+      "label": "No: holdout mean +3.0% (p 0.25); the typical event did not beat the index (H18)",
       "belief_id": "Kalau orang dalam membeli saham perusahaannya, harganya akan naik",
       "label_id": "Tidak terbukti: pada data uji, kejadian yang biasa tidak mengungguli IHSG; rata-rata terdongkrak beberapa kenaikan besar",
       "title_short_id": "Orang dalam beli membuat harga naik",

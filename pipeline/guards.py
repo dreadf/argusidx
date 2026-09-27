@@ -2,7 +2,7 @@
 Guards against known Sectors API traps and injection surfaces.
 
 Each guard here corresponds to a specific failure documented in
-docs/PLAN.md — this module exists so the trap is fixed once, in code,
+docs/PLAN.md: this module exists so the trap is fixed once, in code,
 rather than re-discovered per-caller (RULES.md process rule 3: fix the
 class, not the instance).
 """

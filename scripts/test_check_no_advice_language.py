@@ -50,3 +50,27 @@ def test_line_numbers_are_1_indexed():
     text = "line one\nyou should buy this\nline three"
     hits = find_advice_language(text)
     assert hits == [(2, "you should buy this")]
+
+
+def test_catches_state_label_alarm_words():
+    """Added 2026-09-27 with the Pasar/Kesimpulan state labels, which use
+    "tertekan" and "risiko aktif" instead of these words."""
+    assert find_advice_language("Waspada, saham ini sedang turun.")
+    assert find_advice_language("Hindari membeli saat kondisi begini.")
+    assert find_advice_language("Ini saham bahaya.")
+    assert find_advice_language("Hati-hati dengan saham ini.")
+    assert find_advice_language("Hati hati dengan saham ini.")
+
+
+def test_does_not_flag_ojk_program_name():
+    """OJK's own consumer-protection programme name is a legitimate,
+    quoted proper noun (frontend/src/lib/ask/tip-claims.ts), not an
+    imperative aimed at the reader."""
+    assert not find_advice_language(
+        'Panduan OJK Waspada Investasi: cek "2L: Legal dan Logis".'
+    )
+
+
+def test_ojk_program_name_does_not_hide_a_real_hit_on_the_same_line():
+    hits = find_advice_language("Waspada Investasi kata OJK, tapi Anda harus jual sekarang.")
+    assert hits

@@ -37,7 +37,7 @@ TABLE_HEADER = "| What people believe | | Verdict |"
 VERDICT_MAP = {
     "✓": "yes",
     "✗": "no",
-    "—": "mixed_or_inconclusive",
+    "~": "mixed_or_inconclusive",
 }
 
 

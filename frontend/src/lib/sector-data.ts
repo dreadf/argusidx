@@ -22,7 +22,7 @@ export interface SectorRow {
 export interface SectorBreakdownData {
   as_of: string;
   source_file: string;
-  /** Ordered by company_count, descending — never by a performance
+  /** Ordered by company_count, descending: never by a performance
    * metric. Sorting sectors by how well they're doing would itself be
    * a cross-sector ranking, which nothing else in this product does. */
   sectors: SectorRow[];
@@ -30,7 +30,7 @@ export interface SectorBreakdownData {
 
 /**
  * Reads data/app/sector_breakdown.json, written by
- * pipeline/appdata/build_sector_breakdown.py. Server-only (fs) — never
+ * pipeline/appdata/build_sector_breakdown.py. Server-only (fs): never
  * import from a "use client" component.
  */
 export async function getSectorBreakdownData(): Promise<SectorBreakdownData> {

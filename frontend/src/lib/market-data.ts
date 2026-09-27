@@ -11,7 +11,7 @@ export interface MarketData {
 
 /**
  * Reads data/app/market.json, written by
- * pipeline/appdata/build_market.py. Server-only (fs) — this file must
+ * pipeline/appdata/build_market.py. Server-only (fs): this file must
  * never be imported from a "use client" component.
  */
 export async function getMarketData(): Promise<MarketData> {

@@ -3,7 +3,7 @@ market-cap history (data/raw/idx_total_*.json, pipeline/appdata/
 fetch_idx_total.py).
 
 Powers Home's 4th market-condition reading (docs/PRODUCT.md §3.1,
-§21) — the one reading that genuinely has years of history, so it gets
+§21): the one reading that genuinely has years of history, so it gets
 the actual line/area chart (`components/viz/trend-chart.tsx`, built
 2026-09-13 but never wired to real data until this) instead of another
 stat tile. Replaces the literal "Menunggu data" placeholder that was

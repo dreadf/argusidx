@@ -1,9 +1,9 @@
 """Resolves H1's free-float/volatility finding to every owned company
-(docs/PRODUCT.md §5.2's "stock page — resolved to *this* stock" rendering;
+(docs/PRODUCT.md §5.2's "stock page: resolved to *this* stock" rendering;
 §0 rule 7's current, re-verified boundary condition).
 
 The rule, quoted directly from docs/PRODUCT.md §5.2 (not re-derived from
-memory) — H1b's tested partitioning, corrected 2026-09-10 to drop the
+memory): H1b's tested partitioning, corrected 2026-09-10 to drop the
 retracted small-cap-only reading:
     - 4 market-cap size buckets (quartiles): smallest, small_mid, mid_large,
       largest.

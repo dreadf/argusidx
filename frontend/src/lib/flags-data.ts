@@ -20,14 +20,14 @@ export interface FlagsData {
     earnings_2024: number;
   }>;
   yield_far_above_average: FlagBucket<{ symbol: string; company_name: string | null; yield_ttm: number; yield_avg: number }>;
-  /** Was typed `null` here — stale from before this flag was implemented.
+  /** Was typed `null` here: stale from before this flag was implemented.
    * The real data/app/flags.json has always carried a populated bucket. */
   lq45_low_float: FlagBucket<{ symbol: string; company_name: string | null; free_float: number }>;
 }
 
 /**
  * Reads data/app/flags.json, written by pipeline/appdata/build_flags.py.
- * Server-only (fs) — never import from a "use client" component.
+ * Server-only (fs): never import from a "use client" component.
  */
 export async function getFlagsData(): Promise<FlagsData> {
   const filePath = path.join(process.cwd(), "..", "data", "app", "flags.json");

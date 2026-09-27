@@ -61,7 +61,7 @@ project total.
 
 Legal/naming note, unchanged from the rest of this project: this
 reports a checkable, dated, public-record pattern (an official IDX
-filing, followed by an official IDX suspension notice) — never a claim
+filing, followed by an official IDX suspension notice): never a claim
 that any named company or individual manipulated its price. Any symbol
 appearing in this module's output is cited only as a matter of public
 record.

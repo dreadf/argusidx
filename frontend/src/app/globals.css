@@ -129,15 +129,15 @@
   }
 }
 /* ============================================================
-   ArgusIDX data-viz tokens — dataviz skill's validated default
+   ArgusIDX data-viz tokens: dataviz skill's validated default
    palette (validated: node scripts/dataviz/validate_palette.js,
    see /docs/PRODUCT.md's design-system section for the audit).
-   These are separate from shadcn's UI chrome tokens above —
+   These are separate from shadcn's UI chrome tokens above:
    this block is ONLY for chart/data marks, never for buttons,
    borders, or generic UI chrome.
    ============================================================ */
 :root {
-  /* Categorical (8 hues, fixed order — never cycled, never reassigned
+  /* Categorical (8 hues, fixed order: never cycled, never reassigned
      by rank). Slot 1 (blue) doubles as the sequential hue. */
   --viz-cat-1: #2a78d6; /* blue */
   --viz-cat-2: #eb6834; /* orange */
@@ -148,15 +148,15 @@
   --viz-cat-7: #4a3aa7; /* violet */
   --viz-cat-8: #e34948; /* red */
 
-  /* Diverging pair — blue<->red, gray neutral midpoint.
+  /* Diverging pair: blue<->red, gray neutral midpoint.
      Used for: market breadth (near-low/mid/near-high), today's
-     movers (down/flat/up). NEVER green/red — verified to fail
+     movers (down/flat/up). NEVER green/red: verified to fail
      the colorblind check (deuteranopia ΔE 4.1, floor is 6.0). */
   --viz-diverging-pos: #2a78d6;
   --viz-diverging-neg: #e34948;
   --viz-diverging-neutral: #f0efec;
 
-  /* Sequential (one hue, light->dark) — for magnitude / ordinal
+  /* Sequential (one hue, light->dark): for magnitude / ordinal
      jobs, e.g. today's "how much did things move" reading and the
      idx-total trend chart. */
   --viz-seq-100: #cde2fb;
@@ -173,7 +173,7 @@
   --viz-seq-650: #104281;
   --viz-seq-700: #0d366b;
 
-  /* Status (fixed, reserved — never themed, never a series color).
+  /* Status (fixed, reserved: never themed, never a series color).
      The ONLY sanctioned use in this product: the honesty
      scoreboard's ✓/✗ (the claim's status, not a stock's risk).
      Always paired with the ✓/✗ icon, never color alone. */

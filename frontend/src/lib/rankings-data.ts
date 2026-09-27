@@ -46,7 +46,7 @@ export interface RankingsData {
 
 /**
  * Reads data/app/rankings.json, written by
- * pipeline/appdata/build_rankings.py. Server-only (fs) — never import
+ * pipeline/appdata/build_rankings.py. Server-only (fs): never import
  * from a "use client" component.
  */
 export async function getRankingsData(): Promise<RankingsData> {

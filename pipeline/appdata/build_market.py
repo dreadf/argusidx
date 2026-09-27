@@ -1,10 +1,10 @@
 """Build data/app/market.json from the purchased universe sweep.
 
 Day-1 scaffold (docs/PRODUCT.md §3.1, §12's Sep 13 gate). Computes the
-three readings that don't need a new API call — breadth, movers,
-intensity — from the existing owned data. Reading 4 (idx-total vs. its
+three readings that don't need a new API call, breadth, movers,
+intensity, from the existing owned data. Reading 4 (idx-total vs. its
 own history) is added once /v2/idx-total/'s approved full-history fetch
-has actually run (§18, §21) — not before, since that data doesn't exist
+has actually run (§18, §21): not before, since that data doesn't exist
 yet and this module must never invent it.
 
 Run: .venv/bin/python -m pipeline.appdata.build_market
@@ -81,7 +81,7 @@ def main() -> None:
         "movers": build_movers(rows),
         "intensity": build_intensity(rows),
         # idx_total: intentionally absent until the approved full-history
-        # fetch actually runs (docs/PRODUCT.md §18, §21) — never invented.
+        # fetch actually runs (docs/PRODUCT.md §18, §21): never invented.
     }
 
     APP_DIR.mkdir(parents=True, exist_ok=True)

@@ -7,10 +7,10 @@ Keyed by the exact English `belief` string from docs/PRODUCT.md's table
 table's prose is collaboratively-owned research content, not something
 this module hand-transcribes or re-derives). A belief with no entry here
 fails the build loudly, matching findings_translations.py's own
-discipline — this is user-facing evidence, not an optional footnote.
+discipline: this is user-facing evidence, not an optional footnote.
 
 Every number below was read directly out of EXPERIMENT.md's own "What we
-found" / "Limits" sections for the named hypothesis (2026-09-19) — not
+found" / "Limits" sections for the named hypothesis (2026-09-19): not
 recomputed, not inferred. If EXPERIMENT.md's numbers change, this file
 goes stale; it is not auto-derived from that document, the same
 trade-off findings_translations.py already accepts for the scoreboard's

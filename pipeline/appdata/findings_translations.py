@@ -1,7 +1,7 @@
 """Plain-Bahasa translations for docs/PRODUCT.md's honesty scoreboard.
 
 The source table (§5.3) is genuinely curated research content, correctly
-parsed live rather than hand-copied (build_findings.py) — but its labels
+parsed live rather than hand-copied (build_findings.py): but its labels
 are research shorthand ("(H10, new 2026-09-12)", "(H14)"), not
 beginner-facing copy, and the table mixes English into an otherwise
 Bahasa-Indonesia product (user feedback, 2026-09-13: "still lacking,
@@ -10,7 +10,7 @@ would confuse readers, don't release it as a feature").
 Keyed by the EXACT English `belief` text parsed from the source table,
 so a row added there without a matching entry here fails the build
 loudly (build_findings.py) instead of silently shipping untranslated
-jargon — the fix isn't "make the scanner smarter", it's "a human decides
+jargon: the fix isn't "make the scanner smarter", it's "a human decides
 the plain-language version before it ships", same discipline as every
 other translated string in this app.
 """

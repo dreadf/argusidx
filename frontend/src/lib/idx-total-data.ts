@@ -17,7 +17,7 @@ export interface IdxTotalData {
 
 /**
  * Reads data/app/idx_total.json, written by
- * pipeline/appdata/build_idx_total.py. Server-only (fs) — never import
+ * pipeline/appdata/build_idx_total.py. Server-only (fs): never import
  * from a "use client" component.
  */
 export async function getIdxTotalData(): Promise<IdxTotalData> {

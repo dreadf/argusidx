@@ -2,13 +2,17 @@
 # Pre-submission gate. Run from anywhere: scripts/preflight.sh
 #
 # Hard checks (any failure exits non-zero): pipeline tests, secret scan,
-# frontend production build, and the LLM-off gate RULES.md asks for -
-# the production server is started with GEMINI_API_KEY blanked and must
-# still serve pages and answer /api/ask from templates.
+# em dash scan, frontend production build, and the LLM-off gate RULES.md
+# asks for - the production server is started with GEMINI_API_KEY blanked
+# and must still serve pages and answer /api/ask from templates.
 #
 # Advice-language scan is printed for human review, not gated: it flags
 # disclaimers that name the very question they refuse to answer, which are
 # legitimate (see scripts/check_no_advice_language.py's own docstring).
+# The em dash scan IS gated, unlike the advice-language one: a hit there
+# is always a real em dash (project owner's style rule, 2026-09-27), so
+# there is nothing for a human to judge, unlike an advice-shaped phrase
+# that might be a legitimate disclaimer.
 set -u
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT" || exit 1
@@ -27,6 +31,9 @@ step "pipeline tests"
 
 step "secret scan"
 python3 scripts/check_no_secrets.py || fail "check_no_secrets"
+
+step "em dash scan"
+python3 scripts/check_no_em_dash.py || fail "check_no_em_dash"
 
 step "advice-language scan (review hits by hand)"
 python3 scripts/check_no_advice_language.py --dir frontend/src README.md docs/FINDINGS.md docs/SETUP.md docs/ARCHITECTURE.md || \

@@ -1,5 +1,5 @@
 """
-Tests for pipeline/stats.py — the single shared statistics implementation
+Tests for pipeline/stats.py: the single shared statistics implementation
 every hypothesis test builds on (RULES.md process rule 3: a bug here is a
 bug everywhere, so this is the highest-leverage place to have coverage).
 """

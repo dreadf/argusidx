@@ -14,7 +14,7 @@ let indexCache: LookupEntry[] | null = null;
  * Builds (once, cached in module scope like stock-data.ts's own cache) a
  * plain index of {code, company name} for every one of the 962 companies,
  * used only to recognize which stock a free-text question is about.
- * Server-only — reads data/app/stocks.json via getStockData/getAllStockCodes.
+ * Server-only: reads data/app/stocks.json via getStockData/getAllStockCodes.
  */
 async function getLookupIndex(): Promise<LookupEntry[]> {
   if (indexCache) return indexCache;
@@ -44,7 +44,7 @@ async function getLookupIndex(): Promise<LookupEntry[]> {
 /**
  * Finds a single stock ticker mentioned in free text.
  *
- * Company-name match runs FIRST, not ticker match — some real IDX
+ * Company-name match runs FIRST, not ticker match: some real IDX
  * tickers are ordinary words (e.g. `BANK`, PT Bank Aladin Syariah Tbk),
  * so "bagaimana kondisi Bank Central Asia?" must resolve to BBCA via its
  * company name before a ticker scan gets a chance to misfire on the word
@@ -57,7 +57,7 @@ async function getLookupIndex(): Promise<LookupEntry[]> {
  *
  * The name match additionally requires the stripped core to contain a
  * space (at least two words) and matches it as a whole word/phrase
- * (`\bcore\b`), never a bare substring — checked against the real
+ * (`\bcore\b`), never a bare substring: checked against the real
  * universe (2026-09-19): 23 companies reduce to a single-word core after
  * stripping PT/Tbk, and at least one, TINS.JK -> "Timah", is also the
  * ordinary Indonesian word for the metal tin. A plain substring match on
@@ -69,22 +69,22 @@ async function getLookupIndex(): Promise<LookupEntry[]> {
  * reachable by their (case-sensitive) ticker below, or by the dedicated
  * search box (components/stock-search.tsx), the real general fix either way.
  *
- * Ticker match stays case-SENSITIVE (`\bBBCA\b`, capitals as typed) —
+ * Ticker match stays case-SENSITIVE (`\bBBCA\b`, capitals as typed),
  * this was deliberately re-checked, not left as-is out of caution: a
  * direct scan of the real universe found 12 actual IDX tickers that are
- * ordinary Indonesian words used constantly in trading questions —
+ * ordinary Indonesian words used constantly in trading questions:
  * BANK, SATU, SEHAT, NAIK, LABA, EMAS, BELI, BUKA, BAIK, JAYA, MEGA,
  * AMAN. Matching lowercase would make "apakah harga akan naik?" or
- * "apakah datanya baik?" — completely ordinary phrasings — misfire on
+ * "apakah datanya baik?", completely ordinary phrasings, misfire on
  * NAIK/BAIK. That's a worse, broader version of the exact bug this
  * function was already fixed for once; making it case-insensitive would
  * reintroduce the same class of bug at 12x the surface area, not fix
  * anything. The real fix for "lowercase ticker lookup" is the dedicated
- * search box (components/stock-search.tsx) — an explicit picker where a
+ * search box (components/stock-search.tsx): an explicit picker where a
  * match is chosen by the user from a visible list, not inferred from
  * free text, so the same ambiguity never arises there.
  *
- * Returns null (not a guess) when nothing is unambiguous — an
+ * Returns null (not a guess) when nothing is unambiguous: an
  * unrecognized-ticker experience is safer than a wrong one.
  */
 export async function findStockInText(text: string): Promise<string | null> {

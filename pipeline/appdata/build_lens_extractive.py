@@ -1,4 +1,4 @@
-"""Build data/app/lens_extractive.json — the Extractive "lens" (docs/PRODUCT.md §9).
+"""Build data/app/lens_extractive.json: the Extractive "lens" (docs/PRODUCT.md §9).
 
 Not a ranked comparison scorecard like the Banking lens - checked all
 three candidate mining endpoints directly (2026-09-13) and none exist at

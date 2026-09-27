@@ -26,7 +26,7 @@ function getServerSnapshot(): WatchlistEntry[] {
 /**
  * Reactive read of the watchlist via React's own external-store primitive
  * (the textbook fit for "state that lives outside React and can change
- * from other places" — localStorage, a custom event, and another tab's
+ * from other places": localStorage, a custom event, and another tab's
  * `storage` event all qualify). Replaces an earlier manual
  * useState+useEffect version that triggered React's
  * `react-hooks/set-state-in-effect` lint rule; this has no effect body at

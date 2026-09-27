@@ -1,4 +1,4 @@
-"""Build data/app/lens_banking.json — the Banking lens (docs/PRODUCT.md §9).
+"""Build data/app/lens_banking.json: the Banking lens (docs/PRODUCT.md §9).
 
 Scope note: only the 4 ratios with a defensible single "healthier
 direction" get a peer-rank comparison (CASA ratio, capital adequacy

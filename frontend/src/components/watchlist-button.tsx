@@ -16,7 +16,7 @@ function subscribe(onChange: () => void): () => void {
 /**
  * Star toggle for saving a stock to the on-device watchlist (docs/PRODUCT.md
  * §11). Uses `useSyncExternalStore` (matching `use-watchlist.ts`'s hook)
- * rather than a manual `useState`+`useEffect` pair — the server always
+ * rather than a manual `useState`+`useEffect` pair: the server always
  * reports "not watched" (it has no concept of localStorage), and React's
  * own hydration handling for this primitive means the star can simply
  * flip to ★ right after mount for an already-saved stock, with no

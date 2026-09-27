@@ -6,7 +6,7 @@ import pytest
 from pipeline.appdata.build_findings import attach_evidence, attach_translations, parse_scoreboard
 
 SAMPLE = """
-### 5.3 The honesty scoreboard — a verdict list, not a report
+### 5.3 The honesty scoreboard: a verdict list, not a report
 
 Belief in plain words → a large check/x → a three-word verdict.
 
@@ -14,7 +14,7 @@ Belief in plain words → a large check/x → a three-word verdict.
 |---|---|---|
 | Cheap stocks (low P/E) do better | **✓** | Yes, modestly (H5, H10) |
 | Oversold (RSI < 30) means a bounce | **✗** | No (H14) |
-| Small companies earn more | — | Inconclusive |
+| Small companies earn more | ~ | Inconclusive |
 
 Scannable in seconds, no numeracy required; each row expands on tap.
 """

@@ -22,6 +22,7 @@ jobs:
       # Tests that read the purchased raw data skip on a fresh clone (data/raw is private).
       - run: python -m pytest pipeline/tests scripts -q
       - run: python scripts/check_no_secrets.py
+      - run: python scripts/check_no_em_dash.py
 
   frontend:
     name: Frontend lint, tests and build

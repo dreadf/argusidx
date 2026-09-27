@@ -3,7 +3,7 @@
 Cheap guard against committing a live API key or similar secret.
 
 Scans the staged diff (or, for testing, a file/stdin) for lines that look
-like a credential assignment. Not a substitute for real secret-scanning —
+like a credential assignment. Not a substitute for real secret-scanning:
 just insurance against repeating the exact mistake this project already
 made once outside the repo (see docs/PLAN.md 10, RULES.md housekeeping):
 a key typed somewhere it shouldn't have been.

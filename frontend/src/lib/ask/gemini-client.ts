@@ -163,7 +163,7 @@ function extractResponseText(json: unknown): string | null {
 /**
  * `responseMimeType: "application/json"` is documented to return bare
  * JSON, but a live call (2026-09-13, gemini-2.5-flash) returned a
- * conversational preamble plus a ```json fenced block instead — verified
+ * conversational preamble plus a ```json fenced block instead: verified
  * directly, not assumed. Strips a fenced code block if present, otherwise
  * falls back to the substring between the first `{` and the last `}`, so
  * a model that wraps its JSON in prose still parses instead of silently

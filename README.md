@@ -9,7 +9,7 @@ held up on Indonesian stock market data, and what usually happens to a stock in
 the situation yours is in. It never says buy, sell or hold.
 
 Built for the **Sectors Hackathon 2026**, Track 03 (Market Intelligence).
-Live app: _link added at deployment_.
+Live app: <https://argusidx.vercel.app>.
 
 ![Pasting a tip into Tanya, then opening the foreign-flow test](docs/img/tanya.gif)
 
@@ -52,7 +52,7 @@ The app is in Bahasa Indonesia; each section below names the page and what it do
 | **Tanya** (ask) | Paste a message you received, or type a question about a stock. | The stock it mentions (price, and what situation it is in) and, for each claim in the message, whether we tested it and how it came out. Example: "oversold, pasti mantul" is matched to the oversold test and shown as "Tidak terbukti" (not proven). A claim we never tested, like a target price, is labelled "no test for this". The pasted text is read in your browser and never sent anywhere. Optional AI wording; without it, the same facts are shown as plain rows. |
 | **Temuan** (findings) | Open the list of 19 popular beliefs. | One verdict per belief (held up, unclear, did not hold up) with its sample size and its main limit. Open one to see the chart and the method. |
 | **Situasi** (situations) | Pick a situation, for example "a stock that fell 30% and is still below its old peak". | How often that has happened, and what followed, as "N of 100": "of 100 such stocks, 12 got back to their peak within a year". With a plausible range and the caveats. |
-| **Stock page** (`/saham/BBCA`, all 962 companies) | Search any listed company. | Price against its 52-week range, how it compares with its sector, which of the 13 situations it is in now, insider and suspension history. No combined score. |
+| **Stock page** (`/saham/BBCA`, all 962 companies) | Search any listed company. | Price against its 52-week range, how it compares with its sector, which of the 13 situations it is in now, insider and suspension history. No rating or buy/sell/hold score; a count of risk signs is shown only where a pre-registered test confirmed it, and each sign stays visible on its own. |
 | **Jelajah** (explore) | Browse. | *Deteksi anomali*: nine rule-based signals, each with the companies that trigger it, how often the situation ends badly, and how the count changes if the rule is loosened. *Peringkat*: six lists, each ordered by one visible rule (for example ROE compared with similar companies). *Sektor* and *Pasar*: sector breakdowns and today's market. |
 | **Watchlist** | Star stocks. | Saved on your device, no account. |
 
