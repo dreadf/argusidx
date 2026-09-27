@@ -20,6 +20,13 @@ DATA_RAW = Path(__file__).resolve().parent.parent / "data" / "raw"
 # covers listings after May 2005.
 SECTORS_DATA_FLOOR = date(2021, 1, 1)
 
+# index-daily's earliest available date, per the live schema
+# (https://api.sectors.app/schema/, read 2026-09-27): "Earliest ...
+# January 2, 2019". Unlike the individual-stock floor above, this one
+# is documented, not inferred from an empty-array trap -- but a query
+# before it still isn't guaranteed safe, so it gets the same guard.
+SECTORS_INDEX_FLOOR = date(2019, 1, 2)
+
 
 def assert_within_data_floor(start: date) -> None:
     """Raise loudly instead of silently billing for an empty result."""
@@ -28,6 +35,15 @@ def assert_within_data_floor(start: date) -> None:
             f"requested start date {start} is before the Sectors data floor "
             f"({SECTORS_DATA_FLOOR}); individual-stock daily endpoints return "
             "empty arrays for this range and still bill credits"
+        )
+
+
+def assert_within_index_floor(start: date) -> None:
+    """Raise loudly instead of querying index-daily before its documented start."""
+    if start < SECTORS_INDEX_FLOOR:
+        raise ValueError(
+            f"requested start date {start} is before the Sectors index-daily "
+            f"floor ({SECTORS_INDEX_FLOOR}, per the live schema)"
         )
 
 

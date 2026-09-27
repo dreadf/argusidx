@@ -8,7 +8,9 @@ import pytest
 
 from pipeline.guards import (
     SECTORS_DATA_FLOOR,
+    SECTORS_INDEX_FLOOR,
     assert_within_data_floor,
+    assert_within_index_floor,
     is_known_ticker,
 )
 
@@ -24,6 +26,19 @@ def test_data_floor_accepts_floor_date():
 
 def test_data_floor_accepts_later_date():
     assert_within_data_floor(date(2024, 1, 1))  # must not raise
+
+
+def test_index_floor_rejects_earlier_date():
+    with pytest.raises(ValueError):
+        assert_within_index_floor(date(2019, 1, 1))
+
+
+def test_index_floor_accepts_floor_date():
+    assert_within_index_floor(SECTORS_INDEX_FLOOR)  # must not raise
+
+
+def test_index_floor_accepts_later_date():
+    assert_within_index_floor(date(2024, 1, 1))  # must not raise
 
 
 @needs_raw
