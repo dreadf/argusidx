@@ -3461,3 +3461,176 @@ tested against its own two signs), and T1 (a market-condition label,
 "tertekan" or not, tested against subsequent market moves). Each ships only
 if its own test passes on holdout data; each that fails is published as a
 null, same as every other result in this log.
+
+## Pre-registration, 2026-09-27: T1 (market condition, +1 trial), R1 (warning overlap, descriptive) and R2a (does the count of active warnings matter, +1 trial if common support qualifies)
+
+Written before any of these three is run: this section locks the definitions,
+splits and pass rules. Per the amendment above, T1 and R2a are the first two
+tests of the count/combination rule it created. Plan reference:
+`kind-juggling-hoare.md` §5. Data already pulled for these: M1 (full IHSG
+daily history, `data/raw/ihsg_2026-09-27.json`, `docs/credit_ledger.md`
+2026-09-27, 1,861 trading days, 2019-01-02 to 2026-09-27); the universe sweep
+(`data/raw/universe_2026-09-12.json`, 83 fields, 962 companies); and the
+existing dev-time research price history (`pipeline/dev/`, never shipped, per
+`CLAUDE.md`'s standing rule) already used by H5/H10/H17/etc. No new Sectors
+pull is required to run any of the three; none is being requested here.
+
+**Common protocol, all three (plan §4), restated as this project's binding
+rules, not just as this pre-registration's):**
+1. Predictor before outcome: every predictor here is computable using only
+   data available strictly before the day it is measured on.
+2. Lag guard: yearly `field[YYYY]` columns become usable on 1 May of the
+   following year, enforced by the existing pytest lag-guard tests; R1/R2a's
+   "loss year" and "earnings down two years" warnings use this rule.
+3. IDX calendar: "previous trading day" comes from the Sectors-sourced IHSG
+   calendar (`ihsg_2026-09-27.json`'s date list, from 2019; for dates before
+   that, `idx_total.json`'s calendar, from 2021), never from the previous row
+   of the research-price file, which can have gaps that don't correspond to
+   real non-trading days.
+4. Embargo: a formation counts only if its whole outcome window ends before
+   the explore/holdout boundary. 20 trading days for T1, 126 trading days for
+   R2a. A formation whose outcome window crosses the boundary is dropped and
+   the drop is counted and reported.
+5. Run once: each of the three below is computed exactly one time on real
+   data, after this text is committed. Results are reported by explore vs.
+   holdout, by year, and (T1 only) by ARB-7% regime; nulls get equal weight
+   and equal visibility with confirmations.
+6. Standard errors: moving-block bootstrap (20-day blocks) for the T1 market
+   series; stock- and date-clustered bootstrap for the R1/R2a panel. Reuses
+   `pipeline/hypotheses/_stress_common.py` and `pipeline/stats.py` rather than
+   a new implementation.
+7. Missing outcomes (R2a; a stock suspended or delisted inside its 126-day
+   window) are categorised as suspended, delisted or unknown, not silently
+   dropped. The primary result carries the last close forward through the
+   window; an exclusion-of-missing run and a worst-case -50%-at-gap run are
+   also reported.
+8. Asymmetry: where realised volatility alone could produce a result, the
+   statistic compares down minus up (T1's A-B, R2a's D-U), not either alone.
+
+### T1: "Kondisi pasar: tertekan" (+1 trial)
+
+**State at close t**, using IHSG data up to and including t only (no
+look-ahead). The market is `tertekan` if **either**:
+- IHSG's close is >=10% below its running peak-to-date **and** below its
+  own 200-trading-day moving average; **or**
+- its 20-trading-day realised volatility (std. dev. of daily log returns) is
+  above the 90th percentile of that same volatility measure's own history up
+  to t (an expanding percentile, not a fixed-window one).
+
+**Burn-in, verified today on M1 before writing this rule down (plan required
+this check to pass before pre-registering, and it did):** the state is
+computed only from trading day 250 onward. Day 250 of `ihsg_2026-09-27.json`
+is **2020-01-08**. The COVID crash (verified low: 2020-03-24, IHSG 3,937.632,
+trading-day index 303) falls 53 trading days after burn-in ends, not at its
+edge, so it sits fully inside the post-burn-in period and is available for
+both explore and (via later years) generalization checks, exactly as the plan
+required ("If it fails, stop and re-plan" -- it did not fail).
+
+**Split.** Explore: burn-in end (2020-01-08) through 2022-12-31. Holdout:
+2023-01-01 onward, after the 20-day embargo at the boundary.
+
+**Outcomes, over t+1 to t+20 trading days:**
+- A = P(IHSG falls a further >=5% from its close at t, at any point in the
+  window)
+- B = P(IHSG rises >=5% from its close at t, at any point in the window)
+
+**Primary statistic.** (A-B) computed separately on `tertekan` days and on
+normal days, within the holdout; the test statistic is the difference between
+those two (A-B) values.
+
+**Pass.** CONFIRMED only if, on the holdout: the (A-B tertekan) minus (A-B
+normal) difference is > 0, its bootstrap CI (moving-block, 20-day) is
+entirely above 0, **and** the same-signed difference also holds in explore.
+Anything else is NOT confirmed and is published as such, with the numbers.
+
+**The fail state is designed now, before any result exists:** if NOT
+confirmed, the product still shows the percentile tiles (peak distance,
+200-day average distance, realised volatility percentile) as a plain
+description of where IHSG sits today, with no state label implying
+predictive meaning.
+
+**Robustness (reported, not additional trials).** The same test excluding
+the ARB-7% auto-reject-band period (dates to be verified against IDX before
+reporting, not assumed); with 8% and 12% peak-distance thresholds in place of
+10%.
+
+### R1: overlap between the eight warnings (descriptive, not a trial)
+
+**Panel.** Stock x month-start, from 2022-05-01 (the earliest month
+`outstanding_shares[YYYY]` supports under the 1 May lag rule, per the plan's
+R2 size-control note). Each cell is a binary vector over the eight warnings
+below, computed as of that month-start using only data available before it.
+
+**The eight warnings, each already precisely defined by an existing module or
+finding in this log (reused, not redefined):**
+1. fell 30%+ from peak (existing drawdown definition, `m_typical_drawdown.py`)
+2. long below peak (existing definition, `m_long_below_peak.py`)
+3. up 40%+ in 20 trading days (existing definition, `m_recent_spike.py`)
+4. loss year (most recent lagged `earnings[YYYY]` < 0)
+5. earnings down two years running (two most recent lagged `earnings[YYYY]`
+   both below the prior year)
+6. payout in H4's top tercile (`h4_payout_dividend_cuts.py`'s existing
+   tercile cut)
+7. near peak with falling earnings (existing definition,
+   `m_near_peak_earnings_decline.py`)
+8. yield spike (existing definition, `m_yield_spike_cut.py`)
+
+**Merging rule, fixed now.** For every pair of warnings, compute the Jaccard
+index of their active-month sets across the whole panel. Any pair with
+Jaccard > 0.5 merges into whichever of the two is more specific (the smaller
+active-month count), and the merged pair is reported as one warning with both
+original names noted. This is descriptive only: R1 produces the overlap
+table and the (possibly-merged) warning list that R2a and R2b consume; it
+does not itself carry a pass/fail rule and is not counted as a trial.
+
+### R2a: does the number of active warnings matter? (+1 trial, conditional)
+
+**Cells.** Size tercile (by `outstanding_shares[YYYY]`, lagged to 1 May, with
+the plan's flag rule: a stock-year whose share count changes >=50% is flagged,
+takes its size from the following year, and the flag is counted and reported)
+x 60-trading-day realised-volatility tercile, both measured strictly before
+formation.
+
+**Common support, checked before any outcome.** A cell counts only if each of
+the 0, 1, 2 and 3+ active-warning groups (using R1's merged warning list) has
+>=30 observations in **both** the explore and holdout periods. **If fewer
+than 2 cells qualify, R2a is not run as a trial; it becomes descriptive
+(each warning shown alone, no count claim), and the trial counter does not
+move.** This check is done first and reported before the rest of R2a
+proceeds, so the conditional outcome is known before the pass/fail statistic
+is computed.
+
+**Outcomes, within 126 trading days of formation:**
+- D = P(a fall of >=30% from the formation price, at any point in the window)
+- U = P(a rise of >=30% from the formation price, at any point in the window)
+- L = suspended or delisted inside the window (reported, not folded into D)
+
+**Split.** Explore: formations from 2022-05-01, ending 126 trading days
+before 2024-01-01. Holdout: formations from 2024-01-01 onward, after the
+126-day embargo at the boundary.
+
+**Pass.** CONFIRMED only if, on the holdout, cell-weighted (weighted by each
+qualifying cell's observation count):
+1. D-U rises monotonically with the active-warning count (0 < 1 < 2 < 3+); **and**
+2. D-U for the 2+ group beats D-U for the single strongest warning, where
+   "strongest" is chosen using **explore data only**, before looking at the
+   holdout, so the choice cannot be reverse-engineered from the holdout result.
+
+Both conditions must hold; either failing makes R2a NOT confirmed, published
+with the numbers. If confirmed, this is the test that licenses the
+Kesimpulan's "N tanda risiko aktif" line under the amended combination rule
+above; if not, the Kesimpulan falls back to listing warnings individually, in
+explore-strength order.
+
+**Trial counter if both run as trials:** T1 makes it **36**; R2a, if common
+support qualifies, makes it **37** (matching the plan's stated total). If
+R2a's common-support check fails and it turns descriptive, the counter stops
+at 36 for this batch. R1 is never counted, in either outcome.
+
+### Not yet run
+
+Per the plan's own schedule (`kind-juggling-hoare.md` §8: pre-register today,
+2026-09-27; run and commit results 2026-09-28), nothing above has been
+executed. This section will be replaced by a "Results" section, run once,
+after this pre-registration commit already exists in git history -- so the
+history itself shows the rule coming before the result, per RULES.md.
