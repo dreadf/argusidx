@@ -300,6 +300,36 @@
         "period_id": "IHSG 2019-01-02 hingga 2026-09-25; masa uji dimulai 2023-01-01",
         "limit_id": "Rentang kepercayaan pada data uji masih meliputi nol (-0,35 hingga +0,38), dan arahnya berbeda dari data awal, jadi hasil ini tidak dapat disimpulkan ke arah manapun."
       }
+    },
+    {
+      "belief": "A stock long below its peak with a loss year does worse than either sign alone",
+      "verdict": "no",
+      "label": "No: it beats the \"long below peak\" sign alone but not \"loss year\" alone, so it does not beat both (R2b)",
+      "belief_id": "Saham yang lama di bawah puncak dan rugi setahun lebih buruk dari salah satu tanda saja",
+      "label_id": "Tidak terbukti: gabungan ini mengungguli tanda \"lama di bawah puncak\" sendiri, tapi tidak mengungguli tanda \"rugi setahun\" sendiri, jadi belum bisa dikatakan mengungguli keduanya",
+      "title_short_id": "Lama di bawah puncak plus rugi setahun lebih buruk",
+      "result_short_id": "Tidak terbukti, tidak mengungguli tanda rugi setahun sendiri",
+      "evidence": {
+        "hypothesis_id": "R2b",
+        "n": "n=2.359 kombinasi, 7.326 tanda \"lama di bawah puncak\" sendiri, 661 tanda \"rugi setahun\" sendiri (data uji)",
+        "period_id": "Formasi bulanan Mei 2022-Agustus 2026, hasil diukur 126 hari bursa, hanya data uji (dari 2024-01-01)",
+        "limit_id": "Kombinasi ini mengungguli tanda \"lama di bawah puncak\" sendiri, tapi kalah dari tanda \"rugi setahun\" sendiri, jadi syarat mengungguli keduanya tidak terpenuhi; dua pasangan tanda lain yang direncanakan tidak cukup datanya untuk diuji sama sekali."
+      }
+    },
+    {
+      "belief": "Active risk signs matter more when the market is already under pressure",
+      "verdict": "no",
+      "label": "No: the difference-in-differences was positive but its interval straddled zero (R5)",
+      "belief_id": "Tanda risiko yang aktif lebih berarti saat pasar sedang tertekan",
+      "label_id": "Tidak terbukti: selisihnya positif tapi rentang kepercayaannya masih meliputi nol",
+      "title_short_id": "Tanda risiko lebih berarti saat pasar tertekan",
+      "result_short_id": "Tidak terbukti, selisihnya belum jelas dari nol",
+      "evidence": {
+        "hypothesis_id": "R5",
+        "n": "n=12.607 saham-bulan (data uji, semua kelompok)",
+        "period_id": "Formasi bulanan data uji (2024-01-01 dan seterusnya), kondisi pasar dari T1",
+        "limit_id": "Selisihnya positif (+0,03) tapi rentang kepercayaan bootstrap-nya (-0,04 hingga +0,09) masih meliputi nol, jadi belum bisa disimpulkan berbeda dari nol."
+      }
     }
   ]
 }

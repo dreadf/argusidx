@@ -106,6 +106,14 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "belief_id": "Kalau IHSG sudah terlihat \"tertekan\", penurunan lanjutan lebih mungkin daripada pemulihan",
         "label_id": "Tidak terbukti: arah hasilnya berbeda antara data awal dan data uji, dan rentang kepercayaan pada data uji masih meliputi nol",
     },
+    "A stock long below its peak with a loss year does worse than either sign alone": {
+        "belief_id": "Saham yang lama di bawah puncak dan rugi setahun lebih buruk dari salah satu tanda saja",
+        "label_id": "Tidak terbukti: gabungan ini mengungguli tanda \"lama di bawah puncak\" sendiri, tapi tidak mengungguli tanda \"rugi setahun\" sendiri, jadi belum bisa dikatakan mengungguli keduanya",
+    },
+    "Active risk signs matter more when the market is already under pressure": {
+        "belief_id": "Tanda risiko yang aktif lebih berarti saat pasar sedang tertekan",
+        "label_id": "Tidak terbukti: selisihnya positif tapi rentang kepercayaannya masih meliputi nol",
+    },
     "Positive news coverage predicts a stock will rise": {
         "belief_id": "Pemberitaan positif memprediksi harga saham akan naik",
         "label_id": (
@@ -201,6 +209,14 @@ SHORT_COPY: dict[str, dict[str, str]] = {
     "Once IHSG looks \"tertekan\" (pressured), a further fall is more likely than a recovery": {
         "title_short_id": "IHSG tertekan berarti penurunan lanjutan lebih mungkin",
         "result_short_id": "Tidak terbukti, arah hasilnya berbeda antar data",
+    },
+    "A stock long below its peak with a loss year does worse than either sign alone": {
+        "title_short_id": "Lama di bawah puncak plus rugi setahun lebih buruk",
+        "result_short_id": "Tidak terbukti, tidak mengungguli tanda rugi setahun sendiri",
+    },
+    "Active risk signs matter more when the market is already under pressure": {
+        "title_short_id": "Tanda risiko lebih berarti saat pasar tertekan",
+        "result_short_id": "Tidak terbukti, selisihnya belum jelas dari nol",
     },
 }
 

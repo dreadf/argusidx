@@ -139,4 +139,16 @@ EVIDENCE: dict[str, dict[str, str]] = {
         "period_id": "IHSG 2019-01-02 hingga 2026-09-25; masa uji dimulai 2023-01-01",
         "limit_id": "Rentang kepercayaan pada data uji masih meliputi nol (-0,35 hingga +0,38), dan arahnya berbeda dari data awal, jadi hasil ini tidak dapat disimpulkan ke arah manapun.",
     },
+    "A stock long below its peak with a loss year does worse than either sign alone": {
+        "hypothesis_id": "R2b",
+        "n": "n=2.359 kombinasi, 7.326 tanda \"lama di bawah puncak\" sendiri, 661 tanda \"rugi setahun\" sendiri (data uji)",
+        "period_id": "Formasi bulanan Mei 2022-Agustus 2026, hasil diukur 126 hari bursa, hanya data uji (dari 2024-01-01)",
+        "limit_id": "Kombinasi ini mengungguli tanda \"lama di bawah puncak\" sendiri, tapi kalah dari tanda \"rugi setahun\" sendiri, jadi syarat mengungguli keduanya tidak terpenuhi; dua pasangan tanda lain yang direncanakan tidak cukup datanya untuk diuji sama sekali.",
+    },
+    "Active risk signs matter more when the market is already under pressure": {
+        "hypothesis_id": "R5",
+        "n": "n=12.607 saham-bulan (data uji, semua kelompok)",
+        "period_id": "Formasi bulanan data uji (2024-01-01 dan seterusnya), kondisi pasar dari T1",
+        "limit_id": "Selisihnya positif (+0,03) tapi rentang kepercayaan bootstrap-nya (-0,04 hingga +0,09) masih meliputi nol, jadi belum bisa disimpulkan berbeda dari nol.",
+    },
 }

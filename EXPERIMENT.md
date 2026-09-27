@@ -3728,3 +3728,75 @@ disclosed limit already on Cara-Menguji).
 `pipeline/hypotheses/t1_market_state.py`, `_warnings_panel.py`,
 `r1_warning_overlap.py`, `r2a_warning_count.py`,
 `_stress_common.moving_block_bootstrap` (new shared primitive).
+
+## R2b and R5, run 2026-09-27 (`r2b_warning_pairs.py`, `r5_warning_market_state.py`)
+
+**Deviation from this project's own discipline, disclosed rather than hidden:**
+unlike every other entry in this log, these two modules were run BEFORE a
+dated pre-registration paragraph for them existed in this file -- done at
+the user's explicit instruction ("yeah go moveone right now") to keep
+working through R2b/R5/A1 in one sitting, on the same day as T1/R1/R2a.
+Their exact definitions were fixed in advance in the *approved plan*
+(`kind-juggling-hoare.md` section 5, approved before any of this code
+existed), so the substance was locked before the result was seen, but the
+usual "written and committed to git, then run" ordering was not followed
+for these two specifically. Recorded here as both the definition and the
+result together, git-history-adjacent rather than git-history-preceding.
+
+### R2b: three pre-registered warning pairs (using R1's merged names)
+
+Pairs, cells (size tercile x 60-day-vol tercile, per formation month),
+outcomes and the Holm correction are exactly as specified in the plan; the
+"pair"/"X alone"/"Y alone" group definitions, the HOLDOUT-ONLY support
+check (the plan's R2b text never asks for an explore-side check, unlike
+R2a), and the one-sided stock-clustered-bootstrap significance test are
+this module's own operationalization of that spec (stated as such in the
+module's own docstring, not claimed as pre-existing).
+
+| Pair | Qualifying cells | Result |
+|---|---|---|
+| spike_40_20 x loss_year | 0 | Not run as a trial (descriptive). Pooled: pair n=69 D-U -0.116; spike_40_20 alone n=227 D-U -0.040; loss_year alone n=712 D-U -0.090. |
+| payout_top_tercile x earnings_down_2y | 0 | Not run as a trial (descriptive). Pooled: pair n=72 D-U -0.042; payout_top_tercile alone n=677 D-U -0.037; earnings_down_2y alone n=223 D-U -0.022. |
+| long_below_peak x loss_year | 8 of 9 | **Ran as a trial. NOT confirmed.** |
+
+The one pair with support: cell-weighted holdout D-U was pair -0.224,
+long_below_peak alone -0.240, loss_year alone -0.101. The pair beats
+long_below_peak alone (-0.224 > -0.240) but **does not** beat loss_year
+alone (-0.224 < -0.101) -- min(pair-x, pair-y) = -0.123, so the "beats
+both" condition fails outright regardless of significance. One-sided
+bootstrap p (H1: pair beats both) = 0.989, 2,000 valid replicates: no
+evidence for the direction being tested. Holm-Bonferroni was applied
+across the 1 pair that actually ran (trivial at m=1, same as
+uncorrected): not significant. **Trial counter: 37** (one trial ran, the
+other two stayed descriptive and are not counted, same fallback rule as
+R2a).
+
+### R5: warnings x market state (holdout only)
+
+**Correction to the plan's stated premise**, found while building this and
+disclosed rather than silently absorbed: the plan says the explore period
+"has no stressed months." Checked directly against T1's real fitted
+states: explore has exactly one stressed month, 2022-06-01 (708 of
+10,285 explore formations), a single isolated episode. Not literally zero,
+but this doesn't disturb the holdout-only design, since the real 2025-2026
+stress episode this test is actually about lives entirely in holdout
+(8,832 of 23,496 holdout formations, spanning 16 of holdout's 33 months).
+
+Episode minimum (this module's own operationalization, the plan states the
+idea without a number): each of the 4 groups (0/2+ warnings x
+tertekan/normal) needs >=30 holdout observations, pooled rather than
+cell-weighted (cell-weighting on top of this many splits would very likely
+starve every cell, the same way R2a's did). All 4 groups qualified:
+tertekan/0 n=1,300; tertekan/2+ n=3,398; normal/0 n=2,725; normal/2+
+n=5,184. **Ran as a trial.**
+
+DiD statistic -- (DU[2+,tertekan] - DU[0,tertekan]) - (DU[2+,normal] -
+DU[0,normal]) -- estimate **+0.029**, stock-clustered bootstrap CI
+**[-0.040, 0.092]** (2,000 replicates), straddling zero. **R5: NOT
+confirmed.** Warnings appear directionally to matter slightly more during
+a stressed market than a normal one, but the effect is small and not
+distinguishable from zero at this sample size. **Trial counter: 38.**
+
+**New code, all covered by pytest before running on real data:**
+`pipeline/hypotheses/r2b_warning_pairs.py`, `r5_warning_market_state.py`,
+`pipeline.stats.holm_bonferroni` (new shared primitive).
