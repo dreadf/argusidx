@@ -151,4 +151,10 @@ EVIDENCE: dict[str, dict[str, str]] = {
         "period_id": "Formasi bulanan data uji (2024-01-01 dan seterusnya), kondisi pasar dari T1",
         "limit_id": "Selisihnya positif (+0,03) tapi rentang kepercayaan bootstrap-nya (-0,04 hingga +0,09) masih meliputi nol, jadi belum bisa disimpulkan berbeda dari nol.",
     },
+    "The stocks that gained the most today keep rising": {
+        "hypothesis_id": "A1",
+        "n": "n=860 hari (uji akhir), 225 hari (data awal)",
+        "period_id": "Hari bursa 2022-01-01 hingga 2026-09-27, masa uji dimulai 2023-01-01",
+        "limit_id": "Rentang kepercayaan pada data uji masih meliputi nol (-0,010 hingga +0,022), dan arahnya berbeda dari data awal, jadi hasil ini tidak dapat disimpulkan ke arah manapun. Hasil harga memakai adjclose (termasuk dividen), dan kejadian dengan aksi korporasi di dalam jendela 21 hari dikeluarkan, bukan hanya pada hari kejadiannya.",
+    },
 }

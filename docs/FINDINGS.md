@@ -39,3 +39,4 @@ H18) are listed with their test dates there.
 | Once IHSG looks "tertekan" (pressured), a further fall is more likely than a recovery | **✗** | No: explore and holdout disagreed in sign, and the holdout 20-day moving-block bootstrap interval straddled zero (T1) |
 | A stock long below its peak with a loss year does worse than either sign alone | **✗** | No: it beats the "long below peak" sign alone but not "loss year" alone, so it does not beat both (R2b) |
 | Active risk signs matter more when the market is already under pressure | **✗** | No: the difference-in-differences was positive but its interval straddled zero (R5) |
+| The stocks that gained the most today keep rising | **✗** | No: explore and holdout disagreed in sign, and the holdout interval straddled zero (A1) |

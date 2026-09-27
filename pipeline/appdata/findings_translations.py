@@ -114,6 +114,10 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "belief_id": "Tanda risiko yang aktif lebih berarti saat pasar sedang tertekan",
         "label_id": "Tidak terbukti: selisihnya positif tapi rentang kepercayaannya masih meliputi nol",
     },
+    "The stocks that gained the most today keep rising": {
+        "belief_id": "Saham yang naik paling tinggi hari ini akan terus naik",
+        "label_id": "Tidak terbukti: arah hasilnya berbeda antara data awal dan data uji, dan rentang kepercayaan pada data uji masih meliputi nol",
+    },
     "Positive news coverage predicts a stock will rise": {
         "belief_id": "Pemberitaan positif memprediksi harga saham akan naik",
         "label_id": (
@@ -217,6 +221,10 @@ SHORT_COPY: dict[str, dict[str, str]] = {
     "Active risk signs matter more when the market is already under pressure": {
         "title_short_id": "Tanda risiko lebih berarti saat pasar tertekan",
         "result_short_id": "Tidak terbukti, selisihnya belum jelas dari nol",
+    },
+    "The stocks that gained the most today keep rising": {
+        "title_short_id": "Saham naik tertinggi hari ini akan terus naik",
+        "result_short_id": "Tidak terbukti, arah hasilnya berbeda antar data",
     },
 }
 

@@ -330,6 +330,21 @@
         "period_id": "Formasi bulanan data uji (2024-01-01 dan seterusnya), kondisi pasar dari T1",
         "limit_id": "Selisihnya positif (+0,03) tapi rentang kepercayaan bootstrap-nya (-0,04 hingga +0,09) masih meliputi nol, jadi belum bisa disimpulkan berbeda dari nol."
       }
+    },
+    {
+      "belief": "The stocks that gained the most today keep rising",
+      "verdict": "no",
+      "label": "No: explore and holdout disagreed in sign, and the holdout interval straddled zero (A1)",
+      "belief_id": "Saham yang naik paling tinggi hari ini akan terus naik",
+      "label_id": "Tidak terbukti: arah hasilnya berbeda antara data awal dan data uji, dan rentang kepercayaan pada data uji masih meliputi nol",
+      "title_short_id": "Saham naik tertinggi hari ini akan terus naik",
+      "result_short_id": "Tidak terbukti, arah hasilnya berbeda antar data",
+      "evidence": {
+        "hypothesis_id": "A1",
+        "n": "n=860 hari (uji akhir), 225 hari (data awal)",
+        "period_id": "Hari bursa 2022-01-01 hingga 2026-09-27, masa uji dimulai 2023-01-01",
+        "limit_id": "Rentang kepercayaan pada data uji masih meliputi nol (-0,010 hingga +0,022), dan arahnya berbeda dari data awal, jadi hasil ini tidak dapat disimpulkan ke arah manapun. Hasil harga memakai adjclose (termasuk dividen), dan kejadian dengan aksi korporasi di dalam jendela 21 hari dikeluarkan, bukan hanya pada hari kejadiannya."
+      }
     }
   ]
 }

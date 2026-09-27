@@ -3800,3 +3800,91 @@ distinguishable from zero at this sample size. **Trial counter: 38.**
 **New code, all covered by pytest before running on real data:**
 `pipeline/hypotheses/r2b_warning_pairs.py`, `r5_warning_market_state.py`,
 `pipeline.stats.holm_bonferroni` (new shared primitive).
+
+## A1, run 2026-09-27 (`a1_extreme_gainers.py`)
+
+**"Saham yang naik paling tinggi hari ini akan terus naik" (extreme
+one-day gainers keep winning).** Same disclosed deviation as R2b/R5: spec
+fixed in the approved plan before this code existed, but the dated
+EXPERIMENT.md entry follows the run rather than preceding it, at the
+user's explicit instruction.
+
+**A verification detour, disclosed rather than worked around silently**:
+the plan's stated exclusion mechanism, the ARA (auto-rejection) price
+band, could not be verified from a primary source. A subagent tried
+idx.co.id directly (every URL 403/404), the AEI post-pandemic-adjustments
+article (dead, default host page), and idnfinancials (403). It also
+surfaced signs of network interception (injected fake instructions on
+unrelated pages, degraded search results) unrelated to this specific
+question but worth flagging generally. Only the *upcoming* Sept
+2026/Jan 2027 band change had any coverage, and even that from three
+disagreeing secondary sources; 2022-2025, essentially this whole study
+window, had no accessible source at all. Rather than guess a percentage
+and label it verified, **M4 (the corporate-actions pull) was run instead**
+-- the plan's own alternative, which sidesteps the ARA question by
+flagging actual split/rights/bonus days directly. User approved the spend
+after seeing this tradeoff (2026-09-27, "Spend ~61 credits on M4").
+
+**M4 cost more than stated, disclosed rather than only the intended
+figure**: a 3-credit probe (confirming the endpoint's type names and date
+fields) was accidentally run twice -- 6 credits, not 3, because a second
+ad hoc Python process re-issued an identical call instead of reusing the
+first response. The full 20-window pull then cost 60 credits (window 1
+re-fetched rather than reconstructed from the incomplete probe output, to
+avoid writing fabricated data). Total: 66 credits against the ~61 stated,
+logged in `docs/credit_ledger.md`. Running total after this batch: **963
+of 1,000, 37 left of the credits expiring 2026-09-30.**
+
+**Method, as specified in the plan**: top-10 one-day gainers by raw
+`close` return (t-1 from the IHSG calendar, no gap-bridging; price >= Rp
+50; corporate-action days excluded via M4's `ex_date`/`date` fields) vs.
+same-day ranks 11-100, per-date spread of the t+1..t+21 return in excess
+of IHSG, 20-day moving-block bootstrap, explore/holdout boundary
+2023-01-01 (T1's boundary, reused per the common protocol's "20 days for
+T1 and A1" grouping).
+
+**`/code-review` (run before presenting this as finished, per CLAUDE.md)
+found and this fixed before the run below**: the first version used raw
+`close`, not `adjclose`, for the t+1..t+21 OUTCOME return, contradicting
+docs/DATA.md's own rule that a multi-day return ratio must include
+dividends; and M4's exclusion only checked day t, not the outcome window
+itself, so a split/rights/bonus action landing between t+1 and t+21 could
+still have distorted a `close`-based outcome undetected. Both fixed:
+outcome returns now use `adjclose`, and an event is dropped outright if
+any corporate action for that symbol falls anywhere in `[t, t+21]`, not
+only on t. (Two more review findings were fixed too, without changing any
+number: the corporate-actions fetcher's resumability was keyed to
+`date.today()`, which would have silently lost resumability and re-billed
+a resume across a day boundary; and the missing-exit-bar carry-forward
+scan was bounded to the calendar window instead of scanning a whole
+symbol's history.)
+
+**Data**: 864,729 (symbol, day) event-eligible rows from `prices_5y.json`
+(2022-01-01 onward) and the IHSG calendar; 66,277 excluded below the Rp 50
+floor, 200 excluded as a corporate action on day t itself, 12 trading days
+skipped for having fewer than 100 eligible stocks. 1,115 days had a full
+top-10/11-100 split; 1,106 had a computable spread (both groups had at
+least one usable outcome after also excluding any event whose 21-day
+window contained a corporate action, per the fix above). Explore: 225
+days. Holdout: 860 days. 21 days dropped at the embargo.
+
+| | Mean per-date spread (top 10 minus ranks 11-100, 21-day `adjclose` excess return) |
+|---|---|
+| Explore | -0.0072 |
+| Holdout | +0.0034, 20-day moving-block bootstrap CI [-0.0100, 0.0223] (2,000 replicates) |
+
+Explore and holdout disagree in sign, and the holdout CI straddles zero
+by a wide margin relative to the point estimate itself. **A1: NOT
+confirmed.** (The pre-fix run had produced the same conclusion with
+similar magnitudes, -0.0047/+0.0030; the fix changed the numbers modestly
+but not the result -- reported here as the trustworthy version, not as a
+correction of a wrong headline finding.) A third null in this batch that
+disagrees in sign between explore and holdout, same pattern as T1 -- read
+together, this project is not finding evidence that recent extreme price
+behavior (a market-wide stress state, or a single day's biggest movers)
+reliably predicts what IHSG or those specific stocks do next, on the data
+and methods tested so far. **Trial counter: 39.**
+
+**New code, all covered by pytest before running on real data:**
+`pipeline/hypotheses/a1_extreme_gainers.py`,
+`pipeline/appdata/fetch_corporate_actions_history.py`.
