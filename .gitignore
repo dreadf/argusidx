@@ -1,9 +1,8 @@
-# CRITICAL: data/raw/ holds PURCHASED Sectors API data (real credits spent).
-# It must NEVER be gitignored. The previous project's ".gitignore silently
-# dropped the reproducibility data" mistake (a blanket output/data/*.csv
-# rule) is exactly the failure this comment exists to prevent. If you are
-# tempted to add a broad "data/" rule below, add "!data/raw/" alongside it,
-# or better, don't.
+# data/raw/ holds PURCHASED Sectors API data (real credits spent). Sectors' terms do
+# not allow republishing it, so it lives in the private repository
+# dreadf/argusidx-data and is ignored here. Never delete it locally: it cannot be
+# re-fetched without spending credits. Copy it back into data/raw/ after a clone.
+data/raw/
 
 # Yahoo dev-time cache: free and re-fetchable, safe to ignore.
 data/dev_cache/
@@ -18,6 +17,10 @@ venv/
 .env
 .env.local
 *.key
+
+# Vercel: local project link (org/project IDs, not secret, but
+# machine-specific and not meant to be committed).
+.vercel
 
 # OS
 .DS_Store
@@ -43,3 +46,4 @@ venv/
 /.claude/
 /frontend/CLAUDE.md
 /frontend/AGENTS.md
+.env*

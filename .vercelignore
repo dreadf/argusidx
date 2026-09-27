@@ -1,0 +1,28 @@
+# Vercel CLI uploads from the repo root (frontend/'s Root Directory setting
+# only applies to where the build RUNS, not what gets uploaded), and its
+# upload step does not reliably pick up nested .gitignore files such as
+# frontend/.gitignore. Listed explicitly here so a 2GB+ node_modules/.next
+# tree never gets uploaded again (it caused the 2026-09-27 deploy to fail
+# with "fetch failed" mid-upload).
+frontend/node_modules
+frontend/.next
+node_modules
+.next
+
+# Python: never needed at runtime, the app reads only precomputed data/app.
+.venv
+venv
+__pycache__
+*.pyc
+
+# Purchased data, gitignored in the repo too; never uploaded to a serverless
+# host regardless.
+data/raw
+data/dev_cache
+
+# Local-only dev files, most already outside the repo via .gitignore, kept
+# here too in case any is ever untracked-but-present locally.
+.claude
+.git
+reports
+research_notes
