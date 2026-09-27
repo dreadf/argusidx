@@ -36,3 +36,4 @@ H18) are listed with their test dates there.
 | Rising profits mean a rising share price | **✗** | No: holdout correlation +0.002 (H17) |
 | Foreign investors buying heavily means the price will rise | **✗** | No: top foreign-buy vs top foreign-sell list, next 5 trading days: holdout spread −0.03% (H6) |
 | Insiders buying their own stock means the price will rise | **✗** | No: holdout mean +3.0% (p 0.25); the typical event did not beat the index (H18) |
+| Once IHSG looks "tertekan" (pressured), a further fall is more likely than a recovery | **✗** | No: explore and holdout disagreed in sign, and the holdout 20-day moving-block bootstrap interval straddled zero (T1) |

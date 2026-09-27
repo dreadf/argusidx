@@ -133,4 +133,10 @@ EVIDENCE: dict[str, dict[str, str]] = {
         "period_id": "Pola ini teramati 2024–2026, tidak teramati pada 2022–2023",
         "limit_id": "Ini hubungan yang teramati bersamaan (kepemilikan publik dan volatilitas diukur pada waktu yang sama), bukan prediksi, free float adalah angka sesaat tanpa riwayat.",
     },
+    "Once IHSG looks \"tertekan\" (pressured), a further fall is more likely than a recovery": {
+        "hypothesis_id": "T1",
+        "n": "n=861 hari (uji akhir), 711 hari (data awal)",
+        "period_id": "IHSG 2019-01-02 hingga 2026-09-25; masa uji dimulai 2023-01-01",
+        "limit_id": "Rentang kepercayaan pada data uji masih meliputi nol (-0,35 hingga +0,38), dan arahnya berbeda dari data awal, jadi hasil ini tidak dapat disimpulkan ke arah manapun.",
+    },
 }

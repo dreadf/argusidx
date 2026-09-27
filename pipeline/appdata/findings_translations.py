@@ -102,6 +102,10 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "belief_id": "Kalau orang dalam membeli saham perusahaannya, harganya akan naik",
         "label_id": "Tidak terbukti: pada data uji, kejadian yang biasa tidak mengungguli IHSG; rata-rata terdongkrak beberapa kenaikan besar",
     },
+    "Once IHSG looks \"tertekan\" (pressured), a further fall is more likely than a recovery": {
+        "belief_id": "Kalau IHSG sudah terlihat \"tertekan\", penurunan lanjutan lebih mungkin daripada pemulihan",
+        "label_id": "Tidak terbukti: arah hasilnya berbeda antara data awal dan data uji, dan rentang kepercayaan pada data uji masih meliputi nol",
+    },
     "Positive news coverage predicts a stock will rise": {
         "belief_id": "Pemberitaan positif memprediksi harga saham akan naik",
         "label_id": (
@@ -193,6 +197,10 @@ SHORT_COPY: dict[str, dict[str, str]] = {
     "Positive news coverage predicts a stock will rise": {
         "title_short_id": "Berita positif memprediksi harga akan naik",
         "result_short_id": "Arah hasilnya berbalik antar paruh data, belum jelas",
+    },
+    "Once IHSG looks \"tertekan\" (pressured), a further fall is more likely than a recovery": {
+        "title_short_id": "IHSG tertekan berarti penurunan lanjutan lebih mungkin",
+        "result_short_id": "Tidak terbukti, arah hasilnya berbeda antar data",
     },
 }
 

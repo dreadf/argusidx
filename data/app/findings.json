@@ -285,6 +285,21 @@
         "period_id": "Pemberitahuan pembelian 2025 (data awal) dan 2026 (uji akhir), hasil 20 hari bursa",
         "limit_id": "Hanya 20 bulan pemberitahuan dan 8 bulan uji akhir; pemberitahuan berarti perubahan kepemilikan, belum tentu orang dalam seperti yang dimaksud di grup; hasil harga dari riwayat harga riset."
       }
+    },
+    {
+      "belief": "Once IHSG looks \"tertekan\" (pressured), a further fall is more likely than a recovery",
+      "verdict": "no",
+      "label": "No: explore and holdout disagreed in sign, and the holdout 20-day moving-block bootstrap interval straddled zero (T1)",
+      "belief_id": "Kalau IHSG sudah terlihat \"tertekan\", penurunan lanjutan lebih mungkin daripada pemulihan",
+      "label_id": "Tidak terbukti: arah hasilnya berbeda antara data awal dan data uji, dan rentang kepercayaan pada data uji masih meliputi nol",
+      "title_short_id": "IHSG tertekan berarti penurunan lanjutan lebih mungkin",
+      "result_short_id": "Tidak terbukti, arah hasilnya berbeda antar data",
+      "evidence": {
+        "hypothesis_id": "T1",
+        "n": "n=861 hari (uji akhir), 711 hari (data awal)",
+        "period_id": "IHSG 2019-01-02 hingga 2026-09-25; masa uji dimulai 2023-01-01",
+        "limit_id": "Rentang kepercayaan pada data uji masih meliputi nol (-0,35 hingga +0,38), dan arahnya berbeda dari data awal, jadi hasil ini tidak dapat disimpulkan ke arah manapun."
+      }
     }
   ]
 }

@@ -3627,10 +3627,104 @@ support qualifies, makes it **37** (matching the plan's stated total). If
 R2a's common-support check fails and it turns descriptive, the counter stops
 at 36 for this batch. R1 is never counted, in either outcome.
 
-### Not yet run
+### Results, T1, R1 and R2a, run once 2026-09-27 (`t1_market_state.py`, `r1_warning_overlap.py`, `r2a_warning_count.py`)
 
-Per the plan's own schedule (`kind-juggling-hoare.md` §8: pre-register today,
-2026-09-27; run and commit results 2026-09-28), nothing above has been
-executed. This section will be replaced by a "Results" section, run once,
-after this pre-registration commit already exists in git history -- so the
-history itself shows the rule coming before the result, per RULES.md.
+The plan's own schedule (`kind-juggling-hoare.md` §8) put this run on 2026-09-28,
+one day after pre-registration; run same-day instead on the user's explicit
+instruction ("Yes moveon and start right now"), after the text above was
+already committed to git history, so the rule still came before the result.
+
+**T1: NOT confirmed.** IHSG series: 1,861 trading days, 2019-01-02 to
+2026-09-25 (`data/raw/ihsg_2026-09-27.json`). Burn-in ends 2020-01-08, as
+verified before pre-registering. 1,592 formations with a complete 20-day
+window; 20 dropped for insufficient trailing data, 20 dropped at the
+2023-01-01 embargo. Explore: 711 formations (187 tertekan). Holdout: 861
+formations (256 tertekan).
+
+| | (A-B \| tertekan) - (A-B \| normal) |
+|---|---|
+| Explore | -0.097 |
+| Holdout | +0.017, 20-day moving-block bootstrap CI [-0.345, 0.380] (2,000 replicates) |
+
+Explore and holdout disagree in sign, and the holdout CI straddles zero by a
+wide margin: the decision rule's three conditions (holdout > 0, CI entirely
+above 0, explore same sign) all fail. **This is a clean null**, not a near
+miss: even taking holdout's statistic alone as noisy-but-positive, explore
+pointed the opposite way. Robustness (not a second trial): the holdout
+statistic stays small and sign-unstable at 8% (+0.010) and 12% (-0.022) peak
+thresholds too, so this isn't an artifact of the 10% cutoff specifically. The
+ARB-7%-period exclusion was NOT run, as disclosed in the pre-registration:
+that regime's dates were never verified against IDX. **Trial counter: 36.**
+Shipped: the percentile tiles (peak distance, 200-day-average distance,
+volatility percentile) as a plain description of where IHSG sits, with no
+predictive state label -- exactly the fail-state design written before this
+result existed.
+
+**R1 (descriptive).** Panel: 43,881 stock-months, 887 stocks, 53 months
+(2022-05-01 to 2026-08-01 formation, using `data/dev_cache/prices_5y.json`
++ `data/raw/universe_2026-09-12.json`, both already owned, zero new Sectors
+calls). Active-month shares: fell_30 68.9%, long_below_peak 57.3%, loss_year
+25.2%, earnings_down_2y 10.6%, payout_top_tercile 11.1%, spike_40_20 3.7%,
+near_peak_earnings_decline 2.0%, yield_spike 2.0%. The very high fell_30/
+long_below_peak shares are consistent with, not contradicted by, this
+project's own earlier base rate (`m_typical_drawdown.py`'s median full-year
+drawdown already sat in the -40% to -66% range) and with the real ~40%
+IHSG fall from its January 2026 peak (M1, above) reaching even blue-chip
+names by mid-2026 (spot-checked: BBCA reads fell_30=False for the whole
+panel except 2026-07-01, where it flips True). **One merge** (Jaccard >
+0.5): `fell_30` (30,220 active months) merges into `long_below_peak`
+(25,153 active months, the more specific of the pair, Jaccard 0.681); no
+other pair exceeds 0.5. **Final list for R2a/R2b, 7 warnings:**
+long_below_peak, spike_40_20, loss_year, earnings_down_2y,
+payout_top_tercile, near_peak_earnings_decline, yield_spike.
+
+**R2a: fewer than 2 qualifying cells -- DESCRIPTIVE, not a trial. Trial
+counter unchanged at 36.** Outcomes computed for 38,559 of 43,881 rows
+(5,322 dropped: window runs past the price cache's own end, 2026-09-09).
+Explore: 10,285 formations; holdout: 23,496; 4,778 dropped at the
+2024-01-01 embargo. Common support (size tercile x 60-day-volatility
+tercile, >=30 observations per active-warning bucket in both periods):
+**zero of nine cells qualified.** The binding constraint is the 3+ bucket:
+in explore, no cell ever reaches 30 stock-months with 3 or more of the 7
+final warnings simultaneously active (the largest is 8, in the largest-size
+/ highest-volatility cell) -- inspected directly, not assumed, before
+concluding this. This is close to the failure mode the plan's own
+methodology discussion anticipated before any data was pulled ("R2's
+size/volatility controls... common-support empty cells"): the warnings are
+disjoint enough (a recent 40% spike and a 250+-day drawdown rarely coincide
+on the same stock-month) that 3+ simultaneous warnings is simply a rare
+event, not a common-support artifact of a badly chosen cell design.
+
+Because R2a turned descriptive, no count/combination claim ships (per the
+amended combination rule, above): each warning is shown on its own. Pooled
+(not cell-weighted) single-warning D-U, for reference:
+
+| Warning | Explore D-U (n) | Holdout D-U (n) |
+|---|---|---|
+| long_below_peak | -0.085 (1,614) | -0.236 (16,733) |
+| spike_40_20 | +0.188 (191) | -0.153 (1,183) |
+| loss_year | -0.004 (2,819) | -0.225 (5,699) |
+| earnings_down_2y | n/a (0) | -0.261 (3,629) |
+| payout_top_tercile | -0.128 (1,070) | -0.117 (2,662) |
+| near_peak_earnings_decline | +0.153 (72) | -0.101 (535) |
+| yield_spike | n/a (0) | -0.215 (517) |
+
+These are descriptive, not tested against a decision rule, and every
+holdout D-U here is negative (a large fall was, on the whole, more common
+than a large rise following every one of the 7 warnings in the 2024+
+window) -- unsurprising given the same IHSG fall context as R1, and not
+itself evidence that any one warning "works," since there is no benchmark
+rate for a stock with no active warnings shown alongside it here (that
+comparison is exactly what R2a's cell design was for, and it didn't
+qualify). L (suspension announced inside the 126-day window,
+`data/raw/suspensions_2026-09-13.json`): 0 in explore, 2,103 of 23,496 in
+holdout (9.0%) -- consistent with the 2025-2026 concentration already
+visible in that file's own date distribution, and with "delisted" being
+unobservable in this dataset by construction (survivorship: every stock
+in the panel is, by definition, still in the current universe -- the same
+disclosed limit already on Cara-Menguji).
+
+**New code, all covered by pytest before running on real data:**
+`pipeline/hypotheses/t1_market_state.py`, `_warnings_panel.py`,
+`r1_warning_overlap.py`, `r2a_warning_count.py`,
+`_stress_common.moving_block_bootstrap` (new shared primitive).
