@@ -32,7 +32,7 @@ export default async function CaraKamiMengujiPage() {
   return (
     <Page>
       <PageTitle title="Cara kami menguji" pill={`Data ${formatDateId(market.as_of)}`} back={{ href: "/temuan", label: "Temuan" }} />
-      <div className="md:max-w-3xl">
+      <div>
         <Sub>Bagaimana keyakinan diuji dan apa batasnya.</Sub>
         <div className="mt-4 flex gap-7">
           {stats.map((s) => (

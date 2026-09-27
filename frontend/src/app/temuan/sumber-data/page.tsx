@@ -23,7 +23,7 @@ export default async function SumberDataPage() {
   return (
     <Page>
       <PageTitle title="Sumber data" pill={`Data ${formatDateId(market.as_of)}`} back={{ href: "/temuan", label: "Temuan" }} />
-      <div className="md:max-w-3xl">
+      <div>
         <Sub>Dari mana angka aplikasi ini berasal.</Sub>
         {used !== null && (
           <div className="mt-4 flex items-baseline gap-2.5">

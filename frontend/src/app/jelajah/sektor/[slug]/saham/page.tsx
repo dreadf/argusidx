@@ -59,7 +59,7 @@ export default async function SektorSahamPage({
           { value: "jarak", label: "Paling jauh dari tertinggi setahun" },
         ]}
       />
-      <div className="mt-3 md:max-w-3xl">
+      <div className="mt-3">
         <RankList rows={rows} />
         {shown < stocks.length && (
           <Link

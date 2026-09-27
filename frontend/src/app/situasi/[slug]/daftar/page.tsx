@@ -38,7 +38,7 @@ export default async function SituasiDaftarPage({ params, searchParams }: { para
       <p className="mt-1.5 text-[13px] leading-normal text-muted-foreground md:text-sm">
         {meta.sub} Diurutkan {order === "terbaru" ? "dari yang paling baru" : "menurut kode"}.
       </p>
-      <div className="md:max-w-2xl">
+      <div>
         {meta.datedOrder && (
           <div className="mt-3 flex gap-2 text-[12.5px]">
             <Link href={`${base}?urut=terbaru`} replace scroll={false} className={`rounded-md border px-3 py-1.5 ${order === "terbaru" ? "border-[var(--viz-accent)] text-[var(--viz-accent)]" : "border-border text-muted-foreground"}`}>

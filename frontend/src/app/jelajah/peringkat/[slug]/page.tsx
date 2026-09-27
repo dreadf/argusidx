@@ -27,7 +27,7 @@ export default async function PeringkatDetailPage({ params, searchParams }: { pa
     return (
       <main className={wrap}>
         <PageTitle title={view.title} pill={`Data ${formatDateId(derived.as_of)}`} back={back} />
-        <div className="md:max-w-2xl">
+        <div>
           <Sub>{view.line}</Sub>
           <div className="mt-4">
             <RankList rows={view.rows} />
@@ -155,7 +155,7 @@ export default async function PeringkatDetailPage({ params, searchParams }: { pa
           <TwoCol left={list} right={side} ratio="1.5fr 1fr" rightFirstOnMobile />
         </div>
       ) : (
-        <div className="mt-5 md:mt-6 md:max-w-2xl">{list}</div>
+        <div className="mt-5 md:mt-6">{list}</div>
       )}
     </main>
   );

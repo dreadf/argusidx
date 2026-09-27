@@ -65,7 +65,7 @@ export function StockHead({ code, data, asOf, rank, universe, below }: { code: s
       )}
 
       {hasRange && (
-        <div className="mt-4 max-w-xl">
+        <div className="mt-4">
           <div className="flex items-center justify-between">
             <span className="text-xs text-muted-foreground">Rentang setahun</span>
             {pos && <span className="inline-flex h-6 items-center rounded-md border border-border px-2.5 text-[11px] text-muted-foreground">{pos}</span>}
@@ -74,7 +74,7 @@ export function StockHead({ code, data, asOf, rank, universe, below }: { code: s
         </div>
       )}
 
-      <div className="mt-5 grid grid-cols-3 overflow-hidden rounded-2xl border border-border bg-card md:max-w-xl">
+      <div className="mt-5 grid grid-cols-3 overflow-hidden rounded-2xl border border-border bg-card">
         <div className="p-3.5">
           <div className="font-mono text-lg font-bold">{rank === null ? "-" : `#${rank}`}</div>
           <div className="mt-0.5 text-xs font-semibold leading-snug">Jauh dari puncak</div>

@@ -82,7 +82,7 @@ export function WatchlistView({ quotes }: { quotes: QuoteMap }) {
                   <div className="truncate text-xs text-muted-foreground">{shortName(entry.company_name)}</div>
                 </Link>
                 <div className="w-[150px] shrink-0">{priceBlock}</div>
-                <div className="max-w-[380px] flex-1">{range}</div>
+                <div className="flex-1">{range}</div>
                 <span className="ml-auto">{remove}</span>
               </div>
             </li>

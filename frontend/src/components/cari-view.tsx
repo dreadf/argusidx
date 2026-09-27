@@ -67,7 +67,7 @@ export function CariView({ quotes, asOf }: { quotes: QuoteEntry[]; asOf: string 
           {recent.length === 0 ? (
             <p className="mt-2 text-[13px] text-muted-foreground">Belum ada. Halaman saham yang Anda buka muncul di sini.</p>
           ) : (
-            <div className="mt-1 md:max-w-3xl">
+            <div className="mt-1">
               {recent.map((code) => byCode.get(code)).filter((e): e is QuoteEntry => e !== undefined).map((e) => <Row key={e.code} q={e} />)}
             </div>
           )}
@@ -84,7 +84,7 @@ export function CariView({ quotes, asOf }: { quotes: QuoteEntry[]; asOf: string 
             <span className="w-40">Sektor</span>
             <span className="w-[120px] text-right">Harga, dari tertinggi setahun</span>
           </div>
-          <div className="mt-1 md:max-w-4xl md:[&_a]:gap-3">
+          <div className="mt-1 md:[&_a]:gap-3">
             {matches.slice(0, shown).map((e) => (
               <Row key={e.code} q={e} />
             ))}
