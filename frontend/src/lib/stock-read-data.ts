@@ -3,6 +3,7 @@ import path from "node:path";
 import { getExtraBaseRates, yieldCutRate } from "@/lib/anomaly-data";
 import { getBaseRatesData } from "@/lib/base-rates-data";
 import { getFindingsData } from "@/lib/findings-data";
+import { getFlagsData } from "@/lib/flags-data";
 import { getInsiderSummary } from "@/lib/insider-data";
 import { getIpoBoardsData } from "@/lib/ipo-boards-data";
 import { getMarketConditionData } from "@/lib/market-condition-data";
@@ -15,7 +16,7 @@ import { getSituationsFile } from "@/lib/stock-situations";
 
 /** Everything the stock-page rules (lib/stock-read.ts) read, for one stock. Server-only. */
 export async function getReadInput(code: string, data: StockPageData): Promise<ReadInput | null> {
-  const [profile, meta, situations, base, ipo, extra, findings, news, market, gainRankCount, codes, insider] = await Promise.all([
+  const [profile, meta, situations, base, ipo, extra, findings, news, market, gainRankCount, codes, insider, flags] = await Promise.all([
     getStockProfile(code),
     getProfileMeta(),
     getSituationsFile(),
@@ -28,6 +29,7 @@ export async function getReadInput(code: string, data: StockPageData): Promise<R
     getGainRankCount(),
     getAllStockCodes(),
     getInsiderSummary(),
+    getFlagsData(),
   ]);
   if (!profile) return null;
   return {
@@ -47,6 +49,12 @@ export async function getReadInput(code: string, data: StockPageData): Promise<R
     gainRankCount,
     universe: codes.length,
     insiderSince: insider.window.start,
+    nowCounts: {
+      ...situations.counts,
+      payout_above_earnings: flags.payout_above_earnings.flagged_count,
+      near_ath_earnings_decline: flags.near_ath_earnings_decline.flagged_count,
+      yield_far_above_average: flags.yield_far_above_average.flagged_count,
+    },
   };
 }
 

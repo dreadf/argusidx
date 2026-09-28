@@ -5,7 +5,7 @@ import { BackLink } from "@/components/back-link";
 import { DatePill } from "@/components/kit";
 import { RecentTracker } from "@/components/recent-tracker";
 import { DataLengkap } from "@/components/saham/data-lengkap";
-import { ICONS, NoteBox, PriceRange, RingkasanCard, SectionCard, SignalsSection, TwoFigures, WatchSection, YearColumns, amountUnit } from "@/components/saham/parts";
+import { ICONS, KesimpulanCard, NoteBox, PriceRange, SectionCard, SignalsSection, WatchSection, YearColumns, amountUnit } from "@/components/saham/parts";
 import { PantauButton } from "@/components/saham/pantau";
 import { PurposeAnswer, PurposeChips } from "@/components/saham/purpose";
 import { TanyaCard } from "@/components/saham/tanya-card";
@@ -13,7 +13,7 @@ import { dateLong } from "@/lib/dates";
 import { getFindingsData } from "@/lib/findings-data";
 import { formatDateId, formatPrice, idNum, shortName } from "@/lib/format";
 import { getAllStockCodes, getStockData, getStocksAsOf } from "@/lib/stock-data";
-import { WATCH_ORDER, agenda, answers, dividenLine, hargaLine, labaSeriesLine, pctPlain, pctSigned, popularSignals, ringkasan, roeLine, sizeLine, tanyaSuggestions, watchItems } from "@/lib/stock-read";
+import { WATCH_ORDER, agenda, answers, dividenLine, hargaLine, kesimpulan, labaSeriesLine, pctPlain, pctSigned, popularSignals, roeLine, sizeLine, tanyaSuggestions, watchItems } from "@/lib/stock-read";
 import { getPeerBanks, getReadInput } from "@/lib/stock-read-data";
 
 export async function generateStaticParams() {
@@ -26,8 +26,8 @@ const tone = (x: number) => (x > 0 ? "var(--viz-diverging-pos)" : x < 0 ? "var(-
 
 /**
  * The stock page (boards Baru4-Saham-*): who the company is and its price,
- * the "why are you looking" chips, a Ringkasan with one state label per
- * part, the popular signals present in this stock with their test result,
+ * the "why are you looking" chips, the Kesimpulan (fixed rules, one line per
+ * part), the popular signals present in this stock with their test result,
  * the situations to note, the price / profit / dividend cards, Tanya with
  * the stock attached, and every raw number under "Data lengkap". Each part
  * stands on its own; nothing is combined into a score.
@@ -45,7 +45,7 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
   const p = r.profile;
   const watch = watchItems(r);
   const signals = popularSignals(r, watch);
-  const ring = ringkasan(r, watch);
+  const kes = kesimpulan(r, watch);
   const ans = answers(r, watch);
   const price = snapshot.last_close_price;
   const low = snapshot["52_w_low_price"];
@@ -146,34 +146,11 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
   );
 
   /* ---------------- price, profit, dividend */
-  const chg = p.change_1y;
-  const rank = p.sector_rank_1y;
   const hLine = hargaLine(r);
   const harga = (
     <SectionCard icon={ICONS.harga} title={`Harga ${code}`} right={<DatePill>setahun</DatePill>}>
       {price !== null && low !== null && high !== null && high > low && <PriceRange low={low} high={high} price={price} lowDate={p.w52_low_date} highDate={p.w52_high_date} />}
       {hLine && <p className="mt-3.5 text-sm leading-[1.55]">{hLine}</p>}
-      {chg !== null && (
-        <>
-          <TwoFigures
-            items={[
-              { value: pctSigned(chg), caption: `${code}, setahun`, color: tone(chg) },
-              { value: pctSigned(r.meta.ihsg_change_1y), caption: "IHSG, setahun", color: tone(r.meta.ihsg_change_1y) },
-            ]}
-          />
-          {rank && rank.n > 1 && (
-            <p className="mt-2.5 text-[13px] text-muted-foreground">
-              <b className="font-mono tabular-nums text-foreground">
-                {rank.better} dari {rank.n}
-              </b>{" "}
-              saham {r.sector ? r.sector.toLowerCase() : "di sektornya"} bergerak lebih baik.
-            </p>
-          )}
-          <p className="mt-2 text-xs text-muted-foreground">
-            Setahun: {dateLong(r.meta.change_window.start)} sampai {dateLong(r.meta.change_window.end)}, harga penutupan dari Sectors.
-          </p>
-        </>
-      )}
     </SectionCard>
   );
 
@@ -297,7 +274,7 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
       <PurposeAnswer code={code} answers={ans} />
       <div className={`mt-8 lg:mt-10 ${cols}`}>
         <div className="flex min-w-0 flex-col gap-6 md:gap-8">
-          <RingkasanCard code={code} lead={ring.lead} rows={ring.rows} />
+          <KesimpulanCard code={code} k={kes} />
           <SignalsSection code={code} signals={signals} findingsCount={findings.scoreboard.length} />
           <WatchSection code={code} items={watch} checked={WATCH_ORDER.length} />
         </div>

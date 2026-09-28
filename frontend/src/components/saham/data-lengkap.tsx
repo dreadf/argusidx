@@ -248,7 +248,7 @@ export async function DataLengkap({
       />
       {h1_finding && (
         <p className={fine}>
-          Free float {code} {tercile === "low" ? "termasuk sepertiga tersempit" : tercile === "high" ? "termasuk sepertiga terlebar" : "di sepertiga tengah"} untuk ukuran perusahaannya. Dugaan bahwa float sempit membuat harga lebih liar tidak terbukti; di data kami yang terlihat justru sebaliknya, diukur bersamaan, bukan ramalan.{" "}
+          Untuk ukuran perusahaannya, free float {code} {tercile === "low" ? "termasuk sepertiga tersempit" : tercile === "high" ? "termasuk sepertiga terlebar" : "di sepertiga tengah"}. Float sempit tidak terbukti membuat harga lebih liar; di data kami justru sebaliknya.{" "}
           <Link href="/situasi/float-tipis" className="underline">
             Lihat buktinya
           </Link>
@@ -370,7 +370,7 @@ export async function DataLengkap({
           <>
             <p className={`${body} mb-2`}>
               <b>
-                Pernah <GlossaryTerm term="suspensi">disuspensi</GlossaryTerm> {suspension_history.count}x
+                Pernah <GlossaryTerm term="suspensi">disuspensi</GlossaryTerm> {suspension_history.count} kali
               </b>
               , lebih sering dari {suspension_history.more_than_pct}% perusahaan.
             </p>
@@ -386,11 +386,10 @@ export async function DataLengkap({
           </>
         ) : (
           <p className={body}>
-            <b>{code} belum pernah disuspensi.</b>
+            <b>{code} belum pernah disuspensi.</b> {idNum(suspMarket.base_rate_pct, 0)} dari 100 perusahaan IDX pernah, setidaknya sekali.
           </p>
         )}
         <p className={fine}>
-          {idNum(suspMarket.base_rate_pct, 0)} dari 100 perusahaan IDX pernah disuspensi setidaknya sekali.{" "}
           <Link href="/situasi/pernah-disuspensi" className="underline">
             Lihat alasan suspensi
           </Link>

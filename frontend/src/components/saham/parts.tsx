@@ -22,8 +22,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { VerdictChip } from "@/components/saham/evidence";
-import { formatPrice, idNum } from "@/lib/format";
-import type { RingkasanRow, Signal, WatchItem, WatchKind } from "@/lib/stock-read";
+import { formatPrice, idNum, signedPct } from "@/lib/format";
+import type { Kesimpulan, Signal, WatchItem, WatchKind } from "@/lib/stock-read";
 import { dateLong } from "@/lib/dates";
 
 /**
@@ -32,7 +32,7 @@ import { dateLong } from "@/lib/dates";
  * line, then its body, so sections are clearly separated.
  *
  * Two sizes, because size is hierarchy: "primary" for the reading column
- * (Ringkasan, signals, situations, Data lengkap) and "secondary" for the
+ * (Kesimpulan, signals, situations, Data lengkap) and "secondary" for the
  * narrow supporting column (price, profit, dividend).
  */
 
@@ -81,10 +81,10 @@ export function SectionCard({
 }
 
 /** The "Artinya untuk ASII:" box under a signal or situation. */
-export function Meaning({ code, children }: { code: string; children: string }) {
+export function Meaning({ code, children }: { code: string; children: ReactNode }) {
   return (
     <div className="mt-3 rounded-xl bg-[var(--viz-raised)] px-4 py-3 text-[14px] leading-[1.55]">
-      <span className="font-bold text-[var(--viz-accent)]">Artinya untuk {code}:</span> {children.charAt(0).toUpperCase() + children.slice(1)}
+      <span className="font-bold text-[var(--viz-accent)]">Artinya untuk {code}:</span> {children}
     </div>
   );
 }
@@ -102,17 +102,59 @@ export function NoteBox({ children, icon: Icon = Info, tone = "muted" }: { child
   );
 }
 
-/* ------------------------------------------------------------------ Ringkasan */
+/* ------------------------------------------------------------------ Kesimpulan */
 
-export function RingkasanCard({ code, lead, rows }: { code: string; lead: string; rows: RingkasanRow[] }) {
+const toneOf = (x: number) => (x > 0 ? "var(--viz-diverging-pos)" : x < 0 ? "var(--viz-diverging-neg)" : "var(--foreground)");
+
+export function KesimpulanCard({ code, k }: { code: string; k: Kesimpulan }) {
+  const label = "pt-0.5 text-xs font-semibold uppercase tracking-[0.05em] text-muted-foreground";
+  const row = "grid gap-1 border-b border-border py-4 md:grid-cols-[170px_minmax(0,1fr)] md:gap-5 md:py-[18px]";
   return (
     <section className="rounded-[22px] border border-border bg-card p-5 md:p-7">
-      <div className="text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--viz-accent)]">Ringkasan {code}</div>
-      <p className="mt-3 text-[18px] font-semibold leading-[1.45] md:text-[22px] md:leading-[1.4]">{lead}</p>
+      <div className="text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--viz-accent)]">Kesimpulan {code}</div>
+      <p className="mt-3 text-[18px] font-semibold leading-[1.45] md:text-[22px] md:leading-[1.4]">{k.headline}</p>
+      {k.figures.length > 0 && (
+        <div className="mt-4 grid gap-2 sm:grid-cols-2 sm:gap-3">
+          {k.figures.map((f) => (
+            <div key={f.label} className="rounded-xl bg-[var(--viz-raised)] px-4 py-3">
+              <div className="text-xs text-muted-foreground">{f.label}</div>
+              <div className="mt-1 flex items-baseline gap-4">
+                <span className="font-mono text-[20px] font-bold tabular-nums" style={{ color: toneOf(f.stock) }}>
+                  {signedPct(f.stock * 100, 1, true)}
+                </span>
+                <span className="text-[13px] text-muted-foreground">
+                  {code}
+                  {" · "}IHSG <span className="font-mono tabular-nums">{signedPct(f.ihsg * 100, 1, true)}</span>
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      {k.caption && <p className="mt-2.5 text-[13px] leading-normal text-muted-foreground md:text-[13.5px]">{k.caption}</p>}
       <div className="mt-5 border-t border-border">
-        {rows.map((r) => (
-          <div key={r.label} className="grid gap-1 border-b border-border py-4 md:grid-cols-[150px_minmax(0,1fr)] md:gap-5 md:py-[18px]">
-            <div className="pt-0.5 text-xs font-semibold uppercase tracking-[0.05em] text-muted-foreground">{r.label}</div>
+        <div className={row}>
+          <div className={label}>Perlu diperhatikan</div>
+          <div>
+            {k.watch.length === 0 ? (
+              <div className="text-[16px] font-bold leading-snug md:text-[17px]">Tidak ada</div>
+            ) : (
+              <ul className="flex flex-col gap-1">
+                {k.watch.map((w) => (
+                  <li key={w} className="text-[16px] font-bold leading-snug md:text-[17px]">
+                    {w}
+                  </li>
+                ))}
+              </ul>
+            )}
+            <div className="mt-1.5 text-[13.5px] leading-normal text-muted-foreground md:text-[14.5px]">
+              {k.watch.length === 0 ? `Tidak ada keadaan khusus yang sedang terjadi di ${code}.` : (k.rarest ?? "Rinciannya ada di bawah.")}
+            </div>
+          </div>
+        </div>
+        {k.rows.map((r) => (
+          <div key={r.label} className={row}>
+            <div className={label}>{r.label}</div>
             <div>
               <div className="text-[16px] font-bold leading-snug md:text-[17px]">{r.state}</div>
               <div className="mt-1 text-[13.5px] leading-normal text-muted-foreground md:text-[14.5px]">{r.explain}</div>
@@ -121,7 +163,7 @@ export function RingkasanCard({ code, lead, rows }: { code: string; lead: string
         ))}
       </div>
       <p className="mt-4 text-xs leading-normal text-muted-foreground">
-        Tiap baris dihitung dengan aturan tetap dan berdiri sendiri, bukan nilai gabungan.{" "}
+        Setiap baris memakai aturan tetap yang sama untuk semua saham, dan berdiri sendiri: tidak ada nilai gabungan.{" "}
         <Link href="/temuan/cara-kami-menguji" className="underline">
           Cara kami menguji
         </Link>
@@ -134,7 +176,7 @@ export function RingkasanCard({ code, lead, rows }: { code: string; lead: string
 
 export function SignalsSection({ code, signals, findingsCount }: { code: string; signals: Signal[]; findingsCount: number }) {
   return (
-    <SectionCard size="primary" icon={FlaskConical} title={`Sinyal populer yang ada di ${code}`} sub={`Sinyal yang sering dipakai orang untuk memilih saham dan sedang terlihat di ${code}, dengan hasil uji kami.`}>
+    <SectionCard size="primary" icon={FlaskConical} title={`Sinyal populer yang ada di ${code}`} sub="Alasan yang sering dipakai orang untuk memilih saham, dan hasil uji kami.">
       {signals.length === 0 ? (
         <div className="mt-2">
           <NoteBox>
@@ -153,13 +195,11 @@ export function SignalsSection({ code, signals, findingsCount }: { code: string;
               </Link>
               <VerdictChip kind={s.verdict} />
             </div>
-            <p className="mt-2 text-[14px] leading-[1.55]">
-              <Muted>Di {code}:</Muted> {s.here}
-            </p>
+            <p className="mt-2 text-[14px] leading-[1.55]">{s.here}</p>
             <p className="mt-1 text-[14px] leading-[1.55]">
               <Muted>Hasil uji:</Muted> {s.result.charAt(0).toUpperCase() + s.result.slice(1)}
             </p>
-            <Meaning code={code}>{s.meaning}</Meaning>
+            {s.meaning && <Meaning code={code}>{s.meaning}</Meaning>}
           </div>
         ))
       )}
@@ -202,7 +242,7 @@ export function WatchSection({ code, items, checked, className = "" }: { code: s
     );
   }
   return (
-    <SectionCard size="primary" icon={Flag} title={title} sub={`Keadaan yang sedang terjadi di ${code}, dan apa yang biasanya terjadi sesudahnya.`} className={className}>
+    <SectionCard size="primary" icon={Flag} title={title} sub={`Keadaan ${code} sekarang, dan apa yang biasanya terjadi sesudahnya.`} className={className}>
       <div>
         {items.map((w, i) => {
           const Icon = WATCH_ICON[w.kind];
@@ -215,20 +255,23 @@ export function WatchSection({ code, items, checked, className = "" }: { code: s
                 <span className="min-w-0 flex-1 text-[16px] font-semibold leading-snug md:text-[17px]">{w.title}</span>
                 <ChevronRight className="size-[18px] shrink-0 text-muted-foreground" />
               </div>
-              <p className="mt-2.5 text-[14px] leading-[1.55]">
-                <Muted>Di {code}:</Muted> {w.here}
-              </p>
-              {w.others && (
-                <p className="mt-1 text-[14px] leading-[1.55]">
-                  <Muted>Pada saham lain:</Muted> <b className="font-mono tabular-nums">{w.others.figure}</b> {w.others.rest}
-                </p>
+              <p className="mt-2.5 text-[14px] leading-[1.55]">{w.here}</p>
+              {(w.rate || w.note) && (
+                <Meaning code={code}>
+                  {w.rate && (
+                    <>
+                      {w.rate.lead} <b className="font-mono tabular-nums">{w.rate.figure}</b> {w.rate.rest}
+                    </>
+                  )}
+                  {w.rate && w.note ? " " : ""}
+                  {w.note}
+                </Meaning>
               )}
-              <Meaning code={code}>{w.meaning}</Meaning>
             </Link>
           );
         })}
       </div>
-      <p className="mt-2 text-xs leading-normal text-muted-foreground">Frekuensi masa lalu, bukan ramalan. Setiap hal berdiri sendiri.</p>
+      <p className="mt-2 text-xs leading-normal text-muted-foreground">Angka dari kejadian masa lalu, bukan ramalan.</p>
     </SectionCard>
   );
 }

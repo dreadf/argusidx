@@ -13,7 +13,7 @@ import { SLUG_BY_KIND, type StockSituationEntry } from "@/lib/stock-situations";
 
 /**
  * The stock page's reading of one stock (board Baru4-Saham-*): the
- * Ringkasan rows, the popular signals present in the stock with their test
+ * Kesimpulan, the popular signals present in the stock with their test
  * result, the situations to note, the answer for each "why are you looking"
  * chip, and the Tanya suggestions. Pure functions of the data, so every
  * stock gets the same fixed rules and the rules are unit-tested.
@@ -85,6 +85,8 @@ export interface ReadInput {
   gainRankCount: number;
   universe: number;
   insiderSince: string;
+  /** How many stocks are in each situation or flag now (situations.json counts, flags.json flagged_count). */
+  nowCounts: Record<string, number>;
 }
 
 /* ------------------------------------------------------------------ words */
@@ -109,16 +111,22 @@ export function rpAmount(value: number): string {
   return `Rp ${idNum(abs / 1e6, 0)} jt`;
 }
 
-/** Share of 100 as a quantifier: 12 -> "sedikit", 57 -> "lebih dari separuh". */
-export function quantifier(outOf100: number): string {
-  if (outOf100 < 20) return "sedikit";
-  if (outOf100 < 45) return "kurang dari separuh";
-  if (outOf100 <= 55) return "sekitar separuh";
-  if (outOf100 < 80) return "lebih dari separuh";
-  return "sebagian besar";
+const of100 = (share: number) => Math.round(share);
+
+/**
+ * A change in words: "naik 83%", "turun 4,2%", and from +100% up
+ * "naik menjadi 12,3 kali lipat", which a beginner reads more easily than
+ * "naik 1.127%".
+ */
+export function changeWords(frac: number, digits = 1): string {
+  if (frac >= 1) return `naik menjadi ${idNum(1 + frac, 1)} kali lipat`;
+  return `${frac < 0 ? "turun" : "naik"} ${pctPlain(frac, digits)}`;
 }
 
-const of100 = (share: number) => Math.round(share);
+/** Share of profit paid out, in words: "80% dari labanya", or "19 kali labanya" once it passes 200%. */
+export function payoutWords(ratio: number): string {
+  return ratio >= 2 ? `${idNum(ratio, 1)} kali labanya` : `${idNum(ratio * 100, 0)}% dari labanya`;
+}
 const lower = (s: string | null) => (s ? s.toLowerCase() : "");
 
 function sectorStocks(r: ReadInput): string {
@@ -180,22 +188,26 @@ export function dividendShape(d: (number | null)[]): DividendShape {
   return "not_every_year";
 }
 
-/* ------------------------------------------------------------------ price relation */
+/* ------------------------------------------------------------------ Kesimpulan */
 
-type PriceRelation = { dir: "Naik" | "Turun"; rel: string };
-
-function priceRelation(chg: number, ihsg: number): PriceRelation {
-  const dir = chg >= 0 ? "Naik" : "Turun";
-  const diff = chg - ihsg;
-  let rel: string;
-  if (Math.abs(diff) <= 0.03) rel = "sejalan dengan IHSG";
-  else if (chg < 0) rel = diff > 0 ? "lebih ringan dari IHSG" : "lebih dalam dari IHSG";
-  else if (ihsg < 0) rel = "saat IHSG turun";
-  else rel = diff > 0 ? "lebih tinggi dari IHSG" : "lebih rendah dari IHSG";
-  return { dir, rel };
-}
-
-/* ------------------------------------------------------------------ Ringkasan */
+/**
+ * The Kesimpulan's fixed rules (plan kind-juggling-hoare.md §6), so every
+ * stock is read the same way:
+ *
+ * 1. Headline: the one-year price change against IHSG and against the
+ *    stock's own sector. Words once here; the numbers for both fixed
+ *    windows (one year, and since the IHSG peak) sit in a figure strip
+ *    under it, and the dates and exact sector rank in the caption.
+ * 2. "Perlu diperhatikan": every situation and flag named one by one, never
+ *    counted (R2a did not qualify as a test, EXPERIMENT.md 2026-09-27, so no
+ *    count may be shown). Order is WATCH_ORDER.
+ * 3. Under it, the rarest of them right now (fewest stocks in it), and
+ *    how many stocks share it. Its frequency is in the section below, said
+ *    once, so the plan's 100-case minimum (which was for showing a rate
+ *    here) no longer applies.
+ *
+ * Then the Laba / Valuasi / Dividen facts. Each row stands on its own.
+ */
 
 export interface RingkasanRow {
   label: string;
@@ -203,37 +215,25 @@ export interface RingkasanRow {
   explain: string;
 }
 
-export interface Ringkasan {
-  lead: string;
+export interface KesimpulanFigure {
+  label: string;
+  stock: number;
+  ihsg: number;
+}
+
+export interface Kesimpulan {
+  headline: string;
+  /** The stock and IHSG over the two fixed windows: one year, and since the IHSG peak. */
+  figures: KesimpulanFigure[];
+  /** Window and exact sector rank, the numbers behind the headline's words. */
+  caption: string | null;
+  /** Names, one by one. */
+  watch: string[];
+  /** Line 3: the rarest situation now, and how many stocks are in it. */
+  rarest: string | null;
   rows: RingkasanRow[];
 }
 
-function hargaRow(r: ReadInput): RingkasanRow {
-  const { profile, meta, data } = r;
-  const chg = profile.change_1y;
-  const price = data.snapshot.last_close_price;
-  const low = data.snapshot["52_w_low_price"];
-  const high = data.snapshot["52_w_high_price"];
-  const ipo = r.situations?.recent_ipo;
-  if (chg === null) {
-    const dist = price !== null && high ? `${signedPct(pctFrom(price, high))} dari tertinggi setahun.` : "";
-    return ipo
-      ? { label: "Harga", state: "Belum setahun di bursa", explain: `Melantai ${dateLong(ipo.listing_date)}, jadi perubahan setahun belum bisa dihitung. ${dist}`.trim() }
-      : { label: "Harga", state: "Perubahan setahun tidak tersedia", explain: dist || "Harga awal periode tidak tercatat." };
-  }
-  const { dir, rel } = priceRelation(chg, meta.ihsg_change_1y);
-  let state = chg >= 1 ? "Naik lebih dari dua kali lipat" : `${dir}, ${rel}`;
-  if (price !== null && low !== null && high !== null && high > low) {
-    if (price <= low) state = "Di harga terendah setahun";
-    else if (price >= high) state = "Di harga tertinggi setahun";
-    else if (chg < 0 && price <= low * 1.05) state = "Turun, dekat harga terendah setahun";
-    else if (chg > 0 && price >= high * 0.95) state = chg >= 1 ? "Naik jauh, dekat harga tertinggi setahun" : "Naik, dekat harga tertinggi setahun";
-  }
-  const rank = profile.sector_rank_1y;
-  let peers = "";
-  if (rank && rank.n > 1) peers = rank.better === 0 ? ` Tidak ada ${sectorStocks(r)} lain yang bergerak lebih baik.` : ` ${rank.better} dari ${rank.n} ${sectorStocks(r)} bergerak lebih baik.`;
-  return { label: "Harga", state, explain: `${pctSigned(chg)} dalam setahun, IHSG ${pctSigned(meta.ihsg_change_1y)}.${peers}` };
-}
 
 function labaRow(r: ReadInput): RingkasanRow {
   const e = r.profile.earnings;
@@ -244,7 +244,7 @@ function labaRow(r: ReadInput): RingkasanRow {
   const yoyText = () => {
     if (last === null || prev === null || prev <= 0) return "";
     const yoy = last / prev - 1;
-    return `, ${yoy >= 0 ? "naik" : "turun"} ${pctPlain(yoy, 0)} dari ${years[Y.prev]}`;
+    return `, ${changeWords(yoy, 0)} dari ${years[Y.prev]}`;
   };
   switch (shape) {
     case "none": {
@@ -329,97 +329,91 @@ function dividenRow(r: ReadInput): RingkasanRow {
   return { label: "Dividen", state: state[shape], explain: `Rp ${idNum(last, last < 10 ? 2 : 0)} per saham untuk ${years[Y.last]}.${yieldText}${peak}` };
 }
 
-function leadSentence(r: ReadInput): string {
-  const { code, profile, meta } = r;
-  const e = profile.earnings;
-  const years = meta.years;
-  const allDividends = dividendShape(profile.dividend).startsWith("every_year");
-  const divClause = allDividends ? `, dan dividennya dibayar setiap tahun sejak ${years[0]}` : "";
-  let biz: string;
-  switch (earningsShape(e)) {
-    case "loss_shrinking": {
-      const two = e[Y.prev2] !== null && (e[Y.prev2] as number) < 0 && Math.abs(e[Y.prev] as number) < Math.abs(e[Y.prev2] as number);
-      biz = `${code} masih rugi, tapi ruginya menyusut ${two ? "dua tahun berturut-turut" : `dari ${years[Y.prev]}`}.`;
-      break;
-    }
-    case "loss_growing":
-      biz = `${code} masih rugi, dan ruginya membesar pada ${years[Y.last]}.`;
-      break;
-    case "loss":
-      biz = `${code} rugi pada ${years[Y.last]}.`;
-      break;
-    case "turned_loss":
-      biz = `${code} berbalik rugi pada ${years[Y.last]}.`;
-      break;
-    case "back_to_profit":
-      biz = `${code} kembali untung pada ${years[Y.last]} setelah rugi${divClause}.`;
-      break;
-    case "rising_every_year":
-      biz = `Laba ${code} naik setiap tahun sejak ${risingSince(e, years)}${divClause}.`;
-      break;
-    case "falling_two_years":
-      biz = `Laba ${code} turun dua tahun berturut-turut${divClause}.`;
-      break;
-    case "stable_near_high":
-      biz = `Laba ${code} stabil di dekat tertinggi lima tahunnya${divClause}.`;
-      break;
-    case "stable":
-      biz = `Laba ${code} stabil${divClause}.`;
-      break;
-    case "up":
-    case "down": {
-      const yoy = (e[Y.last] as number) / (e[Y.prev] as number) - 1;
-      biz = `Laba ${code} ${years[Y.last]} ${yoy >= 0 ? "naik" : "turun"} ${pctPlain(yoy, 0)}${divClause}.`;
-      break;
-    }
-    case "none":
-      biz = `${code} belum punya laporan laba ${years[Y.last]}.`;
-      break;
-    default:
-      biz = `${code} untung pada ${years[Y.last]}${divClause}.`;
-  }
-  const chg = profile.change_1y;
-  let price: string;
-  if (chg === null) {
-    const ipo = r.situations?.recent_ipo;
-    price = ipo ? `Baru melantai ${dateLong(ipo.listing_date)}, jadi perubahan harga setahun belum bisa dihitung.` : "Perubahan harga setahun tidak tersedia.";
-  } else {
-    const { dir, rel } = priceRelation(chg, meta.ihsg_change_1y);
-    const rank = profile.sector_rank_1y;
-    let peers = "";
-    if (rank && rank.n >= 5) {
-      const share = rank.better / rank.n;
-      if (share >= 2 / 3) peers = `, tapi lebih lemah dari kebanyakan ${sectorStocks(r)}`;
-      else if (share <= 1 / 3) peers = `, dan lebih kuat dari kebanyakan ${sectorStocks(r)}`;
-    }
-    price = `Harganya ${dir.toLowerCase()} ${pctPlain(chg)} dalam setahun, ${rel}${peers}.`;
-  }
-  return `${biz} ${price}`;
+/** How the stock moved against a benchmark, as the adjective the headline uses. */
+function versus(chg: number, other: number): "sejalan" | "worse" | "better" {
+  if (Math.abs(chg - other) <= 0.03) return "sejalan";
+  return chg > other ? "better" : "worse";
 }
 
-export function ringkasan(r: ReadInput, watch: WatchItem[]): Ringkasan {
-  const rows = [hargaRow(r), labaRow(r), valuasiRow(r), dividenRow(r)];
-  rows.push({
-    label: "Perlu diperhatikan",
-    // Named one by one, never counted: CLAUDE.md allows a count of risk signs only after a confirmed holdout test.
-    state: watch.length === 0 ? "Tidak ada" : watch.map((w) => w.title).join(", "),
-    explain: watch.length === 0 ? `Tidak ada keadaan khusus yang sedang terjadi di ${r.code}.` : "Setiap hal berdiri sendiri; rinciannya ada di bagian di bawah.",
-  });
-  return { lead: leadSentence(r), rows };
+function headline(r: ReadInput): { headline: string; caption: string | null } {
+  const { profile, meta, code } = r;
+  const chg = profile.change_1y;
+  if (chg === null) {
+    const ipo = r.situations?.recent_ipo;
+    return { headline: ipo ? `${code} baru melantai ${dateLong(ipo.listing_date)}, jadi perubahan harganya setahun belum bisa dihitung.` : `Perubahan harga ${code} setahun tidak tersedia.`, caption: null };
+  }
+  const ihsg = meta.ihsg_change_1y;
+  const falling = chg < 0;
+  const adj = (v: "worse" | "better") => (falling ? (v === "worse" ? "lebih dalam" : "lebih ringan") : v === "worse" ? "lebih rendah" : "lebih tinggi");
+  const vsI = versus(chg, ihsg);
+  let text: string;
+  if (vsI === "sejalan") text = `sejalan dengan IHSG (${pctSigned(ihsg)})`;
+  else if (!falling && ihsg < 0) text = `saat IHSG turun (${pctSigned(ihsg)})`;
+  else text = `${adj(vsI)} dari IHSG (${pctSigned(ihsg)})`;
+
+  const rank = profile.sector_rank_1y;
+  let sectorText = "";
+  if (rank && rank.n >= 5) {
+    const share = rank.better / rank.n;
+    const vsS: "worse" | "better" | null = share >= 2 / 3 ? "worse" : share <= 1 / 3 ? "better" : null;
+    if (vsS) {
+      const most = share >= 0.9 || share <= 0.1 ? "hampir semua" : "kebanyakan";
+      const who = `${most} ${sectorStocks(r)}`;
+      // "dan dari" only attaches to a comparison ("lebih dalam dari IHSG"); after
+      // "sejalan dengan IHSG" or "saat IHSG turun" the adjective is spelled out.
+      const comparative = vsI !== "sejalan" && !(!falling && ihsg < 0);
+      if (!comparative) sectorText = `, dan ${adj(vsS)} dari ${who}`;
+      else if (vsI === vsS) sectorText = ` dan dari ${who}`;
+      else sectorText = `, tapi ${adj(vsS)} dari ${who}`;
+    }
+  }
+  const peers = rank && rank.n > 1 ? ` Dalam setahun, ${rank.better === 0 ? `tidak ada ${sectorStocks(r)} lain yang` : `${rank.better} dari ${rank.n} ${sectorStocks(r)}`} bergerak lebih baik.` : "";
+  return {
+    headline: `Harga ${code} ${changeWords(chg)} dalam setahun, ${text}${sectorText}.`,
+    caption: `Harga penutupan dari Sectors sampai ${dateLong(meta.change_window.end)}.${peers}`,
+  };
 }
+
+/** Line 3: the situation the fewest stocks are in right now; ties go to the earlier one in WATCH_ORDER. */
+export function rarestItem(r: ReadInput, watch: WatchItem[]): WatchItem | null {
+  const known = watch.filter((w) => r.nowCounts[w.kind] !== undefined);
+  if (known.length === 0) return null;
+  return known.reduce((a, b) => (r.nowCounts[b.kind] < r.nowCounts[a.kind] ? b : a));
+}
+
+export function kesimpulan(r: ReadInput, watch: WatchItem[]): Kesimpulan {
+  const h = headline(r);
+  const top = rarestItem(r, watch);
+  const rarest = top
+    ? `${watch.length > 1 ? `Paling jarang: ${top.title.toLowerCase()}, keadaan yang sedang dialami` : "Keadaan ini sedang dialami"} ${r.nowCounts[top.kind]} dari ${r.universe} saham.`
+    : null;
+  const { profile: p, meta } = r;
+  const figures: KesimpulanFigure[] = [];
+  if (p.change_1y !== null) figures.push({ label: "Setahun", stock: p.change_1y, ihsg: meta.ihsg_change_1y });
+  if (p.change_since_peak !== null) figures.push({ label: `Sejak puncak IHSG, ${dateLong(meta.peak_window.start)}`, stock: p.change_since_peak, ihsg: meta.ihsg_change_since_peak });
+  return {
+    headline: h.headline,
+    figures,
+    caption: h.caption,
+    watch: watch.map((w) => w.title),
+    rarest,
+    rows: [labaRow(r), valuasiRow(r), dividenRow(r)],
+  };
+}
+
 
 /* ------------------------------------------------------------------ Sinyal populer */
 
 export interface Signal {
   key: SignalKey;
   title: string;
-  /** "Di ASII:" line. */
+  /** What the stock shows, as one plain sentence. */
   here: string;
   /** "Hasil uji:" line. */
   result: string;
   verdict: Verdict;
-  /** "Artinya untuk ASII:" line. */
-  meaning: string;
+  /** "Artinya untuk ASII:" line, only when it adds something the test result does not say. */
+  meaning: string | null;
   href: string;
 }
 
@@ -492,12 +486,12 @@ export function popularSignals(r: ReadInput, watch: WatchItem[]): Signal[] {
   if (p.pe_meaningful && p.pe_cheaper_than !== null && p.pe_cheaper_than >= TOP_THIRD && p.pe_ttm !== null) {
     const spe = data.sector_context?.sector_typical_pe ?? null;
     const range = ownPeRange(p, years);
-    const usual = range && p.pe_ttm >= range.min * 0.9 ? ` P/E ${code} di akhir ${range.from} sampai ${years[Y.last]} berkisar ${idNum(range.min)}x sampai ${idNum(range.max)}x, jadi rendahnya bukan hal baru.` : "";
+    const usual = range && p.pe_ttm >= range.min * 0.9 ? ` P/E ${code} di akhir tahun ${range.from} sampai ${years[Y.last]} berkisar ${idNum(range.min)}x sampai ${idNum(range.max)}x, jadi rendahnya bukan hal baru.` : "";
     out.push({
       key: "low_pe",
       title: `P/E ${code} rendah`,
-      here: `P/E ${idNum(p.pe_ttm)}x, lebih rendah dari ${of100(p.pe_cheaper_than)} dari 100 saham berlaba.${isMeaningfulPe(spe) ? ` Nilai tengah sektornya ${idNum(spe)}x.` : ""}`,
-      meaning: `P/E ${code} masuk pola yang terbukti, tapi efeknya kecil dan berlaku rata-rata, bukan untuk satu saham.${usual}`,
+      here: `P/E ${idNum(p.pe_ttm)}x, lebih rendah dari ${of100(p.pe_cheaper_than)}% saham berlaba.${isMeaningfulPe(spe) ? ` Nilai tengah sektornya ${idNum(spe)}x.` : ""}`,
+      meaning: usual ? usual.trim() : null,
     });
   }
   if (isHighYield(p) && p.yield_ttm !== null) {
@@ -512,8 +506,8 @@ export function popularSignals(r: ReadInput, watch: WatchItem[]): Signal[] {
     out.push({
       key: "high_yield",
       title: `Dividen ${code} tinggi`,
-      here: `Imbal dividen ${pctPlain(p.yield_ttm)}, lebih tinggi dari ${of100(p.yield_higher_than)} dari 100 saham.`,
-      meaning: `${code} masuk kelompok berdividen tinggi. Imbal ini dihitung dari dividen 12 bulan terakhir, bukan janji dividen berikutnya.${why}`,
+      here: `Imbal dividen ${pctPlain(p.yield_ttm)}, lebih tinggi dari ${of100(p.yield_higher_than)}% saham.`,
+      meaning: `Imbal ini dihitung dari dividen 12 bulan terakhir, bukan janji dividen berikutnya.${why}`,
     });
   }
   if (p.size_third === "small" && data.snapshot.market_cap !== null && data.snapshot.market_cap_rank !== null) {
@@ -521,31 +515,31 @@ export function popularSignals(r: ReadInput, watch: WatchItem[]): Signal[] {
       key: "small",
       title: `${code} perusahaan kecil`,
       here: `Nilai pasar ${rpAmount(data.snapshot.market_cap)}, peringkat ke-${data.snapshot.market_cap_rank} dari ${r.universe}.`,
-      meaning: `${code} masuk sepertiga perusahaan terkecil. Keunggulan kelompok ini kecil dan berlaku rata-rata, bukan untuk satu saham.`,
+      meaning: null,
     });
   }
   if (p.roe_ttm !== null && p.roe_ttm > 0 && p.roe_higher_than !== null && p.roe_higher_than >= TOP_THIRD) {
     out.push({
       key: "high_roe",
       title: `ROE ${code} tinggi`,
-      here: `ROE ${pctPlain(p.roe_ttm)}: setiap Rp 100 modal menghasilkan Rp ${idNum(p.roe_ttm * 100, 0)} laba setahun. Lebih tinggi dari ${of100(p.roe_higher_than)} dari 100 saham.`,
-      meaning: `ROE tinggi ${code} belum bisa dibaca sebagai tanda harganya akan lebih baik.`,
+      here: `ROE ${pctPlain(p.roe_ttm)}: setiap Rp 100 modal menghasilkan Rp ${idNum(p.roe_ttm * 100, 0)} laba setahun. Lebih tinggi dari ${of100(p.roe_higher_than)}% saham.`,
+      meaning: null,
     });
   }
   if (p.der_mrq !== null && p.der_higher_than !== null && p.der_higher_than >= TOP_THIRD) {
     out.push({
       key: "high_debt",
       title: `Utang ${code} tinggi`,
-      here: `Utang ${idNum(p.der_mrq, 2)}x modal, lebih tinggi dari ${of100(p.der_higher_than)} dari 100 perusahaan non-keuangan.`,
-      meaning: `utang tinggi ${code} belum bisa dibaca sebagai tanda harganya akan lebih buruk.`,
+      here: `Utang ${idNum(p.der_mrq, 2)}x modal, lebih tinggi dari ${of100(p.der_higher_than)}% perusahaan non-keuangan.`,
+      meaning: null,
     });
   }
   if (p.revenue_growth !== null && p.revenue_growth > 0 && p.revenue_growth_higher_than !== null && p.revenue_growth_higher_than >= TOP_THIRD) {
     out.push({
       key: "fast_revenue",
       title: `Pendapatan ${code} tumbuh cepat`,
-      here: `Pendapatan ${years[Y.last]} naik ${pctPlain(p.revenue_growth)} dari ${years[Y.prev]}, lebih cepat dari ${of100(p.revenue_growth_higher_than)} dari 100 perusahaan.`,
-      meaning: `pertumbuhan pendapatan ${code} belum bisa dibaca sebagai tanda harganya akan naik.`,
+      here: `Pendapatan ${years[Y.last]} ${changeWords(p.revenue_growth)} dari ${years[Y.prev]}, lebih cepat dari ${of100(p.revenue_growth_higher_than)}% perusahaan.`,
+      meaning: null,
     });
   }
   const last = e[Y.last];
@@ -553,12 +547,12 @@ export function popularSignals(r: ReadInput, watch: WatchItem[]): Signal[] {
   if (last !== null && prev !== null && prev > 0 && last > prev) {
     const yoy = last / prev - 1;
     const chg = p.change_1y;
-    const vsPrice = chg === null ? "" : ` Dalam setahun harganya ${chg >= 0 ? "naik" : "turun"} ${pctPlain(chg)}.`;
+    const vsPrice = chg === null ? "" : `, sementara harganya ${changeWords(chg)} dalam setahun`;
     out.push({
       key: "earnings_up",
       title: `Laba ${code} naik`,
-      here: `Laba ${years[Y.last]} ${rpAmount(last)}, naik ${pctPlain(yoy, 0)} dari ${years[Y.prev]}.`,
-      meaning: `kenaikan laba ${code} belum bisa dibaca sebagai tanda harganya akan naik.${vsPrice}`,
+      here: `Laba ${years[Y.last]} ${changeWords(yoy, 0)} dari ${years[Y.prev]}${vsPrice}.`,
+      meaning: null,
     });
   }
   if (p.foreign_buy_days >= 10 && p.foreign_buy_days >= 1.5 * p.foreign_sell_days) {
@@ -566,7 +560,7 @@ export function popularSignals(r: ReadInput, watch: WatchItem[]): Signal[] {
       key: "foreign_buy",
       title: `Asing sering membeli ${code}`,
       here: `Di daftar beli bersih asing ${p.foreign_buy_days} hari, daftar jual bersih ${p.foreign_sell_days} hari (dari ${meta.foreign_flow.days} hari).`,
-      meaning: `seringnya ${code} muncul di daftar beli asing belum bisa dibaca sebagai tanda harganya akan naik.`,
+      meaning: null,
     });
   }
   const ins = data.insider_activity;
@@ -574,8 +568,8 @@ export function popularSignals(r: ReadInput, watch: WatchItem[]): Signal[] {
     out.push({
       key: "insider_buy",
       title: `Orang dalam ${code} membeli`,
-      here: `${ins.buy_count} laporan beli, ${ins.sell_count} jual sejak ${dateLong(r.insiderSince)}${ins.last_transaction_date ? `, terakhir ${dateLong(ins.last_transaction_date)}` : ""}.`,
-      meaning: `pembelian orang dalam ${code} belum bisa dibaca sebagai tanda harganya akan naik.`,
+      here: `${ins.buy_count} laporan beli dan ${ins.sell_count} laporan jual sejak ${dateLong(r.insiderSince)}${ins.last_transaction_date ? `, terakhir ${dateLong(ins.last_transaction_date)}` : ""}.`,
+      meaning: null,
     });
   }
   const n = r.news;
@@ -585,8 +579,8 @@ export function popularSignals(r: ReadInput, watch: WatchItem[]): Signal[] {
     out.push({
       key: "news_tone",
       title: `Berita tentang ${code} lebih banyak ${pos ? "positif" : "negatif"}`,
-      here: `${n.bullish} artikel bernada positif, ${n.bearish} negatif (${idNum(share, 0)}% positif; semua saham ${idNum(r.newsMarket.bullishPct, 0)}%), ${dateLong(r.newsMarket.first)} sampai ${dateLong(r.newsMarket.last)}. Label nada dari Sectors.`,
-      meaning: `banyaknya berita ${pos ? "positif" : "negatif"} tentang ${code} belum bisa dijadikan petunjuk arah harganya.`,
+      here: `${n.bullish} artikel positif dan ${n.bearish} negatif dari ${dateLong(r.newsMarket.first)} sampai ${dateLong(r.newsMarket.last)}: ${idNum(share, 0)}% positif, sementara rata-rata semua saham ${idNum(r.newsMarket.bullishPct, 0)}%. Nada artikel dilabeli Sectors.`,
+      meaning: null,
     });
   }
   if (data.h1_finding?.free_float_tercile === "low" && data.snapshot.free_float !== null) {
@@ -594,7 +588,7 @@ export function popularSignals(r: ReadInput, watch: WatchItem[]): Signal[] {
       key: "thin_float",
       title: `Free float ${code} kecil`,
       here: `Free float ${idNum(data.snapshot.free_float * 100)}%, sepertiga tersempit untuk ukuran perusahaannya.`,
-      meaning: `float kecil ${code} tidak berarti harganya lebih liar. Di data kami, saham float kecil justru rata-rata lebih tenang.`,
+      meaning: null,
     });
   }
   const gain = p.daily_close_change;
@@ -603,7 +597,7 @@ export function popularSignals(r: ReadInput, watch: WatchItem[]): Signal[] {
       key: "top_gainer",
       title: `${code} naik paling tinggi hari ini`,
       here: `Naik ${pctPlain(gain)} pada ${dateLong(meta.as_of)}, peringkat ${p.daily_gain_rank} dari ${r.gainRankCount} saham.`,
-      meaning: `kenaikan besar ${code} hari ini belum bisa dibaca sebagai tanda kenaikannya berlanjut.`,
+      meaning: null,
     });
   }
   return out
@@ -627,29 +621,38 @@ export type WatchKind =
   | "near_ath_earnings_decline"
   | "yield_far_above_average";
 
+/**
+ * Order on the page. The seven R1 warnings first, strongest first by R2a's
+ * explore-period D-U (EXPERIMENT.md, 2026-09-27: spike +0.188, near peak
+ * with falling profit +0.153, loss year -0.004, long below peak -0.085
+ * with the one-year fall merged into it by R1; the two with no explore
+ * cases last), then the situations that are not R1 warnings. An order,
+ * never a score: no number is shown for it.
+ */
 export const WATCH_ORDER: WatchKind[] = [
+  "recent_spike",
+  "near_ath_earnings_decline",
+  "loss_year",
   "fall",
   "long_below_peak",
+  "earnings_two_year_decline",
+  "yield_far_above_average",
   "recent_price_suspension",
   "repeat_suspension",
-  "recent_spike",
-  "loss_year",
-  "earnings_two_year_decline",
   "recent_ipo",
   "earnings_more_than_doubled",
   "payout_above_earnings",
-  "yield_far_above_average",
-  "near_ath_earnings_decline",
 ];
 
 export interface WatchItem {
   kind: WatchKind;
   title: string;
-  /** "Di ASII:" line. */
+  /** What is happening in this stock, as one plain sentence (the section title already names the stock). */
   here: string;
-  /** "Pada saham lain:" line: the bold figure and the rest of the sentence; null when there is no frequency. */
-  others: { figure: string; rest: string } | null;
-  meaning: string;
+  /** "Dari 100 saham yang ..., <figure> ...": the past frequency, said once. Null when there is none. */
+  rate: { lead: string; figure: string; rest: string } | null;
+  /** Only what the frequency does not already say about this stock. */
+  note: string | null;
   href: string;
 }
 
@@ -660,11 +663,21 @@ const WATCH_HREF: Record<WatchKind, string> = {
   yield_far_above_average: "/temuan/tanda/dividen-tinggi",
 };
 
-/** "6 sampai 8 dari 10" from two rates, or "7 dari 10". */
+/** "6 sampai 8" from two rates (of 10), or "7". */
 function outOfTen(a: number, b: number): string {
   const lo = Math.round(Math.min(a, b) * 10);
   const hi = Math.round(Math.max(a, b) * 10);
-  return lo === hi ? `${lo} dari 10` : `${lo} sampai ${hi} dari 10`;
+  return lo === hi ? `${lo}` : `${lo} sampai ${hi}`;
+}
+
+/** "laba Rp 5,6 M" or "rugi Rp 257 M": rpAmount drops the sign, so the word carries it. */
+export function profitWord(v: number): string {
+  return `${v < 0 ? "rugi" : "laba"} ${rpAmount(v)}`;
+}
+
+/** The rate as one sentence, for places that show it as plain text. */
+export function rateSentence(rate: NonNullable<WatchItem["rate"]>): string {
+  return `${rate.lead} ${rate.figure} ${rate.rest}`;
 }
 
 const BOARD_ID: Record<string, string> = { Acceleration: "Akselerasi", Main: "Utama", Development: "Pengembangan", Watchlist: "Pemantauan Khusus" };
@@ -679,14 +692,14 @@ export function watchItems(r: ReadInput): WatchItem[] {
       case "fall": {
         const f = s?.fall;
         if (!f) break;
-        const below = of100(base.recovery_after_fall.still_below_peak.pct ?? 0);
+        const back = 100 - of100(base.recovery_after_fall.still_below_peak.pct ?? 0);
         const now = price ?? f.last_close;
         items.push({
           kind,
           title: "Turun banyak dalam setahun",
-          here: `${formatPrice(now)} sekarang, ${idNum(Math.abs(pctFrom(now, f.peak_price)), 0)}% di bawah puncak ${formatPrice(f.peak_price)} (${dateLong(f.peak_date)}).`,
-          others: { figure: `${below} dari 100`, rest: "saham yang turun 30% atau lebih belum kembali ke puncaknya setahun kemudian." },
-          meaning: `kembali ke ${formatPrice(f.peak_price)} dalam setahun terjadi pada ${quantifier(100 - below)} saham yang turun sedalam ${code}.`,
+          here: `${formatPrice(now)}, turun ${idNum(Math.abs(pctFrom(now, f.peak_price)), 0)}% dari puncaknya ${formatPrice(f.peak_price)} (${dateLong(f.peak_date)}).`,
+          rate: { lead: "Dari 100 saham yang turun 30% atau lebih,", figure: `${back}`, rest: "sudah kembali ke puncaknya setahun kemudian." },
+          note: null,
         });
         break;
       }
@@ -694,14 +707,14 @@ export function watchItems(r: ReadInput): WatchItem[] {
         const l = s?.long_below_peak;
         if (!l) break;
         const back = of100((base.long_below_peak.recovered_by_504.rate ?? 0) * 100);
-        const peakDate = s?.older_fall?.peak_date;
+        const since = s?.older_fall?.trigger_date;
         const now = price ?? l.last_close;
         items.push({
           kind,
           title: "Lama di bawah puncak",
-          here: `${formatPrice(now)} sekarang, ${idNum(Math.abs(pctFrom(now, l.peak_price)), 0)}% di bawah puncak ${formatPrice(l.peak_price)}${peakDate ? ` (${dateLong(peakDate)})` : ""}, sudah ${idNum(l.trading_days_since_trigger, 0)} hari bursa sejak jatuh 30%.`,
-          others: { figure: `${back} dari 100`, rest: "saham yang lama di bawah puncaknya kembali ke puncak itu setahun kemudian." },
-          meaning: `kembalinya ${code} ke ${formatPrice(l.peak_price)} dalam setahun terjadi pada ${quantifier(back)} saham dalam keadaan serupa.`,
+          here: `Jatuh 30% dari puncak ${formatPrice(l.peak_price)}${since ? ` pada ${dateLong(since)}` : " lebih dari setahun lalu"} dan belum kembali ke sana. Sekarang ${formatPrice(now)}, ${idNum(Math.abs(pctFrom(now, l.peak_price)), 0)}% di bawahnya.`,
+          rate: { lead: "Dari 100 saham yang setahun sesudah jatuh masih di bawah puncaknya,", figure: `${back}`, rest: "sudah kembali ke puncak itu dua tahun sesudah jatuh." },
+          note: null,
         });
         break;
       }
@@ -711,9 +724,9 @@ export function watchItems(r: ReadInput): WatchItem[] {
         items.push({
           kind,
           title: "Disuspensi karena lonjakan",
-          here: `Disuspensi bursa ${dateLong(x.date)}, ${x.days_ago} hari sebelum data ini.`,
-          others: { figure: `${H11_UNDERPERFORM.holdout} dari 100`, rest: "saham kalah dari indeks dalam 90 hari setelah suspensi seperti ini." },
-          meaning: `hasil sesudah suspensi seperti di ${code} terbelah: sebagian terus naik, tapi lebih banyak yang tertinggal dari indeks.`,
+          here: `Perdagangannya dihentikan sementara oleh bursa pada ${dateLong(x.date)} karena harganya naik tidak wajar.`,
+          rate: { lead: "Dari 100 saham yang disuspensi seperti ini,", figure: `${H11_UNDERPERFORM.holdout}`, rest: "kalah dari IHSG dalam 90 hari sesudahnya." },
+          note: null,
         });
         break;
       }
@@ -724,9 +737,9 @@ export function watchItems(r: ReadInput): WatchItem[] {
         items.push({
           kind,
           title: "Langganan suspensi",
-          here: `${x.n_events} kali disuspensi karena lonjakan, ${dateLong(x.first_date)} sampai ${dateLong(x.last_date)}.`,
-          others: { figure: `${again} dari 100`, rest: "suspensi karena lonjakan diikuti suspensi serupa dalam setahun." },
-          meaning: `suspensi berulang terjadi pada ${quantifier(again)} kasus serupa, dan ${code} sudah ${x.n_events} kali.`,
+          here: `Sudah ${x.n_events} kali disuspensi karena lonjakan harga, ${dateLong(x.first_date)} sampai ${dateLong(x.last_date)}.`,
+          rate: { lead: "Dari 100 suspensi karena lonjakan,", figure: `${again}`, rest: "diikuti suspensi serupa dalam setahun." },
+          note: null,
         });
         break;
       }
@@ -738,8 +751,8 @@ export function watchItems(r: ReadInput): WatchItem[] {
           kind,
           title: "Harga baru melonjak",
           here: `Naik ${idNum(x.jump_pct, 0)}% dalam ${x.lookback_trading_days} hari bursa sampai ${dateLong(x.event_date)}.`,
-          others: { figure: `${below} dari 100`, rest: "saham yang melonjak seperti ini berada di harga lebih rendah 60 hari bursa kemudian." },
-          meaning: `${quantifier(below)} saham yang melonjak seperti ${code} berada di harga lebih rendah 60 hari bursa kemudian.`,
+          rate: { lead: "Dari 100 saham yang melonjak seperti ini,", figure: `${below}`, rest: "harganya lebih rendah 60 hari bursa kemudian." },
+          note: null,
         });
         break;
       }
@@ -747,21 +760,13 @@ export function watchItems(r: ReadInput): WatchItem[] {
         const x = s?.loss_year;
         if (!x) break;
         const up = of100(base.loss_maker_turnaround.pct ?? 0);
-        const e = profile.earnings;
-        const prev = e[Y.prev];
-        const trend = prev !== null && prev < 0 ? (Math.abs(x.net_income) < Math.abs(prev) ? `, menyusut dari rugi ${rpAmount(prev)} (${x.year - 1})` : `, lebih besar dari rugi ${rpAmount(prev)} (${x.year - 1})`) : "";
-        const shrinking = prev !== null && prev < 0 && Math.abs(x.net_income) < Math.abs(prev);
+        // The year before is already in the Kesimpulan's Laba row; not repeated here.
         items.push({
           kind,
           title: "Perusahaan rugi",
-          here: `Rugi bersih ${rpAmount(x.net_income)} pada ${x.year}${trend}.`,
-          others: { figure: `${up} dari 100`, rest: "perusahaan rugi kembali untung pada tahun berikutnya." },
-          meaning:
-            prev !== null && prev < 0
-              ? shrinking
-                ? `kembali untung tahun depan terjadi pada ${quantifier(up)} perusahaan rugi, meski rugi ${code} sudah menyusut.`
-                : `rugi ${code} justru membesar, dan kembali untung tahun depan terjadi pada ${quantifier(up)} perusahaan rugi.`
-              : `kembali untung tahun depan terjadi pada ${quantifier(up)} perusahaan rugi.`,
+          here: `Rugi bersih ${rpAmount(x.net_income)} pada ${x.year}.`,
+          rate: { lead: "Dari 100 perusahaan rugi,", figure: `${up}`, rest: "kembali untung tahun berikutnya." },
+          note: null,
         });
         break;
       }
@@ -769,12 +774,13 @@ export function watchItems(r: ReadInput): WatchItem[] {
         const x = s?.earnings_two_year_decline;
         if (!x) break;
         const up = of100(base.earnings_two_year_decline.pooled.rate * 100);
+        const [a, b, c] = x.earnings;
         items.push({
           kind,
           title: "Laba turun dua tahun",
-          here: `Laba ${x.year - 2} ${rpAmount(x.earnings[0])}, ${x.year - 1} ${rpAmount(x.earnings[1])}, ${x.year} ${rpAmount(x.earnings[2])}.`,
-          others: { figure: `${up} dari 100`, rest: "perusahaan yang labanya turun dua tahun, labanya naik lagi tahun berikutnya." },
-          meaning: `laba naik lagi tahun depan terjadi pada ${quantifier(up)} kasus serupa, dan naik lagi belum berarti kembali ke laba semula.`,
+          here: `${profitWord(a).replace(/^./, (ch) => ch.toUpperCase())} pada ${x.year - 2}, ${profitWord(b)} pada ${x.year - 1}, lalu ${profitWord(c)} pada ${x.year}.`,
+          rate: { lead: "Dari 100 perusahaan yang labanya turun dua tahun,", figure: `${up}`, rest: "labanya naik lagi tahun berikutnya." },
+          note: "Naik lagi belum berarti kembali ke laba semula.",
         });
         break;
       }
@@ -787,9 +793,9 @@ export function watchItems(r: ReadInput): WatchItem[] {
         items.push({
           kind,
           title: "IPO kurang dari setahun",
-          here: `Melantai ${dateLong(x.listing_date)} di Papan ${board}.`,
-          others: tested ? { figure: `${Math.round(cell.negative_rate_pct)} dari 100`, rest: `IPO di Papan ${board} harganya di bawah penutupan hari pertama setahun kemudian.` } : null,
-          meaning: `riwayat ${code} masih pendek, jadi sebagian perbandingan di halaman ini belum bisa dihitung.${tested ? "" : ` Papan ${board} tidak masuk uji IPO kami.`}`,
+          here: `Melantai ${dateLong(x.listing_date)} di Papan ${board}, jadi sebagian perbandingan di halaman ini belum bisa dihitung.`,
+          rate: tested ? { lead: `Dari 100 IPO di Papan ${board},`, figure: `${Math.round(cell.negative_rate_pct)}`, rest: "harganya di bawah penutupan hari pertama setahun kemudian." } : null,
+          note: tested ? null : `Papan ${board} tidak masuk uji IPO kami.`,
         });
         break;
       }
@@ -800,24 +806,22 @@ export function watchItems(r: ReadInput): WatchItem[] {
         items.push({
           kind,
           title: "Laba lebih dari dua kali lipat",
-          here: `Laba ${x.year - 1} ${rpAmount(x.earnings[0])} ke ${x.year} ${rpAmount(x.earnings[1])}.`,
-          others: { figure: `${lowerNext} dari 100`, rest: "perusahaan yang labanya melonjak seperti ini, labanya lebih rendah tahun berikutnya." },
-          meaning: `laba ${code} turun lagi tahun depan terjadi pada ${quantifier(lowerNext)} kasus serupa.`,
+          here: `Laba naik dari ${rpAmount(x.earnings[0])} pada ${x.year - 1} ke ${rpAmount(x.earnings[1])} pada ${x.year}.`,
+          rate: { lead: "Dari 100 perusahaan yang labanya melonjak seperti ini,", figure: `${lowerNext}`, rest: "labanya lebih rendah tahun berikutnya." },
+          note: null,
         });
         break;
       }
       case "payout_above_earnings": {
         if (!flag(kind)) break;
         const pr = base.payout_above_100_cut_rate;
+        const ratio = payoutOf(r);
         items.push({
           kind,
           title: "Dividen melebihi laba",
-          here: (() => {
-            const pr = payoutOf(r);
-            return pr !== null && pr > 1 ? `Membagikan ${idNum(pr * 100, 0)}% dari labanya sebagai dividen.` : "Dividen yang dibayar lebih besar dari labanya.";
-          })(),
-          others: { figure: outOfTen(pr.explore.cut_rate, pr.holdout.cut_rate), rest: "perusahaan yang membagikan lebih dari labanya memangkas dividen tahun berikutnya." },
-          meaning: `dividen ${code} tahun depan belum tentu sebesar tahun ini.`,
+          here: ratio !== null && ratio > 1 ? `Membagikan ${payoutWords(ratio)} sebagai dividen.` : "Dividen yang dibayar lebih besar dari labanya.",
+          rate: { lead: "Dari 10 perusahaan yang membagikan lebih dari labanya,", figure: outOfTen(pr.explore.cut_rate, pr.holdout.cut_rate), rest: "memangkas dividen tahun berikutnya." },
+          note: null,
         });
         break;
       }
@@ -830,12 +834,9 @@ export function watchItems(r: ReadInput): WatchItem[] {
         items.push({
           kind,
           title: "Imbal dividen jauh di atas rata-ratanya",
-          here: yNow !== undefined && yAvg !== undefined ? `${pctPlain(yNow)} sekarang, rata-rata ${code} sendiri ${pctPlain(yAvg)}.` : "Imbal dividen jauh di atas rata-rata perusahaan ini sendiri.",
-          others: cut.rate === null ? null : { figure: `${of100(cut.rate * 100)} dari 100`, rest: `perusahaan dengan tanda ini memangkas dividen tahun berikutnya (${cut.n} kasus, ${cut.year}).` },
-          meaning:
-            cut.rate === null
-              ? `imbal setinggi ini di ${code} biasanya karena harganya turun, bukan karena dividennya naik.`
-              : `imbal ${code} yang tinggi belum tentu bertahan; ${quantifier(cut.rate * 100)} kasus serupa diikuti dividen yang dipangkas.`,
+          here: yNow !== undefined && yAvg !== undefined ? `Imbal dividen ${pctPlain(yNow)}, padahal rata-rata ${code} sendiri ${pctPlain(yAvg)}.` : "Imbal dividen jauh di atas rata-rata perusahaan ini sendiri.",
+          rate: cut.rate === null ? null : { lead: `Dari 100 perusahaan dengan tanda ini (${cut.n} kasus, ${cut.year}),`, figure: `${of100(cut.rate * 100)}`, rest: "memangkas dividen tahun berikutnya." },
+          note: "Imbal setinggi ini biasanya karena harganya turun, bukan karena dividennya naik.",
         });
         break;
       }
@@ -845,9 +846,9 @@ export function watchItems(r: ReadInput): WatchItem[] {
         items.push({
           kind,
           title: "Dekat puncak, laba turun",
-          here: `Harga dalam 10% dari tertinggi sepanjang masa${profile.all_time_high !== null ? ` (${formatPrice(profile.all_time_high)})` : ""}, laba ${r.meta.years[Y.last]} lebih rendah dari ${r.meta.years[Y.prev]}.`,
-          others: { figure: `${neg} dari 100`, rest: "saham dalam keadaan ini harganya lebih rendah 4 bulan kemudian." },
-          meaning: `harga ${code} yang dekat puncak saat labanya turun diikuti harga lebih rendah pada ${quantifier(neg)} kasus serupa.`,
+          here: `Harga dalam 10% dari tertinggi sepanjang masa${profile.all_time_high !== null ? ` (${formatPrice(profile.all_time_high)})` : ""}, sementara laba ${r.meta.years[Y.last]} lebih rendah dari ${r.meta.years[Y.prev]}.`,
+          rate: { lead: "Dari 100 saham dalam keadaan ini,", figure: `${neg}`, rest: "harganya lebih rendah 4 bulan kemudian." },
+          note: null,
         });
         break;
       }
@@ -860,10 +861,11 @@ export function watchItems(r: ReadInput): WatchItem[] {
 
 export type { Answer, Evidence, Purpose };
 
-function watchEvidence(items: WatchItem[], kinds: WatchKind[], code: string): Evidence[] {
+/** A situation as one evidence row: this stock's fact, then the past frequency. The card's heading already names the stock. */
+function watchEvidence(items: WatchItem[], kinds: WatchKind[]): Evidence[] {
   return items
-    .filter((w) => kinds.includes(w.kind) && w.others)
-    .map((w) => ({ text: `${code}: ${w.here} Pada saham lain, ${w.others!.figure} ${w.others!.rest}`, kind: "base" as const, href: w.href }));
+    .filter((w) => kinds.includes(w.kind) && w.rate)
+    .map((w) => ({ text: `${w.here} ${rateSentence(w.rate!)}`, kind: "base" as const, href: w.href }));
 }
 
 function tested(r: ReadInput, key: FindingKey, text: string): Evidence {
@@ -885,10 +887,14 @@ export function answers(r: ReadInput, watch: WatchItem[]): Record<Purpose, Answe
   const years = meta.years;
   const last = e[Y.last];
   const prev = e[Y.prev];
-  const yoy = last !== null && prev !== null && prev > 0 ? last / prev - 1 : null;
-  const labaLine = yoy === null ? (last !== null && last < 0 ? `${code} rugi ${rpAmount(last)} pada ${years[Y.last]}.` : "") : `Laba ${code} ${years[Y.last]} ${yoy >= 0 ? "naik" : "turun"} ${pctPlain(yoy, 0)}.`;
-  const rank = p.sector_rank_1y;
-  const vsLine = chg === null ? "" : `Dalam setahun ${code} ${pctSigned(chg)}, IHSG ${pctSigned(meta.ihsg_change_1y)}.${rank && rank.n > 1 ? ` ${rank.better} dari ${rank.n} ${sectorStocks(r)} bergerak lebih baik.` : ""}`;
+  const yoy = last !== null && last >= 0 && prev !== null && prev > 0 ? last / prev - 1 : null;
+  const labaLine =
+    last !== null && last < 0
+      ? `${code} ${prev !== null && prev > 0 ? "berbalik rugi" : "rugi"} ${rpAmount(last)} pada ${years[Y.last]}.`
+      : yoy === null
+        ? ""
+        : `Laba ${code} ${years[Y.last]} ${changeWords(yoy, 0)}.`;
+  const vsLine = chg === null ? "" : headline(r).headline;
   const dist = price !== null && high ? pctFrom(price, high) : null;
   const spe = data.sector_context?.sector_typical_pe ?? null;
   const pressured = r.market.state === "tertekan";
@@ -899,9 +905,9 @@ export function answers(r: ReadInput, watch: WatchItem[]): Record<Purpose, Answe
       ? `Harga ${code} tidak lengkap, jadi jaraknya dari harga tertinggi setahun tidak bisa dihitung.`
       : dist > -10
         ? `${code} tidak sedang turun jauh: ${signedPct(dist)} dari harga tertinggi setahunnya (${formatPrice(high)}).`
-        : `${code} ${signedPct(dist)} dari harga tertinggi setahunnya (${formatPrice(high)}${p.w52_high_date ? `, ${dateLong(p.w52_high_date)}` : ""}).`;
+        : `${code} turun ${idNum(Math.abs(dist), 1)}% dari harga tertinggi setahunnya (${formatPrice(high)}${p.w52_high_date ? `, ${dateLong(p.w52_high_date)}` : ""}).`;
   const turunEvidence = [
-    ...watchEvidence(watch, ["fall", "long_below_peak"], code),
+    ...watchEvidence(watch, ["fall", "long_below_peak"]),
     tested(r, "oversold", `Kalau menurut Anda ${code} sudah "oversold" dan akan memantul: pola RSI di bawah 30 tidak terbukti di data kami.`),
     ...(pressured ? [tested(r, "market_state", `IHSG sedang tertekan, ${pctPlain(r.market.pct_from_peak)} di bawah puncaknya. Pasar tertekan tidak terbukti membuat penurunan lanjutan lebih mungkin.`)] : []),
   ];
@@ -917,7 +923,7 @@ export function answers(r: ReadInput, watch: WatchItem[]): Record<Purpose, Answe
       : "";
     const inCheapThird = p.pe_cheaper_than !== null && p.pe_cheaper_than >= TOP_THIRD;
     murah = {
-      lead: `P/E ${code} ${idNum(pe)}x${vsSector ? `: ${vsSector} nilai tengah sektornya (${idNum(spe!)}x)` : ""}, lebih rendah dari ${of100(p.pe_cheaper_than ?? 0)} dari 100 saham berlaba.`,
+      lead: `P/E ${code} ${idNum(pe)}x${vsSector ? `, ${vsSector} nilai tengah sektornya (${idNum(spe!)}x)` : ""}. Di antara saham berlaba, ${of100(p.pe_cheaper_than ?? 0)}% punya P/E lebih tinggi.`,
       body: `Artinya harga ${code} Rp ${idNum(pe)} untuk tiap Rp 1 laba setahun.${history}`,
       evidence: [
         inCheapThird
@@ -926,7 +932,7 @@ export function answers(r: ReadInput, watch: WatchItem[]): Record<Purpose, Answe
         ...(p.roe_ttm !== null ? [tested(r, "high_roe", `ROE ${code} ${pctPlain(p.roe_ttm)}. ROE tinggi tidak terbukti memprediksi hasil lebih baik.`)] : []),
         ...(p.pb_mrq !== null && p.pb_mrq > 0 ? [{ text: `P/B ${code} ${idNum(p.pb_mrq, 2)}x: harga pasarnya ${p.pb_mrq < 1 ? "di bawah" : "di atas"} nilai buku modal perusahaan.`, kind: null }] : []),
       ],
-      check: [`P/E rendah bisa berarti pasar memperkirakan laba ${code} turun. Bandingkan dengan laporan laba kuartal berikutnya.`, `Bandingkan ${code} dengan ${sectorStocks(r)} lain, bukan dengan seluruh pasar.`],
+      check: [...(inCheapThird ? [`P/E rendah bisa berarti pasar memperkirakan laba ${code} turun. Bandingkan dengan laporan laba kuartal berikutnya.`] : []), `Bandingkan ${code} dengan ${sectorStocks(r)} lain, bukan dengan seluruh pasar.`],
     };
   } else {
     murah = {
@@ -963,7 +969,7 @@ export function answers(r: ReadInput, watch: WatchItem[]): Record<Purpose, Answe
       every_year: `Dibayar setiap tahun sejak ${years[0]}.`,
       first_time: `Ini dividen pertama dalam data ${years[0]} sampai ${years[Y.last]}.`,
       not_every_year: `Tidak dibayar setiap tahun: ${years.filter((_, i) => d[i] !== null && (d[i] as number) > 0).join(", ")}.`,
-      skipped_latest: `Tidak ada dividen untuk ${years[Y.last]}.`,
+      skipped_latest: `Terakhir dibayar untuk ${years.filter((_, i) => d[i] !== null && (d[i] as number) > 0).pop()}.`,
     };
     const payoutFlag = watch.find((w) => w.kind === "payout_above_earnings");
     dividen = {
@@ -971,17 +977,23 @@ export function answers(r: ReadInput, watch: WatchItem[]): Record<Purpose, Answe
         dLast !== null && dLast > 0
           ? `${code} membagikan Rp ${idNum(dLast, dLast < 10 ? 2 : 0)} per saham untuk ${years[Y.last]}.${yieldNow !== null && yieldNow > 0 ? ` Imbal 12 bulan terakhir ${pctPlain(yieldNow)} dari harga sekarang.` : ""}`
           : `${code} tidak membagikan dividen untuk ${years[Y.last]}.`,
-      body: `${yieldNow !== null && yieldNow > 0 ? `Lebih tinggi dari ${of100(p.yield_higher_than)} dari 100 saham. ` : ""}${history[dShape]}${payout !== null && payout > 0 ? ` ${code} membagikan ${idNum(payout * 100, 0)}% dari labanya.` : ""}`,
+      body: `${yieldNow !== null && yieldNow > 0 ? `Imbal itu lebih tinggi dari ${of100(p.yield_higher_than)}% saham. ` : ""}${history[dShape]}${payout !== null && payout > 0 ? ` ${code} membagikan ${payoutWords(payout)}.` : ""}`,
       evidence: [
         isHighYield(p)
           ? tested(r, "high_yield", `Dividen ${code} termasuk sepertiga tertinggi di antara pembayar dividen. Saham berdividen tinggi terbukti memberi hasil sedikit lebih baik, rata-rata.`)
-          : notApplicable(r, "high_yield", `Dividen ${code} tidak termasuk sepertiga tertinggi di antara pembayar dividen, jadi pola "dividen tinggi" yang terbukti itu tidak berlaku di sini.`),
+          : notApplicable(
+              r,
+              "high_yield",
+              yieldNow !== null && yieldNow > 0
+                ? `Dividen ${code} tidak termasuk sepertiga tertinggi di antara pembayar dividen, jadi pola "dividen tinggi" yang terbukti itu tidak berlaku di sini.`
+                : `Tidak ada dividen ${code} dalam 12 bulan terakhir, jadi pola "dividen tinggi" yang terbukti itu tidak berlaku di sini.`
+            ),
         ...(payoutFlag
-          ? watchEvidence(watch, ["payout_above_earnings"], code)
+          ? watchEvidence(watch, ["payout_above_earnings"])
           : payout !== null && payout > 0 && payout <= 1
-            ? [{ text: `${code} membagikan ${idNum(payout * 100, 0)}% dari labanya, di bawah 100%. Perusahaan yang membagikan lebih dari labanya memangkas dividen ${outOfTen(r.base.payout_above_100_cut_rate.explore.cut_rate, r.base.payout_above_100_cut_rate.holdout.cut_rate)} kali; ${code} tidak dalam keadaan itu.`, kind: "base" as const }]
+            ? [{ text: `${code} membagikan ${idNum(payout * 100, 0)}% dari labanya, di bawah 100%. Yang membagikan lebih dari labanya memangkas dividen ${outOfTen(r.base.payout_above_100_cut_rate.explore.cut_rate, r.base.payout_above_100_cut_rate.holdout.cut_rate)} dari 10 kali; ${code} tidak termasuk.`, kind: "base" as const }]
             : []),
-        ...watchEvidence(watch, ["yield_far_above_average"], code),
+        ...watchEvidence(watch, ["yield_far_above_average"]),
       ],
       check: [`Imbal dihitung dari dividen 12 bulan terakhir. Dividen ${code} tahun ini bisa berbeda.`, `Tanggal ex dividen ${code} berikutnya ada di Data lengkap, bagian Aksi korporasi.`],
     };
@@ -1021,16 +1033,16 @@ export function answers(r: ReadInput, watch: WatchItem[]): Record<Purpose, Answe
   const naikLead = spike
     ? `${code} naik ${idNum(spike.jump_pct, 0)}% dalam ${spike.lookback_trading_days} hari bursa sampai ${dateLong(spike.event_date)}.${suspended ? " Lalu perdagangannya dihentikan sementara oleh bursa." : ""}`
     : chg !== null && chg > 0
-      ? `${code} naik ${pctPlain(chg)} dalam setahun, saat IHSG ${pctSigned(meta.ihsg_change_1y)}.`
+      ? `${code} ${changeWords(chg)} dalam setahun, saat IHSG ${changeWords(meta.ihsg_change_1y)}.`
       : chg === null && price !== null && low
-        ? `${code} ${signedPct(pctFrom(price, low), 1, true)} dari harga terendah setahunnya (${formatPrice(low)}${p.w52_low_date ? `, ${dateLong(p.w52_low_date)}` : ""})${dist !== null ? ` dan ${signedPct(dist)} dari tertingginya` : ""}.`
-        : `${code} tidak sedang naik tinggi: ${chg !== null ? `${pctSigned(chg)} setahun` : "perubahan setahun tidak tersedia"}${dist !== null ? `, ${signedPct(dist)} dari tertinggi setahun` : ""}.`;
+        ? `${code} ${changeWords(pctFrom(price, low) / 100)} dari harga terendah setahunnya (${formatPrice(low)}${p.w52_low_date ? `, ${dateLong(p.w52_low_date)}` : ""})${dist !== null ? `, dan ${idNum(Math.abs(dist), 1)}% di bawah tertingginya` : ""}.`
+        : `${code} tidak sedang naik tinggi: ${chg !== null ? `${changeWords(chg)} dalam setahun` : "perubahan setahun tidak tersedia"}${dist !== null ? `, ${idNum(Math.abs(dist), 1)}% di bawah tertinggi setahun` : ""}.`;
   const peLine = p.pe_meaningful && p.pe_ttm !== null ? ` Harga ${code} sekarang ${idNum(p.pe_ttm, 0)} kali laba setahun${isMeaningfulPe(spe) ? `, nilai tengah sektornya ${idNum(spe, 0)} kali` : ""}.` : "";
   const naik: Answer = {
     lead: naikLead,
     body: `${labaLine}${peLine}`.trim() || vsLine,
     evidence: [
-      ...watchEvidence(watch, ["recent_spike", "recent_price_suspension", "repeat_suspension"], code),
+      ...watchEvidence(watch, ["recent_spike", "recent_price_suspension", "repeat_suspension"]),
       tested(r, "top_gainer", `Kalau Anda berharap ${code} terus naik karena naiknya tinggi: saham yang naik paling tinggi tidak terbukti terus naik sebulan sesudahnya.`),
       tested(r, "momentum", `Tren 60 hari tidak terbukti memprediksi arah bulan berikutnya.`),
     ],
@@ -1043,7 +1055,7 @@ export function answers(r: ReadInput, watch: WatchItem[]): Record<Purpose, Answe
   return {
     turun: {
       lead: turunLead,
-      body: [vsLine, pressured ? `IHSG sendiri sedang tertekan: ${pctPlain(r.market.pct_from_peak)} di bawah puncaknya.` : "", labaLine].filter(Boolean).join(" "),
+      body: [p.change_1y === null ? "" : headline(r).headline, pressured ? `IHSG sendiri sedang tertekan: ${pctPlain(r.market.pct_from_peak)} di bawah puncaknya.` : "", labaLine].filter(Boolean).join(" "),
       evidence: turunEvidence,
       check: [`Laporan laba kuartal berikutnya: apakah laba ${code} ikut turun?`, `Apakah ${code} tetap membagikan dividen tahun ini?`],
     },
@@ -1158,7 +1170,7 @@ export function dividenLine(r: ReadInput): string {
         : shape === "first_time"
           ? `Dividen pertama dalam data ini dibagikan untuk tahun ${paid[0]}.`
           : `Dibayar untuk ${paid.join(", ")}.`;
-  const share = payout !== null && payout > 0 && shape !== "never" ? ` Perusahaan membagikan ${idNum(payout * 100, 0)}% dari labanya.` : "";
+  const share = payout !== null && payout > 0 && shape !== "never" ? ` Perusahaan membagikan ${payoutWords(payout)}.` : "";
   return `${how}${share}`;
 }
 

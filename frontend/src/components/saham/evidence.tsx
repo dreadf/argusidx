@@ -6,7 +6,7 @@ import { VERDICT_CHIP } from "@/lib/verdict-chip";
 export function VerdictChip({ kind }: { kind: Evidence["kind"] }) {
   if (kind === null) return null;
   if (kind === "base")
-    return <span className="inline-flex h-6 shrink-0 items-center whitespace-nowrap rounded-md border border-border bg-[var(--viz-raised)] px-2 text-[11.5px] font-semibold">Frekuensi</span>;
+    return <span className="inline-flex h-6 shrink-0 items-center whitespace-nowrap rounded-md border border-border bg-[var(--viz-raised)] px-2 text-[11.5px] font-semibold">Riwayat</span>;
   const v = VERDICT_CHIP[kind];
   return (
     <span className="inline-flex h-6 shrink-0 items-center whitespace-nowrap rounded-md border px-2 text-[11.5px] font-semibold" style={{ color: v.color, borderColor: v.color }}>

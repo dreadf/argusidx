@@ -41,6 +41,9 @@ export interface StockProfile {
   /** Fraction, -0.109 = -10,9%, between change_window.start and .end. */
   change_1y: number | null;
   sector_rank_1y: { better: number; n: number } | null;
+  /** Fraction, from the IHSG peak day (peak_window.start) to peak_window.end. */
+  change_since_peak: number | null;
+  sector_rank_since_peak: { better: number; n: number } | null;
   /** P/E > 0 and 2025 not a loss year; otherwise P/E is never compared. */
   pe_meaningful: boolean;
   /** Shares 0..100 among all stocks with a value (see the builder's docstring). */
@@ -64,6 +67,9 @@ export interface ProfileMeta {
   years: number[];
   change_window: { start: string; end: string };
   ihsg_change_1y: number;
+  /** IHSG's highest close (start) to the same end date as change_window. */
+  peak_window: { start: string; end: string };
+  ihsg_change_since_peak: number;
   foreign_flow: { days: number; first: string; last: string };
 }
 
@@ -85,8 +91,8 @@ export async function getStockProfile(code: string): Promise<StockProfile | null
 }
 
 export async function getProfileMeta(): Promise<ProfileMeta> {
-  const { as_of, years, change_window, ihsg_change_1y, foreign_flow } = await load();
-  return { as_of, years, change_window, ihsg_change_1y, foreign_flow };
+  const { as_of, years, change_window, ihsg_change_1y, peak_window, ihsg_change_since_peak, foreign_flow } = await load();
+  return { as_of, years, change_window, ihsg_change_1y, peak_window, ihsg_change_since_peak, foreign_flow };
 }
 
 /** Number of stocks ranked by one-day gain on the snapshot date. */

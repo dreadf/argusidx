@@ -4,7 +4,7 @@ import type { WatchItem } from "@/lib/stock-read";
 import { buildFingerprint, describeChanges, type StockFingerprint } from "@/lib/watchlist-changes";
 
 function watchItem(kind: string, title: string): WatchItem {
-  return { kind: kind as WatchItem["kind"], title, here: "", others: null, meaning: "", href: "" };
+  return { kind: kind as WatchItem["kind"], title, here: "", rate: null, note: null, href: "" };
 }
 
 function stockData(overrides: Partial<StockPageData> = {}): StockPageData {
