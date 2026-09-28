@@ -6,12 +6,12 @@ import { getRankingsData } from "@/lib/rankings-data";
 
 /** The six ranking lists, in board order. `line` is the board's own copy. */
 const LISTS = [
-  { slug: "jauh-dari-puncak", title: "Jauh dari puncak", line: "Paling jauh di bawah puncak 52 minggu", isNew: false },
-  { slug: "float-terendah", title: "Free float terendah", line: "Float kecil tidak terbukti membuat harga bergejolak", isNew: false },
-  { slug: "roe-dalam-kelompok", title: "ROE tertinggi dalam kelompoknya", line: "Persentil ROE di antara perusahaan sejenis", isNew: true },
-  { slug: "dividen-rutin", title: "Dividen paling rutin", line: "Tahun membayar dividen dari 2021 sampai 2025", isNew: true },
-  { slug: "laba-naik-berturut", title: "Laba naik berturut-turut", line: "Rentetan kenaikan laba tahunan", isNew: true },
-  { slug: "orang-dalam-beli", title: "Pembelian bersih orang dalam", line: "Selisih beli dan jual, dibanding saham beredar", isNew: true },
+  { slug: "jauh-dari-puncak", title: "Jauh dari puncak", line: "Paling jauh di bawah puncak 52 minggu" },
+  { slug: "float-terendah", title: "Free float terendah", line: "Float kecil tidak terbukti membuat harga bergejolak" },
+  { slug: "roe-dalam-kelompok", title: "ROE tertinggi dalam kelompoknya", line: "Persentil ROE di antara perusahaan sejenis" },
+  { slug: "dividen-rutin", title: "Dividen paling rutin", line: "Tahun membayar dividen dari 2021 sampai 2025" },
+  { slug: "laba-naik-berturut", title: "Laba naik berturut-turut", line: "Rentetan kenaikan laba tahunan" },
+  { slug: "orang-dalam-beli", title: "Pembelian bersih orang dalam", line: "Selisih beli dan jual, dibanding saham beredar" },
 ];
 
 /** Temuan > Peringkat: the six ranking lists. */
@@ -23,7 +23,7 @@ export default async function PeringkatPage() {
       <Sub className="mt-4">Urutan menurut satu aturan yang terbuka.</Sub>
       <div className="mt-3">
         {LISTS.map((l) => (
-          <ExploreRow key={l.slug} href={`/temuan/peringkat/${l.slug}`} title={l.title} isNew={l.isNew} line={l.line} />
+          <ExploreRow key={l.slug} href={`/temuan/peringkat/${l.slug}`} title={l.title} line={l.line} />
         ))}
       </div>
       <Note className="mt-4">Urutan menurut satu aturan, bukan pilihan atau rekomendasi.</Note>

@@ -34,10 +34,7 @@ export default async function SituasiPage() {
                       <SituationGlyph slug={s.slug} />
                     </span>
                     <span className="min-w-0 flex-1">
-                      <span className="block text-[14.5px] font-semibold leading-snug">
-                        {s.title}
-                        {s.isNew && <span className="ml-2 rounded-md border border-accent-foreground px-[7px] py-px align-middle text-[10.5px] font-bold tracking-[0.06em] text-accent-foreground">BARU</span>}
-                      </span>
+                      <span className="block text-[14.5px] font-semibold leading-snug">{s.title}</span>
                       <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">{s.line}</span>
                     </span>
                     {s.count !== null && (

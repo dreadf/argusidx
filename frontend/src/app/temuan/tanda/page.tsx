@@ -31,7 +31,7 @@ export default async function AnomaliPage() {
               const Icon = ICONS[r.icon];
               // Situation page when it exists, else the flag page, else the situation index.
               const href = r.situationSlug && situationSlugs.has(r.situationSlug) ? `/situasi/${r.situationSlug}` : r.flagKind ? `/temuan/tanda/${r.flagKind}` : "/situasi";
-              return <ExploreRow key={r.key} href={href} title={r.title} isNew={r.isNew} line={r.line} icon={<Icon className="size-4" strokeWidth={1.7} />} />;
+              return <ExploreRow key={r.key} href={href} title={r.title} line={r.line} icon={<Icon className="size-4" strokeWidth={1.7} />} />;
             })}
         </section>
       ))}

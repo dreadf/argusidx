@@ -21,7 +21,6 @@ export interface AnomalyRow {
   group: AnomalyGroup;
   icon: AnomalyIcon;
   title: string;
-  isNew: boolean;
   /** "N saham. base-rate sentence" */
   line: string;
   /** Situation slug when the row has a situation page. */
@@ -81,7 +80,6 @@ export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, e
       group: "Harga",
       icon: "spike",
       title: "Harga baru melonjak",
-      isNew: false,
       line: `${counts.recent_spike} saham. ${of100(base.recent_spike.pooled.share_below_event_close)} dari 100 lebih rendah 60 hari kemudian`,
       situationSlug: "harga-baru-melonjak",
       flagKind: null,
@@ -91,7 +89,6 @@ export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, e
       group: "Harga",
       icon: "pause",
       title: "Suspensi karena lonjakan",
-      isNew: false,
       line: `${counts.recent_price_suspension} saham. ${H11_UNDERPERFORM.holdout} dari 100 kalah dari indeks dalam 90 hari`,
       situationSlug: "pernah-disuspensi",
       flagKind: null,
@@ -101,7 +98,6 @@ export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, e
       group: "Harga",
       icon: "pause",
       title: "Langganan suspensi",
-      isNew: true,
       line: `${counts.repeat_suspension} saham. ${of100(extra.repeat_spike_suspension.share_followed)} dari 100 disuspensi lagi dalam setahun`,
       situationSlug: "langganan-suspensi",
       flagKind: null,
@@ -111,7 +107,6 @@ export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, e
       group: "Laporan keuangan",
       icon: "double",
       title: "Laba lebih dari dua kali lipat",
-      isNew: false,
       line: `${counts.earnings_more_than_doubled} perusahaan. ${of100(base.earnings_more_than_doubled.gave_part_back.rate)} dari 100 labanya turun lagi`,
       situationSlug: "laba-dua-kali-lipat",
       flagKind: null,
@@ -121,7 +116,6 @@ export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, e
       group: "Laporan keuangan",
       icon: "decline",
       title: "Laba turun dua tahun",
-      isNew: false,
       line: `${counts.earnings_two_year_decline} perusahaan. ${of100(base.earnings_two_year_decline.pooled.rate)} dari 100 labanya naik lagi`,
       situationSlug: "laba-turun-dua-tahun",
       flagKind: null,
@@ -131,7 +125,6 @@ export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, e
       group: "Laporan keuangan",
       icon: "flag",
       title: "Dekat puncak, laba menurun",
-      isNew: false,
       line: `${flags.near_ath_earnings_decline.flagged_count} saham. ${of100(extra.near_peak_earnings_decline.pooled.share_negative)} dari 100 rugi dalam 4 bulan`,
       situationSlug: "dekat-puncak-laba-turun",
       flagKind: "puncak-laba",
@@ -141,7 +134,6 @@ export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, e
       group: "Dividen",
       icon: "flag",
       title: "Dividen melebihi laba",
-      isNew: true,
       line: `${flags.payout_above_earnings.flagged_count} perusahaan. ${outOfTen(extra.payout_above_100_cut_rate.explore.cut_rate, extra.payout_above_100_cut_rate.holdout.cut_rate)} memangkas dividen tahun berikutnya`,
       situationSlug: "dividen-besar",
       flagKind: "payout",
@@ -151,7 +143,6 @@ export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, e
       group: "Dividen",
       icon: "flag",
       title: "Dividen jauh di atas rata-rata sendiri",
-      isNew: true,
       line: `${flags.yield_far_above_average.flagged_count} perusahaan. ${cutRate === null ? "Belum ada hasil tahun berikutnya" : `${of100(cutRate)} dari 100 memangkas dividen tahun berikutnya${cutCases ? ` (${cutCases} kasus, ${cutYear}, satu tahun saja); semua pembayar dividen: ${Math.round(STRESS.ordinary.i9CutAllPayers)}` : ""}`}`,
       situationSlug: null,
       flagKind: "dividen-tinggi",

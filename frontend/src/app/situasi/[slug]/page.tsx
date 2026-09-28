@@ -516,9 +516,9 @@ export default async function SituasiDetailPage({ params }: { params: Promise<{ 
     </EvidenceSide>
   );
 
-  // The two newest boards end at the card and the side column: no stock list under them.
+  // Two boards end at the card and the side column: no stock list under them.
   let listBlock: ReactNode = null;
-  if (kind && !situation.isNew) {
+  if (kind && !situation.noStockList) {
     const all = await getSituationRows(kind);
     const meta = LIST_SUB[kind];
     const sorted = [...all].sort((a, b) => (meta.datedOrder ? (b.date ?? "").localeCompare(a.date ?? "") : 0) || a.code.localeCompare(b.code));

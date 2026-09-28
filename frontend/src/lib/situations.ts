@@ -45,8 +45,8 @@ export interface SituationMeta {
   asOf: string;
   /** Stocks in this situation right now (data/app/situations.json counts, flags.json), when we have a count. */
   count: number | null;
-  /** Shown as the BARU chip on the hub. */
-  isNew?: boolean;
+  /** True when the board ends at the card and the side column: no stock list under it. */
+  noStockList?: boolean;
   /** One line under the page title, on the pages whose board has one. */
   sub?: string;
   /** Side-column block under the card, when the situation has one ("Kapan situasi ini berlaku"). */
@@ -188,7 +188,6 @@ export async function getSituations(): Promise<SituationMeta[]> {
       title: "Dividen besar dibanding laba",
       group: "Laporan keuangan",
       count: flags.payout_above_earnings.flagged_count,
-      isNew: true,
       icon: Coins,
       line: `Payout di atas 100%: ${Math.round(p100.explore.cut_rate * 10)} sampai ${Math.round(p100.holdout.cut_rate * 10)} dari 10 memangkas dividen tahun berikutnya`,
       explain: `Dari perusahaan dengan rasio dividen terhadap laba paling rendah, ${Math.round(H4_CUT_RATES.lowest)} dari 100 memotong dividen tahun berikutnya. Untuk yang paling tinggi, ${Math.round(H4_CUT_RATES.highest)} dari 100 (${H4_CUT_RATES.n} pengamatan perusahaan-tahun). Sekarang ${flags.payout_above_earnings.flagged_count} dari ${flags.payout_above_earnings.evaluable_count} pembayar dividen membayar lebih dari labanya.`,
@@ -265,7 +264,7 @@ export async function getSituations(): Promise<SituationMeta[]> {
       sub: "Sudah lebih dari setahun di bawah puncak.",
       group: "Harga",
       count: counts.long_below_peak,
-      isNew: true,
+      noStockList: true,
       icon: TrendingDown,
       line: `Sudah lebih dari setahun di bawah puncak. Dari 100, ${back} kembali ke puncak setahun kemudian`,
       explain: `Dari ${idNum(lbp.still_below_at_252, 0)} kejadian saham jatuh ${fallPct}% atau lebih dan setahun kemudian masih di bawah puncaknya, ${back} dari 100 sudah kembali ke puncak setahun sesudahnya (dua tahun setelah jatuh). Sekarang ${counts.long_below_peak} dari ${CACHED_STOCKS} saham berada di situasi ini, jadi ini situasi yang umum, bukan yang jarang.`,
@@ -289,7 +288,7 @@ export async function getSituations(): Promise<SituationMeta[]> {
       sub: "Disuspensi karena lonjakan harga, lalu disuspensi lagi.",
       group: "Suspensi",
       count: counts.repeat_suspension,
-      isNew: true,
+      noStockList: true,
       icon: Pause,
       line: `Disuspensi karena lonjakan, lalu disuspensi lagi dalam setahun: ${again} dari 100`,
       explain: `Dari ${rss.eligible_events} suspensi karena kenaikan harga yang punya setahun pengamatan, ${rss.followed_within_365d} (${again} dari 100) diikuti suspensi serupa dalam setahun. Bila pengumuman yang hanya berselang 7 hari tidak dihitung, ${Math.round(rss.share_followed_by_gap_over_7d * 100)} dari 100. ${rss.stocks_with_2_or_more} dari ${rss.stocks} saham yang pernah disuspensi karena lonjakan sudah mengalaminya dua kali atau lebih.`,
