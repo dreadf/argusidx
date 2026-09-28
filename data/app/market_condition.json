@@ -1,0 +1,36 @@
+{
+  "ihsg_source_file": "ihsg_2026-09-27.json",
+  "rankings_as_of": "2026-09-13",
+  "ihsg": {
+    "date": "2026-09-25",
+    "close": 6241.892,
+    "state": "tertekan",
+    "pct_from_peak": -0.31668341598519933,
+    "peak_date": "2026-01-20",
+    "peak_close": 9134.7,
+    "pct_vs_ma200": -0.13636325879431954,
+    "vol20_percentile": 59.31558935361217,
+    "days_since_peak": 161,
+    "rule": {
+      "below_peak_and_ma200": true,
+      "volatility_above_p90": false
+    }
+  },
+  "distance_from_high": {
+    "n": 962,
+    "median": -0.3769449715370019,
+    "n_down_30_or_more": 620,
+    "bins": [
+      141,
+      99,
+      102,
+      182,
+      154,
+      115,
+      95,
+      53,
+      16,
+      5
+    ]
+  }
+}
