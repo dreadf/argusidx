@@ -49,10 +49,10 @@ export default async function Home() {
 
   const asOf = formatDateId(market.as_of);
   const ways = [
-    { href: "/jelajah", icon: BarChart3, title: "Peringkat", line: "Jauh dari puncak dan lainnya" },
-    { href: "/jelajah/sektor", icon: LayoutGrid, title: "Sektor", line: `${sectors.sectors.length} sektor, daftar saham` },
-    { href: "/jelajah/anomali", icon: Flag, title: "Deteksi anomali", line: "Kejadian tak biasa dan seberapa sering" },
-    { href: "/jelajah/pasar", icon: TrendingUp, title: `Pasar per ${asOf.slice(0, 5)}`, line: "Nilai pasar, naik-turun" },
+    { href: "/temuan/peringkat", icon: BarChart3, title: "Peringkat", line: "Jauh dari puncak dan lainnya" },
+    { href: "/pasar#sektor", icon: LayoutGrid, title: "Sektor", line: `${sectors.sectors.length} sektor, daftar saham` },
+    { href: "/temuan/tanda", icon: Flag, title: "Tanda", line: "Kejadian tak biasa dan seberapa sering" },
+    { href: "/pasar", icon: TrendingUp, title: `Pasar per ${asOf.slice(0, 5)}`, line: "Nilai pasar, naik-turun" },
   ];
 
   const evidenceCard = (

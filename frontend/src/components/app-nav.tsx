@@ -2,15 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Compass, FlaskConical, House, MessageCircle, PanelLeftClose, PanelLeftOpen, Search, Star, type LucideIcon } from "lucide-react";
+import { FlaskConical, House, MessageCircle, PanelLeftClose, PanelLeftOpen, Search, Star, TrendingUp, type LucideIcon } from "lucide-react";
 import { StockSearch } from "@/components/stock-search";
 import type { SearchEntry } from "@/lib/stock-data";
 
 /**
  * The five destinations. Situasi is reached from Beranda (it is a "what
  * usually happens" entry point, not a top-level section), so it keeps
- * Beranda highlighted. Peringkat, Sektor, Tanda and Berita all live
- * under Jelajah as tabs. Search is not a destination: it is the
+ * Beranda highlighted. Pasar replaced Jelajah (2026-09-28): sectors live
+ * inside Pasar, and Peringkat and Tanda are tabs under Temuan. Search is not a destination: it is the
  * magnifier in the header (mobile) / the box in the sidebar (desktop).
  */
 interface NavItem {
@@ -22,7 +22,7 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { href: "/", label: "Beranda", icon: House, isActive: (p) => p === "/" || p.startsWith("/situasi") },
-  { href: "/jelajah", label: "Jelajah", icon: Compass, isActive: (p) => p.startsWith("/jelajah") },
+  { href: "/pasar", label: "Pasar", icon: TrendingUp, isActive: (p) => p.startsWith("/pasar") || p.startsWith("/jelajah") },
   { href: "/temuan", label: "Temuan", icon: FlaskConical, isActive: (p) => p.startsWith("/temuan") },
   { href: "/tanya", label: "Tanya", icon: MessageCircle, isActive: (p) => p.startsWith("/tanya") },
   { href: "/watchlist", label: "Watchlist", icon: Star, isActive: (p) => p.startsWith("/watchlist") },

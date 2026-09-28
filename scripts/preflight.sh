@@ -58,8 +58,8 @@ if [ "$FAILED" -eq 0 ]; then
   if [ "$READY" -ne 1 ]; then
     fail "server did not start on :$PORT"
   else
-    # -L: old URLs redirect to their new home (/peringkat -> /jelajah, etc.).
-    PATHS="/ /jelajah /jelajah/sektor /jelajah/tanda /cari /peringkat /sektor /tanda /temuan /tanya /watchlist /saham/BBCA"
+    # -L: old URLs redirect to their new home (/jelajah -> /pasar, /peringkat -> /temuan/peringkat, etc.).
+    PATHS="/ /pasar /pasar/sektor/keuangan /temuan /temuan/tanda /temuan/peringkat /jelajah /jelajah/sektor /jelajah/tanda /cari /peringkat /sektor /tanda /tanya /watchlist /saham/BBCA"
     for path in $PATHS; do
       code=$(curl -sL -o /dev/null -w '%{http_code}' "http://localhost:$PORT$path")
       [ "$code" = "200" ] && echo "ok   $path" || fail "$path returned $code"

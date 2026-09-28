@@ -181,7 +181,7 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
           </Cells>
           <p className={fine}>
             Nilai tipikal sektor{sectorMeta ? ` ${sectorMeta.label}` : ""}: nilai tengah dari yang melapor ({sector_context.sector_roe_n} dari {sector_context.sector_company_count} untuk ROE). Bukan peringkat antar sektor.{" "}
-            <Link href="/jelajah/sektor" className="underline">
+            <Link href="/pasar#sektor" className="underline">
               Lihat semua sektor
             </Link>
           </p>
@@ -496,7 +496,7 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
               ))}
             </ul>
           )}
-          <Link href="/jelajah/tanda" className="inline-flex min-h-11 items-center text-[13px] font-medium text-[var(--viz-accent)]">
+          <Link href="/temuan/tanda" className="inline-flex min-h-11 items-center text-[13px] font-medium text-[var(--viz-accent)]">
             Lihat semua tanda &rarr;
           </Link>
         </DataRow>

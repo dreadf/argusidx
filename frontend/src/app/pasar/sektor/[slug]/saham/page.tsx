@@ -48,7 +48,7 @@ export default async function SektorSahamPage({
 
   return (
     <Page>
-      <PageTitle title={meta.label} pill={`Data ${formatDateId(asOf)}`} back={{ href: `/jelajah/sektor/${meta.slug}`, label: `Sektor ${meta.label}` }} />
+      <PageTitle title={meta.label} pill={`Data ${formatDateId(asOf)}`} back={{ href: `/pasar/sektor/${meta.slug}`, label: `Sektor ${meta.label}` }} />
       <Sub>{stocks.length} saham. Nilai pasar, harga, dan jarak dari tertinggi setahun.</Sub>
       <Picker
         label="Urut menurut"
@@ -63,7 +63,7 @@ export default async function SektorSahamPage({
         <RankList rows={rows} />
         {shown < stocks.length && (
           <Link
-            href={`/jelajah/sektor/${meta.slug}/saham?urut=${urut}&tampil=${shown + PAGE}`}
+            href={`/pasar/sektor/${meta.slug}/saham?urut=${urut}&tampil=${shown + PAGE}`}
             scroll={false}
             className="mt-4 flex h-9 items-center justify-center rounded-md border border-border text-[13.5px] font-semibold text-[var(--viz-accent)]"
           >

@@ -91,7 +91,7 @@ export async function getSituations(): Promise<SituationMeta[]> {
       asOf: asOfResearch,
       limits: [`Riwayat harga riset per ${asOfResearch}, bukan data langsung.`, "Kecil, menengah, besar: sepertiga saham menurut nilai pasar.", "Pulih berarti kembali ke puncak lama, bukan sekadar naik dari dasar."],
       related: [
-        { label: "Jelajah: peringkat jauh dari puncak", href: "/jelajah" },
+        { label: "Temuan: peringkat jauh dari puncak", href: "/temuan/peringkat/jauh-dari-puncak" },
         { label: "Temuan: apakah oversold berarti memantul?", href: "/temuan?hasil=tidak-terbukti" },
       ],
     },
@@ -107,7 +107,7 @@ export async function getSituations(): Promise<SituationMeta[]> {
       asOf: formatDateId(flags.as_of),
       limits: ["Laba bersih tahunan 2024 dan 2025.", "Sebagian adalah rugi yang makin dalam, bukan laba yang menyusut.", `Sebagai pembanding, pada semua saham ${Math.round(STRESS.ordinary.i3Negative)} dari 100 harganya lebih rendah dalam periode yang sama. Selisihnya belum bisa dibedakan dari kebetulan (68 kasus).`],
       related: [
-        { label: "Jelajah: daftar lengkap tanda ini", href: "/jelajah/tanda?jenis=puncak-laba" },
+        { label: "Temuan: daftar lengkap tanda ini", href: "/temuan/tanda/puncak-laba" },
         { label: "Situasi: perusahaan sedang rugi", href: "/situasi/perusahaan-rugi" },
       ],
     },
@@ -159,7 +159,7 @@ export async function getSituations(): Promise<SituationMeta[]> {
       limits: ["Untung lagi: laba bersih positif tahun berikutnya, sekecil apa pun.", "Satu perusahaan bisa dihitung lebih dari sekali."],
       related: [
         { label: "Situasi: saham saya turun banyak", href: "/situasi/turun-banyak" },
-        { label: "Jelajah: tanda harga dekat tertinggi, laba turun", href: "/jelajah/tanda?jenis=puncak-laba" },
+        { label: "Temuan: tanda harga dekat tertinggi, laba turun", href: "/temuan/tanda/puncak-laba" },
       ],
     },
     {
@@ -196,7 +196,7 @@ export async function getSituations(): Promise<SituationMeta[]> {
       limits: ["Sebagian efek mekanis: laba turun membuat rasio dividen naik.", "Satu perusahaan bisa muncul di dua tahun pengamatan.", `Sekarang ${flags.payout_above_earnings.flagged_count} dari ${flags.payout_above_earnings.evaluable_count} pembayar dividen membayar lebih dari labanya.`],
       related: [
         { label: "Temuan: payout tinggi memprediksi pemotongan", href: "/temuan?hasil=terbukti" },
-        { label: "Jelajah: tanda dividen melebihi laba", href: "/jelajah/tanda" },
+        { label: "Temuan: tanda dividen melebihi laba", href: "/temuan/tanda/payout" },
       ],
     },
     {
@@ -212,7 +212,7 @@ export async function getSituations(): Promise<SituationMeta[]> {
       limits: ["Diukur bersamaan, bukan prediksi dan bukan sebab.", "Teramati 2024-2026, tidak di 2022-2023."],
       related: [
         { label: "Temuan: free float kecil membuat harga bergejolak?", href: "/temuan?hasil=tidak-terbukti" },
-        { label: "Jelajah: free float terendah", href: "/jelajah?urut=float-terendah" },
+        { label: "Temuan: peringkat free float terendah", href: "/temuan/peringkat/float-terendah" },
       ],
     },
     {

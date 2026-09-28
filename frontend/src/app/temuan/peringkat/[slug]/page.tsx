@@ -19,7 +19,7 @@ const wrap = "mx-auto w-full max-w-6xl px-[18px] py-5 md:px-8 md:py-8";
 
 export default async function PeringkatDetailPage({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const { slug } = await params;
-  const back = { href: "/jelajah", label: "Peringkat" };
+  const back = { href: "/temuan/peringkat", label: "Peringkat" };
 
   if ((DERIVED_SLUGS as string[]).includes(slug)) {
     const derived = await getRankingsDerived();
@@ -136,7 +136,7 @@ export default async function PeringkatDetailPage({ params, searchParams }: { pa
         <RankList rows={rows} />
       </div>
       {shown < Math.min(100, total) && (
-        <Link href={`/jelajah/peringkat/${measure}?tampil=${Math.min(100, shown + PAGE)}`} scroll={false} className={moreButton}>
+        <Link href={`/temuan/peringkat/${measure}?tampil=${Math.min(100, shown + PAGE)}`} scroll={false} className={moreButton}>
           Tampilkan {PAGE} berikutnya
         </Link>
       )}

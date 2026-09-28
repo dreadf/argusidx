@@ -13,7 +13,7 @@ export function GroupLabel({ children }: { children: ReactNode }) {
 }
 
 /**
- * List row for the Jelajah lists (Peringkat, Deteksi anomali): optional
+ * List row for the Temuan lists (Peringkat, Tanda): optional
  * icon tile, title (+ BARU), one supporting line, chevron.
  */
 export function ExploreRow({ href, title, isNew, line, icon }: { href: string; title: string; isNew?: boolean; line: string; icon?: ReactNode }) {

@@ -125,7 +125,7 @@ export default async function AnomaliDetailPage({ params, searchParams }: { para
       </div>
       {shown < flagged && (
         <Link
-          href={`/jelajah/anomali/${kind}?tampil=${Math.min(100, shown + PAGE)}`}
+          href={`/temuan/tanda/${kind}?tampil=${Math.min(100, shown + PAGE)}`}
           scroll={false}
           className="mt-4 flex h-9 items-center justify-center rounded-md border border-border text-[13px] font-semibold text-[var(--viz-accent)]"
         >
@@ -137,7 +137,7 @@ export default async function AnomaliDetailPage({ params, searchParams }: { para
 
   return (
     <main className="mx-auto w-full max-w-6xl px-[18px] py-5 md:px-8 md:py-8">
-      <PageTitle title={TITLES[kind]} pill={`Data ${formatDateId(flags.as_of)}`} back={{ href: "/jelajah/anomali", label: "Deteksi anomali" }} />
+      <PageTitle title={TITLES[kind]} pill={`Data ${formatDateId(flags.as_of)}`} back={{ href: "/temuan/tanda", label: "Tanda" }} />
       <div className="mt-4 md:mt-6">
         <TwoCol
           left={list}

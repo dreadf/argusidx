@@ -30,7 +30,7 @@ interface AppearsRow {
 const APPEARS: Record<string, AppearsRow[]> = {
   H4: [
     { label: "Situasi: dividen besar dibanding laba", href: "/situasi/dividen-besar" },
-    { label: "Tanda: dividen melebihi laba", href: "/jelajah/tanda" },
+    { label: "Tanda: dividen melebihi laba", href: "/temuan/tanda/payout" },
   ],
   H1: [
     { label: "Situasi: free float-nya tipis", href: "/situasi/float-tipis" },

@@ -6,7 +6,7 @@ import { getSituations, H11_UNDERPERFORM } from "@/lib/situations";
 import { STRESS } from "@/lib/evidence-constants";
 
 /**
- * "Deteksi anomali" list rows. Every count and rate comes from
+ * Temuan > Tanda list rows (formerly "Deteksi anomali"). Every count and rate comes from
  * data/app/situations.json (counts), base_rates.json and flags.json; the
  * one exception is the H11 suspension result, which only exists as the
  * pinned constant in lib/situations.ts. Server-only (fs).

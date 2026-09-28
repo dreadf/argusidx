@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Info } from "lucide-react";
-import { PageTitle, Sub, TextLink } from "@/components/kit";
-import { TRIALS } from "@/lib/evidence-constants";
+import { Sub, TextLink } from "@/components/kit";
+import { TemuanHead } from "@/components/temuan-head";
+import { TRIAL_COUNT } from "@/lib/findings-summary";
 import { sampleLine } from "@/lib/finding-copy";
 import { findingSlug, getFindingsData, orderFindings, VERDICT_CHIP, VERDICT_TAB, type Verdict } from "@/lib/findings-data";
 
@@ -36,8 +37,8 @@ export default async function TemuanPage({ searchParams }: { searchParams: Promi
   return (
     <main className="mx-auto w-full max-w-6xl px-[18px] py-5 md:px-8 md:py-8">
       <div className="md:max-w-[860px]">
-        <PageTitle title="Temuan" pill="Data 13/09/2026" />
-        <Sub>Keyakinan populer yang kami uji terhadap data.</Sub>
+        <TemuanHead active="keyakinan" pill="Data 13/09/2026" />
+        <Sub className="mt-4">Keyakinan populer yang kami uji terhadap data.</Sub>
 
         <div className="mt-4 overflow-hidden rounded-2xl border border-border bg-card">
           <div className="grid grid-cols-3">
@@ -54,7 +55,7 @@ export default async function TemuanPage({ searchParams }: { searchParams: Promi
             <b>
               Hanya {count("yes")} dari {total} keyakinan yang terbukti.
             </b>{" "}
-            <span className="text-muted-foreground">{TRIALS} uji, semua hasil tampil.</span>
+            <span className="text-muted-foreground">{TRIAL_COUNT} uji, semua hasil tampil.</span>
           </p>
         </div>
 

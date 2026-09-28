@@ -61,5 +61,3 @@ export const H18 = {
   trial: 35,
 };
 
-/** Tests run so far, every result shown (EXPERIMENT.md trial counter; H18 is trial 35). */
-export const TRIALS = 35;

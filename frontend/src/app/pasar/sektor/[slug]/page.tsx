@@ -79,7 +79,7 @@ export default async function SektorDetailPage({ params }: { params: Promise<{ s
             }))}
           />
         </div>
-        <TextLink href={`/jelajah/sektor/${meta.slug}/saham`}>Lihat {row.company_count} saham di sektor ini</TextLink>
+        <TextLink href={`/pasar/sektor/${meta.slug}/saham`}>Lihat {row.company_count} saham di sektor ini</TextLink>
       </section>
       <section>
         <H2>Saham dengan anomali</H2>
@@ -92,14 +92,14 @@ export default async function SektorDetailPage({ params }: { params: Promise<{ s
             </Link>
           ))}
         </div>
-        <TextLink href="/jelajah/anomali">Lihat semua anomali</TextLink>
+        <TextLink href="/temuan/tanda">Lihat semua anomali</TextLink>
       </section>
     </div>
   );
 
   return (
     <Page>
-      <PageTitle title={meta.label} pill={`Data ${formatDateId(data.as_of)}`} back={{ href: "/jelajah/sektor", label: "Sektor" }} />
+      <PageTitle title={meta.label} pill={`Data ${formatDateId(data.as_of)}`} back={{ href: "/pasar#sektor", label: "Sektor" }} />
       <div className="mt-2 flex items-center gap-2 text-[13px] text-muted-foreground">
         <span className="flex size-7 items-center justify-center rounded-lg bg-accent text-accent-foreground">
           <Icon className="size-4" strokeWidth={1.7} />

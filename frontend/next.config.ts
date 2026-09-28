@@ -12,14 +12,24 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/*": ["../data/app/**/*", "../docs/credit_ledger.md"],
   },
-  // Peringkat, Sektor and Tanda became tabs under Jelajah. The old URLs
-  // stay valid so existing links, the README and scripts/preflight.sh keep
-  // working.
+  // Jelajah became Pasar (2026-09-28): Peringkat and Deteksi anomali (now
+  // "Tanda") moved to tabs under Temuan, sector pages under Pasar. Every old
+  // URL stays valid so existing links, the README and scripts/preflight.sh
+  // keep working. /jelajah itself is a page (app/jelajah/page.tsx) because
+  // its ?urut=<measure> links need a lookup.
   async redirects() {
     return [
-      { source: "/peringkat", destination: "/jelajah", permanent: true },
-      { source: "/sektor", destination: "/jelajah/sektor", permanent: true },
-      { source: "/tanda", destination: "/jelajah/tanda", permanent: true },
+      { source: "/peringkat", destination: "/temuan/peringkat", permanent: true },
+      { source: "/sektor", destination: "/pasar", permanent: true },
+      { source: "/tanda", destination: "/temuan/tanda", permanent: true },
+      { source: "/jelajah/pasar", destination: "/pasar", permanent: true },
+      { source: "/jelajah/sektor", destination: "/pasar", permanent: true },
+      { source: "/jelajah/sektor/:slug*", destination: "/pasar/sektor/:slug*", permanent: true },
+      { source: "/jelajah/peringkat/:slug", destination: "/temuan/peringkat/:slug", permanent: true },
+      { source: "/jelajah/anomali", destination: "/temuan/tanda", permanent: true },
+      { source: "/jelajah/anomali/:jenis", destination: "/temuan/tanda/:jenis", permanent: true },
+      { source: "/jelajah/tanda", has: [{ type: "query", key: "jenis", value: "(?<jenis>.+)" }], destination: "/temuan/tanda/:jenis", permanent: true },
+      { source: "/jelajah/tanda", destination: "/temuan/tanda", permanent: true },
     ];
   },
 };
