@@ -359,12 +359,18 @@ function headline(r: ReadInput): { headline: string; caption: string | null } {
     if (vsS) {
       const most = share >= 0.9 || share <= 0.1 ? "hampir semua" : "kebanyakan";
       const who = `${most} ${sectorStocks(r)}`;
-      // "dan dari" only attaches to a comparison ("lebih dalam dari IHSG"); after
-      // "sejalan dengan IHSG" or "saat IHSG turun" the adjective is spelled out.
+      // "dan dari" only attaches to a comparison ("lebih dalam dari IHSG"), where the
+      // adjective right before it already carries the verb by proximity. After
+      // "sejalan dengan IHSG" or "saat IHSG turun" that adjective is many words from
+      // "turun"/"naik" at the sentence's start, so the verb is repeated here --
+      // otherwise "lebih dalam dari X" reads with no clear antecedent (found from a
+      // first read of the live copy, 2026-09-28: "sejalan dengan IHSG, tapi lebih
+      // dalam dari saham keuangan" -- "lebih dalam [apa]?").
       const comparative = vsI !== "sejalan" && !(!falling && ihsg < 0);
-      if (!comparative) sectorText = `, dan ${adj(vsS)} dari ${who}`;
+      const verbed = `${falling ? "turun" : "naik"} ${adj(vsS)}`;
+      if (!comparative) sectorText = `, dan ${verbed} dari ${who}`;
       else if (vsI === vsS) sectorText = ` dan dari ${who}`;
-      else sectorText = `, tapi ${adj(vsS)} dari ${who}`;
+      else sectorText = `, tapi ${verbed} dari ${who}`;
     }
   }
   const peers = rank && rank.n > 1 ? ` Dalam setahun, ${rank.better === 0 ? `tidak ada ${sectorStocks(r)} lain yang` : `${rank.better} dari ${rank.n} ${sectorStocks(r)}`} bergerak lebih baik.` : "";

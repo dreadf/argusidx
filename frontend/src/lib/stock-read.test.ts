@@ -74,7 +74,7 @@ describe("reference stocks", () => {
     const r = inputs.ASII;
     const w = watchItems(r);
     const k = kesimpulan(r, w);
-    expect(k.headline).toBe("Harga ASII turun 10,9% dalam setahun, lebih ringan dari IHSG (-15,6%), tapi lebih dalam dari kebanyakan saham industri.");
+    expect(k.headline).toBe("Harga ASII turun 10,9% dalam setahun, lebih ringan dari IHSG (-15,6%), tapi turun lebih dalam dari kebanyakan saham industri.");
     expect(k.caption).toContain("48 dari 65 saham industri bergerak lebih baik.");
     expect(k.rows.map((x) => x.state)).toEqual(["Stabil, dekat tertinggi lima tahun", "P/E di bawah sektornya", "Rutin, tapi turun dua tahun"]);
     expect(k.watch).toEqual(["Lama di bawah puncak"]);
@@ -146,7 +146,7 @@ describe("reference stocks", () => {
     const w = watchItems(r);
     expect(w.map((x) => x.kind)).toEqual(["fall", "yield_far_above_average"]);
     expect(w[1].rate).toEqual({ lead: "Dari 100 perusahaan dengan tanda ini (47 kasus, 2024),", figure: "55", rest: "memangkas dividen tahun berikutnya." });
-    expect(kesimpulan(r, w).headline).toBe("Harga BBCA turun 16,2% dalam setahun, sejalan dengan IHSG (-15,6%), dan lebih dalam dari kebanyakan saham keuangan.");
+    expect(kesimpulan(r, w).headline).toBe("Harga BBCA turun 16,2% dalam setahun, sejalan dengan IHSG (-15,6%), dan turun lebih dalam dari kebanyakan saham keuangan.");
     expect(tanyaSuggestions(r)[0]).toBe("Kenapa BBCA turun padahal labanya naik?");
     expect(answers(r, w).murah.check.some((c) => c.startsWith("P/E rendah"))).toBe(false);
     expect(agenda(r)[0]).toEqual({ date: "2026-09-16", label: "Pembayaran dividen Rp 25", past: true });
