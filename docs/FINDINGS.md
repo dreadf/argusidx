@@ -1,6 +1,6 @@
 # Findings scoreboard
 
-The 19 popular market beliefs ArgusIDX tests against IDX data, and what happened
+The 23 popular market beliefs ArgusIDX tests against IDX data, and what happened
 to each. One row per belief. **Yes** means it held up on data the search never
 saw (an explore/holdout split fixed before the results were seen); **No** means
 it did not; **Inconclusive** means the two halves disagreed or the sample was too

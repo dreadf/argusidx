@@ -13,8 +13,9 @@ Live app: <https://argusidx.vercel.app>.
 
 ![Pasting a tip into Tanya, then opening the foreign-flow test](docs/img/tanya.gif)
 
-> For Indonesia's millions of new retail investors, ArgusIDX checks the tips and
-> popular beliefs they act on against IDX data, and shows what has actually held up.
+> For Indonesia's millions of new retail investors, ArgusIDX shows the IDX
+> market's current condition and each stock's active situations, and checks
+> the tips and popular beliefs they act on against tested evidence.
 
 ## Contents
 
@@ -43,18 +44,24 @@ signals as if they work, and **none of them publish whether they actually do.**
 ArgusIDX does not add another signal. It tests the signals people already believe,
 shows the result, and keeps the failures on the page.
 
+A tip also arrives with no picture of the market it lands in. As of this data
+snapshot, IHSG itself is **31.7% below its 2026 peak** (20 Jan 2026), a state
+ArgusIDX labels from a fixed rule, never a forecast. The app shows that
+condition, and each stock's currently active situations, before any tip claim
+is checked.
+
 ## What you can do in the app
 
 The app is in Bahasa Indonesia; each section below names the page and what it does.
 
 | Page | What you do | What you get |
 |---|---|---|
-| **Tanya** (ask) | Paste a message you received, or type a question about a stock. | The stock it mentions (price, and what situation it is in) and, for each claim in the message, whether we tested it and how it came out. Example: "oversold, pasti mantul" is matched to the oversold test and shown as "Tidak terbukti" (not proven). A claim we never tested, like a target price, is labelled "no test for this". The pasted text is read in your browser and never sent anywhere. Optional AI wording; without it, the same facts are shown as plain rows. |
-| **Temuan** (findings) | Open the list of 19 popular beliefs. | One verdict per belief (held up, unclear, did not hold up) with its sample size and its main limit. Open one to see the chart and the method. |
+| **Tanya** (ask) | Paste a message you received, or type a question, from anywhere or from a stock page (already pointed at that stock, so you don't have to name it again). | The stock it mentions (price, and what situation it is in) and, for each claim in the message, whether we tested it and how it came out. Example: "oversold, pasti mantul" is matched to the oversold test and shown as "Tidak terbukti" (not proven). A claim we never tested, like a target price, is labelled "no test for this". The pasted text is read in your browser and never sent anywhere. Optional AI wording; without it, the same facts are shown as plain rows. |
+| **Pasar** (market) | Check the market before checking a stock. | IHSG's current state against a fixed rule (tertekan / normal, described, never forecast), sectors sorted by how many of their stocks are near a 52-week low, tanda currently active market-wide, and today's biggest movers. |
+| **Temuan** (findings) | Open the list of 23 popular beliefs, tabbed with active tanda and rule-based rankings. | One verdict per belief (held up, unclear, did not hold up) with its sample size and its main limit. *Tanda*: stocks currently tripping one of 8 fixed rules, each with how often it is followed by what. *Peringkat*: lists ordered by one visible rule (for example ROE compared with similar companies). |
 | **Situasi** (situations) | Pick a situation, for example "a stock that fell 30% and is still below its old peak". | How often that has happened, and what followed, as "N of 100": "of 100 such stocks, 12 got back to their peak within a year". With a plausible range and the caveats. |
-| **Stock page** (`/saham/BBCA`, all 962 companies) | Search any listed company. | Price against its 52-week range, how it compares with its sector, which of the 13 situations it is in now, insider and suspension history. No rating or buy/sell/hold score; a count of risk signs is shown only where a pre-registered test confirmed it, and each sign stays visible on its own. |
-| **Jelajah** (explore) | Browse. | *Deteksi anomali*: nine rule-based signals, each with the companies that trigger it, how often the situation ends badly, and how the count changes if the rule is loosened. *Peringkat*: six lists, each ordered by one visible rule (for example ROE compared with similar companies). *Sektor* and *Pasar*: sector breakdowns and today's market. |
-| **Watchlist** | Star stocks. | Saved on your device, no account. |
+| **Stock page** (`/saham/BBCA`, all 962 companies) | Search any listed company, or say why you opened it (price fell, looks cheap, a big dividend, someone recommended it, price jumped). | A plain-language summary (price, profit, valuation, dividend, each with its own state, never combined into one score), which popular signals are currently true for it with their test result, which situations to note with their base rate, and a data-backed answer for the reason you picked. |
+| **Watchlist** | Star stocks. | Saved on your device, no account. Flags when something changes for a saved stock (a new situation or tanda, a dividend, an AGM, a suspension, or an insider report) since you last checked, compared entirely in the browser. |
 
 ## The research
 
@@ -62,7 +69,7 @@ Sectors asked for insight that is derived, not a reformatted view of raw data. T
 core of this project is a research programme that tests popular market beliefs the
 way a researcher would, and publishes every result.
 
-**35 counted tests of 19 beliefs. 4 held up, 2 are unclear, 13 did not.**
+**39 counted tests of 23 beliefs. 4 held up, 2 are unclear, 17 did not.**
 
 | Belief | Result | What we found |
 |---|---|---|
@@ -117,7 +124,8 @@ number is in [`EXPERIMENT.md`](EXPERIMENT.md).
   billing guard and a call log. The full-market foreign-flow list has no MCP tool, so
   that test uses REST.
 - **Every call is accounted for.** [`docs/credit_ledger.md`](docs/credit_ledger.md) logs each
-  billed call with its reason: 864 of the 1,000 hackathon credits are spent.
+  billed call with its reason: 963 of the 1,000 hackathon credits are spent, 37 remain
+  (a separate 600-credit balance, expiring 2027, is untouched).
 - **Nothing calls Sectors at request time.** Every number is precomputed, so the app
   does not depend on any API being reachable.
 - **The foreign-flow test is new to us.** We found no published test of the retail
@@ -136,7 +144,7 @@ flowchart LR
   J --> A["/api/ask<br/>optional Gemini"]
 ```
 
-- **433 Python tests and 159 frontend tests**, run by CI on every push together with
+- **537 Python tests and 192 frontend tests**, run by CI on every push together with
   a secret scan and a production build ([`ci.yml`](.github/workflows/ci.yml)).
 - **Guards against expensive mistakes:** the client refuses queries below Sectors' data
   floor (they return empty and still bill), unknown tickers, and billed MCP calls
@@ -150,10 +158,11 @@ flowchart LR
 ## Try it in three minutes
 
 1. **Tanya:** paste "BBCA oversold banget, pasti mantul! Asing borong, TP 12000". You get BBCA and each claim checked; the target price is marked untested.
-2. **Temuan:** open "Asing borong membuat harga naik" and read the chart and the limits.
-3. **Situasi:** open "Masih di bawah puncak lama".
-4. **A stock page:** `/saham/ASII`.
-5. **Sumber data:** `/temuan/sumber-data` shows the Sectors endpoints and the credit count.
+2. **Pasar:** `/pasar` for IHSG's current state, the sectors under the most pressure, and today's movers.
+3. **Temuan:** open "Asing borong membuat harga naik" and read the chart and the limits.
+4. **Situasi:** open "Masih di bawah puncak lama".
+5. **A stock page:** `/saham/ASII`, then pick a reason ("kelihatan murah") to see the answer built for it.
+6. **Sumber data:** `/temuan/sumber-data` shows the Sectors endpoints and the credit count.
 
 ## Run it yourself
 

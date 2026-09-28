@@ -17,7 +17,7 @@ flowchart LR
   subgraph Build["Build (0 credits)"]
     APP["pipeline/appdata/build_*.py"]
   end
-  JSON[("data/app/*.json<br/>committed, ~22 files")]
+  JSON[("data/app/*.json<br/>committed, 26 files")]
   subgraph Web["frontend/ (Next.js, static)"]
     PAGES["962 stock pages, situations,<br/>findings, rankings"]
     ASK["/api/ask, /api/ask/tip-data<br/>optional Gemini, data-only fallback"]
@@ -64,7 +64,7 @@ sample of symbols. The three "proven" findings are re-checkable that way.
 
 ## Tests and checks
 
-- `pytest pipeline/tests scripts` (358 tests): statistics, guards, builders, one test module per hypothesis.
-- `npm test` in `frontend/` (159 tests): the tip reader, question classifier, advice-language guard, view models.
+- `pytest pipeline/tests scripts` (537 tests): statistics, guards, builders, one test module per hypothesis.
+- `npm test` in `frontend/` (192 tests): the tip reader, question classifier, advice-language guard, view models.
 - `scripts/check_no_secrets.py`, `scripts/check_no_advice_language.py`, `scripts/check_no_em_dash.py`, `scripts/preflight.sh` (production build, with the LLM switched off).
 - `.github/workflows/ci.yml` runs the tests, both scans and the production build on every push.
