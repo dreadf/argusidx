@@ -465,7 +465,7 @@ export async function DataLengkap({
   );
 
   return (
-    <SectionCard icon={ICONS.data} title={`Data lengkap ${code}`} sub="Angka mentah untuk yang ingin memeriksa sendiri." className={className}>
+    <SectionCard size="primary" icon={ICONS.data} title={`Data lengkap ${code}`} sub="Angka mentah untuk yang ingin memeriksa sendiri." className={className}>
       <div className="md:grid md:grid-cols-2 md:gap-x-10">
         <div>
           <DataRow title="Valuasi" summary={valuasiSummary}>

@@ -57,10 +57,10 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
   const identity = (
     <div>
       <div className="flex items-start gap-3">
-        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent text-sm font-bold text-accent-foreground md:size-[52px] md:text-base">{code.slice(0, 2)}</span>
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent text-sm font-bold text-accent-foreground md:size-14 md:rounded-2xl md:text-base">{code.slice(0, 2)}</span>
         <div className="min-w-0 flex-1">
-          <h1 className="text-[26px] font-bold leading-tight tracking-[-0.02em] md:text-[32px]">{code}</h1>
-          <p className="mt-0.5 text-[13px] leading-snug text-muted-foreground">
+          <h1 className="text-[26px] font-bold leading-tight tracking-[-0.02em] md:text-[40px]">{code}</h1>
+          <p className="mt-0.5 text-[13px] leading-snug text-muted-foreground md:text-[15px]">
             {shortName(snapshot.company_name)}
             {r.sector ? ` · ${r.sector}` : ""}
           </p>
@@ -72,8 +72,8 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
       <div className="mt-4 flex items-end justify-between gap-3">
         {price !== null ? (
           <div>
-            <div className="font-mono text-[30px] font-bold leading-none tracking-[-0.02em] tabular-nums md:text-[36px]">{formatPrice(price)}</div>
-            <div className="mt-1.5 text-[13px]">
+            <div className="font-mono text-[30px] font-bold leading-none tracking-[-0.02em] tabular-nums md:text-[44px]">{formatPrice(price)}</div>
+            <div className="mt-2 text-[13px] md:text-[14px]">
               {daily !== null && (
                 <span className="font-mono font-bold tabular-nums" style={{ color: tone(daily) }}>
                   {pctSigned(daily)}
@@ -85,11 +85,11 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
         ) : (
           <div className="text-[13px] text-muted-foreground">Harga terakhir tidak tercatat.</div>
         )}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <PantauButton symbol={code} companyName={snapshot.company_name} />
         </div>
       </div>
-      {size && <p className="mt-2.5 text-[13px] text-muted-foreground">{size}</p>}
+      {size && <p className="mt-3 text-[13px] text-muted-foreground md:text-[14px]">{size}</p>}
     </div>
   );
 
@@ -119,10 +119,10 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
   const pantau = (
     <section className="rounded-[20px] border border-border bg-card p-5">
       <div className="flex items-center gap-3">
-        <span className="flex size-9 shrink-0 items-center justify-center rounded-[10px] bg-accent text-accent-foreground">
-          <Star className="size-[18px]" strokeWidth={1.7} />
+        <span className="flex size-8 shrink-0 items-center justify-center rounded-[9px] bg-accent text-accent-foreground">
+          <Star className="size-4" strokeWidth={1.7} />
         </span>
-        <h2 className="text-[19px] font-bold leading-tight">Pantau {code}</h2>
+        <h2 className="text-[17px] font-bold leading-tight">Pantau {code}</h2>
       </div>
       <p className="mt-2.5 text-[13.5px] leading-normal text-muted-foreground">Simpan {code} di Watchlist. Kami tandai di sana saat ada yang berubah: keadaan baru, dividen, RUPS, suspensi, atau laporan orang dalam.</p>
       {items.length > 0 && (
@@ -227,19 +227,19 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
           <div className="mt-[18px] text-sm font-semibold">Bank besar lain</div>
           {peers.map((b) => (
             <Link key={b.code} href={`/saham/${b.code}`} className="flex items-center gap-3 border-b border-border py-3 last:border-0">
-              <span className="w-14 text-sm font-bold">{b.code}</span>
-              <span className="min-w-0 flex-1 text-[13px] text-muted-foreground">
+              <span className="w-12 shrink-0 text-sm font-bold">{b.code}</span>
+              <span className="min-w-0 flex-1 text-[12.5px] leading-snug text-muted-foreground">
                 {b.pe !== null ? `P/E ${idNum(b.pe)}x` : "P/E tidak bermakna"}
                 {b.yield !== null && b.yield > 0 ? ` · dividen ${pctPlain(b.yield)}` : ""}
-                {b.change1y !== null && (
-                  <>
-                    {" · setahun "}
-                    <span className="font-mono tabular-nums" style={{ color: tone(b.change1y) }}>
-                      {pctSigned(b.change1y)}
-                    </span>
-                  </>
-                )}
               </span>
+              {b.change1y !== null && (
+                <span className="shrink-0 text-right">
+                  <span className="block font-mono text-[13px] font-semibold tabular-nums" style={{ color: tone(b.change1y) }}>
+                    {pctSigned(b.change1y)}
+                  </span>
+                  <span className="block text-[11px] text-muted-foreground">setahun</span>
+                </span>
+              )}
               <ChevronRight className="size-[18px] shrink-0 text-muted-foreground" />
             </Link>
           ))}
@@ -275,46 +275,41 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
   );
 
   const news = r.news;
-  // Web: the left column grows with the number of signals, the right one is
-  // fixed. When the left runs well past the right, "Yang perlu diperhatikan"
-  // fills the right column's tail instead of sitting full width below.
-  // Rough heights in px, from the boards.
-  const leftEst = 830 + 230 * Math.max(1, signals.length);
-  const rightEst = 290 + 400 + (lens_banking ? 760 : 460) + (paidAny ? 340 : 170);
-  const watchEst = 150 + 250 * Math.max(1, watch.length);
-  const watchRight = leftEst - rightEst > 250 && watchEst < leftEst - rightEst + 300;
   const suggestions = tanyaSuggestions(r);
 
+  // Two columns from lg up. The left is the reading column and takes the
+  // space (size = hierarchy): summary, popular signals, situations to note.
+  // The right is a fixed, narrower supporting column. Space = grouping: 32px
+  // between sections on the left, 20px between the smaller cards on the right.
+  const cols = "lg:grid lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start lg:gap-10";
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 py-5 md:px-8 md:py-8">
+    <main className="mx-auto w-full max-w-[1320px] px-4 py-5 md:px-8 md:py-8">
       <RecentTracker code={code} />
       <BackLink fallback={{ href: "/", label: "Beranda" }} />
-      <div className="md:grid md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:items-start md:gap-6">
+      <div className={cols}>
         <div className="min-w-0">
           {identity}
           {banner}
           <PurposeChips code={code} />
         </div>
-        <div className="hidden min-w-0 md:block">{pantau}</div>
+        <div className="hidden min-w-0 lg:block">{pantau}</div>
       </div>
       <PurposeAnswer code={code} answers={ans} />
-      <div className="mt-5 md:grid md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:items-start md:gap-6">
-        <div className="flex min-w-0 flex-col gap-5">
+      <div className={`mt-8 lg:mt-10 ${cols}`}>
+        <div className="flex min-w-0 flex-col gap-6 md:gap-8">
           <RingkasanCard code={code} lead={ring.lead} rows={ring.rows} />
           <SignalsSection code={code} signals={signals} findingsCount={findings.scoreboard.length} />
-          <WatchSection code={code} items={watch} checked={WATCH_ORDER.length} className="md:hidden" />
+          <WatchSection code={code} items={watch} checked={WATCH_ORDER.length} />
         </div>
-        <div className="mt-5 flex min-w-0 flex-col gap-5 md:mt-0">
-          <TanyaCard code={code} suggestions={suggestions} className="hidden md:block" />
+        <div className="mt-6 flex min-w-0 flex-col gap-5 md:mt-8 lg:mt-0">
+          <TanyaCard code={code} suggestions={suggestions} className="hidden lg:block" />
           {harga}
           {bisnis}
           {dividen}
-          {watchRight && <WatchSection code={code} items={watch} checked={WATCH_ORDER.length} narrow className="hidden md:block" />}
         </div>
       </div>
-      {!watchRight && <WatchSection code={code} items={watch} checked={WATCH_ORDER.length} className="mt-5 hidden md:block" />}
-      <DataLengkap code={code} data={data} profile={p} meta={r.meta} sectorLabel={r.sector} news={news} newsMarket={r.newsMarket} className="mt-5" />
-      <TanyaCard code={code} suggestions={suggestions} className="mt-5 md:hidden" />
+      <DataLengkap code={code} data={data} profile={p} meta={r.meta} sectorLabel={r.sector} news={news} newsMarket={r.newsMarket} className="mt-8 lg:mt-10" />
+      <TanyaCard code={code} suggestions={suggestions} className="mt-6 lg:hidden" />
     </main>
   );
 }

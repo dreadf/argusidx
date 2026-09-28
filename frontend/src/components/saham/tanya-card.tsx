@@ -17,10 +17,10 @@ export function TanyaCard({ code, suggestions, className = "" }: { code: string;
   return (
     <section className={`rounded-[20px] border border-border bg-card p-4 md:p-5 ${className}`}>
       <div className="flex items-center gap-3">
-        <span className="flex size-9 shrink-0 items-center justify-center rounded-[10px] bg-accent text-accent-foreground">
-          <Sparkle className="size-[18px]" strokeWidth={1.7} />
+        <span className="flex size-8 shrink-0 items-center justify-center rounded-[9px] bg-accent text-accent-foreground">
+          <Sparkle className="size-4" strokeWidth={1.7} />
         </span>
-        <h2 className="text-[19px] font-bold leading-tight tracking-[-0.01em]">Tanya tentang {code}</h2>
+        <h2 className="text-[17px] font-bold leading-tight tracking-[-0.01em]">Tanya tentang {code}</h2>
       </div>
       <div className="mt-3 flex flex-col items-start gap-1.5">
         {suggestions.map((s) => (
