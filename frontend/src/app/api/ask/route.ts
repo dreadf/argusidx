@@ -42,7 +42,10 @@ export async function POST(request: Request) {
   if (question.length > MAX_QUESTION_LENGTH) {
     return NextResponse.json({ error: `Pertanyaan terlalu panjang (maks ${MAX_QUESTION_LENGTH} karakter).` }, { status: 400 });
   }
-  const { history, carriedStock } = parseHistory((body as { history?: unknown })?.history);
+  const { history, carriedStock: fromHistory } = parseHistory((body as { history?: unknown })?.history);
+  // "Tentang ASII" chip: the stock the user opened Tanya from, used when the question names none.
+  const attached = (body as { stockCode?: unknown })?.stockCode;
+  const carriedStock = fromHistory ?? (typeof attached === "string" && /^[A-Z0-9]{4}$/.test(attached) ? attached : null);
   // "data": the user chose to be answered from data only. The model is not called and no allowance is spent.
   const wantsModel = (body as { mode?: unknown })?.mode !== "data";
 

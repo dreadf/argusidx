@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { X } from "lucide-react";
 import { TanyaComposer, aiUsable, type AskMode } from "@/components/tanya-composer";
 import { ClaimRow, ConfirmRow, DATA_ONLY_LINE, LimitNote, StockCardView, TipNoticeView, UnavailableCard, UserBubble } from "@/components/tanya-results";
 import type { Quota } from "@/lib/ask/quota";
@@ -25,8 +26,9 @@ type Turn =
  * to /api/ask, answered from data and, when the user picks it and has
  * allowance left, worded by AI. Neither path gives advice.
  */
-export default function TanyaView({ asOf }: { asOf: string }) {
+export default function TanyaView({ asOf, stock: initialStock = null, initialQuestion = "" }: { asOf: string; stock?: string | null; initialQuestion?: string }) {
   const [text, setText] = useState("");
+  const [stock, setStock] = useState<string | null>(initialStock);
   const [mode, setMode] = useState<AskMode>("ai");
   const [turns, setTurns] = useState<Turn[]>([]);
   const [quota, setQuota] = useState<Quota | null>(null);
@@ -66,8 +68,8 @@ export default function TanyaView({ asOf }: { asOf: string }) {
     setTimeout(() => endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" }), 50);
   }
 
-  async function submit() {
-    const q = text.trim();
+  async function submit(override?: string) {
+    const q = (override ?? text).trim();
     if (!q || busy) return;
     setText("");
 
@@ -110,7 +112,7 @@ export default function TanyaView({ asOf }: { asOf: string }) {
       const res = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: q, history, mode: sendMode }),
+        body: JSON.stringify({ question: q, history, mode: sendMode, stockCode: stock }),
       });
       const json = await res.json();
       if (!res.ok) {
@@ -125,8 +127,33 @@ export default function TanyaView({ asOf }: { asOf: string }) {
     }
   }
 
+  // Opened from a stock page with a question: ask it once, as if typed.
+  const asked = useRef(false);
+  useEffect(() => {
+    if (asked.current || !initialQuestion.trim()) return;
+    asked.current = true;
+    void submit(initialQuestion);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const chip = stock && (
+    <div className="mb-2 flex items-center gap-2">
+      <span className="inline-flex h-[26px] items-center gap-1.5 rounded-md border border-[var(--viz-accent)] bg-accent px-2 text-xs font-bold text-[var(--viz-accent)]">
+        Tentang {stock}
+        <button type="button" onClick={() => setStock(null)} aria-label={`Lepas ${stock}`} className="inline-flex">
+          <X className="size-3" />
+        </button>
+      </span>
+      <Link href={`/saham/${stock}`} className="text-xs text-muted-foreground underline">
+        Kembali ke {stock}
+      </Link>
+    </div>
+  );
+
   const composer = (
-    <TanyaComposer value={text} onChange={setText} onSubmit={() => void submit()} mode={mode} onMode={setMode} aiConfigured={aiConfigured} quota={quota} busy={busy} menuUp={turns.length > 0} />
+    <>
+      {chip}
+      <TanyaComposer value={text} onChange={setText} onSubmit={() => void submit()} mode={mode} onMode={setMode} aiConfigured={aiConfigured} quota={quota} busy={busy} menuUp={turns.length > 0} />
+    </>
   );
 
   if (turns.length === 0) {
