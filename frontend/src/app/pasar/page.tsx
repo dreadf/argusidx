@@ -6,6 +6,7 @@ import { findingSlug, getFindingsData } from "@/lib/findings-data";
 import { getFlagsData, type FlagsData } from "@/lib/flags-data";
 import { formatDateId, idNum, pctFrom, rpTrillion, shortName, signedPct } from "@/lib/format";
 import { getIdxTotalData, type IdxTotalPoint } from "@/lib/idx-total-data";
+import { getMarketAnalysisData } from "@/lib/market-analysis-data";
 import { getMarketConditionData } from "@/lib/market-condition-data";
 import { getMarketData } from "@/lib/market-data";
 import { getRankingsData } from "@/lib/rankings-data";
@@ -59,7 +60,7 @@ const FLAG_ROWS: { key: keyof Omit<FlagsData, "as_of" | "source_file">; kind: st
  * tested rule, which was NOT confirmed: the card says so in its own note.
  */
 export default async function PasarPage() {
-  const [market, cond, idxTotal, rankings, sectors, flags, findings] = await Promise.all([
+  const [market, cond, idxTotal, rankings, sectors, flags, findings, ma] = await Promise.all([
     getMarketData(),
     getMarketConditionData(),
     getIdxTotalData(),
@@ -67,6 +68,7 @@ export default async function PasarPage() {
     getSectorBreakdownData(),
     getFlagsData(),
     getFindingsData(),
+    getMarketAnalysisData(),
   ]);
   const ih = cond.ihsg;
   const dist = cond.distance_from_high;
@@ -244,6 +246,130 @@ export default async function PasarPage() {
     </section>
   );
 
+  // Since the IHSG peak (M5/M6 Sectors closes; see build_market_analysis.py):
+  // who dragged total market value down, and how the two big-stock indices
+  // held up against the whole market. Descriptive, one snapshot, not a
+  // trial (EXPERIMENT.md, 2026-09-28). Addition to Sektor/Tanda/hari ini
+  // below, not a replacement of them: no stock named here is a duplicate
+  // of the day's movers or an active flag.
+  const tone = (v: number) => (v < 0 ? "var(--viz-diverging-neg)" : v > 0 ? "var(--viz-diverging-pos)" : "var(--foreground)");
+  const falling = ma.universe.market_value_end < ma.universe.market_value_start;
+  const ihsgIdx = ma.indices.find((i) => i.code === "IHSG");
+  const bestBig = ma.indices.filter((i) => i.code !== "IHSG").reduce((a, b) => (a.change_since_peak > b.change_since_peak ? a : b));
+  const bigBeatsWhole = ihsgIdx !== undefined && bestBig.change_since_peak > ihsgIdx.change_since_peak;
+
+  const sejakPuncak = (
+    <section className={cardCls}>
+      <div className="flex items-center justify-between gap-2">
+        <div>
+          <div className={eyebrowCls}>Sejak puncak IHSG</div>
+          <div className="mt-0.5 text-xs text-muted-foreground">
+            {formatDateId(ma.peak_window.start)} sampai {formatDateId(ma.peak_window.end)}
+          </div>
+        </div>
+      </div>
+      <p className="mt-2.5 text-[15px] font-semibold leading-snug">
+        {falling && ma.top5_drag_share !== null
+          ? `Lima saham menanggung ${idNum(ma.top5_drag_share * 100, 0)}% dari turunnya nilai pasar.`
+          : `Nilai total pasar sejak puncak IHSG: ${signedPct((ma.universe.market_value_end / ma.universe.market_value_start - 1) * 100)}.`}
+      </p>
+      <div className="mt-3.5 grid grid-cols-3 overflow-hidden rounded-[14px] border border-border">
+        {[
+          { value: signedPct((ma.universe.market_value_end / ma.universe.market_value_start - 1) * 100), label: "nilai semua saham", color: tone(ma.universe.market_value_end - ma.universe.market_value_start) },
+          { value: signedPct(ma.universe.median_return * 100), label: "saham tipikal", color: tone(ma.universe.median_return) },
+          { value: `${ma.universe.down} dari ${ma.universe.n}`, label: "saham turun", color: "var(--foreground)" },
+        ].map((t, i) => (
+          <div key={t.label} className={`min-w-0 p-3 ${i < 2 ? "border-r border-border" : ""}`}>
+            <div className="font-mono text-[15px] font-bold md:text-base" style={{ color: t.color }}>
+              {t.value}
+            </div>
+            <div className="mt-1 text-xs text-muted-foreground">{t.label}</div>
+          </div>
+        ))}
+      </div>
+      {falling && (
+        <>
+          <div className="mt-4 text-[13px] font-semibold">Paling menanggung penurunan</div>
+          <p className="mt-0.5 text-xs leading-normal text-muted-foreground">Urut dari besar kontribusinya ke turunnya nilai pasar, bukan dari besar penurunan harganya (angka kecil di kanan).</p>
+          <div>
+            {ma.drag
+              .filter((r): r is typeof r & { drag_share: number } => r.drag_share !== null)
+              .slice(0, 5)
+              .map((r) => (
+                <div key={r.symbol} className="flex items-center gap-2.5 border-t border-border py-2.5">
+                  <span className="w-14 shrink-0 text-[13.5px] font-semibold">{r.symbol}</span>
+                  <span className="min-w-0 flex-1 font-mono text-[13.5px] font-semibold" style={{ color: "var(--viz-diverging-neg)" }}>
+                    {idNum(r.drag_share * 100, 1)}% dari penurunan
+                  </span>
+                  <span className="shrink-0 font-mono text-xs text-muted-foreground">{signedPct(r.return * 100)}</span>
+                </div>
+              ))}
+          </div>
+          <p className="mt-2 text-xs text-muted-foreground">Nilai = jumlah saham x harga penutupan Sectors.</p>
+          <div className="my-4 h-px bg-border" />
+        </>
+      )}
+      <div className="text-[13px] font-semibold">Saham besar vs seluruh pasar</div>
+      {bigBeatsWhole && bestBig.change_since_peak < 0 && <p className="mt-0.5 text-xs leading-normal text-muted-foreground">{bestBig.code} turun paling sedikit sejak puncak IHSG.</p>}
+      <div className="mt-2.5">
+        {ma.indices.map((r) => (
+          <div key={r.code} className="flex items-center gap-3 border-t border-border py-2.5">
+            <div className="min-w-0 flex-1">
+              <div className="text-[14.5px] font-semibold">{r.code}</div>
+              <div className="text-xs text-muted-foreground">{r.label}</div>
+            </div>
+            <div className="w-20 shrink-0 text-right">
+              <div className="font-mono text-[14.5px] font-bold" style={{ color: tone(r.change_since_peak) }}>
+                {signedPct(r.change_since_peak * 100)}
+              </div>
+              <div className="text-[10.5px] text-muted-foreground">sejak puncak</div>
+            </div>
+            <div className="w-20 shrink-0 text-right">
+              <div className="font-mono text-[14.5px] font-bold" style={{ color: tone(r.change_1y) }}>
+                {signedPct(r.change_1y * 100)}
+              </div>
+              <div className="text-[10.5px] text-muted-foreground">setahun</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+
+  const largeCaps = (
+    <section className={cardCls}>
+      <div>
+        <div className={eyebrowCls}>100 saham terbesar</div>
+        <div className="mt-0.5 text-xs text-muted-foreground">
+          Sejak puncak IHSG, {formatDateId(ma.peak_window.start)} sampai {formatDateId(ma.peak_window.end)}
+        </div>
+      </div>
+      <p className="mt-2.5 text-[15px] font-semibold leading-snug">
+        {ma.large_caps.n_up} dari {ma.large_caps.n} justru naik{ma.large_caps.n_producer > 0 ? `; ${ma.large_caps.n_producer} di antaranya produsen komoditas.` : "."}
+      </p>
+      <p className="mt-1 text-[13px] leading-normal text-muted-foreground">
+        {ma.large_caps.n_producer > 0 && "Batu bara, emas dan logam, minyak, serta perkebunan. "}
+        Saham tipikal dari {ma.large_caps.n} ini {signedPct(ma.large_caps.median_return * 100)}.
+      </p>
+      <div className="mt-1">
+        {ma.large_caps.up.slice(0, 5).map((r) => (
+          <Row
+            key={r.symbol}
+            href={`/saham/${r.symbol}`}
+            title={r.symbol}
+            line={shortName(r.company_name)}
+            trailing={
+              <span className="font-mono text-base font-bold tabular-nums" style={{ color: "var(--viz-diverging-pos)" }}>
+                {signedPct(r.return * 100, 1, true)}
+              </span>
+            }
+          />
+        ))}
+      </div>
+      <p className="mt-2.5 text-xs text-muted-foreground">Mencatat yang sudah terjadi, bukan daftar pilihan.</p>
+    </section>
+  );
+
   const topMoves = rankings.biggest_daily_moves.slice(0, 3);
   const hariIni = (
     <section>
@@ -282,6 +408,10 @@ export default async function PasarPage() {
       <div className="mt-4 grid gap-4 md:grid-cols-2">
         {total}
         {jarak}
+      </div>
+      <div className="mt-9 space-y-5">
+        {sejakPuncak}
+        {largeCaps}
       </div>
       <div className="mt-9">{sektor}</div>
       <div className="mt-9 grid gap-9 md:grid-cols-2 md:gap-x-10">
