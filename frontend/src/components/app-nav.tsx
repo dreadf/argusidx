@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { FlaskConical, House, MessageCircle, PanelLeftClose, PanelLeftOpen, Search, Star, TrendingUp, type LucideIcon } from "lucide-react";
 import { StockSearch } from "@/components/stock-search";
 import type { SearchEntry } from "@/lib/stock-data";
+import { useWatchlistChanges } from "@/lib/use-watchlist-changes";
 
 /**
  * The five destinations. Situasi is reached from Beranda (it is a "what
@@ -27,6 +28,13 @@ const NAV_ITEMS: NavItem[] = [
   { href: "/tanya", label: "Tanya", icon: MessageCircle, isActive: (p) => p.startsWith("/tanya") },
   { href: "/watchlist", label: "Watchlist", icon: Star, isActive: (p) => p.startsWith("/watchlist") },
 ];
+
+/** Small dot on the Watchlist nav item when a watched stock has something new since the browser last checked. Read-only: never marks anything as seen (only opening /watchlist does that). */
+function WatchlistDot() {
+  const { hasChanges } = useWatchlistChanges(false);
+  if (!hasChanges) return null;
+  return <span aria-hidden className="absolute right-0 top-0 size-2 rounded-full bg-[var(--viz-accent)]" />;
+}
 
 function Logo() {
   return (
@@ -70,7 +78,10 @@ export function BottomNav() {
               active ? "text-[var(--viz-accent)]" : "text-muted-foreground"
             }`}
           >
-            <item.icon className="size-5" strokeWidth={1.7} />
+            <span className="relative">
+              <item.icon className="size-5" strokeWidth={1.7} />
+              {item.href === "/watchlist" && <WatchlistDot />}
+            </span>
             {item.label}
           </Link>
         );
@@ -134,7 +145,10 @@ export function Sidebar({ index }: { index: SearchEntry[] }) {
                 active ? "bg-accent text-accent-foreground" : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              <item.icon className="size-4 shrink-0" strokeWidth={1.7} />
+              <span className="relative shrink-0">
+                <item.icon className="size-4" strokeWidth={1.7} />
+                {item.href === "/watchlist" && <WatchlistDot />}
+              </span>
               <span className="sb-expanded">{item.label}</span>
             </Link>
           );

@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Star, Trash2 } from "lucide-react";
+import { Sparkles, Star, Trash2 } from "lucide-react";
 import { RangeBar } from "@/components/charts/range-bar";
 import { formatPrice, pctFrom, shortName, signedPct } from "@/lib/format";
 import { useWatchlist } from "@/lib/use-watchlist";
+import { useWatchlistChanges } from "@/lib/use-watchlist-changes";
 import { removeFromWatchlist } from "@/lib/watchlist-store";
 
 export interface QuoteMap {
@@ -14,6 +15,7 @@ export interface QuoteMap {
 /** Saved stocks, each with today's price, its signed distance from the year's high, and the year's range (both ends labelled). */
 export function WatchlistView({ quotes }: { quotes: QuoteMap }) {
   const { entries } = useWatchlist();
+  const { results } = useWatchlistChanges(true);
 
   if (entries.length === 0) {
     return (
@@ -44,6 +46,22 @@ export function WatchlistView({ quotes }: { quotes: QuoteMap }) {
           const q = quotes[entry.symbol];
           const dist = q && q.price != null && q.high ? pctFrom(q.price, q.high) : null;
           const range = q && q.price != null && q.low != null && q.high != null ? <RangeBar low={q.low} high={q.high} price={q.price} /> : null;
+          const changes = results[entry.symbol]?.changes ?? [];
+          const changeNote = changes.length > 0 && (
+            <div className="mt-2.5 rounded-lg bg-[var(--viz-raised)] px-2.5 py-2 text-[12.5px] leading-snug text-[var(--viz-accent)]">
+              <div className="flex items-center gap-2 font-semibold">
+                <Sparkles className="size-[13px] shrink-0" strokeWidth={1.8} />
+                Ada yang berubah
+              </div>
+              <ul className="mt-1 flex flex-col gap-0.5 pl-[21px]">
+                {changes.map((c) => (
+                  <li key={c} className="list-disc">
+                    {c}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
           const remove = (
             <button
               type="button"
@@ -76,6 +94,7 @@ export function WatchlistView({ quotes }: { quotes: QuoteMap }) {
                   {range}
                 </div>
               )}
+              {changeNote && <div className="md:hidden">{changeNote}</div>}
               <div className="hidden items-center gap-3.5 md:flex">
                 <Link href={`/saham/${entry.symbol}`} className="w-[220px] shrink-0">
                   <div className="text-[15px] font-bold">{entry.symbol}</div>
@@ -85,6 +104,7 @@ export function WatchlistView({ quotes }: { quotes: QuoteMap }) {
                 <div className="flex-1">{range}</div>
                 <span className="ml-auto">{remove}</span>
               </div>
+              {changeNote && <div className="hidden md:block md:pl-[249px]">{changeNote}</div>}
             </li>
           );
         })}

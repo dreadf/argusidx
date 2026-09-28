@@ -124,7 +124,7 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
         </span>
         <h2 className="text-[19px] font-bold leading-tight">Pantau {code}</h2>
       </div>
-      <p className="mt-2.5 text-[13.5px] leading-normal text-muted-foreground">Simpan {code} di Watchlist agar mudah dibuka lagi dan dilihat berdampingan dengan saham lain yang Anda simpan.</p>
+      <p className="mt-2.5 text-[13.5px] leading-normal text-muted-foreground">Simpan {code} di Watchlist. Kami tandai di sana saat ada yang berubah: keadaan baru, dividen, RUPS, suspensi, atau laporan orang dalam.</p>
       {items.length > 0 && (
         <div className="mt-3">
           <div className="text-xs font-semibold text-muted-foreground">Jadwal tercatat</div>
