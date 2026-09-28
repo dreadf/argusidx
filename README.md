@@ -124,8 +124,9 @@ number is in [`EXPERIMENT.md`](EXPERIMENT.md).
   billing guard and a call log. The full-market foreign-flow list has no MCP tool, so
   that test uses REST.
 - **Every call is accounted for.** [`docs/credit_ledger.md`](docs/credit_ledger.md) logs each
-  billed call with its reason: 963 of the 1,000 hackathon credits are spent, 37 remain
-  (a separate 600-credit balance, expiring 2027, is untouched).
+  billed call with its reason: the 1,000-credit hackathon pool is fully spent, and the
+  build now draws on a separate 600-credit balance (expiring 2027), 109 of which are
+  spent so far.
 - **Nothing calls Sectors at request time.** Every number is precomputed, so the app
   does not depend on any API being reachable.
 - **The foreign-flow test is new to us.** We found no published test of the retail

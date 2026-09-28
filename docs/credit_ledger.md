@@ -77,8 +77,6 @@ portal's credit history is the primary record.
 | 2026-09-28 | MCP `fetch-daily-close` x64 (32 pages each for 2025-12-30 and 2026-06-30) | M6 (plan §3.9, standing approval plus user's 2026-09-28 go-ahead): universe closes for R3 (sector-neutral, size-controlled, "satu kejadian, bukan uji") and R4 (H5/H10/H4 split by market state). Both dates verified as real IDX trading days against the M1 IHSG calendar (`data/raw/ihsg_2026-09-27.json`) before the pull. Stated before the run: about 64 credits; actual 64, exact match (956 companies on 2025-12-30, 957 on 2026-06-30, both pulls marked complete). Reused `fetch_sectors_closes.fetch_closes` rather than reimplementing pagination. `pipeline/appdata/fetch_sectors_closes_m6.py`. `data/raw/sectors_daily_close_m6_2026-09-28.json`. | 64 | 1077 |
 | 2026-09-28 | MCP `fetch-daily-close` x32 (2026-01-20) | M5 (plan §3.4): every stock's close on the IHSG peak day (M1: 9,134.7), for the Kesimpulan's "sejak puncak IHSG" window and the Pasar sections on which stocks fell least and weighed most since the peak. Listed in the §9 standing approval; cost stated to the user again 2026-09-28 (~32 credits, ordinary pool) and approved before the call. Actual 32, exact match; 956 stocks, marked complete. `pipeline/appdata/fetch_sectors_closes_m5.py` (reuses `fetch_closes`). `data/raw/sectors_daily_close_m5_2026-09-28.json`. | 32 | 1109 |
 
-**Total spent as of 2026-09-20: 599 credits.**
-
 *(Note on how the Phase 0 call actually ran: the first attempts via
 `pipeline/sectors_client.py` and a mis-sourced `.env` both hit Cloudflare
 403s, which are free per the rules above and not logged as separate
