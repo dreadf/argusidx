@@ -80,7 +80,7 @@ export default async function PasarPage() {
   const tiles = [
     { value: signedPct(ih.pct_from_peak * 100), label: `dari puncak, ${formatDateId(ih.peak_date)}`, neg: true },
     { value: signedPct(ih.pct_vs_ma200 * 100), label: "dari rata-rata 200 hari", neg: false },
-    { value: `${Math.round(ih.vol20_percentile)} dari 100`, label: "persentil volatilitas 20 hari", neg: false },
+    { value: `${Math.round(ih.vol20_percentile)} dari 100`, label: "hari dalam riwayat IHSG lebih tenang dari sekarang", neg: false },
     { value: `${ih.days_since_peak} hari`, label: "bursa sejak puncak", neg: false },
   ];
 
