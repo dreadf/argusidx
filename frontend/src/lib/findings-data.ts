@@ -1,7 +1,9 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
-export type Verdict = "yes" | "no" | "mixed_or_inconclusive";
+import type { Verdict } from "@/lib/verdict-chip";
+
+export type { Verdict };
 
 export interface FindingEvidence {
   hypothesis_id: string;
@@ -59,12 +61,7 @@ export const VERDICT_TAB: Record<Verdict, { key: string; label: string }> = {
   no: { key: "tidak-terbukti", label: "Tidak terbukti" },
 };
 
-/** Verdict chip on the list (board Temuan-List-2): "Belum jelas" covers the mixed and inconclusive results. */
-export const VERDICT_CHIP: Record<Verdict, { label: string; color: string }> = {
-  yes: { label: "Terbukti", color: "var(--viz-diverging-pos)" },
-  mixed_or_inconclusive: { label: "Belum jelas", color: "var(--viz-ink-muted)" },
-  no: { label: "Tidak terbukti", color: "var(--viz-diverging-neg)" },
-};
+export { VERDICT_CHIP } from "@/lib/verdict-chip";
 
 const VERDICT_RANK: Record<Verdict, number> = { yes: 0, no: 1, mixed_or_inconclusive: 2 };
 /** Newest tests lead their verdict group; everything else keeps the file's order. */

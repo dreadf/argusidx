@@ -56,13 +56,24 @@ export function outOfTen(a: number, b: number): string {
   return lo === hi ? `${lo} dari 10` : `${lo} sampai ${hi} dari 10`;
 }
 
-export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, extra: ExtraBaseRates, flags: FlagsData): AnomalyRow[] {
-  // Count: stocks flagged now (the same definition the flag page lists). Rate: the newest past year whose next-year cut is already known, with its case count.
+/** Yield-spike flag: the newest past year whose next-year cut is already known, with its case count. */
+export function yieldCutRate(extra: Pick<ExtraBaseRates, "yield_spike_cut">): { rate: number | null; n: number | null; year: string } {
   const years = Object.keys(extra.yield_spike_cut).sort();
   const withRate = years.map((y) => extra.yield_spike_cut[y]).reverse().find((y) => y.cut_missing_counted_as_cut.rate !== null);
-  const cutRate = withRate?.cut_missing_counted_as_cut.rate ?? null;
-  const cutCases = withRate?.cut_missing_counted_as_cut.n ?? null;
-  const cutYear = years.find((y) => extra.yield_spike_cut[y] === withRate) ?? "";
+  return {
+    rate: withRate?.cut_missing_counted_as_cut.rate ?? null,
+    n: withRate?.cut_missing_counted_as_cut.n ?? null,
+    year: years.find((y) => extra.yield_spike_cut[y] === withRate) ?? "",
+  };
+}
+
+export async function getExtraBaseRates(): Promise<ExtraBaseRates> {
+  return JSON.parse(await readFile(path.join(process.cwd(), "..", "data", "app", "base_rates.json"), "utf-8")) as ExtraBaseRates;
+}
+
+export function buildAnomalyRows(counts: SituationCounts, base: BaseRatesData, extra: ExtraBaseRates, flags: FlagsData): AnomalyRow[] {
+  // Count: stocks flagged now (the same definition the flag page lists).
+  const { rate: cutRate, n: cutCases, year: cutYear } = yieldCutRate(extra);
 
   return [
     {
