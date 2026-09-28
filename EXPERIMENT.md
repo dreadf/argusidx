@@ -3888,3 +3888,137 @@ and methods tested so far. **Trial counter: 39.**
 **New code, all covered by pytest before running on real data:**
 `pipeline/hypotheses/a1_extreme_gainers.py`,
 `pipeline/appdata/fetch_corporate_actions_history.py`.
+
+## Pre-registration, 2026-09-28: R3 (sector/size snapshot) and R4 (H5/H10/H4 split by market state)
+
+Written before either is computed. Plan reference: `kind-juggling-hoare.md`
+§5, "R3 and R4 (not trials)". **Neither counts toward the trial counter,
+by the plan's own label**: both are explicitly descriptive, with no
+decision rule, no explore/holdout split of their own, and no significance
+test. Because there is no pass/fail boundary either could be gamed
+against, this entry does not follow blind pre-registration discipline the
+way T1/R2a/R2b/R5/A1 did -- the market-state labels used below (found via
+`t1_market_state.compute_states`, already run and logged) were checked
+before writing this definition, and that's disclosed here rather than
+presented as if it weren't.
+
+**Data:** M2 (`data/raw/lq45_2026-09-28.json`, `idxhidiv20_2026-09-28.json`),
+M3 (`data/raw/subsectors_2026-09-28.json`,
+`subsector_market_cap_2026-09-28.json`) and M6
+(`data/raw/sectors_daily_close_m6_2026-09-28.json`), all pulled 2026-09-28,
+stated cost and approved by the user before the pull, logged in
+`docs/credit_ledger.md`. R3 uses M6; R4 uses none of the three new pulls
+(it re-slices H5/H10/H4's own already-owned data by an existing state
+series) -- M2 and M3 feed Pasar's other sections directly, not R3/R4.
+
+### R3: sector-neutral, size-controlled snapshot, 2025-12-30 -> 2026-06-30
+
+Labelled "satu kejadian, bukan uji" on Sektor, per the plan. One realized
+outcome per stock, not a repeated-sampling statistic -- no CI, no
+bootstrap, no significance claim.
+
+- **Universe:** every symbol present in both M6 dates
+  (`sectors_daily_close_m6_2026-09-28.json`, 956/957 companies).
+- **Return:** `close[2026-06-30] / close[2025-12-30] - 1`.
+- **Sector-neutral rank:** `stats.sector_neutral_rank(rows, "ret",
+  "sub_sector")`, `sub_sector` from `data/raw/universe_2026-09-12.json`
+  (already owned, no new pull) -- the same primitive H10 already uses, per
+  `pipeline/stats.py`'s "fix it once" rule.
+- **Size control:** market-cap proxy `outstanding_shares[2025] *
+  close[2025-12-30]` (same raw-price-at-formation convention H5/H10 use
+  for size), bucketed into terciles via `quintiles(rows, "size",
+  n_buckets=3)`.
+- **Report:** sector-neutral return-rank distribution by size tercile
+  (median, not mean, matching this project's own convention for skewed
+  return data), plus the 10 highest and 10 lowest sector-adjusted movers
+  by name, with their sector and raw return shown alongside the rank so
+  the number isn't presented without its own context.
+
+### R4: H5, H10 and H4 re-tabulated by market state at their already-fixed formation dates
+
+No new formation logic: every entry date below is already fixed by each
+hypothesis's own pre-registered methodology (H5/H10's EXPLORE_YEARS
+`[2022,2023]`/HOLDOUT_YEARS `[2024,2025]`, H4's EXPLORE_YEARS
+`[2021,2022]`/HOLDOUT_YEARS `[2023,2024]`, all unchanged). State comes
+from `t1_market_state.compute_states` on the M1 IHSG series, read on the
+nearest trading day on/after each target date (same nearest-value
+convention used throughout this project).
+
+**States found (2026-09-28, on the real M1 series):**
+
+| Formation year | Entry date (nearest trading day) | State |
+|---|---|---|
+| 2021 (H4 only) | 2022-05-09 | normal |
+| 2022 (H5/H10/H4) | 2023-05-02 | normal |
+| 2023 (H5/H10/H4) | 2024-05-02 | normal |
+| 2024 (H5/H10/H4) | 2025-05-05 | tertekan |
+| 2025 (H5/H10 only) | 2026-05-04 | tertekan |
+
+**Disclosed confound, found before writing this table:** for H5 and H10,
+state is perfectly collinear with phase -- every explore-formation year is
+"normal" and every holdout-formation year is "tertekan." A state split for
+H5/H10 therefore cannot separate a genuine state effect from whatever else
+changed between explore and holdout (methodology freeze, calendar time, or
+regime): it is reported as a description of what those already-published
+holdout numbers were measured against, not as new evidence of a state
+effect. **H4 alone has within-phase variation** -- its two holdout years
+split 2023-formation (normal) vs. 2024-formation (tertekan) -- so that
+comparison is the one place in this batch where state isn't confounded
+with phase, and is called out as such in the results rather than pooled
+silently with the rest.
+
+- **H5/H10:** re-run `build_rows_for_year`/`run_phase` per individual
+  formation year (not pooled across years, so each year keeps its own
+  state label), report the same Spearman/quintile statistics already
+  computed for T1/H5/H10, annotated with state.
+- **H4:** re-run `build_rows_for_year` per individual formation year,
+  report payout-ratio-tercile cut rates annotated with state, with the
+  2023-vs-2024 holdout-year comparison called out separately.
+- No decision rule, no new significance test: this is a re-tabulation of
+  each hypothesis's already-computed relationship by one additional cut,
+  not a new claim.
+
+**New code, to be covered by pytest before running on real data:**
+`pipeline/hypotheses/r3_sector_size_snapshot.py`,
+`pipeline/hypotheses/r4_market_state_split.py`.
+
+### Results, R3 and R4, run once 2026-09-28 (`r3_sector_size_snapshot.py`, `r4_market_state_split.py`)
+
+**R3.** 775 of 956/957 M6-covered stocks had both a `sub_sector` and
+`outstanding_shares[2025]` (181 dropped, mostly newer/thinly-covered
+listings). Raw median return over the window was deeply negative in every
+size tercile alike (T1 -22.8%, T2 -22.6%, T3 -23.7%) -- consistent with
+the broad IHSG decline this project has already established (M1: IHSG
+peak 2026-01-20, this window starts after that peak and ends mid-2026).
+Sector-neutral return rank showed **no meaningful size gradient**: T1
+0.519, T2 0.520, T3 0.465 -- the largest tercile ranked slightly worse
+within its own sectors, but the gap is small and this is one snapshot, not
+a tested effect. The 10 best/worst sector-adjusted movers span ordinary
+small/mid-caps across many sectors (MKAP +242%, TIRT +365%, DSSA -80%,
+SSTM -85%), not an obvious single-sector story. Shipped as-is to Sektor:
+a descriptive ranking, explicitly labelled "satu kejadian, bukan uji," no
+predictive claim attached.
+
+**R4.** H5's earnings-yield-vs-return relationship stayed positive across
+all 4 formation years (rho +0.203, +0.134, +0.033, +0.111) but weakened
+sharply in the first holdout year; its size-vs-return relationship
+flipped sign between explore (+0.089, -0.078) and holdout (-0.292, -0.022)
+-- **this is exactly the confound disclosed before running**: state
+(normal in explore, tertekan in holdout) and phase are perfectly
+collinear here, so this split cannot say whether the flip is a state
+effect, a phase/regime effect, or coincidence. H10 was not re-run
+separately: it shares the identical years and therefore the identical
+confound, so a feature-by-feature re-tabulation would add no information
+beyond what H5's numbers already show. **H4 is the one place state and
+phase aren't confounded**: the payout-ratio-vs-cut relationship stayed
+positive and similar in strength across all 4 years regardless of state
+(rho +0.410, +0.396, +0.469, +0.404), and the direct within-holdout
+comparison -- 2023 formation (normal): 41.0% cut rate, 2024 formation
+(tertekan): 38.3% -- shows **no material difference**, though the lowest
+payout tercile's cut rate did rise from 11.0% (normal) to 18.9%
+(tertekan). Read together: on the one comparison in this batch not
+confounded by phase, the state a company entered a "high payout ratio"
+period in doesn't appear to change whether that ratio predicted a
+dividend cut. Neither result changes any earlier finding's status;
+both are descriptive re-tabulations, not new trials, and neither is
+published as a predictive claim.
