@@ -1,0 +1,148 @@
+{
+  "as_of": "2026-09-13",
+  "source_files": [
+    "universe_2026-09-13.json",
+    "sectors_daily_close_2026-09-27.json",
+    "sectors_daily_close_m5_2026-09-28.json",
+    "lq45_2026-09-28.json",
+    "idxhidiv20_2026-09-28.json"
+  ],
+  "peak_window": {
+    "start": "2026-01-20",
+    "end": "2026-09-04"
+  },
+  "indices": [
+    {
+      "code": "IHSG",
+      "label": "semua saham",
+      "change_since_peak": -0.27348736138023144,
+      "change_1y": -0.15645357077033561
+    },
+    {
+      "code": "LQ45",
+      "label": "45 saham besar dan teramai",
+      "change_since_peak": -0.25644125023462827,
+      "change_1y": -0.1778107026756689
+    },
+    {
+      "code": "IDXHIDIV20",
+      "label": "20 saham berdividen tinggi",
+      "change_since_peak": -0.15527354818331307,
+      "change_1y": -0.05686961933409396
+    }
+  ],
+  "universe": {
+    "n": 955,
+    "market_value_start": 1.6988191195866468e+16,
+    "market_value_end": 1.157889116190414e+16,
+    "median_return": -0.18137254901960786,
+    "down": 682
+  },
+  "top5_drag_share": 0.45384051869253683,
+  "drag": [
+    {
+      "symbol": "BREN.JK",
+      "company_name": "PT Barito Renewables Energy Tbk.",
+      "return": -0.6463157894736842,
+      "value_change": -821447390800000.0,
+      "drag_share": 0.15185835240096443
+    },
+    {
+      "symbol": "DSSA.JK",
+      "company_name": "Dian Swastatika Sentosa Tbk",
+      "return": -0.7107843137254901,
+      "value_change": -558650432000000.0,
+      "drag_share": 0.10327591897149527
+    },
+    {
+      "symbol": "TPIA.JK",
+      "company_name": "PT Chandra Asri Pacific Tbk",
+      "return": -0.7150000000000001,
+      "value_change": -432990283185460.0,
+      "drag_share": 0.08004552908267752
+    },
+    {
+      "symbol": "MORA.JK",
+      "company_name": "PT Ekamas Mora Republik Tbk",
+      "return": -0.6122082585278277,
+      "value_change": -407274993074400.0,
+      "drag_share": 0.07529162562943839
+    },
+    {
+      "symbol": "AMMN.JK",
+      "company_name": "PT Amman Mineral Internasional Tbk.",
+      "return": -0.4242622950819672,
+      "value_change": -234596434117160.0,
+      "drag_share": 0.04336909260796123
+    },
+    {
+      "symbol": "BBCA.JK",
+      "company_name": "PT Bank Central Asia Tbk.",
+      "return": -0.16249999999999998,
+      "value_change": -158654989350000.0,
+      "drag_share": 0.02933004055125128
+    },
+    {
+      "symbol": "FILM.JK",
+      "company_name": "PT MD Entertainment Tbk",
+      "return": -0.9351724137931035,
+      "value_change": -147635405238480.0,
+      "drag_share": 0.027292885273796995
+    },
+    {
+      "symbol": "PANI.JK",
+      "company_name": "PT Pantai Indah Kapuk Dua Tbk.",
+      "return": -0.5208747514910537,
+      "value_change": -119141239396900.0,
+      "drag_share": 0.022025259950246963
+    }
+  ],
+  "large_caps": {
+    "n": 100,
+    "n_up": 18,
+    "n_producer": 9,
+    "median_return": -0.270598648213711,
+    "up": [
+      {
+        "symbol": "SMMA.JK",
+        "company_name": "PT Sinar Mas Multiartha Tbk",
+        "return": 0.5508637236084453
+      },
+      {
+        "symbol": "AADI.JK",
+        "company_name": "PT Adaro Andalan Indonesia Tbk",
+        "return": 0.5
+      },
+      {
+        "symbol": "TAPG.JK",
+        "company_name": "PT Triputra Agro Persada Tbk",
+        "return": 0.4294871794871795
+      },
+      {
+        "symbol": "EMAS.JK",
+        "company_name": "PT Merdeka Gold Resources Tbk",
+        "return": 0.33461538461538454
+      },
+      {
+        "symbol": "GGRM.JK",
+        "company_name": "Gudang Garam Tbk",
+        "return": 0.2746031746031745
+      },
+      {
+        "symbol": "TINS.JK",
+        "company_name": "PT Timah Tbk",
+        "return": 0.22099447513812165
+      },
+      {
+        "symbol": "ADRO.JK",
+        "company_name": "Alamtri Resources Indonesia Tbk",
+        "return": 0.2142857142857142
+      },
+      {
+        "symbol": "MEGA.JK",
+        "company_name": "Bank Mega Tbk",
+        "return": 0.19578313253012047
+      }
+    ]
+  }
+}
