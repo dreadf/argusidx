@@ -12,9 +12,11 @@ outcomes were computed; run once.
   close <= 70% of the running peak, re-armed only by a new peak). Bars with
   a missing or non-positive close are dropped; stocks with fewer than 100
   usable bars are skipped. Raw `close`, 5-year research price cache.
-- In the situation now: a fall event triggered at least 252 trading days
-  before the last bar AND the latest close is still below that event's
-  pre-fall peak price.
+- In the situation now: the stock's latest fall event triggered more than
+  252 trading days before the last bar (at exactly 252 it is still the
+  one-year fall) AND the price has not been back at
+  that event's pre-fall peak since (corrected 2026-09-28; see
+  `in_situation_now`).
 - Base rate: events with more than 199 bars after trigger + 252 (i.e. at
   least 200 bars; fewer are left out). Of those still below the peak at
   trigger + 252, the share at or above the peak at trigger + 504. When the
@@ -52,12 +54,29 @@ def usable_closes(entry: dict | None) -> list[float] | None:
 
 
 def in_situation_now(closes: list[float]) -> dict | None:
-    """The first qualifying fall event (triggered >= 252 bars ago, latest close still below its peak), or None."""
+    """The stock's latest fall event, if it triggered more than 252 bars ago
+    and the price has not been back at its peak since, or None.
+
+    Only the latest event can qualify: a new event needs a new running peak,
+    so every earlier event's peak has already been passed. (Before
+    2026-09-28 this returned the FIRST event still above the latest close,
+    which could be one the stock had long since recovered from: FILM showed
+    "74% below its Rp 3.070 peak" after trading as high as Rp 14.500. See
+    EXPERIMENT.md's dated note. The base rate, which is measured per event
+    at trigger + 252 and + 504, is unaffected.)
+    """
+    events = _detect_fall_events(closes)
+    if not events:
+        return None
+    ev = events[-1]
     last = len(closes) - 1
-    for ev in _detect_fall_events(closes):
-        if ev["trigger_idx"] <= last - YEAR_BARS and closes[last] < ev["peak_price"]:
-            return ev
-    return None
+    # More than 252 bars: at exactly 252 the one-year "fall" situation still
+    # holds (build_situations counts that edge day), and one fall is never both.
+    if ev["trigger_idx"] >= last - YEAR_BARS:
+        return None
+    if max(closes[ev["trigger_idx"] :]) >= ev["peak_price"]:
+        return None
+    return ev
 
 
 def event_result(closes: list[float], ev: dict) -> dict | None:

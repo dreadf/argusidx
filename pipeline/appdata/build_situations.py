@@ -110,8 +110,8 @@ def _latest_fall(entry: dict | None) -> dict | None:
     event = events[-1]
     last_index = len(closes) - 1
     peak = event["peak_price"]
-    if closes[-1] >= peak:
-        return None  # already back at the old peak: no longer in a fall
+    if max(closes[event["trigger_idx"] :]) >= peak:
+        return None  # back at the old peak at some point since the fall: no longer in it
     return {
         "peak_price": peak,
         "peak_date": _bar_date(pairs[event["peak_idx"]][0]).isoformat(),

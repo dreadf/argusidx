@@ -4022,3 +4022,52 @@ period in doesn't appear to change whether that ratio predicted a
 dividend cut. Neither result changes any earlier finding's status;
 both are descriptive re-tabulations, not new trials, and neither is
 published as a predictive claim.
+
+## Correction, 2026-09-28: the "now" triggers for "Turun banyak dalam setahun" and "Lama di bawah puncak"
+
+Found by the user reading FILM's stock page, which listed both situations
+for what looked like one fall: "94% below its Rp 14.500 peak (30 Dec 2025)"
+and "74% below its Rp 3.070 peak, 894 trading days since the 30% fall".
+
+**Cause.** `m_long_below_peak.in_situation_now` returned the *first* fall
+event whose peak was still above the latest close. FILM's first event (peak
+Rp 3.070) was years old, and FILM had since traded as high as Rp 14.500, so
+it had long been back above that peak; the event was stale. A new fall
+event is only possible after a new running peak, so every event except the
+latest has, by construction, already been recovered.
+
+**Fix (definitions of the "now" trigger only).**
+- `in_situation_now` now considers only the stock's latest fall event, and
+  requires that the price has not been back at that event's peak since the
+  trigger (`max(closes[trigger:]) < peak`).
+- `build_situations._latest_fall` (the one-year "fall" situation and
+  `older_fall`) gets the same "not back at the peak since" check, replacing
+  "latest close below the peak".
+- The edge day: both definitions included a fall exactly 252 trading days
+  old (found by `/code-review`). The one-year fall keeps that day (its
+  existing edge test); "Lama di bawah puncak" now starts at 253, the same
+  boundary `older_fall` already used. No stock sat on that day in this
+  data, so the counts below are unaffected.
+
+The pre-registered base rates are **unchanged**: they are measured per event
+at trigger + 252 and trigger + 504 (`event_result`,
+`m_recovery_after_fall`), which this does not touch. Verified: rebuilding
+leaves `data/app/base_rates.json` byte-identical.
+
+**Effect on the current data (rebuild of `data/app/situations.json`, 0
+credits):**
+
+| | Before | After |
+|---|---|---|
+| Stocks in "Lama di bawah puncak" | 703 | 541 |
+| Stocks in "Turun banyak dalam setahun" | 278 | 270 |
+| Stocks shown with both at once | 148 | 0 |
+
+The 162 removed "Lama di bawah puncak" entries were all stale older falls
+like FILM's. The 8 removed "fall" entries (SMAR, BHAT, BOGA, IFSH, JGLE,
+BIPP, WGSH, ICON) had closed back at their old peak since the fall and
+slipped below it again. The two situations are now one fall at two ages:
+under a year old it is "Turun banyak dalam setahun", over a year old "Lama
+di bawah puncak". Regression tests: `test_m_long_below_peak.py` (three new
+cases, one shaped like FILM), `test_build_situations.py`, and a frontend
+check that no stock shows both.

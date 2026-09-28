@@ -277,3 +277,19 @@ def test_build_repeat_suspension_needs_two_events():
     assert build_repeat_suspension([date(2024, 1, 5)]) is None
     out = build_repeat_suspension([date(2024, 1, 5), date(2024, 6, 1), date(2025, 2, 3)])
     assert out == {"n_events": 3, "first_date": "2024-01-05", "last_date": "2025-02-03"}
+
+
+def test_fall_ends_once_the_price_touched_the_old_peak_even_if_it_slipped_back():
+    # Back to exactly the old peak (100, not a new high, so no new fall event), then 90.
+    assert build_fall(_flat_then([69.0, 100.0, 90.0])) is None
+
+
+def test_one_fall_is_never_both_situations_on_the_edge_day():
+    from pipeline.appdata.build_situations import build_long_below_peak
+
+    for extra in (FORWARD_TRADING_DAYS - 1, FORWARD_TRADING_DAYS, FORWARD_TRADING_DAYS + 1):
+        entry = _flat_then([69.0] + [60.0] * extra)
+        both = build_fall(entry) is not None and build_long_below_peak(entry) is not None
+        assert not both, extra
+        # the older-fall details (dates) exist exactly when long_below_peak does
+        assert (build_older_fall(entry) is None) == (build_long_below_peak(entry) is None), extra

@@ -14,17 +14,17 @@
     "earnings_year": 2025
   },
   "counts": {
-    "fall": 278,
+    "fall": 270,
     "loss_year": 235,
     "recent_price_suspension": 23,
     "recent_ipo": 11,
     "recent_spike": 79,
     "earnings_two_year_decline": 136,
     "earnings_more_than_doubled": 79,
-    "long_below_peak": 703,
+    "long_below_peak": 541,
     "repeat_suspension": 134,
-    "older_fall_not_a_situation": 555,
-    "no_situation": 80,
+    "older_fall_not_a_situation": 541,
+    "no_situation": 90,
     "universe": 962
   },
   "by_symbol": {
@@ -96,12 +96,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 226150.0,
-        "last_close": 201600.0,
-        "pct_below_peak": -0.10855626796374085,
-        "trading_days_since_trigger": 351
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 4,
         "first_date": "2025-02-25",
@@ -128,10 +123,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 8050.0,
+        "peak_price": 11900.0,
         "last_close": 3300.0,
-        "pct_below_peak": -0.5900621118012422,
-        "trading_days_since_trigger": 632
+        "pct_below_peak": -0.7226890756302521,
+        "trading_days_since_trigger": 468
       },
       "repeat_suspension": null
     },
@@ -323,12 +318,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1989.0,
-        "last_close": 1170.0,
-        "pct_below_peak": -0.4117647058823529,
-        "trading_days_since_trigger": 363
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "ASII.JK": {
@@ -403,10 +393,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 6000.0,
+        "peak_price": 10625.0,
         "last_close": 1935.0,
-        "pct_below_peak": -0.6775,
-        "trading_days_since_trigger": 631
+        "pct_below_peak": -0.8178823529411765,
+        "trading_days_since_trigger": 435
       },
       "repeat_suspension": null
     },
@@ -435,12 +425,7 @@
           8197635263220.0
         ]
       },
-      "long_below_peak": {
-        "peak_price": 1752.196533203125,
-        "last_close": 1735.0,
-        "pct_below_peak": -0.00981427190230122,
-        "trading_days_since_trigger": 633
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "DNET.JK": {
@@ -503,17 +488,7 @@
     },
     "SMMA.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 22700.0,
-        "peak_date": "2025-07-25",
-        "trigger_date": "2025-07-31",
-        "trigger_price": 15875.0,
-        "trading_days_since": 269,
-        "window_trading_days": 252,
-        "last_close": 20025.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -11.784140969162992
-      },
+      "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
       "recent_ipo": null,
@@ -526,12 +501,7 @@
           2045644000000.0
         ]
       },
-      "long_below_peak": {
-        "peak_price": 21375.0,
-        "last_close": 20025.0,
-        "pct_below_peak": -0.06315789473684208,
-        "trading_days_since_trigger": 615
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "MPRO.JK": {
@@ -584,12 +554,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1342.5,
-        "last_close": 940.0,
-        "pct_below_peak": -0.2998137802607076,
-        "trading_days_since_trigger": 624
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "PANI.JK": {
@@ -746,10 +711,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1160.0,
+        "peak_price": 1220.0,
         "last_close": 745.0,
-        "pct_below_peak": -0.35775862068965514,
-        "trading_days_since_trigger": 876
+        "pct_below_peak": -0.389344262295082,
+        "trading_days_since_trigger": 699
       },
       "repeat_suspension": null
     },
@@ -861,10 +826,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 2194.44482421875,
+        "peak_price": 3160.0,
         "last_close": 1775.0,
-        "pct_below_peak": -0.19113938048913015,
-        "trading_days_since_trigger": 1112
+        "pct_below_peak": -0.43829113924050633,
+        "trading_days_since_trigger": 348
       },
       "repeat_suspension": null
     },
@@ -1063,10 +1028,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 5325.0,
+        "peak_price": 5400.0,
         "last_close": 1675.0,
-        "pct_below_peak": -0.6854460093896714,
-        "trading_days_since_trigger": 1086
+        "pct_below_peak": -0.6898148148148149,
+        "trading_days_since_trigger": 743
       },
       "repeat_suspension": null
     },
@@ -1089,12 +1054,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1445.0,
-        "last_close": 1005.0,
-        "pct_below_peak": -0.3044982698961938,
-        "trading_days_since_trigger": 790
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "GOTO.JK": {
@@ -1120,10 +1080,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 382.0,
+        "peak_price": 404.0,
         "last_close": 50.0,
-        "pct_below_peak": -0.8691099476439791,
-        "trading_days_since_trigger": 1042
+        "pct_below_peak": -0.8762376237623762,
+        "trading_days_since_trigger": 980
       },
       "repeat_suspension": null
     },
@@ -1173,12 +1133,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1281.0,
-        "last_close": 1235.0,
-        "pct_below_peak": -0.03590944574551136,
-        "trading_days_since_trigger": 423
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 4,
         "first_date": "2025-02-06",
@@ -1372,12 +1327,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 10300.0,
-        "last_close": 9300.0,
-        "pct_below_peak": -0.09708737864077666,
-        "trading_days_since_trigger": 826
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "EXCL.JK": {
@@ -1402,12 +1352,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 3320.0,
-        "last_close": 2730.0,
-        "pct_below_peak": -0.17771084337349397,
-        "trading_days_since_trigger": 1015
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "MEGA.JK": {
@@ -1476,10 +1421,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 8800.0,
+        "peak_price": 15675.0,
         "last_close": 7675.0,
-        "pct_below_peak": -0.12784090909090906,
-        "trading_days_since_trigger": 1083
+        "pct_below_peak": -0.5103668261562999,
+        "trading_days_since_trigger": 445
       },
       "repeat_suspension": null
     },
@@ -1536,12 +1481,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1605.0,
-        "last_close": 1035.0,
-        "pct_below_peak": -0.3551401869158879,
-        "trading_days_since_trigger": 663
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BELI.JK": {
@@ -1622,12 +1562,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1665.0,
-        "last_close": 1575.0,
-        "pct_below_peak": -0.05405405405405406,
-        "trading_days_since_trigger": 679
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "ENRG.JK": {
@@ -1705,12 +1640,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1975.0,
-        "last_close": 1545.0,
-        "pct_below_peak": -0.21772151898734182,
-        "trading_days_since_trigger": 825
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "PTBA.JK": {
@@ -1778,12 +1708,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 5150.0,
-        "last_close": 4500.0,
-        "pct_below_peak": -0.12621359223300976,
-        "trading_days_since_trigger": 660
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "VKTR.JK": {
@@ -1906,10 +1831,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 2570.0,
+        "peak_price": 2970.0,
         "last_close": 1525.0,
-        "pct_below_peak": -0.4066147859922179,
-        "trading_days_since_trigger": 1095
+        "pct_below_peak": -0.4865319865319865,
+        "trading_days_since_trigger": 348
       },
       "repeat_suspension": null
     },
@@ -1998,10 +1923,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 2470.0,
+        "peak_price": 3000.0,
         "last_close": 515.0,
-        "pct_below_peak": -0.791497975708502,
-        "trading_days_since_trigger": 1106
+        "pct_below_peak": -0.8283333333333334,
+        "trading_days_since_trigger": 1037
       },
       "repeat_suspension": null
     },
@@ -2340,12 +2265,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 4440.0,
-        "last_close": 4180.0,
-        "pct_below_peak": -0.058558558558558516,
-        "trading_days_since_trigger": 1047
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BNBR.JK": {
@@ -2458,12 +2378,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 8900.0,
-        "last_close": 8225.0,
-        "pct_below_peak": -0.0758426966292135,
-        "trading_days_since_trigger": 1004
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "MDIY.JK": {
@@ -2642,10 +2557,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 4500.0,
+        "peak_price": 5675.0,
         "last_close": 3010.0,
-        "pct_below_peak": -0.33111111111111113,
-        "trading_days_since_trigger": 899
+        "pct_below_peak": -0.4696035242290749,
+        "trading_days_since_trigger": 375
       },
       "repeat_suspension": null
     },
@@ -2769,10 +2684,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 2990.0,
+        "peak_price": 4970.0,
         "last_close": 560.0,
-        "pct_below_peak": -0.8127090301003345,
-        "trading_days_since_trigger": 369
+        "pct_below_peak": -0.8873239436619719,
+        "trading_days_since_trigger": 285
       },
       "repeat_suspension": {
         "n_events": 5,
@@ -2873,25 +2788,15 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 1250.0,
+        "peak_price": 1680.0,
         "last_close": 306.0,
-        "pct_below_peak": -0.7552,
-        "trading_days_since_trigger": 844
+        "pct_below_peak": -0.8178571428571428,
+        "trading_days_since_trigger": 434
       },
       "repeat_suspension": null
     },
     "SMAR.JK": {
-      "fall": {
-        "peak_price": 6875.0,
-        "peak_date": "2025-08-25",
-        "trigger_date": "2025-10-08",
-        "trigger_price": 4750.0,
-        "trading_days_since": 223,
-        "window_trading_days": 252,
-        "last_close": 6500.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -5.454545454545457
-      },
+      "fall": null,
       "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
@@ -2986,12 +2891,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 846.0,
-        "last_close": 825.0,
-        "pct_below_peak": -0.024822695035460973,
-        "trading_days_since_trigger": 366
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "DSNG.JK": {
@@ -3328,10 +3228,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1410.0,
+        "peak_price": 1520.0,
         "last_close": 1010.0,
-        "pct_below_peak": -0.2836879432624113,
-        "trading_days_since_trigger": 1016
+        "pct_below_peak": -0.3355263157894737,
+        "trading_days_since_trigger": 696
       },
       "repeat_suspension": null
     },
@@ -3361,12 +3261,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 3330.0,
-        "last_close": 3120.0,
-        "pct_below_peak": -0.06306306306306309,
-        "trading_days_since_trigger": 853
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "JRPT.JK": {
@@ -3507,12 +3402,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 3900.0,
-        "last_close": 3630.0,
-        "pct_below_peak": -0.0692307692307692,
-        "trading_days_since_trigger": 787
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BSDE.JK": {
@@ -3587,12 +3477,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 595.0,
-        "last_close": 400.0,
-        "pct_below_peak": -0.32773109243697474,
-        "trading_days_since_trigger": 678
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-12-16",
@@ -3715,12 +3600,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1410.0,
-        "last_close": 1275.0,
-        "pct_below_peak": -0.0957446808510638,
-        "trading_days_since_trigger": 864
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "RISE.JK": {
@@ -3808,10 +3688,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 5025.0,
+        "peak_price": 5725.0,
         "last_close": 4970.0,
-        "pct_below_peak": -0.010945273631840835,
-        "trading_days_since_trigger": 1029
+        "pct_below_peak": -0.13187772925764196,
+        "trading_days_since_trigger": 913
       },
       "repeat_suspension": null
     },
@@ -3834,12 +3714,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 444.0,
-        "last_close": 204.0,
-        "pct_below_peak": -0.5405405405405406,
-        "trading_days_since_trigger": 1119
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "ALII.JK": {
@@ -3861,12 +3736,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 835.0,
-        "last_close": 795.0,
-        "pct_below_peak": -0.04790419161676651,
-        "trading_days_since_trigger": 597
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "HRUM.JK": {
@@ -3939,10 +3809,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 16125.0,
+        "peak_price": 16425.0,
         "last_close": 9400.0,
-        "pct_below_peak": -0.4170542635658915,
-        "trading_days_since_trigger": 720
+        "pct_below_peak": -0.4277016742770168,
+        "trading_days_since_trigger": 362
       },
       "repeat_suspension": null
     },
@@ -3983,12 +3853,7 @@
           839724187661.0
         ]
       },
-      "long_below_peak": {
-        "peak_price": 90.0,
-        "last_close": 73.0,
-        "pct_below_peak": -0.18888888888888888,
-        "trading_days_since_trigger": 346
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "GOOD.JK": {
@@ -4060,10 +3925,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 9275.0,
+        "peak_price": 10725.0,
         "last_close": 8475.0,
-        "pct_below_peak": -0.08625336927223715,
-        "trading_days_since_trigger": 1146
+        "pct_below_peak": -0.2097902097902098,
+        "trading_days_since_trigger": 955
       },
       "repeat_suspension": null
     },
@@ -4121,10 +3986,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1180.0,
+        "peak_price": 1405.0,
         "last_close": 625.0,
-        "pct_below_peak": -0.4703389830508474,
-        "trading_days_since_trigger": 1006
+        "pct_below_peak": -0.5551601423487544,
+        "trading_days_since_trigger": 408
       },
       "repeat_suspension": null
     },
@@ -4148,10 +4013,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1785.0,
+        "peak_price": 2220.0,
         "last_close": 1270.0,
-        "pct_below_peak": -0.28851540616246496,
-        "trading_days_since_trigger": 781
+        "pct_below_peak": -0.4279279279279279,
+        "trading_days_since_trigger": 360
       },
       "repeat_suspension": null
     },
@@ -4290,10 +4155,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 737.88232421875,
+        "peak_price": 750.4000244140625,
         "last_close": 680.0,
-        "pct_below_peak": -0.07844384167900242,
-        "trading_days_since_trigger": 678
+        "pct_below_peak": -0.0938166606124956,
+        "trading_days_since_trigger": 562
       },
       "repeat_suspension": null
     },
@@ -4316,12 +4181,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 2610.0,
-        "last_close": 2110.0,
-        "pct_below_peak": -0.1915708812260536,
-        "trading_days_since_trigger": 354
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-01-31",
@@ -4390,12 +4250,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 890.0,
-        "last_close": 740.0,
-        "pct_below_peak": -0.1685393258426966,
-        "trading_days_since_trigger": 540
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "HEAL.JK": {
@@ -4417,12 +4272,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1730.0,
-        "last_close": 670.0,
-        "pct_below_peak": -0.6127167630057804,
-        "trading_days_since_trigger": 580
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "CLEO.JK": {
@@ -4526,12 +4376,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 11600.0,
-        "last_close": 2250.0,
-        "pct_below_peak": -0.8060344827586207,
-        "trading_days_since_trigger": 981
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "EDGE.JK": {
@@ -4561,10 +4406,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 5410.0,
+        "peak_price": 9625.0,
         "last_close": 4790.0,
-        "pct_below_peak": -0.11460258780036969,
-        "trading_days_since_trigger": 1039
+        "pct_below_peak": -0.5023376623376623,
+        "trading_days_since_trigger": 661
       },
       "repeat_suspension": null
     },
@@ -4648,10 +4493,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 2290.0,
+        "peak_price": 3970.0,
         "last_close": 1500.0,
-        "pct_below_peak": -0.34497816593886466,
-        "trading_days_since_trigger": 716
+        "pct_below_peak": -0.6221662468513853,
+        "trading_days_since_trigger": 377
       },
       "repeat_suspension": {
         "n_events": 2,
@@ -4728,10 +4573,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1039.262451171875,
+        "peak_price": 1110.0,
         "last_close": 530.0,
-        "pct_below_peak": -0.4900229490612591,
-        "trading_days_since_trigger": 1124
+        "pct_below_peak": -0.5225225225225225,
+        "trading_days_since_trigger": 671
       },
       "repeat_suspension": null
     },
@@ -4795,12 +4640,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 224.0,
-        "last_close": 158.0,
-        "pct_below_peak": -0.2946428571428571,
-        "trading_days_since_trigger": 950
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "SMMT.JK": {
@@ -4916,17 +4756,7 @@
       "repeat_suspension": null
     },
     "BHAT.JK": {
-      "fall": {
-        "peak_price": 1780.0,
-        "peak_date": "2025-11-26",
-        "trigger_date": "2026-05-19",
-        "trigger_price": 1205.0,
-        "trading_days_since": 78,
-        "window_trading_days": 252,
-        "last_close": 1770.0,
-        "last_close_date": "2026-09-08",
-        "pct_from_peak": -0.5617977528089901
-      },
+      "fall": null,
       "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
@@ -5000,12 +4830,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 3070.0,
-        "last_close": 845.0,
-        "pct_below_peak": -0.7247557003257329,
-        "trading_days_since_trigger": 894
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "SGRO.JK": {
@@ -5049,12 +4874,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 134.0,
-        "last_close": 66.0,
-        "pct_below_peak": -0.5074626865671642,
-        "trading_days_since_trigger": 1048
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "MDIA.JK": {
@@ -5137,10 +4957,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 248.0,
+        "peak_price": 334.0,
         "last_close": 149.0,
-        "pct_below_peak": -0.39919354838709675,
-        "trading_days_since_trigger": 1085
+        "pct_below_peak": -0.5538922155688623,
+        "trading_days_since_trigger": 786
       },
       "repeat_suspension": null
     },
@@ -5294,12 +5114,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 735.0,
-        "last_close": 635.0,
-        "pct_below_peak": -0.13605442176870752,
-        "trading_days_since_trigger": 821
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BTPS.JK": {
@@ -5349,10 +5164,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 3280.0,
+        "peak_price": 4850.0,
         "last_close": 2930.0,
-        "pct_below_peak": -0.10670731707317072,
-        "trading_days_since_trigger": 1015
+        "pct_below_peak": -0.39587628865979385,
+        "trading_days_since_trigger": 913
       },
       "repeat_suspension": null
     },
@@ -5504,12 +5319,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 100.0,
-        "last_close": 60.0,
-        "pct_below_peak": -0.4,
-        "trading_days_since_trigger": 1122
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "CYBR.JK": {
@@ -5842,17 +5652,7 @@
       "repeat_suspension": null
     },
     "BOGA.JK": {
-      "fall": {
-        "peak_price": 1790.0,
-        "peak_date": "2026-01-28",
-        "trigger_date": "2026-06-03",
-        "trigger_price": 1210.0,
-        "trading_days_since": 67,
-        "window_trading_days": 252,
-        "last_close": 1660.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -7.2625698324022325
-      },
+      "fall": null,
       "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
@@ -5940,12 +5740,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 272.0,
-        "last_close": 216.0,
-        "pct_below_peak": -0.20588235294117652,
-        "trading_days_since_trigger": 770
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "UNIC.JK": {
@@ -5979,12 +5774,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1420.0,
-        "last_close": 1320.0,
-        "pct_below_peak": -0.07042253521126762,
-        "trading_days_since_trigger": 615
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "HATM.JK": {
@@ -6148,12 +5938,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1525.0,
-        "last_close": 510.0,
-        "pct_below_peak": -0.6655737704918032,
-        "trading_days_since_trigger": 588
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "SAME.JK": {
@@ -6257,12 +6042,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 4770.0,
-        "last_close": 1640.0,
-        "pct_below_peak": -0.6561844863731656,
-        "trading_days_since_trigger": 938
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-01-24",
@@ -6365,12 +6145,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1540.0,
-        "last_close": 496.0,
-        "pct_below_peak": -0.6779220779220779,
-        "trading_days_since_trigger": 295
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-05-14",
@@ -6447,29 +6222,14 @@
     },
     "GJTL.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 1390.0,
-        "peak_date": "2024-04-02",
-        "trigger_date": "2025-04-08",
-        "trigger_price": 905.0,
-        "trading_days_since": 343,
-        "window_trading_days": 252,
-        "last_close": 1375.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -1.0791366906474864
-      },
+      "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
       "recent_ipo": null,
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1390.0,
-        "last_close": 1375.0,
-        "pct_below_peak": -0.010791366906474864,
-        "trading_days_since_trigger": 343
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "MASB.JK": {
@@ -6511,10 +6271,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1055.0,
+        "peak_price": 1175.0,
         "last_close": 298.0,
-        "pct_below_peak": -0.7175355450236967,
-        "trading_days_since_trigger": 1108
+        "pct_below_peak": -0.7463829787234042,
+        "trading_days_since_trigger": 1039
       },
       "repeat_suspension": null
     },
@@ -6702,10 +6462,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 3620.0,
+        "peak_price": 4350.0,
         "last_close": 3050.0,
-        "pct_below_peak": -0.1574585635359116,
-        "trading_days_since_trigger": 381
+        "pct_below_peak": -0.29885057471264365,
+        "trading_days_since_trigger": 253
       },
       "repeat_suspension": null
     },
@@ -6860,10 +6620,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 551.9337158203125,
+        "peak_price": 748.7100830078125,
         "last_close": 232.0,
-        "pct_below_peak": -0.5796596704457716,
-        "trading_days_since_trigger": 1123
+        "pct_below_peak": -0.6901337309790455,
+        "trading_days_since_trigger": 1104
       },
       "repeat_suspension": null
     },
@@ -7269,12 +7029,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 535.0,
-        "last_close": 460.0,
-        "pct_below_peak": -0.14018691588785048,
-        "trading_days_since_trigger": 328
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "TBLA.JK": {
@@ -7385,10 +7140,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1810.0,
+        "peak_price": 1935.0,
         "last_close": 1175.0,
-        "pct_below_peak": -0.350828729281768,
-        "trading_days_since_trigger": 469
+        "pct_below_peak": -0.3927648578811369,
+        "trading_days_since_trigger": 264
       },
       "repeat_suspension": {
         "n_events": 2,
@@ -7458,29 +7213,14 @@
     },
     "PSGO.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 274.0,
-        "peak_date": "2022-01-12",
-        "trigger_date": "2022-02-02",
-        "trigger_price": 191.0,
-        "trading_days_since": 1101,
-        "window_trading_days": 252,
-        "last_close": 196.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -28.467153284671532
-      },
+      "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
       "recent_ipo": null,
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 274.0,
-        "last_close": 196.0,
-        "pct_below_peak": -0.2846715328467153,
-        "trading_days_since_trigger": 1101
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "LPPF.JK": {
@@ -7580,10 +7320,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1075.0,
+        "peak_price": 3200.0,
         "last_close": 910.0,
-        "pct_below_peak": -0.15348837209302324,
-        "trading_days_since_trigger": 1106
+        "pct_below_peak": -0.715625,
+        "trading_days_since_trigger": 783
       },
       "repeat_suspension": null
     },
@@ -7622,29 +7362,14 @@
     },
     "RDTX.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 15800.0,
-        "peak_date": "2023-01-16",
-        "trigger_date": "2023-02-07",
-        "trigger_price": 10800.0,
-        "trading_days_since": 854,
-        "window_trading_days": 252,
-        "last_close": 13525.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -14.39873417721519
-      },
+      "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
       "recent_ipo": null,
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 15800.0,
-        "last_close": 13525.0,
-        "pct_below_peak": -0.1439873417721519,
-        "trading_days_since_trigger": 854
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "GOLF.JK": {
@@ -7666,12 +7391,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 272.0,
-        "last_close": 162.0,
-        "pct_below_peak": -0.40441176470588236,
-        "trading_days_since_trigger": 374
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "UNSP.JK": {
@@ -7720,10 +7440,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 4810.0,
+        "peak_price": 21250.0,
         "last_close": 1410.0,
-        "pct_below_peak": -0.7068607068607069,
-        "trading_days_since_trigger": 433
+        "pct_below_peak": -0.9336470588235294,
+        "trading_days_since_trigger": 364
       },
       "repeat_suspension": null
     },
@@ -7754,10 +7474,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 395.0,
+        "peak_price": 675.0,
         "last_close": 326.0,
-        "pct_below_peak": -0.1746835443037975,
-        "trading_days_since_trigger": 1175
+        "pct_below_peak": -0.517037037037037,
+        "trading_days_since_trigger": 1114
       },
       "repeat_suspension": null
     },
@@ -7834,12 +7554,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1060.0,
-        "last_close": 955.0,
-        "pct_below_peak": -0.09905660377358494,
-        "trading_days_since_trigger": 654
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "CENT.JK": {
@@ -7928,10 +7643,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 6225.0,
+        "peak_price": 7225.0,
         "last_close": 1655.0,
-        "pct_below_peak": -0.7341365461847389,
-        "trading_days_since_trigger": 404
+        "pct_below_peak": -0.7709342560553634,
+        "trading_days_since_trigger": 362
       },
       "repeat_suspension": null
     },
@@ -7987,12 +7702,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 505.0,
-        "last_close": 458.0,
-        "pct_below_peak": -0.09306930693069304,
-        "trading_days_since_trigger": 1106
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "INPC.JK": {
@@ -8236,12 +7946,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 785.0,
-        "last_close": 404.0,
-        "pct_below_peak": -0.4853503184713376,
-        "trading_days_since_trigger": 647
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "ABDA.JK": {
@@ -8378,12 +8083,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 9575.0,
-        "last_close": 610.0,
-        "pct_below_peak": -0.9362924281984334,
-        "trading_days_since_trigger": 1115
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "MAPB.JK": {
@@ -8586,12 +8286,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 170.0,
-        "last_close": 131.0,
-        "pct_below_peak": -0.22941176470588232,
-        "trading_days_since_trigger": 595
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BGTG.JK": {
@@ -8614,10 +8309,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 237.21728515625,
+        "peak_price": 332.8694152832031,
         "last_close": 121.0,
-        "pct_below_peak": -0.48991912659189285,
-        "trading_days_since_trigger": 1178
+        "pct_below_peak": -0.6364940891398689,
+        "trading_days_since_trigger": 1121
       },
       "repeat_suspension": null
     },
@@ -8656,10 +8351,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1230.0,
+        "peak_price": 1400.0,
         "last_close": 260.0,
-        "pct_below_peak": -0.7886178861788617,
-        "trading_days_since_trigger": 880
+        "pct_below_peak": -0.8142857142857143,
+        "trading_days_since_trigger": 650
       },
       "repeat_suspension": {
         "n_events": 2,
@@ -8758,12 +8453,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1258.4390869140625,
-        "last_close": 1035.0,
-        "pct_below_peak": -0.17755256431360422,
-        "trading_days_since_trigger": 879
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "PNGO.JK": {
@@ -8855,12 +8545,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1345.0,
-        "last_close": 915.0,
-        "pct_below_peak": -0.3197026022304833,
-        "trading_days_since_trigger": 906
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "PRDA.JK": {
@@ -8936,12 +8621,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1400.0,
-        "last_close": 1100.0,
-        "pct_below_peak": -0.2142857142857143,
-        "trading_days_since_trigger": 307
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "SMDM.JK": {
@@ -9139,12 +8819,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1575.0,
-        "last_close": 970.0,
-        "pct_below_peak": -0.3841269841269841,
-        "trading_days_since_trigger": 1071
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "VICO.JK": {
@@ -9301,12 +8976,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 2100.0,
-        "last_close": 1145.0,
-        "pct_below_peak": -0.4547619047619048,
-        "trading_days_since_trigger": 519
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "TOTO.JK": {
@@ -9367,12 +9037,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 262.0,
-        "last_close": 146.0,
-        "pct_below_peak": -0.4427480916030534,
-        "trading_days_since_trigger": 703
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-08-28",
@@ -9405,10 +9070,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 204.0,
+        "peak_price": 262.0,
         "last_close": 127.0,
-        "pct_below_peak": -0.37745098039215685,
-        "trading_days_since_trigger": 1110
+        "pct_below_peak": -0.5152671755725191,
+        "trading_days_since_trigger": 436
       },
       "repeat_suspension": null
     },
@@ -9432,10 +9097,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 3770.0,
+        "peak_price": 8925.0,
         "last_close": 3070.0,
-        "pct_below_peak": -0.18567639257294433,
-        "trading_days_since_trigger": 1156
+        "pct_below_peak": -0.6560224089635854,
+        "trading_days_since_trigger": 263
       },
       "repeat_suspension": null
     },
@@ -9488,12 +9153,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1910.0,
-        "last_close": 1820.0,
-        "pct_below_peak": -0.04712041884816753,
-        "trading_days_since_trigger": 383
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 4,
         "first_date": "2025-01-23",
@@ -9622,17 +9282,7 @@
       "repeat_suspension": null
     },
     "IFSH.JK": {
-      "fall": {
-        "peak_price": 3250.0,
-        "peak_date": "2026-03-04",
-        "trigger_date": "2026-03-30",
-        "trigger_price": 2150.0,
-        "trading_days_since": 111,
-        "window_trading_days": 252,
-        "last_close": 1100.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -66.15384615384615
-      },
+      "fall": null,
       "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
@@ -9647,12 +9297,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 2480.0,
-        "last_close": 1100.0,
-        "pct_below_peak": -0.5564516129032258,
-        "trading_days_since_trigger": 1103
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2026-01-14",
@@ -9794,10 +9439,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 765.0,
+        "peak_price": 1250.0,
         "last_close": 382.0,
-        "pct_below_peak": -0.5006535947712418,
-        "trading_days_since_trigger": 621
+        "pct_below_peak": -0.6944,
+        "trading_days_since_trigger": 576
       },
       "repeat_suspension": null
     },
@@ -9890,10 +9535,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 342.0,
+        "peak_price": 386.0,
         "last_close": 137.0,
-        "pct_below_peak": -0.5994152046783625,
-        "trading_days_since_trigger": 1178
+        "pct_below_peak": -0.645077720207254,
+        "trading_days_since_trigger": 1085
       },
       "repeat_suspension": null
     },
@@ -9916,12 +9561,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 264.0,
-        "last_close": 236.0,
-        "pct_below_peak": -0.10606060606060608,
-        "trading_days_since_trigger": 893
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BISI.JK": {
@@ -9944,10 +9584,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1925.0,
+        "peak_price": 2080.0,
         "last_close": 730.0,
-        "pct_below_peak": -0.6207792207792208,
-        "trading_days_since_trigger": 966
+        "pct_below_peak": -0.6490384615384616,
+        "trading_days_since_trigger": 473
       },
       "repeat_suspension": null
     },
@@ -10014,10 +9654,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 115.0,
+        "peak_price": 324.0,
         "last_close": 50.0,
-        "pct_below_peak": -0.5652173913043479,
-        "trading_days_since_trigger": 1145
+        "pct_below_peak": -0.845679012345679,
+        "trading_days_since_trigger": 1048
       },
       "repeat_suspension": null
     },
@@ -10138,12 +9778,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 206.0,
-        "last_close": 204.0,
-        "pct_below_peak": -0.009708737864077666,
-        "trading_days_since_trigger": 643
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "KMTR.JK": {
@@ -10175,29 +9810,14 @@
     },
     "MMLP.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 660.0,
-        "peak_date": "2021-09-22",
-        "trigger_date": "2022-01-27",
-        "trigger_price": 436.0,
-        "trading_days_since": 1104,
-        "window_trading_days": 252,
-        "last_close": 304.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -53.93939393939393
-      },
+      "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
       "recent_ipo": null,
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 660.0,
-        "last_close": 304.0,
-        "pct_below_peak": -0.5393939393939393,
-        "trading_days_since_trigger": 1104
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "SCCO.JK": {
@@ -10250,10 +9870,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1280.0,
+        "peak_price": 1470.0,
         "last_close": 50.0,
-        "pct_below_peak": -0.9609375,
-        "trading_days_since_trigger": 1095
+        "pct_below_peak": -0.9659863945578231,
+        "trading_days_since_trigger": 1084
       },
       "repeat_suspension": null
     },
@@ -10385,12 +10005,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 298.0,
-        "last_close": 296.0,
-        "pct_below_peak": -0.006711409395973145,
-        "trading_days_since_trigger": 1053
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "DGWG.JK": {
@@ -10425,10 +10040,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 187.0,
+        "peak_price": 206.0,
         "last_close": 149.0,
-        "pct_below_peak": -0.20320855614973266,
-        "trading_days_since_trigger": 1111
+        "pct_below_peak": -0.2766990291262136,
+        "trading_days_since_trigger": 646
       },
       "repeat_suspension": null
     },
@@ -10623,10 +10238,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 3800.0,
+        "peak_price": 5150.0,
         "last_close": 1420.0,
-        "pct_below_peak": -0.6263157894736842,
-        "trading_days_since_trigger": 1074
+        "pct_below_peak": -0.7242718446601941,
+        "trading_days_since_trigger": 1018
       },
       "repeat_suspension": null
     },
@@ -10659,17 +10274,7 @@
     },
     "LPGI.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 652.5,
-        "peak_date": "2023-06-15",
-        "trigger_date": "2023-11-21",
-        "trigger_price": 450.0,
-        "trading_days_since": 665,
-        "window_trading_days": 252,
-        "last_close": 635.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -2.6819923371647514
-      },
+      "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
       "recent_ipo": null,
@@ -10682,12 +10287,7 @@
           144731453092.0
         ]
       },
-      "long_below_peak": {
-        "peak_price": 652.5,
-        "last_close": 635.0,
-        "pct_below_peak": -0.026819923371647514,
-        "trading_days_since_trigger": 665
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "PSSI.JK": {
@@ -10754,10 +10354,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 350.0,
+        "peak_price": 785.0,
         "last_close": 258.0,
-        "pct_below_peak": -0.2628571428571429,
-        "trading_days_since_trigger": 1119
+        "pct_below_peak": -0.6713375796178345,
+        "trading_days_since_trigger": 404
       },
       "repeat_suspension": null
     },
@@ -10891,12 +10491,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 665.0,
-        "last_close": 394.0,
-        "pct_below_peak": -0.40751879699248117,
-        "trading_days_since_trigger": 1081
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-10-09",
@@ -10962,12 +10557,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 328.0,
-        "last_close": 144.0,
-        "pct_below_peak": -0.5609756097560976,
-        "trading_days_since_trigger": 1042
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 3,
         "first_date": "2025-05-21",
@@ -11032,12 +10622,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1510.0,
-        "last_close": 985.0,
-        "pct_below_peak": -0.347682119205298,
-        "trading_days_since_trigger": 1066
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "DVLA.JK": {
@@ -11103,10 +10688,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 3800.0,
+        "peak_price": 4540.0,
         "last_close": 2000.0,
-        "pct_below_peak": -0.4736842105263158,
-        "trading_days_since_trigger": 1115
+        "pct_below_peak": -0.5594713656387665,
+        "trading_days_since_trigger": 878
       },
       "repeat_suspension": null
     },
@@ -11138,17 +10723,7 @@
       "repeat_suspension": null
     },
     "JGLE.JK": {
-      "fall": {
-        "peak_price": 90.0,
-        "peak_date": "2026-01-14",
-        "trigger_date": "2026-01-23",
-        "trigger_price": 62.0,
-        "trading_days_since": 150,
-        "window_trading_days": 252,
-        "last_close": 82.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -8.888888888888891
-      },
+      "fall": null,
       "older_fall": null,
       "loss_year": {
         "year": 2025,
@@ -11181,12 +10756,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 2190.0,
-        "last_close": 1540.0,
-        "pct_below_peak": -0.29680365296803657,
-        "trading_days_since_trigger": 364
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BVIC.JK": {
@@ -11246,10 +10816,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 4400.0,
+        "peak_price": 7000.0,
         "last_close": 3640.0,
-        "pct_below_peak": -0.17272727272727273,
-        "trading_days_since_trigger": 470
+        "pct_below_peak": -0.48,
+        "trading_days_since_trigger": 437
       },
       "repeat_suspension": null
     },
@@ -11272,12 +10842,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 137.0,
-        "last_close": 114.0,
-        "pct_below_peak": -0.16788321167883213,
-        "trading_days_since_trigger": 945
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BMHS.JK": {
@@ -11353,12 +10918,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 360.0,
-        "last_close": 272.0,
-        "pct_below_peak": -0.24444444444444446,
-        "trading_days_since_trigger": 693
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2026-01-15",
@@ -11385,10 +10945,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 590.0,
+        "peak_price": 815.0,
         "last_close": 490.0,
-        "pct_below_peak": -0.1694915254237288,
-        "trading_days_since_trigger": 1153
+        "pct_below_peak": -0.39877300613496935,
+        "trading_days_since_trigger": 362
       },
       "repeat_suspension": null
     },
@@ -11534,17 +11094,7 @@
     },
     "ERAL.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 402.0,
-        "peak_date": "2023-08-08",
-        "trigger_date": "2024-04-16",
-        "trigger_price": 276.0,
-        "trading_days_since": 574,
-        "window_trading_days": 252,
-        "last_close": 328.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -18.40796019900498
-      },
+      "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
       "recent_ipo": null,
@@ -11558,12 +11108,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 402.0,
-        "last_close": 328.0,
-        "pct_below_peak": -0.1840796019900498,
-        "trading_days_since_trigger": 574
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "GSMF.JK": {
@@ -11592,10 +11137,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 195.25006103515625,
+        "peak_price": 316.0,
         "last_close": 92.0,
-        "pct_below_peak": -0.5288093662442712,
-        "trading_days_since_trigger": 1169
+        "pct_below_peak": -0.7088607594936709,
+        "trading_days_since_trigger": 1128
       },
       "repeat_suspension": null
     },
@@ -11646,10 +11191,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 276.3508605957031,
+        "peak_price": 582.4625854492188,
         "last_close": 254.0,
-        "pct_below_peak": -0.08087856338686084,
-        "trading_days_since_trigger": 1158
+        "pct_below_peak": -0.5639204880359742,
+        "trading_days_since_trigger": 760
       },
       "repeat_suspension": null
     },
@@ -11710,12 +11255,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 900.0,
-        "last_close": 780.0,
-        "pct_below_peak": -0.1333333333333333,
-        "trading_days_since_trigger": 1005
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "IPCM.JK": {
@@ -11826,12 +11366,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 50.0,
-        "last_close": 36.0,
-        "pct_below_peak": -0.28,
-        "trading_days_since_trigger": 581
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "KKGI.JK": {
@@ -11854,10 +11389,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 676.914306640625,
+        "peak_price": 729.7232055664062,
         "last_close": 308.0,
-        "pct_below_peak": -0.5449941048985426,
-        "trading_days_since_trigger": 1007
+        "pct_below_peak": -0.5779221523304409,
+        "trading_days_since_trigger": 916
       },
       "repeat_suspension": null
     },
@@ -11921,10 +11456,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 3037.5,
+        "peak_price": 10100.0,
         "last_close": 2350.0,
-        "pct_below_peak": -0.22633744855967075,
-        "trading_days_since_trigger": 1099
+        "pct_below_peak": -0.7673267326732673,
+        "trading_days_since_trigger": 421
       },
       "repeat_suspension": null
     },
@@ -11948,10 +11483,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 312.0,
+        "peak_price": 570.0,
         "last_close": 216.0,
-        "pct_below_peak": -0.3076923076923077,
-        "trading_days_since_trigger": 1073
+        "pct_below_peak": -0.6210526315789473,
+        "trading_days_since_trigger": 672
       },
       "repeat_suspension": null
     },
@@ -12009,10 +11544,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 448.0,
+        "peak_price": 705.0,
         "last_close": 378.0,
-        "pct_below_peak": -0.15625,
-        "trading_days_since_trigger": 888
+        "pct_below_peak": -0.46382978723404256,
+        "trading_days_since_trigger": 686
       },
       "repeat_suspension": null
     },
@@ -12046,10 +11581,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 520.0,
+        "peak_price": 688.0,
         "last_close": 224.0,
-        "pct_below_peak": -0.5692307692307692,
-        "trading_days_since_trigger": 1107
+        "pct_below_peak": -0.6744186046511628,
+        "trading_days_since_trigger": 777
       },
       "repeat_suspension": null
     },
@@ -12292,10 +11827,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 174.0,
+        "peak_price": 222.0,
         "last_close": 86.0,
-        "pct_below_peak": -0.5057471264367817,
-        "trading_days_since_trigger": 1127
+        "pct_below_peak": -0.6126126126126126,
+        "trading_days_since_trigger": 914
       },
       "repeat_suspension": null
     },
@@ -12429,12 +11964,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 800.0,
-        "last_close": 468.0,
-        "pct_below_peak": -0.41500000000000004,
-        "trading_days_since_trigger": 1085
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "CEKA.JK": {
@@ -12456,12 +11986,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 2650.0,
-        "last_close": 2200.0,
-        "pct_below_peak": -0.16981132075471694,
-        "trading_days_since_trigger": 702
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "WOOD.JK": {
@@ -12536,12 +12061,7 @@
       },
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 240.0,
-        "last_close": 173.0,
-        "pct_below_peak": -0.2791666666666667,
-        "trading_days_since_trigger": 1115
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "GMTD.JK": {
@@ -12564,10 +12084,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 5200.0,
+        "peak_price": 6575.0,
         "last_close": 1290.0,
-        "pct_below_peak": -0.7519230769230769,
-        "trading_days_since_trigger": 616
+        "pct_below_peak": -0.8038022813688213,
+        "trading_days_since_trigger": 535
       },
       "repeat_suspension": null
     },
@@ -12728,10 +12248,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 184.0,
+        "peak_price": 191.0,
         "last_close": 134.0,
-        "pct_below_peak": -0.2717391304347826,
-        "trading_days_since_trigger": 873
+        "pct_below_peak": -0.2984293193717278,
+        "trading_days_since_trigger": 679
       },
       "repeat_suspension": null
     },
@@ -12993,10 +12513,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 11400.0,
+        "peak_price": 13000.0,
         "last_close": 1745.0,
-        "pct_below_peak": -0.8469298245614035,
-        "trading_days_since_trigger": 1114
+        "pct_below_peak": -0.8657692307692307,
+        "trading_days_since_trigger": 902
       },
       "repeat_suspension": null
     },
@@ -13019,12 +12539,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 232.0,
-        "last_close": 200.0,
-        "pct_below_peak": -0.13793103448275867,
-        "trading_days_since_trigger": 1020
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "RSCH.JK": {
@@ -13072,10 +12587,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 348.0,
+        "peak_price": 500.0,
         "last_close": 306.0,
-        "pct_below_peak": -0.12068965517241381,
-        "trading_days_since_trigger": 1144
+        "pct_below_peak": -0.388,
+        "trading_days_since_trigger": 942
       },
       "repeat_suspension": null
     },
@@ -13250,12 +12765,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1000.0,
-        "last_close": 665.0,
-        "pct_below_peak": -0.33499999999999996,
-        "trading_days_since_trigger": 727
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "AISA.JK": {
@@ -13307,12 +12817,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 234.0,
-        "last_close": 108.0,
-        "pct_below_peak": -0.5384615384615384,
-        "trading_days_since_trigger": 1115
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "MITI.JK": {
@@ -13342,10 +12847,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 320.0,
+        "peak_price": 620.0,
         "last_close": 220.0,
-        "pct_below_peak": -0.3125,
-        "trading_days_since_trigger": 1085
+        "pct_below_peak": -0.6451612903225806,
+        "trading_days_since_trigger": 697
       },
       "repeat_suspension": null
     },
@@ -13429,12 +12934,7 @@
       },
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 50.0,
-        "last_close": 28.0,
-        "pct_below_peak": -0.43999999999999995,
-        "trading_days_since_trigger": 771
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "JIHD.JK": {
@@ -13460,10 +12960,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 500.0,
+        "peak_price": 2720.0,
         "last_close": 454.0,
-        "pct_below_peak": -0.09199999999999997,
-        "trading_days_since_trigger": 1083
+        "pct_below_peak": -0.8330882352941177,
+        "trading_days_since_trigger": 418
       },
       "repeat_suspension": null
     },
@@ -13486,12 +12986,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 3600.0,
-        "last_close": 2580.0,
-        "pct_below_peak": -0.2833333333333333,
-        "trading_days_since_trigger": 551
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "UDNG.JK": {
@@ -13523,12 +13018,7 @@
       },
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1475.0,
-        "last_close": 730.0,
-        "pct_below_peak": -0.5050847457627119,
-        "trading_days_since_trigger": 284
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 6,
         "first_date": "2025-03-20",
@@ -13628,10 +13118,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 390.0,
+        "peak_price": 478.0,
         "last_close": 288.0,
-        "pct_below_peak": -0.2615384615384615,
-        "trading_days_since_trigger": 1055
+        "pct_below_peak": -0.39748953974895396,
+        "trading_days_since_trigger": 334
       },
       "repeat_suspension": null
     },
@@ -13699,10 +13189,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 610.0,
+        "peak_price": 930.0,
         "last_close": 555.0,
-        "pct_below_peak": -0.0901639344262295,
-        "trading_days_since_trigger": 1193
+        "pct_below_peak": -0.4032258064516129,
+        "trading_days_since_trigger": 921
       },
       "repeat_suspension": null
     },
@@ -13762,12 +13252,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 326.0,
-        "last_close": 236.0,
-        "pct_below_peak": -0.2760736196319018,
-        "trading_days_since_trigger": 408
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "ARTA.JK": {
@@ -13792,12 +13277,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 2700.0,
-        "last_close": 2350.0,
-        "pct_below_peak": -0.12962962962962965,
-        "trading_days_since_trigger": 772
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BUDI.JK": {
@@ -13906,10 +13386,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 720.0,
+        "peak_price": 1805.0,
         "last_close": 535.0,
-        "pct_below_peak": -0.2569444444444444,
-        "trading_days_since_trigger": 1083
+        "pct_below_peak": -0.7036011080332409,
+        "trading_days_since_trigger": 1032
       },
       "repeat_suspension": null
     },
@@ -14089,12 +13569,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 590.0,
-        "last_close": 545.0,
-        "pct_below_peak": -0.07627118644067798,
-        "trading_days_since_trigger": 1146
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "YPAS.JK": {
@@ -14197,12 +13672,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1050.0,
-        "last_close": 990.0,
-        "pct_below_peak": -0.05714285714285716,
-        "trading_days_since_trigger": 432
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-08-22",
@@ -14259,10 +13729,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1395.0,
+        "peak_price": 3600.0,
         "last_close": 855.0,
-        "pct_below_peak": -0.3870967741935484,
-        "trading_days_since_trigger": 1134
+        "pct_below_peak": -0.7625,
+        "trading_days_since_trigger": 707
       },
       "repeat_suspension": null
     },
@@ -14319,12 +13789,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 282.0,
-        "last_close": 189.0,
-        "pct_below_peak": -0.32978723404255317,
-        "trading_days_since_trigger": 473
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "HGII.JK": {
@@ -14395,12 +13860,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1530.0,
-        "last_close": 1225.0,
-        "pct_below_peak": -0.19934640522875813,
-        "trading_days_since_trigger": 604
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "RODA.JK": {
@@ -14456,10 +13916,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 160.0,
+        "peak_price": 197.0,
         "last_close": 31.0,
-        "pct_below_peak": -0.80625,
-        "trading_days_since_trigger": 1012
+        "pct_below_peak": -0.8426395939086294,
+        "trading_days_since_trigger": 934
       },
       "repeat_suspension": null
     },
@@ -14594,29 +14054,14 @@
     },
     "AREA.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 630.0,
-        "peak_date": "2025-05-16",
-        "trigger_date": "2025-06-03",
-        "trigger_price": 414.0,
-        "trading_days_since": 308,
-        "window_trading_days": 252,
-        "last_close": 340.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -46.03174603174603
-      },
+      "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
       "recent_ipo": null,
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 630.0,
-        "last_close": 340.0,
-        "pct_below_peak": -0.46031746031746035,
-        "trading_days_since_trigger": 308
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BLTA.JK": {
@@ -14645,12 +14090,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 50.0,
-        "last_close": 33.0,
-        "pct_below_peak": -0.33999999999999997,
-        "trading_days_since_trigger": 580
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "INDO.JK": {
@@ -14672,12 +14112,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 214.0,
-        "last_close": 186.0,
-        "pct_below_peak": -0.13084112149532712,
-        "trading_days_since_trigger": 1149
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "HITS.JK": {
@@ -14710,10 +14145,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 560.0,
+        "peak_price": 1175.0,
         "last_close": 116.0,
-        "pct_below_peak": -0.7928571428571428,
-        "trading_days_since_trigger": 1150
+        "pct_below_peak": -0.9012765957446809,
+        "trading_days_since_trigger": 1022
       },
       "repeat_suspension": null
     },
@@ -14737,10 +14172,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 935.0,
+        "peak_price": 1145.0,
         "last_close": 590.0,
-        "pct_below_peak": -0.36898395721925137,
-        "trading_days_since_trigger": 893
+        "pct_below_peak": -0.4847161572052402,
+        "trading_days_since_trigger": 618
       },
       "repeat_suspension": {
         "n_events": 2,
@@ -14817,10 +14252,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 196.0,
+        "peak_price": 625.0,
         "last_close": 116.0,
-        "pct_below_peak": -0.40816326530612246,
-        "trading_days_since_trigger": 1115
+        "pct_below_peak": -0.8144,
+        "trading_days_since_trigger": 1002
       },
       "repeat_suspension": {
         "n_events": 2,
@@ -14892,10 +14327,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 127.0,
+        "peak_price": 985.0,
         "last_close": 100.0,
-        "pct_below_peak": -0.21259842519685035,
-        "trading_days_since_trigger": 915
+        "pct_below_peak": -0.8984771573604061,
+        "trading_days_since_trigger": 573
       },
       "repeat_suspension": {
         "n_events": 2,
@@ -14928,12 +14363,7 @@
           48091498645.0
         ]
       },
-      "long_below_peak": {
-        "peak_price": 141.0,
-        "last_close": 90.0,
-        "pct_below_peak": -0.36170212765957444,
-        "trading_days_since_trigger": 610
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "MABA.JK": {
@@ -15105,12 +14535,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 53.0,
-        "last_close": 46.0,
-        "pct_below_peak": -0.13207547169811318,
-        "trading_days_since_trigger": 581
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "CMPP.JK": {
@@ -15136,10 +14561,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 525.0,
+        "peak_price": 800.0,
         "last_close": 69.0,
-        "pct_below_peak": -0.8685714285714285,
-        "trading_days_since_trigger": 1108
+        "pct_below_peak": -0.9137500000000001,
+        "trading_days_since_trigger": 1044
       },
       "repeat_suspension": null
     },
@@ -15196,10 +14621,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 850.0,
+        "peak_price": 1075.0,
         "last_close": 210.0,
-        "pct_below_peak": -0.7529411764705882,
-        "trading_days_since_trigger": 1110
+        "pct_below_peak": -0.8046511627906977,
+        "trading_days_since_trigger": 1067
       },
       "repeat_suspension": null
     },
@@ -15396,12 +14821,7 @@
           13506777012.0
         ]
       },
-      "long_below_peak": {
-        "peak_price": 196.0,
-        "last_close": 177.0,
-        "pct_below_peak": -0.09693877551020413,
-        "trading_days_since_trigger": 504
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "PIPA.JK": {
@@ -15557,10 +14977,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 304.0,
+        "peak_price": 436.0,
         "last_close": 64.0,
-        "pct_below_peak": -0.7894736842105263,
-        "trading_days_since_trigger": 689
+        "pct_below_peak": -0.8532110091743119,
+        "trading_days_since_trigger": 666
       },
       "repeat_suspension": null
     },
@@ -15680,12 +15100,7 @@
           213854435657.0
         ]
       },
-      "long_below_peak": {
-        "peak_price": 121.0,
-        "last_close": 115.0,
-        "pct_below_peak": -0.04958677685950408,
-        "trading_days_since_trigger": 895
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "WMUU.JK": {
@@ -15771,12 +15186,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 280.0,
-        "last_close": 220.0,
-        "pct_below_peak": -0.2142857142857143,
-        "trading_days_since_trigger": 867
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "LCGP.JK": {
@@ -15818,10 +15228,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1815.0,
+        "peak_price": 2820.0,
         "last_close": 825.0,
-        "pct_below_peak": -0.5454545454545454,
-        "trading_days_since_trigger": 793
+        "pct_below_peak": -0.7074468085106382,
+        "trading_days_since_trigger": 551
       },
       "repeat_suspension": null
     },
@@ -15878,10 +15288,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 100.0,
+        "peak_price": 133.0,
         "last_close": 50.0,
-        "pct_below_peak": -0.5,
-        "trading_days_since_trigger": 1038
+        "pct_below_peak": -0.6240601503759399,
+        "trading_days_since_trigger": 896
       },
       "repeat_suspension": null
     },
@@ -15977,12 +15387,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1390.0,
-        "last_close": 660.0,
-        "pct_below_peak": -0.525179856115108,
-        "trading_days_since_trigger": 1077
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "EMMI.JK": {
@@ -16023,12 +15428,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 290.0,
-        "last_close": 212.0,
-        "pct_below_peak": -0.2689655172413793,
-        "trading_days_since_trigger": 684
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "SOTS.JK": {
@@ -16176,12 +15576,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 640.0,
-        "last_close": 468.0,
-        "pct_below_peak": -0.26875000000000004,
-        "trading_days_since_trigger": 1085
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-05-16",
@@ -16214,12 +15609,7 @@
       },
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 322.0,
-        "last_close": 270.0,
-        "pct_below_peak": -0.16149068322981364,
-        "trading_days_since_trigger": 780
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "PANR.JK": {
@@ -16242,10 +15632,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 830.1375122070312,
+        "peak_price": 1100.0,
         "last_close": 428.0,
-        "pct_below_peak": -0.4844227688710212,
-        "trading_days_since_trigger": 637
+        "pct_below_peak": -0.6109090909090908,
+        "trading_days_since_trigger": 273
       },
       "repeat_suspension": null
     },
@@ -16517,10 +15907,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 137.0,
+        "peak_price": 216.0,
         "last_close": 90.0,
-        "pct_below_peak": -0.34306569343065696,
-        "trading_days_since_trigger": 1030
+        "pct_below_peak": -0.5833333333333333,
+        "trading_days_since_trigger": 651
       },
       "repeat_suspension": null
     },
@@ -16607,10 +15997,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 440.0,
+        "peak_price": 450.0,
         "last_close": 162.0,
-        "pct_below_peak": -0.6318181818181818,
-        "trading_days_since_trigger": 763
+        "pct_below_peak": -0.64,
+        "trading_days_since_trigger": 368
       },
       "repeat_suspension": null
     },
@@ -16636,12 +16026,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 925.0,
-        "last_close": 490.0,
-        "pct_below_peak": -0.47027027027027024,
-        "trading_days_since_trigger": 826
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 3,
         "first_date": "2025-10-29",
@@ -16677,12 +16062,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 560.0,
-        "last_close": 358.0,
-        "pct_below_peak": -0.36071428571428577,
-        "trading_days_since_trigger": 724
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-10-01",
@@ -16757,12 +16137,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 322.0,
-        "last_close": 312.0,
-        "pct_below_peak": -0.03105590062111796,
-        "trading_days_since_trigger": 519
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "HOKI.JK": {
@@ -16918,10 +16293,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 202.0,
+        "peak_price": 314.0,
         "last_close": 175.0,
-        "pct_below_peak": -0.13366336633663367,
-        "trading_days_since_trigger": 1182
+        "pct_below_peak": -0.4426751592356688,
+        "trading_days_since_trigger": 717
       },
       "repeat_suspension": null
     },
@@ -17102,38 +16477,23 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 440.0,
+        "peak_price": 630.0,
         "last_close": 212.0,
-        "pct_below_peak": -0.5181818181818182,
-        "trading_days_since_trigger": 1123
+        "pct_below_peak": -0.6634920634920635,
+        "trading_days_since_trigger": 559
       },
       "repeat_suspension": null
     },
     "MDKI.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 228.0,
-        "peak_date": "2021-11-15",
-        "trigger_date": "2025-02-12",
-        "trigger_price": 159.0,
-        "trading_days_since": 374,
-        "window_trading_days": 252,
-        "last_close": 200.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -12.28070175438597
-      },
+      "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
       "recent_ipo": null,
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 228.0,
-        "last_close": 200.0,
-        "pct_below_peak": -0.1228070175438597,
-        "trading_days_since_trigger": 374
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "KDTN.JK": {
@@ -17284,10 +16644,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 815.0,
+        "peak_price": 985.0,
         "last_close": 328.0,
-        "pct_below_peak": -0.5975460122699386,
-        "trading_days_since_trigger": 791
+        "pct_below_peak": -0.667005076142132,
+        "trading_days_since_trigger": 687
       },
       "repeat_suspension": null
     },
@@ -17381,10 +16741,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 282.0,
+        "peak_price": 330.0,
         "last_close": 189.0,
-        "pct_below_peak": -0.32978723404255317,
-        "trading_days_since_trigger": 1143
+        "pct_below_peak": -0.42727272727272725,
+        "trading_days_since_trigger": 664
       },
       "repeat_suspension": null
     },
@@ -17437,12 +16797,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 148.0,
-        "last_close": 101.0,
-        "pct_below_peak": -0.31756756756756754,
-        "trading_days_since_trigger": 945
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BOAT.JK": {
@@ -17522,10 +16877,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 5300.0,
+        "peak_price": 5700.0,
         "last_close": 920.0,
-        "pct_below_peak": -0.8264150943396227,
-        "trading_days_since_trigger": 1142
+        "pct_below_peak": -0.8385964912280701,
+        "trading_days_since_trigger": 823
       },
       "repeat_suspension": null
     },
@@ -17575,12 +16930,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 370.0,
-        "last_close": 258.0,
-        "pct_below_peak": -0.3027027027027027,
-        "trading_days_since_trigger": 736
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "TRUK.JK": {
@@ -17758,10 +17108,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 127.0,
+        "peak_price": 181.0,
         "last_close": 106.0,
-        "pct_below_peak": -0.16535433070866146,
-        "trading_days_since_trigger": 574
+        "pct_below_peak": -0.41436464088397795,
+        "trading_days_since_trigger": 287
       },
       "repeat_suspension": null
     },
@@ -17787,12 +17137,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 136.0,
-        "last_close": 96.0,
-        "pct_below_peak": -0.2941176470588235,
-        "trading_days_since_trigger": 680
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-05-22",
@@ -17821,12 +17166,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 230.0,
-        "last_close": 216.0,
-        "pct_below_peak": -0.060869565217391286,
-        "trading_days_since_trigger": 1043
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 3,
         "first_date": "2025-07-29",
@@ -17886,12 +17226,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 294.0,
-        "last_close": 196.0,
-        "pct_below_peak": -0.33333333333333337,
-        "trading_days_since_trigger": 627
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "RIGS.JK": {
@@ -17914,10 +17249,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 890.0,
+        "peak_price": 1150.0,
         "last_close": 700.0,
-        "pct_below_peak": -0.2134831460674157,
-        "trading_days_since_trigger": 1007
+        "pct_below_peak": -0.3913043478260869,
+        "trading_days_since_trigger": 397
       },
       "repeat_suspension": null
     },
@@ -17940,12 +17275,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 312.0,
-        "last_close": 218.0,
-        "pct_below_peak": -0.3012820512820513,
-        "trading_days_since_trigger": 951
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "SAPX.JK": {
@@ -17982,10 +17312,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1405.0,
+        "peak_price": 3630.0,
         "last_close": 326.0,
-        "pct_below_peak": -0.7679715302491104,
-        "trading_days_since_trigger": 1004
+        "pct_below_peak": -0.9101928374655648,
+        "trading_days_since_trigger": 414
       },
       "repeat_suspension": null
     },
@@ -18009,10 +17339,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 966.850830078125,
+        "peak_price": 1886.345703125,
         "last_close": 147.0,
-        "pct_below_peak": -0.8479600002121094,
-        "trading_days_since_trigger": 1183
+        "pct_below_peak": -0.9220715483082058,
+        "trading_days_since_trigger": 1055
       },
       "repeat_suspension": null
     },
@@ -18036,10 +17366,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 715.0,
+        "peak_price": 880.0,
         "last_close": 515.0,
-        "pct_below_peak": -0.2797202797202797,
-        "trading_days_since_trigger": 926
+        "pct_below_peak": -0.4147727272727273,
+        "trading_days_since_trigger": 421
       },
       "repeat_suspension": null
     },
@@ -18112,10 +17442,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 204.0,
+        "peak_price": 380.0,
         "last_close": 192.0,
-        "pct_below_peak": -0.05882352941176472,
-        "trading_days_since_trigger": 1042
+        "pct_below_peak": -0.49473684210526314,
+        "trading_days_since_trigger": 872
       },
       "repeat_suspension": null
     },
@@ -18149,10 +17479,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 481.521728515625,
+        "peak_price": 515.0,
         "last_close": 174.0,
-        "pct_below_peak": -0.6386455902283259,
-        "trading_days_since_trigger": 1009
+        "pct_below_peak": -0.6621359223300971,
+        "trading_days_since_trigger": 987
       },
       "repeat_suspension": {
         "n_events": 3,
@@ -18162,17 +17492,7 @@
     },
     "MTFN.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 50.0,
-        "peak_date": "2021-09-09",
-        "trigger_date": "2024-09-03",
-        "trigger_price": 34.0,
-        "trading_days_since": 482,
-        "window_trading_days": 252,
-        "last_close": 13.0,
-        "last_close_date": "2026-09-08",
-        "pct_from_peak": -74.0
-      },
+      "older_fall": null,
       "loss_year": {
         "year": 2025,
         "net_income": -31462795603.0
@@ -18182,12 +17502,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 50.0,
-        "last_close": 13.0,
-        "pct_below_peak": -0.74,
-        "trading_days_since_trigger": 482
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "PRDL.JK": {
@@ -18296,10 +17611,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 905.0,
+        "peak_price": 1460.0,
         "last_close": 500.0,
-        "pct_below_peak": -0.4475138121546961,
-        "trading_days_since_trigger": 1154
+        "pct_below_peak": -0.6575342465753424,
+        "trading_days_since_trigger": 410
       },
       "repeat_suspension": null
     },
@@ -18323,10 +17638,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 346.0,
+        "peak_price": 466.0,
         "last_close": 338.0,
-        "pct_below_peak": -0.023121387283236983,
-        "trading_days_since_trigger": 819
+        "pct_below_peak": -0.27467811158798283,
+        "trading_days_since_trigger": 268
       },
       "repeat_suspension": null
     },
@@ -18380,10 +17695,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 246.0,
+        "peak_price": 900.0,
         "last_close": 152.0,
-        "pct_below_peak": -0.38211382113821135,
-        "trading_days_since_trigger": 856
+        "pct_below_peak": -0.8311111111111111,
+        "trading_days_since_trigger": 685
       },
       "repeat_suspension": null
     },
@@ -18413,12 +17728,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 143.0,
-        "last_close": 139.0,
-        "pct_below_peak": -0.027972027972028024,
-        "trading_days_since_trigger": 751
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "NUSA.JK": {
@@ -18550,29 +17860,14 @@
     },
     "UNIQ.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 735.0,
-        "peak_date": "2024-10-22",
-        "trigger_date": "2024-10-25",
-        "trigger_price": 510.0,
-        "trading_days_since": 444,
-        "window_trading_days": 252,
-        "last_close": 123.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -83.26530612244898
-      },
+      "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
       "recent_ipo": null,
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 216.0,
-        "last_close": 123.0,
-        "pct_below_peak": -0.4305555555555556,
-        "trading_days_since_trigger": 726
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "ASPR.JK": {
@@ -18606,12 +17901,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 332.0,
-        "last_close": 50.0,
-        "pct_below_peak": -0.8493975903614458,
-        "trading_days_since_trigger": 1191
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 4,
         "first_date": "2025-10-14",
@@ -18638,10 +17928,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 103.0,
+        "peak_price": 136.0,
         "last_close": 87.0,
-        "pct_below_peak": -0.15533980582524276,
-        "trading_days_since_trigger": 1110
+        "pct_below_peak": -0.3602941176470589,
+        "trading_days_since_trigger": 681
       },
       "repeat_suspension": null
     },
@@ -18698,10 +17988,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 334.0,
+        "peak_price": 1180.0,
         "last_close": 316.0,
-        "pct_below_peak": -0.053892215568862256,
-        "trading_days_since_trigger": 1052
+        "pct_below_peak": -0.7322033898305085,
+        "trading_days_since_trigger": 1005
       },
       "repeat_suspension": null
     },
@@ -18724,12 +18014,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 51.0,
-        "last_close": 50.0,
-        "pct_below_peak": -0.019607843137254943,
-        "trading_days_since_trigger": 654
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "APLI.JK": {
@@ -18758,12 +18043,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 298.0,
-        "last_close": 282.0,
-        "pct_below_peak": -0.05369127516778527,
-        "trading_days_since_trigger": 864
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "TRUS.JK": {
@@ -18786,10 +18066,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 468.0,
+        "peak_price": 1565.0,
         "last_close": 450.0,
-        "pct_below_peak": -0.038461538461538436,
-        "trading_days_since_trigger": 703
+        "pct_below_peak": -0.7124600638977636,
+        "trading_days_since_trigger": 346
       },
       "repeat_suspension": null
     },
@@ -18881,10 +18161,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 970.0,
+        "peak_price": 1005.0,
         "last_close": 258.0,
-        "pct_below_peak": -0.7340206185567011,
-        "trading_days_since_trigger": 1076
+        "pct_below_peak": -0.7432835820895523,
+        "trading_days_since_trigger": 745
       },
       "repeat_suspension": null
     },
@@ -18908,10 +18188,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 130.0,
+        "peak_price": 162.0,
         "last_close": 85.0,
-        "pct_below_peak": -0.34615384615384615,
-        "trading_days_since_trigger": 606
+        "pct_below_peak": -0.47530864197530864,
+        "trading_days_since_trigger": 421
       },
       "repeat_suspension": null
     },
@@ -19006,10 +18286,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 402.0,
+        "peak_price": 452.0,
         "last_close": 167.0,
-        "pct_below_peak": -0.5845771144278606,
-        "trading_days_since_trigger": 608
+        "pct_below_peak": -0.6305309734513274,
+        "trading_days_since_trigger": 591
       },
       "repeat_suspension": null
     },
@@ -19033,10 +18313,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 462.0,
+        "peak_price": 494.0,
         "last_close": 284.0,
-        "pct_below_peak": -0.38528138528138534,
-        "trading_days_since_trigger": 1041
+        "pct_below_peak": -0.4251012145748988,
+        "trading_days_since_trigger": 865
       },
       "repeat_suspension": null
     },
@@ -19096,10 +18376,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 705.0,
+        "peak_price": 710.0,
         "last_close": 134.0,
-        "pct_below_peak": -0.8099290780141843,
-        "trading_days_since_trigger": 804
+        "pct_below_peak": -0.8112676056338028,
+        "trading_days_since_trigger": 735
       },
       "repeat_suspension": null
     },
@@ -19139,10 +18419,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 120.0,
+        "peak_price": 234.0,
         "last_close": 113.0,
-        "pct_below_peak": -0.05833333333333335,
-        "trading_days_since_trigger": 793
+        "pct_below_peak": -0.517094017094017,
+        "trading_days_since_trigger": 267
       },
       "repeat_suspension": null
     },
@@ -19170,17 +18450,7 @@
     },
     "SATU.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 260.0,
-        "peak_date": "2025-02-26",
-        "trigger_date": "2025-04-09",
-        "trigger_price": 177.0,
-        "trading_days_since": 341,
-        "window_trading_days": 252,
-        "last_close": 252.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -3.076923076923077
-      },
+      "older_fall": null,
       "loss_year": {
         "year": 2025,
         "net_income": -3178811763.0
@@ -19190,12 +18460,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 260.0,
-        "last_close": 252.0,
-        "pct_below_peak": -0.03076923076923077,
-        "trading_days_since_trigger": 341
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "MPXL.JK": {
@@ -19221,25 +18486,15 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 274.0,
+        "peak_price": 300.0,
         "last_close": 170.0,
-        "pct_below_peak": -0.3795620437956204,
-        "trading_days_since_trigger": 685
+        "pct_below_peak": -0.43333333333333335,
+        "trading_days_since_trigger": 615
       },
       "repeat_suspension": null
     },
     "BIPP.JK": {
-      "fall": {
-        "peak_price": 104.0,
-        "peak_date": "2026-02-26",
-        "trigger_date": "2026-03-03",
-        "trigger_price": 68.0,
-        "trading_days_since": 126,
-        "window_trading_days": 252,
-        "last_close": 69.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -33.65384615384615
-      },
+      "fall": null,
       "older_fall": null,
       "loss_year": {
         "year": 2025,
@@ -19334,12 +18589,7 @@
           194596639000.0
         ]
       },
-      "long_below_peak": {
-        "peak_price": 50.0,
-        "last_close": 37.0,
-        "pct_below_peak": -0.26,
-        "trading_days_since_trigger": 581
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "DEWI.JK": {
@@ -19362,10 +18612,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 276.0,
+        "peak_price": 370.0,
         "last_close": 159.0,
-        "pct_below_peak": -0.42391304347826086,
-        "trading_days_since_trigger": 892
+        "pct_below_peak": -0.5702702702702702,
+        "trading_days_since_trigger": 768
       },
       "repeat_suspension": null
     },
@@ -19395,10 +18645,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 135.0,
+        "peak_price": 294.0,
         "last_close": 68.0,
-        "pct_below_peak": -0.49629629629629635,
-        "trading_days_since_trigger": 689
+        "pct_below_peak": -0.7687074829931972,
+        "trading_days_since_trigger": 419
       },
       "repeat_suspension": null
     },
@@ -19449,10 +18699,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 264.0,
+        "peak_price": 364.0,
         "last_close": 70.0,
-        "pct_below_peak": -0.7348484848484849,
-        "trading_days_since_trigger": 928
+        "pct_below_peak": -0.8076923076923077,
+        "trading_days_since_trigger": 796
       },
       "repeat_suspension": null
     },
@@ -19479,10 +18729,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 148.0,
+        "peak_price": 183.0,
         "last_close": 80.0,
-        "pct_below_peak": -0.45945945945945943,
-        "trading_days_since_trigger": 754
+        "pct_below_peak": -0.5628415300546448,
+        "trading_days_since_trigger": 706
       },
       "repeat_suspension": {
         "n_events": 2,
@@ -19573,12 +18823,7 @@
       },
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 486.0,
-        "last_close": 248.0,
-        "pct_below_peak": -0.4897119341563786,
-        "trading_days_since_trigger": 1186
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "MYTX.JK": {
@@ -19758,10 +19003,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 274.0,
+        "peak_price": 695.0,
         "last_close": 96.0,
-        "pct_below_peak": -0.6496350364963503,
-        "trading_days_since_trigger": 403
+        "pct_below_peak": -0.8618705035971224,
+        "trading_days_since_trigger": 342
       },
       "repeat_suspension": null
     },
@@ -19889,10 +19134,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 113.65384674072266,
+        "peak_price": 175.0,
         "last_close": 87.0,
-        "pct_below_peak": -0.23451777045019695,
-        "trading_days_since_trigger": 771
+        "pct_below_peak": -0.5028571428571429,
+        "trading_days_since_trigger": 420
       },
       "repeat_suspension": null
     },
@@ -19994,10 +19239,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 280.4435729980469,
+        "peak_price": 322.0,
         "last_close": 123.0,
-        "pct_below_peak": -0.5614090967210127,
-        "trading_days_since_trigger": 754
+        "pct_below_peak": -0.6180124223602484,
+        "trading_days_since_trigger": 683
       },
       "repeat_suspension": null
     },
@@ -20038,10 +19283,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 305.1428527832031,
+        "peak_price": 380.5714416503906,
         "last_close": 118.0,
-        "pct_below_peak": -0.613295874624872,
-        "trading_days_since_trigger": 481
+        "pct_below_peak": -0.6899399505956627,
+        "trading_days_since_trigger": 336
       },
       "repeat_suspension": null
     },
@@ -20091,12 +19336,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 172.0,
-        "last_close": 105.0,
-        "pct_below_peak": -0.38953488372093026,
-        "trading_days_since_trigger": 469
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "ASHA.JK": {
@@ -20130,17 +19370,7 @@
       "repeat_suspension": null
     },
     "WGSH.JK": {
-      "fall": {
-        "peak_price": 159.0,
-        "peak_date": "2026-01-23",
-        "trigger_date": "2026-04-06",
-        "trigger_price": 106.0,
-        "trading_days_since": 107,
-        "window_trading_days": 252,
-        "last_close": 156.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -1.8867924528301883
-      },
+      "fall": null,
       "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
@@ -20178,10 +19408,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 254.0,
+        "peak_price": 328.0,
         "last_close": 171.0,
-        "pct_below_peak": -0.32677165354330706,
-        "trading_days_since_trigger": 459
+        "pct_below_peak": -0.47865853658536583,
+        "trading_days_since_trigger": 409
       },
       "repeat_suspension": null
     },
@@ -20304,12 +19534,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 252.0,
-        "last_close": 212.0,
-        "pct_below_peak": -0.15873015873015872,
-        "trading_days_since_trigger": 950
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "HAJJ.JK": {
@@ -20370,12 +19595,7 @@
           855385000000.0
         ]
       },
-      "long_below_peak": {
-        "peak_price": 342.0,
-        "last_close": 242.0,
-        "pct_below_peak": -0.29239766081871343,
-        "trading_days_since_trigger": 1105
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "OKAS.JK": {
@@ -20400,12 +19620,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 222.0,
-        "last_close": 121.0,
-        "pct_below_peak": -0.45495495495495497,
-        "trading_days_since_trigger": 931
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BATR.JK": {
@@ -20427,12 +19642,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 120.0,
-        "last_close": 94.0,
-        "pct_below_peak": -0.21666666666666667,
-        "trading_days_since_trigger": 535
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "PDES.JK": {
@@ -20460,12 +19670,7 @@
           28423779333.0
         ]
       },
-      "long_below_peak": {
-        "peak_price": 476.0,
-        "last_close": 384.0,
-        "pct_below_peak": -0.19327731092436973,
-        "trading_days_since_trigger": 695
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "LAPD.JK": {
@@ -20520,10 +19725,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 173.0,
+        "peak_price": 312.0,
         "last_close": 120.0,
-        "pct_below_peak": -0.3063583815028902,
-        "trading_days_since_trigger": 792
+        "pct_below_peak": -0.6153846153846154,
+        "trading_days_since_trigger": 467
       },
       "repeat_suspension": null
     },
@@ -20602,12 +19807,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 64.0,
-        "last_close": 46.0,
-        "pct_below_peak": -0.28125,
-        "trading_days_since_trigger": 582
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "IKAI.JK": {
@@ -20697,10 +19897,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 196.0,
+        "peak_price": 214.0,
         "last_close": 82.0,
-        "pct_below_peak": -0.5816326530612245,
-        "trading_days_since_trigger": 950
+        "pct_below_peak": -0.6168224299065421,
+        "trading_days_since_trigger": 469
       },
       "repeat_suspension": null
     },
@@ -20761,10 +19961,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 173.0,
+        "peak_price": 426.0,
         "last_close": 34.0,
-        "pct_below_peak": -0.8034682080924855,
-        "trading_days_since_trigger": 823
+        "pct_below_peak": -0.92018779342723,
+        "trading_days_since_trigger": 806
       },
       "repeat_suspension": null
     },
@@ -20787,12 +19987,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 256.0,
-        "last_close": 244.0,
-        "pct_below_peak": -0.046875,
-        "trading_days_since_trigger": 1115
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "POLA.JK": {
@@ -20878,10 +20073,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 332.0,
+        "peak_price": 370.0,
         "last_close": 200.0,
-        "pct_below_peak": -0.3975903614457831,
-        "trading_days_since_trigger": 870
+        "pct_below_peak": -0.45945945945945943,
+        "trading_days_since_trigger": 840
       },
       "repeat_suspension": null
     },
@@ -20914,17 +20109,7 @@
     },
     "AKKU.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 50.0,
-        "peak_date": "2021-09-09",
-        "trigger_date": "2024-03-28",
-        "trigger_price": 34.0,
-        "trading_days_since": 584,
-        "window_trading_days": 252,
-        "last_close": 38.0,
-        "last_close_date": "2026-09-08",
-        "pct_from_peak": -24.0
-      },
+      "older_fall": null,
       "loss_year": {
         "year": 2025,
         "net_income": -27318368346.0
@@ -20934,12 +20119,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 50.0,
-        "last_close": 38.0,
-        "pct_below_peak": -0.24,
-        "trading_days_since_trigger": 584
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BOBA.JK": {
@@ -20961,12 +20141,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 350.0,
-        "last_close": 214.0,
-        "pct_below_peak": -0.38857142857142857,
-        "trading_days_since_trigger": 1131
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "AKSI.JK": {
@@ -20989,10 +20164,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 570.0,
+        "peak_price": 1050.0,
         "last_close": 314.0,
-        "pct_below_peak": -0.4491228070175438,
-        "trading_days_since_trigger": 1141
+        "pct_below_peak": -0.700952380952381,
+        "trading_days_since_trigger": 1121
       },
       "repeat_suspension": null
     },
@@ -21070,12 +20245,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 500.0,
-        "last_close": 418.0,
-        "pct_below_peak": -0.16400000000000003,
-        "trading_days_since_trigger": 1107
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 3,
         "first_date": "2025-02-11",
@@ -21290,12 +20460,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 135.0,
-        "last_close": 87.0,
-        "pct_below_peak": -0.3555555555555555,
-        "trading_days_since_trigger": 1084
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "DUCK.JK": {
@@ -21356,12 +20521,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 208.0,
-        "last_close": 142.0,
-        "pct_below_peak": -0.3173076923076923,
-        "trading_days_since_trigger": 952
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BEBS.JK": {
@@ -21410,12 +20570,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 167.0,
-        "last_close": 162.0,
-        "pct_below_peak": -0.029940119760479056,
-        "trading_days_since_trigger": 868
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "KBLV.JK": {
@@ -21504,12 +20659,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 122.0,
-        "last_close": 83.0,
-        "pct_below_peak": -0.319672131147541,
-        "trading_days_since_trigger": 936
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "RELF.JK": {
@@ -21605,12 +20755,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 1225.0,
-        "last_close": 284.0,
-        "pct_below_peak": -0.7681632653061224,
-        "trading_days_since_trigger": 397
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-09-24",
@@ -21643,12 +20788,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 348.0,
-        "last_close": 228.0,
-        "pct_below_peak": -0.3448275862068966,
-        "trading_days_since_trigger": 888
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "LAND.JK": {
@@ -21677,10 +20817,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 132.0,
+        "peak_price": 238.0,
         "last_close": 77.0,
-        "pct_below_peak": -0.41666666666666663,
-        "trading_days_since_trigger": 1184
+        "pct_below_peak": -0.6764705882352942,
+        "trading_days_since_trigger": 999
       },
       "repeat_suspension": null
     },
@@ -21704,10 +20844,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 73.0,
+        "peak_price": 78.0,
         "last_close": 33.0,
-        "pct_below_peak": -0.547945205479452,
-        "trading_days_since_trigger": 1179
+        "pct_below_peak": -0.5769230769230769,
+        "trading_days_since_trigger": 1111
       },
       "repeat_suspension": null
     },
@@ -21760,12 +20900,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 145.0,
-        "last_close": 61.0,
-        "pct_below_peak": -0.5793103448275863,
-        "trading_days_since_trigger": 1136
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-12-10",
@@ -21814,10 +20949,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 206.0,
+        "peak_price": 236.0,
         "last_close": 148.0,
-        "pct_below_peak": -0.2815533980582524,
-        "trading_days_since_trigger": 1133
+        "pct_below_peak": -0.3728813559322034,
+        "trading_days_since_trigger": 1083
       },
       "repeat_suspension": null
     },
@@ -21844,26 +20979,16 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 212.0,
+        "peak_price": 304.0,
         "last_close": 64.0,
-        "pct_below_peak": -0.6981132075471699,
-        "trading_days_since_trigger": 788
+        "pct_below_peak": -0.7894736842105263,
+        "trading_days_since_trigger": 584
       },
       "repeat_suspension": null
     },
     "NINE.JK": {
       "fall": null,
-      "older_fall": {
-        "peak_price": 326.0,
-        "peak_date": "2025-03-20",
-        "trigger_date": "2025-03-26",
-        "trigger_price": 216.0,
-        "trading_days_since": 344,
-        "window_trading_days": 252,
-        "last_close": 98.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -69.93865030674846
-      },
+      "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
       "recent_ipo": null,
@@ -21877,12 +21002,7 @@
       },
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 326.0,
-        "last_close": 98.0,
-        "pct_below_peak": -0.6993865030674846,
-        "trading_days_since_trigger": 344
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 4,
         "first_date": "2025-01-08",
@@ -21919,10 +21039,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 140.0,
+        "peak_price": 145.0,
         "last_close": 91.0,
-        "pct_below_peak": -0.35,
-        "trading_days_since_trigger": 1102
+        "pct_below_peak": -0.37241379310344824,
+        "trading_days_since_trigger": 1041
       },
       "repeat_suspension": null
     },
@@ -21994,12 +21114,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 50.0,
-        "last_close": 26.0,
-        "pct_below_peak": -0.48,
-        "trading_days_since_trigger": 771
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "SEMA.JK": {
@@ -22022,10 +21137,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 272.0,
+        "peak_price": 316.0,
         "last_close": 122.0,
-        "pct_below_peak": -0.5514705882352942,
-        "trading_days_since_trigger": 1106
+        "pct_below_peak": -0.6139240506329113,
+        "trading_days_since_trigger": 1019
       },
       "repeat_suspension": null
     },
@@ -22147,10 +21262,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 620.0,
+        "peak_price": 640.0,
         "last_close": 130.0,
-        "pct_below_peak": -0.7903225806451613,
-        "trading_days_since_trigger": 1119
+        "pct_below_peak": -0.796875,
+        "trading_days_since_trigger": 1063
       },
       "repeat_suspension": null
     },
@@ -22200,12 +21315,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 326.0,
-        "last_close": 188.0,
-        "pct_below_peak": -0.4233128834355828,
-        "trading_days_since_trigger": 321
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "CAKK.JK": {
@@ -22309,12 +21419,7 @@
         ]
       },
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 173.0,
-        "last_close": 77.0,
-        "pct_below_peak": -0.5549132947976878,
-        "trading_days_since_trigger": 787
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-01-10",
@@ -22466,12 +21571,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 67.0,
-        "last_close": 58.0,
-        "pct_below_peak": -0.13432835820895528,
-        "trading_days_since_trigger": 774
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "FWCT.JK": {
@@ -22494,10 +21594,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 159.0,
+        "peak_price": 228.0,
         "last_close": 92.0,
-        "pct_below_peak": -0.42138364779874216,
-        "trading_days_since_trigger": 839
+        "pct_below_peak": -0.5964912280701755,
+        "trading_days_since_trigger": 326
       },
       "repeat_suspension": null
     },
@@ -22566,12 +21666,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 186.0,
-        "last_close": 141.0,
-        "pct_below_peak": -0.24193548387096775,
-        "trading_days_since_trigger": 1094
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "CSMI.JK": {
@@ -22608,10 +21703,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 3720.0,
+        "peak_price": 4580.0,
         "last_close": 183.0,
-        "pct_below_peak": -0.9508064516129032,
-        "trading_days_since_trigger": 1088
+        "pct_below_peak": -0.9600436681222707,
+        "trading_days_since_trigger": 998
       },
       "repeat_suspension": null
     },
@@ -22640,12 +21735,7 @@
           1755825449.0
         ]
       },
-      "long_below_peak": {
-        "peak_price": 342.0,
-        "last_close": 186.0,
-        "pct_below_peak": -0.45614035087719296,
-        "trading_days_since_trigger": 1192
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-10-02",
@@ -22671,12 +21761,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 402.5,
-        "last_close": 274.0,
-        "pct_below_peak": -0.31925465838509315,
-        "trading_days_since_trigger": 804
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-09-25",
@@ -22849,12 +21934,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 81.0,
-        "last_close": 74.0,
-        "pct_below_peak": -0.0864197530864198,
-        "trading_days_since_trigger": 853
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2026-01-22",
@@ -22887,10 +21967,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 376.0,
+        "peak_price": 730.0,
         "last_close": 206.0,
-        "pct_below_peak": -0.4521276595744681,
-        "trading_days_since_trigger": 1110
+        "pct_below_peak": -0.7178082191780821,
+        "trading_days_since_trigger": 550
       },
       "repeat_suspension": null
     },
@@ -22977,12 +22057,7 @@
           15928115391.0
         ]
       },
-      "long_below_peak": {
-        "peak_price": 125.0,
-        "last_close": 118.0,
-        "pct_below_peak": -0.05600000000000005,
-        "trading_days_since_trigger": 591
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "INCI.JK": {
@@ -23076,10 +22151,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 240.0,
+        "peak_price": 388.0,
         "last_close": 208.0,
-        "pct_below_peak": -0.1333333333333333,
-        "trading_days_since_trigger": 1037
+        "pct_below_peak": -0.4639175257731959,
+        "trading_days_since_trigger": 679
       },
       "repeat_suspension": null
     },
@@ -23179,12 +22254,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 250.0,
-        "last_close": 168.0,
-        "pct_below_peak": -0.32799999999999996,
-        "trading_days_since_trigger": 474
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-09-03",
@@ -23213,12 +22283,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 236.0,
-        "last_close": 164.0,
-        "pct_below_peak": -0.30508474576271183,
-        "trading_days_since_trigger": 1040
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "PURI.JK": {
@@ -23243,12 +22308,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 590.0,
-        "last_close": 156.0,
-        "pct_below_peak": -0.735593220338983,
-        "trading_days_since_trigger": 962
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 3,
         "first_date": "2025-02-04",
@@ -23361,26 +22421,11 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 304.0,
-        "last_close": 272.0,
-        "pct_below_peak": -0.10526315789473684,
-        "trading_days_since_trigger": 1147
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "ICON.JK": {
-      "fall": {
-        "peak_price": 151.0,
-        "peak_date": "2026-05-13",
-        "trigger_date": "2026-05-26",
-        "trigger_price": 105.0,
-        "trading_days_since": 72,
-        "window_trading_days": 252,
-        "last_close": 148.0,
-        "last_close_date": "2026-09-09",
-        "pct_from_peak": -1.9867549668874163
-      },
+      "fall": null,
       "older_fall": null,
       "loss_year": null,
       "recent_price_suspension": null,
@@ -23624,12 +22669,7 @@
           14916710276.0
         ]
       },
-      "long_below_peak": {
-        "peak_price": 75.0,
-        "last_close": 58.0,
-        "pct_below_peak": -0.22666666666666668,
-        "trading_days_since_trigger": 1118
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "PTIS.JK": {
@@ -23662,10 +22702,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 550.0,
+        "peak_price": 665.0,
         "last_close": 268.0,
-        "pct_below_peak": -0.5127272727272727,
-        "trading_days_since_trigger": 1167
+        "pct_below_peak": -0.5969924812030075,
+        "trading_days_since_trigger": 806
       },
       "repeat_suspension": null
     },
@@ -23753,10 +22793,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 630.0,
+        "peak_price": 950.0,
         "last_close": 400.0,
-        "pct_below_peak": -0.3650793650793651,
-        "trading_days_since_trigger": 954
+        "pct_below_peak": -0.5789473684210527,
+        "trading_days_since_trigger": 431
       },
       "repeat_suspension": null
     },
@@ -23780,10 +22820,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 960.0,
+        "peak_price": 1120.0,
         "last_close": 208.0,
-        "pct_below_peak": -0.7833333333333333,
-        "trading_days_since_trigger": 1123
+        "pct_below_peak": -0.8142857142857143,
+        "trading_days_since_trigger": 316
       },
       "repeat_suspension": null
     },
@@ -23837,10 +22877,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 402.0,
+        "peak_price": 775.0,
         "last_close": 137.0,
-        "pct_below_peak": -0.6592039800995024,
-        "trading_days_since_trigger": 1194
+        "pct_below_peak": -0.8232258064516129,
+        "trading_days_since_trigger": 467
       },
       "repeat_suspension": {
         "n_events": 2,
@@ -23867,12 +22907,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 152.3426055908203,
-        "last_close": 128.0,
-        "pct_below_peak": -0.15978856011037745,
-        "trading_days_since_trigger": 1073
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "ASMI.JK": {
@@ -24049,10 +23084,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 260.0,
+        "peak_price": 1010.0,
         "last_close": 109.0,
-        "pct_below_peak": -0.5807692307692307,
-        "trading_days_since_trigger": 998
+        "pct_below_peak": -0.8920792079207921,
+        "trading_days_since_trigger": 789
       },
       "repeat_suspension": {
         "n_events": 2,
@@ -24136,12 +23171,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 50.0,
-        "last_close": 23.0,
-        "pct_below_peak": -0.54,
-        "trading_days_since_trigger": 487
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "AYLS.JK": {
@@ -24167,10 +23197,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 238.0,
+        "peak_price": 462.0,
         "last_close": 161.0,
-        "pct_below_peak": -0.32352941176470584,
-        "trading_days_since_trigger": 1174
+        "pct_below_peak": -0.6515151515151515,
+        "trading_days_since_trigger": 1055
       },
       "repeat_suspension": {
         "n_events": 2,
@@ -24302,10 +23332,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 222.0,
+        "peak_price": 7150.0,
         "last_close": 212.0,
-        "pct_below_peak": -0.04504504504504503,
-        "trading_days_since_trigger": 1064
+        "pct_below_peak": -0.9703496503496504,
+        "trading_days_since_trigger": 478
       },
       "repeat_suspension": null
     },
@@ -24341,10 +23371,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 155.0,
+        "peak_price": 220.0,
         "last_close": 73.0,
-        "pct_below_peak": -0.5290322580645161,
-        "trading_days_since_trigger": 992
+        "pct_below_peak": -0.6681818181818182,
+        "trading_days_since_trigger": 881
       },
       "repeat_suspension": null
     },
@@ -24455,10 +23485,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 560.0,
+        "peak_price": 915.0,
         "last_close": 500.0,
-        "pct_below_peak": -0.1071428571428571,
-        "trading_days_since_trigger": 734
+        "pct_below_peak": -0.45355191256830596,
+        "trading_days_since_trigger": 420
       },
       "repeat_suspension": null
     },
@@ -24484,12 +23514,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 242.0,
-        "last_close": 120.0,
-        "pct_below_peak": -0.5041322314049587,
-        "trading_days_since_trigger": 1185
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "FOOD.JK": {
@@ -24543,12 +23568,7 @@
       },
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 123.0,
-        "last_close": 69.0,
-        "pct_below_peak": -0.4390243902439024,
-        "trading_days_since_trigger": 978
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "RAFI.JK": {
@@ -24597,12 +23617,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 216.0,
-        "last_close": 135.0,
-        "pct_below_peak": -0.375,
-        "trading_days_since_trigger": 1125
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-12-12",
@@ -24632,10 +23647,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 370.0,
+        "peak_price": 590.0,
         "last_close": 68.0,
-        "pct_below_peak": -0.8162162162162162,
-        "trading_days_since_trigger": 941
+        "pct_below_peak": -0.8847457627118644,
+        "trading_days_since_trigger": 871
       },
       "repeat_suspension": {
         "n_events": 2,
@@ -24692,12 +23707,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 336.0,
-        "last_close": 109.0,
-        "pct_below_peak": -0.6755952380952381,
-        "trading_days_since_trigger": 507
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "ISAP.JK": {
@@ -24747,10 +23757,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 530.0,
+        "peak_price": 1255.0,
         "last_close": 510.0,
-        "pct_below_peak": -0.037735849056603765,
-        "trading_days_since_trigger": 1110
+        "pct_below_peak": -0.593625498007968,
+        "trading_days_since_trigger": 627
       },
       "repeat_suspension": null
     },
@@ -24911,10 +23921,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 254.0,
+        "peak_price": 306.0,
         "last_close": 117.0,
-        "pct_below_peak": -0.5393700787401574,
-        "trading_days_since_trigger": 1050
+        "pct_below_peak": -0.6176470588235294,
+        "trading_days_since_trigger": 922
       },
       "repeat_suspension": null
     },
@@ -24950,10 +23960,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 500.0,
+        "peak_price": 510.0,
         "last_close": 110.0,
-        "pct_below_peak": -0.78,
-        "trading_days_since_trigger": 1170
+        "pct_below_peak": -0.7843137254901961,
+        "trading_days_since_trigger": 1127
       },
       "repeat_suspension": null
     },
@@ -25011,10 +24021,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 460.0,
+        "peak_price": 505.0,
         "last_close": 192.0,
-        "pct_below_peak": -0.5826086956521739,
-        "trading_days_since_trigger": 923
+        "pct_below_peak": -0.6198019801980198,
+        "trading_days_since_trigger": 904
       },
       "repeat_suspension": null
     },
@@ -25040,12 +24050,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 466.0,
-        "last_close": 208.0,
-        "pct_below_peak": -0.5536480686695279,
-        "trading_days_since_trigger": 1042
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2025-10-14",
@@ -25075,10 +24080,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 202.0,
+        "peak_price": 262.0,
         "last_close": 97.0,
-        "pct_below_peak": -0.5198019801980198,
-        "trading_days_since_trigger": 1155
+        "pct_below_peak": -0.6297709923664122,
+        "trading_days_since_trigger": 1106
       },
       "repeat_suspension": null
     },
@@ -25104,12 +24109,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 50.0,
-        "last_close": 25.0,
-        "pct_below_peak": -0.5,
-        "trading_days_since_trigger": 771
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "IBFN.JK": {
@@ -25134,12 +24134,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 146.0,
-        "last_close": 63.0,
-        "pct_below_peak": -0.5684931506849316,
-        "trading_days_since_trigger": 1138
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "CBMF.JK": {
@@ -25176,12 +24171,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 150.0,
-        "last_close": 115.0,
-        "pct_below_peak": -0.23333333333333328,
-        "trading_days_since_trigger": 1146
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "RCCC.JK": {
@@ -25204,10 +24194,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 160.0,
+        "peak_price": 610.0,
         "last_close": 115.0,
-        "pct_below_peak": -0.28125,
-        "trading_days_since_trigger": 967
+        "pct_below_peak": -0.8114754098360656,
+        "trading_days_since_trigger": 429
       },
       "repeat_suspension": null
     },
@@ -25272,12 +24262,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 176.0,
-        "last_close": 138.0,
-        "pct_below_peak": -0.21590909090909094,
-        "trading_days_since_trigger": 974
-      },
+      "long_below_peak": null,
       "repeat_suspension": {
         "n_events": 2,
         "first_date": "2026-04-21",
@@ -25340,10 +24325,10 @@
         ]
       },
       "long_below_peak": {
-        "peak_price": 169.0,
+        "peak_price": 220.0,
         "last_close": 65.0,
-        "pct_below_peak": -0.6153846153846154,
-        "trading_days_since_trigger": 1197
+        "pct_below_peak": -0.7045454545454546,
+        "trading_days_since_trigger": 1147
       },
       "repeat_suspension": null
     },
@@ -25552,10 +24537,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 71.0,
+        "peak_price": 127.0,
         "last_close": 53.0,
-        "pct_below_peak": -0.2535211267605634,
-        "trading_days_since_trigger": 795
+        "pct_below_peak": -0.5826771653543308,
+        "trading_days_since_trigger": 690
       },
       "repeat_suspension": null
     },
@@ -25616,10 +24601,10 @@
       },
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1180.0,
+        "peak_price": 2730.0,
         "last_close": 179.0,
-        "pct_below_peak": -0.8483050847457627,
-        "trading_days_since_trigger": 1179
+        "pct_below_peak": -0.9344322344322344,
+        "trading_days_since_trigger": 1108
       },
       "repeat_suspension": null
     },
@@ -25643,10 +24628,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 118.0,
+        "peak_price": 242.0,
         "last_close": 93.0,
-        "pct_below_peak": -0.211864406779661,
-        "trading_days_since_trigger": 1090
+        "pct_below_peak": -0.615702479338843,
+        "trading_days_since_trigger": 341
       },
       "repeat_suspension": {
         "n_events": 2,
@@ -25703,12 +24688,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 246.0,
-        "last_close": 206.0,
-        "pct_below_peak": -0.16260162601626016,
-        "trading_days_since_trigger": 839
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "BRRC.JK": {
@@ -25743,10 +24723,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 460.0,
+        "peak_price": 640.0,
         "last_close": 50.0,
-        "pct_below_peak": -0.8913043478260869,
-        "trading_days_since_trigger": 1182
+        "pct_below_peak": -0.921875,
+        "trading_days_since_trigger": 1140
       },
       "repeat_suspension": null
     },
@@ -25773,10 +24753,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 1440.0,
+        "peak_price": 1560.0,
         "last_close": 106.0,
-        "pct_below_peak": -0.9263888888888889,
-        "trading_days_since_trigger": 1177
+        "pct_below_peak": -0.9320512820512821,
+        "trading_days_since_trigger": 262
       },
       "repeat_suspension": null
     },
@@ -25812,10 +24792,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 119.0,
+        "peak_price": 129.0,
         "last_close": 50.0,
-        "pct_below_peak": -0.5798319327731092,
-        "trading_days_since_trigger": 1151
+        "pct_below_peak": -0.6124031007751938,
+        "trading_days_since_trigger": 1057
       },
       "repeat_suspension": null
     },
@@ -25906,12 +24886,7 @@
       },
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 92.0,
-        "last_close": 62.0,
-        "pct_below_peak": -0.32608695652173914,
-        "trading_days_since_trigger": 675
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "TELE.JK": {
@@ -25961,10 +24936,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 254.0,
+        "peak_price": 600.0,
         "last_close": 14.0,
-        "pct_below_peak": -0.9448818897637795,
-        "trading_days_since_trigger": 1117
+        "pct_below_peak": -0.9766666666666667,
+        "trading_days_since_trigger": 1078
       },
       "repeat_suspension": null
     },
@@ -26056,10 +25031,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 336.0,
+        "peak_price": 745.0,
         "last_close": 50.0,
-        "pct_below_peak": -0.8511904761904762,
-        "trading_days_since_trigger": 1133
+        "pct_below_peak": -0.9328859060402684,
+        "trading_days_since_trigger": 879
       },
       "repeat_suspension": null
     },
@@ -26116,10 +25091,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 104.0,
+        "peak_price": 158.0,
         "last_close": 80.0,
-        "pct_below_peak": -0.23076923076923073,
-        "trading_days_since_trigger": 1071
+        "pct_below_peak": -0.49367088607594933,
+        "trading_days_since_trigger": 933
       },
       "repeat_suspension": null
     },
@@ -26143,10 +25118,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 95.0,
+        "peak_price": 122.0,
         "last_close": 52.0,
-        "pct_below_peak": -0.4526315789473684,
-        "trading_days_since_trigger": 709
+        "pct_below_peak": -0.5737704918032787,
+        "trading_days_since_trigger": 605
       },
       "repeat_suspension": null
     },
@@ -26279,10 +25254,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 133.0,
+        "peak_price": 266.0,
         "last_close": 29.0,
-        "pct_below_peak": -0.7819548872180451,
-        "trading_days_since_trigger": 749
+        "pct_below_peak": -0.8909774436090225,
+        "trading_days_since_trigger": 716
       },
       "repeat_suspension": null
     },
@@ -26347,12 +25322,7 @@
       "recent_spike": null,
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
-      "long_below_peak": {
-        "peak_price": 99.0,
-        "last_close": 37.0,
-        "pct_below_peak": -0.6262626262626263,
-        "trading_days_since_trigger": 868
-      },
+      "long_below_peak": null,
       "repeat_suspension": null
     },
     "ALTO.JK": {
@@ -26441,10 +25411,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 314.0,
+        "peak_price": 320.0,
         "last_close": 55.0,
-        "pct_below_peak": -0.8248407643312102,
-        "trading_days_since_trigger": 1106
+        "pct_below_peak": -0.828125,
+        "trading_days_since_trigger": 1044
       },
       "repeat_suspension": null
     },
@@ -26513,10 +25483,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 92.0,
+        "peak_price": 135.0,
         "last_close": 69.0,
-        "pct_below_peak": -0.25,
-        "trading_days_since_trigger": 732
+        "pct_below_peak": -0.48888888888888893,
+        "trading_days_since_trigger": 307
       },
       "repeat_suspension": {
         "n_events": 2,
@@ -26655,10 +25625,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 80.0,
+        "peak_price": 625.0,
         "last_close": 18.0,
-        "pct_below_peak": -0.775,
-        "trading_days_since_trigger": 1146
+        "pct_below_peak": -0.9712,
+        "trading_days_since_trigger": 645
       },
       "repeat_suspension": null
     },
@@ -26682,10 +25652,10 @@
       "earnings_two_year_decline": null,
       "earnings_more_than_doubled": null,
       "long_below_peak": {
-        "peak_price": 244.0,
+        "peak_price": 286.0,
         "last_close": 8.0,
-        "pct_below_peak": -0.9672131147540983,
-        "trading_days_since_trigger": 1179
+        "pct_below_peak": -0.972027972027972,
+        "trading_days_since_trigger": 1109
       },
       "repeat_suspension": null
     },
