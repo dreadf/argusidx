@@ -10,6 +10,10 @@ once, so the page never ranks stocks at request time:
   sectors_daily_close_*.json), null when either close is missing.
 - sector_rank_1y: how many stocks in the same sector had a larger change_1y,
   out of the sector's stocks with a change_1y.
+- change_since_peak / sector_rank_since_peak: the same, from the IHSG peak
+  day (PEAK_DAY, M5's closes) to WINDOW_END. PEAK_DAY is checked against
+  the IHSG series at build time, so the label "sejak puncak IHSG" cannot
+  drift from the data.
 - pe_meaningful: P/E > 0 and 2025 earnings not a loss. A trailing P/E can be
   positive and huge when trailing earnings are barely above zero after a loss
   year (GOTO: 30,826x); it is then not a valuation and is never compared.
@@ -39,7 +43,9 @@ from pipeline.hypotheses.t1_market_state import load_ihsg
 
 YEARS = [2021, 2022, 2023, 2024, 2025]
 WINDOW_START, WINDOW_END = "2025-09-04", "2026-09-04"
+PEAK_DAY = "2026-01-20"  # IHSG's highest close in M1 (9,134.7); asserted in main()
 DAILY_CLOSE_GLOB = "sectors_daily_close_????-??-??.json"
+PEAK_CLOSE_GLOB = "sectors_daily_close_m5_????-??-??.json"
 FOREIGN_FLOW_GLOB = "foreign_flow_lists_????-??-??.json"
 FINANCIALS = "Financials"
 
@@ -98,14 +104,29 @@ def foreign_days(flow: dict) -> dict[str, dict[str, int]]:
     return out
 
 
-def build(rows: list[dict], start_close: dict[str, float], end_close: dict[str, float], ff: dict[str, dict[str, int]]) -> dict[str, dict]:
+def _sector_rank(q: dict[str, dict], change: dict[str, float | None], sym: str) -> dict | None:
+    c = change[sym]
+    if c is None:
+        return None
+    peers = [change[s] for s, w in q.items() if w.get("sector") == q[sym].get("sector") and change[s] is not None]
+    return {"better": sum(1 for p in peers if p > c), "n": len(peers)}
+
+
+def build(
+    rows: list[dict],
+    start_close: dict[str, float],
+    end_close: dict[str, float],
+    ff: dict[str, dict[str, int]],
+    peak_close: dict[str, float] | None = None,
+) -> dict[str, dict]:
     q = {r["symbol"]: r["query_values"] for r in rows}
 
-    def chg(sym: str) -> float | None:
-        a, b = start_close.get(sym), end_close.get(sym)
+    def chg(frm: dict[str, float], sym: str) -> float | None:
+        a, b = frm.get(sym), end_close.get(sym)
         return b / a - 1 if a and b else None
 
-    change = {s: chg(s) for s in q}
+    change = {s: chg(start_close, s) for s in q}
+    change_peak = {s: chg(peak_close or {}, s) for s in q}
     pes = [v["pe_ttm"] for v in q.values() if pe_meaningful(v)]
     yields = [v.get("yield_ttm") or 0.0 for v in q.values()]
     payer_yields = [y for y in yields if y > 0]
@@ -120,7 +141,6 @@ def build(rows: list[dict], start_close: dict[str, float], end_close: dict[str, 
     out = {}
     for sym, v in q.items():
         c = change[sym]
-        peers = [change[s] for s, w in q.items() if w.get("sector") == v.get("sector") and change[s] is not None]
         pe, roe, der, g = v.get("pe_ttm"), v.get("roe_ttm"), v.get("der_mrq"), revenue_growth(v)
         out[sym] = {
             **{k: v.get(k) for k in SCALARS},
@@ -136,7 +156,9 @@ def build(rows: list[dict], start_close: dict[str, float], end_close: dict[str, 
             "last_ex_dividend_date": v.get("last_ex_dividend_date"),
             "indices": v.get("indices") or [],
             "change_1y": c,
-            "sector_rank_1y": None if c is None else {"better": sum(1 for p in peers if p > c), "n": len(peers)},
+            "sector_rank_1y": _sector_rank(q, change, sym),
+            "change_since_peak": change_peak[sym],
+            "sector_rank_since_peak": _sector_rank(q, change_peak, sym),
             "pe_meaningful": pe_meaningful(v),
             "pe_cheaper_than": share_above(pes, pe) if pe_meaningful(v) else None,
             "yield_higher_than": share_below(yields, v.get("yield_ttm") or 0.0),
@@ -158,24 +180,31 @@ def main() -> None:
     universe_path = latest_dated_file(RAW_DIR, UNIVERSE_GLOB)
     daily_path = latest_dated_file(RAW_DIR, DAILY_CLOSE_GLOB)
     flow_path = latest_dated_file(RAW_DIR, FOREIGN_FLOW_GLOB)
+    peak_path = latest_dated_file(RAW_DIR, PEAK_CLOSE_GLOB)
     rows = json.loads(universe_path.read_text())
     daily = json.loads(daily_path.read_text())
     flow = json.loads(flow_path.read_text())
 
     dates, closes = load_ihsg()
     ihsg = dict(zip(dates, closes))
-    for day in (WINDOW_START, WINDOW_END):
+    for day in (WINDOW_START, WINDOW_END, PEAK_DAY):
         if day not in ihsg:
             raise KeyError(f"IHSG has no close on {day}")
+    top = max(ihsg, key=ihsg.get)
+    if top != PEAK_DAY:
+        raise ValueError(f"IHSG's highest close is on {top}, not PEAK_DAY {PEAK_DAY}: update the label and the M5 pull")
 
-    stocks = build(rows, closes_on(daily, WINDOW_START), closes_on(daily, WINDOW_END), foreign_days(flow))
+    peak = json.loads(peak_path.read_text())
+    stocks = build(rows, closes_on(daily, WINDOW_START), closes_on(daily, WINDOW_END), foreign_days(flow), closes_on(peak, PEAK_DAY))
     flow_days = sorted(flow)
     out = {
         "as_of": universe_path.stem.replace("universe_", ""),
-        "source_files": [universe_path.name, daily_path.name, flow_path.name],
+        "source_files": [universe_path.name, daily_path.name, flow_path.name, peak_path.name],
         "years": YEARS,
         "change_window": {"start": WINDOW_START, "end": WINDOW_END},
         "ihsg_change_1y": ihsg[WINDOW_END] / ihsg[WINDOW_START] - 1,
+        "peak_window": {"start": PEAK_DAY, "end": WINDOW_END},
+        "ihsg_change_since_peak": ihsg[WINDOW_END] / ihsg[PEAK_DAY] - 1,
         "foreign_flow": {"days": len(flow_days), "first": flow_days[0], "last": flow_days[-1]},
         "stocks": stocks,
     }

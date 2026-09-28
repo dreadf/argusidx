@@ -66,3 +66,17 @@ def test_build_leaves_change_null_when_a_close_is_missing():
     out = build([_row("A")], {}, {"A": 90.0}, {})
     assert out["A"]["change_1y"] is None
     assert out["A"]["sector_rank_1y"] is None
+
+
+def test_build_since_peak_uses_the_peak_closes_and_the_same_end_date():
+    rows = [_row("A"), _row("B"), _row("C", sector="Financials")]
+    out = build(rows, {"A": 100.0, "B": 100.0, "C": 100.0}, {"A": 60.0, "B": 90.0, "C": 50.0}, {}, {"A": 120.0, "B": 100.0, "C": 200.0})
+    assert out["A"]["change_since_peak"] == pytest.approx(-0.5)
+    assert out["B"]["change_since_peak"] == pytest.approx(-0.1)
+    assert out["A"]["sector_rank_since_peak"] == {"better": 1, "n": 2}
+    assert out["C"]["sector_rank_since_peak"] == {"better": 0, "n": 1}
+
+
+def test_build_since_peak_is_null_without_peak_closes():
+    out = build([_row("A")], {"A": 100.0}, {"A": 90.0}, {})
+    assert out["A"]["change_since_peak"] is None and out["A"]["sector_rank_since_peak"] is None
