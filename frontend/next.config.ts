@@ -30,6 +30,11 @@ const nextConfig: NextConfig = {
       { source: "/jelajah/anomali/:jenis", destination: "/temuan/tanda/:jenis", permanent: true },
       { source: "/jelajah/tanda", has: [{ type: "query", key: "jenis", value: "(?<jenis>.+)" }], destination: "/temuan/tanda/:jenis", permanent: true },
       { source: "/jelajah/tanda", destination: "/temuan/tanda", permanent: true },
+      // The stock page's reason pages became chips on the page itself
+      // (2026-09-28); a reason opens as #alasan-<key> there.
+      { source: "/saham/:kode/alasan", destination: "/saham/:kode", permanent: true },
+      { source: "/saham/:kode/alasan/rekomendasi", destination: "/saham/:kode#alasan-tip", permanent: true },
+      { source: "/saham/:kode/alasan/:alasan(turun|murah)", destination: "/saham/:kode#alasan-:alasan", permanent: true },
     ];
   },
 };
