@@ -14,7 +14,7 @@ const MEASURES = ["jauh-dari-puncak", "float-terendah", "pergerakan", "nilai-pas
 type Measure = (typeof MEASURES)[number];
 const PAGE = 10;
 
-const moreButton = "mt-4 flex h-9 items-center justify-center rounded-md border border-border text-[13px] font-semibold text-[var(--viz-accent)]";
+const moreButton = "mt-4 flex h-9 items-center justify-center rounded-md border border-border text-[13px] font-semibold text-[var(--viz-accent)] transition-colors hover:bg-muted";
 const wrap = "mx-auto w-full max-w-6xl px-[18px] py-5 md:px-8 md:py-8";
 
 export default async function PeringkatDetailPage({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> }) {
@@ -98,7 +98,7 @@ export default async function PeringkatDetailPage({ params, searchParams }: { pa
         <p className="mt-2 text-[13.5px] leading-normal">
           Free float tipikal seluruh saham: <b className="font-mono">{sharePct(median)}</b>. Free float kecil bukan tanda baik atau buruk; diuji, saham dengan free float besar justru lebih bergejolak.
         </p>
-        <Link href="/situasi/float-tipis" className="mt-2 inline-flex min-h-11 items-center text-[13px] font-medium text-[var(--viz-accent)]">
+        <Link href="/situasi/float-tipis" className="mt-2 inline-flex min-h-11 items-center text-[13px] font-medium text-[var(--viz-accent)] hover:underline">
           Lihat buktinya &rarr;
         </Link>
       </Card>

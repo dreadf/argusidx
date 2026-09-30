@@ -43,7 +43,7 @@ export function BackLink({ fallback }: { fallback: { href: string; label: string
           router.back();
         }
       }}
-      className="mb-3 inline-flex min-h-8 items-center gap-1 text-[12.5px] font-medium text-[var(--viz-accent)]"
+      className="mb-3 inline-flex min-h-8 items-center gap-1 text-[12.5px] font-medium text-[var(--viz-accent)] transition-colors hover:underline"
     >
       <ArrowLeft className="size-4" />
       {label}

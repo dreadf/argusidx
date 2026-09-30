@@ -266,7 +266,7 @@ export default async function TemuanDetailPage({ params }: { params: Promise<{ s
     <SideBlock title="Muncul di aplikasi">
       <div className="-mt-1 flex flex-col">
         {appears.map((a) => (
-          <Link key={a.href + a.label} href={a.href} className="flex items-center gap-3 border-b border-border py-3 last:border-0">
+          <Link key={a.href + a.label} href={a.href} className="flex items-center gap-3 border-b border-border py-3 transition-colors last:border-0 hover:bg-muted">
             <span className="min-w-0 flex-1">
               <span className="block text-sm font-semibold text-foreground">{a.label}</span>
               {a.sub && <span className="mt-0.5 block text-xs text-muted-foreground">{a.sub}</span>}
@@ -309,7 +309,7 @@ export default async function TemuanDetailPage({ params }: { params: Promise<{ s
       {rechecked}
       {links}
       {limits}
-      <Link href="/temuan/cara-kami-menguji" className="text-[13.5px] font-medium text-[var(--viz-accent)]">
+      <Link href="/temuan/cara-kami-menguji" className="text-[13.5px] font-medium text-[var(--viz-accent)] hover:underline">
         Cara kami menguji &rarr;
       </Link>
     </EvidenceSide>

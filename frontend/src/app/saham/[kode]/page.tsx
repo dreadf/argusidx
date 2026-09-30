@@ -203,7 +203,7 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
         <>
           <div className="mt-[18px] text-sm font-semibold">Bank besar lain</div>
           {peers.map((b) => (
-            <Link key={b.code} href={`/saham/${b.code}`} className="flex items-center gap-3 border-b border-border py-3 last:border-0">
+            <Link key={b.code} href={`/saham/${b.code}`} className="flex items-center gap-3 border-b border-border py-3 transition-colors last:border-0 hover:bg-muted">
               <span className="w-12 shrink-0 text-sm font-bold">{b.code}</span>
               <span className="min-w-0 flex-1 text-[12.5px] leading-snug text-muted-foreground">
                 {b.pe !== null ? `P/E ${idNum(b.pe)}x` : "P/E tidak bermakna"}

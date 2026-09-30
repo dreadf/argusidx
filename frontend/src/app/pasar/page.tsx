@@ -33,14 +33,14 @@ const eyebrowCls = "text-[11px] font-semibold uppercase tracking-[0.07em] text-[
 
 function Row({ href, icon, title, line, trailing }: { href: string; icon?: React.ReactNode; title: string; line: React.ReactNode; trailing?: React.ReactNode }) {
   return (
-    <Link href={href} className="flex items-center gap-3 border-b border-border py-3">
+    <Link href={href} className="group/row flex items-center gap-3 border-b border-border py-3 transition-colors hover:bg-muted">
       {icon && <span className="flex size-9 shrink-0 items-center justify-center rounded-[10px] bg-accent text-accent-foreground">{icon}</span>}
       <span className="min-w-0 flex-1">
         <span className="block text-[14.5px] font-semibold leading-snug text-foreground">{title}</span>
         <span className="mt-0.5 block text-xs leading-normal text-muted-foreground">{line}</span>
       </span>
       {trailing}
-      <ChevronRight className="size-[18px] shrink-0 text-muted-foreground" />
+      <ChevronRight className="size-[18px] shrink-0 text-muted-foreground transition-transform group-hover/row:translate-x-0.5" />
     </Link>
   );
 }

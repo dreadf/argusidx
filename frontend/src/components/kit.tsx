@@ -152,13 +152,13 @@ export function LinkRow({
   last?: boolean;
 }) {
   return (
-    <Link href={href} className={`flex items-center gap-3 py-3.5 ${last ? "" : "border-b border-border"}`}>
+    <Link href={href} className={`group/row flex items-center gap-3 py-3.5 transition-colors hover:bg-muted ${last ? "" : "border-b border-border"}`}>
       {icon && <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-accent text-accent-foreground">{icon}</div>}
       <div className="min-w-0 flex-1">
         <div className="text-[15px] font-semibold leading-snug text-foreground">{title}</div>
         {line && <div className="mt-0.5 text-[13px] leading-snug text-muted-foreground">{line}</div>}
       </div>
-      <ChevronRight className="size-[18px] shrink-0 text-muted-foreground" />
+      <ChevronRight className="size-[18px] shrink-0 text-muted-foreground transition-transform group-hover/row:translate-x-0.5" />
     </Link>
   );
 }

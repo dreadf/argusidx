@@ -25,7 +25,7 @@ export function WatchlistView({ quotes }: { quotes: QuoteMap }) {
         </div>
         <div className="text-xl font-bold">Belum ada saham</div>
         <p className="max-w-[260px] text-[13px] leading-normal text-muted-foreground">Ketuk bintang di halaman saham untuk menyimpannya.</p>
-        <Link href="/cari" className="mt-2 inline-flex h-10 items-center rounded-md bg-primary px-7 text-sm font-semibold text-primary-foreground">
+        <Link href="/cari" className="mt-2 inline-flex h-10 items-center rounded-md bg-primary px-7 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/85">
           Cari saham
         </Link>
       </div>
@@ -67,7 +67,7 @@ export function WatchlistView({ quotes }: { quotes: QuoteMap }) {
               type="button"
               onClick={() => removeFromWatchlist(entry.symbol)}
               aria-label={`Hapus ${entry.symbol} dari watchlist`}
-              className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[rgba(230,103,103,0.12)]"
+              className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[rgba(230,103,103,0.12)] transition-colors hover:bg-[rgba(230,103,103,0.22)]"
             >
               <Trash2 className="size-5 text-[#e66767]" strokeWidth={1.8} />
             </button>
@@ -81,8 +81,8 @@ export function WatchlistView({ quotes }: { quotes: QuoteMap }) {
           return (
             <li key={entry.symbol} className="border-b border-border py-4 md:px-3">
               <div className="flex items-center gap-3 md:hidden">
-                <Link href={`/saham/${entry.symbol}`} className="min-w-0 flex-1">
-                  <div className="text-[15px] font-bold">{entry.symbol}</div>
+                <Link href={`/saham/${entry.symbol}`} className="group/row min-w-0 flex-1">
+                  <div className="text-[15px] font-bold transition-colors group-hover/row:text-[var(--viz-accent)]">{entry.symbol}</div>
                   <div className="truncate text-xs text-muted-foreground">{shortName(entry.company_name)}</div>
                 </Link>
                 <div className="text-right">{priceBlock}</div>
@@ -96,8 +96,8 @@ export function WatchlistView({ quotes }: { quotes: QuoteMap }) {
               )}
               {changeNote && <div className="md:hidden">{changeNote}</div>}
               <div className="hidden items-center gap-3.5 md:flex">
-                <Link href={`/saham/${entry.symbol}`} className="w-[220px] shrink-0">
-                  <div className="text-[15px] font-bold">{entry.symbol}</div>
+                <Link href={`/saham/${entry.symbol}`} className="group/row w-[220px] shrink-0">
+                  <div className="text-[15px] font-bold transition-colors group-hover/row:text-[var(--viz-accent)]">{entry.symbol}</div>
                   <div className="truncate text-xs text-muted-foreground">{shortName(entry.company_name)}</div>
                 </Link>
                 <div className="w-[150px] shrink-0">{priceBlock}</div>

@@ -26,8 +26,8 @@ export function PantauButton({ symbol, companyName, wide = false }: { symbol: st
       type="button"
       onClick={() => toggleWatchlist({ symbol, company_name: companyName })}
       aria-pressed={watched}
-      className={`inline-flex h-9 items-center justify-center gap-2 rounded-lg border px-3.5 text-[13.5px] font-semibold ${
-        wide ? "mt-3.5 w-full border-primary bg-primary text-primary-foreground" : "border-border bg-[var(--viz-raised)] text-foreground"
+      className={`inline-flex h-9 items-center justify-center gap-2 rounded-lg border px-3.5 text-[13.5px] font-semibold transition-colors ${
+        wide ? "mt-3.5 w-full border-primary bg-primary text-primary-foreground hover:bg-primary/85" : "border-border bg-[var(--viz-raised)] text-foreground hover:border-[var(--viz-accent)] hover:text-[var(--viz-accent)]"
       }`}
     >
       <Star className="size-4" strokeWidth={1.8} fill={watched ? "currentColor" : "none"} />

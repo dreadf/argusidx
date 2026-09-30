@@ -67,8 +67,8 @@ export default async function TemuanPage({ searchParams }: { searchParams: Promi
               scroll={false}
               role="tab"
               aria-selected={t.active}
-              className={`inline-flex min-h-9 items-center rounded-md border px-3.5 text-[13px] font-semibold ${
-                t.active ? "border-[var(--viz-accent)] bg-accent text-[var(--viz-accent)]" : "border-border bg-[var(--viz-raised)] text-foreground"
+              className={`inline-flex min-h-9 items-center rounded-md border px-3.5 text-[13px] font-semibold transition-colors ${
+                t.active ? "border-[var(--viz-accent)] bg-accent text-[var(--viz-accent)] hover:brightness-110" : "border-border bg-[var(--viz-raised)] text-foreground hover:border-[var(--viz-accent)]"
               }`}
             >
               {t.label} {t.count}
@@ -81,7 +81,7 @@ export default async function TemuanPage({ searchParams }: { searchParams: Promi
             const chip = VERDICT_CHIP[row.verdict];
             return (
               <li key={row.belief}>
-                <Link href={`/temuan/${findingSlug(row)}`} className="flex items-start gap-3 border-b border-border py-3">
+                <Link href={`/temuan/${findingSlug(row)}`} className="flex items-start gap-3 border-b border-border py-3 transition-colors hover:bg-muted">
                   <span className="min-w-0 flex-1">
                     <span className="block text-[14.5px] font-semibold leading-snug">{row.title_short_id}</span>
                     <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">{sampleLine(row.evidence)}</span>
@@ -95,7 +95,7 @@ export default async function TemuanPage({ searchParams }: { searchParams: Promi
           })}
         </ul>
         {more > 0 && (
-          <Link href={`${filter ? `/temuan?hasil=${VERDICT_TAB[filter].key}&` : "/temuan?"}tampil=${rows.length}`} scroll={false} className="mt-1.5 inline-flex min-h-11 items-center text-[13.5px] font-semibold text-[var(--viz-accent)]">
+          <Link href={`${filter ? `/temuan?hasil=${VERDICT_TAB[filter].key}&` : "/temuan?"}tampil=${rows.length}`} scroll={false} className="mt-1.5 inline-flex min-h-11 items-center text-[13.5px] font-semibold text-[var(--viz-accent)] hover:underline">
             Tampilkan {more} berikutnya
           </Link>
         )}

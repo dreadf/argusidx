@@ -25,7 +25,7 @@ export function EvidenceRows({ items }: { items: Evidence[] }) {
             {e.href && (
               <>
                 {" "}
-                <Link href={e.href} className="whitespace-nowrap text-[var(--viz-accent)] underline">
+                <Link href={e.href} className="whitespace-nowrap text-[var(--viz-accent)] underline transition-opacity hover:opacity-80">
                   Buktinya
                 </Link>
               </>

@@ -41,10 +41,20 @@ export default async function SituasiDaftarPage({ params, searchParams }: { para
       <div>
         {meta.datedOrder && (
           <div className="mt-3 flex gap-2 text-[12.5px]">
-            <Link href={`${base}?urut=terbaru`} replace scroll={false} className={`rounded-md border px-3 py-1.5 ${order === "terbaru" ? "border-[var(--viz-accent)] text-[var(--viz-accent)]" : "border-border text-muted-foreground"}`}>
+            <Link
+              href={`${base}?urut=terbaru`}
+              replace
+              scroll={false}
+              className={`rounded-md border px-3 py-1.5 transition-colors ${order === "terbaru" ? "border-[var(--viz-accent)] text-[var(--viz-accent)]" : "border-border text-muted-foreground hover:text-foreground"}`}
+            >
               Terbaru
             </Link>
-            <Link href={`${base}?urut=kode`} replace scroll={false} className={`rounded-md border px-3 py-1.5 ${order === "kode" ? "border-[var(--viz-accent)] text-[var(--viz-accent)]" : "border-border text-muted-foreground"}`}>
+            <Link
+              href={`${base}?urut=kode`}
+              replace
+              scroll={false}
+              className={`rounded-md border px-3 py-1.5 transition-colors ${order === "kode" ? "border-[var(--viz-accent)] text-[var(--viz-accent)]" : "border-border text-muted-foreground hover:text-foreground"}`}
+            >
               Kode A-Z
             </Link>
           </div>
@@ -55,7 +65,7 @@ export default async function SituasiDaftarPage({ params, searchParams }: { para
           ))}
         </div>
         {shown < rows.length && (
-          <Link href={`${base}?urut=${order === "terbaru" ? "terbaru" : "kode"}&tampil=${shown + PAGE}`} scroll={false} className="inline-flex min-h-11 items-center text-[13.5px] font-semibold text-[var(--viz-accent)]">
+          <Link href={`${base}?urut=${order === "terbaru" ? "terbaru" : "kode"}&tampil=${shown + PAGE}`} scroll={false} className="inline-flex min-h-11 items-center text-[13.5px] font-semibold text-[var(--viz-accent)] hover:underline">
             Tampilkan {Math.min(PAGE, rows.length - shown)} berikutnya
           </Link>
         )}

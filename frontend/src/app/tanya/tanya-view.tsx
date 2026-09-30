@@ -139,11 +139,11 @@ export default function TanyaView({ asOf, stock: initialStock = null, initialQue
     <div className="mb-2 flex items-center gap-2">
       <span className="inline-flex h-[26px] items-center gap-1.5 rounded-md border border-[var(--viz-accent)] bg-accent px-2 text-xs font-bold text-[var(--viz-accent)]">
         Tentang {stock}
-        <button type="button" onClick={() => setStock(null)} aria-label={`Lepas ${stock}`} className="inline-flex">
+        <button type="button" onClick={() => setStock(null)} aria-label={`Lepas ${stock}`} className="inline-flex rounded-sm transition-opacity hover:opacity-70">
           <X className="size-3" />
         </button>
       </span>
-      <Link href={`/saham/${stock}`} className="text-xs text-muted-foreground underline">
+      <Link href={`/saham/${stock}`} className="text-xs text-muted-foreground underline transition-opacity hover:opacity-80">
         Kembali ke {stock}
       </Link>
     </div>
@@ -170,7 +170,12 @@ export default function TanyaView({ asOf, stock: initialStock = null, initialQue
         <p className="mt-2.5 text-center text-[11.5px] leading-normal text-muted-foreground">Pesan yang ditempel dibaca di peramban Anda dan tidak dikirim ke AI.</p>
         <div className="mt-4 flex flex-wrap justify-center gap-2">
           {EXAMPLES.map((e) => (
-            <button key={e} type="button" onClick={() => setText(e)} className="inline-flex h-8 items-center rounded-md border border-border bg-muted px-3 text-[12.5px] text-foreground">
+            <button
+              key={e}
+              type="button"
+              onClick={() => setText(e)}
+              className="inline-flex h-8 items-center rounded-md border border-border bg-muted px-3 text-[12.5px] text-foreground transition-colors hover:border-[var(--viz-accent)] hover:text-[var(--viz-accent)]"
+            >
               {e}
             </button>
           ))}
@@ -256,12 +261,12 @@ function AnswerView({ data, limitNote }: { data: AskResponse; limitNote: boolean
           <p className="text-sm leading-[1.55]">{data.prose}</p>
           <div className="mt-2 flex flex-wrap gap-x-4">
             {data.stockCode && (
-              <Link href={`/saham/${data.stockCode}`} className="inline-flex min-h-11 items-center text-[13px] font-semibold text-[var(--viz-accent)]">
+              <Link href={`/saham/${data.stockCode}`} className="inline-flex min-h-11 items-center text-[13px] font-semibold text-[var(--viz-accent)] hover:underline">
                 Halaman {data.stockCode} &rarr;
               </Link>
             )}
             {data.links.map((l) => (
-              <Link key={l.href} href={l.href} className="inline-flex min-h-11 items-center text-[13px] font-semibold text-[var(--viz-accent)]">
+              <Link key={l.href} href={l.href} className="inline-flex min-h-11 items-center text-[13px] font-semibold text-[var(--viz-accent)] hover:underline">
                 {l.label} &rarr;
               </Link>
             ))}
@@ -301,7 +306,7 @@ function AnswerView({ data, limitNote }: { data: AskResponse; limitNote: boolean
           {data.links.length > 0 && (
             <div className="flex flex-wrap gap-x-4">
               {data.links.map((l) => (
-                <Link key={l.href} href={l.href} className="inline-flex min-h-11 items-center text-[13px] font-semibold text-[var(--viz-accent)]">
+                <Link key={l.href} href={l.href} className="inline-flex min-h-11 items-center text-[13px] font-semibold text-[var(--viz-accent)] hover:underline">
                   {l.label} &rarr;
                 </Link>
               ))}

@@ -127,7 +127,7 @@ export default async function AnomaliDetailPage({ params, searchParams }: { para
         <Link
           href={`/temuan/tanda/${kind}?tampil=${Math.min(100, shown + PAGE)}`}
           scroll={false}
-          className="mt-4 flex h-9 items-center justify-center rounded-md border border-border text-[13px] font-semibold text-[var(--viz-accent)]"
+          className="mt-4 flex h-9 items-center justify-center rounded-md border border-border text-[13px] font-semibold text-[var(--viz-accent)] transition-colors hover:bg-muted"
         >
           Tampilkan {Math.min(PAGE, flagged - shown)} lainnya
         </Link>

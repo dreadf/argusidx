@@ -29,7 +29,7 @@ export default async function SituasiPage() {
               <div className="text-[11px] font-semibold uppercase tracking-[0.07em] text-muted-foreground">{group}</div>
               <div className="mt-1.5 border-t border-border">
                 {rows.map((s) => (
-                  <Link key={s.slug} href={`/situasi/${s.slug}`} className="flex items-center gap-3 border-b border-border py-3.5 md:px-1">
+                  <Link key={s.slug} href={`/situasi/${s.slug}`} className="flex items-center gap-3 border-b border-border py-3.5 transition-colors hover:bg-muted md:px-1">
                     <span className="flex size-[34px] shrink-0 items-center justify-center rounded-[10px] bg-accent text-accent-foreground">
                       <SituationGlyph slug={s.slug} />
                     </span>

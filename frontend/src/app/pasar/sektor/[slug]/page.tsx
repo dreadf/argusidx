@@ -86,7 +86,7 @@ export default async function SektorDetailPage({ params }: { params: Promise<{ s
         <p className="mt-2 text-sm">{totalFlagged} dari {row.company_count} saham kena satu anomali atau lebih.</p>
         <div className="mt-2 flex flex-col">
           {flagged.map((s) => (
-            <Link key={s.code} href={`/saham/${s.code}`} className="flex items-center justify-between border-b border-border py-3 text-sm">
+            <Link key={s.code} href={`/saham/${s.code}`} className="flex items-center justify-between border-b border-border py-3 text-sm transition-colors hover:bg-muted">
               <b>{s.code}</b>
               <span className="text-xs text-muted-foreground">{s.flagCount} anomali</span>
             </Link>

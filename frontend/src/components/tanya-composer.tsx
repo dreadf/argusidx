@@ -106,7 +106,7 @@ export function TanyaComposer({ value, onChange, onSubmit, mode, onMode, aiConfi
             onClick={() => setOpen((o) => !o)}
             aria-haspopup="menu"
             aria-expanded={open}
-            className="inline-flex h-8 items-center gap-1.5 rounded-md border border-foreground/15 bg-muted px-2.5 text-[12.5px] font-semibold text-foreground"
+            className="inline-flex h-8 items-center gap-1.5 rounded-md border border-foreground/15 bg-muted px-2.5 text-[12.5px] font-semibold text-foreground transition-colors hover:border-foreground/30"
           >
             {shown === "ai" ? <Sparkle className="size-3.5" /> : <MessageSquare className="size-3.5" />}
             {shown === "ai" ? "Dengan AI" : "Data saja"}
@@ -114,7 +114,12 @@ export function TanyaComposer({ value, onChange, onSubmit, mode, onMode, aiConfi
           </button>
           <div className="flex items-center gap-2.5">
             {right}
-            <button type="submit" disabled={busy || value.trim().length === 0} aria-label="Kirim" className="inline-flex size-9 items-center justify-center rounded-md bg-primary text-primary-foreground disabled:opacity-50">
+            <button
+              type="submit"
+              disabled={busy || value.trim().length === 0}
+              aria-label="Kirim"
+              className="inline-flex size-9 items-center justify-center rounded-md bg-primary text-primary-foreground transition-colors enabled:hover:bg-primary/85 disabled:opacity-50"
+            >
               <ArrowUp className="size-[18px]" />
             </button>
           </div>
@@ -152,7 +157,13 @@ export function TanyaComposer({ value, onChange, onSubmit, mode, onMode, aiConfi
 
 function MenuItem({ icon, title, hint, selected, disabled = false, onPick }: { icon: React.ReactNode; title: string; hint: string; selected: boolean; disabled?: boolean; onPick: () => void }) {
   return (
-    <button type="button" role="menuitem" disabled={disabled} onClick={onPick} className={`flex w-full items-center gap-2.5 rounded-md px-3 py-2.5 text-left disabled:opacity-60 ${selected ? "bg-muted" : ""}`}>
+    <button
+      type="button"
+      role="menuitem"
+      disabled={disabled}
+      onClick={onPick}
+      className={`flex w-full items-center gap-2.5 rounded-md px-3 py-2.5 text-left transition-colors enabled:hover:bg-muted disabled:opacity-60 ${selected ? "bg-muted" : ""}`}
+    >
       {icon}
       <span className="min-w-0 flex-1">
         <span className="block text-[13.5px] font-semibold text-foreground">{title}</span>

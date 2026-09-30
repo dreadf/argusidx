@@ -188,7 +188,7 @@ export async function DataLengkap({
           </Cells>
           <p className={fine}>
             Nilai tengah dari perusahaan yang melapor ({sector_context.sector_roe_n} dari {sector_context.sector_company_count} untuk ROE). Bukan peringkat antar sektor.{" "}
-            <Link href="/pasar#sektor" className="underline">
+            <Link href="/pasar#sektor" className="underline transition-opacity hover:opacity-80">
               Lihat semua sektor
             </Link>
           </p>
@@ -249,7 +249,7 @@ export async function DataLengkap({
       {h1_finding && (
         <p className={fine}>
           Untuk ukuran perusahaannya, free float {code} {tercile === "low" ? "termasuk sepertiga tersempit" : tercile === "high" ? "termasuk sepertiga terlebar" : "di sepertiga tengah"}. Float sempit tidak terbukti membuat harga lebih liar; di data kami justru sebaliknya.{" "}
-          <Link href="/situasi/float-tipis" className="underline">
+          <Link href="/situasi/float-tipis" className="underline transition-opacity hover:opacity-80">
             Lihat buktinya
           </Link>
         </p>
@@ -280,7 +280,7 @@ export async function DataLengkap({
       </Cells>
       <p className="mt-3.5 text-[13px] leading-normal text-muted-foreground">
         Setelah orang dalam membeli, harga <b className="text-foreground">tidak</b> lebih sering mengalahkan IHSG saat diuji.{" "}
-        <Link href="/temuan?hasil=tidak-terbukti" className="underline">
+        <Link href="/temuan?hasil=tidak-terbukti" className="underline transition-opacity hover:opacity-80">
           Lihat temuannya
         </Link>
       </p>
@@ -390,7 +390,7 @@ export async function DataLengkap({
           </p>
         )}
         <p className={fine}>
-          <Link href="/situasi/pernah-disuspensi" className="underline">
+          <Link href="/situasi/pernah-disuspensi" className="underline transition-opacity hover:opacity-80">
             Lihat alasan suspensi
           </Link>
         </p>

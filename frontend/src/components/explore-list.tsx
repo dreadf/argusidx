@@ -13,13 +13,13 @@ export function GroupLabel({ children }: { children: ReactNode }) {
  */
 export function ExploreRow({ href, title, line, icon }: { href: string; title: string; line: string; icon?: ReactNode }) {
   return (
-    <Link href={href} className="flex items-center gap-3 border-b border-border py-3 first:border-t">
+    <Link href={href} className="group/row flex items-center gap-3 border-b border-border py-3 transition-colors first:border-t hover:bg-muted">
       {icon && <span className="flex size-[30px] shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground">{icon}</span>}
       <span className="min-w-0 flex-1">
         <span className="block text-[14.5px] font-semibold leading-snug text-foreground">{title}</span>
         <span className="mt-0.5 block text-xs leading-normal text-muted-foreground">{line}</span>
       </span>
-      <ChevronRight className="size-4 shrink-0 text-muted-foreground" />
+      <ChevronRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover/row:translate-x-0.5" />
     </Link>
   );
 }

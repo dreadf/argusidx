@@ -26,7 +26,7 @@ export function RankList({ rows, startRank = 1 }: { rows: RankRow[]; startRank?:
           <Link
             key={row.code}
             href={row.href ?? `/saham/${row.code}`}
-            className={`flex items-center gap-3 px-3 py-3 ${first ? "mb-1 rounded-[14px] bg-[var(--viz-raised)]" : "border-b border-border"}`}
+            className={`group/row flex items-center gap-3 px-3 py-3 transition-colors ${first ? "mb-1 rounded-[14px] bg-[var(--viz-raised)] hover:brightness-110" : "border-b border-border hover:bg-muted"}`}
           >
             <span
               className={`flex size-7 shrink-0 items-center justify-center rounded-md text-[12.5px] font-bold ${
@@ -43,7 +43,7 @@ export function RankList({ rows, startRank = 1 }: { rows: RankRow[]; startRank?:
               <span className={`block font-mono font-bold tabular-nums text-foreground ${first ? "text-lg" : "text-base"}`}>{row.value}</span>
               {row.sub && <span className="block font-mono text-[11.5px] text-muted-foreground">{row.sub}</span>}
             </span>
-            <ChevronRight className="size-[18px] shrink-0 text-muted-foreground" />
+            <ChevronRight className="size-[18px] shrink-0 text-muted-foreground transition-transform group-hover/row:translate-x-0.5" />
           </Link>
         );
       })}

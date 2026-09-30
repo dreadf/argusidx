@@ -44,7 +44,7 @@ const SITUATION_ICON: Record<SituationLine["kind"], LucideIcon> = {
 export function StockCardView({ card }: { card: CardView }) {
   return (
     <div className="overflow-hidden rounded-[14px] border border-border bg-card">
-      <Link href={`/saham/${card.code}`} className="flex items-center gap-3 px-3.5 py-3">
+      <Link href={`/saham/${card.code}`} className="flex items-center gap-3 px-3.5 py-3 transition-colors hover:bg-muted">
         <span className="flex size-[34px] shrink-0 items-center justify-center rounded-full bg-accent font-mono text-[11px] font-bold text-accent-foreground">{card.code.slice(0, 2)}</span>
         <span className="min-w-0 flex-1">
           <span className="block text-[14.5px] font-semibold leading-snug">{card.code}</span>
@@ -61,7 +61,7 @@ export function StockCardView({ card }: { card: CardView }) {
       {card.situations?.map((s) => {
         const Icon = SITUATION_ICON[s.kind];
         return (
-          <Link key={s.kind} href={s.href} className="flex items-center gap-2.5 border-t border-border px-3.5 py-[11px]">
+          <Link key={s.kind} href={s.href} className="flex items-center gap-2.5 border-t border-border px-3.5 py-[11px] transition-colors hover:bg-muted">
             <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground">
               <Icon className="size-4" />
             </span>
@@ -82,7 +82,11 @@ export function ConfirmRow({ prompt, code, onConfirm }: { prompt: string; code: 
   return (
     <div className="flex items-center gap-2.5">
       <span className="flex-1 text-[12.5px] text-muted-foreground">{prompt}</span>
-      <button type="button" onClick={onConfirm} className="inline-flex h-7 items-center rounded-md border border-[var(--viz-accent)] bg-accent px-2.5 text-xs font-semibold text-[var(--viz-accent)]">
+      <button
+        type="button"
+        onClick={onConfirm}
+        className="inline-flex h-7 items-center rounded-md border border-[var(--viz-accent)] bg-accent px-2.5 text-xs font-semibold text-[var(--viz-accent)] transition-[filter] hover:brightness-125"
+      >
         Ya, {code}
       </button>
     </div>
@@ -106,7 +110,7 @@ export function VerdictChip({ verdict }: { verdict: Verdict }) {
 /** One tested claim: short title, verdict chip, one line, chevron to the evidence. */
 export function ClaimRow({ row }: { row: ClaimRowView }) {
   return (
-    <Link href={row.href} className="flex items-start gap-3 border-b border-border py-[11px] last:border-b-0">
+    <Link href={row.href} className="flex items-start gap-3 border-b border-border py-[11px] transition-colors last:border-b-0 hover:bg-muted">
       <span className="min-w-0 flex-1">
         <span className="block text-sm font-semibold leading-[1.4]">{row.title}</span>
         <span className="mt-0.5 block text-[12.5px] leading-[1.45] text-muted-foreground">{row.line}</span>
@@ -159,7 +163,7 @@ export function TipNoticeView({ notice }: { notice: TipNotice }) {
           <span className="mt-3 flex flex-wrap items-center gap-2">
             <span className="text-xs">Mungkin maksud Anda</span>
             {notice.suggestions.map((c) => (
-              <Link key={c} href={`/saham/${c}`} className="inline-flex min-h-9 items-center rounded-md border border-border bg-muted px-3.5 text-[13px] font-semibold text-foreground">
+              <Link key={c} href={`/saham/${c}`} className="inline-flex min-h-9 items-center rounded-md border border-border bg-muted px-3.5 text-[13px] font-semibold text-foreground transition-colors hover:border-[var(--viz-accent)] hover:text-[var(--viz-accent)]">
                 {c}
               </Link>
             ))}

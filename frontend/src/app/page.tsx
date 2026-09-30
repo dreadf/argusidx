@@ -77,14 +77,14 @@ export default async function Home() {
         <p className="sr-only">
           {count.mixed_or_inconclusive} tidak konsisten, {count.no} tidak terbukti.
         </p>
-        <Link href="/temuan" className="inline-flex min-h-9 items-center text-[13px] font-semibold text-[var(--viz-accent)]">
+        <Link href="/temuan" className="inline-flex min-h-9 items-center text-[13px] font-semibold text-[var(--viz-accent)] hover:underline">
           Lihat buktinya &rarr;
         </Link>
       </div>
     </div>
   );
 
-  const rowLink = "flex min-h-12 items-center justify-between text-[13.5px] font-semibold text-[var(--viz-accent)]";
+  const rowLink = "flex min-h-12 items-center justify-between text-[13.5px] font-semibold text-[var(--viz-accent)] transition-colors hover:underline";
 
   return (
     <Page className="md:py-14">
@@ -137,7 +137,11 @@ export default async function Home() {
           <p className="mb-3 mt-1 text-xs text-muted-foreground md:hidden">Jelajahi dulu, lalu buka salah satu sahamnya.</p>
           <div className="grid grid-cols-2 overflow-hidden rounded-2xl border border-border bg-card md:mt-3.5">
             {ways.map((w, i) => (
-              <Link key={w.href} href={w.href} className={`flex flex-col gap-2 p-3.5 ${i % 2 === 0 ? "border-r border-border" : ""} ${i < 2 ? "border-b border-border" : ""}`}>
+              <Link
+                key={w.href}
+                href={w.href}
+                className={`flex flex-col gap-2 p-3.5 transition-colors hover:bg-muted ${i % 2 === 0 ? "border-r border-border" : ""} ${i < 2 ? "border-b border-border" : ""}`}
+              >
                 <w.icon className="size-5 text-[var(--viz-accent)]" strokeWidth={1.7} />
                 <span>
                   <span className="block text-sm font-semibold leading-snug">{w.title}</span>

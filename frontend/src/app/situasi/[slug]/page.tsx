@@ -221,7 +221,7 @@ async function cardsFor(slug: string): Promise<ReactNode[]> {
               <span className="w-[74px] shrink-0 text-right md:w-24">Laba 2025</span>
             </div>
             {rows.map((r) => (
-              <Link key={r.symbol} href={`/saham/${r.symbol}`} className="flex items-center gap-1.5 border-b border-border px-2 py-3 text-[13px] md:gap-3.5 md:px-3 md:text-[13.5px]">
+              <Link key={r.symbol} href={`/saham/${r.symbol}`} className="flex items-center gap-1.5 border-b border-border px-2 py-3 text-[13px] transition-colors hover:bg-muted md:gap-3.5 md:px-3 md:text-[13.5px]">
                 <b className="w-[46px] shrink-0 md:w-[62px]">{r.symbol}</b>
                 <span className="flex-1 text-right font-mono">{signedPct(-r.pct_below_ath * 100)}</span>
                 <span className="w-[74px] shrink-0 text-right font-mono md:w-24">{m(r.earnings_2024)}</span>
@@ -506,7 +506,7 @@ export default async function SituasiDetailPage({ params }: { params: Promise<{ 
         <SideBlock title="Terkait">
           <div className="flex flex-col gap-2.5">
             {situation.related.map((r) => (
-              <Link key={r.href + r.label} href={r.href} className="text-[13.5px] font-medium text-[var(--viz-accent)]">
+              <Link key={r.href + r.label} href={r.href} className="text-[13.5px] font-medium text-[var(--viz-accent)] hover:underline">
                 {r.label} &rarr;
               </Link>
             ))}
@@ -533,7 +533,7 @@ export default async function SituasiDetailPage({ params }: { params: Promise<{ 
             <StockListRow key={r.code} code={r.code} name={r.name} value={r.value} sub={r.sub} />
           ))}
         </div>
-        <Link href={`/situasi/${slug}/daftar`} className="inline-flex min-h-11 items-center text-[13.5px] font-semibold text-[var(--viz-accent)]">
+        <Link href={`/situasi/${slug}/daftar`} className="inline-flex min-h-11 items-center text-[13.5px] font-semibold text-[var(--viz-accent)] hover:underline">
           Lihat semua {sorted.length} &rarr;
         </Link>
       </div>

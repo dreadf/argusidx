@@ -51,7 +51,7 @@ export function PairBars({ a, b, unit, compact = false }: { a: { n: number; labe
 
 export function StockListRow({ code, name, value, sub }: { code: string; name: string; value: ReactNode; sub: string }) {
   return (
-    <Link href={`/saham/${code}`} className="flex items-center gap-3 border-b border-border py-3">
+    <Link href={`/saham/${code}`} className="group/row flex items-center gap-3 border-b border-border py-3 transition-colors hover:bg-muted">
       <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent font-mono text-xs font-bold text-accent-foreground">{code.slice(0, 2)}</span>
       <span className="min-w-0 flex-1">
         <span className="block text-[15px] font-semibold leading-snug">{code}</span>
@@ -61,7 +61,7 @@ export function StockListRow({ code, name, value, sub }: { code: string; name: s
         <span className="block font-mono text-sm font-semibold">{value}</span>
         <span className="block text-xs text-muted-foreground">{sub}</span>
       </span>
-      <ChevronRight className="size-4 shrink-0 text-muted-foreground" />
+      <ChevronRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover/row:translate-x-0.5" />
     </Link>
   );
 }
