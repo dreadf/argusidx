@@ -1,4 +1,5 @@
 import { commonWordTickers } from "./common-words";
+import { STOCK_ALIASES } from "./stock-aliases";
 import {
   PROMOTION_GUIDANCE,
   PROMOTION_NOTES,
@@ -184,6 +185,13 @@ function getIndex(stocks: readonly TipStock[]): StockIndex {
     // Same rule as stock-lookup.ts: only multi-word names count, so a
     // one-word core that is an ordinary word ("timah") never matches.
     if (core.length >= 4 && core.includes(" ")) names.push({ core, code: s.code });
+  }
+  // Curated nicknames (stock-aliases.ts): pre-vetted collision-free, so
+  // single-word entries are fine here unlike company-name cores above.
+  // Sorted after the real names below, so a full company name always wins
+  // over a shorter alias when both appear.
+  for (const [alias, code] of Object.entries(STOCK_ALIASES)) {
+    if (byCode.has(code)) names.push({ core: alias, code });
   }
   names.sort((a, b) => b.core.length - a.core.length || (a.code < b.code ? -1 : 1));
   const index = { byCode, common, names };

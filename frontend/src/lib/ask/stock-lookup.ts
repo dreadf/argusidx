@@ -1,4 +1,5 @@
 import { getAllStockCodes, getStockData } from "@/lib/stock-data";
+import { STOCK_ALIASES } from "./stock-aliases";
 import { escapeRegExp } from "./text-utils";
 
 interface LookupEntry {
@@ -6,6 +7,8 @@ interface LookupEntry {
   nameCore: string;
   nameRe: RegExp;
   codeRe: RegExp;
+  /** A curated nickname (stock-aliases.ts), pre-vetted as collision-free: skips the multi-word/length guard company-name entries need. */
+  isAlias: boolean;
 }
 
 let indexCache: LookupEntry[] | null = null;
@@ -35,7 +38,13 @@ async function getLookupIndex(): Promise<LookupEntry[]> {
       nameCore,
       nameRe: new RegExp(`\\b${escapeRegExp(nameCore)}\\b`),
       codeRe: new RegExp(`\\b${code}\\b`),
+      isAlias: false,
     });
+  }
+  const byCode = new Set(codes);
+  for (const [alias, code] of Object.entries(STOCK_ALIASES)) {
+    if (!byCode.has(code)) continue; // a delisted target should never crash the lookup
+    entries.push({ code, nameCore: alias, nameRe: new RegExp(`\\b${escapeRegExp(alias)}\\b`), codeRe: /(?!)/, isAlias: true });
   }
   indexCache = entries;
   return entries;
@@ -95,7 +104,7 @@ export async function findStockInText(text: string): Promise<string | null> {
   // "Bumi Resources".
   let nameMatch: { code: string; length: number } | null = null;
   for (const entry of index) {
-    if (entry.nameCore.length < 4 || !entry.nameCore.includes(" ")) continue;
+    if (!entry.isAlias && (entry.nameCore.length < 4 || !entry.nameCore.includes(" "))) continue;
     if (nameMatch && entry.nameCore.length <= nameMatch.length) continue;
     if (entry.nameRe.test(lower)) nameMatch = { code: entry.code, length: entry.nameCore.length };
   }
