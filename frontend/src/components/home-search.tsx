@@ -30,12 +30,22 @@ export function HomeSearch({ index, examples }: { index: SearchEntry[]; examples
     router.push(`/saham/${code}`);
   }
 
+  function askTanya() {
+    const q = query.trim();
+    if (!q) return;
+    setOpen(false);
+    router.push(`/tanya?q=${encodeURIComponent(q)}`);
+  }
+
+  const notFound = query.trim().length > 0 && results.length === 0;
+
   return (
     <div>
       <form
         onSubmit={(e) => {
           e.preventDefault();
           if (results.length > 0) go(results[0].code);
+          else askTanya();
         }}
         className="relative"
       >
@@ -57,7 +67,11 @@ export function HomeSearch({ index, examples }: { index: SearchEntry[]; examples
             autoComplete="off"
             className="h-12 min-w-0 flex-1 bg-transparent text-[17px] text-foreground outline-none placeholder:text-muted-foreground md:h-[52px] md:text-lg"
           />
-          <button type="submit" aria-label="Periksa saham" className="flex h-12 w-12 shrink-0 items-center justify-center gap-2 rounded-[14px] bg-primary text-[15px] font-bold text-primary-foreground md:h-[52px] md:w-auto md:px-[26px]">
+          <button
+            type="submit"
+            aria-label="Periksa saham"
+            className="flex h-12 w-12 shrink-0 items-center justify-center gap-2 rounded-[14px] bg-primary text-[15px] font-bold text-primary-foreground transition-colors hover:bg-primary/85 md:h-[52px] md:w-auto md:px-[26px]"
+          >
             <span className="hidden md:inline">Periksa saham</span>
             <ArrowRight className="size-[22px] md:size-[18px]" strokeWidth={1.7} aria-hidden />
           </button>
@@ -73,7 +87,7 @@ export function HomeSearch({ index, examples }: { index: SearchEntry[]; examples
                     if (blurTimer.current) clearTimeout(blurTimer.current);
                     go(entry.code);
                   }}
-                  className="flex min-h-11 w-full items-center gap-3 px-4 py-2 text-left text-sm"
+                  className="flex min-h-11 w-full items-center gap-3 px-4 py-2 text-left text-sm transition-colors hover:bg-muted"
                 >
                   <span className="shrink-0 font-bold">{entry.code}</span>
                   <span className="truncate text-muted-foreground">{entry.name}</span>
@@ -82,11 +96,33 @@ export function HomeSearch({ index, examples }: { index: SearchEntry[]; examples
             ))}
           </ul>
         )}
+        {open && notFound && (
+          <div role="status" aria-live="polite" className="absolute z-20 mt-1.5 w-full overflow-hidden rounded-2xl border border-border bg-card p-4 shadow-lg">
+            <p className="text-[13.5px] text-muted-foreground">
+              Tidak ada saham dengan kode atau nama &ldquo;{query.trim()}&rdquo;.
+            </p>
+            <button
+              type="button"
+              onMouseDown={(e) => {
+                e.preventDefault();
+                if (blurTimer.current) clearTimeout(blurTimer.current);
+                askTanya();
+              }}
+              className="mt-2.5 inline-flex min-h-9 items-center text-[13.5px] font-semibold text-[var(--viz-accent)] transition-colors hover:underline"
+            >
+              Tanya langsung: &ldquo;{query.trim()}&rdquo; &rarr;
+            </button>
+          </div>
+        )}
       </form>
       <div className="mt-4 flex flex-wrap items-center gap-2.5">
         <span className="text-xs text-muted-foreground">Coba</span>
         {examples.map((code) => (
-          <Link key={code} href={`/saham/${code}`} className="inline-flex min-h-8 items-center rounded-md border border-border bg-[var(--viz-raised)] px-3.5 text-[13.5px] font-bold text-foreground">
+          <Link
+            key={code}
+            href={`/saham/${code}`}
+            className="inline-flex min-h-8 items-center rounded-md border border-border bg-[var(--viz-raised)] px-3.5 text-[13.5px] font-bold text-foreground transition-colors hover:border-[var(--viz-accent)] hover:text-[var(--viz-accent)]"
+          >
             {code}
           </Link>
         ))}

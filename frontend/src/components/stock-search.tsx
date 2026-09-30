@@ -38,6 +38,14 @@ export function StockSearch({ index, inputId }: { index: SearchEntry[]; inputId?
     router.push(`/saham/${code}`);
   }
 
+  function askTanya(q: string) {
+    setQuery("");
+    setOpen(false);
+    router.push(`/tanya?q=${encodeURIComponent(q)}`);
+  }
+
+  const notFound = query.trim().length > 0 && results.length === 0;
+
   return (
     <div className="relative">
       <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
@@ -51,16 +59,17 @@ export function StockSearch({ index, inputId }: { index: SearchEntry[]; inputId?
           setActiveIndex(0);
         }}
         onKeyDown={(e) => {
-          if (!open || results.length === 0) return;
-          if (e.key === "ArrowDown") {
+          if (!open) return;
+          if (e.key === "ArrowDown" && results.length > 0) {
             e.preventDefault();
             setActiveIndex((i) => Math.min(i + 1, results.length - 1));
-          } else if (e.key === "ArrowUp") {
+          } else if (e.key === "ArrowUp" && results.length > 0) {
             e.preventDefault();
             setActiveIndex((i) => Math.max(i - 1, 0));
           } else if (e.key === "Enter") {
             e.preventDefault();
-            go(results[activeIndex].code);
+            if (results.length > 0) go(results[activeIndex].code);
+            else if (query.trim()) askTanya(query.trim());
           } else if (e.key === "Escape") {
             setOpen(false);
           }
@@ -94,7 +103,7 @@ export function StockSearch({ index, inputId }: { index: SearchEntry[]; inputId?
                   if (blurTimer.current) clearTimeout(blurTimer.current);
                   go(entry.code);
                 }}
-                className={`flex w-full items-center justify-between gap-3 px-3 py-2 text-left text-sm ${
+                className={`flex w-full items-center justify-between gap-3 px-3 py-2 text-left text-sm transition-colors hover:bg-[var(--viz-baseline)] ${
                   i === activeIndex ? "bg-[var(--viz-baseline)]" : ""
                 }`}
               >
@@ -104,6 +113,22 @@ export function StockSearch({ index, inputId }: { index: SearchEntry[]; inputId?
             </li>
           ))}
         </ul>
+      )}
+      {open && notFound && (
+        <div id="stock-search-empty" role="status" aria-live="polite" className="absolute z-20 mt-1 w-full overflow-hidden rounded-md border border-border bg-[var(--viz-surface)] p-3 shadow-lg">
+          <p className="text-xs text-[var(--viz-ink-secondary)]">Tidak ada saham dengan kode atau nama itu.</p>
+          <button
+            type="button"
+            onMouseDown={(e) => {
+              e.preventDefault();
+              if (blurTimer.current) clearTimeout(blurTimer.current);
+              askTanya(query.trim());
+            }}
+            className="mt-1.5 inline-flex min-h-8 items-center text-xs font-semibold text-[var(--viz-accent)] transition-colors hover:underline"
+          >
+            Tanya langsung: &ldquo;{query.trim()}&rdquo; &rarr;
+          </button>
+        </div>
       )}
     </div>
   );

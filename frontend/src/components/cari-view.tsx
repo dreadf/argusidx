@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState, useSyncExternalStore } from "react";
+import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 import { formatPrice, pctFrom, shortName, signedPct } from "@/lib/format";
 import { getRecentServerSnapshot, getRecentSnapshot, subscribeRecent } from "@/lib/recent-store";
@@ -13,7 +14,7 @@ const sectorLabel = (key: string | null) => SECTOR_META.find((s) => s.key === ke
 function Row({ q }: { q: QuoteEntry }) {
   const dist = q.price != null && q.high ? pctFrom(q.price, q.high) : null;
   return (
-    <Link href={`/saham/${q.code}`} className="flex items-center gap-3 border-b border-border py-3 md:px-3">
+    <Link href={`/saham/${q.code}`} className="flex items-center gap-3 border-b border-border py-3 transition-colors hover:bg-muted md:px-3">
       <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent font-mono text-xs font-bold text-accent-foreground">{q.code.slice(0, 2)}</span>
       <span className="min-w-0 flex-1">
         <span className="block text-[15px] font-bold">{q.code}</span>
@@ -30,6 +31,7 @@ function Row({ q }: { q: QuoteEntry }) {
 
 /** Find a stock by code or name. Not Tanya: this only opens stock pages. */
 export function CariView({ quotes, asOf }: { quotes: QuoteEntry[]; asOf: string }) {
+  const router = useRouter();
   const [query, setQuery] = useState("");
   const [shown, setShown] = useState(8);
   const recent = useSyncExternalStore(subscribeRecent, getRecentSnapshot, getRecentServerSnapshot);
@@ -89,9 +91,24 @@ export function CariView({ quotes, asOf }: { quotes: QuoteEntry[]; asOf: string 
               <Row key={e.code} q={e} />
             ))}
           </div>
-          {matches.length === 0 && <p className="mt-3 text-sm text-muted-foreground">Tidak ada saham dengan kode atau nama itu.</p>}
+          {matches.length === 0 && (
+            <div className="mt-3" role="status" aria-live="polite">
+              <p className="text-sm text-muted-foreground">Tidak ada saham dengan kode atau nama itu.</p>
+              <button
+                type="button"
+                onClick={() => router.push(`/tanya?q=${encodeURIComponent(query.trim())}`)}
+                className="mt-2 inline-flex min-h-11 items-center text-[13px] font-semibold text-[var(--viz-accent)] transition-colors hover:underline"
+              >
+                Tanya langsung: &ldquo;{query.trim()}&rdquo; &rarr;
+              </button>
+            </div>
+          )}
           {shown < matches.length && (
-            <button type="button" onClick={() => setShown(shown + 20)} className="mt-3 inline-flex min-h-11 items-center text-[13px] font-medium text-[var(--viz-accent)]">
+            <button
+              type="button"
+              onClick={() => setShown(shown + 20)}
+              className="mt-3 inline-flex min-h-11 items-center text-[13px] font-medium text-[var(--viz-accent)] transition-colors hover:underline"
+            >
               Lihat lebih banyak dari {matches.length} hasil &rarr;
             </button>
           )}
