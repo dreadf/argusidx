@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { X } from "lucide-react";
 import { TanyaComposer, aiUsable, type AskMode } from "@/components/tanya-composer";
-import { ClaimRow, ConfirmRow, DATA_ONLY_LINE, LimitNote, StockCardView, TipNoticeView, UnavailableCard, UserBubble } from "@/components/tanya-results";
+import { ClaimRow, ConfirmRow, DATA_ONLY_LINE, LimitNote, StockCardView, TIP_DATA_ONLY_LINE, TipNoticeView, UnavailableCard, UserBubble } from "@/components/tanya-results";
 import type { Quota } from "@/lib/ask/quota";
 import { readTip, type TipReading } from "@/lib/ask/tip-reader";
 import { beliefSlug, buildTipView, findUnknownCodes, routeInput, tipDeps, type ClaimRowView, type TipBundle } from "@/lib/ask/tip-view";
@@ -239,7 +239,7 @@ function TipResult({ turn, bundle, onConfirm }: { turn: Extract<Turn, { kind: "t
       )}
       <p className="text-xs leading-normal text-muted-foreground">
         {view.untested.length > 0 && <>Tidak ada uji untuk {view.untested.map((u) => `“${u}”`).join(", ")}. </>}
-        {DATA_ONLY_LINE}
+        {TIP_DATA_ONLY_LINE}
       </p>
     </>
   );

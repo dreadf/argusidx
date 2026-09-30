@@ -11,6 +11,11 @@ import type { Verdict } from "@/lib/findings-data";
 /** Pieces of a Tanya result (boards Tanya-Tempel-Hasil, Tanya-AI-Habis, Kondisi-Kosong). */
 
 export const DATA_ONLY_LINE = "Dijawab dari data kami, tanpa AI.";
+/** Shown on a pasted-tip result, distinct from DATA_ONLY_LINE: this is never
+ * about AI being unavailable, tips are always checked this way. Without a
+ * distinct line here, choosing "Dengan AI" then pasting a tip reads as if
+ * that choice was ignored or AI failed, when it was never in play. */
+export const TIP_DATA_ONLY_LINE = "Klaim dicek langsung dari hasil uji kami, bukan ditanyakan ke AI. Jawabannya selalu begini, apa pun mode yang dipilih.";
 
 export function UserBubble({ children }: { children: ReactNode }) {
   return (
