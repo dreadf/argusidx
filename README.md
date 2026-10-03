@@ -50,8 +50,8 @@ cara cepat untuk melihat kondisi pasar atau apakah gagasan di balik sebuah tips
 pernah terbukti. ArgusIDX membaca kondisi pasar, memberi setiap dari 962
 perusahaan tercatat ringkasan yang sama tanpa skor gabungan, dan memeriksa
 tips yang ditempel dengan data historis. Dari 23 keyakinan populer yang
-diuji, 4 terbukti. Aplikasi ini berbahasa Indonesia, tidak pernah
-memberi rekomendasi transaksi apa pun, dan bukan saran investasi.
+diuji, 4 terbukti. Aplikasi ini berbahasa Indonesia dan hanya alat
+informasi. Lihat bagian Disclaimer di bawah.
 
 ## Contents
 
