@@ -229,6 +229,27 @@ Tests, rebuilding the data and the optional Gemini key: [`docs/SETUP.md`](docs/S
 | Foreign-flow and insider-buying tests; Sectors closes for the re-check | Sectors | Frozen research results |
 | Most price outcomes, drawdown and recovery base rates | Free public price history (research only, never shipped) | Frozen, dated |
 
+### Why the data is not refreshing
+
+The data fetchers and rebuild scripts exist and work: `pipeline/appdata/`
+(`refresh_universe.py`, `fetch_corporate_actions.py`, `fetch_idx_total.py`,
+`fetch_ihsg.py`, the `fetch_sectors_closes*.py` set) pulls fresh data from
+Sectors, and `scripts/rebuild_app_data.sh` rebuilds every file the app reads.
+They are run by hand, one at a time, and deliberately not scheduled. Two
+constraints, both stated on the pages rather than hidden:
+
+- **Rules.** The hackathon freezes the repository and the application at
+  submission, with no scheduled data refresh afterwards. A cron job would break
+  that rule, so none is set up.
+- **Credits.** Every Sectors call spends from a finite credit balance
+  ([`docs/credit_ledger.md`](docs/credit_ledger.md) logs each one). Each fetcher
+  states its cost and refuses to overwrite a dated file, so a refresh is a
+  conscious, logged step, not a background job.
+
+Because of this, every page shows its "as of" date, and the app never claims
+to be live. With no freeze and a larger budget, a scheduled refresh is the
+first thing to add; the fetchers are already written to be run that way.
+
 `data/raw/` (the purchased data) is kept in a private repository, because Sectors'
 terms do not allow republishing it; the app and all derived data (`data/app/`) are
 here. Data is frozen at submission, as the rules require. Sources for the facts above:
