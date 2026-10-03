@@ -373,8 +373,8 @@ export default async function PasarPage() {
   const topMoves = rankings.biggest_daily_moves.slice(0, 3);
   const hariIni = (
     <section>
-      <H2>Saham hari ini</H2>
-      <Sub>Pergerakan terbesar, {formatDateId(market.as_of)}.</Sub>
+      <H2>Pergerakan terbesar</H2>
+      <Sub>Per {formatDateId(market.as_of)}, naik dan turun.</Sub>
       <div className="mt-1.5">
         {topMoves.map((m) => {
           const up = m.daily_close_change >= 0;
@@ -403,7 +403,7 @@ export default async function PasarPage() {
   return (
     <main className="mx-auto w-full max-w-6xl px-[18px] py-5 md:px-8 md:py-8">
       <PageTitle title="Pasar" pill={`Data ${formatDateId(market.as_of)}`} />
-      <Sub>Kondisi pasar saham Indonesia hari ini.</Sub>
+      <Sub>Kondisi pasar saham Indonesia per {formatDateId(market.as_of)}.</Sub>
       <div className="mt-4 md:mt-5">{kondisi}</div>
       <div className="mt-4 grid gap-4 md:grid-cols-2">
         {total}

@@ -106,7 +106,7 @@ export default async function PeringkatDetailPage({ params, searchParams }: { pa
   } else if (measure === "pergerakan") {
     const all = rankings.biggest_daily_moves;
     total = all.length;
-    title = "Pergerakan harga terbesar hari ini";
+    title = "Pergerakan harga terbesar";
     line = `Naik dan turun, urut menurut besarnya. Data ${formatDateId(rankings.as_of)}.`;
     rows = all.slice(0, shown).map((r) => ({
       code: r.symbol,

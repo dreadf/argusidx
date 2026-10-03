@@ -601,7 +601,7 @@ export function popularSignals(r: ReadInput, watch: WatchItem[]): Signal[] {
   if (p.daily_gain_rank !== null && p.daily_gain_rank <= 10 && gain !== null && gain > 0) {
     out.push({
       key: "top_gainer",
-      title: `${code} naik paling tinggi hari ini`,
+      title: `${code} termasuk 10 saham naik tertinggi`,
       here: `Naik ${pctPlain(gain)} pada ${dateLong(meta.as_of)}, peringkat ${p.daily_gain_rank} dari ${r.gainRankCount} saham.`,
       meaning: null,
     });
