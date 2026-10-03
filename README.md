@@ -160,7 +160,7 @@ flowchart LR
   J --> A["/api/ask<br/>optional Gemini"]
 ```
 
-- **562 Python tests and 193 frontend tests**, run by CI on every push together with
+- **562 Python tests and 207 frontend tests**, run by CI on every push together with
   a secret scan and a production build ([`ci.yml`](.github/workflows/ci.yml)).
 - **Guards against expensive mistakes:** the client refuses queries below Sectors' data
   floor (they return empty and still bill), unknown tickers, and billed MCP calls

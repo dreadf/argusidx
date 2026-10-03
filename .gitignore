@@ -46,4 +46,8 @@ venv/
 /.claude/
 /frontend/CLAUDE.md
 /frontend/AGENTS.md
+# Background research reports and their source notes: not part of the product,
+# and the notes may quote third-party articles.
+/reports/
+/research_notes/
 .env*
