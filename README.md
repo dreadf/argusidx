@@ -21,15 +21,48 @@ Live app: <https://argusidx.vercel.app>.
 > under a claim that sounds too certain; an experienced trader gets the daily
 > read done for them, the same way, every time.
 
+## Problem statement
+
+**In one sentence:** Indonesia's new retail investors act on tips and popular
+beliefs ("oversold banget, pasti mantul", "asing borong") that nobody has
+checked against IDX history, and they have no quick way to see either the
+state of the market or whether the idea behind a tip has ever held up.
+
+- **Who has the problem.** First-time retail investors, who are the fastest
+  growing group on the exchange, and experienced traders who repeat the same
+  daily market read by hand.
+- **What goes wrong today.** A tip arrives with total certainty and no base
+  rate. Screeners show signals as if they work, and we found none that
+  publish whether they do. A market-wide read (what is driving IHSG, which
+  stocks carry the fall) takes repeated work from raw data.
+- **What ArgusIDX does about it.** It reads the market's condition, gives
+  every one of 962 listed companies the same plain-language read with no
+  combined score, and checks a pasted tip against what has actually
+  happened. Of the 23 popular beliefs we tested, 4 held up.
+- **What it will not do.** It never recommends buying, selling or holding,
+  and never promises accuracy or profit.
+
+### Ringkasan (Bahasa Indonesia)
+
+Investor ritel baru di Indonesia sering bertindak berdasarkan tips dan
+keyakinan populer yang belum pernah diuji dengan data bursa, dan tidak punya
+cara cepat untuk melihat kondisi pasar atau apakah gagasan di balik sebuah tips
+pernah terbukti. ArgusIDX membaca kondisi pasar, memberi setiap dari 962
+perusahaan tercatat ringkasan yang sama tanpa skor gabungan, dan memeriksa
+tips yang ditempel dengan data historis. Dari 23 keyakinan populer yang
+diuji, 4 terbukti. Aplikasi ini berbahasa Indonesia, tidak pernah
+memberi rekomendasi transaksi apa pun, dan bukan saran investasi.
+
 ## Contents
 
-1. [Why this exists](#why-this-exists)
-2. [What you can do in the app](#what-you-can-do-in-the-app)
-3. [The research](#the-research) (what we tested, what held up, how we kept it honest)
-4. [How Sectors powers it](#how-sectors-powers-it)
-5. [Engineering](#engineering)
-6. [Try it in three minutes](#try-it-in-three-minutes)
-7. [Run it yourself](#run-it-yourself), [data and limits](#data-provenance-and-limits), [repo map](#repo-map)
+1. [Problem statement](#problem-statement)
+2. [Why this exists](#why-this-exists)
+3. [What you can do in the app](#what-you-can-do-in-the-app)
+4. [The research](#the-research) (what we tested, what held up, how we kept it honest)
+5. [How Sectors powers it](#how-sectors-powers-it)
+6. [Engineering](#engineering)
+7. [Try it in three minutes](#try-it-in-three-minutes)
+8. [Run it yourself](#run-it-yourself), [data and limits](#data-provenance-and-limits), [repo map](#repo-map)
 
 ## Why this exists
 
