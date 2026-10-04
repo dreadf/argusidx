@@ -14,7 +14,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Absolute base for link-preview images (shared results, /api/og). Without it a
+// preview URL would point at the deployment-specific address, not the public one.
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "ArgusIDX",
   description:
     "Lapisan bukti untuk investor ritel Indonesia: apa yang data sebenarnya katakan, bukan opini.",

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { BarChart3, ChartNoAxesColumnIncreasing, ChevronRight, Info, Pause, Rocket, TrendingDown, TrendingUp, TriangleAlert, Wallet, type LucideIcon } from "lucide-react";
+import { BarChart3, ChartNoAxesColumnIncreasing, ChevronRight, Eye, Info, Pause, Rocket, TrendingDown, TrendingUp, TriangleAlert, Wallet, type LucideIcon } from "lucide-react";
 import type { SituationLine } from "@/lib/ask/stock-card";
 import { MAX_TIP_CHARS } from "@/lib/ask/tip-reader";
 import { VERDICT_CHIP, type ClaimRowView, type TipNotice } from "@/lib/ask/tip-view";
@@ -17,10 +17,29 @@ export const DATA_ONLY_LINE = "Dijawab dari data kami, tanpa AI.";
  * that choice was ignored or AI failed, when it was never in play. */
 export const TIP_DATA_ONLY_LINE = "Klaim dicek langsung dari hasil uji kami, bukan ditanyakan ke AI. Jawabannya selalu begini, apa pun mode yang dipilih.";
 
+/** The user's own message: a solid, right-aligned bubble labelled "Anda", so it never reads as part of the reply. */
 export function UserBubble({ children }: { children: ReactNode }) {
   return (
-    <div className="flex justify-end">
-      <div className="max-w-[88%] whitespace-pre-line break-words rounded-xl border border-border bg-muted px-3.5 py-2.5 text-[13.5px] leading-[1.55]">{children}</div>
+    <div className="flex flex-col items-end gap-1">
+      <span className="text-[11.5px] text-muted-foreground">Anda</span>
+      <div className="max-w-[84%] whitespace-pre-line break-words rounded-[16px_16px_4px_16px] bg-primary px-3.5 py-2.5 text-sm leading-[1.55] text-primary-foreground">{children}</div>
+    </div>
+  );
+}
+
+/** Everything ArgusIDX answers: one full-width card with its own header, apart from the user's bubble. `footer` sits under the content (the share button). */
+export function AppReply({ tag, children, footer }: { tag?: string; children: ReactNode; footer?: ReactNode }) {
+  return (
+    <div className="rounded-2xl border border-border bg-card p-3.5 [&_[data-slot=stock-card]]:bg-[var(--viz-raised)]">
+      <div className="flex items-center gap-2 border-b border-border pb-3">
+        <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
+          <Eye className="size-4" strokeWidth={1.8} />
+        </span>
+        <span className="text-[13.5px] font-bold">ArgusIDX</span>
+        {tag && <span className="inline-flex h-[22px] items-center rounded-md border border-border px-2 text-[11px] text-muted-foreground">{tag}</span>}
+      </div>
+      <div className="mt-3 flex flex-col gap-3">{children}</div>
+      {footer && <div className="mt-2.5 flex items-center border-t border-border pt-2">{footer}</div>}
     </div>
   );
 }
@@ -48,7 +67,7 @@ const SITUATION_ICON: Record<SituationLine["kind"], LucideIcon> = {
 /** Stock head line (links to the stock page), with one row per situation the stock is in. */
 export function StockCardView({ card }: { card: CardView }) {
   return (
-    <div className="overflow-hidden rounded-[14px] border border-border bg-card">
+    <div data-slot="stock-card" className="overflow-hidden rounded-[14px] border border-border bg-card">
       <Link href={`/saham/${card.code}`} className="flex items-center gap-3 px-3.5 py-3 transition-colors hover:bg-muted">
         <span className="flex size-[34px] shrink-0 items-center justify-center rounded-full bg-accent font-mono text-[11px] font-bold text-accent-foreground">{card.code.slice(0, 2)}</span>
         <span className="min-w-0 flex-1">

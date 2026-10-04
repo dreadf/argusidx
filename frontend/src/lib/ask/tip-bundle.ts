@@ -8,7 +8,7 @@ import { getAllStockCodes, getStockData } from "@/lib/stock-data";
 import { getSituationsFile } from "@/lib/stock-situations";
 import { buildStockCard, situationLinesFor } from "./stock-card";
 import type { SituationId } from "./tip-claims";
-import type { TipBundle, TipBundleStock } from "./tip-view";
+import { SITUATION_SLUG, type TipBundle, type TipBundleStock } from "./tip-view";
 
 /** base_rates.json key with no typed loader: share of long-below-peak stocks back at the old peak by day 504. */
 async function longBelowRecovered(): Promise<number | null> {
@@ -17,7 +17,56 @@ async function longBelowRecovered(): Promise<number | null> {
   return typeof rate === "number" ? rate : null;
 }
 
-const SITUATION_SLUG: Record<SituationId, string> = { spike: "harga-baru-melonjak", fall: "turun-banyak", ipo: "ikut-ipo", suspension: "pernah-disuspensi" };
+async function loadContext() {
+  const [codes, findings, situations, sitFile, base, ipo, recovered] = await Promise.all([
+    getAllStockCodes(),
+    getFindingsData(),
+    getSituations(),
+    getSituationsFile(),
+    getBaseRatesData(),
+    getIpoBoardsData(),
+    longBelowRecovered(),
+  ]);
+  return { codes, findings, situations, sitFile, base, ipo, recovered };
+}
+type Context = Awaited<ReturnType<typeof loadContext>>;
+
+async function stockEntry(code: string, ctx: Context): Promise<{ stock: TipBundleStock; rank: number } | null> {
+  const data = await getStockData(code);
+  if (!data) return null;
+  const card = buildStockCard(code, data, ctx.codes.length);
+  return {
+    rank: data.snapshot.market_cap_rank ?? Number.MAX_SAFE_INTEGER,
+    stock: {
+      code,
+      name: data.snapshot.company_name,
+      short: card.name,
+      price: card.price,
+      change: card.change,
+      negative: card.negative,
+      situations: situationLinesFor(ctx.sitFile.by_symbol[`${code}.JK`], { base: ctx.base, ipo: ctx.ipo, longBelowRecovered: ctx.recovered }),
+    },
+  };
+}
+
+function findingsAndSituations(ctx: Context): Pick<TipBundle, "findings" | "situationClaims"> {
+  const situationClaims: TipBundle["situationClaims"] = {};
+  for (const id of Object.keys(SITUATION_SLUG) as SituationId[]) {
+    const meta = ctx.situations.find((s) => s.slug === SITUATION_SLUG[id]);
+    if (meta) situationClaims[id] = { slug: meta.slug, line: meta.line };
+  }
+  return {
+    findings: ctx.findings.scoreboard.map((f) => ({
+      belief: f.belief,
+      hypothesisId: f.evidence.hypothesis_id,
+      slug: findingSlug(f),
+      verdict: f.verdict,
+      title: f.title_short_id,
+      line: f.result_short_id,
+    })),
+    situationClaims,
+  };
+}
 
 let cached: TipBundle | null = null;
 
@@ -28,53 +77,29 @@ let cached: TipBundle | null = null;
  */
 export async function getTipBundle(): Promise<TipBundle> {
   if (cached) return cached;
-  const [codes, findings, situations, sitFile, base, ipo, recovered] = await Promise.all([
-    getAllStockCodes(),
-    getFindingsData(),
-    getSituations(),
-    getSituationsFile(),
-    getBaseRatesData(),
-    getIpoBoardsData(),
-    longBelowRecovered(),
-  ]);
-
+  const ctx = await loadContext();
   const ranked: { stock: TipBundleStock; rank: number }[] = [];
-  for (const code of codes) {
-    const data = await getStockData(code);
-    if (!data) continue;
-    const card = buildStockCard(code, data, codes.length);
-    ranked.push({
-      rank: data.snapshot.market_cap_rank ?? Number.MAX_SAFE_INTEGER,
-      stock: {
-        code,
-        name: data.snapshot.company_name,
-        short: card.name,
-        price: card.price,
-        change: card.change,
-        negative: card.negative,
-        situations: situationLinesFor(sitFile.by_symbol[`${code}.JK`], { base, ipo, longBelowRecovered: recovered }),
-      },
-    });
+  for (const code of ctx.codes) {
+    const entry = await stockEntry(code, ctx);
+    if (entry) ranked.push(entry);
   }
   ranked.sort((a, b) => a.rank - b.rank);
-
-  const situationClaims: TipBundle["situationClaims"] = {};
-  for (const id of Object.keys(SITUATION_SLUG) as SituationId[]) {
-    const meta = situations.find((s) => s.slug === SITUATION_SLUG[id]);
-    if (meta) situationClaims[id] = { slug: meta.slug, line: meta.line };
-  }
-
-  cached = {
-    stocks: ranked.map((r) => r.stock),
-    findings: findings.scoreboard.map((f) => ({
-      belief: f.belief,
-      hypothesisId: f.evidence.hypothesis_id,
-      slug: findingSlug(f),
-      verdict: f.verdict,
-      title: f.title_short_id,
-      line: f.result_short_id,
-    })),
-    situationClaims,
-  };
+  cached = { stocks: ranked.map((r) => r.stock), ...findingsAndSituations(ctx) };
   return cached;
+}
+
+/**
+ * The same bundle for a few stocks only. A shared link (/cek) and its preview
+ * image (/api/og) need one or two stocks, and link-preview crawlers give up
+ * quickly, so they must not wait for all 962.
+ */
+export async function getTipBundleFor(codes: readonly string[]): Promise<TipBundle> {
+  if (cached) return cached;
+  const ctx = await loadContext();
+  const stocks: TipBundleStock[] = [];
+  for (const code of codes) {
+    const entry = ctx.codes.includes(code) ? await stockEntry(code, ctx) : null;
+    if (entry) stocks.push(entry.stock);
+  }
+  return { stocks, ...findingsAndSituations(ctx) };
 }

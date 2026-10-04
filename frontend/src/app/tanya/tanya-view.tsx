@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { X } from "lucide-react";
 import { TanyaComposer, aiUsable, type AskMode } from "@/components/tanya-composer";
-import { ClaimRow, ConfirmRow, DATA_ONLY_LINE, LimitNote, StockCardView, TIP_DATA_ONLY_LINE, TipNoticeView, UnavailableCard, UserBubble } from "@/components/tanya-results";
+import { TanyaShare } from "@/components/tanya-share-footer";
+import { AppReply, ClaimRow, ConfirmRow, DATA_ONLY_LINE, LimitNote, StockCardView, TIP_DATA_ONLY_LINE, TipNoticeView, UnavailableCard, UserBubble } from "@/components/tanya-results";
 import type { Quota } from "@/lib/ask/quota";
 import { readTip, type TipReading } from "@/lib/ask/tip-reader";
 import { beliefSlug, buildTipView, findUnknownCodes, routeInput, tipDeps, type ClaimRowView, type TipBundle } from "@/lib/ask/tip-view";
@@ -200,9 +201,21 @@ export default function TanyaView({ asOf, stock: initialStock = null, initialQue
                 onConfirm={(code) => setTurns((prev) => prev.map((t, j) => (j === i && t.kind === "tip" ? { ...t, confirmed: [...t.confirmed, code] } : t)))}
               />
             )}
-            {turn.kind === "ask" && turn.state === "loading" && <p className="text-sm text-muted-foreground">Memproses...</p>}
-            {(turn.kind === "unavailable" || (turn.kind === "ask" && turn.state === "error")) && <UnavailableCard />}
-            {turn.kind === "ask" && turn.state === "done" && <AnswerView data={turn.data} limitNote={turn.limitNote} />}
+            {turn.kind === "ask" && turn.state === "loading" && (
+              <AppReply>
+                <p className="text-sm text-muted-foreground">Memproses...</p>
+              </AppReply>
+            )}
+            {(turn.kind === "unavailable" || (turn.kind === "ask" && turn.state === "error")) && (
+              <AppReply>
+                <UnavailableCard />
+              </AppReply>
+            )}
+            {turn.kind === "ask" && turn.state === "done" && (
+              <AppReply tag={turn.data.source === "gemini" ? "Dengan AI, dari data" : "Dari data, tanpa AI"}>
+                <AnswerView data={turn.data} limitNote={turn.limitNote} />
+              </AppReply>
+            )}
           </div>
         ))}
         <div ref={endRef} />
@@ -220,7 +233,7 @@ function DatePill({ children }: { children: React.ReactNode }) {
 function TipResult({ turn, bundle, onConfirm }: { turn: Extract<Turn, { kind: "tip" }>; bundle: TipBundle; onConfirm: (code: string) => void }) {
   const view = useMemo(() => buildTipView(turn.q, turn.reading, bundle, turn.unknown, turn.confirmed), [turn, bundle]);
   return (
-    <>
+    <AppReply tag="Dari data, tanpa AI" footer={<TanyaShare view={view} />}>
       {view.notices.map((n) => (
         <TipNoticeView key={n.kind} notice={n} />
       ))}
@@ -241,7 +254,7 @@ function TipResult({ turn, bundle, onConfirm }: { turn: Extract<Turn, { kind: "t
         {view.untested.length > 0 && <>Tidak ada uji untuk {view.untested.map((u) => `“${u}”`).join(", ")}. </>}
         {TIP_DATA_ONLY_LINE}
       </p>
-    </>
+    </AppReply>
   );
 }
 

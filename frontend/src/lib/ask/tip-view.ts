@@ -142,6 +142,8 @@ export interface ClaimRowView {
   line: string;
   verdict: Verdict | null;
   href: string;
+  /** Compact id for a share link (lib/ask/share.ts): never the message text. */
+  share?: string;
 }
 
 export interface TipView {
@@ -157,7 +159,7 @@ export interface TipView {
 export const VERDICT_CHIP: Record<Verdict, string> = { yes: "Terbukti", no: "Tidak terbukti", mixed_or_inconclusive: "Belum jelas" };
 
 /** The situation page a situation claim points to (tip-claims leaves some slugs null). */
-const SITUATION_SLUG: Record<SituationId, string> = { spike: "harga-baru-melonjak", fall: "turun-banyak", ipo: "ikut-ipo", suspension: "pernah-disuspensi" };
+export const SITUATION_SLUG: Record<SituationId, string> = { spike: "harga-baru-melonjak", fall: "turun-banyak", ipo: "ikut-ipo", suspension: "pernah-disuspensi" };
 
 const MAX_QUOTED = 40;
 
@@ -184,12 +186,12 @@ export function buildTipView(text: string, reading: TipReading, bundle: TipBundl
     if (claim.target.type === "finding") {
       for (const ref of claim.target.findings) {
         const f = bundle.findings.find((x) => (ref.pending ? x.hypothesisId === ref.ref : x.belief === ref.ref));
-        if (f) push({ key: f.belief, title: f.title, line: f.line, verdict: f.verdict, href: `/temuan/${f.slug}` });
+        if (f) push({ key: f.belief, title: f.title, line: f.line, verdict: f.verdict, href: `/temuan/${f.slug}`, share: `t~${f.slug}` });
       }
     } else {
       const slug = SITUATION_SLUG[claim.target.situation];
       const s = bundle.situationClaims[claim.target.situation];
-      if (s) push({ key: `situasi-${slug}`, title: claim.label, line: s.line, verdict: null, href: `/situasi/${s.slug}` });
+      if (s) push({ key: `situasi-${slug}`, title: claim.label, line: s.line, verdict: null, href: `/situasi/${s.slug}`, share: `s~${claim.target.situation}` });
     }
   }
 
