@@ -41,8 +41,11 @@ function setPurpose(next: Purpose | null) {
 export function PurposeChips({ code }: { code: string }) {
   const active = usePurpose();
   return (
-    <div className="mt-[18px]">
-      <div className="mb-2 text-[12.5px] text-muted-foreground">Kenapa Anda membuka {code}? Pilih untuk melihat jawabannya dulu.</div>
+    <div className="mt-4 border-t border-border pt-4">
+      <div className="mb-2.5">
+        <div className="text-[14.5px] font-bold leading-snug">Kenapa Anda membuka {code}?</div>
+        <div className="mt-0.5 text-[12.5px] text-muted-foreground">Pilih untuk melihat jawabannya dulu.</div>
+      </div>
       <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0">
         {PURPOSES.map((p) => {
           const on = p.key === active;

@@ -68,6 +68,9 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
         <span className="hidden md:inline">
           <DatePill>Data {formatDateId(asOf)}</DatePill>
         </span>
+        <div className="lg:hidden">
+          <PantauButton symbol={code} companyName={snapshot.company_name} />
+        </div>
       </div>
       <div className="mt-4 flex items-end justify-between gap-3">
         {price !== null ? (
@@ -85,11 +88,8 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
         ) : (
           <div className="text-[13px] text-muted-foreground">Harga terakhir tidak tercatat.</div>
         )}
-        <div className="lg:hidden">
-          <PantauButton symbol={code} companyName={snapshot.company_name} />
-        </div>
       </div>
-      {size && <p className="mt-3 text-[13px] text-muted-foreground md:text-[14px]">{size}</p>}
+      {size && <p className="mt-3 text-[13.5px] leading-normal text-foreground md:text-[14px]">{size}</p>}
     </div>
   );
 
@@ -268,18 +268,18 @@ export default async function StockPage(props: PageProps<"/saham/[kode]">) {
           {identity}
           {banner}
           <PurposeChips code={code} />
-        </div>
-        <div className="hidden min-w-0 lg:block">{pantau}</div>
-      </div>
-      <PurposeAnswer code={code} answers={ans} />
-      <div className={`mt-8 lg:mt-10 ${cols}`}>
-        <div className="flex min-w-0 flex-col gap-6 md:gap-8">
-          <KesimpulanCard code={code} k={kes} />
-          <SignalsSection code={code} signals={signals} findingsCount={findings.scoreboard.length} />
-          <WatchSection code={code} items={watch} checked={WATCH_ORDER.length} />
+          <PurposeAnswer code={code} answers={ans} />
+          <div className="mt-8 flex flex-col gap-6 md:gap-8 lg:mt-10">
+            <KesimpulanCard code={code} k={kes} />
+            <SignalsSection code={code} signals={signals} findingsCount={findings.scoreboard.length} />
+            <WatchSection code={code} items={watch} checked={WATCH_ORDER.length} />
+          </div>
         </div>
         <div className="mt-6 flex min-w-0 flex-col gap-5 md:mt-8 lg:mt-0">
-          <TanyaCard code={code} suggestions={suggestions} className="hidden lg:block" />
+          <div className="hidden flex-col gap-3 lg:flex">
+            {pantau}
+            <TanyaCard code={code} suggestions={suggestions} />
+          </div>
           {harga}
           {bisnis}
           {dividen}
