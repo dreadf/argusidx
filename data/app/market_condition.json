@@ -1,16 +1,16 @@
 {
-  "ihsg_source_file": "ihsg_2026-09-27.json",
+  "ihsg_source_file": "ihsg_2026-10-08.json",
   "rankings_as_of": "2026-10-08",
   "ihsg": {
-    "date": "2026-09-25",
-    "close": 6241.892,
+    "date": "2026-10-07",
+    "close": 6146.724,
     "state": "tertekan",
-    "pct_from_peak": -0.31668341598519933,
+    "pct_from_peak": -0.3271017110578345,
     "peak_date": "2026-01-20",
     "peak_close": 9134.7,
-    "pct_vs_ma200": -0.13636325879431954,
-    "vol20_percentile": 59.31558935361217,
-    "days_since_peak": 161,
+    "pct_vs_ma200": -0.13803009175445713,
+    "vol20_percentile": 67.11736073553271,
+    "days_since_peak": 169,
     "rule": {
       "below_peak_and_ma200": true,
       "volatility_above_p90": false

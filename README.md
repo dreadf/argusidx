@@ -225,7 +225,7 @@ Tests, rebuilding the data and the optional Gemini key: [`docs/SETUP.md`](docs/S
 
 | What | Source | Live or frozen |
 |---|---|---|
-| Stock snapshot, peers, flags, rankings, suspensions, insider filings, corporate actions, market cap | Sectors | Snapshot, dated on every page (8 Oct 2026; suspensions and insider filings 13 Sep 2026) |
+| Stock snapshot, peers, flags, rankings, suspensions, insider filings, corporate actions, market cap | Sectors | Snapshot, dated on every page (8 Oct 2026; suspensions 13 Sep 2026) |
 | Foreign-flow and insider-buying tests; Sectors closes for the re-check | Sectors | Frozen research results |
 | Most price outcomes, drawdown and recovery base rates | Free public price history (research only, never shipped) | Frozen, dated |
 
