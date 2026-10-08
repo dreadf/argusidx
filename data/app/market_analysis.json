@@ -1,7 +1,7 @@
 {
-  "as_of": "2026-09-13",
+  "as_of": "2026-10-08",
   "source_files": [
-    "universe_2026-09-13.json",
+    "universe_2026-10-08.json",
     "sectors_daily_close_2026-09-27.json",
     "sectors_daily_close_m5_2026-09-28.json",
     "lq45_2026-09-28.json",
@@ -33,68 +33,68 @@
   ],
   "universe": {
     "n": 955,
-    "market_value_start": 1.6988191195866468e+16,
-    "market_value_end": 1.157889116190414e+16,
+    "market_value_start": 1.7279783238755258e+16,
+    "market_value_end": 1.2157618303790232e+16,
     "median_return": -0.18137254901960786,
     "down": 682
   },
-  "top5_drag_share": 0.45384051869253683,
+  "top5_drag_share": 0.4792816249275625,
   "drag": [
     {
       "symbol": "BREN.JK",
       "company_name": "PT Barito Renewables Energy Tbk.",
       "return": -0.6463157894736842,
       "value_change": -821447390800000.0,
-      "drag_share": 0.15185835240096443
+      "drag_share": 0.1603711323687801
     },
     {
       "symbol": "DSSA.JK",
       "company_name": "Dian Swastatika Sentosa Tbk",
       "return": -0.7107843137254901,
       "value_change": -558650432000000.0,
-      "drag_share": 0.10327591897149527
+      "drag_share": 0.10906529545476544
     },
     {
       "symbol": "TPIA.JK",
       "company_name": "PT Chandra Asri Pacific Tbk",
       "return": -0.7150000000000001,
       "value_change": -432990283185460.0,
-      "drag_share": 0.08004552908267752
+      "drag_share": 0.08453267098639737
     },
     {
       "symbol": "MORA.JK",
       "company_name": "PT Ekamas Mora Republik Tbk",
       "return": -0.6122082585278277,
       "value_change": -407274993074400.0,
-      "drag_share": 0.07529162562943839
+      "drag_share": 0.07951227620458903
     },
     {
       "symbol": "AMMN.JK",
       "company_name": "PT Amman Mineral Internasional Tbk.",
       "return": -0.4242622950819672,
       "value_change": -234596434117160.0,
-      "drag_share": 0.04336909260796123
+      "drag_share": 0.045800249913030534
     },
     {
       "symbol": "BBCA.JK",
       "company_name": "PT Bank Central Asia Tbk.",
       "return": -0.16249999999999998,
       "value_change": -158654989350000.0,
-      "drag_share": 0.02933004055125128
+      "drag_share": 0.030974205509663715
     },
     {
       "symbol": "FILM.JK",
       "company_name": "PT MD Entertainment Tbk",
       "return": -0.9351724137931035,
       "value_change": -147635405238480.0,
-      "drag_share": 0.027292885273796995
+      "drag_share": 0.028822852663468176
     },
     {
       "symbol": "PANI.JK",
       "company_name": "PT Pantai Indah Kapuk Dua Tbk.",
       "return": -0.5208747514910537,
       "value_change": -119141239396900.0,
-      "drag_share": 0.022025259950246963
+      "drag_share": 0.02325993811398295
     }
   ],
   "large_caps": {
@@ -103,6 +103,11 @@
     "n_producer": 9,
     "median_return": -0.270598648213711,
     "up": [
+      {
+        "symbol": "FORU.JK",
+        "company_name": "Fortune Indonesia Tbk",
+        "return": 0.9884057971014493
+      },
       {
         "symbol": "SMMA.JK",
         "company_name": "PT Sinar Mas Multiartha Tbk",
@@ -137,11 +142,6 @@
         "symbol": "ADRO.JK",
         "company_name": "Alamtri Resources Indonesia Tbk",
         "return": 0.2142857142857142
-      },
-      {
-        "symbol": "MEGA.JK",
-        "company_name": "Bank Mega Tbk",
-        "return": 0.19578313253012047
       }
     ]
   }

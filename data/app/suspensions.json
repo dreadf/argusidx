@@ -5985,11 +5985,6 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "MLPT.JK": {
-      "count": 5,
-      "universe_count": 962,
-      "more_than_pct": 99.2
-    },
     "PGUN.JK": {
       "count": 3,
       "universe_count": 962,
@@ -6000,12 +5995,17 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
+    "MLPT.JK": {
+      "count": 5,
+      "universe_count": 962,
+      "more_than_pct": 99.2
+    },
     "TINS.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "VKTR.JK": {
+    "ARCI.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
@@ -6015,7 +6015,7 @@
       "universe_count": 962,
       "more_than_pct": 93.8
     },
-    "ARCI.JK": {
+    "VKTR.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
@@ -6025,55 +6025,55 @@
       "universe_count": 962,
       "more_than_pct": 99.8
     },
+    "FORU.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
     "LIFE.JK": {
       "count": 4,
       "universe_count": 962,
       "more_than_pct": 97.6
-    },
-    "BNBR.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "SOHO.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "PACK.JK": {
-      "count": 5,
-      "universe_count": 962,
-      "more_than_pct": 99.2
-    },
-    "NSSS.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "BUVA.JK": {
-      "count": 3,
-      "universe_count": 962,
-      "more_than_pct": 93.8
-    },
-    "FASW.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
     },
     "SINI.JK": {
       "count": 3,
       "universe_count": 962,
       "more_than_pct": 93.8
     },
-    "RLCO.JK": {
+    "BNBR.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "ARKO.JK": {
+    "NSSS.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "SOHO.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "FASW.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "BUVA.JK": {
       "count": 3,
       "universe_count": 962,
       "more_than_pct": 93.8
+    },
+    "PACK.JK": {
+      "count": 5,
+      "universe_count": 962,
+      "more_than_pct": 99.2
+    },
+    "RLCO.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
     },
     "CARE.JK": {
       "count": 2,
@@ -6085,7 +6085,12 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "RISE.JK": {
+    "RATU.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
+    },
+    "TRIO.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -6095,7 +6100,7 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "RATU.JK": {
+    "COIN.JK": {
       "count": 3,
       "universe_count": 962,
       "more_than_pct": 93.8
@@ -6105,17 +6110,7 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "TRIO.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "WIFI.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "COIN.JK": {
+    "AGII.JK": {
       "count": 3,
       "universe_count": 962,
       "more_than_pct": 93.8
@@ -6125,25 +6120,15 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "AGII.JK": {
-      "count": 3,
+    "RISE.JK": {
+      "count": 1,
       "universe_count": 962,
-      "more_than_pct": 93.8
+      "more_than_pct": 66.0
     },
     "CMNP.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
-    },
-    "BIPI.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "RMKE.JK": {
-      "count": 3,
-      "universe_count": 962,
-      "more_than_pct": 93.8
     },
     "PLIN.JK": {
       "count": 2,
@@ -6155,15 +6140,15 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "FILM.JK": {
+    "BIPI.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "MDIA.JK": {
-      "count": 5,
+    "ARKO.JK": {
+      "count": 3,
       "universe_count": 962,
-      "more_than_pct": 99.2
+      "more_than_pct": 93.8
     },
     "NATO.JK": {
       "count": 3,
@@ -6175,17 +6160,17 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "INET.JK": {
-      "count": 5,
+    "PKPK.JK": {
+      "count": 2,
       "universe_count": 962,
-      "more_than_pct": 99.2
+      "more_than_pct": 83.3
     },
-    "SHIP.JK": {
+    "RMKE.JK": {
       "count": 3,
       "universe_count": 962,
       "more_than_pct": 93.8
     },
-    "SMCB.JK": {
+    "WIFI.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
@@ -6195,52 +6180,47 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
+    "SMCB.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "SHIP.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
+    },
+    "FILM.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "UNSP.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "INET.JK": {
+      "count": 5,
+      "universe_count": 962,
+      "more_than_pct": 99.2
+    },
     "BOGA.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
+    },
+    "MDIA.JK": {
+      "count": 5,
+      "universe_count": 962,
+      "more_than_pct": 99.2
     },
     "WBSA.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "PKPK.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "LINK.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "NICL.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "KRAS.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "SOCI.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "UANG.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "TOBA.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "MMIX.JK": {
+    "IFSH.JK": {
       "count": 3,
       "universe_count": 962,
       "more_than_pct": 93.8
@@ -6250,42 +6230,97 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "BWPT.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "NIRO.JK": {
+    "KRAS.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
+    },
+    "MMIX.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
+    },
+    "LINK.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "SOCI.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
     },
     "SMIL.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "ARGO.JK": {
+    "ROCK.JK": {
+      "count": 4,
+      "universe_count": 962,
+      "more_than_pct": 97.6
+    },
+    "TOBA.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "NICL.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "BEEF.JK": {
-      "count": 3,
+    "ALKA.JK": {
+      "count": 2,
       "universe_count": 962,
-      "more_than_pct": 93.8
+      "more_than_pct": 83.3
+    },
+    "UANG.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "NIRO.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "ARGO.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
     },
     "MKAP.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
+    "BLTZ.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "BEEF.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
+    },
     "EURO.JK": {
       "count": 3,
       "universe_count": 962,
       "more_than_pct": 93.8
     },
-    "UNSP.JK": {
+    "CBRE.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "BWPT.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "VISI.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
@@ -6295,35 +6330,30 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
+    "BTEL.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
     "CENT.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "CBRE.JK": {
-      "count": 2,
+    "SRIL.JK": {
+      "count": 1,
       "universe_count": 962,
-      "more_than_pct": 83.3
+      "more_than_pct": 66.0
     },
     "BESS.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "VISI.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "DOOH.JK": {
+    "ASLI.JK": {
       "count": 4,
       "universe_count": 962,
       "more_than_pct": 97.6
-    },
-    "BTEL.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
     },
     "FPNI.JK": {
       "count": 1,
@@ -6340,32 +6370,47 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "SRIL.JK": {
+    "BNBA.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
-    },
-    "ROCK.JK": {
-      "count": 4,
-      "universe_count": 962,
-      "more_than_pct": 97.6
     },
     "PYFA.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
+    "DOOH.JK": {
+      "count": 4,
+      "universe_count": 962,
+      "more_than_pct": 97.6
+    },
     "KETR.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "MINA.JK": {
-      "count": 5,
+    "KAEF.JK": {
+      "count": 1,
       "universe_count": 962,
-      "more_than_pct": 99.2
+      "more_than_pct": 66.0
     },
-    "BNBA.JK": {
+    "TRAM.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "PBSA.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "PSKT.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
+    },
+    "BCIC.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -6375,37 +6420,7 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "GTSI.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "ASLI.JK": {
-      "count": 4,
-      "universe_count": 962,
-      "more_than_pct": 97.6
-    },
-    "IRSX.JK": {
-      "count": 4,
-      "universe_count": 962,
-      "more_than_pct": 97.6
-    },
-    "ALKA.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "KAEF.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "PSKT.JK": {
-      "count": 3,
-      "universe_count": 962,
-      "more_than_pct": 93.8
-    },
-    "TRAM.JK": {
+    "RIMO.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -6415,30 +6430,40 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
+    "GTSI.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "MINA.JK": {
+      "count": 5,
+      "universe_count": 962,
+      "more_than_pct": 99.2
+    },
     "DATA.JK": {
       "count": 4,
       "universe_count": 962,
       "more_than_pct": 97.6
     },
-    "BCIC.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "IFSH.JK": {
-      "count": 3,
-      "universe_count": 962,
-      "more_than_pct": 93.8
-    },
-    "RIMO.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "PBSA.JK": {
+    "AYAM.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
+    },
+    "IRSX.JK": {
+      "count": 4,
+      "universe_count": 962,
+      "more_than_pct": 97.6
+    },
+    "RONY.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "STAR.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
     },
     "FAST.JK": {
       "count": 1,
@@ -6450,12 +6475,7 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "FUTR.JK": {
-      "count": 3,
-      "universe_count": 962,
-      "more_than_pct": 93.8
-    },
-    "OASA.JK": {
+    "NICK.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
@@ -6465,57 +6485,22 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "AYAM.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "TRIN.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
     "COCO.JK": {
       "count": 3,
       "universe_count": 962,
       "more_than_pct": 93.8
     },
-    "STAR.JK": {
+    "FUTR.JK": {
       "count": 3,
       "universe_count": 962,
       "more_than_pct": 93.8
-    },
-    "BLTZ.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "RONY.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "FORU.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "INDS.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "SIPD.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
     },
     "IIKP.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "NICK.JK": {
+    "INDS.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
@@ -6525,22 +6510,37 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "EKAD.JK": {
-      "count": 1,
+    "BLUE.JK": {
+      "count": 2,
       "universe_count": 962,
-      "more_than_pct": 66.0
+      "more_than_pct": 83.3
     },
-    "MLPL.JK": {
-      "count": 1,
+    "OASA.JK": {
+      "count": 2,
       "universe_count": 962,
-      "more_than_pct": 66.0
+      "more_than_pct": 83.3
+    },
+    "SIPD.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "BKDP.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
     },
     "NRCA.JK": {
       "count": 4,
       "universe_count": 962,
       "more_than_pct": 97.6
     },
-    "BKDP.JK": {
+    "EKAD.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "TRIN.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
@@ -6550,57 +6550,37 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "BLUE.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
     "SUGI.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
+    },
+    "PPRO.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "MLPL.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "TRUK.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
     },
     "HOME.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "FOLK.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "BBRM.JK": {
+    "MKNT.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
-    },
-    "UDNG.JK": {
-      "count": 7,
-      "universe_count": 962,
-      "more_than_pct": 99.8
     },
     "KING.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "RELI.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "ARTA.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "CITY.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "PPRO.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -6610,47 +6590,37 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "PADI.JK": {
-      "count": 2,
+    "RELI.JK": {
+      "count": 1,
       "universe_count": 962,
-      "more_than_pct": 83.3
+      "more_than_pct": 66.0
     },
     "RSGK.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "POLL.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "YPAS.JK": {
-      "count": 4,
-      "universe_count": 962,
-      "more_than_pct": 97.6
-    },
     "SOSS.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "SHID.JK": {
+    "BBRM.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "WMPP.JK": {
+    "POLL.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
+    },
+    "CITY.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
     },
     "KSIX.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "ASLC.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -6675,6 +6645,86 @@
       "universe_count": 962,
       "more_than_pct": 93.8
     },
+    "ARTA.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "YPAS.JK": {
+      "count": 4,
+      "universe_count": 962,
+      "more_than_pct": 97.6
+    },
+    "WMPP.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "MABA.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "ATAP.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "ZINC.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
+    },
+    "KDTN.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "LFLO.JK": {
+      "count": 4,
+      "universe_count": 962,
+      "more_than_pct": 97.6
+    },
+    "UDNG.JK": {
+      "count": 7,
+      "universe_count": 962,
+      "more_than_pct": 99.8
+    },
+    "SMLE.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "FOLK.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "SHID.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "ASLC.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "PGJO.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
+    },
+    "MGNA.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
+    },
+    "PTMR.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
     "BELL.JK": {
       "count": 2,
       "universe_count": 962,
@@ -6685,72 +6735,12 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "MABA.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "ZINC.JK": {
+    "ASPI.JK": {
       "count": 3,
       "universe_count": 962,
       "more_than_pct": 93.8
-    },
-    "APEX.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "SAFE.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "PTMR.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "ATAP.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "PGJO.JK": {
-      "count": 3,
-      "universe_count": 962,
-      "more_than_pct": 93.8
-    },
-    "PIPA.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "LFLO.JK": {
-      "count": 4,
-      "universe_count": 962,
-      "more_than_pct": 97.6
     },
     "STRK.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "LEAD.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "WMUU.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "KONI.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "PADA.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -6760,7 +6750,7 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "SMRU.JK": {
+    "APEX.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -6770,57 +6760,32 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "KOCI.JK": {
-      "count": 2,
+    "SMRU.JK": {
+      "count": 1,
       "universe_count": 962,
-      "more_than_pct": 83.3
+      "more_than_pct": 66.0
+    },
+    "HOPE.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
+    },
+    "KONI.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
     },
     "TIRT.JK": {
       "count": 4,
       "universe_count": 962,
       "more_than_pct": 97.6
     },
-    "FITT.JK": {
-      "count": 3,
-      "universe_count": 962,
-      "more_than_pct": 93.8
-    },
-    "LUCY.JK": {
-      "count": 5,
-      "universe_count": 962,
-      "more_than_pct": 99.2
-    },
-    "ZATA.JK": {
+    "SAFE.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "SOFA.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "IDPR.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "SSTM.JK": {
-      "count": 4,
-      "universe_count": 962,
-      "more_than_pct": 97.6
-    },
-    "RMKO.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "KOKA.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "DPUM.JK": {
+    "PADI.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
@@ -6830,42 +6795,82 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "KDTN.JK": {
+    "GTRA.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
+    },
+    "LEAD.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "DPUM.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "FITT.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
+    },
+    "PADA.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "PIPA.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
     },
     "DART.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
+    "SSTM.JK": {
+      "count": 4,
+      "universe_count": 962,
+      "more_than_pct": 97.6
+    },
+    "IDPR.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "TRUE.JK": {
+      "count": 4,
+      "universe_count": 962,
+      "more_than_pct": 97.6
+    },
     "PEGE.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "MGNA.JK": {
-      "count": 3,
+    "KOCI.JK": {
+      "count": 2,
       "universe_count": 962,
-      "more_than_pct": 93.8
+      "more_than_pct": 83.3
+    },
+    "AKKU.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
     },
     "AHAP.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "GTRA.JK": {
+    "ARMY.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "TRUK.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "ARMY.JK": {
+    "ZATA.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -6875,22 +6880,47 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
+    "ESTA.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
+    },
     "BBSS.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
-    },
-    "HOPE.JK": {
-      "count": 3,
-      "universe_count": 962,
-      "more_than_pct": 93.8
     },
     "KBRI.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "SMLE.JK": {
+    "KOKA.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "RMKO.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "MEJA.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
+    },
+    "WMUU.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "CSMI.JK": {
+      "count": 3,
+      "universe_count": 962,
+      "more_than_pct": 93.8
+    },
+    "POSA.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -6900,27 +6930,12 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "POSA.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "NZIA.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "ESTA.JK": {
-      "count": 3,
-      "universe_count": 962,
-      "more_than_pct": 93.8
-    },
     "MTFN.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "PNSE.JK": {
+    "HBAT.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -6930,35 +6945,35 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "NUSA.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "CSIS.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
     "ASPR.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "TRUE.JK": {
-      "count": 4,
-      "universe_count": 962,
-      "more_than_pct": 97.6
-    },
-    "DADA.JK": {
+    "TGUK.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
+    },
+    "NUSA.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
     },
     "HOMI.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
+    },
+    "WAPO.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "SOFA.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
     },
     "JATI.JK": {
       "count": 2,
@@ -6970,42 +6985,62 @@
       "universe_count": 962,
       "more_than_pct": 93.8
     },
-    "HBAT.JK": {
+    "PNSE.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "ASPI.JK": {
-      "count": 3,
+    "CSIS.JK": {
+      "count": 1,
       "universe_count": 962,
-      "more_than_pct": 93.8
+      "more_than_pct": 66.0
+    },
+    "NZIA.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
     },
     "ETWA.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "TGUK.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
     "MYTX.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
+    },
+    "LUCY.JK": {
+      "count": 5,
+      "universe_count": 962,
+      "more_than_pct": 99.2
     },
     "KIAS.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "NAIK.JK": {
+    "LAPD.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "TFAS.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "TFAS.JK": {
+    "WICO.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "ALMI.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "NAIK.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -7015,52 +7050,17 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "TRON.JK": {
+    "AMMS.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
-    },
-    "WICO.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "MEJA.JK": {
-      "count": 3,
-      "universe_count": 962,
-      "more_than_pct": 93.8
-    },
-    "ASHA.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "WGSH.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "ALMI.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
     },
     "BAIK.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "AMMS.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "LPLI.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "LAPD.JK": {
+    "NAYZ.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
@@ -7070,32 +7070,27 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "AKKU.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "BOBA.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
     "COWL.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "MSIE.JK": {
+    "LPLI.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "TRON.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "TIRA.JK": {
-      "count": 3,
-      "universe_count": 962,
-      "more_than_pct": 93.8
-    },
     "HILL.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "WGSH.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -7105,17 +7100,17 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "WAPO.JK": {
+    "ASHA.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "BOBA.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
     "JMAS.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "NTBK.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -7130,17 +7125,7 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "LPPS.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "GPSO.JK": {
-      "count": 3,
-      "universe_count": 962,
-      "more_than_pct": 93.8
-    },
-    "ITIC.JK": {
+    "AIMS.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -7150,42 +7135,47 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "KAQI.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "NINE.JK": {
-      "count": 4,
-      "universe_count": 962,
-      "more_than_pct": 97.6
-    },
-    "LION.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
     "COAL.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
+    },
+    "PGLI.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "NTBK.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "DKHH.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "ITIC.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
     },
     "MTRA.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "NAYZ.JK": {
-      "count": 2,
+    "TIRA.JK": {
+      "count": 3,
       "universe_count": 962,
-      "more_than_pct": 83.3
+      "more_than_pct": 93.8
+    },
+    "NINE.JK": {
+      "count": 4,
+      "universe_count": 962,
+      "more_than_pct": 97.6
     },
     "GOLL.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "YELO.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -7195,27 +7185,17 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "FIRE.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "CSMI.JK": {
-      "count": 3,
-      "universe_count": 962,
-      "more_than_pct": 93.8
-    },
     "IPAC.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "PUDP.JK": {
+    "DADA.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "DKHH.JK": {
+    "TMPO.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
@@ -7225,7 +7205,27 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
+    "KAQI.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "PUDP.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
     "GLOB.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "MSIE.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "AYLS.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
@@ -7235,47 +7235,67 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "ENZO.JK": {
+    "FIRE.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
-    },
-    "RGAS.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
     },
     "HKMU.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "TMPO.JK": {
-      "count": 2,
+    "GPSO.JK": {
+      "count": 3,
       "universe_count": 962,
-      "more_than_pct": 83.3
+      "more_than_pct": 93.8
+    },
+    "LPPS.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
     },
     "LMPI.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
+    "YELO.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "LION.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
     "PURI.JK": {
       "count": 3,
       "universe_count": 962,
       "more_than_pct": 93.8
     },
-    "WOWS.JK": {
-      "count": 1,
+    "ENZO.JK": {
+      "count": 2,
       "universe_count": 962,
-      "more_than_pct": 66.0
+      "more_than_pct": 83.3
     },
     "KOPI.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "GRPH.JK": {
+    "RGAS.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "PMMP.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
+    "WOWS.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -7285,37 +7305,17 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "SMKM.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "PMMP.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "AYLS.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
     "ZBRA.JK": {
       "count": 3,
       "universe_count": 962,
       "more_than_pct": 93.8
     },
+    "SMKM.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
     "KARW.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "MERI.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "CHEM.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -7340,6 +7340,11 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
+    "MERI.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
     "RAFI.JK": {
       "count": 1,
       "universe_count": 962,
@@ -7350,35 +7355,25 @@
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "KRYA.JK": {
-      "count": 2,
+    "FLMC.JK": {
+      "count": 4,
       "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "INAI.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
+      "more_than_pct": 97.6
     },
     "LCKM.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "AIMS.JK": {
+    "CHEM.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "KIOS.JK": {
+    "GRPH.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
-    },
-    "FLMC.JK": {
-      "count": 4,
-      "universe_count": 962,
-      "more_than_pct": 97.6
     },
     "JSKY.JK": {
       "count": 1,
@@ -7395,10 +7390,10 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "PGLI.JK": {
-      "count": 2,
+    "INAI.JK": {
+      "count": 1,
       "universe_count": 962,
-      "more_than_pct": 83.3
+      "more_than_pct": 66.0
     },
     "IBFN.JK": {
       "count": 1,
@@ -7410,27 +7405,27 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "RCCC.JK": {
+    "KIOS.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "BAPA.JK": {
+    "KRYA.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
-    "SPRE.JK": {
-      "count": 2,
+    "KICI.JK": {
+      "count": 1,
       "universe_count": 962,
-      "more_than_pct": 83.3
+      "more_than_pct": 66.0
     },
     "POLY.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "KICI.JK": {
+    "RCCC.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -7440,22 +7435,12 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "IKAN.JK": {
-      "count": 2,
-      "universe_count": 962,
-      "more_than_pct": 83.3
-    },
-    "BRRC.JK": {
+    "SPRE.JK": {
       "count": 2,
       "universe_count": 962,
       "more_than_pct": 83.3
     },
     "INCF.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "DEFI.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -7470,12 +7455,27 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
+    "BAPA.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "IKAN.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
+    },
+    "TELE.JK": {
+      "count": 1,
+      "universe_count": 962,
+      "more_than_pct": 66.0
+    },
     "LMAX.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "TELE.JK": {
+    "PLAN.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -7490,7 +7490,7 @@
       "universe_count": 962,
       "more_than_pct": 66.0
     },
-    "PLAN.JK": {
+    "DEFI.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
@@ -7504,6 +7504,11 @@
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0
+    },
+    "BRRC.JK": {
+      "count": 2,
+      "universe_count": 962,
+      "more_than_pct": 83.3
     },
     "BIMA.JK": {
       "count": 1,
@@ -7581,11 +7586,6 @@
       "more_than_pct": 66.0
     },
     "DEAL.JK": {
-      "count": 1,
-      "universe_count": 962,
-      "more_than_pct": 66.0
-    },
-    "MKNT.JK": {
       "count": 1,
       "universe_count": 962,
       "more_than_pct": 66.0

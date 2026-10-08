@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-09-13",
-  "source_file": "universe_2026-09-13.json",
+  "as_of": "2026-10-08",
+  "source_file": "universe_2026-10-08.json",
   "note": "H1's free-float/volatility finding (docs/PRODUCT.md §5.2), resolved per stock using the CURRENT full universe - a live application of the tested size-bucket/float-tercile rule, not a replay of the original study's exact historical cut points. Always carries the 2024-2026 calendar-period caveat.",
   "evaluable_count": 961,
   "universe_count": 962,
@@ -115,17 +115,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
+    "HELI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
     "HRME.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
     "PURI.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
-    "HELI.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -141,11 +141,6 @@
       "free_float_tercile": "low"
     },
     "ASDM.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
-    "POLA.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -186,6 +181,11 @@
       "free_float_tercile": "low"
     },
     "AMIN.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "SOLA.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -240,6 +240,11 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
+    "IKPM.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
     "GEMA.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
@@ -261,6 +266,11 @@
       "free_float_tercile": "low"
     },
     "GRPM.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "TFAS.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -345,12 +355,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "RGAS.JK": {
+    "KARW.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "KARW.JK": {
+    "YOII.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -375,11 +385,6 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "WAPO.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
     "PTMP.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
@@ -395,22 +400,27 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "OPMS.JK": {
+    "GRPH.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
+    },
+    "BEER.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "OPMS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
     },
     "CBMF.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
-      "free_float_tercile": "low"
+      "free_float_tercile": "mid"
     },
     "PPRI.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
-    "WGSH.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -435,12 +445,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "KICI.JK": {
+    "OBMD.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "OBMD.JK": {
+    "KICI.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -455,6 +465,16 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
+    "WGSH.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "NASI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
     "TMPO.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
@@ -465,22 +485,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "NASI.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
-    "SEMA.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
     "JAYA.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
-    "RUNS.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -505,17 +510,22 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "OKAS.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
-    "TAMA.JK": {
+    "RUNS.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
     "MPOW.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "NAIK.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "OKAS.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -540,12 +550,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "CPRI.JK": {
+    "TAMA.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "PART.JK": {
+    "CPRI.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -556,11 +566,6 @@
       "free_float_tercile": "mid"
     },
     "MRAT.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
-    "BAPA.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -580,22 +585,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "GRPH.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
     "AIMS.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
     "CGAS.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
-    "NAYZ.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -655,17 +650,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "ENZO.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
     "CINT.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
     "ALTO.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "ENZO.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -681,11 +676,6 @@
       "free_float_tercile": "mid"
     },
     "LCKM.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
-    "MPIX.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -710,7 +700,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
+    "IOTF.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
     "OLIV.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "MAXI.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -730,7 +730,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
+    "MICE.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
     "LOPI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "NAYZ.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -746,6 +756,11 @@
       "free_float_tercile": "mid"
     },
     "IDEA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "RGAS.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -798,17 +813,22 @@
     "RUIS.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
-      "free_float_tercile": "mid"
+      "free_float_tercile": "high"
     },
     "TOYS.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
-      "free_float_tercile": "mid"
+      "free_float_tercile": "high"
     },
     "AEGS.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
-      "free_float_tercile": "mid"
+      "free_float_tercile": "high"
+    },
+    "ATLA.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
     },
     "SNLK.JK": {
       "size_bucket": "smallest",
@@ -821,6 +841,11 @@
       "free_float_tercile": "high"
     },
     "ANDI.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BAPA.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -855,16 +880,6 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "JAST.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "MEDS.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
     "MARI.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
@@ -885,11 +900,6 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "CSMI.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
     "ASHA.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
@@ -905,17 +915,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
+    "MEDS.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
     "TOPS.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
     "SLIS.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "NANO.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -960,11 +970,6 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "WINR.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
     "ISAP.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
@@ -975,12 +980,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
+    "JAST.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
     "FLMC.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "BMBL.JK": {
+    "NANO.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -1000,6 +1010,11 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
+    "WINR.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
     "BRRC.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
@@ -1011,6 +1026,16 @@
       "free_float_tercile": "high"
     },
     "IPPE.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BMBL.JK": {
+      "size_bucket": "smallest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "RAFI.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -1050,17 +1075,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "MEJA.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "RAFI.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "AKKU.JK": {
+    "PCAR.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -1090,7 +1105,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "PCAR.JK": {
+    "DEFI.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -1105,27 +1120,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "MKNT.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
     "KRYA.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
     "GAMA.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "DEFI.JK": {
-      "size_bucket": "smallest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "ASMI.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -1140,12 +1140,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "KREN.JK": {
+    "SMKM.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "SMKM.JK": {
+    "DADA.JK": {
       "size_bucket": "smallest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -1290,6 +1290,11 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
+    "TALF.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
     "AMOR.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
@@ -1335,16 +1340,6 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "MOLI.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
-    "TALF.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
     "CAMP.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
@@ -1376,11 +1371,6 @@
       "free_float_tercile": "low"
     },
     "PJAA.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
-    "ADCP.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -1445,7 +1435,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "INPS.JK": {
+    "HYGN.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -1456,11 +1446,6 @@
       "free_float_tercile": "low"
     },
     "SMKL.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
-    "HYGN.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -1485,17 +1470,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
+    "SURI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
     "TBMS.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
-    "RELI.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
-    "ADMG.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -1505,12 +1485,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
+    "ADMG.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
     "RODA.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "SURI.JK": {
+    "RELI.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -1535,11 +1520,6 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "TRIS.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
     "GDYR.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
@@ -1555,17 +1535,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
+    "CSIS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
     "CRAB.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
     "ZONE.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
-    "CSIS.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -1590,7 +1570,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "KDTN.JK": {
+    "POLA.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -1613,17 +1593,22 @@
     "SATU.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
-      "free_float_tercile": "mid"
+      "free_float_tercile": "low"
+    },
+    "PRIM.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
     },
     "WINE.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
-      "free_float_tercile": "mid"
+      "free_float_tercile": "low"
     },
     "PGJO.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
-      "free_float_tercile": "mid"
+      "free_float_tercile": "low"
     },
     "PZZA.JK": {
       "size_bucket": "small_mid",
@@ -1645,16 +1630,6 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "AKPI.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
-    "MITI.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
     "VERN.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
@@ -1665,12 +1640,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
+    "AKPI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
     "KSIX.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "SOLA.JK": {
+    "KDTN.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -1705,12 +1685,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "GTRA.JK": {
+    "MHKI.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "MHKI.JK": {
+    "GTRA.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -1730,12 +1710,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "ATAP.JK": {
+    "SMGA.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "SMGA.JK": {
+    "ATAP.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -1755,7 +1735,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "IKPM.JK": {
+    "EMMI.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -1775,7 +1755,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "EMMI.JK": {
+    "LIVE.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -1810,7 +1790,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "LIVE.JK": {
+    "INPS.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -1840,17 +1820,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "TFAS.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
     "KOKA.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
-    "PRIM.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -1861,11 +1831,6 @@
       "free_float_tercile": "mid"
     },
     "GDST.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
-    "PPRO.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -1885,7 +1850,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "FUJI.JK": {
+    "RAAM.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -1895,7 +1860,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
+    "SMRU.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
     "PTMR.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "FUJI.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -1905,7 +1880,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "YOII.JK": {
+    "BSML.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -1915,7 +1890,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "BSML.JK": {
+    "WAPO.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -1925,7 +1900,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "BEER.JK": {
+    "TRIS.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -1980,6 +1955,11 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
+    "SEMA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
     "AISA.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
@@ -2013,24 +1993,29 @@
     "GULA.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
-      "free_float_tercile": "high"
+      "free_float_tercile": "mid"
     },
     "BBLD.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
-      "free_float_tercile": "high"
+      "free_float_tercile": "mid"
     },
     "RMKO.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
-      "free_float_tercile": "high"
+      "free_float_tercile": "mid"
     },
     "TOSK.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
-      "free_float_tercile": "high"
+      "free_float_tercile": "mid"
     },
     "MPXL.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "LABS.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2040,17 +2025,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "NAIK.JK": {
+    "BDKR.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
     "MAGP.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "LABS.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2070,12 +2050,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "PADA.JK": {
+    "PART.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "SMRU.JK": {
+    "PADA.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2095,7 +2075,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "TRUK.JK": {
+    "ZINC.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2130,17 +2110,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
+    "MPIX.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
     "PEGE.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "IOTF.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "MAXI.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2155,17 +2130,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "MICE.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
     "JIHD.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "BDKR.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2175,17 +2140,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
+    "KBAG.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
     "SMLE.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "ZINC.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "KBAG.JK": {
+    "DEWI.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2195,7 +2160,22 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "DEWI.JK": {
+    "GMTD.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BUDI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "IBOS.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "IPTV.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2220,27 +2200,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "ATLA.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "LUCY.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
     "WTON.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
     "CHIP.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "BUDI.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2255,7 +2220,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "IBOS.JK": {
+    "GZCO.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2271,6 +2236,21 @@
       "free_float_tercile": "high"
     },
     "MDLN.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "CSMI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BOLA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "LUCY.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2291,6 +2271,11 @@
       "free_float_tercile": "high"
     },
     "UDNG.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "PTPP.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2355,6 +2340,16 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
+    "MEJA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "AKKU.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
     "WSBP.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
@@ -2365,12 +2360,22 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "HOME.JK": {
+    "MKNT.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
     "TARA.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "ASMI.JK": {
+      "size_bucket": "small_mid",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "KREN.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2381,11 +2386,6 @@
       "free_float_tercile": "high"
     },
     "BLTA.JK": {
-      "size_bucket": "small_mid",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "DADA.JK": {
       "size_bucket": "small_mid",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -2410,6 +2410,11 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
+    "PNGO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
     "META.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
@@ -2420,7 +2425,7 @@
       "size_bucket_significant": false,
       "free_float_tercile": "low"
     },
-    "PNGO.JK": {
+    "AMAR.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "low"
@@ -2450,7 +2455,17 @@
       "size_bucket_significant": false,
       "free_float_tercile": "low"
     },
+    "SONA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
     "LPGI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
+    "LINK.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "low"
@@ -2461,11 +2476,6 @@
       "free_float_tercile": "low"
     },
     "ROTI.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "low"
-    },
-    "SONA.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "low"
@@ -2535,11 +2545,6 @@
       "size_bucket_significant": false,
       "free_float_tercile": "low"
     },
-    "AMAR.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "low"
-    },
     "DAYA.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
@@ -2585,6 +2590,11 @@
       "size_bucket_significant": false,
       "free_float_tercile": "low"
     },
+    "MOLI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
     "DNAR.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
@@ -2600,6 +2610,11 @@
       "size_bucket_significant": false,
       "free_float_tercile": "low"
     },
+    "ADCP.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "low"
+    },
     "PTSN.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
@@ -2610,7 +2625,7 @@
       "size_bucket_significant": false,
       "free_float_tercile": "low"
     },
-    "IFSH.JK": {
+    "BPII.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "low"
@@ -2630,12 +2645,12 @@
       "size_bucket_significant": false,
       "free_float_tercile": "low"
     },
-    "CSAP.JK": {
+    "KEJU.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "low"
     },
-    "KEJU.JK": {
+    "CSAP.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "low"
@@ -2670,7 +2685,7 @@
       "size_bucket_significant": false,
       "free_float_tercile": "low"
     },
-    "FORU.JK": {
+    "FMII.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "low"
@@ -2690,12 +2705,12 @@
       "size_bucket_significant": false,
       "free_float_tercile": "low"
     },
-    "FMII.JK": {
+    "IPCM.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "low"
     },
-    "IPCM.JK": {
+    "KINO.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "low"
@@ -2726,16 +2741,6 @@
       "free_float_tercile": "low"
     },
     "MERK.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "low"
-    },
-    "KINO.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "low"
-    },
-    "GGRP.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "low"
@@ -2808,7 +2813,7 @@
     "BSBK.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
-      "free_float_tercile": "low"
+      "free_float_tercile": "mid"
     },
     "GTSI.JK": {
       "size_bucket": "mid_large",
@@ -2836,11 +2841,6 @@
       "free_float_tercile": "mid"
     },
     "PBSA.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "mid"
-    },
-    "DAAZ.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
@@ -2880,6 +2880,11 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
+    "DAAZ.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
     "APLN.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
@@ -2910,7 +2915,17 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
+    "MITI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
     "KKGI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "BEEF.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
@@ -2935,16 +2950,6 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
-    "ARGO.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "mid"
-    },
-    "MARK.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "mid"
-    },
     "DATA.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
@@ -2960,12 +2965,12 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
-    "RSCH.JK": {
+    "BLOG.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
-    "BLOG.JK": {
+    "RSCH.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
@@ -2980,11 +2985,6 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
-    "ROCK.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "mid"
-    },
     "VISI.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
@@ -2995,7 +2995,17 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
+    "ROCK.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
     "POLI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
+    "ARGO.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
@@ -3015,22 +3025,7 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
-    "MTLA.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "mid"
-    },
-    "KRAS.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "mid"
-    },
     "RDTX.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "mid"
-    },
-    "BEEF.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
@@ -3065,12 +3060,12 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
-    "AYAM.JK": {
+    "PPRO.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
-    "RAAM.JK": {
+    "AYAM.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
@@ -3080,12 +3075,7 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
-    "CBRE.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "mid"
-    },
-    "BVIC.JK": {
+    "DRMA.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
@@ -3125,12 +3115,17 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
+    "CBRE.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
     "SCCO.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
-    "SQMI.JK": {
+    "BVIC.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
@@ -3155,6 +3150,11 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
+    "SQMI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
     "ALDO.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
@@ -3165,12 +3165,12 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
-    "TRIN.JK": {
+    "PRDA.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
-    "PRDA.JK": {
+    "TRIN.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
@@ -3190,6 +3190,11 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
+    "NICL.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "mid"
+    },
     "JTPE.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
@@ -3205,10 +3210,15 @@
       "size_bucket_significant": false,
       "free_float_tercile": "mid"
     },
+    "MASB.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
     "SFAN.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
-      "free_float_tercile": "mid"
+      "free_float_tercile": "high"
     },
     "RANS.JK": {
       "size_bucket": "mid_large",
@@ -3220,12 +3230,12 @@
       "size_bucket_significant": false,
       "free_float_tercile": "high"
     },
-    "GSMF.JK": {
+    "MMIX.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "high"
     },
-    "MMIX.JK": {
+    "GSMF.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "high"
@@ -3236,6 +3246,11 @@
       "free_float_tercile": "high"
     },
     "CBUT.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "TRUK.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "high"
@@ -3251,11 +3266,6 @@
       "free_float_tercile": "high"
     },
     "NFCX.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "high"
-    },
-    "JECX.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "high"
@@ -3290,6 +3300,11 @@
       "size_bucket_significant": false,
       "free_float_tercile": "high"
     },
+    "GJTL.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
     "DKFT.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
@@ -3316,11 +3331,6 @@
       "free_float_tercile": "high"
     },
     "SPTO.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "high"
-    },
-    "GMTD.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "high"
@@ -3360,22 +3370,17 @@
       "size_bucket_significant": false,
       "free_float_tercile": "high"
     },
+    "WINS.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
     "BGTG.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "high"
     },
-    "IPTV.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "high"
-    },
     "MAIN.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "high"
-    },
-    "WINS.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "high"
@@ -3401,6 +3406,11 @@
       "free_float_tercile": "high"
     },
     "BISI.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "IATA.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "high"
@@ -3435,11 +3445,6 @@
       "size_bucket_significant": false,
       "free_float_tercile": "high"
     },
-    "GZCO.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "high"
-    },
     "MNCN.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
@@ -3460,22 +3465,12 @@
       "size_bucket_significant": false,
       "free_float_tercile": "high"
     },
-    "IATA.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "high"
-    },
     "MINA.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "high"
     },
     "ASRI.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "high"
-    },
-    "BOLA.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "high"
@@ -3520,17 +3515,7 @@
       "size_bucket_significant": false,
       "free_float_tercile": "high"
     },
-    "PTPP.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "high"
-    },
     "BBYB.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "high"
-    },
-    "BTEL.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "high"
@@ -3540,27 +3525,7 @@
       "size_bucket_significant": false,
       "free_float_tercile": "high"
     },
-    "KOTA.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "high"
-    },
-    "CPRO.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "high"
-    },
-    "UNSP.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "high"
-    },
-    "OASA.JK": {
-      "size_bucket": "mid_large",
-      "size_bucket_significant": false,
-      "free_float_tercile": "high"
-    },
-    "INPC.JK": {
+    "BTEL.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "high"
@@ -3570,7 +3535,42 @@
       "size_bucket_significant": false,
       "free_float_tercile": "high"
     },
+    "KOTA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "KPIG.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "CPRO.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
     "DILD.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "OASA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "SMRA.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "INPC.JK": {
+      "size_bucket": "mid_large",
+      "size_bucket_significant": false,
+      "free_float_tercile": "high"
+    },
+    "HOME.JK": {
       "size_bucket": "mid_large",
       "size_bucket_significant": false,
       "free_float_tercile": "high"
@@ -3665,11 +3665,6 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "BDMN.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
     "PSAB.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
@@ -3680,17 +3675,22 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
+    "BDMN.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "EDGE.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
     "AGII.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
     "HMSP.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
-    "LINK.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -3711,11 +3711,6 @@
       "free_float_tercile": "low"
     },
     "TLDN.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
-    "EDGE.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -3760,12 +3755,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "GIAA.JK": {
+    "TSPC.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "TSPC.JK": {
+    "GIAA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -3830,12 +3825,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "BPII.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
-    "SCMA.JK": {
+    "IFSH.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -3865,6 +3855,16 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
+    "FORU.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "BBHI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
     "GEMS.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
@@ -3880,12 +3880,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "MDIA.JK": {
+    "SCMA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
     "SUPA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "MDIA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -3920,6 +3925,16 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
+    "GGRP.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
+    "RLCO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "low"
+    },
     "NCKL.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
@@ -3930,17 +3945,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "BBHI.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
     "MYOR.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
-    "RLCO.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -3965,22 +3970,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "POWR.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "low"
-    },
     "OMED.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "NISP.JK": {
+    "JRPT.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "JRPT.JK": {
+    "NISP.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -4000,12 +4000,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "SAME.JK": {
+    "FORE.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
     },
-    "ALII.JK": {
+    "SAME.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "low"
@@ -4020,12 +4020,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "FORE.JK": {
+    "TMAS.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "TMAS.JK": {
+    "POWR.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -4105,11 +4105,6 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "AADI.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
     "MORA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
@@ -4140,6 +4135,11 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
+    "MARK.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
     "STTP.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
@@ -4155,6 +4155,11 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
+    "ALII.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
     "AALI.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
@@ -4165,12 +4170,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "DSSA.JK": {
+    "SIDO.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "SIDO.JK": {
+    "MTLA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -4190,7 +4195,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "NSSS.JK": {
+    "IMPC.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -4205,6 +4210,11 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
+    "KRAS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
     "CLEO.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
@@ -4215,12 +4225,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "MKPI.JK": {
+    "UNSP.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "IMPC.JK": {
+    "MKPI.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -4235,7 +4245,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "DRMA.JK": {
+    "DSSA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -4260,12 +4270,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "MGLV.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
-    "FILM.JK": {
+    "EMAS.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -4295,17 +4300,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "EMAS.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
     "AMMN.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
     "WSKT.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "FILM.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -4325,7 +4330,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "NICL.JK": {
+    "JECX.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -4345,11 +4350,6 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
-    "MASB.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "mid"
-    },
     "EMTK.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
@@ -4361,6 +4361,11 @@
       "free_float_tercile": "mid"
     },
     "BRPT.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
+    "NSSS.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
@@ -4390,6 +4395,11 @@
       "size_bucket_significant": true,
       "free_float_tercile": "mid"
     },
+    "ITMG.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "mid"
+    },
     "SGER.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
@@ -4403,12 +4413,12 @@
     "JSMR.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
-      "free_float_tercile": "mid"
+      "free_float_tercile": "high"
     },
     "MAPA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
-      "free_float_tercile": "mid"
+      "free_float_tercile": "high"
     },
     "GOOD.JK": {
       "size_bucket": "largest",
@@ -4425,7 +4435,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "ITMG.JK": {
+    "BUKA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -4435,7 +4445,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "BUKA.JK": {
+    "MGLV.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "UNTR.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -4455,16 +4470,6 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "GJTL.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "UNTR.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
     "MIKA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
@@ -4476,6 +4481,11 @@
       "free_float_tercile": "high"
     },
     "ARKO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "CMNP.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -4500,12 +4510,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "BNBR.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "PACK.JK": {
+    "AADI.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -4525,6 +4530,11 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
+    "SINI.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
     "ACES.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
@@ -4535,12 +4545,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "INET.JK": {
+    "BALI.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "BALI.JK": {
+    "INET.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -4556,6 +4566,11 @@
       "free_float_tercile": "high"
     },
     "ADRO.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BNBR.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -4585,12 +4600,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "CMNP.JK": {
+    "RMKE.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "RMKE.JK": {
+    "ERAA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -4600,12 +4615,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "SMSM.JK": {
+    "PACK.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "SINI.JK": {
+    "SMSM.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -4620,11 +4635,6 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "ERAA.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
     "MEGA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
@@ -4635,17 +4645,17 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "COIN.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
     "ELSA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
     "DSNG.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "COIN.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -4700,12 +4710,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "SMMA.JK": {
+    "INDF.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "INDF.JK": {
+    "SMMA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -4720,12 +4730,12 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "HEAL.JK": {
+    "ESSA.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "KPIG.JK": {
+    "HEAL.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -4735,32 +4745,7 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
-    "MDKA.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
     "ENRG.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "SMRA.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "ESSA.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "BRMS.JK": {
-      "size_bucket": "largest",
-      "size_bucket_significant": true,
-      "free_float_tercile": "high"
-    },
-    "BIPI.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"
@@ -4770,7 +4755,22 @@
       "size_bucket_significant": true,
       "free_float_tercile": "high"
     },
+    "MDKA.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BRMS.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
     "APIC.JK": {
+      "size_bucket": "largest",
+      "size_bucket_significant": true,
+      "free_float_tercile": "high"
+    },
+    "BIPI.JK": {
       "size_bucket": "largest",
       "size_bucket_significant": true,
       "free_float_tercile": "high"

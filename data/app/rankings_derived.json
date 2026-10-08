@@ -1,13 +1,13 @@
 {
-  "as_of": "2026-09-13",
+  "as_of": "2026-10-08",
   "source_files": [
-    "universe_2026-09-13.json",
+    "universe_2026-10-08.json",
     "insider_buys_2025_2026_2026-09-13.jsonl",
     "insider_sells_2025_2026_2026-09-13.jsonl"
   ],
   "roe_vs_peers": {
     "cara_menghitung": "Cara menghitung: ROE 2025 tiap saham dibandingkan dengan ROE 2025 saham lain dalam kelompok sebanding (kelompok sub-industri, industri, sub-sektor, atau sektor; minimal 15 saham). Persentil = jumlah pesaing dengan ROE lebih rendah dibagi (jumlah pesaing - 1). Banyak kelompok punya satu saham di 100%, jadi urutan seri: kelompok lebih besar, lalu ROE lebih tinggi, lalu kode saham. Bukan skor gabungan.",
-    "evaluable_count": 837,
+    "evaluable_count": 840,
     "excluded_over_100_percent": [
       {
         "symbol": "ACST.JK",
@@ -72,7 +72,7 @@
         "percentile": 100.0,
         "group": "Real Estate Development & Management",
         "group_level": "sub_industry",
-        "group_size": 81
+        "group_size": 82
       },
       {
         "symbol": "BBCA.JK",
@@ -153,7 +153,7 @@
         "percentile": 100.0,
         "group": "Coal Production",
         "group_level": "sub_industry",
-        "group_size": 21
+        "group_size": 22
       },
       {
         "symbol": "DEWA.JK",
@@ -386,7 +386,7 @@
   },
   "earnings_streaks": {
     "cara_menghitung": "Cara menghitung: jumlah tahun beruntun sampai 2025 di mana laba tahunan lebih tinggi dari tahun sebelumnya, dengan semua laba dalam rentang itu positif. Seri diurutkan menurut kode saham; jumlah saham di panjang teratas dicatat di daftar.",
-    "evaluable_count": 345,
+    "evaluable_count": 343,
     "longest_run": 4,
     "stocks_at_longest_run": 54,
     "top": [
@@ -496,7 +496,7 @@
     "cara_menghitung": "Cara menghitung: selisih saham yang dibeli dikurangi dijual dalam laporan kepemilikan Januari 2025 sampai September 2026 (dari kepemilikan sebelum dan sesudah tiap laporan), dibagi jumlah saham beredar 2025. Laporan bertanda takeover ditampilkan terpisah. Sebuah laporan belum tentu berasal dari orang dalam dalam arti umum.",
     "filings_used": 3143,
     "filings_tagged_takeover": 45,
-    "evaluable_count": 378,
+    "evaluable_count": 379,
     "excluded_over_100_percent": [
       {
         "symbol": "BIKE.JK",
@@ -711,16 +711,6 @@
         "over_100_percent": false
       },
       {
-        "symbol": "SPMA.JK",
-        "company_name": "Suparma Tbk",
-        "buy_shares": 924885865.0,
-        "sell_shares": 213028705.0,
-        "net_shares": 711857160.0,
-        "share_of_outstanding": 0.1742275510027314,
-        "n_filings": 12,
-        "over_100_percent": false
-      },
-      {
         "symbol": "BAPA.JK",
         "company_name": "Bekasi Asri Pemula Tbk",
         "buy_shares": 104214800.0,
@@ -738,6 +728,16 @@
         "net_shares": 227216084.0,
         "share_of_outstanding": 0.149975926640355,
         "n_filings": 1,
+        "over_100_percent": false
+      },
+      {
+        "symbol": "VINS.JK",
+        "company_name": "PT Victoria Insurance Tbk",
+        "buy_shares": 214597143.0,
+        "sell_shares": 0.0,
+        "net_shares": 214597143.0,
+        "share_of_outstanding": 0.14689778369351258,
+        "n_filings": 3,
         "over_100_percent": false
       }
     ],

@@ -67,7 +67,7 @@ describe("findings", () => {
 describe("reference stocks", () => {
   const inputs: Record<string, ReadInput> = {};
   beforeAll(async () => {
-    for (const code of ["ASII", "BBCA", "GOTO", "EMAS", "JARR", "TINS", "FILM"]) inputs[code] = (await getReadInput(code, (await getStockData(code))!))!;
+    for (const code of ["ASII", "BBCA", "GOTO", "RANS", "JARR", "TINS", "FILM"]) inputs[code] = (await getReadInput(code, (await getStockData(code))!))!;
   });
 
   it("ASII: headline, rows, signals and the one situation", () => {
@@ -81,11 +81,11 @@ describe("reference stocks", () => {
     expect(k.rarest).toBe("Keadaan ini sedang dialami 541 dari 962 saham.");
     const sig = popularSignals(r, w);
     expect(sig.map((s) => s.key)).toEqual(["low_pe", "high_yield", "high_roe", "insider_buy", "news_tone"]);
-    expect(sig[0].here).toContain("lebih rendah dari 84% saham berlaba");
-    expect(sig[1].here).toBe("Imbal dividen 7,9%, lebih tinggi dari 94% saham.");
+    expect(sig[0].here).toContain("lebih rendah dari 83% saham berlaba");
+    expect(sig[1].here).toBe("Imbal dividen 8,2%, lebih tinggi dari 94% saham.");
     expect(sig.find((s) => s.key === "insider_buy")?.meaning).toBeNull();
     expect(w.map((x) => x.kind)).toEqual(["long_below_peak"]);
-    expect(w[0].here).toBe("Jatuh 30% dari puncak Rp 7.575 pada 11 Jan 2023 dan belum kembali ke sana. Sekarang Rp 4.910, 35% di bawahnya.");
+    expect(w[0].here).toBe("Jatuh 30% dari puncak Rp 7.575 pada 11 Jan 2023 dan belum kembali ke sana. Sekarang Rp 4.780, 37% di bawahnya.");
     expect(w[0].rate?.figure).toBe("12");
   });
 
@@ -101,7 +101,7 @@ describe("reference stocks", () => {
       ["Sejak puncak IHSG, 20 Jan 2026", -93.5, -27.3],
     ]);
     expect(rarestItem(r, w)?.kind).toBe("earnings_two_year_decline");
-    expect(k.rarest).toBe("Paling jarang: laba turun dua tahun, keadaan yang sedang dialami 136 dari 962 saham.");
+    expect(k.rarest).toBe("Paling jarang: laba turun dua tahun, keadaan yang sedang dialami 139 dari 962 saham.");
     const a = answers(r, w);
     expect(a.turun.body).toContain("FILM berbalik rugi Rp 257 M pada 2025.");
     expect(a.dividen.body).not.toContain("Tidak ada dividen untuk 2025");
@@ -123,10 +123,10 @@ describe("reference stocks", () => {
     expect(answers(r, w).naik.lead).toBe("JARR naik 53% dalam 20 hari bursa sampai 20 Agu 2026. Lalu perdagangannya dihentikan sementara oleh bursa.");
   });
 
-  it("EMAS: a new listing gets no one-year change", () => {
-    const r = inputs.EMAS;
+  it("RANS: a new listing gets no one-year change", () => {
+    const r = inputs.RANS;
     const k = kesimpulan(r, watchItems(r));
-    expect(k.headline).toMatch(/^EMAS baru melantai .*, jadi perubahan harganya setahun belum bisa dihitung\.$/);
+    expect(k.headline).toMatch(/^RANS baru melantai .*, jadi perubahan harganya setahun belum bisa dihitung\.$/);
     expect(k.caption).toBeNull();
     const ipo = watchItems(r).find((x) => x.kind === "recent_ipo")!;
     expect(ipo.rate).toBeNull();
@@ -149,7 +149,7 @@ describe("reference stocks", () => {
     expect(kesimpulan(r, w).headline).toBe("Harga BBCA turun 16,2% dalam setahun, sejalan dengan IHSG (-15,6%), dan turun lebih dalam dari kebanyakan saham keuangan.");
     expect(tanyaSuggestions(r)[0]).toBe("Kenapa BBCA turun padahal labanya naik?");
     expect(answers(r, w).murah.check.some((c) => c.startsWith("P/E rendah"))).toBe(false);
-    expect(agenda(r)[0]).toEqual({ date: "2026-09-16", label: "Pembayaran dividen Rp 25", past: true });
+    expect(agenda(r)[0]).toEqual({ date: "2026-03-26", label: "Laporan transaksi orang dalam terakhir", past: true });
   });
 });
 

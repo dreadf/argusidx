@@ -2,16 +2,16 @@
   "as_of": "2026-09-13",
   "note": "Descriptive base rates, not predictions for any individual stock - same epistemic status as the beat-gold result (data/app/beat_gold.json): no explore/holdout split, no significance test, not counted in the project's trial counter (see EXPERIMENT.md's Chunk M section). Two of the three (typical_drawdown, recovery_after_fall) are computed once from development-only Yahoo Finance price history, never live in this product - a disclosed, dated research result, not a live capability.",
   "loss_maker_turnaround": {
-    "n": 853,
-    "turned_around": 225,
-    "pct": 26.4,
+    "n": 854,
+    "turned_around": 223,
+    "pct": 26.1,
     "by_year": [
       {
         "from_year": 2021,
         "to_year": 2022,
-        "n": 230,
-        "turned_around": 81,
-        "pct": 35.2
+        "n": 229,
+        "turned_around": 80,
+        "pct": 34.9
       },
       {
         "from_year": 2022,
@@ -23,16 +23,16 @@
       {
         "from_year": 2023,
         "to_year": 2024,
-        "n": 211,
-        "turned_around": 39,
-        "pct": 18.5
+        "n": 210,
+        "turned_around": 38,
+        "pct": 18.1
       },
       {
         "from_year": 2024,
         "to_year": 2025,
-        "n": 205,
+        "n": 208,
         "turned_around": 50,
-        "pct": 24.4
+        "pct": 24.0
       }
     ]
   },
@@ -98,9 +98,9 @@
   },
   "earnings_two_year_decline": {
     "pooled": {
-      "n": 262,
+      "n": 263,
       "count": 151,
-      "rate": 0.5763358778625954
+      "rate": 0.5741444866920152
     },
     "by_year": {
       "2023": {
@@ -109,58 +109,58 @@
         "rate": 0.6111111111111112
       },
       "2024": {
-        "n": 154,
+        "n": 155,
         "count": 85,
-        "rate": 0.551948051948052
+        "rate": 0.5483870967741935
       }
     }
   },
   "earnings_more_than_doubled": {
     "gave_part_back": {
       "n": 256,
-      "count": 136,
-      "rate": 0.53125
+      "count": 134,
+      "rate": 0.5234375
     },
     "gave_all_back": {
       "n": 256,
-      "count": 53,
-      "rate": 0.20703125
+      "count": 51,
+      "rate": 0.19921875
     },
     "by_year": {
       "2022": {
         "gave_part_back": {
           "n": 119,
-          "count": 69,
-          "rate": 0.5798319327731093
+          "count": 68,
+          "rate": 0.5714285714285714
         },
         "gave_all_back": {
           "n": 119,
-          "count": 28,
-          "rate": 0.23529411764705882
+          "count": 27,
+          "rate": 0.226890756302521
         }
       },
       "2023": {
         "gave_part_back": {
-          "n": 64,
+          "n": 65,
           "count": 27,
-          "rate": 0.421875
+          "rate": 0.4153846153846154
         },
         "gave_all_back": {
-          "n": 64,
-          "count": 13,
-          "rate": 0.203125
+          "n": 65,
+          "count": 12,
+          "rate": 0.18461538461538463
         }
       },
       "2024": {
         "gave_part_back": {
-          "n": 73,
-          "count": 40,
-          "rate": 0.547945205479452
+          "n": 72,
+          "count": 39,
+          "rate": 0.5416666666666666
         },
         "gave_all_back": {
-          "n": 73,
+          "n": 72,
           "count": 12,
-          "rate": 0.1643835616438356
+          "rate": 0.16666666666666666
         }
       }
     }

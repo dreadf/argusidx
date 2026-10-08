@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-09-13",
-  "source_file": "universe_2026-09-13.json",
+  "as_of": "2026-10-08",
+  "source_file": "universe_2026-10-08.json",
   "breadth": {
-    "near_high": 60,
-    "middle": 528,
-    "near_low": 299,
+    "near_high": 76,
+    "middle": 428,
+    "near_low": 383,
     "excluded": 75,
     "total_evaluable": 887
   },
   "movers": {
-    "up": 197,
-    "down": 471,
-    "flat": 294
+    "up": 280,
+    "down": 390,
+    "flat": 292
   },
   "intensity": {
-    "calm": 337,
-    "moderate": 458,
-    "choppy": 167
+    "calm": 333,
+    "moderate": 451,
+    "choppy": 178
   }
 }

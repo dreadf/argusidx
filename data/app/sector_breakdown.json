@@ -1,155 +1,155 @@
 {
-  "as_of": "2026-09-13",
-  "source_file": "universe_2026-09-13.json",
+  "as_of": "2026-10-08",
+  "source_file": "universe_2026-10-08.json",
   "sectors": [
     {
       "sector": "Consumer Cyclicals",
       "company_count": 161,
       "breadth": {
         "near_high": 9,
-        "middle": 88,
-        "near_low": 50,
+        "middle": 73,
+        "near_low": 65,
         "excluded": 14,
         "total_evaluable": 147
       },
       "typical_roe_pct": 2.143734426354745,
       "roe_n": 136,
-      "typical_pe": 5.65613678183552,
+      "typical_pe": 5.76737692823813,
       "pe_n": 137
     },
     {
       "sector": "Consumer Non-Cyclicals",
       "company_count": 131,
       "breadth": {
-        "near_high": 10,
-        "middle": 75,
-        "near_low": 40,
+        "near_high": 13,
+        "middle": 60,
+        "near_low": 52,
         "excluded": 6,
         "total_evaluable": 125
       },
       "typical_roe_pct": 9.138408713727387,
       "roe_n": 118,
-      "typical_pe": 9.1609777958179,
+      "typical_pe": 8.82534964655694,
       "pe_n": 118
     },
     {
       "sector": "Basic Materials",
       "company_count": 114,
       "breadth": {
-        "near_high": 9,
-        "middle": 68,
-        "near_low": 23,
+        "near_high": 11,
+        "middle": 59,
+        "near_low": 30,
         "excluded": 14,
         "total_evaluable": 100
       },
       "typical_roe_pct": 5.02939821647838,
       "roe_n": 102,
-      "typical_pe": 10.0724897061301,
+      "typical_pe": 9.760171722044035,
       "pe_n": 102
     },
     {
       "sector": "Financials",
       "company_count": 107,
       "breadth": {
-        "near_high": 6,
-        "middle": 66,
-        "near_low": 32,
+        "near_high": 7,
+        "middle": 53,
+        "near_low": 44,
         "excluded": 3,
         "total_evaluable": 104
       },
-      "typical_roe_pct": 4.16526184404634,
-      "roe_n": 101,
-      "typical_pe": 9.831786999592275,
+      "typical_roe_pct": 4.719119751172525,
+      "roe_n": 102,
+      "typical_pe": 8.968170436081959,
       "pe_n": 102
     },
     {
       "sector": "Properties & Real Estate",
       "company_count": 93,
       "breadth": {
-        "near_high": 2,
-        "middle": 46,
-        "near_low": 34,
+        "near_high": 4,
+        "middle": 34,
+        "near_low": 44,
         "excluded": 11,
         "total_evaluable": 82
       },
-      "typical_roe_pct": 2.47532607891513,
-      "roe_n": 83,
-      "typical_pe": 6.86762503845737,
-      "pe_n": 83
+      "typical_roe_pct": 2.39718953494369,
+      "roe_n": 84,
+      "typical_pe": 6.305629703308315,
+      "pe_n": 84
     },
     {
       "sector": "Energy",
       "company_count": 91,
       "breadth": {
-        "near_high": 11,
-        "middle": 49,
-        "near_low": 24,
+        "near_high": 14,
+        "middle": 35,
+        "near_low": 35,
         "excluded": 7,
         "total_evaluable": 84
       },
-      "typical_roe_pct": 8.19854009219182,
-      "roe_n": 85,
-      "typical_pe": 10.871701902945201,
+      "typical_roe_pct": 8.046478623236775,
+      "roe_n": 86,
+      "typical_pe": 10.5655010762595,
       "pe_n": 86
     },
     {
       "sector": "Infrastructures",
       "company_count": 71,
       "breadth": {
-        "near_high": 3,
-        "middle": 31,
-        "near_low": 28,
+        "near_high": 4,
+        "middle": 20,
+        "near_low": 38,
         "excluded": 9,
         "total_evaluable": 62
       },
-      "typical_roe_pct": 5.798785791390855,
-      "roe_n": 62,
-      "typical_pe": 8.99277034993869,
-      "pe_n": 63
+      "typical_roe_pct": 5.7498933479436,
+      "roe_n": 63,
+      "typical_pe": 9.18800860746876,
+      "pe_n": 64
     },
     {
       "sector": "Industrials",
       "company_count": 66,
       "breadth": {
-        "near_high": 2,
-        "middle": 42,
-        "near_low": 18,
+        "near_high": 3,
+        "middle": 35,
+        "near_low": 24,
         "excluded": 4,
         "total_evaluable": 62
       },
       "typical_roe_pct": 2.8312275253502,
       "roe_n": 59,
-      "typical_pe": 8.97875199291148,
+      "typical_pe": 8.22796311713707,
       "pe_n": 59
     },
     {
       "sector": "Technology",
       "company_count": 47,
       "breadth": {
-        "near_high": 1,
-        "middle": 22,
-        "near_low": 20,
+        "near_high": 3,
+        "middle": 18,
+        "near_low": 22,
         "excluded": 4,
         "total_evaluable": 43
       },
       "typical_roe_pct": 5.67687984913666,
       "roe_n": 37,
-      "typical_pe": 13.6930875857623,
+      "typical_pe": 10.8996977182668,
       "pe_n": 37
     },
     {
       "sector": "Healthcare",
       "company_count": 41,
       "breadth": {
-        "near_high": 3,
-        "middle": 19,
+        "near_high": 4,
+        "middle": 18,
         "near_low": 17,
         "excluded": 2,
         "total_evaluable": 39
       },
       "typical_roe_pct": 6.367209649747885,
       "roe_n": 38,
-      "typical_pe": 12.692043567874,
+      "typical_pe": 13.0876093806095,
       "pe_n": 38
     },
     {
@@ -157,14 +157,14 @@
       "company_count": 40,
       "breadth": {
         "near_high": 4,
-        "middle": 22,
-        "near_low": 13,
+        "middle": 23,
+        "near_low": 12,
         "excluded": 1,
         "total_evaluable": 39
       },
       "typical_roe_pct": 3.07201998348318,
       "roe_n": 36,
-      "typical_pe": 7.4223889438719794,
+      "typical_pe": 7.92094733134102,
       "pe_n": 36
     }
   ]
