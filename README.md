@@ -57,12 +57,13 @@ informasi. Lihat bagian Disclaimer di bawah.
 
 1. [Problem statement](#problem-statement)
 2. [Why this exists](#why-this-exists)
-3. [What you can do in the app](#what-you-can-do-in-the-app)
-4. [The research](#the-research) (what we tested, what held up, how we kept it honest)
-5. [How Sectors powers it](#how-sectors-powers-it)
-6. [Engineering](#engineering)
-7. [Try it in three minutes](#try-it-in-three-minutes)
-8. [Run it yourself](#run-it-yourself), [data and limits](#data-provenance-and-limits), [repo map](#repo-map)
+3. [How to use ArgusIDX](#how-to-use-argusidx) (3-step workflow)
+4. [What you can do in the app](#what-you-can-do-in-the-app)
+5. [The research](#the-research) (what we tested, what held up, how we kept it honest)
+6. [How Sectors powers it](#how-sectors-powers-it)
+7. [Engineering](#engineering)
+8. [Try it in three minutes](#try-it-in-three-minutes)
+9. [Run it yourself](#run-it-yourself), [data and limits](#data-provenance-and-limits), [repo map](#repo-map)
 
 ## Why this exists
 
@@ -97,6 +98,26 @@ snapshot, IHSG itself is **31.7% below its 2026 peak** (20 Jan 2026), a state
 ArgusIDX labels from a fixed rule, never a forecast. The app shows that
 condition, and each stock's currently active situations, before any tip claim
 is checked.
+
+## How to use ArgusIDX
+
+When an investor hears a rumor, reads a social media tip, or evaluates an IDX stock, ArgusIDX provides a disciplined 3-step fact-checking workflow:
+
+```mermaid
+flowchart TD
+  A["Stock tip or claim arrives<br/><i>'BBCA oversold mantul, asing borong, TP 12000'</i>"] --> B["1. Check tip in Tanya (/tanya)"]
+  B --> C{"Client-side parser"}
+  C -->|Matched Claims| D["Fact-check against tested beliefs<br/>• Asing borong: <b>Tidak terbukti</b><br/>• Oversold: <b>Tidak terbukti</b><br/>• TP 12000: <i>Belum diuji</i>"]
+  C -->|Identified Ticker| E["Open Stock Page (/saham/BBCA)<br/>• Plain-language health read<br/>• Peer group comparisons<br/>• Active warning situations"]
+  E --> F["2. Check Market Condition (/pasar)<br/>• IHSG state: <b>Tertekan</b> (-31.7% from peak)<br/>• Top market-drag contributors"]
+  D & E & F --> G["3. Informed Decision<br/>Plain evidence, base rates, zero hidden scores"]
+```
+
+### 3-step decision flow
+
+1. **Paste the claim into Tanya (`/tanya`):** Paste any message directly from WhatsApp, Telegram, or social media. The browser-only parser identifies stock tickers, matches mentioned claims against 23 pre-registered tests, and explicitly tags unverified claims (e.g. price targets). Pasted text never leaves your device.
+2. **Contextualize with the Market (`/pasar`):** View IHSG's macro state under fixed rules (`tertekan` vs `normal`), see which heavyweights are dragging the index down, and identify sector-wide selling pressure before evaluating a single ticker in isolation.
+3. **Inspect Issuer Fundamentals (`/saham/[CODE]`):** Navigate to any of the 962 company profiles. Choose why you opened the stock (e.g. "Harganya turun" or "Kelihatan murah") to review four independent dimensions (price, earnings, valuation, dividend) without blended ratings, alongside peer group percentile ranks.
 
 ## What you can do in the app
 
@@ -173,8 +194,8 @@ number is in [`EXPERIMENT.md`](EXPERIMENT.md).
   that test uses REST.
 - **Every call is accounted for.** [`docs/credit_ledger.md`](docs/credit_ledger.md) logs each
   billed call with its reason: the 1,000-credit hackathon pool is fully spent, and the
-  build now draws on a separate 600-credit balance (expiring 2027), 109 of which are
-  spent so far.
+  build now draws on a separate 600-credit balance (expiring 2027), 133 of which are
+  spent so far (467 left).
 - **Nothing calls Sectors at request time.** Every number is precomputed, so the app
   does not depend on any API being reachable.
 - **The foreign-flow test is new to us.** We found no published test of the retail
