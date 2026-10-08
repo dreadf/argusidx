@@ -266,7 +266,8 @@ The WebFetch tool returns page text through a summariser, so quotes marked
 - **IDX price rules change on 28 Sep 2026.** Secondary: Katadata reporting exchange
   decision Kep-00136/BEI/09-2026 (21 Sep 2026): the minimum share price falls
   from Rp50 to Rp1 and auto-rejection bands change (the 15% lower limit widens from
-  1 Jan 2027). The project's data is dated 13 Sep 2026 and predates it. Tick-size
+  1 Jan 2027). The stock snapshot (8 Oct 2026) postdates it, but the price-history research behind
+  the tested beliefs is frozen at 12-13 Sep 2026 and predates it. Tick-size
   bands are not confirmed.
   <https://katadata.co.id/finansial/bursa/6ab0fe985f085/harga-minimum-saham-jadi-rp-1-mulai-pekan-depan-auto-rejection-disesuaikan>
 - **Trading costs.** Secondary and old (CNBC Indonesia, 26 Jun 2019): broker
@@ -282,7 +283,7 @@ The WebFetch tool returns page text through a summariser, so quotes marked
   horizon were not visible, so they are **not cited**.
   <https://ideas.repec.org/a/eee/ecmode/v135y2024ics0264999324000865.html>
 - **Listed companies.** OJK's Hasan Fawzi, as reported by detik on 29 Jul 2026:
-  "Saat ini perusahaan tercatat ada 963." Our universe of 962 (data of 13 Sep 2026)
+  "Saat ini perusahaan tercatat ada 963." Our universe of 962 (data of 8 Oct 2026)
   is consistent. <https://finance.detik.com/bursa-dan-valas/d-8595961/bursa-butuh-30-perusahaan-ipo-tiap-tahun-buat-capai-target-1-100-emiten/amp>
 - **Listing boards (Utama, Akselerasi).** Only a 2023 secondary description was
   found; the IDX rule text was not opened, so no numeric listing criteria are

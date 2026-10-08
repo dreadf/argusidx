@@ -444,3 +444,26 @@ bias is nearly constant across stocks with similar history length. Not
 worth a re-publish. Flagged here because the year-by-year check compares
 years with very different sample sizes (n ranges roughly 100–240 trading
 days across 2022–2026), where the bias is *not* perfectly uniform.
+
+## Final refresh, 2026-10-08
+
+One last pull before the submission freeze (credits and calls are logged in
+`docs/credit_ledger.md`). Each step wrote a NEW dated file; the builders read
+the latest one of each kind.
+
+- `data/raw/universe_2026-10-08.json`: full `/v2/companies/` re-sweep, 962
+  companies. Replaces the 2026-09-13 snapshot as the source of prices,
+  fundamentals, flags, rankings and the stock pages.
+- `data/raw/corporate_actions_2026-10-08.json`: dividend, upcoming dividend,
+  AGM, rights issue and stock split events for 2026-09-08 to 2026-11-07.
+- `data/raw/{ihsg,lq45,idxhidiv20,idx_total}_2026-10-08.json`: the previous
+  series plus the days since the last pull (to 2026-10-07), via
+  `pipeline/appdata/topup_index_series.py`, one call per series.
+- `data/raw/insider_{buys,sells}_2025_2026_2026-10-08.jsonl`: the previous
+  rows plus filings since 2026-09-10 (108 buys, 104 sells), deduplicated, via
+  `pipeline/appdata/topup_insider_filings.py`.
+
+Not refreshed, still at their earlier dates: suspensions (2026-09-13), news
+sentiment (2026-09-13), commodity prices (2026-09-20; the API's coal series
+ends 2026-02-15), foreign-flow lists and the fixed-date close snapshots (M5,
+M6), which back already-published tests and dates that cannot change.

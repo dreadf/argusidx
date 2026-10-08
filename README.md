@@ -233,7 +233,8 @@ Tests, rebuilding the data and the optional Gemini key: [`docs/SETUP.md`](docs/S
 
 The data fetchers and rebuild scripts exist and work: `pipeline/appdata/`
 (`refresh_universe.py`, `fetch_corporate_actions.py`, `fetch_idx_total.py`,
-`fetch_ihsg.py`, the `fetch_sectors_closes*.py` set) pulls fresh data from
+`fetch_ihsg.py`, `topup_index_series.py`, `topup_insider_filings.py`, the
+`fetch_sectors_closes*.py` set) pulls fresh data from
 Sectors, and `scripts/rebuild_app_data.sh` rebuilds every file the app reads.
 They are run by hand, one at a time, and deliberately not scheduled. Two
 constraints, both stated on the pages rather than hidden:
